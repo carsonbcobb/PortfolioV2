@@ -1,0 +1,154 @@
+@keyframes wiggle {
+	0% {
+		transform: rotate(0deg);
+	}
+	80% {
+		transform: rotate(0deg);
+	}
+	85% {
+		transform: rotate(5deg);
+	}
+	95% {
+		transform: rotate(-5deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+//Touch
+#contact-bottom {
+	background-color: #fff2f2;
+}
+
+.touch {
+	margin-top: 150px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	padding-top: 100px;
+}
+
+.touch__image {
+	margin-top: auto;
+
+	img {
+		max-width: 250px;
+	}
+}
+
+.touch__content {
+	text-align: left;
+	h2 {
+		font-size: 2.5rem;
+	}
+	p {
+		line-height: 1.5;
+		margin-bottom: 25px;
+	}
+	input {
+		border: none;
+		padding: 20px;
+		margin: 10px 5px 10px 0px;
+	}
+	textarea {
+		border: none;
+		padding: 20px;
+		margin: 10px 0 30px 0;
+		width: 350px;
+	}
+}
+
+.touch__content--form-group {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	width: 100%;
+	padding-left: 0;
+}
+
+//Extra Content
+
+.extra-contact {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	margin-top: 150px;
+}
+
+.extra-contact__item {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+
+	img {
+		animation: wiggle 2.5s infinite;
+
+		margin-right: 25px;
+	}
+}
+
+.wiggle-email {
+	animation-delay: 3.75s !important;
+}
+
+.extra-conteact__item--text {
+	display: flex;
+	flex-direction: column;
+
+	font-size: 1.25rem;
+}
+
+.small-text {
+	font-size: 0.75rem;
+}
+
+#copyright {
+	padding: 50px 0;
+	margin: 0;
+}
+
+@media (max-width: 768px) {
+	.touch {
+		margin-top: 100px;
+		flex-direction: column;
+	}
+
+	.touch__image {
+		padding-top: 75px;
+	}
+}
+
+@media (max-width: 425px) {
+	.touch {
+		padding: 0 25px;
+	}
+
+	.touch__image {
+		padding-top: 75px;
+	}
+
+	.extra-contact {
+		display: flex;
+		flex-direction: column;
+		margin-top: 100px;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.extra-contact__item {
+		display: flex;
+		flex-direction: column;
+		margin: 20px 0;
+		img {
+			margin: auto;
+		}
+	}
+}
+
+button {
+	cursor: pointer;
+}

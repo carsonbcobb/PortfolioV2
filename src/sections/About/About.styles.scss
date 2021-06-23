@@ -1,0 +1,31 @@
+.about-banner {
+	img {
+		max-width: 100%;
+	}
+}
+
+#about {
+	background-color: white;
+}
+
+.service-addition {
+	color: #2f2f2f;
+	line-height: 1.75;
+	font-size: 1rem;
+	text-align: start;
+	padding: 0 100px;
+}
+
+@media (max-width: 768px) {
+	.service-addition {
+		padding: 0 110px;
+		line-height: 1.5;
+	}
+}
+
+@media (max-width: 425px) {
+	.service-addition {
+		padding: 0 50px;
+		line-height: 1.5;
+	}
+}
