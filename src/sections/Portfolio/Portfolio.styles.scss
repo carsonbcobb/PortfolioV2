@@ -18,6 +18,10 @@
 	flex-flow: row wrap;
 	justify-content: space-evenly;
 	padding-top: 50px;
+
+	img {
+		max-width: 400px;
+	}
 }
 
 .port-slide {
