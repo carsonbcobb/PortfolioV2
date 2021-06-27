@@ -9,6 +9,7 @@ import portBanner from '../../assets/portfolio/portBanner.png';
 import placeholder from '../../assets/slider/placeholder-image.png';
 import port from '../../assets/portfolio/portfolio-work.png';
 import ccc from '../../assets/portfolio/ccc-work.png';
+import kelpieImage from '../../assets/portfolio/kelpiecoin.png';
 
 const Portfolio = () => {
 	return (
@@ -59,17 +60,20 @@ const Portfolio = () => {
 						</div>
 					</div>
 					<div className='slide port-slide'>
-						<img src={placeholder} />
-						<h4>Kelpie Coin (TBC)</h4>
+						<img src={kelpieImage} />
+						<h4>Kelpie Coin</h4>
 						<div className='button-container'>
 							<div className='button button-slider'>
-								<a href='#' target='_blank'>
+								<a href='https://www.kelpiecoin.finance/' target='_blank'>
 									View Live
 								</a>
 							</div>
 
 							<div className='button button-git button-slider'>
-								<a href='#' target='_blank'>
+								<a
+									href='https://github.com/carsonbcobb/KelpieCoin'
+									target='_blank'
+								>
 									View on Github
 								</a>
 							</div>
@@ -77,7 +81,7 @@ const Portfolio = () => {
 					</div>
 					<div className='slide port-slide'>
 						<img src={placeholder} />
-						<h4>(TBC)</h4>
+						<h4>Homes Not Sold Yet (TBC)</h4>
 						<div className='button-container'>
 							<div className='button button-slider'>
 								<a href='#' target='_blank'>
@@ -101,7 +105,10 @@ const Portfolio = () => {
 							</div>
 
 							<div className='button button-git button-slider'>
-								<a href='#' target='_blank'>
+								<a
+									href='https://github.com/carsonbcobb/PortfolioV2'
+									target='_blank'
+								>
 									View on Github
 								</a>
 							</div>

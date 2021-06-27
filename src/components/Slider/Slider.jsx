@@ -6,6 +6,7 @@ import placeholder from '../../assets/slider/placeholder-image.png';
 import slideArrow from '../../assets/slider/slide-arrow.png';
 import portWork from '../../assets/portfolio/portfolio-work.png';
 import cccWork from '../../assets/portfolio/ccc-work.png';
+import kelpieImage from '../../assets/portfolio/kelpiecoin.png';
 
 export default class HomeSlider extends Component {
 	render() {
@@ -85,17 +86,20 @@ export default class HomeSlider extends Component {
 						</div>
 					</div>
 					<div className='slide'>
-						<img src={placeholder} />
-						<h4>Kelpie Coin (TBC)</h4>
+						<img src={kelpieImage} />
+						<h4>Kelpie Coin</h4>
 						<div className='button-container'>
 							<div className='button button-slider'>
-								<a href='#' target='_blank'>
+								<a href='https://www.kelpiecoin.finance/' target='_blank'>
 									View Live
 								</a>
 							</div>
 
 							<div className='button button-git button-slider'>
-								<a href='#' target='_blank'>
+								<a
+									href='https://github.com/carsonbcobb/KelpieCoin'
+									target='_blank'
+								>
 									View on Github
 								</a>
 							</div>
@@ -103,7 +107,7 @@ export default class HomeSlider extends Component {
 					</div>
 					<div className='slide'>
 						<img src={placeholder} />
-						<h4>(TBC)</h4>
+						<h4>Homes Not Sold Yet</h4>
 						<div className='button-container'>
 							<div className='button button-slider'>
 								<a href='#' target='_blank'>
@@ -127,7 +131,10 @@ export default class HomeSlider extends Component {
 							</div>
 
 							<div className='button button-git button-slider'>
-								<a href='#' target='_blank'>
+								<a
+									href='https://github.com/carsonbcobb/PortfolioV2'
+									target='_blank'
+								>
 									View on Github
 								</a>
 							</div>
