@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import Slider from 'react-slick';
 import './Slider.styles.scss';
 
-import placeholder from '../../assets/slider/placeholder-image.png';
 import slideArrow from '../../assets/slider/slide-arrow.png';
 import portWork from '../../assets/portfolio/portfolio-work.png';
 import cccWork from '../../assets/portfolio/ccc-work.png';
 import kelpieImage from '../../assets/portfolio/kelpiecoin.png';
-
+import cobbCoffeeImage from '../../assets/portfolio/cobb-coffee.png';
+import homesImage from '../../assets/portfolio/homes.png';
 export default class HomeSlider extends Component {
 	render() {
 		const settings = {
@@ -69,17 +69,20 @@ export default class HomeSlider extends Component {
 						</div>
 					</div>
 					<div className='slide'>
-						<img src={placeholder} />
-						<h4>Cobb Coffee (TBC)</h4>
+						<img src={cobbCoffeeImage} />
+						<h4>Cobb Coffee</h4>
 						<div className='button-container'>
 							<div className='button button-slider'>
-								<a href='#' target='_blank'>
+								<a href='https://cobb-coffee.com/' target='_blank'>
 									View Live
 								</a>
 							</div>
 
 							<div className='button button-git button-slider'>
-								<a href='#' target='_blank'>
+								<a
+									href='https://github.com/carsonbcobb/CobbCoffee'
+									target='_blank'
+								>
 									View on Github
 								</a>
 							</div>
@@ -105,23 +108,7 @@ export default class HomeSlider extends Component {
 							</div>
 						</div>
 					</div>
-					<div className='slide'>
-						<img src={placeholder} />
-						<h4>Homes Not Sold Yet</h4>
-						<div className='button-container'>
-							<div className='button button-slider'>
-								<a href='#' target='_blank'>
-									View Live
-								</a>
-							</div>
 
-							<div className='button button-git button-slider'>
-								<a href='#' target='_blank'>
-									View on Github
-								</a>
-							</div>
-						</div>
-					</div>
 					<div className='slide'>
 						<img src={portWork} />
 						<h4>Portfolio (This Website!)</h4>
@@ -135,6 +122,23 @@ export default class HomeSlider extends Component {
 									href='https://github.com/carsonbcobb/PortfolioV2'
 									target='_blank'
 								>
+									View on Github
+								</a>
+							</div>
+						</div>
+					</div>
+					<div className='slide'>
+						<img src={homesImage} />
+						<h4>Homes Not Sold Yet (TBC)</h4>
+						<div className='button-container'>
+							<div className='button button-slider button-inactive'>
+								<a href='#' target='_blank'>
+									View Live
+								</a>
+							</div>
+
+							<div className='button button-git button-slider button-inactive'>
+								<a href='#' target='_blank'>
 									View on Github
 								</a>
 							</div>

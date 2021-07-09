@@ -10,6 +10,8 @@ import placeholder from '../../assets/slider/placeholder-image.png';
 import port from '../../assets/portfolio/portfolio-work.png';
 import ccc from '../../assets/portfolio/ccc-work.png';
 import kelpieImage from '../../assets/portfolio/kelpiecoin.png';
+import cobbCoffeeImage from '../../assets/portfolio/cobb-coffee.png';
+import homesImage from '../../assets/portfolio/homes.png';
 
 const Portfolio = () => {
 	return (
@@ -43,8 +45,8 @@ const Portfolio = () => {
 						</div>
 					</div>
 					<div className='slide port-slide'>
-						<img src={placeholder} />
-						<h4>Cobb Coffee (TBC)</h4>
+						<img src={cobbCoffeeImage} />
+						<h4>Cobb Coffee</h4>
 						<div className='button-container'>
 							<div className='button button-slider'>
 								<a href='#' target='_blank'>
@@ -79,23 +81,7 @@ const Portfolio = () => {
 							</div>
 						</div>
 					</div>
-					<div className='slide port-slide'>
-						<img src={placeholder} />
-						<h4>Homes Not Sold Yet (TBC)</h4>
-						<div className='button-container'>
-							<div className='button button-slider'>
-								<a href='#' target='_blank'>
-									View Live
-								</a>
-							</div>
 
-							<div className='button button-git button-slider'>
-								<a href='#' target='_blank'>
-									View on Github
-								</a>
-							</div>
-						</div>
-					</div>
 					<div className='slide port-slide'>
 						<img src={port} />
 						<h4>Portfolio (This Website!)</h4>
@@ -109,6 +95,23 @@ const Portfolio = () => {
 									href='https://github.com/carsonbcobb/PortfolioV2'
 									target='_blank'
 								>
+									View on Github
+								</a>
+							</div>
+						</div>
+					</div>
+					<div className='slide port-slide'>
+						<img src={homesImage} />
+						<h4>Homes Not Sold Yet (TBC)</h4>
+						<div className='button-container'>
+							<div className='button button-slider button-inactive'>
+								<a href='#' target='_blank'>
+									View Live
+								</a>
+							</div>
+
+							<div className='button button-git button-slider button-inactive'>
+								<a href='#' target='_blank'>
 									View on Github
 								</a>
 							</div>
