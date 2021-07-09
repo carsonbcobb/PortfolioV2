@@ -49,13 +49,16 @@ const Portfolio = () => {
 						<h4>Cobb Coffee</h4>
 						<div className='button-container'>
 							<div className='button button-slider'>
-								<a href='#' target='_blank'>
+								<a href='https://cobb-coffee.com/' target='_blank'>
 									View Live
 								</a>
 							</div>
 
 							<div className='button button-git button-slider'>
-								<a href='#' target='_blank'>
+								<a
+									href='https://github.com/carsonbcobb/CobbCoffee'
+									target='_blank'
+								>
 									View on Github
 								</a>
 							</div>
