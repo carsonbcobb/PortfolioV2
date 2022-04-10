@@ -8,7 +8,8 @@ import phoneIcon from '../../assets/home/phone.png';
 import emailIcon from '../../assets/home/email.png';
 import touchImage from '../../assets/home/touch.png';
 
-const ContactBottom = () => {
+const ContactBottom=() =>
+{
 	return (
 		<div id='contact-bottom'>
 			<section className='touch'>
@@ -60,28 +61,30 @@ const ContactBottom = () => {
 							name='message'
 							placeholder='Enter Your Message'
 						/>
-						<div>
+						<div className="button__container">
 							<button
-								onClick={() => {
-									const form = document.getElementById('form');
+								onClick={ () =>
+								{
+									const form=document.getElementById( 'form' );
 									return (
-										(form.method = 'POST'),
-										(form.action = 'https://mailthis.to/cobb'),
-										(form.encType = 'multipart/form-data')
+										( form.method='POST' ),
+										( form.action='https://submit-form.com/QhONV08k' ),
+										( form.encType='multipart/form-data' )
 									);
-								}}
-								onSubmit={() => {
-									const form = document.getElementById('form');
+								} }
+								onSubmit={ () =>
+								{
+									const form=document.getElementById( 'form' );
 									return form.reset();
-								}}
+								} }
 								className='button'
 								type='submit'
 								value='Send'
 							>
-								<FontAwesomeIcon icon={faArrowRight} className='faIcon' />{' '}
+								<FontAwesomeIcon icon={ faArrowRight } className='faIcon' />{ ' ' }
 								Submit Now
 							</button>
-						</div>{' '}
+						</div>{ ' ' }
 						<input
 							type='hidden'
 							name='_subject'
@@ -90,13 +93,11 @@ const ContactBottom = () => {
 					</form>
 				</div>
 
-				<div className='touch__image'>
-					<img src={touchImage} />
-				</div>
+
 			</section>
 			<section className='extra-contact'>
 				<div className='extra-contact__item'>
-					<img src={phoneIcon} className='wiggleAnimation' />
+					<img src={ phoneIcon } className='wiggleAnimation' />
 					<div>
 						<h3 className='extra-conteact__item--text'>
 							<span className='small-text'>PHONE NUMBER</span>559.916.5560
@@ -105,11 +106,11 @@ const ContactBottom = () => {
 				</div>
 
 				<div className='extra-contact__item'>
-					<img src={emailIcon} className='wiggleAnimation wiggle-email' />
+					<img src={ emailIcon } className='wiggleAnimation wiggle-email' />
 					<div>
 						<h3 className='extra-conteact__item--text'>
 							<span className='small-text'>EMAIL ADDRESS</span>
-							carson@carson-cobb.com
+							carson@carsoncobb.com
 						</h3>
 					</div>
 				</div>

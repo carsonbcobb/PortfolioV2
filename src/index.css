@@ -10,12 +10,56 @@ body {
 	max-width: 1440px;
 	background-color: #fff2f2;
 	margin: auto;
+	font-family: 'Playfair Display', serif;
 }
 
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-body, html, .body {
+body,
+html,
+.body {
 	overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+	width: 1em;
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: #03D1C1;
+	outline: 1px solid white;
+	border-radius: 100em;
+}
+
+@media (max-width: 768px) {
+
+	body,
+	html,
+	.body {
+		overflow-x: visible;
+	}
+
+	body::-webkit-scrollbar {}
+
+	body::-webkit-scrollbar-thumb {
+		background-color: unset;
+		outline: unset;
+		border-radius: unset;
+	}
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	100% {
+		background-position: 0% 50%;
+	}
 }

@@ -42,6 +42,12 @@
 	font-size: 1.15rem !important;
 }
 
+.how p {
+	text-align: justify;
+	margin: auto;
+}
+
+
 .button {
 	background-color: #ff6666;
 	padding: 15px 25px;
@@ -49,7 +55,7 @@
 	color: white;
 	border: 2px solid transparent;
 	font-size: 18px;
-	transition: 0.35s ease-in-out;
+	transition: 0.5s ease-in-out;
 
 	a {
 		text-decoration: none;
@@ -100,6 +106,7 @@
 		}
 	}
 }
+
 @media (max-width: 768px) {
 	.hero {
 		display: flex;
@@ -119,6 +126,7 @@
 
 	.hero__image--mobile {
 		display: block;
+
 		img {
 			max-width: 350px;
 		}
@@ -128,22 +136,27 @@
 @media (max-width: 425px) {
 	.hero__image--mobile {
 		display: block;
+
 		img {
 			max-width: 350px;
 		}
 	}
+
 	.mob-text {
 		display: block;
 	}
+
 	.desk-text {
 		display: none;
 	}
+
 	.hero__content {
 		color: #011c39;
 		text-align: start;
 		background: none;
 		margin-top: 0;
 		padding-top: 0;
+
 		h1 {
 			font-size: 2.5rem;
 		}
@@ -210,6 +223,7 @@
 		}
 	}
 }
+
 //Services
 
 .services {
@@ -285,6 +299,7 @@
 	.services {
 		margin-top: 100px;
 	}
+
 	.services__content {
 		padding-left: 0px;
 
@@ -304,6 +319,7 @@
 
 .how {
 	margin-top: 150px;
+
 	h2 {
 		font-size: 2.5rem;
 	}
@@ -353,9 +369,11 @@
 	.how-container {
 		width: 85%;
 	}
+
 	.how__item {
 		height: 250px;
 	}
+
 	.how__item--content-head {
 		width: 200px;
 	}
@@ -384,6 +402,7 @@
 		flex-direction: column;
 		width: 70%;
 	}
+
 	.how {
 		p {
 			padding: 0 15px;

@@ -28,6 +28,27 @@
 	margin: 25px 0;
 }
 
+
+.portfolio--mobile {
+	background: linear-gradient(-45deg, #F1C84F, rgb(165, 129, 22));
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+
+	.portfolio--name {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	h3 {
+		font-size: 2.5rem;
+		color: white;
+		text-align: left;
+	}
+
+}
+
+
 @media (max-width: 425px) {
 	.portfolio__work--list {
 		display: flex;
@@ -35,7 +56,16 @@
 		justify-content: space-evenly;
 		padding-top: 50px;
 	}
+
+	.portfolio__work {
+		h2 {
+			display: none !important;
+		}
+	}
+
 	.port-slide {
 		margin: 25px;
 	}
+
+
 }

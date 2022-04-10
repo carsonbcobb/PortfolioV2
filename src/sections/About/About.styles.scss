@@ -4,6 +4,32 @@
 	}
 }
 
+.about-banner--mobile {
+	background: linear-gradient(-45deg, #87cefa, #5d97bb);
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+
+	.about-name {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	h3 {
+		font-size: 1.5rem;
+		color: white;
+		text-align: left;
+	}
+
+	span {
+		color: whitesmoke;
+		font-style: italic;
+		font-size: 2rem;
+
+	}
+}
+
+
 #about {
 	background-color: white;
 }
@@ -28,4 +54,25 @@
 		padding: 0 50px;
 		line-height: 1.5;
 	}
+
+	.services {
+		margin-top: 50px !important;
+		padding: 0 10px !important;
+		margin-bottom: -50px;
+
+		h2 {
+			font-size: 2rem !important;
+			margin: auto;
+			padding-bottom: 25px;
+			color: #4d4d4d;
+		}
+
+		p {
+			line-height: 2.5rem !important;
+			color: #4d4d4d;
+
+		}
+	}
+
+
 }

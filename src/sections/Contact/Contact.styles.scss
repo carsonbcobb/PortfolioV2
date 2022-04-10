@@ -1,6 +1,30 @@
 .contact__banner {
   margin-bottom: -100px;
+
   img {
     max-width: 100%;
   }
+}
+
+.contact__banner--mobile {
+  background: linear-gradient(-45deg, #01d1c1, #00857a);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+
+  .contact__banner--name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h3 {
+    font-size: 2.5rem;
+    color: white;
+    text-align: left;
+  }
+
+}
+
+#contact {
+  overflow: hidden !important;
 }

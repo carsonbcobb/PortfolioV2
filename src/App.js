@@ -1,22 +1,53 @@
 import './App.css';
+import { BrowserRouter as Router, Switch, Route,  Routes,  useLocation, Link } from 'react-router-dom';
+import { useState, useEffect } from "react";
 
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Portfolio from './sections/Portfolio/Portfolio';
 import Contact from './sections/Contact/Contact';
 import About from './sections/About/About';
 import Home from './sections/Home/Home';
 
-function App() {
+ function App ()
+{
+
 	return (
 		<div className='App'>
-			<Router>
-				<Route component={Home} exact path='/' />
-				<Route component={About} path='/about' />
-				<Route component={Portfolio} path='/portfolio' />
-				<Route component={Contact} path='/contact' />
-			</Router>
+		<Router>
+        <Content />
+    </Router>
 		</div>
 	);
+}
+
+
+function Content() {
+  const location = useLocation();
+
+  const [displayLocation, setDisplayLocation] = useState(location);
+  const [transitionStage, setTransistionStage] = useState("fadeIn");
+
+  useEffect(() => {
+    if (location !== displayLocation) setTransistionStage("fadeOut");
+  }, [location, displayLocation]);
+
+  return (
+    <div
+      className={`${transitionStage}`}
+      onAnimationEnd={() => {
+        if (transitionStage === "fadeOut") {
+          setTransistionStage("fadeIn");
+          setDisplayLocation(location);
+        }
+      }}
+    >
+      <Switch location={displayLocation}>
+			<Route component={Home} exact path='/' />
+					<Route component={About} path='/about' />
+					<Route component={Portfolio} path='/portfolio' />
+					<Route component={ Contact } path='/contact' />
+      </Switch>
+    </div>
+  );
 }
 
 export default App;

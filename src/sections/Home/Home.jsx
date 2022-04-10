@@ -18,7 +18,8 @@ import howTwo from '../../assets/home/how-2.png';
 import howThree from '../../assets/home/how-3.png';
 import arrow from '../../assets/home/arrow.png';
 
-const Home = () => {
+const Home=() =>
+{
 	return (
 		<div id='home'>
 			<div className='hero-bg'>
@@ -26,7 +27,7 @@ const Home = () => {
 
 				<section className='hero'>
 					<div className='hero__image--mobile'>
-						<img src={heroImage} />
+						<img src={ heroImage } />
 					</div>
 					<div className='hero__content'>
 						<h1>
@@ -39,7 +40,7 @@ const Home = () => {
 						</p>
 						<br />
 						<p className='desk-text'>
-							HTML5 | CSS3 | SCSS | Bootstrap | JQuery | JavaScript |<br />{' '}
+							HTML5 | CSS3 | SCSS | Bootstrap | JQuery | JavaScript |<br />{ ' ' }
 							TypeScript | React | Vue | Liquid | Figma | Adobe XD
 						</p>
 						<p className='mob-text'>
@@ -48,21 +49,21 @@ const Home = () => {
 						</p>
 						<div className='button'>
 							<Link to='/about'>
-								<FontAwesomeIcon icon={faArrowRight} className='faIcon' /> Learn
+								<FontAwesomeIcon icon={ faArrowRight } className='faIcon' /> Learn
 								More
 							</Link>
 						</div>
 					</div>
 
 					<div className='hero__image'>
-						<img src={heroImage} />
+						<img src={ heroImage } />
 					</div>
 				</section>
 			</div>
 
 			<section className='services'>
 				<div className='services__img'>
-					<img src={serviceImage} />
+					<img src={ serviceImage } />
 				</div>
 
 				<div className='services__content'>
@@ -77,14 +78,14 @@ const Home = () => {
 
 					<p>
 						Employers recognize me for my expertise in developing features to
-						enhance user experience, while striking a balance between functional{' '}
+						enhance user experience, while striking a balance between functional{ ' ' }
 						and aesthetic design. My skills in building reusable code for future
 						use and optimizing web pages for maximum speed/scalability set me
 						apart from the res/crowd.
 					</p>
 
 					<p>
-						Based on my credible exposure, I am proven as an expert in utilizing{' '}
+						Based on my credible exposure, I am proven as an expert in utilizing{ ' ' }
 						various markup languages to write web pages. I am an articulate
 						communicator with a credible history of cultivating and maintaining
 						positive collaborations with clients, key stakeholders, and senior
@@ -93,97 +94,15 @@ const Home = () => {
 
 					<div className='button home-service-button'>
 						<Link to='/contact'>
-							<FontAwesomeIcon icon={faArrowRight} className='faIcon' /> Learn
+							<FontAwesomeIcon icon={ faArrowRight } className='faIcon' /> Learn
 							More
 						</Link>
 					</div>
 				</div>
 			</section>
 			<section className='home-slider'>
-				<h2>Take A Look At My Work!</h2>
+				<h2>Take A Look At My Work</h2>
 				<HomeSlider />
-			</section>
-			<section className='how'>
-				<h2>Let's Get Started</h2>
-				<p className='desk-text'>
-					As an established, dedicated, tech-savvy professional with a passion
-					for
-					<br />
-					determining the structure and design of web pages, I am an ideal
-					developer for your <br />
-					project and am excited to apply my skills to start producing immediate
-					results.
-				</p>{' '}
-				<p className='mob-text'>
-					As an established, dedicated, tech-savvy professional with a passion
-					for determining the structure and design of web pages, I am an ideal
-					developer for your project and am excited to apply my skills to start
-					producing immediate results.
-				</p>
-				<div className='how-container'>
-					<div className='how__item'>
-						<img src={howOne} />
-						<div className='how__item--content'>
-							<div className='how__item--content-head'>
-								<div>
-									<h3>
-										Let's
-										<br />
-										Connect
-									</h3>
-								</div>
-								<div>
-									<img src={arrow} />
-								</div>
-							</div>
-							<p>
-								Let's hop on a quick 30-minute call to plan out your project
-								vision and details.
-							</p>
-						</div>
-					</div>
-
-					<div className='how__item'>
-						<img src={howTwo} />
-						<div className='how__item--content'>
-							<div className='how__item--content-head'>
-								<div>
-									<h3>
-										Make It
-										<br />
-										Official
-									</h3>
-								</div>
-								<div>
-									<img src={arrow} />
-								</div>
-							</div>
-							<p>
-								Once all the details are in place and your proposal is accepted.
-								We will sign the contracts and your project can begin
-								development!
-							</p>
-						</div>
-					</div>
-
-					<div className='how__item'>
-						<img src={howThree} />
-						<div className='how__item--content'>
-							<div className='how__item--content-head'>
-								<div>
-									<h3>
-										Kickstart <br />
-										Development
-									</h3>
-								</div>
-							</div>
-							<p>
-								You will be presented with a design and upon approval, it will
-								be coded and delivered within 14 days.
-							</p>
-						</div>
-					</div>
-				</div>
 			</section>
 			<ContactBottom />
 			<SocialFooter />
