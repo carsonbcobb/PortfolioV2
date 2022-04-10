@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Switch, Route,  Routes,  useLocation, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route,  Routes,  useLocation } from 'react-router-dom';
 import { useState, useEffect } from "react";
 
 import Portfolio from './sections/Portfolio/Portfolio';
@@ -40,12 +40,12 @@ function Content() {
         }
       }}
     >
-      <Switch location={displayLocation}>
+      <Routes location={displayLocation}>
 			<Route component={Home} exact path='/' />
 					<Route component={About} path='/about' />
 					<Route component={Portfolio} path='/portfolio' />
 					<Route component={ Contact } path='/contact' />
-      </Switch>
+      </Routes>
     </div>
   );
 }
