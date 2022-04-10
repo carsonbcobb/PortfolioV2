@@ -14,7 +14,7 @@ const Header = () => {
 				<img src={logo} />
 			</div>
 
-			<Switch>
+			<Router>
 				<div className='header__links'>
 					<Link className='header__links--link hoverAnimation' to='/'>
 						HOME
@@ -29,7 +29,7 @@ const Header = () => {
 						CONTACT ME
 					</Link>
 				</div>
-			</Switch>
+			</Router>
 
 			<div className='follow-block'>
 				<p>Follow Me:</p>
