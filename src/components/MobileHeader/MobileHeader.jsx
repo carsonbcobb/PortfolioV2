@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import logo from '../../assets/header/logo.png';
 import logoDropdown from '../../assets/header/logoslide.png';
