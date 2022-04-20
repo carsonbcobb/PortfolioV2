@@ -1,6 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Route,  Routes,  useLocation } from 'react-router-dom';
 import { useState, useEffect } from "react";
+import React from 'react';
 
 import Portfolio from './sections/Portfolio/Portfolio';
 import Contact from './sections/Contact/Contact';
@@ -12,9 +13,9 @@ import Home from './sections/Home/Home';
 
 	return (
 		<div className='App'>
-		<Router>
-        <Content />
-    </Router>
+			<Router>
+				<Content/>
+			</Router>
 		</div>
 	);
 }
@@ -40,14 +41,17 @@ function Content() {
         }
       }}
     >
-      <Routes location={displayLocation}>
-			<Route component={Home} exact path='/' />
-					<Route component={About} path='/about' />
-					<Route component={Portfolio} path='/portfolio' />
-					<Route component={ Contact } path='/contact' />
-      </Routes>
+  		 <Routes location={displayLocation}>
+					<Route element={<Home/>} path='/' />
+					<Route element={<About/>} path='/about' />
+					<Route element={<Portfolio/>} path='/portfolio' />
+					<Route element={ <Contact/> } path='/contact' />
+				</Routes>
     </div>
   );
 }
+
+
+
 
 export default App;

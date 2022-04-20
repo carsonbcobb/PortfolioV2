@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 import './Header.styles.scss';
 
@@ -14,8 +14,8 @@ const Header = () => {
 				<img src={logo} />
 			</div>
 
-			<Router>
-				<div className='header__links'>
+			<div className='header__links'>
+
 					<Link className='header__links--link hoverAnimation' to='/'>
 						HOME
 					</Link>
@@ -28,8 +28,8 @@ const Header = () => {
 					<Link className='header__links--link hoverAnimation' to='/contact'>
 						CONTACT ME
 					</Link>
+
 				</div>
-			</Router>
 
 			<div className='follow-block'>
 				<p>Follow Me:</p>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 import logo from '../../assets/header/logo.png';
 import logoDropdown from '../../assets/header/logoslide.png';
@@ -34,8 +34,9 @@ const MobileHeader=() =>
 							PORTFOLIO
 						</Link>
 						<Link to='/contact' class='nav__links--mobile-link'>
-							CONTACT
+								CONTACT
 						</Link>
+						
 						<br />
 						<img src={ logoDropdown } class='nav__links--mobile-logo' />
 					</div>
