@@ -52,7 +52,7 @@ const Portfolio=() =>
 						<h4>Kelpie Coin</h4>
 						<div className='button-container'>
 							<div className='button button-slider'>
-								<a href='https://www.kelpiecoin.finance/' target='_blank'>
+								<a href='https://master.d3fllip99yi3o5.amplifyapp.com' target='_blank'>
 									View Live
 								</a>
 							</div>
