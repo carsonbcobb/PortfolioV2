@@ -11,7 +11,7 @@ import HomeSlider from '../../components/Slider/Slider';
 import ContactBottom from '../../components/ContactBottom/ContactBottom';
 import SocialFooter from '../../components/SocialFooter/SocialFooter';
 
-import heroImage from '../../assets/home/me.jpg';
+import heroImage from '../../assets/home/me.png';
 import serviceImage from '../../assets/home/service_img.png';
 import howOne from '../../assets/home/how-1.png';
 import howTwo from '../../assets/home/how-2.png';
@@ -33,19 +33,19 @@ const Home=() =>
 						<h1>
 							Carson Cobb
 							<br />
-							<span className='teal'>Web Developer</span>
+							<span className='teal'>Full Stack Developer</span>
 						</h1>
 						<p className='bold desk-text'>
-							Articulate Communicator | Tech-savvy Professional
+						E-commerce Expert
 						</p>
 						<br />
 						<p className='desk-text'>
-							HTML5 | CSS3 | SCSS | Bootstrap | JQuery | JavaScript |<br />{ ' ' }
-							TypeScript | React | Vue | Liquid | Figma | Adobe XD
+							HTML | CSS | JQuery | JavaScript | TypeScript | React |<br />{ ' ' }
+							Vue | Liquid | Python | Node.js | AWS | SQL | + MORE!
 						</p>
 						<p className='mob-text'>
-							HTML5 | CSS3 | SCSS | Bootstrap | JQuery | JavaScript | TypeScript
-							| React | Vue | Liquid | Figma | Adobe XD
+						HTML | CSS | JQuery | JavaScript | TypeScript | React |<br />{ ' ' }
+							Vue | Liquid | Python | Node.js | AWS | SQL | + MORE!
 						</p>
 						<div className='button'>
 							<Link to='/about'>
