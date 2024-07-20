@@ -11,7 +11,7 @@ import HomeSlider from '../../components/Slider/Slider';
 import ContactBottom from '../../components/ContactBottom/ContactBottom';
 import SocialFooter from '../../components/SocialFooter/SocialFooter';
 
-import heroImage from '../../assets/home/hero_img.png';
+import heroImage from '../../assets/home/me.jpg';
 import serviceImage from '../../assets/home/service_img.png';
 import howOne from '../../assets/home/how-1.png';
 import howTwo from '../../assets/home/how-2.png';
