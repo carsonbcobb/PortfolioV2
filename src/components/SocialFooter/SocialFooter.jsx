@@ -42,18 +42,7 @@ const SocialFooter = () => {
 						</p>
 					</div>
 				</Link>
-				<Link to='/about' className='socialFooter__block sf-about'>
-					<div>
-						<img src={about} />
-					</div>
 
-					<div>
-						<p>
-							Learn More <br />
-							<span className='bold-sf'>About Me</span>
-						</p>
-					</div>
-				</Link>
 				<a
 					href='https://github.com/carsonbcobb'
 					target='_blank'
@@ -71,24 +60,21 @@ const SocialFooter = () => {
 						</p>
 					</div>
 				</a>
-
-				<a
-					href='sms:+15599165560'
-					target='_blank'
-					rel='norefferer'
-					className='socialFooter__block sf-support'
-				>
+				<Link to='/about' className='socialFooter__block sf-about'>
 					<div>
-						<img src={supportImage} />
+						<img src={about} />
 					</div>
 
 					<div>
 						<p>
-							Get <br />
-							<span className='bold-sf'>Instant Support</span>
+							Learn More <br />
+							<span className='bold-sf'>About Me</span>
 						</p>
 					</div>
-				</a>
+				</Link>
+				
+
+				
 			</div>
 
 			<div className='socialFooter--mobile'>
@@ -124,11 +110,13 @@ const SocialFooter = () => {
 						</div>
 					</Link>
 				</div>
+				
+				<div className='mobile__group2'>
 				<a
 					href='https://github.com/carsonbcobb'
 					target='_blank'
 					rel='norefferer'
-					className='socialFooter__block sf-github sf-github--mobile'
+					className='socialFooter__block sf-github'
 				>
 					<div>
 						<img src={github} />
@@ -141,24 +129,6 @@ const SocialFooter = () => {
 						</p>
 					</div>
 				</a>
-				<div className='mobile__group2'>
-					<a
-						href='sms:+15599165560'
-						target='_blank'
-						rel='norefferer'
-						className='socialFooter__block sf-support'
-					>
-						<div>
-							<img src={supportImage} />
-						</div>
-
-						<div>
-							<p>
-								Get <br />
-								<span className='bold-sf'>Instant Support</span>
-							</p>
-						</div>
-					</a>
 					<Link to='/about' className='socialFooter__block sf-about'>
 						<div>
 							<img src={about} />

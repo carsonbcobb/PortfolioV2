@@ -16,17 +16,14 @@ const ContactBottom=() =>
 				<div className='touch__content'>
 					<h2>Let's Chat!</h2>
 					<p className='desk-text'>
-						I look forward to discussing my background and your needs in detail,
-						as I am
-						<br />
-						confident that my unique experience will be of great use in meeting
-						your immediate
-						<br /> and future objectives.
+					I’m always excited to connect with fellow professionals, potential collaborators, and anyone interested in discussing innovative projects. Whether you have a question, need a consultation, or are looking to start a new project, I’d love to hear from you. Please feel free to reach out using the form below, and I will get back to you as soon as possible.
+
+
 					</p>
 					<p className='mob-text'>
-						I look forward to discussing my background and your needs in detail,
-						as I am confident that my unique experience will be of great use in
-						meeting your immediate and future objectives.
+					I’m always excited to connect with fellow professionals, potential collaborators, and anyone interested in discussing innovative projects. Whether you have a question, need a consultation, or are looking to start a new project, I’d love to hear from you. Please feel free to reach out using the form below, and I will get back to you as soon as possible.
+
+s.
 					</p>
 					<form id='form'>
 						<div className='touch__content--form-group'>

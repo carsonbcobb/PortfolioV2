@@ -30,55 +30,36 @@ const About=() =>
 
 				<div className='services__content'>
 					<h2>My Services</h2>
-					<p>
-						I would like to introduce myself as a tech-savvy professional with
-						progressive experience determining structure and design of web
-						pages, while ensuring user experience determines design choices.
-					</p>
+					
+  <div class="service">
+    <h3>Web Development</h3>
+    <p>I offer comprehensive web development services, creating high-performance websites that are both visually appealing and highly functional. From responsive design to seamless user experiences, I ensure your site stands out.</p>
+  </div>
 
-					<p>
-						Employers recognize me for my expertise in developing features to
-						enhance
-						 user experience, while striking a balance between functional{ ' ' }
-						and aesthetic design.
-						My skills in building reusable code for future use and optimizing
-						web pages
-					 for maximum speed/scalability set me apart from the
-						res/crowd.
-					</p>
+  <div class="service">
+    <h3>Front-End Development</h3>
+    <p>With a strong focus on front-end technologies, I build dynamic, responsive interfaces that engage users. My expertise includes HTML, CSS, JavaScript, and modern frameworks like React and Angular, ensuring your application is fast and efficient.</p>
+  </div>
 
-					<p>
-						Based on my credible exposure, I am proven as an expert in utilizing{ ' ' }
+  <div class="service">
+    <h3>Back-End Development</h3>
+    <p>I provide robust back-end solutions that support your front-end needs. Utilizing technologies such as Node.js, Express, and various databases, I develop scalable and secure server-side applications that power your business.</p>
+  </div>
 
-						various markup languages to write web pages. I am an articulate
-						communicator
-						 with a credible history of cultivating and maintaining
-						positive collaborations
-						 with clients, key stakeholders, and senior management to
-						realize
-						 organizational goals.
-					</p>
-					<p>
-						Throughout my career, I have made it my priority to utilize current
-						technologies and new techniques to drive elegant, creative solutions
-						across a range of projects. Comfortable in both collaborative and
-						independent roles, I offer refined analytical and critical thinking
-						skills, and I can adapt and revise my strategies to meet evolving
-						priorities, shifting needs, and emergent issues.
-				</p>
+  <div class="service">
+    <h3>Creative Design</h3>
+    <p>Combining technical skills with a creative touch, I deliver unique and engaging designs that enhance user interaction. Whether it’s designing a new layout or revamping an existing one, I focus on creating an intuitive and aesthetically pleasing user experience.</p>
+  </div>
 
-					<p>Moreover, I am technically proficient in the following:</p>
+  <div class="service">
+    <h3>E-Commerce Solutions</h3>
+    <p>Specializing in e-commerce, I create tailored online stores that drive sales and improve customer satisfaction. From Shopify to custom solutions, I provide everything you need to succeed in the digital marketplace.</p>
+  </div>
 
-					<p>
-						HTML | CSS | SCSS | Bootstrap | JQuery | JavaScript | TypeScript |
-						React | Vue | Liquid | Figma
-				</p>
-
-					<p>
-						Please feel free to contact me at carson@carsoncobb.com with any
-						thoughts, comments, or questions about my work—I’m always interested
-						in making new professional acquaintances.
-				</p>
+  <div class="service">
+    <h3>Consulting & Team Leadership</h3>
+    <p>With extensive experience in leading development teams, I offer consulting services to help guide your project to success. Whether you need strategic planning, team management, or technical guidance, I provide the expertise to drive your project forward.</p>
+  </div>
 				</div>
 			</section>
 			<div className='service-addition'>

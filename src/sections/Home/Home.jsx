@@ -33,10 +33,10 @@ const Home=() =>
 						<h1>
 							Carson Cobb
 							<br />
-							<span className='teal'>Full Stack Developer</span>
+							<span className='teal'>Developer</span>
 						</h1>
 						<p className='bold desk-text'>
-						E-commerce Expert
+						Full Stack Developer & E-commerce Expert
 						</p>
 						<br />
 						<p className='desk-text'>
@@ -44,8 +44,8 @@ const Home=() =>
 							Vue | Liquid | Python | Node.js | AWS | SQL | + MORE!
 						</p>
 						<p className='mob-text'>
-						HTML | CSS | JQuery | JavaScript | TypeScript | React |<br />{ ' ' }
-							Vue | Liquid | Python | Node.js | AWS | SQL | + MORE!
+						HTML | CSS | JQuery | JavaScript | TypeScript | React | Vue | Liquid |<br />{ ' ' }
+							Python | Node.js | AWS | SQL | + MORE!
 						</p>
 						<div className='button'>
 							<Link to='/about'>
@@ -68,28 +68,27 @@ const Home=() =>
 
 				<div className='services__content'>
 					<h2>
-						Who Is <span className='pink'>Carson Cobb</span>...?
+						About <span className='pink'>Carson Cobb</span>
 					</h2>
 					<p>
-						I would like to introduce myself as a tech-savvy professional with
-						progressive experience determining structure and design of web
-						pages, while ensuring user experience determines design choices.
+					Hi there! I'm Carson, a passionate full-stack developer with a focus on front-end and creative development. With years of experience in the health and wellness space, I thrive on creating impactful and user-friendly web applications that make a difference.
+
+
 					</p>
 
 					<p>
-						Employers recognize me for my expertise in developing features to
-						enhance user experience, while striking a balance between functional{ ' ' }
-						and aesthetic design. My skills in building reusable code for future
-						use and optimizing web pages for maximum speed/scalability set me
-						apart from the res/crowd.
+					<ul>
+  <li><strong>Front-End Development:</strong> Crafting responsive, visually stunning interfaces.</li>
+  <li><strong>Back-End Development:</strong> Building robust, scalable server-side solutions.</li>
+  <li><strong>Creative Design:</strong> Delivering unique and engaging user experiences.</li>
+</ul>
+
 					</p>
 
 					<p>
-						Based on my credible exposure, I am proven as an expert in utilizing{ ' ' }
-						various markup languages to write web pages. I am an articulate
-						communicator with a credible history of cultivating and maintaining
-						positive collaborations with clients, key stakeholders, and senior
-						management to realize organizational goals.
+					I’m always excited to take on new challenges, lead teams, and collaborate on projects that push the boundaries of technology. Thank you for visiting my website. Let’s connect and explore how we can work together to bring your vision to life.
+
+
 					</p>
 
 					<div className='button home-service-button'>

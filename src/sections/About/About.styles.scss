@@ -42,6 +42,20 @@
 	padding: 0 100px;
 }
 
+#about .services {
+	margin-top: 50px;
+	h2 {
+		text-align: center;
+		margin: 20px auto;
+	}
+}
+
+.service {
+	h3 {
+		text-align: left;
+	}
+}
+
 @media (max-width: 768px) {
 	.service-addition {
 		padding: 0 110px;
