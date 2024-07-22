@@ -22,8 +22,6 @@ const ContactBottom=() =>
 					</p>
 					<p className='mob-text'>
 					I’m always excited to connect with fellow professionals, potential collaborators, and anyone interested in discussing innovative projects. Whether you have a question, need a consultation, or are looking to start a new project, I’d love to hear from you. Please feel free to reach out using the form below, and I will get back to you as soon as possible.
-
-s.
 					</p>
 					<form id='form'>
 						<div className='touch__content--form-group'>
@@ -112,7 +110,7 @@ s.
 					</div>
 				</div>
 			</section>
-			<p id='copyright'>© Copyright 2021 Carson Cobb. All rights reserved.</p>
+			<p id='copyright'>© Copyright 2024 Carson Cobb. All rights reserved.</p>
 		</div>
 	);
 };

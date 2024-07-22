@@ -35,7 +35,7 @@ const Home=() =>
 							<br />
 							<span className='teal'>Developer</span>
 						</h1>
-						<p className='bold desk-text'>
+						<p className='bold hero-title-description'>
 						Full Stack Developer & E-commerce Expert
 						</p>
 						<br />
@@ -44,8 +44,7 @@ const Home=() =>
 							Vue | Liquid | Python | Node.js | AWS | SQL | + MORE!
 						</p>
 						<p className='mob-text'>
-						HTML | CSS | JQuery | JavaScript | TypeScript | React | Vue | Liquid |<br />{ ' ' }
-							Python | Node.js | AWS | SQL | + MORE!
+						HTML | CSS | JQuery | JavaScript | TypeScript | React | Vue | Liquid | Python | Node.js | AWS | SQL | + MORE!
 						</p>
 						<div className='button'>
 							<Link to='/about'>
@@ -100,7 +99,7 @@ const Home=() =>
 				</div>
 			</section>
 			<section className='home-slider'>
-				<h2>Take A Look At My Work</h2>
+				<h2>Side Work + Personal Projects</h2>
 				<HomeSlider />
 			</section>
 			<ContactBottom />

@@ -24,13 +24,12 @@ html,
 }
 
 body::-webkit-scrollbar {
-	width: 1em;
+	width: 5px;
 }
 
 body::-webkit-scrollbar-thumb {
 	background-color: #03D1C1;
 	outline: 1px solid white;
-	border-radius: 100em;
 }
 
 @media (max-width: 768px) {
@@ -38,7 +37,7 @@ body::-webkit-scrollbar-thumb {
 	body,
 	html,
 	.body {
-		overflow-x: visible;
+		overflow-x: hidden;
 	}
 
 	body::-webkit-scrollbar {}

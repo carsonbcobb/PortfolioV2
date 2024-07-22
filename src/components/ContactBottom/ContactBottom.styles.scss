@@ -142,6 +142,10 @@
 }
 
 @media (max-width: 768px) {
+
+	#contact-bottom {
+		padding: 0 20px;
+	}
 	.touch {
 		margin-top: 10px;
 		flex-direction: column;
@@ -150,12 +154,24 @@
 	.touch__image {
 		padding-top: 75px;
 	}
+
+	#contact-bottom .touch__content {
+		width: 100%;
+		padding: 0 20px;
+	}
+
+	.extra-contact {
+		flex-direction: column-reverse;
+	}
 }
+
 
 @media (max-width: 425px) {
 	.touch {
 		padding: 0 25px;
 	}
+
+
 
 	.touch__image {
 		padding-top: 75px;

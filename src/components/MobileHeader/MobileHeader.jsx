@@ -22,23 +22,23 @@ const MobileHeader=() =>
 				<span></span>
 
 				<ul id='menu'>
-					<div class='nav__links--mobile'>
-						<Link to='/' class='nav__links--mobile-link'>
+					<div className='nav__links--mobile'>
+						<Link to='/' className='nav__links--mobile-link'>
 							HOME
 						</Link>
-						<Link to='/about' class='nav__links--mobile-link'>
+						<Link to='/about' className='nav__links--mobile-link'>
 							ABOUT
 						</Link>
 
-						<Link to='/portfolio' class='nav__links--mobile-link'>
+						<Link to='/portfolio' className='nav__links--mobile-link'>
 							PORTFOLIO
 						</Link>
-						<Link to='/contact' class='nav__links--mobile-link'>
+						<Link to='/contact' className='nav__links--mobile-link'>
 								CONTACT
 						</Link>
 						
 						<br />
-						<img src={ logoDropdown } class='nav__links--mobile-logo' />
+						<img src={ logoDropdown } className='nav__links--mobile-logo' />
 					</div>
 				</ul>
 			</div>

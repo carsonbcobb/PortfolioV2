@@ -50,16 +50,40 @@
 	}
 }
 
+.services__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+	margin: 40px 0;
+}
+
+#about .services {
+	display: flex;
+	flex-direction: column-reverse;
+	justify-content: space-evenly;
+	align-items: center;
+	padding: 0 50px;
+	margin-top: 50px;
+}
+
 .service {
 	h3 {
 		text-align: left;
 	}
 }
 
+#about #contact-bottom .touch {
+	padding-top: 10px;
+}
+
 @media (max-width: 768px) {
 	.service-addition {
 		padding: 0 110px;
 		line-height: 1.5;
+	}
+
+	#about .services__content {
+		padding-left: 0;
 	}
 }
 
