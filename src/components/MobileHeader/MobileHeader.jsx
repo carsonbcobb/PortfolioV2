@@ -11,9 +11,12 @@ const MobileHeader=() =>
 {
 	return (
 		<nav role='navigation' id='mobile-nav'>
+			<Link to='/'>
 			<div className='mobile-logo'>
 				<img src={ logo } />
 			</div>
+			</Link>
+
 			<div id='menuToggle'>
 				<input type='checkbox' />
 

@@ -5,6 +5,9 @@ import SelectHeader from '../../components/SelectHeader/SelectHeader';
 import ContactBottom from '../../components/ContactBottom/ContactBottom';
 import SocialFooter from '../../components/SocialFooter/SocialFooter';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+
 import portBanner from '../../assets/portfolio/portBanner.png';
 import port from '../../assets/portfolio/portfolio-work.png';
 import ccc from '../../assets/portfolio/ccc-work.png';
@@ -29,10 +32,10 @@ const Portfolio=() =>
 				<div className='portfolio__work--list'>
 					<div className='slide port-slide'>
 						<img src={ ccc } />
-						<h4>Clovis Community Choir</h4>
+						<h4>Community Choir of the Valley</h4>
 						<div className='button-container'>
 							<div className='button button-slider'>
-								<a href='https://www.cloviscommunitychoir.com/' target='_blank'>
+								<a href='https://www.choirofthevalley.com/' target='_blank'>
 									View Live
 								</a>
 							</div>
@@ -42,7 +45,7 @@ const Portfolio=() =>
 									href='https://github.com/carsonbcobb/ClovisCommunityChoir'
 									target='_blank'
 								>
-									View on Github
+									<FontAwesomeIcon icon={faGithub} size="2x" />
 								</a>
 							</div>
 						</div>
@@ -62,7 +65,7 @@ const Portfolio=() =>
 									href='https://github.com/carsonbcobb/KelpieCoin'
 									target='_blank'
 								>
-									View on Github
+									<FontAwesomeIcon icon={faGithub} size="2x" />
 								</a>
 							</div>
 						</div>
@@ -81,7 +84,7 @@ const Portfolio=() =>
 									href='https://github.com/carsonbcobb/PortfolioV2'
 									target='_blank'
 								>
-									View on Github
+									<FontAwesomeIcon icon={faGithub} size="2x" />
 								</a>
 							</div>
 						</div>
@@ -98,7 +101,7 @@ const Portfolio=() =>
 
 							<div className='button button-git button-slider button-inactive'>
 								<a href='#' target='_blank'>
-									View on Github
+								<FontAwesomeIcon icon={faGithub} size="2x" />
 								</a>
 							</div>
 						</div>

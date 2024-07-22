@@ -20,14 +20,14 @@ const About=() =>
 			</section>
 			<section className='about-banner--mobile mobile'>
 				<div className='about-name'>
-					<h3>About <br /><span>Carson Cobb</span></h3>
+					<h3>My<br /><span>Services</span></h3>
 				</div>
 			</section>
 			<section className='services'>
 			
 
 				<div className="services__content">
-    <h2>My Services</h2>
+    <h2 className='desk-text'>My Services</h2>
     <div className="services__grid">
         <div className="service">
             <h3>Web Development</h3>

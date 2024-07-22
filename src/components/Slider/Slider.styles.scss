@@ -23,6 +23,7 @@
 
 .button-git {
 	background-color: #333;
+	padding: 9px;
 
 	&:hover {
 		border: 2px solid #333;
@@ -55,14 +56,16 @@
 		}
 	}
 
-	.button-git {
-		margin-left: 5px;
-		padding: 15px;
-	}
+	
 
 	.button-slider {
 		padding: 15px;
 		margin-right: 5px;
+	}
+
+	.button-git {
+		margin-left: 5px;
+		padding: 9px;
 	}
 
 	#slider {
@@ -76,6 +79,10 @@
 }
 
 @media (max-width: 768px) {
+
+	.slick-dots { 
+		transform: translateY(20px);
+	}
 	#slide-arrow {
 		transform: translate(100%, -200%);
 	}

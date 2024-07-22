@@ -6,8 +6,9 @@ import slideArrow from '../../assets/slider/slide-arrow.png';
 import portWork from '../../assets/portfolio/portfolio-work.png';
 import cccWork from '../../assets/portfolio/ccc-work.png';
 import kelpieImage from '../../assets/portfolio/kelpiecoin.png';
-import cobbCoffeeImage from '../../assets/portfolio/cobb-coffee.png';
 import homesImage from '../../assets/portfolio/homes.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 export default class HomeSlider extends Component
 {
 	render ()
@@ -52,10 +53,10 @@ export default class HomeSlider extends Component
 				<Slider { ...settings }>
 					<div className='slide'>
 						<img src={ cccWork } />
-						<h4>Clovis Community Choir</h4>
+						<h4>Community Choir of the Valley</h4>
 						<div className='button-container'>
 							<div className='button button-slider'>
-								<a href='https://www.cloviscommunitychoir.com/' target='_blank'>
+								<a href='https://www.choirofthevalley.com/' target='_blank'>
 									View Live
 								</a>
 							</div>
@@ -65,7 +66,7 @@ export default class HomeSlider extends Component
 									href='https://github.com/carsonbcobb/ClovisCommunityChoir'
 									target='_blank'
 								>
-									View on Github
+									<FontAwesomeIcon icon={faGithub} size="2x" />
 								</a>
 							</div>
 						</div>
@@ -85,7 +86,7 @@ export default class HomeSlider extends Component
 									href='https://github.com/carsonbcobb/KelpieCoin'
 									target='_blank'
 								>
-									View on Github
+									<FontAwesomeIcon icon={faGithub} size="2x" />
 								</a>
 							</div>
 						</div>
@@ -104,7 +105,7 @@ export default class HomeSlider extends Component
 									href='https://github.com/carsonbcobb/PortfolioV2'
 									target='_blank'
 								>
-									View on Github
+									<FontAwesomeIcon icon={faGithub} size="2x" />
 								</a>
 							</div>
 						</div>
@@ -121,7 +122,7 @@ export default class HomeSlider extends Component
 
 							<div className='button button-git button-slider button-inactive'>
 								<a href='#' target='_blank'>
-									View on Github
+									<FontAwesomeIcon icon={faGithub} size="2x" />
 								</a>
 							</div>
 						</div>

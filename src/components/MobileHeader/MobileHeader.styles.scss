@@ -114,8 +114,8 @@
  * at the top left of the screen
  */
 #menu {
-	position: absolute;
-	width: 425px;
+	position: fixed;
+	width: 105vw;
 	height: 100vh;
 	margin: -125px 0 0 -425px;
 	padding: 50px;
@@ -154,7 +154,7 @@
 }
 
 .nav__links--mobile-link {
-	margin: 50px 0;
+	margin: 30px 0;
 	font-size: 28px;
 }
 
@@ -192,9 +192,14 @@
 }
 
 @media (max-width: 768px) {
+
+	#menuToggle {
+		left: -5%;
+	}
+
 	.mobile-logo {
 		position: absolute !important;
-		padding: 100px 0 0 10px;
+		padding: 30px 0 0 10px;
 
 		img {
 			max-width: 150px;
@@ -209,8 +214,8 @@
 
 @media (max-width: 425px) {
 	#menuToggle {
-		left: 375px;
-		top: 40px;
+		left: -5%;
+		top: 30px;
 	}
 
 	#mobile-nav {
@@ -219,6 +224,22 @@
 	}
 
 	.mobile-logo {
-		padding: 75px 0 0 10px;
+		padding: 10px 0 0 10px;
+	}
+
+	.nav__links--mobile {
+		transform: translateX(12%);
+	}
+}
+
+@media (max-width: 320px) {
+	#menuToggle input:checked ~ ul {
+		transform: translateX(13.5%);
+	}
+}
+
+@media (min-width: 600px) and (max-width: 769px) {
+	#menuToggle input:checked ~ ul {
+		transform: translateX(-36%);
 	}
 }

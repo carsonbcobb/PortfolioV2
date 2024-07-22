@@ -33,10 +33,13 @@ const Home=() =>
 						<h1>
 							Carson Cobb
 							<br />
-							<span className='teal'>Developer</span>
+							<span className='teal hide-mobile'>Developer</span>
 						</h1>
-						<p className='bold hero-title-description'>
+						<p className='desk-text bold hero-title-description'>
 						Full Stack Developer & E-commerce Expert
+						</p>
+						<p className='mob-text bold hero-title-description'>
+						Full Stack Developer &<br/>E-commerce Expert
 						</p>
 						<br />
 						<p className='desk-text'>

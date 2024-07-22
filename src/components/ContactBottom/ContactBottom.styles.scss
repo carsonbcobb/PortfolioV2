@@ -162,16 +162,24 @@
 
 	.extra-contact {
 		flex-direction: column-reverse;
+		align-items: flex-start;
+	}
+
+	.touch__content input {
+		padding: 20px 10px;
 	}
 }
 
 
 @media (max-width: 425px) {
 	.touch {
-		padding: 0 25px;
+		padding: 0;
 	}
 
-
+	.touch__content--form-group {
+		display: flex;
+		flex-direction: column;
+	}
 
 	.touch__image {
 		padding-top: 75px;
