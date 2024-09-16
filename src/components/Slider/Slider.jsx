@@ -7,6 +7,7 @@ import portWork from '../../assets/portfolio/portfolio-work.png';
 import cccWork from '../../assets/portfolio/ccc-work.png';
 import kelpieImage from '../../assets/portfolio/kelpiecoin.png';
 import homesImage from '../../assets/portfolio/homes.png';
+import digitalOverdriveImage from '../../assets/portfolio/digitaloverdrive.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 export default class HomeSlider extends Component
@@ -14,12 +15,15 @@ export default class HomeSlider extends Component
 	render ()
 	{
 		const settings={
-			dots: false,
-			prevArrow: <img src={ slideArrow } id='slide-arrow' />,
 			infinite: true,
-			speed: 500,
+			speed: 2000,
 			slidesToShow: 3,
 			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 5000,
+			dots: true,
+			arrows: false,
+			pauseOnHover: true,
 			responsive: [
 				{
 					breakpoint: 1025,
@@ -28,6 +32,8 @@ export default class HomeSlider extends Component
 				{
 					breakpoint: 769,
 					settings: {
+						speed: 5000,
+			autoplaySpeed: 5000,
 						slidesToShow: 1,
 						slidesToScroll: 1,
 					},
@@ -38,7 +44,6 @@ export default class HomeSlider extends Component
 						slidesToShow: 1,
 						slidesToScroll: 1,
 						autoplay: true,
-						autoplaySpeed: 2000,
 						dots: true,
 						arrows: false,
 						pauseOnHover: true,
@@ -72,6 +77,17 @@ export default class HomeSlider extends Component
 						</div>
 					</div>
 					<div className='slide'>
+						<img src={ digitalOverdriveImage } />
+						<h4>Digital Overdrive</h4>
+						<div className='button-container'>
+							<div className='button button-slider'>
+								<a href='https://digitaloverdrive.co' target='_blank'>
+									View Live
+								</a>
+							</div>
+						</div>
+					</div>
+					<div className='slide'>
 						<img src={ kelpieImage } />
 						<h4>Kelpie Coin</h4>
 						<div className='button-container'>
@@ -94,11 +110,9 @@ export default class HomeSlider extends Component
 
 					<div className='slide'>
 						<img src={ portWork } />
-						<h4>Portfolio (This Website!)</h4>
+						<h4>Carson Cobb</h4>
 						<div className='button-container'>
-							<div className='button button-slider button-inactive'>
-								<a className='button-inactive'>View Live</a>
-							</div>
+						
 
 							<div className='button button-git button-slider'>
 								<a
@@ -112,7 +126,7 @@ export default class HomeSlider extends Component
 					</div>
 					<div className='slide'>
 						<img src={ homesImage } />
-						<h4>Homes Not Sold Yet (TBC)</h4>
+						<h4>Homes Not Sold Yet (In Progress)</h4>
 						<div className='button-container'>
 							<div className='button button-slider button-inactive'>
 								<a href='#' target='_blank'>

@@ -1,0 +1,59 @@
+.companies-worked-with { 
+    padding: 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+  
+    h2 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 1.5rem;
+    }
+  
+    .top-row, .bottom-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      justify-items: center;
+      margin-bottom: 2rem;
+  
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr); // 2 columns for tablet
+        gap: 1.5rem;
+      }
+  
+      @media (max-width: 480px) {
+        grid-template-columns: repeat(2, 1fr); // 2 per row for the first three rows
+        &:nth-child(7) {
+          grid-column: span 2; // Make the last logo span the full width
+        }
+      }
+    }
+  
+    .company-logo {
+      max-width: 150px;
+      max-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+      margin: 0 5%;
+  
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+  
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+  @media (max-width: 1280px){
+    #service-bundles {
+      padding: 0 1em;
+    }
+  }

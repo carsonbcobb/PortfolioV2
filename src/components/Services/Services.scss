@@ -1,0 +1,103 @@
+.services-offers {
+    background-color: #fff9f8; // Match the light, soft background color of your site
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      color: #333;
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif; // Match the font used in the rest of the site
+    }
+  
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      width: 100%;
+      max-width: 1200px;
+    }
+  
+    .service-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+      padding: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid  rgba(0, 0, 0, 0.15); // Subtle border to match the clean aesthetic
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); // Enhanced shadow on hover
+
+  
+      &:hover {
+        transform: translateY(-5px);
+      }
+  
+      h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+        text-align: left;
+      }
+  
+      p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        color: #4a4a4a; // Softer, neutral tone for body text
+        line-height: 1.6;
+        font-family: 'Poppins', sans-serif;
+        text-align: left;
+        margin: auto;
+      }
+  
+      ul {
+        list-style-type: disc;
+        padding-left: 20px;
+        margin-bottom: 1rem;
+  
+        li {
+          font-size: 0.95rem;
+          color: #555555;
+          line-height: 1.5;
+          font-family: 'Poppins', sans-serif;
+          text-align: left;
+        }
+      }
+  
+      .service-price {
+        font-weight: bold;
+        font-size: 1.1rem;
+        text-align: left;
+        margin: .5rem 0;
+        font-family: 'Poppins', sans-serif;
+      }
+    }
+  }
+  
+  @media (max-width: 768px){
+    .services-offers {
+        padding: 0 1rem;
+    }
+  }
+
+  @media (min-width: 768px){
+    .learn-more-btn {
+      display: none;
+    }
+  }
+
+  .learn-more-btn {
+    padding: 0.5rem 1rem;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.875rem;
+  }
+
+  .service-cta {
+    margin-top: 2em;
+  }

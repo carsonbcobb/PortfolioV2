@@ -12,12 +12,16 @@
 	flex-direction: row;
 	justify-content: space-evenly;
 	align-items: center;
-	margin-top: 100px;
+}
+
+.hero-description {
+	max-width: 600px;
 }
 
 .hero__content {
 	color: #011c39;
 	text-align: start;
+	margin-left: 4em;
 
 	h1 {
 		font-size: 4rem;
@@ -180,12 +184,59 @@
 
 		h1 {
 			font-size: 2.5rem;
+			text-align: center;
+		}
+
+		.hero-title-description {
+			text-align: center;
+
+		}
+
+		.hero-description {
+			margin: 0 auto;
+			text-align: justify;
+			margin-bottom: 20px;
+			margin-top: -10px;
 		}
 
 		p {
 			line-height: 2;
 			font-size: .8rem;
+			margin-bottom: 0;
 		}
+
+		.button {
+			margin: auto;
+		}
+	}
+
+	.services__content {
+		margin-left: 0 !important;
+	}
+
+	.home-service-button {
+		text-align: center;
+		margin: auto;
+	}
+
+	.home-slider {
+		padding: 0 !important;
+	}
+
+	.touch__content {
+		flex-direction: column !important;
+		margin-top: 25px;
+	}
+
+	.touch__container {
+		margin-right: 0;
+	}
+
+	#contact-bottom .touch__content {
+		padding: unset !important;
+	}
+	form {
+		width: 100%;
 	}
 }
 
@@ -200,8 +251,7 @@
 
 	h2 {
 		font-size: 2rem;
-		text-align: start;
-		margin-left: 200px;
+		text-align: left;
 		margin-bottom: 50px;
 	}
 }
@@ -211,9 +261,9 @@
 		margin-top: 100px;
 
 		h2 {
-			font-size: 1.5rem;
+			font-size: 2rem;
 			text-align: start;
-			margin: 0 0 0 30px;
+			margin: 0 0 0 0px;
 			padding-bottom: 50px;
 			
 		}
@@ -262,7 +312,7 @@
 	justify-content: space-evenly;
 	align-items: center;
 	padding: 0 50px;
-	margin-top: 150px;
+	margin-top: 50px;
 }
 
 .services__content {
@@ -270,7 +320,8 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: start;
-	padding-left: 100px;
+	max-width: 650px;
+	margin-left: 50px;
 
 	h2 {
 		font-size: 2.5rem;
@@ -287,7 +338,7 @@
 .services__img {
 	margin-top: 20px;
 	img {
-		max-width: 500px;
+		max-width: 400px;
 	}
 }
 
@@ -338,6 +389,7 @@
 
 	.services__content {
 		padding-left: 0px;
+		padding: 0 1em;
 
 		h2 {
 			font-size: 1.5rem;
@@ -465,4 +517,32 @@
 	.hero-bg {
         background-position: 350px -150px;
     }
+}
+
+@media (max-width: 1280px){
+	.services {
+		padding: 0;
+	}
+}
+
+@media (max-width: 1024px){
+	.services {
+		padding: 0 1em;
+	}
+
+	.hero__content {
+		margin-left: 0 !important;
+	}
+
+	.hero__content p {
+		max-width: 500px;
+	}
+}
+
+@media (max-width: 1024px) and (min-width: 769px){
+	
+
+	.hero-bg {
+		background-position: top right -100px !important;
+	}
 }

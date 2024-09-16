@@ -14,15 +14,19 @@ const ContactBottom=() =>
 		<div id='contact-bottom'>
 			<section className='touch'>
 				<div className='touch__content'>
-					<h2>Let's Chat!</h2>
+<div className='touch__container'>
+<h2>Ready to elevate your online presence?</h2>
 					<p className='desk-text'>
-					I’m always excited to connect with fellow professionals, potential collaborators, and anyone interested in discussing innovative projects. Whether you have a question, need a consultation, or are looking to start a new project, I’d love to hear from you. Please feel free to reach out using the form below, and I will get back to you as soon as possible.
+					Whether you're looking to start a new project, need expert guidance, or have questions about how we can work together, I’m here to help. Let’s turn your vision into reality with custom e-commerce solutions that deliver results. Fill out the form below, and I’ll get back to you promptly to discuss how we can achieve your goals.
+
 
 
 					</p>
 					<p className='mob-text'>
-					I’m always excited to connect with fellow professionals, potential collaborators, and anyone interested in discussing innovative projects. Whether you have a question, need a consultation, or are looking to start a new project, I’d love to hear from you. Please feel free to reach out using the form below, and I will get back to you as soon as possible.
-					</p>
+					Whether you're looking to start a new project, need expert guidance, or have questions about how we can work together, I’m here to help. Let’s turn your vision into reality with custom e-commerce solutions that deliver results. Fill out the form below, and I’ll get back to you promptly to discuss how we can achieve your goals.
+
+</p>
+</div>
 					<form id='form'>
 						<div className='touch__content--form-group'>
 							<input

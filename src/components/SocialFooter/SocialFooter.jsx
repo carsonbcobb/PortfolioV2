@@ -5,9 +5,9 @@ import './SocialFooter.styles.scss';
 
 import github from '../../assets/socialFooter/github.png';
 import linkedin from '../../assets/socialFooter/linkedin.png';
-import supportImage from '../../assets/socialFooter/support.png';
+import email from '../../assets/socialFooter/email.svg';
 import work from '../../assets/socialFooter/work.png';
-import about from '../../assets/socialFooter/about.png';
+import about from '../../assets/socialFooter/support.png';
 
 const SocialFooter = () => {
 	return (
@@ -30,18 +30,18 @@ const SocialFooter = () => {
 						</p>
 					</div>
 				</a>
-				<Link to='/portfolio' className='socialFooter__block sf-work'>
+				<a href='mailto:carson@carsoncobb.com' className='socialFooter__block sf-work'>
 					<div>
-						<img src={work} />
+						<img src={email} />
 					</div>
 
 					<div>
 						<p>
-							Look at <br />
-							<span className='bold-sf'>My Work</span>
+							Send an <br />
+							<span className='bold-sf'>Email</span>
 						</p>
 					</div>
-				</Link>
+				</a>
 
 				<a
 					href='https://github.com/carsonbcobb'
@@ -60,18 +60,18 @@ const SocialFooter = () => {
 						</p>
 					</div>
 				</a>
-				<Link to='/about' className='socialFooter__block sf-about'>
+				<a href="https://wa.me/15599165560?text=Hello%2C%20I%20would%20like%20to%20discuss%20a%20project%21" target="_blank" className='socialFooter__block sf-about'>
 					<div>
 						<img src={about} />
 					</div>
 
 					<div>
 						<p>
-							Learn More <br />
-							<span className='bold-sf'>About Me</span>
+							Message on <br />
+							<span className='bold-sf'>Whatsapp</span>
 						</p>
 					</div>
-				</Link>
+				</a>
 				
 
 				
@@ -97,18 +97,18 @@ const SocialFooter = () => {
 						</div>
 					</a>
 
-					<Link to='/portfolio' className='socialFooter__block sf-work'>
-						<div>
-							<img src={work} />
-						</div>
+					<a href='mailto:carson@carsoncobb.com' className='socialFooter__block sf-work'>
+					<div>
+						<img src={email} />
+					</div>
 
-						<div>
-							<p>
-								Look at <br />
-								<span className='bold-sf'>My Work</span>
-							</p>
-						</div>
-					</Link>
+					<div>
+						<p>
+							Send an <br />
+							<span className='bold-sf'>Email</span>
+						</p>
+					</div>
+				</a>
 				</div>
 				
 				<div className='mobile__group2'>
@@ -129,18 +129,18 @@ const SocialFooter = () => {
 						</p>
 					</div>
 				</a>
-					<Link to='/about' className='socialFooter__block sf-about'>
-						<div>
-							<img src={about} />
-						</div>
+				<a href="https://wa.me/15599165560?text=Hello%2C%20I%20would%20like%20to%20discuss%20a%20project%21" target="_blank" className='socialFooter__block sf-about'>
+					<div>
+						<img src={about} />
+					</div>
 
-						<div>
-							<p>
-								Learn More <br />
-								<span className='bold-sf'>About Me</span>
-							</p>
-						</div>
-					</Link>
+					<div>
+						<p>
+							Message on <br />
+							<span className='bold-sf'>Whatsapp</span>
+						</p>
+					</div>
+				</a>
 				</div>
 			</div>
 		</>

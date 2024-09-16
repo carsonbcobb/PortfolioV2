@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 import logo from '../../assets/header/logo.png';
 import logoDropdown from '../../assets/header/logoslide.png';
-
+import linkedin from '../../assets/header/linkedin.png';
+import github from '../../assets/header/github.png';
 
 import './MobileHeader.styles.scss';
 
@@ -18,32 +19,23 @@ const MobileHeader=() =>
 			</Link>
 
 			<div id='menuToggle'>
-				<input type='checkbox' />
-
-				<span></span>
-				<span></span>
-				<span></span>
-
-				<ul id='menu'>
-					<div className='nav__links--mobile'>
-						<Link to='/' className='nav__links--mobile-link'>
-							HOME
-						</Link>
-						<Link to='/about' className='nav__links--mobile-link'>
-							ABOUT
-						</Link>
-
-						<Link to='/portfolio' className='nav__links--mobile-link'>
-							PORTFOLIO
-						</Link>
-						<Link to='/contact' className='nav__links--mobile-link'>
-								CONTACT
-						</Link>
-						
-						<br />
-						<img src={ logoDropdown } className='nav__links--mobile-logo' />
-					</div>
-				</ul>
+			<div className='follow-block'>
+				<p>Follow Me:</p>
+				<a
+					href='https://www.linkedin.com/in/carsoncobb/'
+					target='_blank'
+					rel='norefferer'
+				>
+					<img src={linkedin} />
+				</a>
+				<a
+					href='https://github.com/carsonbcobb'
+					target='_blank'
+					rel='norefferer'
+				>
+					<img src={github} />
+				</a>
+			</div>
 			</div>
 		</nav>
 	);

@@ -1,7 +1,8 @@
 .slide {
 	img {
-		width: 99%;
-		height: 250px !important;
+max-height: 200px;
+max-width: 400px;
+	margin: auto;
 	}
 
 	h4 {
@@ -10,8 +11,12 @@
 	}
 }
 
-#slider {
-	padding-left: 200px;
+.home-slider {
+	padding: 0 8rem;
+}
+
+.slick-dots {
+	transform: translateY(100%);
 }
 
 .button-container {
@@ -92,6 +97,18 @@
 	}
 }
 
+@media (max-width: 1280px){
+	.home-slider {
+		padding: 0 4rem;
+	}
+}
+
+@media (max-width: 1024px){
+	.home-slider {
+		padding: 0 2rem;
+	}
+}
+
 @media (max-width: 425px) {
 	#slider {
 		margin: 5px;
@@ -104,7 +121,7 @@
 
 	.slide {
 		img {
-			width: 100%;
+			width: 95%;
 			height: 100% !important;
 		}
 	}

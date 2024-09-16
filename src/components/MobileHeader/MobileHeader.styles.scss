@@ -15,6 +15,19 @@
 	}
 }
 
+#menuToggle .follow-block {
+	padding: 0 15px;
+}
+
+#menuToggle .follow-block img {
+	width: 25px;
+	transform: translateY(2.5px);
+}
+
+#menuToggle .follow-block p {
+	font-size: .8rem;
+}
+
 #menuToggle {
 	display: block;
 	position: relative;

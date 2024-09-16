@@ -102,3 +102,7 @@ $thetransition: all 0.5s cubic-bezier(1, 0.25, 0, 0.75) 0s;
 		display: none;
 	}
 }
+
+.header__links {
+	visibility: hidden;
+}
