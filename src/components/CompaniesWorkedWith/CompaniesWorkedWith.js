@@ -5,7 +5,7 @@ import './CompaniesWorkedWith.scss';
 import efLogo from '../../assets/companies/ef-logo-black.png';
 import sgLogo from '../../assets/companies/sg.svg';
 import gemLogo from '../../assets/companies/EX_LOGO_250x.png';
-import organifiLogo from '../../assets/companies/326259791_680747150454524_1406745717201181736_n.jpg';
+import organifiLogo from '../../assets/companies/326259791_680747150454524_1406745717201181736_n.png';
 import celebrityCruisesLogo from '../../assets/companies/celebrity-cruises-logo-blue-lg.svg';
 import saintJaneLogo from '../../assets/companies/saint_jane_logoBlack_420x63.png';
 import bioOptimizersLogo from '../../assets/companies/bio-logo-2023-with-tagline-wide.svg';
