@@ -5,7 +5,6 @@ import SelectHeader from '../../components/SelectHeader/SelectHeader';
 
 import contactBanner from '../../assets/contact/contact-banner.png';
 import ContactBottom from '../../components/ContactBottom/ContactBottom';
-import SocialFooter from '../../components/SocialFooter/SocialFooter';
 
 const Contact=() =>
 {
@@ -21,7 +20,6 @@ const Contact=() =>
 				</div>
 			</section>
 			<ContactBottom />
-			<SocialFooter />
 		</div>
 	);
 };

@@ -14,23 +14,6 @@ const Header = () => {
 				<img src={logo} />
 			</div>
 
-			<div className='header__links'>
-
-					<Link className='header__links--link hoverAnimation' to='/'>
-						HOME
-					</Link>
-					<Link className='header__links--link hoverAnimation' to='/about'>
-						ABOUT
-					</Link>
-					<Link className='header__links--link hoverAnimation' to='/portfolio'>
-						PORTFOLIO
-					</Link>
-					<Link className='header__links--link hoverAnimation' to='/contact'>
-						CONTACT ME
-					</Link>
-
-				</div>
-
 			<div className='follow-block'>
 				<p>Follow Me:</p>
 				<a

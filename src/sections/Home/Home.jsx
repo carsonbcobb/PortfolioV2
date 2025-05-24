@@ -9,10 +9,9 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import SelectHeader from '../../components/SelectHeader/SelectHeader';
 import HomeSlider from '../../components/Slider/Slider';
 import ContactBottom from '../../components/ContactBottom/ContactBottom';
-import SocialFooter from '../../components/SocialFooter/SocialFooter';
 
 import heroImage from '../../assets/home/me.png';
-import serviceImage from '../../assets/home/service_img.png';
+import serviceImage from '../../assets/home/carson-about.png';
 import howOne from '../../assets/home/how-1.png';
 import howTwo from '../../assets/home/how-2.png';
 import howThree from '../../assets/home/how-3.png';
@@ -33,25 +32,19 @@ const Home=() =>
 					</div>
 					<div className='hero__content'>
 						<h1>
-							Carson Cobb
+						 Boost your add‑to‑cart rates by 8–15% in 30 days  
 							<br />
-							<span className='teal hide-mobile'>Developer</span>
+							<span className='pink'>(or your money back)</span>
 						</h1>
 						<p className='desk-text bold hero-title-description'>
-						Full Stack Developer & E-commerce Expert
+						Proven speed, UX & CRO packages that turn browsers into buyers.
 						</p>
 						<p className='mob-text bold hero-title-description'>
-						Full Stack Developer &<br/>E-commerce Expert
+						Proven speed, UX & CRO packages that turn browsers into buyers.
 						</p>
-						<br />
-						<p className='hero-description'>
-						Looking to boost online sales? I create custom e-commerce solutions that enhance user engagement, improve conversion rates, and elevate your brand. From seamless experiences to optimized performance, let’s drive results together.
-
-</p>
-						<div className='button'>
+						<div className='hero-button'>
 							<a href='#service-bundles'>
-								<FontAwesomeIcon icon={ faArrowRight } className='faIcon' /> Learn
-								More
+								<FontAwesomeIcon icon={ faArrowRight } className='faIcon' /> Get My Free 5‑Point Audit
 							</a>
 						</div>
 					</div>
@@ -66,6 +59,9 @@ const Home=() =>
 
 			<Services />
 
+
+			<ContactBottom />
+
 			<section className='services'>
 				<div className='services__img'>
 					<img src={ serviceImage } />
@@ -73,25 +69,10 @@ const Home=() =>
 
 				<div className='services__content'>
 					<h2>
-						About <span className='pink'>Carson Cobb</span>
-					</h2>
+					Your Shopify Development Advantage</h2>
 					<p>
-					Carson Cobb is dedicated to helping businesses grow through custom e-commerce solutions that combine striking design with powerful functionality. Specializing in both front-end and back-end development, I create high-performing websites that engage users and drive results across all industries.
-					</p>
+					I specialize in high-performance Shopify development, helping established stores reach new levels of growth. With deep expertise in both front-end and back-end development, I lead projects that optimize conversions, enhance site speed, and deliver a seamless user experience. My approach turns complex challenges into tailored solutions that drive measurable results.					</p>
 
-					<p>
-				
-					From crafting intuitive, responsive interfaces to building robust, scalable back-end systems, my work focuses on delivering exceptional user experiences that reflect your brand’s unique value. I take pride in turning complex challenges into effective solutions that elevate your online presence.
-
-
-					</p>
-
-					<p>
-					Let’s work together to transform your digital strategy. Explore my services, and let’s build a website that not only meets your business goals but exceeds your expectations.
-
-
-
-					</p>
 
 					<div className='button home-service-button'>
 						<a href='#contact-bottom'>
@@ -100,12 +81,11 @@ const Home=() =>
 					</div>
 				</div>
 			</section>
-			<section className='home-slider'>
-				<h2>Independent Projects & Side Work</h2>
-				<HomeSlider />
-			</section>
-			<ContactBottom />
-			<SocialFooter />
+			
+
+			<footer style={{"padding": "2em 0"}}>
+      © {new Date().getFullYear()} Carson Cobb. All rights reserved.
+    </footer>
 		</div>
 	);
 };

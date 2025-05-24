@@ -10,8 +10,9 @@
 .hero {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-evenly;
+	justify-content: space-between;
 	align-items: center;
+	padding: 0 50px;
 }
 
 .hero-description {
@@ -22,9 +23,10 @@
 	color: #011c39;
 	text-align: start;
 	margin-left: 4em;
+	max-width: 600px;
 
 	h1 {
-		font-size: 4rem;
+		font-size: 3rem;
 	}
 
 	p {
@@ -67,19 +69,30 @@
 	}
 
 	&:hover {
-		background: transparent;
-		border: 2px solid #ff6666;
-		border-left: 2px solid transparent;
-		border-right: 2px solid transparent;
+	
+		opacity: .75;
 		transform: scale(0.95);
-		color: black;
-		font-weight: bold;
+	}
+}
 
-		a {
-			text-decoration: none;
-			color: black;
-			font-weight: bold;
-		}
+.hero-button {
+	background-color: black;
+	padding: 15px 25px;
+	width: fit-content;
+	color: white;
+	border: 2px solid transparent;
+	font-size: 18px;
+	transition: 0.5s ease-in-out;
+	cursor: pointer;
+
+	a {
+		text-decoration: none;
+		color: white;
+	}
+
+	&:hover {
+		opacity: .75;
+		transform: scale(0.95);
 	}
 }
 
@@ -88,7 +101,7 @@
 }
 
 .teal {
-	color: #01d1c1;
+	color: #33627C;
 }
 
 .pink {
@@ -324,12 +337,12 @@
 	margin-left: 50px;
 
 	h2 {
-		font-size: 2.5rem;
+		font-size: 2rem;
 	}
 
 	p {
 		color: #2f2f2f;
-		line-height: 1.5;
+		line-height: 2;
 		font-size: 1rem;
 		text-align: start;
 	}
@@ -339,6 +352,8 @@
 	margin-top: 20px;
 	img {
 		max-width: 400px;
+
+	border-radius: 20px;
 	}
 }
 
