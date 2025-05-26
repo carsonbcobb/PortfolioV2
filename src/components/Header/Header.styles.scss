@@ -23,8 +23,10 @@
 #header {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-evenly;
+	justify-content: space-between;
 	align-items: center;
+	width: 85%;
+	margin: auto;
 	padding: 25px 0;
 }
 
@@ -46,7 +48,7 @@
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	background-color: #01d1c1;
+	background-color: #33627C;
 	padding: 0px 50px;
 	color: white;
 	font-weight: bold;

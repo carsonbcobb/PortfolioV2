@@ -1,0 +1,253 @@
+@keyframes wiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+    80% {
+        transform: rotate(0deg);
+    }
+    85% {
+        transform: rotate(5deg);
+    }
+    95% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.wrapper {
+    padding: 4rem 2rem 0 2rem;
+    background: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.textContent {
+    text-align: center;
+    max-width: 720px;
+}
+
+.contact-bottom__title {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.copy {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+.calendarContainer {
+    width: 100%;
+    max-width: 800px;
+    min-height: 600px;
+    margin: 0 auto;
+}
+
+// Hide Koalendar branding
+[data-koa-embed] .koalendar-powered-by,
+[data-koa-embed] .koalendar-branding {
+    display: none !important;
+}
+
+.formContainer {
+    flex: 1;
+    max-width: 500px;
+    width: 100%;
+    @media (max-width: 1024px) {
+        max-width: 100%;
+    }
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input,
+.textarea {
+    padding: 1rem 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+    background: white;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    &:focus {
+        outline: none;
+        border-color: #000;
+        box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+    }
+    &::placeholder {
+        color: #999;
+    }
+}
+
+.textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    &:hover {
+        background-color: #333;
+        transform: translateY(-2px);
+    }
+    &:active {
+        transform: translateY(0);
+    }
+    svg {
+        transition: transform 0.3s ease;
+    }
+    &:hover svg {
+        transform: translateX(4px);
+    }
+}
+
+.contactInfo {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 50px;
+    @media (max-width: 768px) {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+    @media (max-width: 425px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.infoItem {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: inherit;
+    &\:hover .icon {
+        transform: rotate(10deg);
+    }
+    @media (max-width: 425px) {
+        flex-direction: column;
+        margin: 20px 0;
+        text-align: center;
+    }
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    animation: wiggle 2.5s infinite;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+.small {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.footer {
+    padding: 50px 0;
+    margin: 0;
+    text-align: center;
+    font-size: 0.875rem;
+}
+
+button {
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    .wrapper {
+        padding: 3rem 1.5rem;
+    }
+    .calendarContainer {
+        min-height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 3rem 1rem;
+    }
+    .contact-bottom__title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    .copy {
+        font-size: 1rem;
+    }
+    .calendarContainer {
+        min-height: 450px;
+    }
+}
+
+@media (max-width: 425px) {
+    .wrapper {
+        padding: 2rem 1rem;
+    }
+    .contact-bottom__title {
+        font-size: 1.75rem;
+        margin-bottom: 0.75rem;
+    }
+    .copy {
+        font-size: 0.95rem;
+    }
+    .calendarContainer {
+        min-height: 400px;
+    }
+}

@@ -3,7 +3,6 @@ import React from 'react';
 import './Portfolio.styles.scss';
 import SelectHeader from '../../components/SelectHeader/SelectHeader';
 import ContactBottom from '../../components/ContactBottom/ContactBottom';
-import SocialFooter from '../../components/SocialFooter/SocialFooter';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -110,7 +109,6 @@ const Portfolio=() =>
 			</section>
 
 			<ContactBottom />
-			<SocialFooter />
 		</div>
 	);
 };

@@ -3,7 +3,6 @@ import React from 'react';
 import './About.styles.scss';
 import SelectHeader from '../../components/SelectHeader/SelectHeader';
 import ContactBottom from '../../components/ContactBottom/ContactBottom';
-import SocialFooter from '../../components/SocialFooter/SocialFooter';
 
 import aboutBanner from '../../assets/about/about-banner.png';
 
@@ -61,7 +60,6 @@ const About=() =>
 			</div>
 
 			<ContactBottom />
-			<SocialFooter />
 		</div>
 	);
 };

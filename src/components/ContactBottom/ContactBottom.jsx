@@ -1,122 +1,82 @@
-import React from 'react';
-import './ContactBottom.styles.scss';
+import React, { useEffect } from 'react';
+import styles from './ContactBottom.module.scss';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+const ContactBottom = () => {
+  useEffect(() => {
+    // Load Koalendar script if not already loaded
+    if (!document.querySelector('script[src="https://koalendar.com/assets/widget.js"]')) {
+      const script = document.createElement('script');
+      script.src = 'https://koalendar.com/assets/widget.js';
+      script.async = true;
+      document.body.appendChild(script);
+    }
 
-import phoneIcon from '../../assets/home/phone.png';
-import emailIcon from '../../assets/home/email.png';
-import touchImage from '../../assets/home/touch.png';
+    // Initialize Koalendar after component mounts
+    const initKoalendar = () => {
+      if (window.Koalendar) {
+        window.Koalendar('inline', {
+          url: 'https://koalendar.com/e/meet-with-carson-koaUwc9W?embed=true&hide_branding=true',
+          selector: '#inline-widget-meet-with-carson-koaUwc9W'
+        });
+      }
+    };
 
-const ContactBottom=() =>
-{
-	return (
-		<div id='contact-bottom'>
-			<section className='touch'>
-				<div className='touch__content'>
-<div className='touch__container'>
-<h2>Ready to elevate your online presence?</h2>
-					<p className='desk-text'>
-					Whether you're looking to start a new project, need expert guidance, or have questions about how we can work together, I’m here to help. Let’s turn your vision into reality with custom e-commerce solutions that deliver results. Fill out the form below, and I’ll get back to you promptly to discuss how we can achieve your goals.
+    // If Koalendar is already loaded, initialize immediately
+    if (window.Koalendar) {
+      initKoalendar();
+    } else {
+      // Otherwise, wait for the script to load
+      window.addEventListener('load', initKoalendar);
+    }
 
+    // Remove Koalendar branding link
+    const removeBrandingLink = () => {
+      // Target the specific div containing the branding
+      const brandingDiv = document.querySelector('div.flex.items-center.justify-center.w-full.p-1\\.5.text-base.text-gray-500');
+      if (brandingDiv) {
+        brandingDiv.remove();
+      }
+    };
 
+    // Initial removal
+    removeBrandingLink();
 
-					</p>
-					<p className='mob-text'>
-					Whether you're looking to start a new project, need expert guidance, or have questions about how we can work together, I’m here to help. Let’s turn your vision into reality with custom e-commerce solutions that deliver results. Fill out the form below, and I’ll get back to you promptly to discuss how we can achieve your goals.
+    // Set up a MutationObserver to catch dynamically added links
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach(() => {
+        removeBrandingLink();
+      });
+    });
 
-</p>
-</div>
-					<form id='form'>
-						<div className='touch__content--form-group'>
-							<input
-								id='inputFN'
-								type='text'
-								name='firstName'
-								placeholder='Enter Your First Name'
-							/>
-							<input
-								id='inputLN'
-								type='text'
-								name='lastName'
-								placeholder='Enter Your Last Name'
-							/>
-							<input
-								id='inputEmail'
-								type='email'
-								name='email'
-								placeholder='Enter Your Email Address'
-							/>
-							<input
-								id='inputPhone'
-								type='phone'
-								name='phone'
-								placeholder='Enter Your Phone Number'
-							/>
-						</div>
-						<textarea
-							id='textarea'
-							type='message'
-							name='message'
-							placeholder='Enter Your Message'
-						/>
-						<div className="button__container">
-							<button
-								onClick={ () =>
-								{
-									const form=document.getElementById( 'form' );
-									return (
-										( form.method='POST' ),
-										( form.action='https://submit-form.com/QhONV08k' ),
-										( form.encType='multipart/form-data' )
-									);
-								} }
-								onSubmit={ () =>
-								{
-									const form=document.getElementById( 'form' );
-									return form.reset();
-								} }
-								className='button'
-								type='submit'
-								value='Send'
-							>
-								<FontAwesomeIcon icon={ faArrowRight } className='faIcon' />{ ' ' }
-								Submit Now
-							</button>
-						</div>{ ' ' }
-						<input
-							type='hidden'
-							name='_subject'
-							value='Contact form submitted'
-						/>
-					</form>
-				</div>
+    // Start observing the document body for changes
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
 
+    return () => {
+      window.removeEventListener('load', initKoalendar);
+      observer.disconnect();
+    };
+  }, []);
 
-			</section>
-			<section className='extra-contact'>
-				<div className='extra-contact__item'>
-					<img src={ phoneIcon } className='wiggleAnimation' />
-					<div>
-						<h3 className='extra-conteact__item--text'>
-							<span className='small-text'>PHONE NUMBER</span>559.916.5560
-						</h3>
-					</div>
-				</div>
-
-				<div className='extra-contact__item'>
-					<img src={ emailIcon } className='wiggleAnimation wiggle-email' />
-					<div>
-						<h3 className='extra-conteact__item--text'>
-							<span className='small-text'>EMAIL ADDRESS</span>
-							carson@carsoncobb.com
-						</h3>
-					</div>
-				</div>
-			</section>
-			<p id='copyright'>© Copyright 2024 Carson Cobb. All rights reserved.</p>
-		</div>
-	);
+  return (
+    <div id="contact-bottom" className={styles.wrapper}>
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <div className={styles.textContent}>
+            <h2 className={styles['contact-bottom__title']}>Ready to Book Your Free 5-Point Speed & UX Audit Call?</h2>
+            <p className={styles.copy}>
+              Choose a 30-minute slot below for your live audit call. You'll receive a tailored PDF report within 24 hours.
+            </p>
+          </div>
+          <div className={styles.calendarContainer}>
+            <div id="inline-widget-meet-with-carson-koaUwc9W"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default ContactBottom;
