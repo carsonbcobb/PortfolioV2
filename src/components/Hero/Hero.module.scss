@@ -1,0 +1,122 @@
+.hero {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    @media (max-width: 1024px) {
+        max-width: 100%;
+    }
+}
+
+.content {
+    max-width: 775px;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+    @media (max-width: 768px) {
+        font-size: 2.25rem;
+    }
+}
+
+.copy {
+    margin-bottom: 2rem;
+    p {
+        font-size: 1.25rem;
+        line-height: 1.5;
+        color: #4a4a4a;
+        margin: 0 0 1rem;
+        font-family: 'Poppins', sans-serif;
+    }
+}
+
+.microTrust {
+    font-size: 1.1rem !important;
+    color: #666 !important;
+}
+
+.ctaGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.primaryCta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    &:hover {
+        background-color: #333;
+        transform: translateY(-2px);
+    }
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+.secondaryCta {
+    color: #666;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    text-align: center;
+    &:hover {
+        color: #000;
+    }
+}
+
+.processStrip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: #666;
+    span {
+        font-weight: 500;
+    }
+}
+
+.scarcity {
+    text-align: center;
+    font-size: 1rem;
+    color: #666;
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    strong {
+        color: #000;
+    }
+}

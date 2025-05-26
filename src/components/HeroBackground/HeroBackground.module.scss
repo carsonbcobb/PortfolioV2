@@ -1,0 +1,81 @@
+@keyframes blobFloat {
+    0% {
+        transform: translate(0, 0) rotate(15deg) scale(1);
+    }
+    50% {
+        transform: translate(-10px, 10px) rotate(25deg) scale(1.05);
+    }
+    100% {
+        transform: translate(0, 0) rotate(15deg) scale(1);
+    }
+}
+
+.hero-bg {
+    position: relative;
+    padding: 0rem 0rem 6rem;
+    overflow: visible;
+    background: linear-gradient(135deg, #FFF5F7 0%, #FFE0E6 60%, #FFD1D9 100%);
+    &::before {
+        content: "";
+        position: absolute;
+        top: -10%;
+        right: -15%;
+        width: 70%;
+        height: 70%;
+        background: url('../../assets/blob-accent.svg') no-repeat center/cover;
+        opacity: 0.15;
+        pointer-events: none;
+        animation: blobFloat 8s ease-in-out infinite;
+    }
+}
+
+.hero-bg__inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    padding: 0 1rem;
+}
+
+.hero-bg__divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: translateY(1px);
+    svg {
+        display: block;
+        width: 100%;
+        height: 100px;
+        fill: #FBECF0;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-bg {
+        padding: 0rem 0rem 4rem;
+    }
+    .hero-bg::before {
+        width: 120%;
+        height: 120%;
+        right: -30%;
+    }
+    .hero-bg__divider svg {
+        height: 60px;
+    }
+}
+
+@media (max-width: 425px) {
+    .hero-bg {
+        padding: 0rem 0rem 3rem;
+    }
+    .hero-bg__inner {
+        padding: 0 0.5rem;
+    }
+    .hero-bg__divider svg {
+        height: 40px;
+    }
+}

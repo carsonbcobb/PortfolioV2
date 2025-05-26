@@ -3,38 +3,47 @@ import './Services.scss';
 
 const services = [
   {
-    title: 'Store Development Leadership',
-    description:
-      'Drive your Shopify store forward with expert guidance and hands-on support. I help lead development efforts, implement best practices, and streamline feature integration.',
-    details: [
-      'Weekly strategy sessions',
-      'Technical roadmap planning',
-      'Hands-on code reviews & mentoring',
-      'Seamless feature integration',
+    title: '30-Day A-to-C Accelerator',
+    description: 'A single-minded, 30-day sprint to boost your add-to-cart rate by 8-15% —guaranteed.',
+    deliverables: [
+      '7-day baseline tracking (GA4 + add-to-cart events)',
+      'Speed & UX optimizations',
+      'Up to two A/B tests',
+      'Final report & 30-min wrap-up call'
     ],
+    price: '$3,500 one-time',
+    guarantee: '8-15% lift in add-to-cart or I work free until we do',
+    cta: 'Book Accelerator Slot',
+    ctaLink: 'https://koalendar.com/e/meet-with-carson-koaUwc9W-2',
+    isHighlighted: true
   },
   {
-    title: 'Conversion Optimization Partnership',
-    description:
-      'Boost your store’s conversion rates with data-driven strategies and continuous improvements. I analyze user behavior, refine sales funnels, and implement A/B testing to maximize results.',
-    details: [
-      'Conversion rate audits',
-      'A/B testing strategies',
-      'User behavior analysis',
-      'Iterative optimization',
+    title: '5-Point Speed & UX Audit Call',
+    description: 'Free 30-minute live audit + tailored PDF report within 24 hours.',
+    deliverables: [
+      'Live 30-min audit call covering speed & UX blockers',
+      'Tailored PDF audit report emailed within 24 h'
     ],
+    price: 'Free',
+    guarantee: 'N/A',
+    cta: 'Book Audit Call',
+    ctaLink: 'https://koalendar.com/e/meet-with-carson-koaUwc9W',
+    isHighlighted: false
   },
   {
-    title: 'Site Speed & Performance Enhancement',
-    description:
-      'Improve your Shopify store’s speed and performance for a smoother user experience and better SEO. I tackle technical bottlenecks and implement best practices to reduce load times.',
-    details: [
-      'Performance audits',
-      'Technical optimizations',
-      'Load time improvements',
-      'Ongoing performance monitoring',
+    title: 'Site Concierge Retainer',
+    description: 'Monthly block of hours you can spend however you need—optimizations, tests, or support.',
+    deliverables: [
+      '12 hrs/mo of your chosen work',
+      'Priority 24-h turnaround on critical tasks',
+      'Monthly 30-min strategy & reporting call'
     ],
-  },
+    price: '$2,000/mo',
+    guarantee: 'Work paused when hours cap is reached; overage at $140/hr',
+    cta: 'Start Retainer',
+    ctaLink: 'https://koalendar.com/e/meet-with-carson-koaUwc9W-2e',
+    isHighlighted: false
+  }
 ];
 
 
@@ -44,16 +53,30 @@ const Services = () => {
       <h2>Signature Packages</h2>
       <div className="services-grid">
         {services.map((service, index) => (
-          <div className="service-card" key={index}>
+          <div className={`service-card ${service.isHighlighted ? 'highlighted' : ''}`} key={index}>
             <h3>{service.title}</h3>
-            <div className="service-price hidden">{service.price}</div>
+            <div className="service-price">{service.price}</div>
             <p>{service.description}</p>
-            <ul>
-              {service.details.map((detail, i) => (
-                <li key={i}>{detail}</li>
-              ))}
-            </ul>
-            <a className="learn-more-btn" href="#contact-bottom">Book Your Slot</a> 
+            <div className="deliverables">
+              <h4>Deliverables</h4>
+              <ul>
+                {service.deliverables.map((deliverable, i) => (
+                  <li key={i}>{deliverable}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="guarantee">
+              <h4>Guarantee</h4>
+              <p>{service.guarantee}</p>
+            </div>
+            <a 
+              className="learn-more-btn" 
+              href={service.ctaLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {service.cta}
+            </a>
           </div>
         ))}
       </div>

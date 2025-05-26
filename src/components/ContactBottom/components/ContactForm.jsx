@@ -3,9 +3,10 @@ import React from 'react';
 import styles from '../ContactBottom.module.scss';
 
 const fields = [
-  { name: 'firstName', placeholder: 'First Name', type: 'text' },
-  { name: 'lastName',  placeholder: 'Last Name',  type: 'text' },
-  { name: 'email',     placeholder: 'Email Address', type: 'email' }
+  { name: 'firstName', placeholder: 'First Name', type: 'text', required: true },
+  { name: 'lastName',  placeholder: 'Last Name',  type: 'text', required: true },
+  { name: 'email', placeholder: 'Email Address', type: 'email', required: true },
+  { name: 'website', placeholder: 'Website (optional)', type: 'url', required: false }
 ];
 
 const ContactForm = () => {
@@ -23,25 +24,18 @@ const ContactForm = () => {
       encType="multipart/form-data"
       onSubmit={handleSubmit}
     >
-      <div className={styles.formGroup}>
+      <div className={styles.formGrid}>
         {fields.map(f => (
           <input
             key={f.name}
             name={f.name}
             type={f.type}
             placeholder={f.placeholder}
-            required
+            required={f.required}
             className={styles.input}
           />
         ))}
       </div>
-
-      <textarea
-        name="message"
-        placeholder="Add Your Message Here"
-        required
-        className={styles.textarea}
-      />
 
       <input type="hidden" name="_subject" value="Contact form submitted" />
 
