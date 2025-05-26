@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import styles from './Faq.module.scss';
 
 const faqs = [
@@ -28,18 +28,50 @@ const faqs = [
     }
 ];
 
+function AccordionItem({ question, answer }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const contentRef = useRef(null);
+
+  const toggle = () => {
+    setIsOpen(!isOpen);
+    const el = contentRef.current;
+    if (!isOpen) {
+      el.style.maxHeight = el.scrollHeight + 'px';
+      el.style.paddingBottom = '1.25rem';
+    } else {
+      el.style.maxHeight = '0';
+      el.style.paddingBottom = '0';
+    }
+  };
+
+  return (
+    <div className={`${styles['faq-item']} ${isOpen ? styles.open : ''}`}>
+      <div className={styles['faq-question']} onClick={toggle}>
+        {question}
+        <span className={styles.arrow}>{isOpen ? '−' : '+'}</span>
+      </div>
+      <div
+        ref={contentRef}
+        className={styles['faq-answer-wrapper']}
+        style={{ 
+          maxHeight: 0, 
+          overflow: 'hidden', 
+          transition: 'max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding-bottom 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+        }}
+      >
+        <p className={styles['faq-answer']}>{answer}</p>
+      </div>
+    </div>
+  );
+}
+
 const Faq = () => {
     return (
         <section id="faq" aria-label="Frequently Asked Questions" className={styles['faq-section']}>
             <h2>Frequently Asked Questions</h2>
             <div className={styles['faq-list']}>
-                {faqs.map(({ question, answer }, i) => (
-                    <details key={i} className={styles['faq-item']}>
-                        <summary className={styles['faq-question']}>{question}</summary>
-                        <div className={styles['faq-answer-wrapper']}>
-                            <p className={styles['faq-answer']}>{answer}</p>
-                        </div>
-                    </details>
+                {faqs.map((item, i) => (
+                    <AccordionItem key={i} question={item.question} answer={item.answer} />
                 ))}
             </div>
         </section>

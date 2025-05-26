@@ -38,32 +38,43 @@
     color: #1a202c;
     cursor: pointer;
     position: relative;
-    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background: #fff;
     transition: all 0.3s ease;
-    &::after {
-        content: '+';
-        position: absolute;
-        right: 1.25rem;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 1.5rem;
-        color: #4a5568;
-        transition: transform 0.3s ease;
-    }
     &:hover {
         background: #f7fafc;
     }
 }
 
+.arrow {
+    font-size: 1.5rem;
+    color: #4a5568;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    text-align: center;
+    line-height: 1.5rem;
+    transform: rotate(0deg);
+}
+
+.faq-item.open {
+    .faq-question {
+        background: #f7fafc;
+    }
+    .arrow {
+        transform: rotate(180deg);
+    }
+}
+
 .faq-answer-wrapper {
-    max-height: 0;
+    padding: 0 1.25rem;
     overflow: hidden;
-    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .faq-answer {
-    padding: 0 1.25rem;
     margin: 0;
     color: #4a5568;
     font-size: 1rem;
@@ -72,27 +83,12 @@
     opacity: 0;
     transform: translateY(-10px);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: left;
 }
 
-.faq-item[open] {
-    .faq-question {
-        background: #f7fafc;
-        &::after {
-            transform: translateY(-50%) rotate(45deg);
-        }
-    }
-    .faq-answer-wrapper {
-        max-height: 500px;
-    }
-    .faq-answer {
-        padding: 0 1.25rem 1.25rem;
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.faq-item summary::-webkit-details-marker {
-    display: none;
+.faq-item.open .faq-answer {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 @media (max-width: 1024px) {
@@ -113,12 +109,11 @@
         font-size: 1rem;
         padding: 1rem;
     }
-    .faq-answer {
-        font-size: 0.95rem;
+    .faq-answer-wrapper {
         padding: 0 1rem;
     }
-    .faq-item[open] .faq-answer {
-        padding: 0 1rem 1rem;
+    .faq-answer {
+        font-size: 0.95rem;
     }
 }
 
@@ -133,17 +128,18 @@
     .faq-question {
         padding: 0.875rem;
         font-size: 0.9rem;
-        &::after {
-            right: 1rem;
-            font-size: 1.25rem;
-        }
+    }
+    .arrow {
+        font-size: 1.25rem;
+        width: 1.25rem;
+        height: 1.25rem;
+        line-height: 1.25rem;
+    }
+    .faq-answer-wrapper {
+        padding: 0 0.875rem;
     }
     .faq-answer {
-        padding: 0 0.875rem;
         font-size: 0.85rem;
-    }
-    .faq-item[open] .faq-answer {
-        padding-bottom: 0.875rem;
     }
 }
 
