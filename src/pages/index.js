@@ -64,13 +64,13 @@ export default function Home() {
         { /* JSON-LD */ } <
         script type = "application/ld+json"
         dangerouslySetInnerHTML = {
-            { __html: JSON.stringify(jsonLd) } }
-        /> <
-        /Head>
+            { __html: JSON.stringify(jsonLd) }
+        }
+        /> < /
+        Head >
 
         <
         main > { /* Your existing components */ } <
-        /main> <
-        />
+        /main> < / >
     );
 }
