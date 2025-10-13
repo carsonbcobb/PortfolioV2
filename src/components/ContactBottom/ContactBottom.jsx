@@ -65,13 +65,21 @@ const ContactBottom = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.textContent}>
-            <h2 className={styles['contact-bottom__title']}>Ready to Book Your Free 5-Point Speed & UX Audit Call?</h2>
+            <h2 className={styles['contact-bottom__title']}>Ready To Stop Leaving Money On The Table?</h2>
             <p className={styles.copy}>
-              Choose a 30-minute slot below for your live audit call. You'll receive a tailored PDF report within 24 hours.
+              Every day you wait is another day of lost revenue. Every hour your store has these issues is money walking out the door.
             </p>
+            <p className={styles.copy}>
+              The audit is free. The insights are invaluable. And if we're a good fit, you could see ROI within weeks.
+            </p>
+            <div className={styles.calendarHeading}>
+              <h3>Book Your Free Store Audit</h3>
+              <p className={styles.availability}>Limited availability: Only 3 audit spots left this month.</p>
+            </div>
           </div>
           <div className={styles.calendarContainer}>
             <div id="inline-widget-meet-with-carson-koaUwc9W"></div>
+            <p className={styles.calendarFooter}>The audit takes 30 minutes. What you learn could be worth thousands in recovered revenue.</p>
           </div>
         </div>
       </div>

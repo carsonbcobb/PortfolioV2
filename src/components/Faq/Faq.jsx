@@ -2,30 +2,30 @@ import React, { useRef, useState } from 'react';
 import styles from './Faq.module.scss';
 
 const faqs = [
-    {
-      question: 'How does the "8–15% add-to-cart lift" guarantee work?',
-      answer: 'We install tracking to capture your baseline add-to-cart rate, then run our 30-Day A-to-C Accelerator (speed & UX optimizations, up to two A/B tests, and a final report). We aim to increase your add-to-cart rate by 8–15%. If your post-program rate hasn\'t improved by at least 8%, we\'ll keep working at no extra cost until it does.'
-    },
-    {
-      question: "What's included in the 30-Day A-to-C Accelerator?",
-      answer: '• 7-day baseline tracking setup (GA4 + add-to-cart events)\n• 0.2–0.5 s LCP speed & UX optimizations\n• Up to two A/B tests of your choice\n• Final performance report & 30 min wrap-up call'
-    },
-    {
-      question: 'What do you need from me to get started?',
-      answer: '• Admin access to your Shopify store\n• Google Analytics and Google Tag Manager permissions (or we can set them up)\n• A 30-minute kickoff call to agree on priorities'
-    },
-    {
-      question: 'How long is the commitment?',
-      answer: "• The Accelerator is a one-time, 30-day program.\n• Retainers are month-to-month with a three-month minimum; cancel anytime with 30 days' notice."
-    },
-    {
-      question: 'Can I upgrade or downgrade my retainer tier?',
-      answer: "Yes—just let us know 10 days before your next billing cycle and we'll adjust your included hours, overage rate, and deliverables accordingly."
-    },
-    {
-      question: 'How do I book my free 5-Point Speed & UX Audit Call?',
-      answer: 'Click the "Book Audit Call" button anywhere on the page, choose a 30-minute slot in my calendar, and I\'ll walk you through the live audit—then send you a tailored PDF report within 24 hours.'
-    }
+  {
+    question: 'How much does this actually cost?',
+    answer: 'The audit is completely free. After that, pricing depends on what your store needs. Could be $3K for targeted fixes. Could be $20K for a complete overhaul. I give you transparent pricing after we identify the problems. Here\'s what I can tell you: my work typically pays for itself within the first month through increased revenue. It\'s an investment that generates ROI, not an expense.'
+  },
+  {
+    question: 'How fast will I see results?',
+    answer: 'Some fixes show impact immediately - fix a slow page, watch bounce rate drop that same day. Bigger improvements take 2-4 weeks to show meaningful data. But you\'ll see measurable results in metrics that matter, not vague promises about "brand perception."'
+  },
+  {
+    question: 'I\'ve already had my store "optimized" - what\'s different?',
+    answer: 'Then someone missed something. I constantly find critical issues on stores that were supposedly "already optimized." The previous developer either didn\'t know what to look for or took shortcuts. Book the audit - if I genuinely can\'t find anything worth fixing, you\'ve lost 30 minutes. If I do find issues (which I will), you\'ll know exactly what\'s still costing you sales.'
+  },
+  {
+    question: 'Do you guarantee specific results?',
+    answer: 'I don\'t make percentage guarantees because every store is different. What I will tell you: I only take projects where I\'m confident I can make a significant impact on your revenue. If I don\'t think I can help you, I\'ll say so on the audit call. I\'m not desperate for clients - I\'m selective about who I work with.'
+  },
+  {
+    question: 'Why shouldn\'t I just hire an agency instead?',
+    answer: 'Go ahead if you want to pay $15K minimum, work with junior developers, and wait months for results. Agencies have massive overhead. You\'re paying for their fancy office and account managers, not expertise. With me, you work directly with someone who\'s actually done this work at scale. I move faster and cost less. Your choice.'
+  },
+  {
+    question: 'What actually happens on the free audit call?',
+    answer: 'I\'ll screen share your store and walk through it in real-time, pointing out every issue I see. You\'ll leave with brutal honesty about what\'s wrong and what it\'s costing you. No sales pitch. No pressure. Just a clear understanding of your store\'s problems and what it takes to fix them. Even if we don\'t work together, you\'ll have actionable information you can use.'
+  }
 ];
 
 function AccordionItem({ question, answer }) {
@@ -67,8 +67,8 @@ function AccordionItem({ question, answer }) {
 
 const Faq = () => {
     return (
-        <section id="faq" aria-label="Frequently Asked Questions" className={styles['faq-section']}>
-            <h2>Frequently Asked Questions</h2>
+        <section id="faq" aria-label="Questions You're Probably Asking" className={styles['faq-section']}>
+            <h2>Questions You're Probably Asking</h2>
             <div className={styles['faq-list']}>
                 {faqs.map((item, i) => (
                     <AccordionItem key={i} question={item.question} answer={item.answer} />

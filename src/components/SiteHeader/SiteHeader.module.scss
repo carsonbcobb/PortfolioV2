@@ -13,7 +13,8 @@
     justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 1rem 2rem;
+    font-family: 'Poppins', sans-serif;
 }
 
 .site-header__logo {
@@ -37,11 +38,15 @@
         justify-content: center;
         a {
             text-decoration: none;
-            color: #1a202c;
+            color: #1a1a1a;
             font-weight: 500;
-            transition: color 0.3s ease;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
             &:hover {
-                color: #FF5A5F;
+                color: #000;
+                text-decoration: underline;
+                text-underline-offset: 4px;
             }
         }
     }
@@ -56,12 +61,17 @@
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
     &-primary {
         background-color: #000;
         color: #fff;
         &:hover {
-            background-color: #333;
-            transform: translateY(-2px);
+            background-color: #2c2c2c;
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        &:active {
+            transform: scale(1) translateY(0);
         }
     }
 }
@@ -166,14 +176,16 @@
         }
         a {
             text-decoration: none;
-            color: #1a202c;
-            font-weight: 500;
+            color: #1a1a1a;
+            font-weight: 600;
             font-size: 1.5rem;
             display: block;
             padding: 0.5rem 0;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
             &:hover {
-                color: #FF5A5F;
+                color: #000;
+                transform: translateX(5px);
             }
         }
     }

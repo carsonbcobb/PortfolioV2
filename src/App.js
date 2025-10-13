@@ -31,7 +31,8 @@ function Content() {
     const [transitionStage, setTransistionStage] = useState("fadeIn");
 
     useEffect(() => {
-        if (location !== displayLocation) setTransistionStage("fadeOut");
+        // Only trigger fade transition if pathname changes, not hash/anchor links
+        if (location.pathname !== displayLocation.pathname) setTransistionStage("fadeOut");
     }, [location, displayLocation]);
 
     return ( <

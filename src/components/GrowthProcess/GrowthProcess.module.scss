@@ -10,71 +10,94 @@
 }
 
 .growth-process__title {
-    font-size: 2.5rem;
-    color: #333;
+    font-size: 2.75rem;
+    color: #1a1a1a;
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
 }
 
 .steps {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    gap: 3rem;
     margin-bottom: 4rem;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 60px;
+        left: 12.5%;
+        right: 12.5%;
+        height: 2px;
+        background: linear-gradient(to right, transparent 0%, #e0e0e0 10%, #e0e0e0 90%, transparent 100%);
+        z-index: 0;
+    }
     @media (max-width: 1024px) {
         grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
+        gap: 2rem;
+        &::before {
+            display: none;
+        }
     }
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 2.5rem;
     }
 }
 
 .step {
     display: flex;
     flex-direction: column;
+    align-items: center;
     text-align: center;
-    padding: 2rem;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
-    height: 100%;
+    padding: 2rem 1.5rem 1rem;
+    background: #fafafa;
+    border-radius: 16px;
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 95%;
+    position: relative;
+    z-index: 1;
     &:hover {
-        transform: translateY(-4px);
+        transform: translateY(-6px);
+        background: #fff;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        border-color: #e0e0e0;
     }
 }
 
 .icon {
-    display: inline-block;
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
     flex-shrink: 0;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .step h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0rem;
-    color: #000;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
     font-family: 'Poppins', sans-serif;
-    min-height: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .step p {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #4a4a4a;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #666;
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 0.5rem;
+    text-align: left;
+    width: 100%;
 }
 
 .cta {
@@ -84,22 +107,29 @@
 .button {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.75rem;
-    padding: 1rem 2rem;
-    background-color: #000;
+    padding: 1.25rem 3rem;
+    background: linear-gradient(135deg, #000 0%, #2c2c2c 100%);
     color: #fff;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 600;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 700;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
     &:hover {
-        background-color: #333;
-        transform: translateY(-2px);
+        background: linear-gradient(135deg, #1a1a1a 0%, #3c3c3c 100%);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
         svg {
-            transform: translateX(4px);
+            transform: translateX(6px);
         }
+    }
+    &:active {
+        transform: translateY(-1px);
     }
     svg {
         transition: transform 0.3s ease;
@@ -114,15 +144,28 @@
         padding: 0 1.5rem;
     }
     .growth-process__title {
-        font-size: 2rem;
-        margin-bottom: 2rem;
+        font-size: 2.25rem;
+        margin-bottom: 2.5rem;
+    }
+    .steps {
+        margin-bottom: 3rem;
     }
     .step {
-        padding: 1.5rem;
+        padding: 2rem 1.5rem;
+        height: auto;
+    }
+    .icon {
+        width: 70px;
+        height: 70px;
+        font-size: 2.5rem;
+        margin-bottom: 1.25rem;
+    }
+    .step h3 {
+        font-size: 1.25rem;
     }
     .button {
-        padding: 0.875rem 1.75rem;
-        font-size: 1rem;
+        padding: 1.125rem 2.5rem;
+        font-size: 1.1rem;
     }
 }
 
@@ -134,21 +177,33 @@
         padding: 0 1rem;
     }
     .growth-process__title {
-        font-size: 1.75rem;
-        margin-bottom: 1.5rem;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    .steps {
+        gap: 2rem;
     }
     .step {
-        padding: 1.25rem;
+        padding: 2rem 1.25rem;
+        height: auto;
+    }
+    .icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+        margin-bottom: 1rem;
     }
     .step h3 {
-        font-size: 1.1rem;
-        min-height: 2.5rem;
+        font-size: 1.15rem;
     }
     .step p {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
     .button {
-        padding: 0.75rem 1.5rem;
-        font-size: 0.95rem;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+        width: calc(100% - 2rem);
+        max-width: 320px;
+        gap: 0.5rem;
     }
 }

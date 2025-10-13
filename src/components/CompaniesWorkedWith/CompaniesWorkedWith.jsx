@@ -30,7 +30,7 @@ const CompaniesWorkedWith = () => {
 
   return (
     <section className="companies-worked-with">
-      <h2>Trusted by Industry Leaders</h2>
+      <h2>Proven Results For 30+ E-Commerce Brands</h2>
       <div className="top-row">
         <div className="company-logo">
           <img src={ saintJaneLogo } alt="Saint Jane logo" />

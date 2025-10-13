@@ -11,24 +11,25 @@ const Header = () => {
 	return (
 		<div id='header'>
 			<div className='header__logo'>
-				<img src={logo} />
+				<img src={logo} alt="Carson Cobb Logo" />
 			</div>
 
-			<div className='follow-block'>
-				<p>Follow Me:</p>
+			<nav className='header__nav'>
+				<ul>
+					<li><a href="#case-studies">Proof</a></li>
+					<li><a href="#process">Process</a></li>
+					<li><a href="#faq">FAQ</a></li>
+				</ul>
+			</nav>
+
+			<div className='header__cta'>
 				<a
-					href='https://www.linkedin.com/in/carsoncobb/'
+					href='https://koalendar.com/e/meet-with-carson-koaUwc9W'
 					target='_blank'
-					rel='norefferer'
+					rel='noopener noreferrer'
+					className='btn-primary'
 				>
-					<img src={linkedin} />
-				</a>
-				<a
-					href='https://github.com/carsonbcobb'
-					target='_blank'
-					rel='norefferer'
-				>
-					<img src={github} />
+					Book My Free Audit
 				</a>
 			</div>
 		</div>

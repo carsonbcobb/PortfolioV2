@@ -27,24 +27,38 @@
 
 h1 {
     font-size: 3.5rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-    color: #000;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 2rem;
+    color: #1a1a1a;
     font-family: 'Poppins', sans-serif;
+    letter-spacing: -0.02em;
+    @media (max-width: 1024px) {
+        font-size: 3rem;
+    }
     @media (max-width: 768px) {
-        font-size: 2.25rem;
+        font-size: 2.5rem;
+    }
+    @media (max-width: 425px) {
+        font-size: 2rem;
     }
 }
 
 .copy {
     margin-bottom: 2rem;
     p {
-        font-size: 1.25rem;
-        line-height: 1.5;
+        font-size: 1.35rem;
+        line-height: 1.7;
         color: #4a4a4a;
         margin: 0 0 1rem;
         font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        @media (max-width: 768px) {
+            font-size: 1.15rem;
+        }
+        @media (max-width: 425px) {
+            font-size: 1rem;
+        }
     }
 }
 
@@ -65,23 +79,34 @@ h1 {
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
-    padding: 1rem 2rem;
+    padding: 1.25rem 3rem;
     background-color: #000;
     color: #fff;
     border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 600;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    font-weight: 700;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
     &:hover {
-        background-color: #333;
-        transform: translateY(-2px);
+        background-color: #1a1a1a;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     }
     &:active {
-        transform: translateY(0);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    }
+    @media (max-width: 768px) {
+        padding: 1.125rem 2.5rem;
+        font-size: 1.1rem;
+    }
+    @media (max-width: 425px) {
+        padding: 1rem 2rem;
+        font-size: 1rem;
     }
 }
 
@@ -113,9 +138,19 @@ h1 {
     text-align: center;
     font-size: 1rem;
     color: #666;
-    padding: 0.75rem;
+    font-weight: 500;
+    padding: 0.875rem 1.5rem;
+    background: rgba(255, 240, 245, 0.6);
+    border: 1px solid rgba(255, 107, 107, 0.2);
     border-radius: 8px;
-    margin-bottom: 2rem;
+    @media (max-width: 768px) {
+        font-size: 0.95rem;
+        padding: 0.75rem 1.25rem;
+    }
+    @media (max-width: 425px) {
+        font-size: 0.9rem;
+        padding: 0.625rem 1rem;
+    }
     strong {
         color: #000;
     }
