@@ -20,12 +20,12 @@ const Hero = () => {
               rel="noopener noreferrer"
               className={styles.primaryCta}
             >
-              Get Your Free Store Audit
+              Schedule a Discovery Call
             </a>
           </div>
 
           <div className={styles.scarcity}>
-          🚨 Only 3 audit spots available this month
+          🔒 I'm at capacity most months - book now to secure a spot
 </div>
         </div>
 

@@ -29,7 +29,7 @@ const Header = () => {
 					rel='noopener noreferrer'
 					className='btn-primary'
 				>
-					Book My Free Audit
+					Schedule a Discovery Call
 				</a>
 			</div>
 		</div>

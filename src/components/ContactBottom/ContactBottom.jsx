@@ -70,16 +70,15 @@ const ContactBottom = () => {
               Every day you wait is another day of lost revenue. Every hour your store has these issues is money walking out the door.
             </p>
             <p className={styles.copy}>
-              The audit is free. The insights are invaluable. And if we're a good fit, you could see ROI within weeks.
+              Let's discuss your store's performance and see if there's an opportunity to work together. I'll share initial thoughts on what I'm seeing and we can explore if my approach is a fit for your goals.
             </p>
             <div className={styles.calendarHeading}>
-              <h3>Book Your Free Store Audit</h3>
-              <p className={styles.availability}>Limited availability: Only 3 audit spots left this month.</p>
+              <h3>Schedule a Discovery Call</h3>
             </div>
           </div>
           <div className={styles.calendarContainer}>
             <div id="inline-widget-meet-with-carson-koaUwc9W"></div>
-            <p className={styles.calendarFooter}>The audit takes 30 minutes. What you learn could be worth thousands in recovered revenue.</p>
+            <p className={styles.calendarFooter}>I'll review your store beforehand and come to the call with specific observations about what's working and what's not. We'll discuss the revenue impact of fixing these issues, and if it makes sense to work together, I'll outline exactly what that looks like.</p>
           </div>
         </div>
       </div>

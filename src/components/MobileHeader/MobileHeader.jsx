@@ -47,7 +47,7 @@ const MobileHeader = () => {
 						className='btn-primary'
 						onClick={toggleMenu}
 					>
-						Book My Free Audit
+						Schedule a Discovery Call
 					</a>
 				</div>
 			</div>

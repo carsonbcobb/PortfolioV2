@@ -35,7 +35,7 @@ const SiteHeader = () => {
                         rel="noopener noreferrer"
                         className={`${styles.btn} ${styles['btn-primary']}`}
                     >
-                        Book My Free Audit
+                        Schedule a Discovery Call
                     </a>
                 </div>
 
@@ -72,7 +72,7 @@ const SiteHeader = () => {
                         className={`${styles.btn} ${styles['btn-primary']}`}
                         onClick={toggleDrawer}
                     >
-                        Book My Free Audit
+                        Schedule a Discovery Call
                     </a>
                 </div>
             </div>

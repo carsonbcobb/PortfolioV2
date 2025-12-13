@@ -27,14 +27,14 @@ export default function Home() {
         <
         title > Shopify Speed & UX Optimization | Your Company Name < /title> <
         meta name = "description"
-        content = "Expert Shopify speed optimization and UX improvements to increase your store's conversion rate. Get a free 5-Point Speed & UX Audit." / >
+        content = "Expert Shopify speed optimization and UX improvements to increase your store's conversion rate. Schedule a discovery call." / >
 
         { /* Open Graph */ } <
         meta property = "og:title"
         content = "Shopify Speed & UX Optimization | Your Company Name" / >
         <
         meta property = "og:description"
-        content = "Expert Shopify speed optimization and UX improvements to increase your store's conversion rate. Get a free 5-Point Speed & UX Audit." / >
+        content = "Expert Shopify speed optimization and UX improvements to increase your store's conversion rate. Schedule a discovery call." / >
         <
         meta property = "og:image"
         content = "https://yourdomain.com/og-image.jpg" / >
@@ -51,7 +51,7 @@ export default function Home() {
         content = "Shopify Speed & UX Optimization | Your Company Name" / >
         <
         meta name = "twitter:description"
-        content = "Expert Shopify speed optimization and UX improvements to increase your store's conversion rate. Get a free 5-Point Speed & UX Audit." / >
+        content = "Expert Shopify speed optimization and UX improvements to increase your store's conversion rate. Schedule a discovery call." / >
         <
         meta name = "twitter:image"
         content = "https://yourdomain.com/og-image.jpg" / >

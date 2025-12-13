@@ -9,7 +9,7 @@ const WhyMe = () => {
       <div className={styles.proofContent}>
         <div className={styles.proofMain}>
           <h3>I've Been Doing This For Years</h3>
-          <p>Over 5+ years, I've optimized 30+ e-commerce stores across supplements, health & wellness, and DTC brands. I've seen every mistake. Every conversion killer. Every technical issue that silently destroys revenue.</p>
+          <p>Over 6+ years, I've optimized 30+ e-commerce stores across supplements, health & wellness, and DTC brands. I've seen every mistake. Every conversion killer. Every technical issue that silently destroys revenue.</p>
           <p><strong>More importantly - I know exactly how to fix them.</strong></p>
         </div>
 
@@ -19,7 +19,7 @@ const WhyMe = () => {
             <div className={styles.statLabel}>Stores Optimized</div>
           </div>
           <div className={styles.proofStat}>
-            <div className={styles.statNumber}>5+</div>
+            <div className={styles.statNumber}>6+</div>
             <div className={styles.statLabel}>Years Experience</div>
           </div>
           <div className={styles.proofStat}>
@@ -41,10 +41,9 @@ const WhyMe = () => {
 
       <div className={styles.proofCta}>
         <h3>Let Me Prove It</h3>
-        <p>Book a free audit. I'll show you exactly what's wrong with your store and how much it's costing you.</p>
-        <p>If I can't find anything worth fixing (unlikely), I'll tell you.</p>
+        <p>Let's discuss your store's performance and see if there's an opportunity to work together. I'll share initial thoughts on what I'm seeing and we can explore if my approach is a fit for your goals.</p>
         <a href="https://koalendar.com/e/meet-with-carson-koaUwc9W-2" className={styles.btnSecondary} target="_blank" rel="noopener noreferrer">
-          Book Free Audit Call
+          Schedule a Discovery Call
         </a>
       </div>
     </section>

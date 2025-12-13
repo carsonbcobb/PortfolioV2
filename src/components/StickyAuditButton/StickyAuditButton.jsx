@@ -14,9 +14,9 @@ const StickyAuditButton = () => {
     <button 
       className="sticky-audit-button"
       onClick={handleClick}
-      aria-label="Get Free Audit"
+      aria-label="Schedule a Discovery Call"
     >
-      Free Audit
+      Schedule a Discovery Call
     </button>
   );
 };

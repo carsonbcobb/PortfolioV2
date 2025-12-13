@@ -46,7 +46,7 @@ const GrowthProcess = () => {
 
         <div className={styles.cta}>
           <a href="https://koalendar.com/e/meet-with-carson-koaUwc9W-2" target="_blank" rel="noopener noreferrer" className={styles.button}>
-            <span>Book Your Free Audit</span>
+            <span>Schedule a Discovery Call</span>
             <FontAwesomeIcon icon={faArrowRight} />
           </a>
         </div>
