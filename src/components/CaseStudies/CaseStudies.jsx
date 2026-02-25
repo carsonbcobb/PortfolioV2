@@ -3,53 +3,33 @@ import styles from './CaseStudies.module.scss';
 
 const caseStudies = [
   {
-    title: "Subscription E-Commerce Platform",
-    problem: "Platform losing subscribers. Broken checkout killing conversions.",
-    solutions: [
-      "Complete platform migration",
-      "Rebuilt subscription experience",
-      "Fixed all mobile UX issues"
-    ],
-    resultHeadline: "+$200K ANNUAL RECURRING REVENUE",
-    resultMetrics: [
-      "20% Conversion Increase",
-      "15% Retention Boost"
-    ]
+    title: 'DTC Health & Wellness Brand',
+    problem: 'Converting at 2.4%. Product pages weren\'t educating new visitors, trust elements were missing or in the wrong places, and mobile experience was dragging down 70%+ of their traffic.',
+    solution: 'Full conversion audit. Rebuilt product page structure, moved social proof above the fold, restructured mobile experience, and fixed technical performance issues.',
+    resultPrimary: '2.4% → 6.7% CVR',
+    resultSecondary: '179% revenue increase from the same traffic'
   },
   {
-    title: "Health Supplement Brand",
-    problem: "High traffic, terrible conversion. Cart abandonment destroying profit.",
-    solutions: [
-      "Redesigned product pages",
-      "Custom checkout optimization",
-      "Mobile experience overhaul"
-    ],
-    resultHeadline: "2X MOBILE REVENUE",
-    resultMetrics: [
-      "Conversion Rate: +40%",
-      "Average Order Value: ↑"
-    ]
+    title: 'E-Commerce Subscription Brand',
+    problem: 'Converting at 3.2%. Repeat customers loved the product but new visitors were bouncing. The site wasn\'t building enough trust or education for cold ad traffic.',
+    solution: 'Full conversion audit and implementation. Rebuilt the homepage for cold traffic, restructured product pages with conversion psychology, and optimized the entire mobile funnel.',
+    resultPrimary: '3.2% → 7.4% CVR',
+    resultSecondary: '131% revenue increase. 18% AOV increase. $0 extra ad spend.'
   },
   {
-    title: "Agency Client Portfolio",
-    problem: "Multiple clients with slow sites, poor SEO, declining conversions.",
-    solutions: [
-      "Performance optimization",
-      "Strategic landing pages",
-      "Data-driven A/B testing"
-    ],
-    resultHeadline: "CONSISTENT GROWTH ACROSS ALL CLIENTS",
-    resultMetrics: [
-      "↑ Speed  ↑ Rankings",
-      "↑ Revenue Per Visitor"
-    ]
+    title: 'Shopify Store (Ongoing Retainer)',
+    problem: 'Multiple conversion issues across the site. Product pages underperforming, checkout flow creating friction, and site speed hurting mobile conversions.',
+    solution: 'Ongoing optimization and development. Systematic improvements across every page, continuous testing, and iterative fixes based on data.',
+    resultPrimary: '1.2% → 3.8% CVR',
+    resultSecondary: 'Conversion rate more than doubled and continues to climb with ongoing optimizations'
   }
 ];
 
 const CaseStudies = () => {
   return (
-    <section className={styles['case-studies']} id="case-studies">
-      <h2 className={styles['case-studies__title']}>Real Stores, Real Revenue Growth</h2>
+    <section className={styles['case-studies']} id="results">
+      <span className={styles['case-studies__eyebrow']}>Results</span>
+      <h2 className={styles['case-studies__title']}>Real Stores. Real Revenue Growth.</h2>
       <div className={styles['case-studies__grid']}>
         {caseStudies.map((caseStudy, index) => (
           <div key={index} className={styles['case-study-card']}>
@@ -62,22 +42,13 @@ const CaseStudies = () => {
             
             <div className={styles['case-study-card__solution']}>
               <h4><span className={styles.icon}>✅</span> WHAT I DID</h4>
-              <ul>
-                {caseStudy.solutions.map((solution, idx) => (
-                  <li key={idx}>{solution}</li>
-                ))}
-              </ul>
+              <p>{caseStudy.solution}</p>
             </div>
             
             <div className={styles['case-study-card__results']}>
               <div className={styles['result-box']}>
-                <div className={styles['result-icon']}>📊</div>
-                <div className={styles['result-headline']}>{caseStudy.resultHeadline}</div>
-                <div className={styles['result-metrics']}>
-                  {caseStudy.resultMetrics.map((metric, idx) => (
-                    <div key={idx} className={styles['result-metric']}>{metric}</div>
-                  ))}
-                </div>
+                <div className={styles['result-headline']}>{caseStudy.resultPrimary}</div>
+                <div className={styles['result-metric']}>{caseStudy.resultSecondary}</div>
               </div>
             </div>
           </div>
@@ -87,4 +58,4 @@ const CaseStudies = () => {
   );
 };
 
-export default CaseStudies; 
+export default CaseStudies;

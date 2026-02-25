@@ -52,9 +52,44 @@
     font-size: 1.2rem;
     line-height: 1.7;
     color: #555;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
+}
+
+.primaryCta {
+    display: inline-block;
+    padding: 1.25rem 3rem;
+    background: linear-gradient(135deg, #000 0%, #2c2c2c 100%);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    &:hover {
+        background: linear-gradient(135deg, #1a1a1a 0%, #3c3c3c 100%);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+}
+
+.emailLine {
+    font-size: 1.05rem;
+    color: #555;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    a {
+        color: #1a1a1a;
+        font-weight: 600;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 .calendarHeading {

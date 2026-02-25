@@ -9,6 +9,18 @@
     padding: 0 2rem;
 }
 
+.eyebrow {
+    display: block;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #666;
+    margin-bottom: 0.75rem;
+    font-family: 'Poppins', sans-serif;
+}
+
 .growth-process__title {
     font-size: 2.75rem;
     color: #1a1a1a;
@@ -20,29 +32,28 @@
 
 .steps {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
     margin-bottom: 4rem;
     position: relative;
     &::before {
         content: '';
         position: absolute;
-        top: 60px;
-        left: 12.5%;
-        right: 12.5%;
+        top: 50px;
+        left: 16.66%;
+        right: 16.66%;
         height: 2px;
         background: linear-gradient(to right, transparent 0%, #e0e0e0 10%, #e0e0e0 90%, transparent 100%);
         z-index: 0;
     }
     @media (max-width: 1024px) {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
         gap: 2rem;
         &::before {
             display: none;
         }
     }
     @media (max-width: 768px) {
-        grid-template-columns: 1fr;
         gap: 2.5rem;
     }
 }
@@ -68,18 +79,21 @@
     }
 }
 
-.icon {
+.stepNumber {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 80px;
-    height: 80px;
-    font-size: 3rem;
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+    font-weight: 900;
     margin-bottom: 1.5rem;
     flex-shrink: 0;
-    background: #fff;
+    background: linear-gradient(135deg, #000 0%, #2c2c2c 100%);
+    color: #fff;
     border-radius: 50%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    font-family: 'Poppins', sans-serif;
 }
 
 .step h3 {
@@ -154,10 +168,10 @@
         padding: 2rem 1.5rem;
         height: auto;
     }
-    .icon {
-        width: 70px;
-        height: 70px;
-        font-size: 2.5rem;
+    .stepNumber {
+        width: 60px;
+        height: 60px;
+        font-size: 1.75rem;
         margin-bottom: 1.25rem;
     }
     .step h3 {
@@ -187,10 +201,10 @@
         padding: 2rem 1.25rem;
         height: auto;
     }
-    .icon {
-        width: 60px;
-        height: 60px;
-        font-size: 2rem;
+    .stepNumber {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
         margin-bottom: 1rem;
     }
     .step h3 {

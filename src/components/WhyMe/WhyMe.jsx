@@ -1,54 +1,42 @@
 import React from 'react';
 import styles from './WhyMe.module.scss';
 
+const cards = [
+  {
+    headline: "I've seen your exact problem before.",
+    text: "After 50+ audits, patterns are obvious to me that are invisible to most. I don't guess. I look at your data and know within minutes where the biggest leaks are because I've fixed the same ones dozens of times."
+  },
+  {
+    headline: 'I do the work. Not a team.',
+    text: 'No account managers relaying your feedback to a junior developer who has never run a store. You talk to me. I do the analysis. I write the audit. I build the fix. One person, fully accountable.'
+  },
+  {
+    headline: 'I only care about revenue.',
+    text: "I'm not going to redesign your site to win a design award. Every recommendation I make is ranked by how much money it will recover. If it doesn't move the needle on revenue, it doesn't make the report."
+  },
+  {
+    headline: "I'll tell you if I can't help.",
+    text: "Not every store needs an audit. If I don't see a real opportunity to improve your numbers, I'll tell you on the discovery call and save you the money."
+  }
+];
+
 const WhyMe = () => {
   return (
     <section className={styles.proof}>
-      <h2>Here's Why You Should Trust Me</h2>
-      
-      <div className={styles.proofContent}>
-        <div className={styles.proofMain}>
-          <h3>I've Been Doing This For Years</h3>
-          <p>Over 6+ years, I've optimized 30+ e-commerce stores across supplements, health & wellness, and DTC brands. I've seen every mistake. Every conversion killer. Every technical issue that silently destroys revenue.</p>
-          <p><strong>More importantly - I know exactly how to fix them.</strong></p>
-        </div>
-
-        <div className={styles.proofStats}>
-          <div className={styles.proofStat}>
-            <div className={styles.statNumber}>30+</div>
-            <div className={styles.statLabel}>Stores Optimized</div>
+      <h2>This Isn't My First Store</h2>
+      <p className={styles.proofSubtext}>
+        I've spent 6+ years inside Shopify stores across health, wellness, supplements, apparel, and DTC. I've optimized 50+ stores and generated over $10M in additional revenue for clients. Here's what that means for you.
+      </p>
+      <div className={styles.proofCards}>
+        {cards.map((card, index) => (
+          <div key={index} className={styles.proofCard}>
+            <h3>{card.headline}</h3>
+            <p>{card.text}</p>
           </div>
-          <div className={styles.proofStat}>
-            <div className={styles.statNumber}>6+</div>
-            <div className={styles.statLabel}>Years Experience</div>
-          </div>
-          <div className={styles.proofStat}>
-            <div className={styles.statNumber}>$5M+</div>
-            <div className={styles.statLabel}>Revenue Generated</div>
-          </div>
-        </div>
-
-        <div className={styles.proofBullets}>
-          <h4>What Makes Me Different From Every Other Developer:</h4>
-          <ul>
-            <li><strong>You work directly with me.</strong><br/>No account managers. No junior developers. No middlemen. Just me, personally handling your project.</li>
-            <li><strong>I've worked with major brands.</strong><br/>The optimization strategies that work for 8-figure companies work for growing brands too. I bring that experience to your store.</li>
-            <li><strong>I focus on revenue, not vanity metrics.</strong><br/>I don't care about "pretty code" or technical perfectionism. I care about what makes you more money.</li>
-            <li><strong>I move fast and execute efficiently.</strong><br/>No corporate bureaucracy. No endless meetings. Just clear communication and fast results.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div className={styles.proofCta}>
-        <h3>Let Me Prove It</h3>
-        <p>Let's discuss your store's performance and see if there's an opportunity to work together. I'll share initial thoughts on what I'm seeing and we can explore if my approach is a fit for your goals.</p>
-        <a href="https://koalendar.com/e/meet-with-carson-koaUwc9W-2" className={styles.btnSecondary} target="_blank" rel="noopener noreferrer">
-          Schedule a Discovery Call
-        </a>
+        ))}
       </div>
     </section>
   );
 };
 
 export default WhyMe;
-

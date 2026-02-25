@@ -12,11 +12,24 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.mobile-logo-link {
+    text-decoration: none;
+    color: inherit;
+}
+
 .mobile-logo {
     img {
         height: 40px;
         width: auto;
     }
+}
+
+.mobile-logo-text {
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #1a1a1a;
+    font-family: 'Poppins', sans-serif;
 }
 
 .hamburger {

@@ -3,41 +3,34 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import styles from './GrowthProcess.module.scss';
 
+const KOALENDAR_URL = 'https://koalendar.com/e/meet-with-carson-koaUwc9W';
+
 const steps = [
   {
-    icon: '🔍',
-    title: 'Deep Analysis',
-    description: "I systematically tear apart your store looking for every problem. Site speed. Mobile experience. Checkout flow. UX issues. Technical debt. Every single revenue leak."
+    title: 'Discovery Call',
+    description: "We hop on a quick call where I learn about your store, your current conversion rate, your traffic sources, and what's not working. I'll ask the right questions to understand your situation and determine if there's a real opportunity to improve your numbers. By the end of the call, I'll tell you honestly whether I can help or not. If it's a fit, I'll walk you through the process, what to expect, and how we get started."
   },
   {
-    icon: '💣',
-    title: 'Prioritize By Impact',
-    description: "I rank every issue by how much it's costing you. We fix the biggest money-losers first - the problems bleeding the most revenue right now."
+    title: 'Audit',
+    description: "Every page. Every funnel step. Mobile and desktop. Within the first week you have a complete breakdown of where revenue is leaking and why. A 30 to 40+ page report with every issue ranked by revenue impact and a full video walkthrough explaining each recommendation."
   },
   {
-    icon: '⚡',
-    title: 'Execute Fast',
-    description: "No endless meetings or corporate bureaucracy. I execute quickly, communicate clearly, and keep you updated on progress. You always know what's happening."
-  },
-  {
-    icon: '💰',
-    title: 'Measure Results',
-    description: "Track the impact in real metrics that matter. Conversion rate improvements. Revenue increases. Results you can see in your bank account."
+    title: 'Implementation & Results',
+    description: "Whether your team implements the roadmap or I handle it through ongoing optimization, the changes start driving results within weeks. Better conversion rates, higher AOV, more revenue from the same traffic."
   }
 ];
 
 const GrowthProcess = () => {
   return (
-    <section className={styles.growthProcess} aria-label="4 step growth process" id="process">
+    <section className={styles.growthProcess} aria-label="Process" id="process">
       <div className={styles.container}>
-        <h2 className={styles['growth-process__title']}>How This Actually Works</h2>
+        <span className={styles.eyebrow}>Process</span>
+        <h2 className={styles['growth-process__title']}>Here's How It Works</h2>
         
         <div className={styles.steps}>
           {steps.map((step, index) => (
             <div key={index} className={styles.step}>
-              <span className={styles.icon} role="img" aria-label={step.title}>
-                {step.icon}
-              </span>
+              <span className={styles.stepNumber}>{index + 1}</span>
               <h3>{step.title}</h3>
               <p>{step.description}</p>
             </div>
@@ -45,7 +38,7 @@ const GrowthProcess = () => {
         </div>
 
         <div className={styles.cta}>
-          <a href="https://koalendar.com/e/meet-with-carson-koaUwc9W-2" target="_blank" rel="noopener noreferrer" className={styles.button}>
+          <a href={KOALENDAR_URL} target="_blank" rel="noopener noreferrer" className={styles.button}>
             <span>Schedule a Discovery Call</span>
             <FontAwesomeIcon icon={faArrowRight} />
           </a>
@@ -55,4 +48,4 @@ const GrowthProcess = () => {
   );
 };
 
-export default GrowthProcess; 
+export default GrowthProcess;

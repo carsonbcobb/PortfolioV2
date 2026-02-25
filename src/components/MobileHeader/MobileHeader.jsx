@@ -1,12 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-
-import logo from '../../assets/header/logo.png';
-import logoDropdown from '../../assets/header/logoslide.png';
-import linkedin from '../../assets/header/linkedin.png';
-import github from '../../assets/header/github.png';
-
+import { Link } from 'react-router-dom';
 import './MobileHeader.styles.scss';
+
+const KOALENDAR_URL = 'https://koalendar.com/e/meet-with-carson-koaUwc9W';
 
 const MobileHeader = () => {
 	const [isOpen, setIsOpen] = React.useState(false);
@@ -17,9 +13,9 @@ const MobileHeader = () => {
 
 	return (
 		<nav role='navigation' id='mobile-nav'>
-			<Link to='/'>
+			<Link to='/' className='mobile-logo-link'>
 				<div className='mobile-logo'>
-					<img src={logo} alt="Carson Cobb Logo" />
+					<span className='mobile-logo-text'>CARSON COBB</span>
 				</div>
 			</Link>
 
@@ -35,13 +31,14 @@ const MobileHeader = () => {
 
 			<div className={`mobile-menu ${isOpen ? 'is-open' : ''}`}>
 				<ul className='mobile-nav-list'>
-					<li><a href="#case-studies" onClick={toggleMenu}>Proof</a></li>
+					<li><a href="#services" onClick={toggleMenu}>Services</a></li>
+					<li><a href="#results" onClick={toggleMenu}>Results</a></li>
 					<li><a href="#process" onClick={toggleMenu}>Process</a></li>
 					<li><a href="#faq" onClick={toggleMenu}>FAQ</a></li>
 				</ul>
 				<div className='mobile-cta'>
 					<a
-						href='https://koalendar.com/e/meet-with-carson-koaUwc9W'
+						href={KOALENDAR_URL}
 						target='_blank'
 						rel='noopener noreferrer'
 						className='btn-primary'

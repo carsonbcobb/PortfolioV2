@@ -41,6 +41,15 @@
     }
 }
 
+.header__logo-text {
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
 .header__nav {
     flex: 1 1 auto;
     text-align: center;
