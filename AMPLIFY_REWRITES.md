@@ -2,18 +2,16 @@
 
 Amplify rewrites every request to your React app’s `index.html` unless a rule matches first. So `/blog` and `/admin` either load the SPA (blank) or, if you added rules, the HTML loads but **requests for `blog.css`, `blog.js`, `admin.css`, `admin.js`** are still caught by the catch‑all and return the React app instead of the real files — so the pages load with no styles or scripts and look blank.
 
-**Fix:** Add these four rules **above** your catch‑all and SPA rules (order matters).
+**Fix:** Add these rules **above** your catch‑all and SPA rules (order matters).
 
 ## Rules to add (in this order, at the top)
 
 | Source address   | Target address        | Type    |
 |------------------|------------------------|--------|
 | `/blog`          | `/blog/index.html`     | Rewrite (200) |
-| `/admin`         | `/admin/index.html`    | Rewrite (200) |
 | `/blog/<*>`      | `/blog/<*>`            | Rewrite (200) |
-| `/admin/<*>`     | `/admin/<*>`           | Rewrite (200) |
 
-The first two make `/blog` and `/admin` serve their `index.html`. The last two make requests like `/blog/blog.css` and `/admin/admin.js` serve the **actual files** instead of being rewritten to the SPA.
+**Do not add** a rewrite for `/admin` or `/admin/<*>`. The admin is a **React route** at `/admin` that uses Amplify Auth (sign-in). If you rewrite `/admin` to a static file, the SPA never loads and Auth cannot run. Let the SPA catch‑all serve `/admin` so the React app shows the protected Admin page.
 
 ## Steps in Amplify Console
 
@@ -23,7 +21,7 @@ The first two make `/blog` and `/admin` serve their `index.html`. The last two m
 
 ## JSON (if you use the editor)
 
-Add these **at the beginning** of the redirects array:
+Add these **at the beginning** of the redirects array (blog only; no /admin so the SPA handles it):
 
 ```json
 {
@@ -33,20 +31,8 @@ Add these **at the beginning** of the redirects array:
   "condition": null
 },
 {
-  "source": "/admin",
-  "target": "/admin/index.html",
-  "status": "200",
-  "condition": null
-},
-{
   "source": "/blog/<*>",
   "target": "/blog/<*>",
-  "status": "200",
-  "condition": null
-},
-{
-  "source": "/admin/<*>",
-  "target": "/admin/<*>",
   "status": "200",
   "condition": null
 }
@@ -58,10 +44,7 @@ Add these **at the beginning** of the redirects array:
    In Amplify, open the latest build → **Build details** (or the build artifacts). Check that the output includes `blog/index.html`, `blog/blog.css`, `blog/blog.js`, `admin/index.html`, `admin/admin.css`, `admin/admin.js`. With Create React App they come from `public/blog` and `public/admin`; if your build doesn’t copy `public/`, those paths won’t exist.
 
 2. **Test assets directly**  
-   After deploying, open:
-   - `https://www.carsoncobb.com/blog/blog.css`  
-   - `https://www.carsoncobb.com/admin/admin.css`  
-   You should see CSS. If you see HTML (the React app), the `/blog/<*>` and `/admin/<*>` rules are still below the catch‑all or missing.
+   After deploying, open `https://www.carsoncobb.com/blog/blog.css`. You should see CSS. If you see HTML (the React app), the `/blog/<*>` rule is still below the catch‑all or missing.
 
 ## Check
 

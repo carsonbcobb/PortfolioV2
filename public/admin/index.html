@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>Blog Admin | Carson Cobb</title>
-  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="/admin/admin.css">
 </head>
 <body>
   <div class="admin-wrap">
     <div class="password-gate" id="password-gate">
       <h1>Admin access</h1>
+      <p class="password-gate-note">This is a convenience gate only — it is not secure (anyone can bypass via devtools). For real protection, use Amplify branch access control or a backend; see <code>ADMIN_AUTH.md</code> in the repo.</p>
       <input type="password" id="admin-password" placeholder="Password" autocomplete="current-password" aria-label="Admin password">
       <button type="button" id="unlock-btn">Continue</button>
       <p class="error" id="gate-error" role="alert" hidden></p>
@@ -95,6 +96,6 @@
     </div>
   </div>
 
-  <script src="admin.js"></script>
+  <script src="/admin/admin.js"></script>
 </body>
 </html>

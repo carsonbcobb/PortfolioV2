@@ -7,6 +7,7 @@ import Portfolio from './sections/Portfolio/Portfolio';
 import Contact from './sections/Contact/Contact';
 import About from './sections/About/About';
 import Home from './sections/Home/Home';
+import Admin from './sections/Admin/Admin';
 import StickyAuditButton from './components/StickyAuditButton/StickyAuditButton';
 
 function App() {
@@ -59,6 +60,9 @@ function Content() {
         <
         Route element = { < Contact / > }
         path = '/contact' / >
+        <
+        Route element = { < Admin / > }
+        path = '/admin' / >
         <
         /Routes> < /
         div >

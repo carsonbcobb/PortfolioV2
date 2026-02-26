@@ -58,6 +58,19 @@ body {
   margin-top: 0.5rem;
 }
 
+.password-gate-note {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0 0 1rem;
+  line-height: 1.4;
+}
+
+.password-gate-note code {
+  background: #eee;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+}
+
 /* Form (hidden until unlocked) */
 .admin-form-wrap { display: none; }
 .admin-form-wrap.is-unlocked { display: block; }
