@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Blog Admin | Carson Cobb</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="admin-wrap">
+    <div class="password-gate" id="password-gate">
+      <h1>Admin access</h1>
+      <input type="password" id="admin-password" placeholder="Password" autocomplete="current-password" aria-label="Admin password">
+      <button type="button" id="unlock-btn">Continue</button>
+      <p class="error" id="gate-error" role="alert" hidden></p>
+    </div>
+
+    <div class="admin-form-wrap" id="admin-form-wrap">
+      <h1>New blog post</h1>
+      <form id="post-form">
+        <div class="form-group">
+          <label for="title">Post Title *</label>
+          <input type="text" id="title" name="title" required>
+        </div>
+        <div class="form-group">
+          <label for="slug">Slug *</label>
+          <input type="text" id="slug" name="slug" required placeholder="e.g. how-to-improve-product-pages">
+          <p class="hint">Lowercase, hyphens only. Used in URL: /blog/[slug]/</p>
+        </div>
+        <div class="form-group">
+          <label for="category">Category *</label>
+          <select id="category" name="category" required>
+            <option value="Conversion Optimization">Conversion Optimization</option>
+            <option value="Shopify">Shopify</option>
+            <option value="Conversion Psychology">Conversion Psychology</option>
+            <option value="Case Studies">Case Studies</option>
+            <option value="AEO">AEO</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="meta-description">Meta Description *</label>
+          <textarea id="meta-description" name="meta-description" rows="2" required maxlength="170"></textarea>
+          <p class="char-count" id="meta-char-count">0 / 150–160</p>
+        </div>
+        <div class="form-group">
+          <label for="summary">Summary / TL;DR *</label>
+          <textarea id="summary" name="summary" rows="3" required placeholder="2–3 sentences at the top of the post and for AI answers."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="body">Body (Markdown) *</label>
+          <textarea id="body" name="body" class="body-field" required placeholder="## Heading&#10;Use **bold**, *italic*, [links](url), lists, blockquotes."></textarea>
+        </div>
+        <div class="form-group">
+          <label>FAQ (optional)</label>
+          <div id="faq-container"></div>
+          <button type="button" class="add-faq" id="add-faq">+ Add FAQ</button>
+        </div>
+        <div class="form-group">
+          <label for="related">Related post slugs</label>
+          <input type="text" id="related" name="related" placeholder="slug-one, slug-two, slug-three">
+        </div>
+        <div class="form-group">
+          <label for="publish-date">Publish Date *</label>
+          <input type="date" id="publish-date" name="publish-date" required>
+        </div>
+        <div class="submit-actions">
+          <button type="submit" id="submit-btn">Publish post</button>
+        </div>
+      </form>
+
+      <section class="preview-section">
+        <h2>Preview</h2>
+        <div class="preview-box" id="preview"></div>
+      </section>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="confirm-modal" hidden>
+    <div class="modal">
+      <h3>Publish post?</h3>
+      <p id="confirm-message"></p>
+      <div class="modal-buttons">
+        <button type="button" class="btn-cancel" id="confirm-cancel">Cancel</button>
+        <button type="button" class="btn-confirm" id="confirm-publish">Publish</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
