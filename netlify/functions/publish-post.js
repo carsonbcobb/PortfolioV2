@@ -1,3 +1,7 @@
+/**
+ * Netlify serverless function: commits new blog posts to GitHub (used only when the site is deployed on Netlify).
+ * On AWS Amplify, use the admin "Generate for deploy" flow and push the generated files to GitHub manually.
+ */
 const GITHUB_API = 'https://api.github.com';
 
 function getEnv(name) {

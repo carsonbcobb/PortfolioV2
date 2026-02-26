@@ -65,7 +65,7 @@
           <input type="date" id="publish-date" name="publish-date" required>
         </div>
         <div class="submit-actions">
-          <button type="submit" id="submit-btn">Publish post</button>
+          <button type="button" id="generate-btn">Generate for deploy</button>
         </div>
       </form>
 
@@ -73,17 +73,25 @@
         <h2>Preview</h2>
         <div class="preview-box" id="preview"></div>
       </section>
-    </div>
-  </div>
 
-  <div class="modal-overlay" id="confirm-modal" hidden>
-    <div class="modal">
-      <h3>Publish post?</h3>
-      <p id="confirm-message"></p>
-      <div class="modal-buttons">
-        <button type="button" class="btn-cancel" id="confirm-cancel">Cancel</button>
-        <button type="button" class="btn-confirm" id="confirm-publish">Publish</button>
-      </div>
+      <section class="generate-output preview-section" id="generate-output" hidden>
+        <h2>Generated output (Amplify / GitHub)</h2>
+        <p class="hint">Add the post file to the repo, paste the card and sitemap entry, then push. Amplify will deploy.</p>
+        <div class="form-group">
+          <label>1. Post file — save as <code>public/blog/<span id="out-slug"></span>/index.html</code></label>
+          <a id="download-post" class="btn-primary" download="index.html" href="#">Download index.html</a>
+        </div>
+        <div class="form-group">
+          <label>2. Card HTML — paste at the top of the grid in <code>public/blog/index.html</code> (inside <code>&lt;div class="blog-grid" id="blog-grid"&gt;</code>)</label>
+          <textarea id="out-card" readonly rows="6"></textarea>
+          <button type="button" id="copy-card" class="add-faq">Copy card</button>
+        </div>
+        <div class="form-group">
+          <label>3. Sitemap entry — paste inside <code>&lt;urlset&gt;</code> in <code>public/blog/sitemap.xml</code> (before <code>&lt;/urlset&gt;</code>)</label>
+          <textarea id="out-sitemap" readonly rows="6"></textarea>
+          <button type="button" id="copy-sitemap" class="add-faq">Copy sitemap</button>
+        </div>
+      </section>
     </div>
   </div>
 

@@ -249,3 +249,8 @@ body {
 .message { margin-top: 1rem; padding: 0.75rem; border-radius: 8px; }
 .message.success { background: #e8f5e9; color: #1b5e20; }
 .message.error { background: #ffebee; color: #c62828; }
+
+.generate-output textarea { font-family: ui-monospace, monospace; font-size: 0.85rem; min-height: 120px; }
+.generate-output .btn-primary { display: inline-block; margin-bottom: 0.5rem; text-decoration: none; }
+.generate-output code { background: #eee; padding: 0.15rem 0.35rem; border-radius: 4px; font-size: 0.9em; }
+.generate-output button.add-faq { margin-top: 0.5rem; }
