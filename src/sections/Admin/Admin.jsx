@@ -31,7 +31,7 @@ export default function Admin() {
   }
 
   return (
-    <Authenticator>
+    <Authenticator hideSignUp>
       {() => <AdminForm />}
     </Authenticator>
   );

@@ -1,0 +1,315 @@
+/* Admin form page — modern layout and form styling */
+.admin-form-wrap {
+  display: block;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f7f4 0%, #f0ede8 100%);
+  padding: 2rem 1.5rem 3rem;
+  margin: 0;
+  max-width: 100%;
+}
+
+.admin-form-wrap > h1 {
+  margin: 0 0 1.75rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #1a1a1a;
+}
+
+/* Form card */
+.admin-form-wrap #post-form {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06), 0 0 1px rgba(0, 0, 0, 0.04);
+  padding: 2rem 2.25rem;
+  margin-bottom: 0;
+}
+
+/* Form groups */
+.admin-form-wrap .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.admin-form-wrap .form-group:last-child {
+  margin-bottom: 0;
+}
+
+.admin-form-wrap .form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #2d2d2d;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.01em;
+}
+
+.admin-form-wrap .form-group input[type="text"],
+.admin-form-wrap .form-group input[type="date"],
+.admin-form-wrap .form-group select,
+.admin-form-wrap .form-group textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #1a1a1a;
+  background: #fafafa;
+  border: 1px solid #e5e3df;
+  border-radius: 10px;
+  font-family: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.admin-form-wrap .form-group input:focus,
+.admin-form-wrap .form-group select:focus,
+.admin-form-wrap .form-group textarea:focus {
+  outline: none;
+  border-color: #1a1a1a;
+  box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.08);
+  background: #fff;
+}
+
+.admin-form-wrap .form-group input::placeholder,
+.admin-form-wrap .form-group textarea::placeholder {
+  color: #999;
+}
+
+.admin-form-wrap .form-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.25rem;
+}
+
+.admin-form-wrap .form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.admin-form-wrap .form-group textarea.body-field {
+  min-height: 280px;
+  font-family: ui-monospace, 'SF Mono', 'Cascadia Code', Consolas, monospace;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.admin-form-wrap .form-group .hint {
+  font-size: 0.8rem;
+  color: #6b6b6b;
+  margin-top: 0.4rem;
+  line-height: 1.4;
+}
+
+.admin-form-wrap .form-group .char-count {
+  font-size: 0.8rem;
+  margin-top: 0.35rem;
+}
+
+.admin-form-wrap .form-group .char-count.in-range {
+  color: #0d7d0d;
+}
+
+.admin-form-wrap .form-group .char-count.out-range {
+  color: #c53030;
+}
+
+/* FAQ rows */
+.admin-form-wrap .faq-row {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.admin-form-wrap .faq-row input.q,
+.admin-form-wrap .faq-row input.a {
+  flex: 1;
+  min-width: 160px;
+}
+
+.admin-form-wrap .remove-faq {
+  padding: 0.55rem 0.9rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b6b6b;
+  background: #f0eeea;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.admin-form-wrap .remove-faq:hover {
+  background: #e5e3df;
+  color: #2d2d2d;
+}
+
+.admin-form-wrap .add-faq {
+  padding: 0.6rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 0.25rem;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.admin-form-wrap .add-faq:hover {
+  background: #333;
+}
+
+.admin-form-wrap .add-faq:active {
+  transform: scale(0.98);
+}
+
+/* Submit */
+.admin-form-wrap .submit-actions {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e3df;
+}
+
+.admin-form-wrap .submit-actions button {
+  padding: 0.85rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s ease, opacity 0.15s ease;
+}
+
+.admin-form-wrap .submit-actions button:hover:not(:disabled) {
+  background: #333;
+}
+
+.admin-form-wrap .submit-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Preview section */
+.admin-form-wrap .preview-section {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e3df;
+}
+
+.admin-form-wrap .preview-section h2 {
+  margin: 0 0 1rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #2d2d2d;
+}
+
+.admin-form-wrap .preview-box {
+  background: #fff;
+  border: 1px solid #e5e3df;
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+  min-height: 200px;
+  max-height: 480px;
+  overflow-y: auto;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #2d2d2d;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.admin-form-wrap .preview-box h1 { font-size: 1.5rem; margin: 0 0 0.5rem; }
+.admin-form-wrap .preview-box h2 { font-size: 1.3rem; margin: 1.25rem 0 0.5rem; }
+.admin-form-wrap .preview-box h3 { font-size: 1.1rem; margin: 1rem 0 0.35rem; }
+.admin-form-wrap .preview-box p { margin: 0 0 0.75rem; }
+.admin-form-wrap .preview-box ul,
+.admin-form-wrap .preview-box ol { margin: 0 0 0.75rem; padding-left: 1.5rem; }
+.admin-form-wrap .preview-box blockquote {
+  margin: 0.75rem 0;
+  padding-left: 1rem;
+  border-left: 4px solid #1a1a1a;
+  color: #555;
+  font-style: italic;
+}
+
+/* Generate output section */
+.admin-form-wrap .generate-output {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e3df;
+}
+
+.admin-form-wrap .generate-output h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #2d2d2d;
+}
+
+.admin-form-wrap .generate-output .hint {
+  margin-bottom: 1.25rem;
+}
+
+.admin-form-wrap .generate-output .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.admin-form-wrap .generate-output label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.admin-form-wrap .generate-output .btn-primary {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: #1a1a1a;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  transition: background 0.15s ease;
+}
+
+.admin-form-wrap .generate-output .btn-primary:hover {
+  background: #333;
+}
+
+.admin-form-wrap .generate-output textarea {
+  font-family: ui-monospace, 'SF Mono', Consolas, monospace;
+  font-size: 0.85rem;
+  min-height: 120px;
+  background: #f8f7f4;
+}
+
+.admin-form-wrap .generate-output code {
+  background: #f0eeea;
+  padding: 0.15rem 0.4rem;
+  border-radius: 5px;
+  font-size: 0.88em;
+  color: #2d2d2d;
+}
+
+.admin-form-wrap .generate-output button.add-faq {
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .admin-form-wrap {
+    padding: 2.5rem 2rem 3rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .admin-form-wrap #post-form {
+    padding: 2.5rem 2.75rem;
+  }
+}

@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from 'react';
+import './AdminForm.css';
 
 const CATEGORIES = ['Conversion Optimization', 'Shopify', 'Conversion Psychology', 'Case Studies', 'AEO'];
 
@@ -321,7 +322,7 @@ export default function AdminForm() {
   const metaInRange = metaLen >= 150 && metaLen <= 160;
 
   return (
-    <div className="admin-form-wrap is-unlocked" style={{ display: 'block', padding: '2rem', maxWidth: '900px', margin: '0 auto' }}>
+    <div className="admin-form-wrap is-unlocked">
       <h1>New blog post</h1>
       <form onSubmit={(e) => e.preventDefault()} id="post-form">
         <div className="form-group">
@@ -385,20 +386,18 @@ export default function AdminForm() {
             onChange={(e) => setBody(e.target.value)}
             required
             placeholder="## Heading\nUse **bold**, *italic*, [links](url), lists, blockquotes."
-            style={{ minHeight: '280px' }}
-          />
+            />
         </div>
         <div className="form-group">
           <label>FAQ (optional)</label>
           {faqs.map((faq, i) => (
-            <div key={i} className="faq-row" style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem' }}>
+            <div key={i} className="faq-row">
               <input
                 type="text"
                 className="q"
                 placeholder="Question"
                 value={faq.q}
                 onChange={(e) => updateFaq(i, 'q', e.target.value)}
-                style={{ flex: 1, minWidth: '180px' }}
               />
               <input
                 type="text"
@@ -406,7 +405,6 @@ export default function AdminForm() {
                 placeholder="Answer"
                 value={faq.a}
                 onChange={(e) => updateFaq(i, 'a', e.target.value)}
-                style={{ flex: 1, minWidth: '200px' }}
               />
               <button type="button" className="remove-faq" onClick={() => removeFaq(i)}>
                 Remove
@@ -438,20 +436,20 @@ export default function AdminForm() {
         </div>
       </form>
 
-      <section className="preview-section" style={{ marginTop: '2.5rem', paddingTop: '2rem', borderTop: '1px solid #ddd' }}>
+      <section className="preview-section">
         <h2>Preview</h2>
-        <div className="preview-box" id="preview" dangerouslySetInnerHTML={{ __html: previewHtml }} style={{ background: '#fff', border: '1px solid #ddd', borderRadius: '8px', padding: '1.5rem', minHeight: '200px', maxHeight: '480px', overflowY: 'auto' }} />
+        <div className="preview-box" id="preview" dangerouslySetInnerHTML={{ __html: previewHtml }} />
       </section>
 
       {showOutput && (
-        <section className="generate-output preview-section" style={{ marginTop: '2rem' }}>
+        <section className="generate-output preview-section">
           <h2>Generated output (Amplify / GitHub)</h2>
           <p className="hint">Add the post file to the repo, paste the card and sitemap entry, then push. Amplify will deploy.</p>
           <div className="form-group">
             <label>
               1. Post file — save as <code>public/blog/{outSlug}/index.html</code>
             </label>
-            <a className="btn-primary" download="index.html" href={downloadUrl} style={{ display: 'inline-block', marginBottom: '0.5rem' }}>
+            <a className="btn-primary" download="index.html" href={downloadUrl}>
               Download index.html
             </a>
           </div>
@@ -459,7 +457,7 @@ export default function AdminForm() {
             <label>
               2. Card HTML — paste at the top of the grid in <code>public/blog/index.html</code>
             </label>
-            <textarea readOnly value={outCard} rows={6} style={{ width: '100%', fontFamily: 'monospace', fontSize: '0.85rem' }} />
+            <textarea readOnly value={outCard} rows={6} />
             <button type="button" className="add-faq" onClick={copyCard}>
               {copyLabel.card}
             </button>
@@ -468,7 +466,7 @@ export default function AdminForm() {
             <label>
               3. Sitemap entry — paste inside <code>&lt;urlset&gt;</code> in <code>public/blog/sitemap.xml</code>
             </label>
-            <textarea readOnly value={outSitemap} rows={6} style={{ width: '100%', fontFamily: 'monospace', fontSize: '0.85rem' }} />
+            <textarea readOnly value={outSitemap} rows={6} />
             <button type="button" className="add-faq" onClick={copySitemap}>
               {copyLabel.sitemap}
             </button>
