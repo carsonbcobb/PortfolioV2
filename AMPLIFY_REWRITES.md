@@ -13,7 +13,10 @@ If the **homepage or /admin is blank**, the SPA fallback is usually missing or i
 |-------|------------------|---------------------|---------------|
 | 1     | `/blog`          | `/blog/index.html` | Rewrite (200) |
 | 2     | `/blog/<*>`      | `/blog/<*>`         | Rewrite (200) |
-| 3     | **SPA fallback** | `/index.html`      | Rewrite (200) |
+| 3     | `/static/<*>`    | `/static/<*>`       | Rewrite (200) |
+| 4     | **SPA fallback** | `/index.html`      | Rewrite (200) |
+
+**Important:** The **`/static/<*>`** rule must appear **before** the SPA fallback. Otherwise the catch‑all rewrites requests for your JS/CSS (e.g. `/static/js/main.xxx.js`) to `index.html`, and the browser throws **"Uncaught SyntaxError: Unexpected token '<'"** because it receives HTML instead of JavaScript.
 
 **SPA fallback** = one of these (only one):
 
@@ -22,12 +25,15 @@ If the **homepage or /admin is blank**, the SPA fallback is usually missing or i
 
 **Do not add** a rewrite for `/admin`. Admin is a React route; it must be served by the SPA fallback.
 
+**If /admin is blank:** You likely have a rule that sends `/admin` to `/admin/index.html`. **Remove it.** Delete any rule whose source is `/admin` or `/admin/<*>`. Then `/admin` will hit the SPA fallback, the React app will load, and the in-app route will show the admin (sign-in) page.
+
 ## Steps in Amplify Console
 
 1. **App settings** → **Rewrites and redirects**.
 2. Put the **blog** rules at the **top**.
-3. Ensure you have **one** SPA fallback rule (e.g. `/<*>` → `/index.html`, 200) **below** the blog rules. If it’s missing, add it.
-4. Save.
+3. Add **`/static/<*>`** → **`/static/<*>`** as Rewrite (200) **above** the SPA fallback (so JS/CSS are served, not rewritten to index.html).
+4. Ensure you have **one** SPA fallback rule (e.g. `/<*>` → `/index.html`, **200**) **last**. If it's 404 (Rewrite), change it to 200.
+5. Save.
 
 ## JSON (if you use the editor)
 
@@ -44,6 +50,12 @@ Your full redirects array should look like this (blog first, then SPA fallback).
   {
     "source": "/blog/<*>",
     "target": "/blog/<*>",
+    "status": "200",
+    "condition": null
+  },
+  {
+    "source": "/static/<*>",
+    "target": "/static/<*>",
     "status": "200",
     "condition": null
   },

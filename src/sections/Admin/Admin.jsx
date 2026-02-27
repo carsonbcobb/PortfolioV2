@@ -13,9 +13,12 @@ export default function Admin() {
     return () => link.remove();
   }, []);
 
-  const isAuthConfigured = outputs.auth?.user_pool_id && !outputs.auth.user_pool_id.includes('PLACEHOLDER');
+  // Boolean: do not call as a function (e.g. isAuthConfigured, not isAuthConfigured())
+  const isAuthConfigured = Boolean(
+    outputs.auth?.user_pool_id && !outputs.auth.user_pool_id.includes('PLACEHOLDER')
+  );
 
-  if (!isAuthConfigured()) {
+  if (!isAuthConfigured) {
     return (
       <div style={{ padding: '2rem', maxWidth: '480px', margin: '0 auto', textAlign: 'center' }}>
         <h1>Admin</h1>
