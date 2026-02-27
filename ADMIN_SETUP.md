@@ -2,6 +2,33 @@
 
 The **admin** is the blog post editor. You can use it in two ways.
 
+---
+
+## How to log in to post blogs (React admin with Auth)
+
+1. **Go to your admin URL**  
+   Open **https://yoursite.com/admin** (or your real domain).
+
+2. **First time only – create an account**
+   - On the sign-in screen, click **“Create account”** (or the sign-up tab).
+   - Enter your **email** and a **password** (meet the requirements shown, e.g. 8+ chars, upper/lower/numbers).
+   - Submit. If Cognito is set to verify email, check your inbox for a code and enter it.
+   - You’re then signed in.
+
+3. **Next times – sign in**
+   - Go to **https://yoursite.com/admin**.
+   - Enter the same **email** and **password**.
+   - Click sign in. You’ll see the “New blog post” form.
+
+4. **Post a blog**
+   - Fill out the form (title, slug, category, meta description, summary, body in Markdown, etc.).
+   - Use the preview, then click **“Generate for deploy”**.
+   - Download the generated file, paste the card and sitemap snippet as in the on-screen steps, then commit and push.
+
+You only need one admin account; use it whenever you want to create or edit posts.
+
+---
+
 ## Option 1: React app with Amplify Auth (recommended)
 
 **URL:** `https://yoursite.com/admin` (handled by the React app; no static rewrite for `/admin` in Amplify).
@@ -10,8 +37,9 @@ The **admin** is the blog post editor. You can use it in two ways.
    ```bash
    cp amplify_outputs.json src/amplify_outputs.json
    ```
-2. **First-time sign-in:** Create an account using the Amplify Authenticator (email + password). You only need one admin user.
-3. **Rewrites:** In Amplify, **do not** add a rewrite for `/admin`. Let the SPA serve `/admin` so the React route and Auth run.
+   For **Amplify Hosting** builds, the backend may already be linked and outputs injected; if `/admin` shows the sign-in screen (not the “run sandbox” message), Auth is configured.
+
+2. **Rewrites:** In Amplify, **do not** add a rewrite for `/admin`. Let the SPA serve `/admin` so the React route and Auth run.
 
 After that, going to `/admin` shows the sign-in screen; after sign-in you see the “New blog post” form with preview and “Generate for deploy”.
 
