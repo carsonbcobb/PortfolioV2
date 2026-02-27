@@ -1,20 +1,29 @@
 {
-  "version": "1",
   "auth": {
+    "user_pool_id": "us-west-1_kzOityCLK",
     "aws_region": "us-west-1",
-    "user_pool_id": "PLACEHOLDER_RUN_AMPX_SANDBOX",
-    "user_pool_client_id": "PLACEHOLDER_RUN_AMPX_SANDBOX",
-    "identity_pool_id": "PLACEHOLDER_RUN_AMPX_SANDBOX",
-    "username_attributes": ["email"],
-    "standard_required_attributes": [],
-    "user_verification_types": ["email"],
+    "user_pool_client_id": "5i4cqkcovqq0gp087n2trvbaug",
+    "identity_pool_id": "us-west-1:a8704b98-6b54-4d62-8378-3bf28172d9f2",
+    "mfa_methods": [],
+    "standard_required_attributes": [
+      "email"
+    ],
+    "username_attributes": [
+      "email"
+    ],
+    "user_verification_types": [
+      "email"
+    ],
+    "groups": [],
+    "mfa_configuration": "NONE",
     "password_policy": {
       "min_length": 8,
-      "require_numbers": true,
       "require_lowercase": true,
-      "require_uppercase": true,
-      "require_symbols": false
+      "require_numbers": true,
+      "require_symbols": true,
+      "require_uppercase": true
     },
     "unauthenticated_identities_enabled": true
-  }
+  },
+  "version": "1.4"
 }

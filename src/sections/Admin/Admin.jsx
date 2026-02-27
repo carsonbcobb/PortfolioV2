@@ -26,9 +26,6 @@ export default function Admin() {
           Run <code>npx ampx sandbox</code>, then copy the generated <code>amplify_outputs.json</code> from the
           project root to <code>src/amplify_outputs.json</code> so sign-in works.
         </p>
-        <p style={{ marginTop: '1rem' }}>
-          <a href="/admin/">Use static admin page (no Auth) →</a>
-        </p>
       </div>
     );
   }
