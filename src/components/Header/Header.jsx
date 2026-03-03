@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.styles.scss';
 
-const KOALENDAR_URL = 'https://koalendar.com/e/meet-with-carson-koaUwc9W';
+const KOALENDAR_URL = 'https://koalendar.com/e/ghost-revenue-discovery-call';
 
 const Header = () => {
 	return (

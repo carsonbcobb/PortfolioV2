@@ -1,65 +1,78 @@
 .proof {
-    padding: 4rem 2rem;
-    background: #f9f9f9;
+    padding: var(--section-padding-y) var(--container-padding);
+    background: var(--color-bg-alt);
     max-width: 100%;
     margin: 0 auto;
 }
 
-.proof h2 {
-    font-size: 3rem;
-    color: #1a1a1a;
+.eyebrow {
+    display: block;
     text-align: center;
-    margin-bottom: 1.25rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-eyebrow);
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+    font-family: var(--font-sans);
+}
+
+.proof h2 {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    color: var(--color-text);
+    text-align: center;
+    margin-bottom: 1rem;
     margin-top: 0;
     font-weight: 800;
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.2;
+    font-family: var(--font-sans);
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-heading);
 }
 
 .proofSubtext {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     line-height: 1.7;
-    color: #555;
+    color: var(--color-text-secondary);
     text-align: center;
-    max-width: 800px;
+    max-width: 720px;
     margin: 0 auto 3rem;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-sans);
 }
 
 .proofCards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    max-width: 1000px;
+    max-width: var(--container-max);
     margin: 0 auto;
 }
 
 .proofCard {
-    background: #fff;
-    border: 1px solid #e5e5e5;
-    border-radius: 12px;
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
     padding: 2.5rem 2rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    transition: var(--transition);
+    box-shadow: 0 2px 8px var(--color-shadow);
     &:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-        border-color: #d5d5d5;
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px var(--color-shadow-hover);
+        border-color: var(--color-border-strong);
     }
     h3 {
-        font-size: 1.35rem;
+        font-size: 1.25rem;
         font-weight: 700;
-        color: #1a1a1a;
+        color: var(--color-text);
         margin-bottom: 1rem;
-        font-family: 'Poppins', sans-serif;
+        font-family: var(--font-sans);
         line-height: 1.3;
     }
     p {
         font-size: 1rem;
         line-height: 1.7;
-        color: #555;
+        color: var(--color-text-secondary);
         margin: 0;
-        font-family: 'Poppins', sans-serif;
+        font-family: var(--font-sans);
     }
 }
 

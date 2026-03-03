@@ -68,6 +68,7 @@ function AccordionItem({ question, answer }) {
 const Faq = () => {
   return (
     <section id="faq" aria-label="Questions You're Probably Asking" className={styles['faq-section']}>
+      <span className={styles.eyebrow}>FAQ</span>
       <h2>Questions You're Probably Asking</h2>
       <div className={styles['faq-list']}>
         {faqs.map((item, i) => (

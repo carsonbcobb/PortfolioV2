@@ -12,7 +12,7 @@ document.body.appendChild(script);
 // Initialize the widget when the script loads
 script.onload = function() {
     window.Koalendar('inline', {
-        url: 'https://koalendar.com/e/meet-with-carson-koaUwc9W',
+        url: 'https://koalendar.com/e/ghost-revenue-discovery-call',
         selector: '#inline-widget-meet-with-carson-koaUwc9W'
     });
 };

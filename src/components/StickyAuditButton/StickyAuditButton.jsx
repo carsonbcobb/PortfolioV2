@@ -2,22 +2,16 @@ import React from 'react';
 import './StickyAuditButton.scss';
 
 const StickyAuditButton = () => {
-  const handleClick = () => {
-    // Scroll to contact form
-    const contactForm = document.getElementById('contact-bottom');
-    if (contactForm) {
-      contactForm.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <button 
+    <a
+      href="https://ghostrevenue.co"
+      target="_blank"
+      rel="noopener noreferrer"
       className="sticky-audit-button"
-      onClick={handleClick}
-      aria-label="Schedule a Discovery Call"
+      aria-label="Need full implementation? Visit Ghost Revenue"
     >
-      Schedule a Discovery Call
-    </button>
+      Need full implementation?
+    </a>
   );
 };
 

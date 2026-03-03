@@ -2,9 +2,9 @@ import React from 'react';
 import styles from './StatsBar.module.scss';
 
 const stats = [
-  { value: '50+', label: 'Stores Optimized' },
-  { value: '6+', label: 'Years Experience' },
-  { value: '$10M+', label: 'Revenue Generated For Clients' }
+  { value: '2.4%→6.7%', label: 'Sample CVR Lift' },
+  { value: '131%', label: 'Revenue Increase (Client)' },
+  { value: '$0', label: 'Extra Ad Spend Required' }
 ];
 
 const StatsBar = () => {

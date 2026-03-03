@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import styles from './GrowthProcess.module.scss';
 
-const KOALENDAR_URL = 'https://koalendar.com/e/meet-with-carson-koaUwc9W';
+const KOALENDAR_URL = 'https://koalendar.com/e/ghost-revenue-discovery-call';
 
 const steps = [
   {
@@ -30,7 +30,7 @@ const GrowthProcess = () => {
         <div className={styles.steps}>
           {steps.map((step, index) => (
             <div key={index} className={styles.step}>
-              <span className={styles.stepNumber}>{index + 1}</span>
+              <span className={styles.stepNumber}>{String(index + 1).padStart(2, '0')}</span>
               <h3>{step.title}</h3>
               <p>{step.description}</p>
             </div>

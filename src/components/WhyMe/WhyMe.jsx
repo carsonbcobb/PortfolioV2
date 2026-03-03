@@ -22,7 +22,8 @@ const cards = [
 
 const WhyMe = () => {
   return (
-    <section className={styles.proof}>
+    <section className={styles.proof} id="trust">
+      <span className={styles.eyebrow}>Why Work With Me</span>
       <h2>This Isn't My First Store</h2>
       <p className={styles.proofSubtext}>
         I've spent 6+ years inside Shopify stores across health, wellness, supplements, apparel, and DTC. I've optimized 50+ stores and generated over $10M in additional revenue for clients. Here's what that means for you.

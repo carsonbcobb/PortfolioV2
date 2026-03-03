@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Services.module.scss';
 
-const KOALENDAR_URL = 'https://koalendar.com/e/meet-with-carson-koaUwc9W';
+const KOALENDAR_URL = 'https://koalendar.com/e/ghost-revenue-discovery-call';
 
 const services = [
   {
@@ -60,6 +60,7 @@ const Services = () => {
     <section className={styles.servicesTiers} id="services">
       <span className={styles.servicesEyebrow}>Services</span>
       <h2 className={styles.servicesTiersTitle}>Three Ways To Work With Me</h2>
+      <p className={styles.servicesIntro}>Standalone audit, ongoing optimization, or white-label for your agency. Pick what fits.</p>
       <div className={styles.serviceCards}>
         {services.map((service, index) => (
           <div

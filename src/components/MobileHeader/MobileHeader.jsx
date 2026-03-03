@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './MobileHeader.styles.scss';
 
-const KOALENDAR_URL = 'https://koalendar.com/e/meet-with-carson-koaUwc9W';
+const KOALENDAR_URL = 'https://koalendar.com/e/ghost-revenue-discovery-call';
 
 const MobileHeader = () => {
 	const [isOpen, setIsOpen] = React.useState(false);

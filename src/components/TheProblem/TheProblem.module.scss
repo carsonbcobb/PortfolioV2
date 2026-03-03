@@ -1,34 +1,48 @@
 .problem {
-    padding: 4rem 2rem;
-    background: #f9f9f9;
+    padding: var(--section-padding-y) var(--container-padding);
+    background: var(--color-bg-alt);
     max-width: 100%;
     margin: 0 auto;
 }
 
-.problem h2 {
-    font-size: 3rem;
-    color: #1a1a1a;
+.eyebrow {
+    display: block;
     text-align: center;
-    margin-bottom: 2rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-eyebrow);
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+    font-family: var(--font-sans);
+}
+
+.problem h2 {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    color: var(--color-text);
+    text-align: center;
+    margin-bottom: 1.5rem;
     font-weight: 800;
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.2;
+    font-family: var(--font-sans);
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-heading);
+
+    em {
+        font-style: italic;
+        font-weight: 800;
+    }
 }
 
 .problemIntro {
     text-align: center;
     max-width: 800px;
-    margin: 0 auto 4rem;
+    margin: 0 auto 3rem;
     p {
-        font-size: 1.25rem;
+        font-size: 1.15rem;
         line-height: 1.7;
-        color: #555;
-        margin: 0.75rem 0;
-        font-family: 'Poppins', sans-serif;
-    }
-    strong {
-        color: #1a1a1a;
-        font-weight: 700;
+        color: var(--color-text-secondary);
+        margin: 0;
+        font-family: var(--font-sans);
     }
 }
 
@@ -36,79 +50,50 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin-bottom: 3rem;
+    max-width: var(--container-max);
+    margin: 0 auto;
 }
 
 .problemCard {
-    background: #fff;
-    border: 1px solid #e5e5e5;
-    border-radius: 12px;
-    padding: 3rem 2rem;
-    text-align: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    padding: 2.5rem 2rem;
+    text-align: left;
+    transition: var(--transition);
+    box-shadow: 0 2px 8px var(--color-shadow);
     &:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-        border-color: #d5d5d5;
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px var(--color-shadow-hover);
+        border-color: var(--color-border-strong);
+    }
+
+    h3 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--color-text);
+        margin-bottom: 1rem;
+        font-family: var(--font-sans);
     }
 }
 
-.stat {
-    font-size: 3.5rem;
-    font-weight: 900;
-    color: #000;
-    margin-bottom: 2rem;
-    font-family: 'Poppins', sans-serif;
+.stepNum {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+    font-family: var(--font-sans);
     line-height: 1;
-    letter-spacing: -0.02em;
-    position: relative;
-    &::after {
-        content: '';
-        display: block;
-        width: 60px;
-        height: 4px;
-        background: #ff4757;
-        margin: 1.5rem auto 0;
-        border-radius: 2px;
-    }
+    letter-spacing: var(--letter-spacing-heading);
 }
 
 .problemCard p {
     font-size: 1rem;
     line-height: 1.7;
-    color: #666;
+    color: var(--color-text-secondary);
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-}
-
-.problemBottom {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 2.5rem 2rem;
-    background: #fff;
-    border-radius: 12px;
-    border: 1px solid #e5e5e5;
-    h3 {
-        font-size: 1.75rem;
-        font-weight: 700;
-        color: #1a1a1a;
-        margin-bottom: 1rem;
-        font-family: 'Poppins', sans-serif;
-    }
-    p {
-        font-size: 1.15rem;
-        line-height: 1.7;
-        color: #555;
-        margin: 1rem 0;
-        font-family: 'Poppins', sans-serif;
-        strong {
-            color: #000;
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-    }
+    font-family: var(--font-sans);
 }
 
 @media (max-width: 1024px) {
@@ -136,28 +121,11 @@
         }
     }
     .problemCard {
-        padding: 2.5rem 1.5rem;
-    }
-    .stat {
-        font-size: 4rem;
-        margin-bottom: 1.5rem;
-        &::after {
-            width: 50px;
-            height: 3px;
-            margin-top: 1.25rem;
-        }
-    }
-    .problemBottom {
         padding: 2rem 1.5rem;
-        h3 {
-            font-size: 1.5rem;
-        }
-        p {
-            font-size: 1.05rem;
-            strong {
-                font-size: 1.1rem;
-            }
-        }
+    }
+    .stepNum {
+        font-size: 2rem;
+        margin-bottom: 0.75rem;
     }
 }
 
@@ -179,30 +147,12 @@
         gap: 1.5rem;
     }
     .problemCard {
-        padding: 2rem 1.25rem;
+        padding: 1.75rem 1.25rem;
     }
-    .stat {
-        font-size: 3.5rem;
-        margin-bottom: 1.25rem;
-        &::after {
-            width: 40px;
-            height: 3px;
-            margin-top: 1rem;
-        }
+    .stepNum {
+        font-size: 1.75rem;
     }
     .problemCard p {
         font-size: 0.95rem;
-    }
-    .problemBottom {
-        padding: 1.75rem 1.25rem;
-        h3 {
-            font-size: 1.35rem;
-        }
-        p {
-            font-size: 1rem;
-            strong {
-                font-size: 1.05rem;
-            }
-        }
     }
 }

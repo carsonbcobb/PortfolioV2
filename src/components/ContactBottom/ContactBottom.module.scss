@@ -17,12 +17,12 @@
 }
 
 .wrapper {
-    padding: 4rem 2rem 0 2rem;
-    background: #f9f9f9;
+    padding: var(--section-padding-y) var(--container-padding) 0;
+    background: var(--color-bg-alt);
 }
 
 .container {
-    max-width: 1200px;
+    max-width: var(--container-max);
     margin: 0 auto;
 }
 
@@ -39,55 +39,62 @@
 }
 
 .contact-bottom__title {
-    font-size: 3rem;
-    color: #1a1a1a;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    color: var(--color-text);
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     font-weight: 800;
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.2;
+    font-family: var(--font-sans);
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-heading);
+
+    em {
+        font-style: italic;
+        font-weight: 800;
+    }
 }
 
 .copy {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     line-height: 1.7;
-    color: #555;
+    color: var(--color-text-secondary);
     margin-bottom: 1.5rem;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-sans);
     font-weight: 500;
 }
 
 .primaryCta {
     display: inline-block;
-    padding: 1.25rem 3rem;
-    background: linear-gradient(135deg, #000 0%, #2c2c2c 100%);
+    padding: var(--button-padding);
+    background: var(--color-accent);
     color: #fff;
     text-decoration: none;
-    border-radius: 12px;
+    border-radius: var(--radius-button);
     font-weight: 700;
-    font-size: 1.2rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    font-family: 'Poppins', sans-serif;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    font-size: 1.1rem;
+    transition: var(--transition);
+    font-family: var(--font-sans);
+    margin-bottom: 1.25rem;
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.35);
     &:hover {
-        background: linear-gradient(135deg, #1a1a1a 0%, #3c3c3c 100%);
-        transform: translateY(-3px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        background: var(--color-accent-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(255, 107, 53, 0.4);
     }
 }
 
 .emailLine {
-    font-size: 1.05rem;
-    color: #555;
-    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    font-family: var(--font-sans);
     margin: 0;
     a {
-        color: #1a1a1a;
+        color: var(--color-accent);
         font-weight: 600;
         text-decoration: none;
         &:hover {
             text-decoration: underline;
+            text-underline-offset: 4px;
         }
     }
 }
@@ -120,17 +127,17 @@
 
 .calendarContainer {
     width: 100%;
-    max-width: 1200px;
+    max-width: var(--container-max);
     min-height: 600px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #fff;
-    border-radius: 20px;
-    padding: 3rem 2rem;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-    border: 2px solid rgba(255, 255, 255, 0.8);
+    background: var(--color-card-bg);
+    border-radius: var(--radius-card);
+    padding: 2.5rem 2rem;
+    box-shadow: 0 4px 24px var(--color-shadow);
+    border: 1px solid var(--color-border);
     box-sizing: border-box;
     >div {
         width: 100%;

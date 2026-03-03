@@ -54,9 +54,9 @@ const ContactBottom = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.textContent}>
-            <h2 className={styles['contact-bottom__title']}>Ready To Stop Leaving Money On The Table?</h2>
+            <h2 className={styles['contact-bottom__title']}>Your site is <em>losing revenue</em> right now. Let's find it.</h2>
             <p className={styles.copy}>
-              Every day you wait is another day of paying for traffic that doesn't convert. Let's discuss your store's performance and see if there's an opportunity to work together.
+              Every day you wait is another day of paying for traffic that doesn't convert. Book a discovery call and I'll tell you if I can help.
             </p>
             <a
               href={KOALENDAR_URL}
@@ -64,7 +64,7 @@ const ContactBottom = () => {
               rel="noopener noreferrer"
               className={styles.primaryCta}
             >
-              Schedule a Discovery Call
+              See What Your Store Is Losing
             </a>
             <p className={styles.emailLine}>Or email me directly at <a href="mailto:carson@carsoncobb.com">carson@carsoncobb.com</a></p>
           </div>
