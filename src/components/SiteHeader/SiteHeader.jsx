@@ -19,7 +19,7 @@ const SiteHeader = () => {
                         <li><a href="#results">Results</a></li>
                         <li><a href="#process">Process</a></li>
                         <li><a href="#faq">FAQ</a></li>
-                        <li><Link to="/blog/">Blog</Link></li>
+                        <li><a href="/blog/">Blog</a></li>
                     </ul>
                 </nav>
 
@@ -64,7 +64,7 @@ const SiteHeader = () => {
                         <li><a href="#results" onClick={toggleDrawer}>Results</a></li>
                         <li><a href="#process" onClick={toggleDrawer}>Process</a></li>
                         <li><a href="#faq" onClick={toggleDrawer}>FAQ</a></li>
-                        <li><Link to="/blog/" onClick={toggleDrawer}>Blog</Link></li>
+                        <li><a href="/blog/" onClick={toggleDrawer}>Blog</a></li>
                     </ul>
                 </nav>
                 <div className={styles['site-header__mobile-cta']}>
