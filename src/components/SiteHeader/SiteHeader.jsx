@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './SiteHeader.module.scss';
-import logo from '../../assets/header/logo.png';
 
 const SiteHeader = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -13,21 +12,21 @@ const SiteHeader = () => {
     return (
         <header className={styles['site-header']} role="banner" aria-label="Main Navigation">
             <div className={styles['site-header__inner']}>
-                {/* Left: Logo */}
-                <Link to="/" className={styles['site-header__logo']} aria-label="Home">
-                    <img src={logo} alt="Carson Cobb Logo" />
-                </Link>
-
-                {/* Center: Anchor Links */}
+                {/* Left: Nav links */}
                 <nav className={styles['site-header__nav']} role="navigation" aria-label="Primary">
                     <ul className={styles['nav-list']}>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#results">Results</a></li>
                         <li><a href="#process">Process</a></li>
                         <li><a href="#faq">FAQ</a></li>
-                        <li><Link to="/blog">Blog</Link></li>
+                        <li><Link to="/blog/">Blog</Link></li>
                     </ul>
                 </nav>
+
+                {/* Center: Name */}
+                <Link to="/" className={styles['site-header__brand']} aria-label="Home">
+                    Carson Cobb
+                </Link>
 
                 {/* Right: Primary CTA */}
                 <div className={styles['site-header__cta']}>
@@ -65,7 +64,7 @@ const SiteHeader = () => {
                         <li><a href="#results" onClick={toggleDrawer}>Results</a></li>
                         <li><a href="#process" onClick={toggleDrawer}>Process</a></li>
                         <li><a href="#faq" onClick={toggleDrawer}>FAQ</a></li>
-                        <li><Link to="/blog" onClick={toggleDrawer}>Blog</Link></li>
+                        <li><Link to="/blog/" onClick={toggleDrawer}>Blog</Link></li>
                     </ul>
                 </nav>
                 <div className={styles['site-header__mobile-cta']}>
