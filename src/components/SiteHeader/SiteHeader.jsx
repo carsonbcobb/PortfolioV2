@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './SiteHeader.module.scss';
 
+const EMAIL_URL = 'mailto:carson@carsoncobb.com?subject=Shopify%20store%20inquiry';
+
 const SiteHeader = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -19,7 +21,6 @@ const SiteHeader = () => {
                         <li><a href="#results">Results</a></li>
                         <li><a href="#process">Process</a></li>
                         <li><a href="#faq">FAQ</a></li>
-                        <li><a href="/blog/">Blog</a></li>
                     </ul>
                 </nav>
 
@@ -31,12 +32,10 @@ const SiteHeader = () => {
                 {/* Right: Primary CTA */}
                 <div className={styles['site-header__cta']}>
                     <a 
-                        href="https://koalendar.com/e/ghost-revenue-discovery-call"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href={EMAIL_URL}
                         className={`${styles.btn} ${styles['btn-primary']}`}
                     >
-                        Schedule a Discovery Call
+                        Get in touch
                     </a>
                 </div>
 
@@ -64,18 +63,15 @@ const SiteHeader = () => {
                         <li><a href="#results" onClick={toggleDrawer}>Results</a></li>
                         <li><a href="#process" onClick={toggleDrawer}>Process</a></li>
                         <li><a href="#faq" onClick={toggleDrawer}>FAQ</a></li>
-                        <li><a href="/blog/" onClick={toggleDrawer}>Blog</a></li>
                     </ul>
                 </nav>
                 <div className={styles['site-header__mobile-cta']}>
                     <a 
-                        href="https://koalendar.com/e/ghost-revenue-discovery-call"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href={EMAIL_URL}
                         className={`${styles.btn} ${styles['btn-primary']}`}
                         onClick={toggleDrawer}
                     >
-                        Schedule a Discovery Call
+                        Get in touch
                     </a>
                 </div>
             </div>
@@ -83,4 +79,4 @@ const SiteHeader = () => {
     );
 };
 
-export default SiteHeader; 
+export default SiteHeader;

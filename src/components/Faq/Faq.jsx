@@ -3,28 +3,28 @@ import styles from './Faq.module.scss';
 
 const faqs = [
   {
-    question: 'How much does this actually cost?',
-    answer: 'A standalone conversion audit is $1,997, delivered in 7 business days. Ongoing optimization and development is $85/hr. For agencies looking for white-label partnerships, pricing depends on volume. Schedule a call and I\'ll help figure out what makes sense for your situation.'
+    question: 'How does this work and what does it cost?',
+    answer: 'The core offer is a monthly retainer at $2,500/mo where I run your entire Shopify store across conversion, development, AI search, retention, and operations. There is also a standalone full-store audit at $2,000 if you just want to see what your store is losing first. Retainer clients get that audit as the first thing I do, at no separate cost. Send me a message and I will tell you which fits your situation.'
+  },
+  {
+    question: 'Why a retainer instead of hiring specialists as I need them?',
+    answer: 'To properly cover a store you normally need a designer, a developer, an SEO, and a retention person. That is four or five contractors, four or five invoices, and a lot of coordination that lands on you. The retainer gives you that whole range of expertise for one flat monthly price, working together instead of in silos.'
+  },
+  {
+    question: 'What does the retainer actually cover?',
+    answer: 'Everything a store needs to grow: conversion and testing, Shopify development and technical health, AI search visibility and structured data, traffic and SEO, retention and subscriptions, and the operations underneath like settings, order flows, and email. It all moves under one plan instead of being split across separate vendors.'
   },
   {
     question: 'How fast will I see results?',
-    answer: 'The audit is delivered within 7 business days. Once changes start being implemented, most clients see measurable improvements within the first few weeks. The timeline depends on how quickly your team can implement or whether I\'m handling the ongoing work.'
+    answer: 'The audit that kicks off the retainer lands within the first week or so. From there, most clients see measurable improvement within the first several weeks, and it compounds month over month because every part of the store is finally being worked on together.'
   },
   {
-    question: "I've already had my store optimized. What's different?",
-    answer: "Most optimization is surface level. A developer moves some buttons around, updates the theme, maybe speeds up load time. I go deeper. I analyze the psychology behind why visitors aren't buying, where they're dropping off, and what specific changes will recover the most revenue. It's not a design refresh. It's a forensic analysis of your entire funnel."
+    question: 'What about AI search? Why does that matter?',
+    answer: 'More buyers now find products through ChatGPT, Google AI, and other answer engines, not just traditional search. Structured data and AI search optimization decide whether your store shows up there. Most people optimizing stores still ignore it. I build it in as part of the retainer.'
   },
   {
     question: 'Do you guarantee specific results?',
-    answer: "I don't guarantee specific numbers because every store is different. What I can tell you is that I've taken stores from 2.4% to 6.7%, from 3.2% to 7.4%, and helped multiple brands more than double their revenue from the same traffic. The results speak for themselves."
-  },
-  {
-    question: "Why shouldn't I just hire an agency?",
-    answer: "You can. But with an agency you'll get an account manager who doesn't touch your store, junior developers learning on your dime, and a process designed to bill hours, not drive results. With me, you get one person who has 6+ years of experience, has optimized 50+ stores, and is personally accountable for the work."
-  },
-  {
-    question: 'What about the white-label partnership?',
-    answer: "If you run an agency and want to offer conversion audits to your clients without building a CRO team, I handle the entire audit under your brand. You set your own price, keep the margin, and keep all the ongoing work it generates. It's a new revenue stream with zero overhead."
+    answer: 'No, because every store is different. What I can share is the range of results I have driven for past clients across conversion, AI search, traffic, and retention. Those are examples of what has happened, not a promise of what any specific store will do.'
   }
 ];
 
@@ -36,8 +36,8 @@ function AccordionItem({ question, answer }) {
     setIsOpen(!isOpen);
     const el = contentRef.current;
     if (!isOpen) {
+      el.style.paddingBottom = '1.75rem';
       el.style.maxHeight = el.scrollHeight + 'px';
-      el.style.paddingBottom = '1.25rem';
     } else {
       el.style.maxHeight = '0';
       el.style.paddingBottom = '0';
@@ -80,3 +80,4 @@ const Faq = () => {
 };
 
 export default Faq;
+export { faqs };

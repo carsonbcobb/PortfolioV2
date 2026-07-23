@@ -25,19 +25,19 @@ export default function Home() {
         <
         Head >
         <
-        title > Shopify Speed & UX Optimization | Your Company Name < /title> <
+        title > Carson Cobb | Full-Store Shopify Operator for DTC Brands < /title> <
         meta name = "description"
-        content = "Expert Shopify speed optimization and UX improvements to increase your store's conversion rate. Schedule a discovery call." / >
+        content = "One operator to run your entire Shopify store end to end: conversion, development, AI search visibility, retention, and operations. 6+ years across nearly every DTC vertical." / >
 
         { /* Open Graph */ } <
         meta property = "og:title"
-        content = "Shopify Speed & UX Optimization | Your Company Name" / >
+        content = "Carson Cobb | Full-Store Shopify Operator for DTC Brands" / >
         <
         meta property = "og:description"
-        content = "Expert Shopify speed optimization and UX improvements to increase your store's conversion rate. Schedule a discovery call." / >
+        content = "One operator to run your entire Shopify store end to end: conversion, development, AI search visibility, retention, and operations. 6+ years across nearly every DTC vertical." / >
         <
         meta property = "og:image"
-        content = "https://yourdomain.com/og-image.jpg" / >
+        content = "https://carsoncobb.com/og-image.jpg" / >
         <
         meta property = "og:url"
         content = { getCurrentUrl() }
@@ -48,13 +48,13 @@ export default function Home() {
         content = "summary_large_image" / >
         <
         meta name = "twitter:title"
-        content = "Shopify Speed & UX Optimization | Your Company Name" / >
+        content = "Carson Cobb | Full-Store Shopify Operator for DTC Brands" / >
         <
         meta name = "twitter:description"
-        content = "Expert Shopify speed optimization and UX improvements to increase your store's conversion rate. Schedule a discovery call." / >
+        content = "One operator to run your entire Shopify store end to end: conversion, development, AI search visibility, retention, and operations. 6+ years across nearly every DTC vertical." / >
         <
         meta name = "twitter:image"
-        content = "https://yourdomain.com/og-image.jpg" / >
+        content = "https://carsoncobb.com/og-image.jpg" / >
 
         { /* Canonical */ } <
         link rel = "canonical"

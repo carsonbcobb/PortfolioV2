@@ -9,113 +9,13 @@
     text-transform: uppercase;
     letter-spacing: var(--letter-spacing-eyebrow);
     color: var(--color-accent);
-    margin: 0 0 1.5rem;
+    margin: 0;
     font-family: var(--font-sans);
-  }
-
-  .carousel-container {
-    width: 100%;
-    overflow: hidden;
-    margin: 1.5rem 0;
-    position: relative;
-
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      width: 80px;
-      height: 100%;
-      z-index: 2;
-      pointer-events: none;
-    }
-    &::before {
-      left: 0;
-      background: linear-gradient(to right, var(--color-bg), transparent);
-    }
-    &::after {
-      right: 0;
-      background: linear-gradient(to left, var(--color-bg), transparent);
-    }
-  }
-
-  .carousel {
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .carousel-track {
-    display: flex;
-    animation: scroll 30s linear infinite;
-    width: max-content;
-  }
-
-  .carousel-track .company-logo {
-    width: 160px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    background: var(--color-card-bg);
-    border-radius: var(--radius-card);
-    border: 1px solid var(--color-border);
-    transition: var(--transition);
-    margin: 0 1rem;
-    flex-shrink: 0;
-
-    img {
-      width: 100%;
-      height: 60px;
-      object-fit: contain;
-      filter: grayscale(100%);
-      opacity: 0.8;
-    }
-
-    &:hover {
-      border-color: var(--color-border-strong);
-      box-shadow: 0 4px 12px var(--color-shadow);
-
-      img {
-        filter: grayscale(0%);
-        opacity: 1;
-      }
-    }
-  }
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
   }
 }
 
 @media (max-width: 768px) {
   .companies-worked-with {
     padding: 1.5rem var(--container-padding);
-  }
-  .carousel-track .company-logo {
-    width: 140px;
-    height: 90px;
-    margin: 0 0.75rem;
-
-    img {
-      height: 50px;
-    }
-  }
-}
-
-@media (max-width: 425px) {
-  .carousel-track .company-logo {
-    width: 120px;
-    height: 80px;
-    margin: 0 0.5rem;
-
-    img {
-      height: 45px;
-    }
   }
 }

@@ -1,57 +1,42 @@
 import React from 'react';
 import styles from './Services.module.scss';
 
-const KOALENDAR_URL = 'https://koalendar.com/e/ghost-revenue-discovery-call';
+const EMAIL_URL = 'mailto:carson@carsoncobb.com?subject=Shopify%20store%20inquiry';
 
 const services = [
   {
-    price: '$1,997',
-    title: 'Conversion Audit',
-    tagline: 'Find exactly where your store is bleeding revenue.',
-    description: 'A 30 to 40+ page report that tears apart your entire site. Every page, every funnel step, mobile and desktop. Full data analysis using your Shopify, Google Analytics, and email marketing platform. Every issue ranked by revenue impact with the psychology behind why it\'s hurting conversions and specific instructions on how to fix it. Delivered in 7 business days.',
+    price: '$2,500/mo',
+    title: 'Full-Store Operator',
+    tagline: 'You hand me the store. I run it end to end.',
+    description: 'One operator for your entire Shopify store. Conversion and testing, development, technical and speed, AI search visibility, structured data, retention and subscriptions, and all the operations underneath: settings, order and fulfillment flows, and email setup. Instead of coordinating a team of contractors, you get one person who owns the whole store and keeps it improving every month.',
     includes: [
-      'Full-funnel conversion analysis',
-      'Conversion psychology framework',
-      'Quick wins and major problem areas',
-      'Revenue projections',
-      'Prioritized implementation roadmap',
-      'Full Loom video walkthrough'
+      'Ongoing CRO and A/B testing',
+      'Shopify development and technical health',
+      'AI search visibility and structured data',
+      'Retention, subscriptions, and email flows',
+      'Store operations and order flow management',
+      'Direct access to me, no account managers'
     ],
-    cta: 'Get Started',
-    ctaUrl: KOALENDAR_URL,
+    cta: 'Get in touch',
+    ctaUrl: EMAIL_URL,
     isAgency: false
   },
   {
-    price: '$85/hr',
-    title: 'Ongoing Optimization & Development',
-    tagline: 'I find the problems and fix them for you.',
-    description: 'Ongoing Shopify development and conversion optimization focused entirely on increasing your revenue. I implement audit recommendations, rebuild product pages, optimize site speed, improve your cart and checkout flow, and continuously test and iterate to push your conversion rate higher. You work directly with me. No junior developers. No account managers.',
+    price: '$2,000',
+    title: 'Full-Store Audit',
+    tagline: 'See exactly what your store is losing, and how I would fix it.',
+    description: 'A deep report across your entire store: conversion, technical health, AI search visibility, retention, and operations. Every issue ranked by revenue impact, with the fix and the reasoning behind it. Delivered in 7 business days. Standalone at $2,000, or included as the first thing I do when you start the retainer, at no separate cost.',
     includes: [
-      'Conversion audit and implementation',
-      'Site speed optimization',
-      'Product page optimization',
-      'Cart and checkout improvements',
-      'Post-purchase upsell setup',
-      'Ongoing conversion testing and iteration'
+      'Full-store analysis, not just conversion',
+      'Every issue ranked by revenue impact',
+      'AI search and structured data review',
+      'Prioritized fix roadmap',
+      'Clear recommendations with reasoning',
+      'Included as the starting point of the retainer'
     ],
-    cta: 'Get Started',
-    ctaUrl: KOALENDAR_URL,
+    cta: 'Get in touch',
+    ctaUrl: EMAIL_URL,
     isAgency: false
-  },
-  {
-    price: 'Custom Pricing',
-    title: 'Agency & White-Label Partnerships',
-    tagline: 'Add CRO to your agency without the overhead.',
-    description: 'I deliver full conversion audits under your brand so you can offer CRO as a service to your existing clients. You set the price, keep the markup, and keep all the ongoing work it generates from your client. Zero overhead on your end. A new revenue stream for your agency and more revenue for your clients.',
-    includes: [
-      'White-label ready reports',
-      '7 day delivery',
-      'Volume pricing available',
-      'Your branding, your client relationship'
-    ],
-    cta: "Let's Talk",
-    ctaUrl: KOALENDAR_URL,
-    isAgency: true
   }
 ];
 
@@ -59,8 +44,8 @@ const Services = () => {
   return (
     <section className={styles.servicesTiers} id="services">
       <span className={styles.servicesEyebrow}>Services</span>
-      <h2 className={styles.servicesTiersTitle}>Three Ways To Work With Me</h2>
-      <p className={styles.servicesIntro}>Standalone audit, ongoing optimization, or white-label for your agency. Pick what fits.</p>
+      <h2 className={styles.servicesTiersTitle}>Two Ways To Work With Me</h2>
+      <p className={styles.servicesIntro}>Get a standalone full-store audit, or hand me the store on a monthly retainer. Retainer clients get the audit as the first thing I do, no separate fee.</p>
       <div className={styles.serviceCards}>
         {services.map((service, index) => (
           <div
@@ -76,7 +61,7 @@ const Services = () => {
                 <li key={i}>{item}</li>
               ))}
             </ul>
-            <a href={service.ctaUrl} target="_blank" rel="noopener noreferrer" className={styles.serviceCta}>
+            <a href={service.ctaUrl} className={styles.serviceCta}>
               {service.cta}
             </a>
           </div>
@@ -87,3 +72,4 @@ const Services = () => {
 };
 
 export default Services;
+export { services };

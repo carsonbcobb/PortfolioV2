@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './MobileHeader.styles.scss';
 
-const KOALENDAR_URL = 'https://koalendar.com/e/ghost-revenue-discovery-call';
+const EMAIL_URL = 'mailto:carson@carsoncobb.com?subject=Shopify%20store%20inquiry';
 
 const MobileHeader = () => {
 	const [isOpen, setIsOpen] = React.useState(false);
@@ -38,13 +38,11 @@ const MobileHeader = () => {
 				</ul>
 				<div className='mobile-cta'>
 					<a
-						href={KOALENDAR_URL}
-						target='_blank'
-						rel='noopener noreferrer'
+						href={EMAIL_URL}
 						className='btn-primary'
 						onClick={toggleMenu}
 					>
-						Schedule a Discovery Call
+						Get in touch
 					</a>
 				</div>
 			</div>

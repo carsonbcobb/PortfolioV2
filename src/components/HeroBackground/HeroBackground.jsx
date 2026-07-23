@@ -5,7 +5,7 @@ import styles from './HeroBackground.module.scss';
 
 const HeroBackground = () => {
     return (
-        <div className={styles['hero-bg']} aria-label="Hero: boost add-to-cart">
+        <div className={styles['hero-bg']} aria-label="Hero: full-store Shopify operator">
             <SiteHeader />
             <div className={styles['hero-bg__inner']}>
                 <Hero />

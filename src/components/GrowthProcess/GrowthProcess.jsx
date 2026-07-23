@@ -3,20 +3,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import styles from './GrowthProcess.module.scss';
 
-const KOALENDAR_URL = 'https://koalendar.com/e/ghost-revenue-discovery-call';
+const EMAIL_URL = 'mailto:carson@carsoncobb.com?subject=Shopify%20store%20inquiry';
 
 const steps = [
   {
-    title: 'Discovery Call',
-    description: "We hop on a quick call where I learn about your store, your current conversion rate, your traffic sources, and what's not working. I'll ask the right questions to understand your situation and determine if there's a real opportunity to improve your numbers. By the end of the call, I'll tell you honestly whether I can help or not. If it's a fit, I'll walk you through the process, what to expect, and how we get started."
+    title: 'Get In Touch',
+    description: 'Send me a message about your store and where it is falling short. We get on a quick call so I can understand the business and tell you honestly whether I am the right fit for it.'
   },
   {
-    title: 'Audit',
-    description: "Every page. Every funnel step. Mobile and desktop. Within the first week you have a complete breakdown of where revenue is leaking and why. A 30 to 40+ page report with every issue ranked by revenue impact and a full video walkthrough explaining each recommendation."
+    title: 'I Take Over The Store',
+    description: 'You start the retainer and I get to work. The first thing I do is a full-store audit that maps where revenue is leaking, across conversion, technical, AI search, retention, and operations. That audit becomes the plan for everything that follows, at no separate cost.'
   },
   {
-    title: 'Implementation & Results',
-    description: "Whether your team implements the roadmap or I handle it through ongoing optimization, the changes start driving results within weeks. Better conversion rates, higher AOV, more revenue from the same traffic."
+    title: 'Ongoing Optimization',
+    description: 'From there I run the store month over month. Continuous improvement across conversion, development, AI search, traffic, retention, and operations, all under one flat retainer with clear accountability for the results.'
   }
 ];
 
@@ -38,8 +38,8 @@ const GrowthProcess = () => {
         </div>
 
         <div className={styles.cta}>
-          <a href={KOALENDAR_URL} target="_blank" rel="noopener noreferrer" className={styles.button}>
-            <span>Schedule a Discovery Call</span>
+          <a href={EMAIL_URL} className={styles.button}>
+            <span>Get in touch</span>
             <FontAwesomeIcon icon={faArrowRight} />
           </a>
         </div>

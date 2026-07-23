@@ -2,9 +2,9 @@ import React from 'react';
 import styles from './StatsBar.module.scss';
 
 const stats = [
-  { value: '2.4%→6.7%', label: 'Sample CVR Lift' },
-  { value: '131%', label: 'Revenue Increase (Client)' },
-  { value: '$0', label: 'Extra Ad Spend Required' }
+  { value: '1.9%→4.8%', label: 'Conversion Rate Lift' },
+  { value: '131%', label: 'Client Revenue Increase' },
+  { value: '3.4x', label: 'Organic Traffic Growth' }
 ];
 
 const StatsBar = () => {
@@ -18,6 +18,9 @@ const StatsBar = () => {
           </div>
         ))}
       </div>
+      <p className={styles.disclaimer}>
+        Results shown are specific past client outcomes. They are examples, not a guarantee or prediction of results for any other store. Individual results vary.
+      </p>
     </section>
   );
 };

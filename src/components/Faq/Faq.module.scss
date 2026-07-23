@@ -98,13 +98,13 @@
 }
 
 .faq-answer-wrapper {
-    padding: 0 2rem 0 2.5rem;
+    padding: 0 2rem;
     overflow: hidden;
 }
 
 .faq-answer {
     margin: 0;
-    padding-top: 0.5rem;
+    padding: 1.25rem 0 0.25rem;
     color: var(--color-text-secondary);
     font-size: 1.05rem;
     line-height: 1.8;
@@ -149,7 +149,7 @@
         font-size: 1.5rem;
     }
     .faq-answer-wrapper {
-        padding: 0 1.5rem 0 2rem;
+        padding: 0 1.5rem;
     }
     .faq-answer {
         font-size: 1rem;
@@ -179,7 +179,7 @@
         height: 26px;
     }
     .faq-answer-wrapper {
-        padding: 0 1.25rem 0 1.5rem;
+        padding: 0 1.25rem;
     }
     .faq-answer {
         font-size: 0.95rem;

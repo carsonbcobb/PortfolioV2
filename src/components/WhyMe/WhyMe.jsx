@@ -3,20 +3,20 @@ import styles from './WhyMe.module.scss';
 
 const cards = [
   {
-    headline: "I've seen your exact problem before.",
-    text: "After 50+ audits, patterns are obvious to me that are invisible to most. I don't guess. I look at your data and know within minutes where the biggest leaks are because I've fixed the same ones dozens of times."
+    headline: 'Depth in every part of the store.',
+    text: 'Conversion, development, AI search, traffic, retention, and operations. Real skill in each, not a generalist who is shallow everywhere. That combination is rare and it is what a store actually needs.'
   },
   {
-    headline: 'I do the work. Not a team.',
-    text: 'No account managers relaying your feedback to a junior developer who has never run a store. You talk to me. I do the analysis. I write the audit. I build the fix. One person, fully accountable.'
+    headline: 'One price instead of four invoices.',
+    text: 'Hiring each of these skills separately means four or five contractors and four or five bills. You get the same range for one flat monthly retainer.'
   },
   {
-    headline: 'I only care about revenue.',
-    text: "I'm not going to redesign your site to win a design award. Every recommendation I make is ranked by how much money it will recover. If it doesn't move the needle on revenue, it doesn't make the report."
+    headline: 'Nothing falls through the gaps.',
+    text: 'When one specialist covers the whole store, the SEO work and the dev work and the conversion work actually line up. No disconnected vendors producing a disconnected store.'
   },
   {
-    headline: "I'll tell you if I can't help.",
-    text: "Not every store needs an audit. If I don't see a real opportunity to improve your numbers, I'll tell you on the discovery call and save you the money."
+    headline: 'I will tell you if I cannot help.',
+    text: 'Not every store is a fit. If I do not see a real opportunity to move your numbers, I will tell you early and save you the money.'
   }
 ];
 
@@ -24,9 +24,9 @@ const WhyMe = () => {
   return (
     <section className={styles.proof} id="trust">
       <span className={styles.eyebrow}>Why Work With Me</span>
-      <h2>This Isn't My First Store</h2>
+      <h2>The range of a whole team, from one specialist.</h2>
       <p className={styles.proofSubtext}>
-        I've spent 6+ years inside Shopify stores across health, wellness, supplements, apparel, and DTC. I've optimized 50+ stores and generated over $10M in additional revenue for clients. Here's what that means for you.
+        Most stores need conversion, development, AI search, retention, and operations handled. Brands usually hire four or five people for that. I have spent 6+ years across 50+ Shopify stores in nearly every DTC vertical building depth in all of it, so you get the full range without the full headcount.
       </p>
       <div className={styles.proofCards}>
         {cards.map((card, index) => (

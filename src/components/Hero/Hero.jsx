@@ -1,36 +1,30 @@
 import React from 'react';
 import styles from './Hero.module.scss';
 
-const KOALENDAR_URL = 'https://koalendar.com/e/ghost-revenue-discovery-call';
+const EMAIL_URL = 'mailto:carson@carsoncobb.com?subject=Shopify%20store%20inquiry';
 
 const Hero = () => {
   return (
     <section className={styles.hero} aria-label="Hero">
       <div className={styles.container}>
         <div className={styles.content}>
-          <span className={styles.eyebrow}>Conversion Optimization Specialist</span>
-          <h1>Your store is <em>bleeding revenue</em>. I find it and fix it.</h1>
+          <span className={styles.eyebrow}>Full-Store Shopify Operator</span>
+          <h1>A whole team's worth of Shopify expertise, for one <em>low monthly retainer</em>.</h1>
 
           <div className={styles.copy}>
-            <p>I start every engagement with a full-funnel conversion audit to find exactly where your site is losing revenue. Then I fix it. Audits, ongoing optimization, and white-label partnerships for agencies.</p>
+            <p>Conversion, development, AI search, retention, and store operations. The range of skills a DTC brand usually hires four or five people for, delivered by one specialist who has done all of it. $2,500/mo.</p>
           </div>
 
           <div className={styles.ctaGroup}>
             <a
-              href={KOALENDAR_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={EMAIL_URL}
               className={styles.primaryCta}
             >
-              See What Your Store Is Losing
+              Get in touch
             </a>
             <a href="#results" className={styles.secondaryCta}>
               See My Results
             </a>
-          </div>
-
-          <div className={styles.scarcity}>
-            I take on a limited number of clients at a time so every brand gets my full attention.
           </div>
         </div>
       </div>
@@ -38,4 +32,4 @@ const Hero = () => {
   );
 };
 
-export default Hero; 
+export default Hero;

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.styles.scss';
 
-const KOALENDAR_URL = 'https://koalendar.com/e/ghost-revenue-discovery-call';
+const EMAIL_URL = 'mailto:carson@carsoncobb.com?subject=Shopify%20store%20inquiry';
 
 const Header = () => {
 	return (
@@ -21,12 +21,10 @@ const Header = () => {
 
 			<div className='header__cta'>
 				<a
-					href={KOALENDAR_URL}
-					target='_blank'
-					rel='noopener noreferrer'
+					href={EMAIL_URL}
 					className='btn-primary'
 				>
-					Schedule a Discovery Call
+					Get in touch
 				</a>
 			</div>
 		</div>

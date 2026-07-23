@@ -1,11 +1,11 @@
 export const siteConfig = {
-    name: 'Your Company Name',
-    url: 'https://yourdomain.com',
-    logo: 'https://yourdomain.com/logo.png',
-    description: 'Expert Shopify speed optimization and UX improvements to increase your store\'s conversion rate.',
+    name: 'Carson Cobb',
+    url: 'https://carsoncobb.com',
+    logo: 'https://carsoncobb.com/logo.png',
+    description: 'One operator to run your entire Shopify store end to end: conversion, development, AI search visibility, retention, and operations. 6+ years across nearly every DTC vertical.',
     social: {
         twitter: 'https://twitter.com/yourhandle',
-        linkedin: 'https://linkedin.com/company/yourcompany',
+        linkedin: 'https://www.linkedin.com/in/carsoncobb',
         github: 'https://github.com/yourusername'
     }
 };

@@ -36,6 +36,18 @@
   letter-spacing: 0.05em;
 }
 
+.disclaimer {
+  max-width: var(--container-max);
+  margin: 1.25rem auto 0;
+  padding: 0 var(--container-padding);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  text-align: center;
+  font-family: var(--font-sans);
+  opacity: 0.85;
+}
+
 @media (max-width: 768px) {
   .statsBar {
     padding: 1.5rem var(--container-padding);

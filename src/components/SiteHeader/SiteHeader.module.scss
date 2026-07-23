@@ -53,9 +53,10 @@
   transform: translateX(-50%);
   text-decoration: none;
   color: var(--color-text);
-  font-weight: 700;
+  font-weight: 800;
   font-size: 1.25rem;
-  letter-spacing: 0.02em;
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-heading);
   font-family: var(--font-sans);
   transition: var(--transition);
 

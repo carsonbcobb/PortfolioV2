@@ -196,10 +196,10 @@ exports.handler = async (event) => {
       '@type': 'Person',
       name: 'Carson Cobb',
       url: 'https://carsoncobb.com',
-      jobTitle: 'Conversion Optimization Specialist',
+      jobTitle: 'Full-Store Shopify Operator',
       description:
-        'Founder of Ghost Revenue. 6+ years optimizing ecommerce stores. 50+ Shopify stores optimized. $10M+ in recovered revenue.',
-      sameAs: ['https://www.linkedin.com/in/carsoncobb/', 'https://ghostrevenue.co'],
+        'Full-store Shopify operator with 6+ years across DTC brands. Across 50+ stores worked on, clients have seen a combined $10M+ in additional revenue.',
+      sameAs: ['https://www.linkedin.com/in/carsoncobb/', 'https://carsoncobb.com'],
     },
     publisher: { '@type': 'Person', name: 'Carson Cobb', url: 'https://carsoncobb.com' },
     datePublished: publishedDate,

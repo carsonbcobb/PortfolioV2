@@ -8,7 +8,6 @@ import Contact from './sections/Contact/Contact';
 import About from './sections/About/About';
 import Home from './sections/Home/Home';
 import Admin from './sections/Admin/Admin';
-import StickyAuditButton from './components/StickyAuditButton/StickyAuditButton';
 
 function App() {
     return ( <
@@ -17,8 +16,6 @@ function App() {
         Router >
         <
         Content / >
-        <
-        StickyAuditButton / >
         <
         /Router> < /
         div >

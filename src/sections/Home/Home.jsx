@@ -8,6 +8,7 @@ import GrowthProcess from '../../components/GrowthProcess/GrowthProcess';
 import HeroBackground from '../../components/HeroBackground/HeroBackground';
 import Faq from '../../components/Faq/Faq';
 import CaseStudies from '../../components/CaseStudies/CaseStudies';
+import Outcomes from '../../components/Outcomes/Outcomes';
 import TheProblem from '../../components/TheProblem/TheProblem';
 import WhyMe from '../../components/WhyMe/WhyMe';
 
@@ -19,14 +20,19 @@ const Home = () => {
 			<StatsBar />
 			<Services />
 			<CaseStudies />
+			<Outcomes />
 			<TheProblem />
 			<GrowthProcess />
 			<WhyMe />
 			<Faq />
 			<ContactBottom />
 			<footer className="site-footer">
-				<p>© 2026 Carson Cobb. All rights reserved.</p>
-				<p><a href="mailto:carson@carsoncobb.com">carson@carsoncobb.com</a></p>
+				<p className="site-footer__primary">
+					© 2026 Carson Cobb · <a href="mailto:carson@carsoncobb.com">carson@carsoncobb.com</a>
+				</p>
+				<p className="site-footer__disclaimer">
+					Shopify is a trademark of Shopify Inc. Carson Cobb is an independent contractor and is not affiliated with or endorsed by Shopify Inc.
+				</p>
 			</footer>
 		</div>
 	);
