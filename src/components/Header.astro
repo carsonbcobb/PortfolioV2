@@ -3,11 +3,11 @@ import Button from './Button.astro';
 import { CAL_LINK } from '../data/site';
 
 const links = [
-  { href: '/#services', label: 'Services' },
   { href: '/#results', label: 'Results' },
+  { href: '/#services', label: 'Services' },
   { href: '/#process', label: 'Process' },
-  { href: '/agencies', label: 'For Agencies' },
   { href: '/#faq', label: 'FAQ' },
+  { href: '/agencies', label: 'For Agencies' },
 ];
 const current = Astro.url.pathname.replace(/\/$/, '') || '/';
 ---

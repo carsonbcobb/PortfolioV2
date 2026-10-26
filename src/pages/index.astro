@@ -4,6 +4,7 @@ import Section from '../components/Section.astro';
 import Card from '../components/Card.astro';
 import Button from '../components/Button.astro';
 import ContactCta from '../components/ContactCta.astro';
+import Testimonials from '../components/Testimonials.astro';
 import {
   CAL_LINK,
   SITE_URL,
@@ -16,7 +17,6 @@ import {
   PLANS,
   PLAN_TERMS,
   SPRINT,
-  RESULTS_NOTE,
   CASE_STUDIES,
   TESTIMONIALS,
   RECENT_WORK,
@@ -134,6 +134,83 @@ const jsonLd = [
     <p class="disclaimer">{DISCLAIMER}</p>
   </section>
 
+  <!-- The Problem -->
+  <Section
+    id="problem"
+    eyebrow="The Problem"
+    title="Hiring each skill separately is <em>expensive and disjointed</em>."
+    intro="You need a developer, someone on conversion, someone on email and subscriptions, and someone keeping the store running. Hiring each one means four contractors, four invoices, and you stuck in the middle coordinating all of it."
+  >
+    <div class="grid grid--3">
+      {
+        PROBLEMS.map((p, i) => (
+          <Card class="problem">
+            <span class="problem__num">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{p.title}</h3>
+            <p>{p.text}</p>
+          </Card>
+        ))
+      }
+    </div>
+  </Section>
+
+  <!-- Results -->
+  <Section
+    id="results"
+    bg="alt"
+    eyebrow="Results"
+    title="What changes when your store is run right."
+    intro="Results from past clients. Names withheld; most of my work is under NDA or white label."
+  >
+    <p class="disclaimer results__disclaimer">{DISCLAIMER}</p>
+    <div class="grid grid--3">
+      {
+        CASE_STUDIES.map((c) => (
+          <Card as="article" class="case">
+            <span class="case__tag">{c.tag}</span>
+            <h3 class="case__headline">{c.headline}</h3>
+            <p class="case__context">{c.context}</p>
+            <dl class="case__shift">
+              <div>
+                <dt>Before</dt>
+                <dd>{c.before}</dd>
+              </div>
+              <div>
+                <dt>After</dt>
+                <dd>{c.after}</dd>
+              </div>
+            </dl>
+            <div class="case__stats">
+              {c.stats.map((st) => (
+                <div>
+                  <div class="case__stat-value">{st.value}</div>
+                  <div class="case__stat-label">{st.label}</div>
+                </div>
+              ))}
+            </div>
+          </Card>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Testimonials items={TESTIMONIALS} />
+
+  <!-- Recent Work -->
+  <Section id="work" eyebrow="Recent Work" title="More recent wins." intro="A sample of results from recent projects.">
+    <ul class="grid grid--4 work">
+      {
+        RECENT_WORK.map((w) => (
+          <Card as="li" class="work__card">
+            <h3 class="work__result">{w.result}</h3>
+            <span class="work__tag">{w.tag}</span>
+            <p>{w.text}</p>
+          </Card>
+        ))
+      }
+    </ul>
+  </Section>
+
   <!-- Plans -->
   <Section
     id="services"
@@ -184,94 +261,6 @@ const jsonLd = [
     </Card>
   </Section>
 
-  <!-- Results -->
-  <Section id="results" eyebrow="Results" title="Real Stores. Real Results.">
-    <div class="results__notes">
-      <p class="disclaimer">{DISCLAIMER}</p>
-      <p class="disclaimer">{RESULTS_NOTE}</p>
-    </div>
-    <div class="grid grid--3">
-      {
-        CASE_STUDIES.map((c) => (
-          <Card as="article" class="case">
-            <span class="case__tag">{c.tag}</span>
-            <h3 class="case__title">{c.title}</h3>
-            <h4>The Problem</h4>
-            <p>{c.problem}</p>
-            <h4>What I Did</h4>
-            <p>{c.solution}</p>
-            <div class="case__result">
-              <div class="case__result-headline">{c.resultPrimary}</div>
-              <div class="case__result-metric">{c.resultSecondary}</div>
-            </div>
-          </Card>
-        ))
-      }
-    </div>
-  </Section>
-
-  <!-- Testimonials -->
-  {
-    TESTIMONIALS.length > 0 && (
-      <section class="testimonials" aria-label="Testimonials">
-        <div class="grid grid--2">
-          {TESTIMONIALS.map((t) => (
-            <Card as="article" class="testimonial">
-              <span class="testimonial__mark" aria-hidden="true">“</span>
-              <blockquote>{t.quote}</blockquote>
-              <p class="testimonial__cite">
-                <strong>{t.name}</strong>, {t.brand}
-              </p>
-            </Card>
-          ))}
-        </div>
-      </section>
-    )
-  }
-
-  <!-- Recent Work -->
-  <Section
-    id="work"
-    bg="alt"
-    eyebrow="Recent Work"
-    title="What I've shipped lately."
-    intro="A sample of recent projects. Names withheld; most of my work is under NDA."
-  >
-    <ul class="grid grid--4 work">
-      {
-        RECENT_WORK.map((w) => (
-          <Card as="li" class="work__card">
-            <span class="work__tag">{w.tag}</span>
-            <h3>{w.title}</h3>
-            <p>{w.text}</p>
-            <p class="work__result">{w.result}</p>
-          </Card>
-        ))
-      }
-    </ul>
-  </Section>
-
-  <!-- The Problem -->
-  <Section
-    id="problem"
-    bg="alt"
-    eyebrow="The Problem"
-    title="Hiring each skill separately is <em>expensive and disjointed</em>."
-    intro="To cover everything a store needs, most DTC brands hire a designer, a developer, an SEO, and a retention person. That is four or five salaries or contractors, none of them cheap, and they rarely coordinate. You pay a fortune and still stitch the pieces together yourself."
-  >
-    <div class="grid grid--3">
-      {
-        PROBLEMS.map((p, i) => (
-          <Card class="problem">
-            <span class="problem__num">{String(i + 1).padStart(2, '0')}</span>
-            <h3>{p.title}</h3>
-            <p>{p.text}</p>
-          </Card>
-        ))
-      }
-    </div>
-  </Section>
-
   <!-- Process -->
   <Section id="process" eyebrow="Process" title="Here's How It Works">
     <ol class="grid grid--3 steps">
@@ -296,8 +285,18 @@ const jsonLd = [
     bg="alt"
     eyebrow="Why Work With Me"
     title="One specialist. Every part of the store."
-    intro="Most stores need conversion, development, retention, and operations handled. Brands usually hire four or five people for that. I have spent 6+ years across 50+ Shopify stores in nearly every DTC vertical building depth in all of it, so you get the full range without the full headcount."
+    intro="You get one senior operator who knows your whole store, answers directly, and is accountable for the numbers. No account managers, no handoffs, no juniors learning on your store."
   >
+    <div class="grid grid--2">
+      {
+        WHY_ME.map((w) => (
+          <Card class="why">
+            <h3>{w.title}</h3>
+            <p>{w.text}</p>
+          </Card>
+        ))
+      }
+    </div>
     <div class="about">
       {
         HEADSHOT ? (
@@ -312,16 +311,6 @@ const jsonLd = [
         I'm Carson. I've spent 6+ years inside 50+ Shopify stores, from scrappy founders to eight figure brands, and
         I've run stores end to end. I'm based in California and work with brands across the US.
       </p>
-    </div>
-    <div class="grid grid--2">
-      {
-        WHY_ME.map((w) => (
-          <Card class="why">
-            <h3>{w.title}</h3>
-            <p>{w.text}</p>
-          </Card>
-        ))
-      }
     </div>
   </Section>
 
@@ -571,10 +560,7 @@ const jsonLd = [
   }
 
   /* Results */
-  .results__notes {
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
+  .results__disclaimer {
     margin: -2rem auto 3rem;
   }
 
@@ -594,86 +580,78 @@ const jsonLd = [
     border: 1px solid rgba(var(--color-accent-rgb), 0.25);
     border-radius: 999px;
     padding: 0.35rem 0.75rem;
-    margin-bottom: 0.85rem;
-  }
-
-  .case__title {
-    font-size: 1.35rem;
-    padding-bottom: 1rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .case h4 {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--color-accent-text);
-    text-transform: uppercase;
-    letter-spacing: var(--letter-spacing-eyebrow);
-    margin-bottom: 0.5rem;
-  }
-
-  .case p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: var(--color-text-secondary);
     margin-bottom: 1rem;
   }
 
-  .case__result {
+  .case__headline {
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: var(--letter-spacing-heading);
+    margin-bottom: 0.75rem;
+  }
+
+  .case__context {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .case__shift {
+    margin: 0 0 1.5rem;
+  }
+
+  .case__shift div + div {
+    margin-top: 1rem;
+  }
+
+  .case__shift dt {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-eyebrow);
+    color: var(--color-text-secondary);
+    margin-bottom: 0.25rem;
+  }
+
+  .case__shift div + div dt {
+    color: var(--color-accent-text);
+  }
+
+  .case__shift dd {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .case__stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
     margin-top: auto;
-    padding: 1.75rem 1.5rem;
+    padding: 1.25rem;
     background: var(--color-result-bg);
     border: 1px solid rgba(76, 175, 80, 0.3);
     border-radius: var(--radius-card);
     text-align: center;
   }
 
-  .case__result-headline {
-    font-size: 1.5rem;
+  .case__stat-value {
+    font-size: 1.2rem;
     font-weight: 800;
-    line-height: 1.3;
+    line-height: 1.25;
     letter-spacing: var(--letter-spacing-heading);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
   }
 
-  .case__result-metric {
-    font-size: 0.95rem;
+  .case__stat-label {
+    font-size: 0.8rem;
     font-weight: 600;
+    line-height: 1.4;
     color: var(--color-result-text);
-  }
-
-  /* Testimonials */
-  .testimonials {
-    padding: 0 var(--container-padding) var(--section-padding-y);
-  }
-
-  .testimonial {
-    margin: 0;
-  }
-
-  .testimonial__mark {
-    display: block;
-    height: 2.5rem;
-    font-size: 4.5rem;
-    font-weight: 800;
-    line-height: 1;
-    color: var(--color-accent);
-  }
-
-  .testimonial blockquote {
-    margin: 0 0 1rem;
-    font-size: 1.1rem;
-    line-height: 1.7;
-  }
-
-  .testimonial__cite {
-    font-size: 0.9rem;
-    color: var(--color-text-secondary);
-  }
-
-  .testimonial strong {
-    color: var(--color-text);
   }
 
   /* Recent Work */
@@ -688,38 +666,27 @@ const jsonLd = [
     padding: 2rem 1.5rem;
   }
 
+  .work__card .work__result {
+    font-size: 1.3rem;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: var(--letter-spacing-heading);
+    margin-bottom: 1rem;
+  }
+
   .work__tag {
     font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: var(--letter-spacing-eyebrow);
     color: var(--color-accent-text);
-    margin-bottom: 0.6rem;
-  }
-
-  .work__card h3 {
-    font-size: 1.05rem;
-    line-height: 1.35;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.5rem;
   }
 
   .work__card p {
     font-size: 0.9rem;
     line-height: 1.6;
     color: var(--color-text-secondary);
-  }
-
-  .work__card .work__result {
-    margin-top: auto;
-    padding-top: 1rem;
-    font-size: 1rem;
-    font-weight: 700;
-    line-height: 1.4;
-    color: var(--color-accent-text);
-  }
-
-  .work__card p:not(.work__result) {
-    margin-bottom: 1rem;
   }
 
   /* Why Work With Me */
@@ -754,23 +721,21 @@ const jsonLd = [
   .about {
     display: flex;
     align-items: center;
-    gap: 1.25rem;
-    max-width: 720px;
-    margin: -1rem auto 3rem;
-    padding: 1.25rem 1.5rem;
-    background: var(--color-card-bg);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-card);
+    gap: 1rem;
+    max-width: 640px;
+    margin: 2.5rem auto 0;
   }
 
   .about p {
+    font-size: 0.9rem;
     line-height: 1.6;
+    color: var(--color-text-secondary);
   }
 
   .about__photo {
     flex-shrink: 0;
-    width: 80px;
-    height: 80px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     object-fit: cover;
   }
@@ -782,7 +747,7 @@ const jsonLd = [
     background: var(--color-accent);
     color: #fff;
     font-weight: 800;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
   }
 
   /* FAQ */
@@ -931,7 +896,6 @@ const jsonLd = [
     .about {
       flex-direction: column;
       text-align: center;
-      margin-top: 0;
     }
   }
 
@@ -948,8 +912,8 @@ const jsonLd = [
     .stat__value {
       font-size: 1.75rem;
     }
-    .case__result-headline {
-      font-size: 1.2rem;
+    .case__headline {
+      font-size: 1.3rem;
     }
   }
 </style>

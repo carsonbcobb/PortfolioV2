@@ -25,8 +25,8 @@ export const HEADSHOT = publicFile('carson.jpg') ? '/carson.jpg' : null;
 // `npm run check:placeholders` fails the build while any remain in dist/.
 export const STATS = [
   { value: '50+', label: 'Shopify stores' },
-  { value: '[2.1x]', label: 'Average conversion lift on rebuilt PDPs' },
-  { value: '[$40M+]', label: 'In client revenue supported' },
+  { value: '2.1x', label: 'Avg conversion lift' },
+  { value: '$40M+', label: 'In client revenue supported' },
   { value: '6+', label: 'Years' },
 ];
 
@@ -98,43 +98,51 @@ export const SPRINT = {
   ],
 };
 
-export const RESULTS_NOTE = 'Client names withheld. Most of my work is under NDA or white label.';
-
 export const CASE_STUDIES = [
   {
-    tag: 'Ongoing Retainer',
-    title: 'Skincare Brand, Run End to End',
-    problem:
-      'One hero product drove over half of revenue, the collection page buried products under an oversized banner, the mobile cart fought itself, and nobody owned the store week to week.',
-    solution:
-      'Took over the store on a monthly retainer. Built a dedicated hero product page, a product finder quiz, and rebuilt collection and cart layouts for mobile. Launched a content program answering the exact questions buyers ask before purchasing.',
-    resultPrimary: '[2.1% → 3.6%] conversion rate',
-    resultSecondary: '[62%] increase in organic revenue in [6] months',
+    tag: 'Skincare · Ongoing Retainer',
+    headline: 'Conversion up [71%] without spending more on ads.',
+    context: '[$2M] skincare brand with one hero product and no one owning the store.',
+    before:
+      'A store that looked fine but leaked buyers at every step, from a buried collection page to a clunky mobile cart.',
+    after:
+      'A store that guides shoppers to the right product and makes checking out on a phone effortless, improving every month.',
+    stats: [
+      { value: '[2.1% → 3.6%]', label: 'conversion rate' },
+      { value: '[+62%]', label: 'organic revenue in [6] months' },
+    ],
   },
   {
-    tag: 'Retention + Subscriptions',
-    title: 'Tea Subscription Brand',
-    problem:
-      'Strong first orders, weak repeat revenue. Subscriptions were an afterthought, there was no upsell path, and Recharge and Rebuy were configured in ways that fought each other.',
-    solution:
-      'Rebuilt the subscription experience from product page to post-purchase. Untangled the Recharge and Rebuy setup, repositioned subscribe and save on product pages, built smart cart upsells, and launched post-purchase offers.',
-    resultPrimary: 'Subscription opt-in [8% → 21%]',
-    resultSecondary: '[18%] AOV increase on the same traffic',
+    tag: 'Subscriptions · Retention',
+    headline: 'Nearly [3x] more customers choosing subscribe and save.',
+    context: 'Tea subscription brand with strong first orders and weak repeat revenue.',
+    before:
+      'Subscriptions were buried, there was no upsell path, and the subscription and upsell apps were working against each other.',
+    after:
+      'Subscribing is the obvious choice on every product page, and every order gets a relevant upsell before and after checkout.',
+    stats: [
+      { value: '[8% → 21%]', label: 'subscription opt-in' },
+      { value: '[+18%]', label: 'average order value' },
+    ],
   },
   {
-    tag: 'Complex Development',
-    title: 'Multi Store Catalog Rebuild',
-    problem:
-      "Three Shopify stores and hundreds of products, with specs trapped in description text. Shoppers couldn't filter or compare, and every launch meant hours of copy and paste.",
-    solution:
-      'Designed a structured product data system, one definition per category, and mapped it into templates across all three stores. Specs, comparisons, and filters now update from a single source.',
-    resultPrimary: '[34%] more shoppers using filters to find products',
-    resultSecondary: 'New product setup cut from [3 hours] to [15 minutes]',
+    tag: 'Multi Store · Development',
+    headline: 'Product launches went from an afternoon to [15] minutes.',
+    context: 'Brand running 3 Shopify stores and hundreds of products.',
+    before:
+      "Specs were trapped in description text, shoppers couldn't filter or compare, and every launch meant hours of copy and paste across stores.",
+    after:
+      'One source of product data powers filters, comparisons, and specs across all three stores. Shoppers find what they need faster.',
+    stats: [
+      { value: '[+34%]', label: 'shoppers using filters' },
+      { value: '[3 hrs → 15 min]', label: 'per product launch' },
+    ],
   },
 ];
 
-// Replace the bracketed text with real quotes. The section is hidden in production
-// builds until both quotes are filled in (dev shows the placeholders).
+// Testimonials stay off until real quotes exist. To turn them on, fill in both quotes
+// and set SHOW_TESTIMONIALS to true. Unfilled quotes never render in production.
+export const SHOW_TESTIMONIALS = false;
 const TESTIMONIAL_1 = {
   quote: '[Real client quote, 1 to 2 sentences, about results or reliability]',
   name: '[Founder]',
@@ -147,56 +155,50 @@ const TESTIMONIAL_2 = {
 };
 const isFilled = (t: typeof TESTIMONIAL_1) => Object.values(t).every((v) => v.trim() && !v.includes('['));
 export const TESTIMONIALS =
-  import.meta.env.DEV || [TESTIMONIAL_1, TESTIMONIAL_2].every(isFilled) ? [TESTIMONIAL_1, TESTIMONIAL_2] : [];
+  SHOW_TESTIMONIALS && (import.meta.env.DEV || [TESTIMONIAL_1, TESTIMONIAL_2].every(isFilled))
+    ? [TESTIMONIAL_1, TESTIMONIAL_2]
+    : [];
 
 export const RECENT_WORK = [
   {
-    tag: 'Operations',
-    title: 'Full store operations, supplement brand',
-    text: 'Ran the store end to end: launches, promos, theme, apps, and order flows.',
-    result: '[Zero] downtime across [3] BFCM seasons',
+    result: '[Zero] downtime across [3] Black Friday seasons',
+    tag: 'Supplements · Operations',
+    text: 'Store fully run end to end through peak season.',
   },
   {
-    tag: 'Conversion',
-    title: 'PDP rebuild, wellness brand',
-    text: 'New product page template built around education and trust, A/B tested against the original.',
-    result: '[+27%] add to cart rate',
+    result: 'Add to cart up [27%]',
+    tag: 'Wellness · Conversion',
+    text: 'New product page, tested head to head against the old one.',
   },
   {
-    tag: 'Subscriptions',
-    title: 'Post-purchase offers, wellness brand',
-    text: 'One click post-purchase cross-sells built in Recharge.',
-    result: '[11%] take rate on offers',
+    result: '[11%] of buyers taking a post-purchase offer',
+    tag: 'Wellness · Subscriptions',
+    text: 'One click offers added right after checkout.',
   },
   {
-    tag: 'Cart',
-    title: 'Cart drawer rebuild, skincare brand',
-    text: 'Rebuilt the mobile cart with tiered upsells and fixed conflicting discount launchers.',
-    result: '[+$6] average order value',
+    result: 'Average order up [$6]',
+    tag: 'Skincare · Cart',
+    text: 'Rebuilt mobile cart with smart upsells.',
   },
   {
-    tag: 'Email',
-    title: 'Klaviyo flow overhaul, skincare brand',
-    text: 'Audited and rebuilt welcome, abandonment, and post-purchase flows.',
-    result: '[+38%] flow revenue',
+    result: 'Email flow revenue up [38%]',
+    tag: 'Skincare · Email',
+    text: 'Welcome, abandonment, and post-purchase flows rebuilt.',
   },
   {
-    tag: 'Speed',
-    title: 'App cleanup and speed pass, beauty brand',
-    text: 'Removed dead apps and scripts and rebuilt slow sections.',
-    result: 'Mobile load time [5.8s → 2.4s]',
+    result: 'Mobile load time cut from [5.8s] to [2.4s]',
+    tag: 'Beauty · Speed',
+    text: 'Dead apps and slow code removed.',
   },
   {
-    tag: 'Launch',
-    title: 'New category launch, energy drink brand',
-    text: 'Product pages and landing pages for a product category customers had never heard of.',
-    result: 'Launched in [10] days',
+    result: 'New category launched in [10] days',
+    tag: 'Energy Drinks · Launch',
+    text: 'Product and landing pages built for a product customers had never heard of.',
   },
   {
-    tag: 'Catalog',
-    title: 'Variant migration, home goods brand',
-    text: 'Merged separate products into variants without losing a single review or ranking.',
-    result: '[1,200+] reviews preserved',
+    result: '[1,200+] reviews kept through a full catalog rebuild',
+    tag: 'Home Goods · Catalog',
+    text: 'Separate products merged into variants with zero lost reviews or rankings.',
   },
 ];
 
@@ -232,19 +234,19 @@ export const PROCESS = [
 
 export const WHY_ME = [
   {
-    title: 'Depth in every part of the store.',
-    text: 'Conversion, development, retention, and operations. Real skill in each, not a generalist who is shallow everywhere. That combination is rare and it is what a store actually needs.',
-  },
-  {
-    title: 'One price instead of four invoices.',
-    text: 'Hiring each of these skills separately means four or five contractors and four or five bills. You get the same range for one flat monthly retainer.',
-  },
-  {
-    title: 'Nothing falls through the gaps.',
+    title: 'Nothing falls between the cracks.',
     text: 'When one specialist covers the whole store, the SEO work and the dev work and the conversion work actually line up. No disconnected vendors producing a disconnected store.',
   },
   {
-    title: 'I will tell you if I cannot help.',
+    title: 'One invoice instead of four.',
+    text: 'Hiring each of these skills separately means four or five contractors and four or five bills. You get the same range for one flat monthly retainer.',
+  },
+  {
+    title: 'You talk to the person doing the work.',
+    text: "Every message comes straight to me. No account managers relaying your requests to someone you've never met.",
+  },
+  {
+    title: 'Honest about fit.',
     text: 'Not every store is a fit. If I do not see a real opportunity to move your numbers, I will tell you early and save you the money.',
   },
 ];
