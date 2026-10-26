@@ -1,0 +1,208 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Section from '../components/Section.astro';
+import Card from '../components/Card.astro';
+import Button from '../components/Button.astro';
+import ContactCta from '../components/ContactCta.astro';
+import { CAL_LINK, SITE_URL, LINKEDIN_URL, EMAIL, AGENCY_EMAIL_URL, AGENCY_SERVICES, AGENCY_STEPS } from '../data/site';
+
+const description =
+  'Senior Shopify dev capacity for Klaviyo, paid media, CRO, and growth agencies. Your brand, your client relationship. I work under your name, in your Slack and your project tools.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${SITE_URL}/#carson`,
+    name: 'Carson Cobb',
+    jobTitle: 'Shopify Store Operator',
+    url: SITE_URL,
+    sameAs: [LINKEDIN_URL],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: 'Carson Cobb, White Label Shopify Development',
+    url: `${SITE_URL}/agencies`,
+    email: EMAIL,
+    description,
+    founder: { '@id': `${SITE_URL}/#carson` },
+    areaServed: 'US',
+    makesOffer: {
+      '@type': 'Offer',
+      name: 'White label Shopify development, 10 hour block',
+      description: 'Prepaid 10 hour blocks at $100/hr. Volume rate at 40+ hours/month.',
+      price: 1000,
+      priceCurrency: 'USD',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: 100,
+        priceCurrency: 'USD',
+        unitText: 'HOUR',
+      },
+    },
+  },
+];
+---
+
+<Layout
+  title="White Label Shopify Developer for Agencies | Carson Cobb"
+  description={description}
+  jsonLd={jsonLd}
+>
+  <section class="a-hero" aria-label="Introduction">
+    <span class="eyebrow">For Agencies</span>
+    <h1>White label Shopify development <em>for agencies</em>.</h1>
+    <p class="a-hero__copy">{description}</p>
+    <div class="a-hero__ctas">
+      <Button href={CAL_LINK} track="book_call">Book a call</Button>
+      <Button href="#pricing" variant="text">See pricing</Button>
+    </div>
+  </section>
+
+  <Section id="work" bg="alt" eyebrow="What I Take On" title="Senior dev work, shipped under your name.">
+    <div class="grid grid--3">
+      {
+        AGENCY_SERVICES.map((s) => (
+          <Card class="a-service">
+            <h3>{s.title}</h3>
+            <p>{s.text}</p>
+          </Card>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section id="pricing" eyebrow="Pricing" title="Simple hourly blocks.">
+    <Card class="a-pricing" featured>
+      <p class="a-pricing__price">$100<span>/hr</span></p>
+      <p class="a-pricing__terms">In prepaid 10 hour blocks. Volume rate at 40+ hours/month.</p>
+      <Button href={CAL_LINK} track="book_call">Book a call</Button>
+    </Card>
+  </Section>
+
+  <Section id="process" bg="alt" eyebrow="How It Works" title="Three steps to extra capacity.">
+    <ol class="grid grid--3 steps">
+      {
+        AGENCY_STEPS.map((s, i) => (
+          <li class="step">
+            <span class="step__num">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{s.title}</h3>
+            <p>{s.text}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </Section>
+
+  <Section id="trust" eyebrow="Your Client, Always" title="Your clients never know I exist.">
+    <p class="a-trust">No poaching, ever. Happy to sign your NDA and non solicit.</p>
+  </Section>
+
+  <ContactCta
+    title="Need more <em>Shopify dev capacity</em>?"
+    copy="Book a 20 minute intro call. Tell me about your clients and your stack, and I will tell you honestly whether I am a fit."
+    emailUrl={AGENCY_EMAIL_URL}
+  />
+</Layout>
+
+<style is:global>
+  .a-hero {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem var(--container-padding) 5rem;
+    text-align: center;
+  }
+
+  .a-hero h1 {
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .a-hero__copy {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+  }
+
+  .a-hero__ctas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .a-service h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .a-service p {
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+  }
+
+  .a-pricing {
+    max-width: 520px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .a-pricing__price {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--color-accent);
+    letter-spacing: var(--letter-spacing-heading);
+  }
+
+  .a-pricing__price span {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+  }
+
+  .a-pricing__terms {
+    margin: 0.75rem 0 1.75rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+  }
+
+  #process .steps {
+    margin-bottom: 0;
+  }
+
+  .a-trust {
+    margin-top: -2rem;
+    text-align: center;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+  }
+
+  @media (max-width: 768px) {
+    .a-hero {
+      padding: 2.5rem var(--container-padding) 3rem;
+    }
+    .a-hero h1 {
+      font-size: 2.25rem;
+    }
+    .a-hero__copy {
+      font-size: 1.1rem;
+    }
+    .a-trust {
+      margin-top: -1rem;
+    }
+  }
+
+  @media (max-width: 425px) {
+    .a-hero h1 {
+      font-size: 2rem;
+    }
+    .a-hero__copy {
+      font-size: 1rem;
+    }
+  }
+</style>

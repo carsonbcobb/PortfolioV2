@@ -1,0 +1,81 @@
+---
+interface Props {
+  id?: string;
+  eyebrow?: string;
+  /** May contain <em> for the italic accent */
+  title?: string;
+  intro?: string;
+  bg?: 'white' | 'alt';
+  label?: string;
+  class?: string;
+}
+
+const { id, eyebrow, title, intro, bg = 'white', label, class: className } = Astro.props;
+---
+
+<section id={id} class:list={['section', `section--${bg}`, className]} aria-label={label}>
+  {
+    (eyebrow || title || intro) && (
+      <header class="section__header">
+        {eyebrow && <span class="eyebrow">{eyebrow}</span>}
+        {title && <h2 class="section__title" set:html={title} />}
+        {intro && <p class="section__intro">{intro}</p>}
+      </header>
+    )
+  }
+  <slot />
+</section>
+
+<style>
+  .section {
+    padding: var(--section-padding-y) var(--container-padding);
+  }
+
+  .section--white {
+    background: var(--color-bg);
+  }
+
+  .section--alt {
+    background: var(--color-bg-alt);
+  }
+
+  .section__header {
+    text-align: center;
+    max-width: var(--container-max);
+    margin: 0 auto 3rem;
+  }
+
+  .section__title {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    color: var(--color-text);
+  }
+
+  .section__intro {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    max-width: 720px;
+    margin: 1rem auto 0;
+  }
+
+  @media (max-width: 768px) {
+    .section__header {
+      margin-bottom: 2rem;
+    }
+    .section__title {
+      font-size: 2rem;
+    }
+    .section__intro {
+      font-size: 1.05rem;
+    }
+  }
+
+  @media (max-width: 425px) {
+    .section__title {
+      font-size: 1.75rem;
+    }
+    .section__intro {
+      font-size: 1rem;
+    }
+  }
+</style>

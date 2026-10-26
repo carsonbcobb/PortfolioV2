@@ -1,0 +1,47 @@
+---
+import { EMAIL } from '../data/site';
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <p class="site-footer__primary">
+    © {year} Carson Cobb · <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+  </p>
+  <p class="site-footer__disclaimer">
+    Shopify is a trademark of Shopify Inc. Carson Cobb is an independent contractor and is not affiliated with or
+    endorsed by Shopify Inc.
+  </p>
+</footer>
+
+<style>
+  .site-footer {
+    padding: 2.5rem var(--container-padding);
+    background: var(--color-bg);
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+    color: var(--color-text-secondary);
+  }
+
+  .site-footer a {
+    color: var(--color-accent-text);
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .site-footer a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .site-footer__primary {
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .site-footer__disclaimer {
+    max-width: 520px;
+    margin: 0 auto;
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+</style>

@@ -1,0 +1,48 @@
+---
+interface Props {
+  as?: 'div' | 'article' | 'li';
+  featured?: boolean;
+  class?: string;
+}
+
+const { as: Tag = 'div', featured = false, class: className } = Astro.props;
+---
+
+<Tag class:list={['card', { 'card--featured': featured }, className]}>
+  <slot />
+</Tag>
+
+<style>
+  .card {
+    position: relative;
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    padding: 2.5rem 2rem;
+    box-shadow: 0 2px 8px var(--color-shadow);
+    transition: var(--transition);
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px var(--color-shadow-hover);
+    border-color: var(--color-border-strong);
+  }
+
+  .card--featured,
+  .card--featured:hover {
+    border: 2px solid var(--color-accent);
+  }
+
+  @media (max-width: 768px) {
+    .card {
+      padding: 2rem 1.5rem;
+    }
+  }
+
+  @media (max-width: 425px) {
+    .card {
+      padding: 1.75rem 1.25rem;
+    }
+  }
+</style>

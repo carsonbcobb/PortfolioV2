@@ -1,0 +1,122 @@
+---
+import '@fontsource/poppins/latin-400.css';
+import '@fontsource/poppins/latin-500.css';
+import '@fontsource/poppins/latin-600.css';
+import '@fontsource/poppins/latin-700.css';
+import '@fontsource/poppins/latin-800.css';
+// The old site only loaded italic up to 600, so headline <em> renders as 600 italic.
+import '@fontsource/poppins/latin-600-italic.css';
+import poppins800 from '@fontsource/poppins/files/poppins-latin-800-normal.woff2?url';
+import poppins400 from '@fontsource/poppins/files/poppins-latin-400-normal.woff2?url';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { GA_ID, SITE_URL } from '../data/site';
+
+interface Props {
+  title: string;
+  description: string;
+  keywords?: string;
+  jsonLd?: object[];
+}
+
+const {
+  title,
+  description,
+  keywords = 'Shopify, Shopify store operator, Shopify retainer, white label Shopify developer, DTC, conversion rate optimization, Shopify developer, store operations',
+  jsonLd = [],
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname.replace(/\/$/, '') || '/', SITE_URL).href;
+const ogImage = new URL('/og-image.png', SITE_URL).href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Carson Cobb" />
+    <meta name="robots" content={Astro.url.pathname.startsWith("/404") ? "noindex" : "index, follow"} />
+    <meta name="theme-color" content="#FF5A5F" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/icon.png" />
+    <link rel="sitemap" href="/sitemap.xml" />
+    <link rel="preload" href={poppins800} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={poppins400} as="font" type="font/woff2" crossorigin />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Carson Cobb" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Carson Cobb, Shopify Store Operator for DTC Brands" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    {jsonLd.map((data) => <script type="application/ld+json" set:html={JSON.stringify(data)} />)}
+
+    <!-- Google tag (gtag.js). Commands queue in dataLayer; the library loads once the page is idle. -->
+    <script is:inline define:vars={{ GA_ID }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', GA_ID);
+      window.addEventListener('load', function () {
+        (window.requestIdleCallback || setTimeout)(function () {
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+          document.head.appendChild(s);
+        });
+      });
+      // Fire GA4 events for "Book a call" and email clicks.
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[data-track], a[href^="mailto:"]');
+        if (!a) return;
+        gtag('event', a.dataset.track === 'book_call' ? 'book_call_click' : 'email_click', {
+          link_url: a.href,
+          link_text: a.textContent.trim(),
+          page_path: location.pathname,
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -100px;
+    z-index: 200;
+    padding: 0.5rem 1rem;
+    background: var(--color-text);
+    color: #fff;
+    border-radius: var(--radius-button);
+  }
+
+  .skip-link:focus {
+    top: 1rem;
+  }
+</style>
