@@ -1,57 +1,48 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Section from '../components/Section.astro';
-import Card from '../components/Card.astro';
-import Button from '../components/Button.astro';
-import ContactCta from '../components/ContactCta.astro';
-import Testimonials from '../components/Testimonials.astro';
+import HomeLayout from '../layouts/HomeLayout.astro';
 import {
   CAL_LINK,
   SITE_URL,
   LINKEDIN_URL,
   EMAIL,
   HEADSHOT,
+  HERO_METRICS,
+  HERO_SHIPPED,
+  HERO_NEXT,
   STATS,
   VERTICALS,
-  DISCLAIMER,
+  OPTIONS,
+  OWN,
+  RESULTS,
+  FIRST_90,
   PLANS,
-  PLAN_TERMS,
-  SPRINT,
-  CASE_STUDIES,
-  TESTIMONIALS,
-  RECENT_WORK,
-  PROBLEMS,
-  CAPABILITIES,
-  PROCESS,
-  WHY_ME,
+  STEPS,
   FAQS,
 } from '../data/site';
 
 const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
 
-// Stroke icons for the What I Own cards (24×24, drawn in currentColor).
-const ICONS: Record<string, string> = {
-  code: '<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>',
-  layout: '<rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>',
-  trend: '<polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>',
-  mail: '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>',
-  chart: '<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>',
-  megaphone: '<path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>',
+// Every booking button goes to CAL_LINK and is tracked as a book_call event.
+const book = {
+  href: CAL_LINK,
+  'data-track': 'book_call',
+  ...(CAL_LINK.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {}),
 };
 
-const person = {
-  '@type': 'Person',
-  '@id': `${SITE_URL}/#carson`,
-  name: 'Carson Cobb',
-  jobTitle: 'Fractional Head of Ecommerce',
-  url: SITE_URL,
-  email: `mailto:${EMAIL}`,
-  sameAs: [LINKEDIN_URL],
-  address: { '@type': 'PostalAddress', addressRegion: 'CA', addressCountry: 'US' },
-};
+const year = new Date().getFullYear();
 
 const jsonLd = [
-  { '@context': 'https://schema.org', ...person },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${SITE_URL}/#carson`,
+    name: 'Carson Cobb',
+    jobTitle: 'Fractional Head of Ecommerce',
+    url: SITE_URL,
+    email: `mailto:${EMAIL}`,
+    sameAs: [LINKEDIN_URL],
+    address: { '@type': 'PostalAddress', addressRegion: 'CA', addressCountry: 'US' },
+  },
   {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
@@ -65,14 +56,14 @@ const jsonLd = [
     priceRange: '$3,000 to $5,500 per month',
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Shopify plans',
-      itemListElement: [
-        ...PLANS.map((p) => ({
-          '@type': 'Offer',
-          name: p.name,
-          description: p.bestFor,
-          price: p.price,
-          priceCurrency: 'USD',
+      name: 'Shopify ecommerce plans',
+      itemListElement: PLANS.map((p) => ({
+        '@type': 'Offer',
+        name: p.name,
+        description: p.summary,
+        price: p.price,
+        priceCurrency: 'USD',
+        ...(p.monthly && {
           priceSpecification: {
             '@type': 'UnitPriceSpecification',
             price: p.price,
@@ -80,15 +71,8 @@ const jsonLd = [
             unitText: 'MONTH',
             billingDuration: 'P1M',
           },
-        })),
-        {
-          '@type': 'Offer',
-          name: 'Store Sprint',
-          description: SPRINT.description,
-          price: SPRINT.price,
-          priceCurrency: 'USD',
-        },
-      ],
+        }),
+      })),
     },
   },
   {
@@ -103,887 +87,387 @@ const jsonLd = [
 ];
 ---
 
-<Layout
+<HomeLayout
   title="Carson Cobb | Fractional Head of Ecommerce for Shopify Brands"
   description="A senior ecommerce lead who owns your Shopify store and growth: development, design, conversion, email, analytics, and marketing direction. A fraction of the cost of a full time hire."
-  keywords="fractional head of ecommerce, Shopify ecommerce manager, DTC ecommerce lead, Shopify retainer, white label Shopify developer"
   jsonLd={jsonLd}
 >
-  <!-- Hero -->
-  <section class="hero" aria-label="Introduction">
-    <div class="hero__content">
-      <span class="eyebrow">Fractional Head of Ecommerce</span>
-      <h1>Your head of ecommerce, <em>without the full time hire</em>.</h1>
-      <p class="hero__copy">
-        I own your Shopify store and the growth around it: development, design, conversion, email, analytics, and
-        marketing direction. One senior lead, accountable for the numbers, at a fraction of the cost of a full time
-        hire.
-      </p>
-      <div class="hero__ctas">
-        <Button href={CAL_LINK} track="book_call">Book a call</Button>
-        <Button href="#results" variant="text">See my results</Button>
-      </div>
-      <p class="hero__status"><span class="hero__dot" aria-hidden="true"></span>Now booking new retainer clients.</p>
-    </div>
-    <svg class="hero__divider" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M0,0 C600,100 600,0 1200,100 L1200,0 L0,0 Z"></path>
-    </svg>
-  </section>
+  <header class="dark">
+      <nav class="wrap nav" aria-label="Main">
+        <a href="#top" class="nav__brand">Carson Cobb</a>
+        <div class="nav__links">
+          <a href="#results">Results</a>
+          <a href="#own">What I own</a>
+          <a href="#pricing">Pricing</a>
+          <a href="/agencies">For agencies</a>
+          <a {...book} class="btn btn--accent nav__cta">Book a call</a>
+        </div>
+      </nav>
+  </header>
 
-  <!-- Proof bar -->
-  <section class="proof" aria-label="Proof">
-    <p class="eyebrow">Trusted by DTC brands across nearly every ecommerce vertical</p>
-    <div class="proof__stats">
-      {
-        STATS.map((s) => (
-          <div class="stat">
-            <div class="stat__value">{s.value}</div>
-            <div class="stat__label">{s.label}</div>
+  <main id="main">
+    <!-- Hero -->
+    <section class="dark" aria-label="Introduction">
+      <div class="wrap hero" id="top">
+        <div class="hero__text">
+          <div class="hero__pill">
+            <span class="dot" aria-hidden="true"></span>
+            Now booking new retainer clients
           </div>
-        ))
-      }
-    </div>
-    <p class="eyebrow proof__verticals">{VERTICALS.join(' · ')}</p>
-    <p class="disclaimer">{DISCLAIMER}</p>
-  </section>
+          <h1 class="hero__h1">Your head of ecommerce, <span class="accent">without the full time hire.</span></h1>
+          <p class="hero__sub">
+            I run your Shopify store and the growth around it, so you make more from the traffic you already have. One
+            senior lead who owns the results, without the hiring, managing, or vendor juggling.
+          </p>
+          <div class="btn-row">
+            <a {...book} class="btn btn--accent"
+              >Book an intro call
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+            </a>
+            <a href="#results" class="btn btn--ghost-dark">See the results</a>
+          </div>
+          <p class="hero__fine">
+            <strong>50+ Shopify stores, from startups to ten figure brands.</strong> For brands doing $15K+ a month.
+          </p>
+        </div>
 
-  <!-- The Problem -->
-  <Section
-    id="problem"
-    eyebrow="The Problem"
-    title="Your store needs an owner. <em>Not more vendors.</em>"
-    intro="Most growing brands either hire a full time head of ecommerce they can't yet afford, or stitch together a developer, a designer, an email agency, and a social freelancer, then end up managing all of them. Either way, nobody owns the whole picture."
-  >
-    <div class="grid grid--3">
-      {
-        PROBLEMS.map((p, i) => (
-          <Card class="problem">
-            <span class="problem__num">{String(i + 1).padStart(2, '0')}</span>
-            <h3>{p.title}</h3>
-            <p>{p.text}</p>
-          </Card>
-        ))
-      }
-    </div>
-  </Section>
-
-  <!-- What I Own -->
-  <Section
-    id="what-i-own"
-    bg="alt"
-    eyebrow="What I Own"
-    title="Every part of running a Shopify store."
-    intro="What I build and run myself, and what I direct and manage, so it all moves the same direction."
-  >
-    <div class="grid grid--3">
-      {
-        CAPABILITIES.map((c) => (
-          <Card class="own">
-            <svg
-              class="own__icon"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-              set:html={ICONS[c.icon]}
-            />
-            <h3>{c.title}</h3>
-            <ul class="check-list">
-              {c.items.map((i) => (
-                <li>{i}</li>
-              ))}
-            </ul>
-          </Card>
-        ))
-      }
-    </div>
-    <p class="own__close">Whatever the store needs, it has an owner.</p>
-  </Section>
-
-  <!-- Results -->
-  <Section
-    id="results"
-    eyebrow="Results"
-    title="What changes when your store has an owner."
-    intro="Results from past clients. Names withheld; most of my work is under NDA or white label."
-  >
-    <p class="disclaimer results__disclaimer">{DISCLAIMER}</p>
-    <div class="grid grid--3">
-      {
-        CASE_STUDIES.map((c) => (
-          <Card as="article" class="case">
-            <span class="case__tag">{c.tag}</span>
-            <h3 class="case__headline">{c.headline}</h3>
-            <p class="case__context">{c.context}</p>
-            <dl class="case__shift">
-              <div>
-                <dt>Before</dt>
-                <dd>{c.before}</dd>
-              </div>
-              <div>
-                <dt>After</dt>
-                <dd>{c.after}</dd>
-              </div>
-            </dl>
-            <div class="case__stats">
-              {c.stats.map((st) => (
-                <div>
-                  <div class="case__stat-value">{st.value}</div>
-                  <div class="case__stat-label">{st.label}</div>
-                </div>
-              ))}
+        <div class="hero__panel">
+          <div class="month">
+            <div class="month__head">
+              <span class="tag tag--dim">A typical month with me</span>
+              <span class="month__client">Skincare client</span>
             </div>
-          </Card>
-        ))
-      }
-    </div>
-  </Section>
+            <div class="month__metrics">
+              {
+                HERO_METRICS.map((m) => (
+                  <div class="metric">
+                    <div class="metric__label">{m.label}</div>
+                    <div class="metric__value">{m.value}</div>
+                    <div class="metric__change">{m.change}</div>
+                  </div>
+                ))
+              }
+            </div>
+            <div class="month__list">
+              <div class="tag tag--dim">Shipped</div>
+              {
+                HERO_SHIPPED.map((item) => (
+                  <div class="month__item">
+                    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3DDC84" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7" /></svg>
+                    {item}
+                  </div>
+                ))
+              }
+              <div class="month__item month__item--next">
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B6E76" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="8"></circle></svg>
+                {HERO_NEXT}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <Testimonials items={TESTIMONIALS} />
+    <!-- Proof strip -->
+    <section class="proof" aria-label="At a glance">
+      <div class="wrap proof__inner">
+        <div class="proof__stats">
+          {
+            STATS.map((s) => (
+              <div>
+                <div class="proof__value">{s.value}</div>
+                <div class="proof__label">{s.label}</div>
+              </div>
+            ))
+          }
+        </div>
+        <p class="tag">{VERTICALS.join(' · ')}</p>
+      </div>
+    </section>
 
-  <!-- Recent Work -->
-  <Section id="work" bg="alt" eyebrow="Recent Work" title="More recent wins." intro="A sample of results from recent projects.">
-    <ul class="grid grid--4 work">
-      {
-        RECENT_WORK.map((w) => (
-          <Card as="li" class="work__card">
-            <h3 class="work__result">{w.result}</h3>
-            <span class="work__tag">{w.tag}</span>
-            <p>{w.text}</p>
-          </Card>
-        ))
-      }
-    </ul>
-  </Section>
+    <!-- The problem -->
+    <section class="section">
+      <div class="wrap stack">
+        <div class="head">
+          <p class="eyebrow">The problem</p>
+          <h2 class="h2">Most brands pick one of two bad options.</h2>
+          <p class="lede">Your store needs an owner. Here is what that usually costs, and what it costs with me.</p>
+        </div>
+        <div class="grid grid--300">
+          {
+            OPTIONS.map((o) => (
+              <div class:list={['card', 'option', { 'option--dark': o.dark }]}>
+                <span class="tag">{o.tag}</span>
+                <h3 class="h3">{o.title}</h3>
+                <div class="option__price">
+                  {o.price}
+                  <span>{o.unit}</span>
+                </div>
+                <ul class="option__list">
+                  {o.points.map((p) => (
+                    <li>{p}</li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
 
-  <!-- Plans -->
-  <Section
-    id="plans"
-    eyebrow="Plans"
-    title="Pick your level of ownership."
-    intro="Flat monthly retainers, billed in advance. No hourly billing and no surprise invoices."
-  >
-    <div class="grid grid--2 plans">
-      {
-        PLANS.map((p) => (
-          <Card featured={p.featured} class="plan">
-            {p.featured && <span class="plan__badge">Most Popular</span>}
-            <h3 class="plan__name">{p.name}</h3>
-            <p class="plan__price">
-              {usd(p.price)}
-              <span>/mo</span>
+    <!-- What I own -->
+    <section id="own" class="section section--sand">
+      <div class="wrap stack">
+        <div class="head head--split">
+          <div class="head">
+            <p class="eyebrow">What I own</p>
+            <h2 class="h2">Every part of running a Shopify store.</h2>
+          </div>
+          <p class="lede head__aside">
+            I do the hands on work myself and direct the rest, so your store, email, and marketing finally pull in the
+            same direction.
+          </p>
+        </div>
+        <div class="grid grid--320">
+          {
+            OWN.map((o) => (
+              <div class="card own">
+                <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8323A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={o.icon} />
+                <h3 class="own__title">{o.title}</h3>
+                <p class="own__text">{o.text}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section id="results" class="section">
+      <div class="wrap stack">
+        <div class="head">
+          <p class="eyebrow">Results</p>
+          <h2 class="h2">What changes when your store has an owner.</h2>
+          <p class="lede">
+            Real outcomes from past clients. Names withheld, since most of my work is under NDA or white label.
+          </p>
+        </div>
+        <div class="grid grid--330">
+          {
+            RESULTS.map((r) => (
+              <article class="card result">
+                <div class="result__top">
+                  <span class="tag tag--dim">{r.tag}</span>
+                  <div class="result__stat">{r.stat}</div>
+                  <div class="result__stat-label">{r.statLabel}</div>
+                </div>
+                <div class="result__body">
+                  <h3 class="result__title">{r.title}</h3>
+                  <div class="result__row">
+                    <strong>Before:</strong> {r.before}
+                  </div>
+                  <div class="result__row">
+                    <strong>After:</strong> {r.after}
+                  </div>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+
+        <!-- Your first 90 days -->
+        <div class="first90">
+          <h3 class="first90__title">Your first 90 days</h3>
+          <div class="grid grid--260 grid--tight">
+            {
+              FIRST_90.map((m) => (
+                <div class="card first90__card">
+                  <span class="tag tag--accent">{m.month}</span>
+                  <div class="first90__name">{m.title}</div>
+                  <p class="own__text">{m.text}</p>
+                </div>
+              ))
+            }
+          </div>
+          <p class="fineprint">Past client outcomes, shown as examples. Not a guarantee of results for any other store.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="section section--sand">
+      <div class="wrap stack">
+        <div class="head">
+          <p class="eyebrow">Pricing</p>
+          <h2 class="h2">Start small, or hand me the keys.</h2>
+          <p class="lede">Flat monthly retainers, billed in advance. No hourly billing, no surprise invoices, month to month.</p>
+        </div>
+
+        <div class="grid grid--320 plans">
+          {
+            PLANS.map((p) => (
+              <div class:list={['card', 'plan', { 'plan--featured': p.featured }]}>
+                {p.featured && <span class="plan__badge">RECOMMENDED</span>}
+                <div class="plan__head">
+                  <span class:list={['tag', { 'tag--dim': p.featured }]}>{p.tag}</span>
+                  <h3 class="h3">{p.name}</h3>
+                  <div class="plan__price">
+                    {usd(p.price)}
+                    <span>{p.unit}</span>
+                  </div>
+                  <p class="plan__summary">{p.summary}</p>
+                </div>
+                <ul class="plan__list">
+                  {p.includes.map((i) => (
+                    <li>
+                      <span aria-hidden="true">✓</span>
+                      {i}
+                    </li>
+                  ))}
+                </ul>
+                <div class="plan__foot">
+                  {p.note && (
+                    <div class="plan__note">
+                      <strong>{p.note.strong}</strong> {p.note.text}
+                    </div>
+                  )}
+                  <a {...book} class:list={['btn', p.featured ? 'btn--accent' : 'btn--outline']}>
+                    {p.cta}
+                  </a>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+        <!-- Lock in 2026 pricing -->
+        <div class="lock">
+          <div class="lock__pill">
+            <span class="lock__icon">
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111214" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 018 0v3"></path></svg>
+            </span>
+            <p><strong>Lock in 2026 pricing.</strong> Start before January 1 and keep today's rate for 12 months.</p>
+          </div>
+          <p class="lock__terms">30 days notice to cancel. Scope set on our first call.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section">
+      <div class="wrap stack">
+        <div class="head">
+          <p class="eyebrow">How it works</p>
+          <h2 class="h2">From first call to first win in a week.</h2>
+        </div>
+        <div class="grid grid--300">
+          {
+            STEPS.map((s) => (
+              <div class="step">
+                <span class="tag tag--accent">{s.when}</span>
+                <h3 class="step__title">{s.title}</h3>
+                <p class="step__text">{s.text}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section section--flush">
+      <div class="wrap">
+        <div class="about">
+          {
+            HEADSHOT ? (
+              <img class="about__photo" src={HEADSHOT} alt="Carson Cobb" width="220" height="260" loading="lazy" />
+            ) : (
+              <div class="about__photo" aria-hidden="true" />
+            )
+          }
+          <div class="about__text">
+            <p class="eyebrow">Who leads your store</p>
+            <h2 class="h2 h2--36">Senior led, start to finish.</h2>
+            <p class="lede">
+              I'm Carson. I've spent 6+ years inside 50+ Shopify stores, from fresh startups to ten figure brands, leading
+              development, conversion, retention, and growth. I lead every engagement personally and stay accountable for
+              the results. When a project needs more hands, I bring in specialists I trust, so you get more capacity
+              without losing your direct line to me.
             </p>
-            <p class="plan__best">Best for: {p.bestFor}</p>
-            <ul class="check-list">
-              {p.includes.map((i) => (
-                <li>{i}</li>
-              ))}
-            </ul>
-            <Button href={CAL_LINK} track="book_call" variant={p.featured ? 'primary' : 'outline'} class="plan__cta">
-              Book a call
-            </Button>
-          </Card>
-        ))
-      }
-    </div>
-    <p class="plans__terms">{PLAN_TERMS}</p>
-
-    <Card class="sprint" as="article">
-      <div class="sprint__intro">
-        <span class="eyebrow">Not ready for a retainer?</span>
-        <h3 class="sprint__title">Store Sprint</h3>
-        <p class="sprint__price">{usd(SPRINT.price)} fixed <span>· {SPRINT.duration}</span></p>
-        <p class="sprint__desc">{SPRINT.description}</p>
+            <p class="about__where">Based in California. Working with brands across the US.</p>
+          </div>
+        </div>
       </div>
-      <div class="sprint__details">
-        <ul class="check-list">
-          {SPRINT.includes.map((i) => <li>{i}</li>)}
-        </ul>
-        <Button href={CAL_LINK} track="book_call">Book a call</Button>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--flush">
+      <div class="wrap faq">
+        <div class="faq__head">
+          <p class="eyebrow">FAQ</p>
+          <h2 class="h2 h2--36">Questions, answered.</h2>
+        </div>
+        <div class="faq__list">
+          {
+            FAQS.map((f, i) => (
+              <details open={i === 0}>
+                <summary>{f.q}</summary>
+                <p>
+                  {f.link ? (
+                    <Fragment>
+                      {f.a.slice(0, f.a.indexOf(f.link.text))}
+                      <a href={f.link.href}>{f.link.text}</a>
+                      {f.a.slice(f.a.indexOf(f.link.text) + f.link.text.length)}
+                    </Fragment>
+                  ) : (
+                    f.a
+                  )}
+                </p>
+              </details>
+            ))
+          }
+        </div>
       </div>
-    </Card>
-  </Section>
+    </section>
 
-  <!-- Process -->
-  <Section id="process" bg="alt" eyebrow="Process" title="Here's How It Works">
-    <ol class="grid grid--3 steps">
-      {
-        PROCESS.map((s, i) => (
-          <li class="step">
-            <span class="step__num">{String(i + 1).padStart(2, '0')}</span>
-            <h3>{s.title}</h3>
-            <p>{s.text}</p>
-          </li>
-        ))
-      }
-    </ol>
-    <div class="center">
-      <Button href={CAL_LINK} track="book_call" arrow>Book a call</Button>
-    </div>
-  </Section>
-
-  <!-- Why Work With Me -->
-  <Section
-    id="why"
-    eyebrow="Why Work With Me"
-    title="A senior lead, not another vendor."
-    intro="You get one person who knows your whole store, answers directly, and is accountable for the numbers. No account managers, no handoffs, no juniors learning on your store."
-  >
-    <div class="grid grid--2">
-      {
-        WHY_ME.map((w) => (
-          <Card class="why">
-            <h3>{w.title}</h3>
-            <p>{w.text}</p>
-          </Card>
-        ))
-      }
-    </div>
-    <div class="about">
-      {
-        HEADSHOT ? (
-          <img class="about__photo" src={HEADSHOT} alt="Carson Cobb" width="96" height="96" loading="lazy" />
-        ) : (
-          <span class="about__photo about__photo--initials" aria-hidden="true">
-            CC
-          </span>
-        )
-      }
-      <p>
-        I'm Carson. I've spent 6+ years inside 50+ Shopify stores, from scrappy founders to eight figure brands,
-        leading development, conversion, retention, and growth. I'm based in California and work with brands across the
-        US.
-      </p>
-    </div>
-  </Section>
-
-  <!-- FAQ -->
-  <Section id="faq" bg="alt" eyebrow="FAQ" title="Questions You're Probably Asking">
-    <div class="faq">
-      {
-        FAQS.map((f) => (
-          <details class="faq__item">
-            <summary>
-              {f.q}
-              <span class="faq__icon" aria-hidden="true" />
-            </summary>
+    <!-- Referral -->
+    <section class="section section--flush">
+      <div class="wrap">
+        <div class="referral">
+          <div class="referral__text">
+            <h3 class="h3">Know a brand that needs an owner?</h3>
             <p>
-              {f.link ? (
-                <Fragment>
-                  {f.a.replace(f.link.text + '.', '')}
-                  <a href={f.link.href}>{f.link.text}</a>.
-                </Fragment>
-              ) : (
-                f.a
-              )}
+              Introduce us. When they sign, you get <strong>10% of their first 3 months</strong>, paid once their third
+              payment clears.
             </p>
-          </details>
-        ))
-      }
+          </div>
+          <a href={`mailto:${EMAIL}?subject=Referral`} class="btn btn--outline">Make an intro</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="book" class="dark cta">
+      <div class="wrap cta__inner">
+        <h2 class="h2 cta__title">Let's find the revenue your store is leaving on the table.</h2>
+        <p class="cta__sub">
+          Book a 20 minute intro call. Built for Shopify brands doing $15K+ a month that want a senior owner, not the
+          cheapest option.
+        </p>
+        <div class="btn-row btn-row--center">
+          <a {...book} class="btn btn--accent">Book an intro call</a>
+          <a href={`mailto:${EMAIL}`} class="btn btn--ghost-dark">Email me</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="dark footer">
+    <div class="wrap footer__inner">
+      <span>
+        © {year} Carson Cobb · <a href={`mailto:${EMAIL}`}>{EMAIL}</a> · <a href={LINKEDIN_URL}>LinkedIn</a>
+      </span>
+      <span>Shopify is a trademark of Shopify Inc. Independent contractor, not affiliated with Shopify.</span>
     </div>
-  </Section>
-
-  <ContactCta
-    title="Let's talk about <em>your store</em>."
-    copy="Book a 20 minute call. I'll tell you honestly whether I'm a fit, and what I'd focus on first."
-  />
-</Layout>
-
-<style is:global>
-  /* Hero */
-  .hero {
-    position: relative;
-    padding: 2rem var(--container-padding) 7rem;
-    text-align: center;
-    background: var(--color-bg);
-  }
-
-  .hero__content {
-    position: relative;
-    z-index: 1;
-    max-width: 720px;
-    margin: 0 auto;
-  }
-
-  .hero h1 {
-    font-size: clamp(2.25rem, 5vw, 3.5rem);
-    margin-bottom: 1.5rem;
-  }
-
-  .hero__copy {
-    font-size: 1.2rem;
-    line-height: 1.7;
-    color: var(--color-text-secondary);
-    margin-bottom: 1.5rem;
-  }
-
-  .hero__ctas {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .hero__status {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 1.25rem;
-    font-size: 0.875rem;
-    color: var(--color-text-secondary);
-  }
-
-  .hero__dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #22a447;
-    box-shadow: 0 0 0 3px rgba(34, 164, 71, 0.18);
-  }
-
-  .hero__divider {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    display: block;
-    width: 100%;
-    height: 80px;
-    fill: var(--color-bg-alt);
-    transform: rotate(180deg) translateY(-1px);
-  }
-
-  /* Proof bar */
-  .proof {
-    padding: 2rem var(--container-padding);
-    background: var(--color-bg-alt);
-    text-align: center;
-  }
-
-  .proof__stats {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    max-width: var(--container-max);
-    margin: 1.5rem auto 1.5rem;
-  }
-
-  .proof__verticals {
-    margin-bottom: 1.25rem;
-    color: var(--color-text-secondary);
-  }
-
-  .stat__value {
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
-    font-weight: 800;
-    color: var(--color-accent);
-    line-height: 1.1;
-    letter-spacing: var(--letter-spacing-heading);
-    margin-bottom: 0.35rem;
-  }
-
-  .stat__label {
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--color-text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  /* Plans */
-  .plans {
-    align-items: stretch;
-    max-width: 900px;
-  }
-
-  .plans .plan {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .plan__badge {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 0.3rem 0.9rem;
-    border-radius: 999px;
-    background: var(--color-accent-text);
-    color: #fff;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    white-space: nowrap;
-  }
-
-  .plan__name {
-    font-size: 1.35rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .plan__price {
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--color-accent);
-    line-height: 1.2;
-    margin-bottom: 0.75rem;
-  }
-
-  .plan__price span {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--color-text-secondary);
-  }
-
-  .plan__best {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: var(--color-text-secondary);
-    margin-bottom: 1.5rem;
-  }
-
-  .plans .check-list {
-    flex: 1;
-  }
-
-  .plans .plan__cta {
-    margin-top: auto;
-  }
-
-  .plans__terms {
-    max-width: 720px;
-    margin: 2rem auto 3rem;
-    text-align: center;
-    font-size: 0.9rem;
-    color: var(--color-text-secondary);
-  }
-
-  /* What I Own */
-  .own__icon {
-    display: block;
-    width: 32px;
-    height: 32px;
-    margin-bottom: 1.25rem;
-    color: var(--color-accent-text);
-  }
-
-  .own h3 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-  }
-
-  .own .check-list {
-    margin-bottom: 0;
-  }
-
-  .own__close {
-    margin-top: 2.5rem;
-    text-align: center;
-    font-size: 1.15rem;
-    font-weight: 700;
-  }
-
-  .sprint {
-    display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    gap: 2.5rem;
-    max-width: var(--container-max);
-    margin: 0 auto;
-    align-items: center;
-  }
-
-  .sprint__title {
-    font-size: 1.75rem;
-    font-weight: 800;
-    margin-bottom: 0.5rem;
-  }
-
-  .sprint__price {
-    font-size: 1.75rem;
-    font-weight: 800;
-    color: var(--color-accent);
-    margin-bottom: 1rem;
-  }
-
-  .sprint__price span {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--color-text-secondary);
-  }
-
-  .sprint__desc {
-    line-height: 1.7;
-    color: var(--color-text-secondary);
-  }
-
-  .sprint__details {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  /* Results */
-  .results__disclaimer {
-    margin: -2rem auto 3rem;
-  }
-
-  .case {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .case__tag {
-    align-self: flex-start;
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: var(--letter-spacing-eyebrow);
-    color: var(--color-accent-text);
-    background: rgba(var(--color-accent-rgb), 0.1);
-    border: 1px solid rgba(var(--color-accent-rgb), 0.25);
-    border-radius: 999px;
-    padding: 0.35rem 0.75rem;
-    margin-bottom: 1rem;
-  }
-
-  .case__headline {
-    font-size: 1.5rem;
-    font-weight: 800;
-    line-height: 1.25;
-    letter-spacing: var(--letter-spacing-heading);
-    margin-bottom: 0.75rem;
-  }
-
-  .case__context {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    color: var(--color-text-secondary);
-    padding-bottom: 1.25rem;
-    margin-bottom: 1.25rem;
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .case__shift {
-    margin: 0 0 1.5rem;
-  }
-
-  .case__shift div + div {
-    margin-top: 1rem;
-  }
-
-  .case__shift dt {
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: var(--letter-spacing-eyebrow);
-    color: var(--color-text-secondary);
-    margin-bottom: 0.25rem;
-  }
-
-  .case__shift div + div dt {
-    color: var(--color-accent-text);
-  }
-
-  .case__shift dd {
-    margin: 0;
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-
-  .case__stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-top: auto;
-    padding: 1.25rem;
-    background: var(--color-result-bg);
-    border: 1px solid rgba(76, 175, 80, 0.3);
-    border-radius: var(--radius-card);
-    text-align: center;
-  }
-
-  .case__stat-value {
-    font-size: 1.2rem;
-    font-weight: 800;
-    line-height: 1.25;
-    letter-spacing: var(--letter-spacing-heading);
-    margin-bottom: 0.25rem;
-  }
-
-  .case__stat-label {
-    font-size: 0.8rem;
-    font-weight: 600;
-    line-height: 1.4;
-    color: var(--color-result-text);
-  }
-
-  /* Recent Work */
-  .work {
-    list-style: none;
-    padding: 0;
-  }
-
-  .work__card {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem 1.5rem;
-  }
-
-  .work__card .work__result {
-    font-size: 1.3rem;
-    font-weight: 800;
-    line-height: 1.25;
-    letter-spacing: var(--letter-spacing-heading);
-    margin-bottom: 1rem;
-  }
-
-  .work__tag {
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: var(--letter-spacing-eyebrow);
-    color: var(--color-accent-text);
-    margin-bottom: 0.5rem;
-  }
-
-  .work__card p {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: var(--color-text-secondary);
-  }
-
-  /* Why Work With Me */
-  .why h3 {
-    font-size: 1.25rem;
-    line-height: 1.3;
-    margin-bottom: 1rem;
-  }
-
-  .why p,
-  .problem p {
-    line-height: 1.7;
-    color: var(--color-text-secondary);
-  }
-
-  /* The Problem */
-  .problem__num {
-    display: block;
-    font-size: 2.5rem;
-    font-weight: 800;
-    line-height: 1;
-    color: var(--color-accent);
-    letter-spacing: var(--letter-spacing-heading);
-    margin-bottom: 1rem;
-  }
-
-  .problem h3 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-  }
-
-  .about {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    max-width: 640px;
-    margin: 2.5rem auto 0;
-  }
-
-  .about p {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: var(--color-text-secondary);
-  }
-
-  .about__photo {
-    flex-shrink: 0;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-
-  .about__photo--initials {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--color-accent);
-    color: #fff;
-    font-weight: 800;
-    font-size: 1.1rem;
-  }
-
-  /* FAQ */
-  .faq {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .faq__item {
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-card);
-    background: var(--color-card-bg);
-    box-shadow: 0 2px 8px var(--color-shadow);
-    overflow: hidden;
-    transition: var(--transition);
-  }
-
-  .faq__item:hover {
-    border-color: var(--color-border-strong);
-    box-shadow: 0 4px 12px var(--color-shadow-hover);
-  }
-
-  .faq__item[open] {
-    border-color: var(--color-accent);
-  }
-
-  .faq summary {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1.5rem 2rem;
-    font-weight: 700;
-    font-size: 1.05rem;
-    cursor: pointer;
-    list-style: none;
-    transition: var(--transition);
-  }
-
-  .faq summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .faq summary:hover,
-  .faq__item[open] summary {
-    background: var(--color-bg-alt);
-  }
-
-  .faq__item[open] summary {
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .faq__icon {
-    position: relative;
-    flex-shrink: 0;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: var(--color-bg-alt);
-    transition: var(--transition);
-  }
-
-  .faq__icon::before,
-  .faq__icon::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 12px;
-    height: 2px;
-    background: var(--color-text-secondary);
-    transform: translate(-50%, -50%);
-    transition: var(--transition);
-  }
-
-  .faq__icon::after {
-    transform: translate(-50%, -50%) rotate(90deg);
-  }
-
-  .faq__item[open] .faq__icon {
-    background: var(--color-accent);
-  }
-
-  .faq__item[open] .faq__icon::before,
-  .faq__item[open] .faq__icon::after {
-    background: #fff;
-  }
-
-  .faq__item[open] .faq__icon::after {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-
-  .faq__item p {
-    padding: 1.25rem 2rem 1.5rem;
-    color: var(--color-text-secondary);
-    font-size: 1.05rem;
-    line-height: 1.8;
-  }
-
-  .faq__item a {
-    color: var(--color-accent-text);
-    font-weight: 600;
-  }
-
-  @media (max-width: 768px) {
-    .hero {
-      padding: 1.5rem var(--container-padding) 5rem;
-    }
-    .hero h1 {
-      font-size: 2.25rem;
-    }
-    .hero__copy {
-      font-size: 1.1rem;
-    }
-    .hero__divider {
-      height: 50px;
-    }
-    .proof__stats {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem 1rem;
-    }
-    .stat__value {
-      font-size: 2rem;
-    }
-    /* Head of Ecommerce stacks first on mobile */
-    .plans .card--featured {
-      order: -1;
-    }
-    .sprint {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-    .faq summary {
-      padding: 1.25rem 1.25rem;
-      font-size: 1rem;
-      gap: 1rem;
-    }
-    .faq__item p {
-      padding: 1rem 1.25rem 1.25rem;
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
-    .faq__icon {
-      width: 28px;
-      height: 28px;
-    }
-    .about {
-      flex-direction: column;
-      text-align: center;
-    }
-  }
-
-  @media (max-width: 425px) {
-    .hero h1 {
-      font-size: 2rem;
-    }
-    .hero__copy {
-      font-size: 1rem;
-    }
-    .hero__divider {
-      height: 40px;
-    }
-    .stat__value {
-      font-size: 1.75rem;
-    }
-    .case__headline {
-      font-size: 1.3rem;
-    }
-  }
-</style>
+  </footer>
+</HomeLayout>

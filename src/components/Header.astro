@@ -4,11 +4,9 @@ import { CAL_LINK } from '../data/site';
 
 const links = [
   { href: '/#results', label: 'Results' },
-  { href: '/#what-i-own', label: 'What I Own' },
-  { href: '/#plans', label: 'Plans' },
-  { href: '/#process', label: 'Process' },
-  { href: '/agencies', label: 'For Agencies' },
-  { href: '/#faq', label: 'FAQ' },
+  { href: '/#own', label: 'What I own' },
+  { href: '/#pricing', label: 'Pricing' },
+  { href: '/agencies', label: 'For agencies' },
 ];
 const current = Astro.url.pathname.replace(/\/$/, '') || '/';
 ---
@@ -215,8 +213,7 @@ const current = Astro.url.pathname.replace(/\/$/, '') || '/';
     cursor: pointer;
   }
 
-  /* Six nav links plus the centered name need about 1150px before they collide. */
-  @media (max-width: 1180px) {
+  @media (max-width: 900px) {
     .site-header__nav,
     .site-header__cta {
       display: none;

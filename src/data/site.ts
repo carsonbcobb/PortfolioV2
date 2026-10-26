@@ -18,315 +18,247 @@ export const CAL_LINK = calLink || EMAIL_URL;
 
 const publicFile = (p: string) => fs.existsSync(path.join(process.cwd(), 'public', p));
 
-// Headshot: drop a photo at public/carson.jpg. Until then an initials avatar is shown.
+// Headshot: drop a photo at public/carson.jpg. Until then a neutral gray box is shown.
 export const HEADSHOT = publicFile('carson.jpg') ? '/carson.jpg' : null;
 
-// Values in [brackets] are placeholders for Carson to replace with real data before launch.
-// `npm run check:placeholders` fails the build while any remain in dist/.
+// Home page copy, taken word for word from the approved design (design-reference.html).
+
+export const HERO_METRICS = [
+  { label: 'Conversion rate', value: '3.2%', change: 'up from 2.1%' },
+  { label: 'Avg order value', value: '$64', change: 'up from $58' },
+];
+
+export const HERO_SHIPPED = [
+  'New product page template live across the catalog',
+  'Cart upsell test won, rolled out to 100%',
+  'Winback email flow launched',
+  'Holiday promo calendar and landing pages ready',
+];
+export const HERO_NEXT = 'Next: subscription page test, social content plan';
+
 export const STATS = [
   { value: '50+', label: 'Shopify stores' },
-  { value: '2.1x', label: 'Avg conversion lift' },
-  { value: '$40M+', label: 'In client revenue supported' },
-  { value: '6+', label: 'Years' },
+  { value: '6+ years', label: 'running and building stores' },
+  { value: '$40M+', label: 'in client revenue supported' },
+  { value: '2.1x', label: 'avg conversion lift on rebuilt pages' },
 ];
 
 export const VERTICALS = ['Supplements', 'Beauty', 'Skincare', 'Wellness', 'Food & Beverage', 'Apparel', 'Home'];
 
-export const DISCLAIMER =
-  'Results shown are specific past client outcomes. They are examples, not a guarantee or prediction of results for any other store. Individual results vary.';
+export const OPTIONS = [
+  {
+    tag: 'Option 1',
+    title: 'Hire full time',
+    price: '$150K+',
+    unit: ' / year',
+    points: [
+      'Salary, benefits, and recruiting fees',
+      'Months to hire, then more months to ramp',
+      'Still need a developer and designer underneath them',
+    ],
+    dark: false,
+  },
+  {
+    tag: 'Option 2',
+    title: 'Stitch together vendors',
+    price: '4 invoices',
+    unit: ' / month',
+    points: [
+      'Developer, designer, email agency, social freelancer',
+      'None of them talk, none of them own revenue',
+      'You become the project manager',
+    ],
+    dark: false,
+  },
+  {
+    tag: 'The better option',
+    title: 'One owner, on retainer',
+    price: 'From $3,000',
+    unit: ' / month',
+    points: [
+      'Senior lead who builds and directs everything',
+      'First changes ship in week one',
+      'Month to month, no recruiting, no ramp',
+    ],
+    dark: true,
+  },
+];
+
+// Icon markup is the inner SVG of a 24×24 stroke icon.
+export const OWN = [
+  {
+    icon: '<path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/>',
+    title: 'Store and development',
+    text: 'Theme builds, custom sections, apps and integrations, site speed, migrations, and the technical health nobody else is watching.',
+  },
+  {
+    icon: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/>',
+    title: 'Design and UX',
+    text: 'Product pages, landing pages, collections, cart, and mobile, designed to sell and kept consistent with your brand.',
+  },
+  {
+    icon: '<path d="M3 17l6-6 4 4 8-8M15 7h6v6"/>',
+    title: 'Conversion and testing',
+    text: 'A/B tests, funnel analysis, offers and pricing, and checkout fixes that turn the traffic you already pay for into buyers.',
+  },
+  {
+    icon: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
+    title: 'Retention and email',
+    text: 'Klaviyo flows and campaigns, subscriptions, upsells, and post-purchase, so every customer is worth more over time.',
+  },
+  {
+    icon: '<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
+    title: 'Analytics and reporting',
+    text: "Clean tracking, a KPI dashboard you actually read, and a monthly review of what moved and what's next.",
+  },
+  {
+    icon: '<path d="M3 11v2a1 1 0 001 1h3l5 4V6L7 10H4a1 1 0 00-1 1zM16 9a4 4 0 010 6M19 6a8 8 0 010 12"/>',
+    title: 'Marketing, content, and brand',
+    text: 'Social and content direction, launch and promo planning, brand consistency, and managing your freelancers and agencies.',
+  },
+];
+
+export const RESULTS = [
+  {
+    tag: 'Skincare · Ongoing retainer',
+    stat: '+71%',
+    statLabel: 'conversion rate, same ad spend',
+    title: 'A store that leaked buyers became one that improves every month.',
+    before: 'one hero product carried the business, products were buried, and the mobile cart fought shoppers.',
+    after:
+      'shoppers get guided to the right product, checkout on a phone is effortless, and organic revenue grew 62% in 6 months.',
+  },
+  {
+    tag: 'Subscriptions · Retention',
+    stat: '7% → 32%',
+    statLabel: 'subscription opt-in',
+    title: 'Over 4x more customers choosing subscribe and save.',
+    before: 'strong first orders, weak repeat revenue, and subscription and upsell apps working against each other.',
+    after: 'subscribing is the obvious choice on every page, every order gets a relevant upsell, and AOV is up 18%.',
+  },
+  {
+    tag: 'Supplements · Site rebuild',
+    stat: '7.9s → 2.1s',
+    statLabel: 'mobile load time',
+    title: 'A rebuild that paid for itself in 6 weeks.',
+    before: 'an old, bloated theme with 20+ apps, slow pages, and simple changes that took days and a developer.',
+    after: 'a fast new theme the team can edit themselves, half the apps, and conversion up 24%.',
+  },
+];
+
+export const FIRST_90 = [
+  {
+    month: 'Month 1',
+    title: 'Stop the leaks',
+    text: 'Fix tracking, speed, and the product pages and cart where buyers drop off. The quickest money is almost always here.',
+  },
+  {
+    month: 'Month 2',
+    title: 'Make every order worth more',
+    text: 'Upsells, subscriptions, and Klaviyo flows that raise order value and bring customers back.',
+  },
+  {
+    month: 'Month 3',
+    title: 'Build the growth engine',
+    text: 'A running testing roadmap, a launch and promo calendar, and content direction, so the store keeps compounding.',
+  },
+];
 
 export const PLANS = [
   {
-    name: 'Operator',
-    price: 3000,
-    bestFor: 'Brands that need their store built, fixed, and optimized continuously.',
+    tag: 'Start here',
+    name: 'Store Sprint',
+    price: 1500,
+    unit: ' one time',
+    summary: 'One week. I find the five changes most likely to move revenue, and ship them.',
     includes: [
-      'Development, design, and technical health',
-      'Ongoing conversion testing and optimization',
-      'Klaviyo, subscriptions, and upsell management',
-      'Analytics setup and monthly performance report',
-      '1 business day response',
-      'Monthly strategy call',
+      'Full store review',
+      'Five changes shipped, not a PDF',
+      'Video walkthrough of everything',
+      '100% credited to a retainer within 30 days',
     ],
+    note: { strong: 'Paid upfront.', text: 'Five changes live within seven days of kickoff.' },
+    cta: 'Book a Sprint',
+    monthly: false,
     featured: false,
   },
   {
+    tag: 'For the store itself',
+    name: 'Operator',
+    price: 3000,
+    unit: ' / month',
+    summary: 'Your store built, fixed, and optimized continuously.',
+    includes: [
+      'Development, design, and technical health',
+      'Ongoing conversion testing',
+      'Klaviyo, subscriptions, and upsells',
+      'Monthly performance report and strategy call',
+      '1 business day response',
+    ],
+    note: null,
+    cta: 'Book a call',
+    monthly: true,
+    featured: false,
+  },
+  {
+    tag: 'For the whole business',
     name: 'Head of Ecommerce',
     price: 5500,
-    bestFor: 'Brands that want one senior lead owning the store and its growth.',
+    unit: ' / month',
+    summary: 'One senior lead owning the store and its growth.',
     includes: [
       'Everything in Operator',
-      'Marketing, content, and social media direction',
-      'Brand direction across site, email, and social',
+      'Marketing, content, and social direction',
       'Launch, promo, and campaign planning',
-      'Managing your freelancers, agencies, and vendors',
-      'Weekly strategy call and KPI dashboard',
+      'Manage your freelancers and agencies',
+      'Weekly strategy call and live KPI dashboard',
       'Same day response on weekdays',
     ],
+    note: null,
+    cta: 'Book a call',
+    monthly: true,
     featured: true,
   },
 ];
 
-export const PLAN_TERMS =
-  'Month to month after the first month. 30 days notice to cancel. Scope is set together on our first call and reviewed monthly.';
-
-export const SPRINT = {
-  price: 1500,
-  duration: '1 week',
-  description:
-    'The fastest way to see how I work. I review your store, pick the five changes most likely to move revenue, and ship them in one week. If you start a retainer within 30 days, the full $1,500 is credited to your first month.',
-  includes: [
-    'Full store review',
-    'Top 5 changes shipped, not just listed',
-    'Loom walkthrough of everything changed',
-    'Credited toward a retainer',
-  ],
-};
-
-export const CASE_STUDIES = [
+export const STEPS = [
   {
-    tag: 'Skincare · Ongoing Retainer',
-    headline: 'Conversion up [71%] without spending more on ads.',
-    context: '[$2M] skincare brand with one hero product and no one owning the store.',
-    before:
-      'A store that looked fine but leaked buyers at every step, from a buried collection page to a clunky mobile cart.',
-    after:
-      'A store that guides shoppers to the right product and makes checking out on a phone effortless, improving every month.',
-    stats: [
-      { value: '[2.1% → 3.6%]', label: 'conversion rate' },
-      { value: '[+62%]', label: 'organic revenue in [6] months' },
-    ],
+    when: 'Day 1',
+    title: 'Intro call',
+    text: "20 minutes on your goals, your numbers, and where the store stands. If I'm not the right fit, I'll tell you.",
   },
   {
-    tag: 'Subscriptions · Retention',
-    headline: 'Nearly [3x] more customers choosing subscribe and save.',
-    context: 'Tea subscription brand with strong first orders and weak repeat revenue.',
-    before:
-      'Subscriptions were buried, there was no upsell path, and the subscription and upsell apps were working against each other.',
-    after:
-      'Subscribing is the obvious choice on every product page, and every order gets a relevant upsell before and after checkout.',
-    stats: [
-      { value: '[8% → 21%]', label: 'subscription opt-in' },
-      { value: '[+18%]', label: 'average order value' },
-    ],
+    when: 'Week 1',
+    title: 'First fixes ship',
+    text: 'Sprint or retainer, the first week maps where revenue is leaking and the first changes go live.',
   },
   {
-    tag: 'Multi Store · Development',
-    headline: 'Product launches went from an afternoon to [15] minutes.',
-    context: 'Brand running 3 Shopify stores and hundreds of products.',
-    before:
-      "Specs were trapped in description text, shoppers couldn't filter or compare, and every launch meant hours of copy and paste across stores.",
-    after:
-      'One source of product data powers filters, comparisons, and specs across all three stores. Shoppers find what they need faster.',
-    stats: [
-      { value: '[+34%]', label: 'shoppers using filters' },
-      { value: '[3 hrs → 15 min]', label: 'per product launch' },
-    ],
-  },
-];
-
-// Testimonials stay off until real quotes exist. To turn them on, fill in both quotes
-// and set SHOW_TESTIMONIALS to true. Unfilled quotes never render in production.
-export const SHOW_TESTIMONIALS = false;
-const TESTIMONIAL_1 = {
-  quote: '[Real client quote, 1 to 2 sentences, about results or reliability]',
-  name: '[Founder]',
-  brand: '[Skincare brand]',
-};
-const TESTIMONIAL_2 = {
-  quote: '[Real client quote, 1 to 2 sentences, about working with Carson]',
-  name: '[Head of Ecommerce]',
-  brand: '[Supplement brand]',
-};
-const isFilled = (t: typeof TESTIMONIAL_1) => Object.values(t).every((v) => v.trim() && !v.includes('['));
-export const TESTIMONIALS =
-  SHOW_TESTIMONIALS && (import.meta.env.DEV || [TESTIMONIAL_1, TESTIMONIAL_2].every(isFilled))
-    ? [TESTIMONIAL_1, TESTIMONIAL_2]
-    : [];
-
-export const RECENT_WORK = [
-  {
-    result: '[Zero] downtime across [3] Black Friday seasons',
-    tag: 'Supplements · Operations',
-    text: 'Store fully run end to end through peak season.',
-  },
-  {
-    result: 'Add to cart up [27%]',
-    tag: 'Wellness · Conversion',
-    text: 'New product page, tested head to head against the old one.',
-  },
-  {
-    result: '[11%] of buyers taking a post-purchase offer',
-    tag: 'Wellness · Subscriptions',
-    text: 'One click offers added right after checkout.',
-  },
-  {
-    result: 'Average order up [$6]',
-    tag: 'Skincare · Cart',
-    text: 'Rebuilt mobile cart with smart upsells.',
-  },
-  {
-    result: 'Email flow revenue up [38%]',
-    tag: 'Skincare · Email',
-    text: 'Welcome, abandonment, and post-purchase flows rebuilt.',
-  },
-  {
-    result: 'Mobile load time cut from [5.8s] to [2.4s]',
-    tag: 'Beauty · Speed',
-    text: 'Dead apps and slow code removed.',
-  },
-  {
-    result: 'New category launched in [10] days',
-    tag: 'Energy Drinks · Launch',
-    text: 'Product and landing pages built for a product customers had never heard of.',
-  },
-  {
-    result: '[1,200+] reviews kept through a full catalog rebuild',
-    tag: 'Home Goods · Catalog',
-    text: 'Separate products merged into variants with zero lost reviews or rankings.',
-  },
-];
-
-export const PROBLEMS = [
-  {
-    title: 'A full time hire is a big bet.',
-    text: "Salary, benefits, recruiting, and months of ramp time before you know if they're right.",
-  },
-  {
-    title: "Vendors don't talk.",
-    text: "Your developer doesn't know what your email person launched. Your social doesn't match your site. Nobody connects it to revenue.",
-  },
-  {
-    title: 'You become the project manager.',
-    text: 'Coordinating everyone becomes your job, instead of running the business.',
-  },
-];
-
-export const CAPABILITIES = [
-  {
-    icon: 'code',
-    title: 'Store & Development',
-    items: [
-      'Theme development',
-      'Custom sections',
-      'App setup and integrations',
-      'Site speed',
-      'Technical health',
-      'Migrations',
-    ],
-  },
-  {
-    icon: 'layout',
-    title: 'Design & UX',
-    items: [
-      'Product pages',
-      'Landing pages',
-      'Collection and cart design',
-      'Mobile experience',
-      'Brand consistency across the site',
-    ],
-  },
-  {
-    icon: 'trend',
-    title: 'Conversion & Testing',
-    items: ['A/B testing', 'Funnel analysis', 'Offer and pricing strategy', 'Checkout and cart optimization'],
-  },
-  {
-    icon: 'mail',
-    title: 'Retention & Email',
-    items: [
-      'Klaviyo flows and campaigns',
-      'Subscriptions (Recharge)',
-      'Upsells and cross-sells (Rebuy)',
-      'Post-purchase',
-      'Loyalty',
-    ],
-  },
-  {
-    icon: 'chart',
-    title: 'Analytics & Reporting',
-    items: [
-      'GA4 and Shopify analytics setup',
-      'KPI dashboards',
-      'Monthly performance reviews',
-      'Finding where revenue leaks',
-    ],
-  },
-  {
-    icon: 'megaphone',
-    title: 'Marketing, Content & Brand',
-    items: [
-      'Social media direction',
-      'Content strategy and creation',
-      'Brand direction',
-      'Launch and promo planning',
-      'Managing freelancers and agencies',
-    ],
-  },
-];
-
-export const PROCESS = [
-  {
-    title: 'Book a call',
-    text: "20 minutes. I learn the business and tell you honestly if I'm the right fit.",
-  },
-  {
-    title: 'Sprint or straight in',
-    text: 'Start with a one week Store Sprint, or go straight into a plan. Either way, week one maps where revenue is leaking and ships the first fixes.',
-  },
-  {
+    when: 'Month 1 and on',
     title: 'I own it',
-    text: 'From there I run the store and direct the growth: a clear plan each month, regular check ins, and reporting on the numbers that matter.',
-  },
-];
-
-export const WHY_ME = [
-  {
-    title: 'Owner, not order taker.',
-    text: "I don't wait for tickets. I find what's holding the store back and fix it.",
-  },
-  {
-    title: 'A fraction of a full time hire.',
-    text: 'Senior ecommerce leadership without the salary, benefits, recruiting, or ramp time.',
-  },
-  {
-    title: 'You talk to the person doing the work.',
-    text: "Every message comes straight to me. No account managers relaying your requests to someone you've never met.",
-  },
-  {
-    title: 'Honest about fit.',
-    text: 'Not every store is a fit. If I do not see a real opportunity to move your numbers, I will tell you early and save you the money.',
+    text: 'A clear plan each month, regular check ins, and reporting on the numbers that matter. It compounds from there.',
   },
 ];
 
 export const FAQS = [
   {
-    q: 'What does a fractional head of ecommerce do?',
-    a: 'I own your Shopify store and the growth around it, the same scope as a full time ecommerce lead, on a monthly retainer. I build and optimize the store myself and direct the marketing, content, and vendors around it.',
-  },
-  {
-    q: 'What does it cost?',
-    a: "Operator is $3,000/mo and Head of Ecommerce is $5,500/mo. If you'd like to start smaller, the one week Store Sprint is $1,500 and is credited toward a retainer.",
+    q: 'Who is this for?',
+    a: "Shopify brands doing $15K a month or more, with real traffic and a product that sells. If you're pre-launch or looking for the cheapest developer available, I'm not the right fit, and I'll say so.",
   },
   {
     q: 'Which plan is right for me?',
-    a: "If you mainly need the store built, fixed, and optimized, Operator. If you want someone owning the whole ecommerce function, including marketing direction and managing your vendors, Head of Ecommerce. I'll tell you honestly on our call.",
+    a: 'If you mainly need the store built, fixed, and optimized, Operator. If you want one person owning ecommerce, including marketing direction and your vendors, Head of Ecommerce. Not sure yet? Start with a Sprint.',
   },
   {
     q: 'Do you create the content and run social yourself?',
-    a: 'I set the direction, plan the content, and create what fits, like site content, email, and product pages. For high volume production, such as daily social posting or photo shoots, I direct your team or freelancers so it all stays on brand and tied to revenue.',
-  },
-  {
-    q: 'Why not just hire someone full time?',
-    a: 'A full time head of ecommerce means salary, benefits, recruiting, and months of ramp time. You get the same senior leadership at a fraction of the cost, starting this week.',
-  },
-  {
-    q: 'Do you bill hourly?',
-    a: "No. Plans are flat monthly retainers. Scope is agreed on our first call and reviewed every month, so you always know what's being worked on.",
+    a: 'I set the direction, plan the content, and create what fits, like site content, email, and product pages. For high volume production I direct your team or freelancers so it stays on brand and tied to revenue.',
   },
   {
     q: 'How fast will I see results?',
-    a: 'The first changes ship in week one. Most clients see measurable movement within the first month, and it compounds from there.',
+    a: 'The first changes ship in week one. Most clients see measurable movement within the first month.',
+  },
+  {
+    q: 'Do you bill hourly?',
+    a: 'No. Plans are flat monthly retainers. Scope is agreed on our first call and reviewed every month.',
   },
   {
     q: 'Can I cancel?',
@@ -334,12 +266,8 @@ export const FAQS = [
   },
   {
     q: 'Do you work with agencies?',
-    a: 'Yes, as a white label Shopify developer. See /agencies.',
-    link: { href: '/agencies', text: '/agencies' },
-  },
-  {
-    q: 'Do you guarantee results?',
-    a: 'No, because every store is different. The results on this page are real examples from past clients, not promises.',
+    a: 'Yes, as a white label Shopify developer. See the agencies page.',
+    link: { href: '/agencies', text: 'agencies page' },
   },
 ];
 

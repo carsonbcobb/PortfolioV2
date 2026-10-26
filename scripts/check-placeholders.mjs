@@ -1,4 +1,4 @@
-// Fails the build while any [bracketed] placeholder text is left in the built pages.
+// Fails the build if any "[" (placeholder text) is left in the built pages.
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -18,14 +18,14 @@ for (const file of files(DIST)) {
     .readFileSync(file, 'utf8')
     .replace(/<script[\s\S]*?<\/script>/g, '')
     .replace(/<style[\s\S]*?<\/style>/g, '');
-  for (const m of text.match(/\[[^\]<\n]{1,200}\]/g) ?? []) {
+  for (const m of text.match(/\[[^<\n]{0,60}/g) ?? []) {
     hits++;
     console.error(`${path.relative(DIST, file)}: ${m}`);
   }
 }
 
 if (hits) {
-  console.error(`\nFound ${hits} [bracketed] placeholder(s) in dist/. Replace them in src/data/site.ts before launch.`);
+  console.error(`\nFound ${hits} "[" placeholder(s) in dist/. Replace them before launch.`);
   process.exit(1);
 }
-console.log('Placeholder check passed: no [brackets] in dist/.');
+console.log('Placeholder check passed: no "[" in dist/.');
