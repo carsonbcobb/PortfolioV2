@@ -18,17 +18,19 @@ interface Props {
   description: string;
   keywords?: string;
   jsonLd?: object[];
+  ogImage?: { path: string; alt: string };
 }
 
 const {
   title,
   description,
-  keywords = 'Shopify, Shopify store operator, Shopify retainer, white label Shopify developer, DTC, conversion rate optimization, Shopify developer, store operations',
+  keywords = 'fractional head of ecommerce, Shopify ecommerce manager, DTC ecommerce lead, Shopify retainer, white label Shopify developer',
   jsonLd = [],
+  ogImage: og = { path: '/og-image.png', alt: 'Carson Cobb, Fractional Head of Ecommerce for Shopify Brands' },
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname.replace(/\/$/, '') || '/', SITE_URL).href;
-const ogImage = new URL('/og-image.png', SITE_URL).href;
+const ogImage = new URL(og.path, SITE_URL).href;
 ---
 
 <!doctype html>
@@ -57,7 +59,7 @@ const ogImage = new URL('/og-image.png', SITE_URL).href;
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Carson Cobb, Shopify Store Operator for DTC Brands" />
+    <meta property="og:image:alt" content={og.alt} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />

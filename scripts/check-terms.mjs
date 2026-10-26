@@ -14,6 +14,17 @@ const BANNED = [
   /\bGEM\b/i,
   /\baudits?\b/i,
   /\$2,000/,
+  // Retired plans, hourly terms, and positioning (Round 3).
+  /Essentials/,
+  /Full Ownership/,
+  /\$1,500\/mo/,
+  /\$2,500/,
+  /\$4,500/,
+  /hours per month/i,
+  /roll over/i,
+  /\$110/,
+  /whole team/i,
+  /Store Operator/i,
 ];
 const TEXT_EXT = new Set(['.html', '.xml', '.txt', '.json', '.js', '.css', '.svg', '.webmanifest']);
 

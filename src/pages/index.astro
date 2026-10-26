@@ -21,6 +21,7 @@ import {
   TESTIMONIALS,
   RECENT_WORK,
   PROBLEMS,
+  CAPABILITIES,
   PROCESS,
   WHY_ME,
   FAQS,
@@ -28,11 +29,21 @@ import {
 
 const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
 
+// Stroke icons for the What I Own cards (24×24, drawn in currentColor).
+const ICONS: Record<string, string> = {
+  code: '<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>',
+  layout: '<rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>',
+  trend: '<polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>',
+  mail: '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>',
+  chart: '<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>',
+  megaphone: '<path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>',
+};
+
 const person = {
   '@type': 'Person',
   '@id': `${SITE_URL}/#carson`,
   name: 'Carson Cobb',
-  jobTitle: 'Shopify Store Operator',
+  jobTitle: 'Fractional Head of Ecommerce',
   url: SITE_URL,
   email: `mailto:${EMAIL}`,
   sameAs: [LINKEDIN_URL],
@@ -45,13 +56,13 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
     '@id': `${SITE_URL}/#service`,
-    name: 'Carson Cobb, Shopify Store Operator',
+    name: 'Carson Cobb, Fractional Head of Ecommerce',
     url: SITE_URL,
     image: `${SITE_URL}/og-image.png`,
     email: EMAIL,
     founder: { '@id': `${SITE_URL}/#carson` },
     areaServed: 'US',
-    priceRange: '$1,500 to $4,500 per month',
+    priceRange: '$3,000 to $5,500 per month',
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: 'Shopify plans',
@@ -59,7 +70,7 @@ const jsonLd = [
         ...PLANS.map((p) => ({
           '@type': 'Offer',
           name: p.name,
-          description: p.tagline,
+          description: p.bestFor,
           price: p.price,
           priceCurrency: 'USD',
           priceSpecification: {
@@ -93,18 +104,20 @@ const jsonLd = [
 ---
 
 <Layout
-  title="Carson Cobb | Shopify Store Operator for DTC Brands"
-  description="One senior operator to run your Shopify store end to end: conversion, development, retention, and operations. Monthly retainers for DTC brands, plus white label dev for agencies."
+  title="Carson Cobb | Fractional Head of Ecommerce for Shopify Brands"
+  description="A senior ecommerce lead who owns your Shopify store and growth: development, design, conversion, email, analytics, and marketing direction. A fraction of the cost of a full time hire."
+  keywords="fractional head of ecommerce, Shopify ecommerce manager, DTC ecommerce lead, Shopify retainer, white label Shopify developer"
   jsonLd={jsonLd}
 >
   <!-- Hero -->
   <section class="hero" aria-label="Introduction">
     <div class="hero__content">
-      <span class="eyebrow">Full Store Shopify Operator</span>
-      <h1>A whole team's worth of Shopify expertise, for one <em>monthly retainer</em>.</h1>
+      <span class="eyebrow">Fractional Head of Ecommerce</span>
+      <h1>Your head of ecommerce, <em>without the full time hire</em>.</h1>
       <p class="hero__copy">
-        Conversion, development, retention, and store operations. The range a DTC brand usually hires four or five
-        people for, from one specialist who has done all of it. Plans from $1,500/mo.
+        I own your Shopify store and the growth around it: development, design, conversion, email, analytics, and
+        marketing direction. One senior lead, accountable for the numbers, at a fraction of the cost of a full time
+        hire.
       </p>
       <div class="hero__ctas">
         <Button href={CAL_LINK} track="book_call">Book a call</Button>
@@ -138,8 +151,8 @@ const jsonLd = [
   <Section
     id="problem"
     eyebrow="The Problem"
-    title="Hiring each skill separately is <em>expensive and disjointed</em>."
-    intro="You need a developer, someone on conversion, someone on email and subscriptions, and someone keeping the store running. Hiring each one means four contractors, four invoices, and you stuck in the middle coordinating all of it."
+    title="Your store needs an owner. <em>Not more vendors.</em>"
+    intro="Most growing brands either hire a full time head of ecommerce they can't yet afford, or stitch together a developer, a designer, an email agency, and a social freelancer, then end up managing all of them. Either way, nobody owns the whole picture."
   >
     <div class="grid grid--3">
       {
@@ -154,12 +167,47 @@ const jsonLd = [
     </div>
   </Section>
 
+  <!-- What I Own -->
+  <Section
+    id="what-i-own"
+    bg="alt"
+    eyebrow="What I Own"
+    title="Every part of running a Shopify store."
+    intro="What I build and run myself, and what I direct and manage, so it all moves the same direction."
+  >
+    <div class="grid grid--3">
+      {
+        CAPABILITIES.map((c) => (
+          <Card class="own">
+            <svg
+              class="own__icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              set:html={ICONS[c.icon]}
+            />
+            <h3>{c.title}</h3>
+            <ul class="check-list">
+              {c.items.map((i) => (
+                <li>{i}</li>
+              ))}
+            </ul>
+          </Card>
+        ))
+      }
+    </div>
+    <p class="own__close">Whatever the store needs, it has an owner.</p>
+  </Section>
+
   <!-- Results -->
   <Section
     id="results"
-    bg="alt"
     eyebrow="Results"
-    title="What changes when your store is run right."
+    title="What changes when your store has an owner."
     intro="Results from past clients. Names withheld; most of my work is under NDA or white label."
   >
     <p class="disclaimer results__disclaimer">{DISCLAIMER}</p>
@@ -197,7 +245,7 @@ const jsonLd = [
   <Testimonials items={TESTIMONIALS} />
 
   <!-- Recent Work -->
-  <Section id="work" eyebrow="Recent Work" title="More recent wins." intro="A sample of results from recent projects.">
+  <Section id="work" bg="alt" eyebrow="Recent Work" title="More recent wins." intro="A sample of results from recent projects.">
     <ul class="grid grid--4 work">
       {
         RECENT_WORK.map((w) => (
@@ -213,13 +261,12 @@ const jsonLd = [
 
   <!-- Plans -->
   <Section
-    id="services"
-    bg="alt"
-    eyebrow="Services"
-    title="Plans"
-    intro="Every plan is a flat monthly retainer billed in advance. You get a dedicated queue, direct access to me, and a monthly recap of everything shipped."
+    id="plans"
+    eyebrow="Plans"
+    title="Pick your level of ownership."
+    intro="Flat monthly retainers, billed in advance. No hourly billing and no surprise invoices."
   >
-    <div class="grid grid--3 plans">
+    <div class="grid grid--2 plans">
       {
         PLANS.map((p) => (
           <Card featured={p.featured} class="plan">
@@ -230,7 +277,6 @@ const jsonLd = [
               <span>/mo</span>
             </p>
             <p class="plan__best">Best for: {p.bestFor}</p>
-            <p class="plan__tagline">{p.tagline}</p>
             <ul class="check-list">
               {p.includes.map((i) => (
                 <li>{i}</li>
@@ -247,7 +293,7 @@ const jsonLd = [
 
     <Card class="sprint" as="article">
       <div class="sprint__intro">
-        <span class="eyebrow">Not ready for a plan?</span>
+        <span class="eyebrow">Not ready for a retainer?</span>
         <h3 class="sprint__title">Store Sprint</h3>
         <p class="sprint__price">{usd(SPRINT.price)} fixed <span>· {SPRINT.duration}</span></p>
         <p class="sprint__desc">{SPRINT.description}</p>
@@ -262,7 +308,7 @@ const jsonLd = [
   </Section>
 
   <!-- Process -->
-  <Section id="process" eyebrow="Process" title="Here's How It Works">
+  <Section id="process" bg="alt" eyebrow="Process" title="Here's How It Works">
     <ol class="grid grid--3 steps">
       {
         PROCESS.map((s, i) => (
@@ -282,10 +328,9 @@ const jsonLd = [
   <!-- Why Work With Me -->
   <Section
     id="why"
-    bg="alt"
     eyebrow="Why Work With Me"
-    title="One specialist. Every part of the store."
-    intro="You get one senior operator who knows your whole store, answers directly, and is accountable for the numbers. No account managers, no handoffs, no juniors learning on your store."
+    title="A senior lead, not another vendor."
+    intro="You get one person who knows your whole store, answers directly, and is accountable for the numbers. No account managers, no handoffs, no juniors learning on your store."
   >
     <div class="grid grid--2">
       {
@@ -308,14 +353,15 @@ const jsonLd = [
         )
       }
       <p>
-        I'm Carson. I've spent 6+ years inside 50+ Shopify stores, from scrappy founders to eight figure brands, and
-        I've run stores end to end. I'm based in California and work with brands across the US.
+        I'm Carson. I've spent 6+ years inside 50+ Shopify stores, from scrappy founders to eight figure brands,
+        leading development, conversion, retention, and growth. I'm based in California and work with brands across the
+        US.
       </p>
     </div>
   </Section>
 
   <!-- FAQ -->
-  <Section id="faq" eyebrow="FAQ" title="Questions You're Probably Asking">
+  <Section id="faq" bg="alt" eyebrow="FAQ" title="Questions You're Probably Asking">
     <div class="faq">
       {
         FAQS.map((f) => (
@@ -342,7 +388,7 @@ const jsonLd = [
 
   <ContactCta
     title="Let's talk about <em>your store</em>."
-    copy="Book a 20 minute call about your store. I will tell you honestly whether it is a fit, and what I would focus on first."
+    copy="Book a 20 minute call. I'll tell you honestly whether I'm a fit, and what I'd focus on first."
   />
 </Layout>
 
@@ -449,6 +495,7 @@ const jsonLd = [
   /* Plans */
   .plans {
     align-items: stretch;
+    max-width: 900px;
   }
 
   .plans .plan {
@@ -492,16 +539,10 @@ const jsonLd = [
   }
 
   .plan__best {
-    font-size: 0.875rem;
+    font-size: 0.95rem;
     line-height: 1.5;
     color: var(--color-text-secondary);
-    margin-bottom: 1rem;
-  }
-
-  .plan__tagline {
-    font-weight: 600;
-    line-height: 1.4;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
   }
 
   .plans .check-list {
@@ -518,6 +559,31 @@ const jsonLd = [
     text-align: center;
     font-size: 0.9rem;
     color: var(--color-text-secondary);
+  }
+
+  /* What I Own */
+  .own__icon {
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin-bottom: 1.25rem;
+    color: var(--color-accent-text);
+  }
+
+  .own h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .own .check-list {
+    margin-bottom: 0;
+  }
+
+  .own__close {
+    margin-top: 2.5rem;
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: 700;
   }
 
   .sprint {
@@ -874,6 +940,10 @@ const jsonLd = [
     }
     .stat__value {
       font-size: 2rem;
+    }
+    /* Head of Ecommerce stacks first on mobile */
+    .plans .card--featured {
+      order: -1;
     }
     .sprint {
       grid-template-columns: 1fr;

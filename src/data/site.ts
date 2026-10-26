@@ -37,62 +37,47 @@ export const DISCLAIMER =
 
 export const PLANS = [
   {
-    name: 'Essentials',
-    price: 1500,
-    tagline: 'For stores that need a reliable senior developer on call.',
-    bestFor: 'stores under $1M that need a dev on call',
+    name: 'Operator',
+    price: 3000,
+    bestFor: 'Brands that need their store built, fixed, and optimized continuously.',
     includes: [
-      'Up to 15 hours per month',
-      'Theme, app, and bug fixes',
-      'Small builds and landing pages',
-      '2 business day response',
-      'Monthly recap of everything shipped',
+      'Development, design, and technical health',
+      'Ongoing conversion testing and optimization',
+      'Klaviyo, subscriptions, and upsell management',
+      'Analytics setup and monthly performance report',
+      '1 business day response',
+      'Monthly strategy call',
     ],
     featured: false,
   },
   {
-    name: 'Operator',
-    price: 2500,
-    tagline: 'You hand me the store. I run it end to end.',
-    bestFor: '$1M to $5M brands ready to grow',
+    name: 'Head of Ecommerce',
+    price: 5500,
+    bestFor: 'Brands that want one senior lead owning the store and its growth.',
     includes: [
-      'Up to 25 hours per month',
-      'Ongoing CRO and A/B testing',
-      'Development and technical health',
-      'Retention, subscriptions, and Klaviyo flows (Recharge, Rebuy)',
-      'Store operations and order flows',
-      '1 business day response',
-      'Monthly roadmap call',
+      'Everything in Operator',
+      'Marketing, content, and social media direction',
+      'Brand direction across site, email, and social',
+      'Launch, promo, and campaign planning',
+      'Managing your freelancers, agencies, and vendors',
+      'Weekly strategy call and KPI dashboard',
+      'Same day response on weekdays',
     ],
     featured: true,
-  },
-  {
-    name: 'Full Ownership',
-    price: 4500,
-    tagline: 'For brands that want the whole store off their plate.',
-    bestFor: 'brands with no in house ecommerce team',
-    includes: [
-      'Up to 45 hours per month',
-      'Everything in Operator',
-      'Same day response on weekdays',
-      'Weekly check in',
-      'Priority queue',
-    ],
-    featured: false,
   },
 ];
 
 export const PLAN_TERMS =
-  'Month to month after the first month. 30 days notice to cancel. Unused hours do not roll over. Additional hours $110/hr.';
+  'Month to month after the first month. 30 days notice to cancel. Scope is set together on our first call and reviewed monthly.';
 
 export const SPRINT = {
   price: 1500,
   duration: '1 week',
   description:
-    'Not a PDF of recommendations. I review your store, pick the five fixes most likely to move revenue, and ship them in one week. If you start a retainer within 30 days, the sprint is credited to your first month.',
+    'The fastest way to see how I work. I review your store, pick the five changes most likely to move revenue, and ship them in one week. If you start a retainer within 30 days, the full $1,500 is credited to your first month.',
   includes: [
-    'Conversion and technical review',
-    'Top 5 fixes shipped, not just listed',
+    'Full store review',
+    'Top 5 changes shipped, not just listed',
     'Loom walkthrough of everything changed',
     'Credited toward a retainer',
   ],
@@ -204,42 +189,105 @@ export const RECENT_WORK = [
 
 export const PROBLEMS = [
   {
-    title: 'Four Or Five Line Items',
-    text: 'Each specialty is its own hire and its own invoice. The total to properly cover a store runs well past a single monthly retainer.',
+    title: 'A full time hire is a big bet.',
+    text: "Salary, benefits, recruiting, and months of ramp time before you know if they're right.",
   },
   {
-    title: "Skills That Don't Talk",
-    text: 'Your SEO does not know what your dev changed. Your designer does not know what converts. Disconnected experts produce a disconnected store.',
+    title: "Vendors don't talk.",
+    text: "Your developer doesn't know what your email person launched. Your social doesn't match your site. Nobody connects it to revenue.",
   },
   {
-    title: 'You Manage It All',
-    text: 'Coordinating four vendors becomes your job. You end up project managing instead of running your business.',
+    title: 'You become the project manager.',
+    text: 'Coordinating everyone becomes your job, instead of running the business.',
+  },
+];
+
+export const CAPABILITIES = [
+  {
+    icon: 'code',
+    title: 'Store & Development',
+    items: [
+      'Theme development',
+      'Custom sections',
+      'App setup and integrations',
+      'Site speed',
+      'Technical health',
+      'Migrations',
+    ],
+  },
+  {
+    icon: 'layout',
+    title: 'Design & UX',
+    items: [
+      'Product pages',
+      'Landing pages',
+      'Collection and cart design',
+      'Mobile experience',
+      'Brand consistency across the site',
+    ],
+  },
+  {
+    icon: 'trend',
+    title: 'Conversion & Testing',
+    items: ['A/B testing', 'Funnel analysis', 'Offer and pricing strategy', 'Checkout and cart optimization'],
+  },
+  {
+    icon: 'mail',
+    title: 'Retention & Email',
+    items: [
+      'Klaviyo flows and campaigns',
+      'Subscriptions (Recharge)',
+      'Upsells and cross-sells (Rebuy)',
+      'Post-purchase',
+      'Loyalty',
+    ],
+  },
+  {
+    icon: 'chart',
+    title: 'Analytics & Reporting',
+    items: [
+      'GA4 and Shopify analytics setup',
+      'KPI dashboards',
+      'Monthly performance reviews',
+      'Finding where revenue leaks',
+    ],
+  },
+  {
+    icon: 'megaphone',
+    title: 'Marketing, Content & Brand',
+    items: [
+      'Social media direction',
+      'Content strategy and creation',
+      'Brand direction',
+      'Launch and promo planning',
+      'Managing freelancers and agencies',
+    ],
   },
 ];
 
 export const PROCESS = [
   {
-    title: 'Book A Call',
+    title: 'Book a call',
     text: "20 minutes. I learn the business and tell you honestly if I'm the right fit.",
   },
   {
-    title: 'Sprint or Straight to Retainer',
+    title: 'Sprint or straight in',
     text: 'Start with a one week Store Sprint, or go straight into a plan. Either way, week one maps where revenue is leaking and ships the first fixes.',
   },
   {
-    title: 'Ongoing',
-    text: 'A monthly queue, a monthly recap, and steady improvement across conversion, development, retention, and operations.',
+    title: 'I own it',
+    text: 'From there I run the store and direct the growth: a clear plan each month, regular check ins, and reporting on the numbers that matter.',
   },
 ];
 
 export const WHY_ME = [
   {
-    title: 'Nothing falls between the cracks.',
-    text: 'When one specialist covers the whole store, the SEO work and the dev work and the conversion work actually line up. No disconnected vendors producing a disconnected store.',
+    title: 'Owner, not order taker.',
+    text: "I don't wait for tickets. I find what's holding the store back and fix it.",
   },
   {
-    title: 'One invoice instead of four.',
-    text: 'Hiring each of these skills separately means four or five contractors and four or five bills. You get the same range for one flat monthly retainer.',
+    title: 'A fraction of a full time hire.',
+    text: 'Senior ecommerce leadership without the salary, benefits, recruiting, or ramp time.',
   },
   {
     title: 'You talk to the person doing the work.',
@@ -253,32 +301,32 @@ export const WHY_ME = [
 
 export const FAQS = [
   {
-    q: 'How does this work and what does it cost?',
-    a: 'There are three flat monthly plans. Essentials is $1,500/mo for up to 15 hours of senior development. Operator is $2,500/mo for up to 25 hours, where I run the store end to end. Full Ownership is $4,500/mo for up to 45 hours with a priority queue and weekly check ins. If you want to start smaller, the Store Sprint is $1,500 fixed: one week, five fixes shipped, and credited to your first month if you start a retainer within 30 days. Book a call and I will tell you which fits your situation.',
+    q: 'What does a fractional head of ecommerce do?',
+    a: 'I own your Shopify store and the growth around it, the same scope as a full time ecommerce lead, on a monthly retainer. I build and optimize the store myself and direct the marketing, content, and vendors around it.',
   },
   {
-    q: 'What does the retainer actually cover?',
-    a: 'Everything a store needs to grow: conversion and testing, Shopify development and technical health, traffic and SEO, retention and subscriptions, and the operations underneath like settings, order flows, and email. It all moves under one plan instead of being split across separate vendors.',
+    q: 'What does it cost?',
+    a: "Operator is $3,000/mo and Head of Ecommerce is $5,500/mo. If you'd like to start smaller, the one week Store Sprint is $1,500 and is credited toward a retainer.",
   },
   {
     q: 'Which plan is right for me?',
-    a: "Most growing brands start on Operator. If you mostly need fixes and small builds, Essentials covers it. If you don't have anyone in house running ecommerce, Full Ownership is built for that. On our call I'll tell you honestly which one fits.",
+    a: "If you mainly need the store built, fixed, and optimized, Operator. If you want someone owning the whole ecommerce function, including marketing direction and managing your vendors, Head of Ecommerce. I'll tell you honestly on our call.",
   },
   {
-    q: "What's the Store Sprint?",
-    a: "A one week, fixed price engagement. I review your store, pick the five fixes most likely to move revenue, and ship them. It's the easiest way to see how I work, and it's credited to your first month if you start a retainer within 30 days.",
+    q: 'Do you create the content and run social yourself?',
+    a: 'I set the direction, plan the content, and create what fits, like site content, email, and product pages. For high volume production, such as daily social posting or photo shoots, I direct your team or freelancers so it all stays on brand and tied to revenue.',
+  },
+  {
+    q: 'Why not just hire someone full time?',
+    a: 'A full time head of ecommerce means salary, benefits, recruiting, and months of ramp time. You get the same senior leadership at a fraction of the cost, starting this week.',
+  },
+  {
+    q: 'Do you bill hourly?',
+    a: "No. Plans are flat monthly retainers. Scope is agreed on our first call and reviewed every month, so you always know what's being worked on.",
   },
   {
     q: 'How fast will I see results?',
-    a: 'The first fixes ship in week one. Most clients see measurable movement within the first month, and it compounds from there because every part of the store is being worked on together.',
-  },
-  {
-    q: 'Do unused hours roll over?',
-    a: 'No. The plan reserves my time for you each month.',
-  },
-  {
-    q: 'What if I need more hours?',
-    a: 'Additional hours are $110/hr, or move up a plan anytime.',
+    a: 'The first changes ship in week one. Most clients see measurable movement within the first month, and it compounds from there.',
   },
   {
     q: 'Can I cancel?',
@@ -286,16 +334,12 @@ export const FAQS = [
   },
   {
     q: 'Do you work with agencies?',
-    a: 'Yes, as white label dev. See /agencies.',
+    a: 'Yes, as a white label Shopify developer. See /agencies.',
     link: { href: '/agencies', text: '/agencies' },
   },
   {
-    q: 'Why a retainer instead of hiring specialists?',
-    a: 'To properly cover a store you normally need a designer, a developer, an SEO, and a retention person. That is four or five contractors, four or five invoices, and a lot of coordination that lands on you. The retainer gives you that whole range of expertise for one flat monthly price, working together instead of in silos.',
-  },
-  {
-    q: 'Do you guarantee specific results?',
-    a: 'No, because every store is different. What I can share is the range of results I have driven for past clients across conversion, traffic, and retention. Those are examples of what has happened, not a promise of what any specific store will do.',
+    q: 'Do you guarantee results?',
+    a: 'No, because every store is different. The results on this page are real examples from past clients, not promises.',
   },
 ];
 

@@ -29,4 +29,4 @@ The old SPA fallback (`/<*>` → `/index.html`, 200) must be removed, or every p
 | --- | --- | --- |
 | `/<*>` | `/404.html` | 404 (Rewrite) |
 
-The og:image source is `scripts/og-image.html` (render at 1200×630).
+The og:image sources are `scripts/og-image.html` (home) and `scripts/og-image-agencies.html` (/agencies), rendered at 1200×630.
