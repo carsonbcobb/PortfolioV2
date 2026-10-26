@@ -21,20 +21,16 @@ const publicFile = (p: string) => fs.existsSync(path.join(process.cwd(), 'public
 // Headshot: drop a photo at public/carson.jpg. Until then an initials avatar is shown.
 export const HEADSHOT = publicFile('carson.jpg') ? '/carson.jpg' : null;
 
-// Approved client logos live in public/logos (ideally .webp, 80px tall). Only logos whose file exists are rendered,
-// and the whole "Trusted by" row is hidden if none exist.
-const LOGO_CANDIDATES = [
-  { name: 'GEM', file: 'gem.webp', width: 181, height: 80 },
-  { name: 'Organifi', file: 'organifi.png', width: 0, height: 0 },
-  { name: "Charlotte's Web", file: 'charlottes-web.png', width: 0, height: 0 },
-];
-export const LOGOS = LOGO_CANDIDATES.filter((l) => publicFile(`logos/${l.file}`));
-
+// Values in [brackets] are placeholders for Carson to replace with real data before launch.
+// `npm run check:placeholders` fails the build while any remain in dist/.
 export const STATS = [
-  { value: '1.9%→4.8%', label: 'Conversion Rate Lift' },
-  { value: '131%', label: 'Client Revenue Increase' },
-  { value: '3.4x', label: 'Organic Traffic Growth' },
+  { value: '50+', label: 'Shopify stores' },
+  { value: '[2.1x]', label: 'Average conversion lift on rebuilt PDPs' },
+  { value: '[$40M+]', label: 'In client revenue supported' },
+  { value: '6+', label: 'Years' },
 ];
+
+export const VERTICALS = ['Supplements', 'Beauty', 'Skincare', 'Wellness', 'Food & Beverage', 'Apparel', 'Home'];
 
 export const DISCLAIMER =
   'Results shown are specific past client outcomes. They are examples, not a guarantee or prediction of results for any other store. Individual results vary.';
@@ -44,13 +40,21 @@ export const PLANS = [
     name: 'Essentials',
     price: 1500,
     tagline: 'For stores that need a reliable senior developer on call.',
-    includes: ['Up to 15 hours per month', 'Theme and app fixes, small builds', '2 business day response', 'Monthly recap'],
+    bestFor: 'stores under $1M that need a dev on call',
+    includes: [
+      'Up to 15 hours per month',
+      'Theme, app, and bug fixes',
+      'Small builds and landing pages',
+      '2 business day response',
+      'Monthly recap of everything shipped',
+    ],
     featured: false,
   },
   {
     name: 'Operator',
     price: 2500,
     tagline: 'You hand me the store. I run it end to end.',
+    bestFor: '$1M to $5M brands ready to grow',
     includes: [
       'Up to 25 hours per month',
       'Ongoing CRO and A/B testing',
@@ -66,6 +70,7 @@ export const PLANS = [
     name: 'Full Ownership',
     price: 4500,
     tagline: 'For brands that want the whole store off their plate.',
+    bestFor: 'brands with no in house ecommerce team',
     includes: [
       'Up to 45 hours per month',
       'Everything in Operator',
@@ -93,81 +98,105 @@ export const SPRINT = {
   ],
 };
 
+export const RESULTS_NOTE = 'Client names withheld. Most of my work is under NDA or white label.';
+
 export const CASE_STUDIES = [
   {
-    tag: 'Conversion',
-    title: 'DTC Health & Wellness Brand',
+    tag: 'Ongoing Retainer',
+    title: 'Skincare Brand, Run End to End',
     problem:
-      'Converting at 2.4%. Product pages were not educating new visitors, trust elements were missing or in the wrong places, and the mobile experience was dragging down 70%+ of their traffic.',
+      'One hero product drove over half of revenue, the collection page buried products under an oversized banner, the mobile cart fought itself, and nobody owned the store week to week.',
     solution:
-      'Took over the store end to end. Rebuilt product page structure, moved social proof above the fold, restructured the mobile experience, and fixed technical performance issues.',
-    resultPrimary: '2.4% → 6.7% CVR',
-    resultSecondary: '179% revenue increase from the same traffic',
+      'Took over the store on a monthly retainer. Built a dedicated hero product page, a product finder quiz, and rebuilt collection and cart layouts for mobile. Launched a content program answering the exact questions buyers ask before purchasing.',
+    resultPrimary: '[2.1% → 3.6%] conversion rate',
+    resultSecondary: '[62%] increase in organic revenue in [6] months',
   },
   {
-    tag: 'Technical SEO + Traffic',
-    title: 'DTC Supplement Brand',
-    problem: 'Thin technical SEO, missing structured data, and slow pages were costing the store organic rankings.',
+    tag: 'Retention + Subscriptions',
+    title: 'Tea Subscription Brand',
+    problem:
+      'Strong first orders, weak repeat revenue. Subscriptions were an afterthought, there was no upsell path, and Recharge and Rebuy were configured in ways that fought each other.',
     solution:
-      'Rebuilt the technical SEO foundation, implemented product structured data, and fixed site speed across the store.',
-    resultPrimary: '68% increase in organic traffic',
-    resultSecondary: 'Over 6 months',
+      'Rebuilt the subscription experience from product page to post-purchase. Untangled the Recharge and Rebuy setup, repositioned subscribe and save on product pages, built smart cart upsells, and launched post-purchase offers.',
+    resultPrimary: 'Subscription opt-in [8% → 21%]',
+    resultSecondary: '[18%] AOV increase on the same traffic',
   },
   {
-    tag: 'Retention + Ongoing Retainer',
-    title: 'E-Commerce Subscription Brand',
+    tag: 'Complex Development',
+    title: 'Multi Store Catalog Rebuild',
     problem:
-      'Strong first orders but weak repeat revenue. Low subscription opt-in, no upsell path, and email flows that were not converting repeat buyers.',
+      "Three Shopify stores and hundreds of products, with specs trapped in description text. Shoppers couldn't filter or compare, and every launch meant hours of copy and paste.",
     solution:
-      'Ongoing retainer running the full store. Rebuilt subscription and upsell flows, restructured post-purchase email, and continuously tested across the funnel month over month.',
-    resultPrimary: 'Subscription opt-in 8% → 21%',
-    resultSecondary: '18% AOV increase and steady month over month revenue growth on the same ad spend',
+      'Designed a structured product data system, one definition per category, and mapped it into templates across all three stores. Specs, comparisons, and filters now update from a single source.',
+    resultPrimary: '[34%] more shoppers using filters to find products',
+    resultSecondary: 'New product setup cut from [3 hours] to [15 minutes]',
   },
 ];
 
-// Fill these in when Carson supplies them. Unfilled testimonials show as
-// placeholders in `npm run dev` and are left out of production builds.
-const TESTIMONIAL_1 = { quote: '', name: '', title: '', brand: '' };
-const TESTIMONIAL_2 = { quote: '', name: '', title: '', brand: '' };
-export const TESTIMONIALS = [TESTIMONIAL_1, TESTIMONIAL_2]
-  .map((t, i) =>
-    t.quote
-      ? t
-      : import.meta.env.DEV
-        ? { quote: `TESTIMONIAL_${i + 1}`, name: 'Name', title: 'Title', brand: 'Brand' }
-        : null,
-  )
-  .filter((t): t is NonNullable<typeof t> => t !== null);
+// Replace the bracketed text with real quotes. The section is hidden in production
+// builds until both quotes are filled in (dev shows the placeholders).
+const TESTIMONIAL_1 = {
+  quote: '[Real client quote, 1 to 2 sentences, about results or reliability]',
+  name: '[Founder]',
+  brand: '[Skincare brand]',
+};
+const TESTIMONIAL_2 = {
+  quote: '[Real client quote, 1 to 2 sentences, about working with Carson]',
+  name: '[Head of Ecommerce]',
+  brand: '[Supplement brand]',
+};
+const isFilled = (t: typeof TESTIMONIAL_1) => Object.values(t).every((v) => v.trim() && !v.includes('['));
+export const TESTIMONIALS =
+  import.meta.env.DEV || [TESTIMONIAL_1, TESTIMONIAL_2].every(isFilled) ? [TESTIMONIAL_1, TESTIMONIAL_2] : [];
 
-export const OUTCOMES = [
+export const RECENT_WORK = [
   {
-    title: 'Conversion',
-    outcome:
-      'Turning the traffic you already have into more buyers. Rebuilt product pages, checkout, and mobile experience.',
-    metric: '1.9% to 4.8% conversion rate',
+    tag: 'Operations',
+    title: 'Full store operations, supplement brand',
+    text: 'Ran the store end to end: launches, promos, theme, apps, and order flows.',
+    result: '[Zero] downtime across [3] BFCM seasons',
   },
   {
-    title: 'Development',
-    outcome:
-      'Custom sections, app integrations, Recharge and Rebuy builds, and the technical work most stores have been putting off.',
-    metric: null,
+    tag: 'Conversion',
+    title: 'PDP rebuild, wellness brand',
+    text: 'New product page template built around education and trust, A/B tested against the original.',
+    result: '[+27%] add to cart rate',
   },
   {
-    title: 'Traffic',
-    outcome:
-      'Growing qualified visits through SEO and technical health, so acquisition is not fully dependent on paid ads.',
-    metric: '68% increase in organic traffic in 6 months',
+    tag: 'Subscriptions',
+    title: 'Post-purchase offers, wellness brand',
+    text: 'One click post-purchase cross-sells built in Recharge.',
+    result: '[11%] take rate on offers',
   },
   {
-    title: 'Retention & Subscriptions',
-    outcome:
-      'Keeping customers buying after the first order with subscription flows, upsells, and email that actually converts.',
-    metric: 'Subscription opt-in from 8% to 21%, 18% AOV lift',
+    tag: 'Cart',
+    title: 'Cart drawer rebuild, skincare brand',
+    text: 'Rebuilt the mobile cart with tiered upsells and fixed conflicting discount launchers.',
+    result: '[+$6] average order value',
   },
   {
-    title: 'Growth',
-    outcome: 'Every layer working together compounds. Steady month over month improvement instead of one-off fixes.',
-    metric: '40%+ revenue lift over 6 months on the same ad spend',
+    tag: 'Email',
+    title: 'Klaviyo flow overhaul, skincare brand',
+    text: 'Audited and rebuilt welcome, abandonment, and post-purchase flows.',
+    result: '[+38%] flow revenue',
+  },
+  {
+    tag: 'Speed',
+    title: 'App cleanup and speed pass, beauty brand',
+    text: 'Removed dead apps and scripts and rebuilt slow sections.',
+    result: 'Mobile load time [5.8s → 2.4s]',
+  },
+  {
+    tag: 'Launch',
+    title: 'New category launch, energy drink brand',
+    text: 'Product pages and landing pages for a product category customers had never heard of.',
+    result: 'Launched in [10] days',
+  },
+  {
+    tag: 'Catalog',
+    title: 'Variant migration, home goods brand',
+    text: 'Merged separate products into variants without losing a single review or ranking.',
+    result: '[1,200+] reviews preserved',
   },
 ];
 
@@ -192,8 +221,8 @@ export const PROCESS = [
     text: "20 minutes. I learn the business and tell you honestly if I'm the right fit.",
   },
   {
-    title: 'Sprint Or Straight To Retainer',
-    text: 'Start with a one week Store Sprint, or go straight into a plan. Either way, the first week maps where revenue is leaking and ships the first fixes.',
+    title: 'Sprint or Straight to Retainer',
+    text: 'Start with a one week Store Sprint, or go straight into a plan. Either way, week one maps where revenue is leaking and ships the first fixes.',
   },
   {
     title: 'Ongoing',
@@ -226,12 +255,20 @@ export const FAQS = [
     a: 'There are three flat monthly plans. Essentials is $1,500/mo for up to 15 hours of senior development. Operator is $2,500/mo for up to 25 hours, where I run the store end to end. Full Ownership is $4,500/mo for up to 45 hours with a priority queue and weekly check ins. If you want to start smaller, the Store Sprint is $1,500 fixed: one week, five fixes shipped, and credited to your first month if you start a retainer within 30 days. Book a call and I will tell you which fits your situation.',
   },
   {
-    q: 'Why a retainer instead of hiring specialists as I need them?',
-    a: 'To properly cover a store you normally need a designer, a developer, an SEO, and a retention person. That is four or five contractors, four or five invoices, and a lot of coordination that lands on you. The retainer gives you that whole range of expertise for one flat monthly price, working together instead of in silos.',
-  },
-  {
     q: 'What does the retainer actually cover?',
     a: 'Everything a store needs to grow: conversion and testing, Shopify development and technical health, traffic and SEO, retention and subscriptions, and the operations underneath like settings, order flows, and email. It all moves under one plan instead of being split across separate vendors.',
+  },
+  {
+    q: 'Which plan is right for me?',
+    a: "Most growing brands start on Operator. If you mostly need fixes and small builds, Essentials covers it. If you don't have anyone in house running ecommerce, Full Ownership is built for that. On our call I'll tell you honestly which one fits.",
+  },
+  {
+    q: "What's the Store Sprint?",
+    a: "A one week, fixed price engagement. I review your store, pick the five fixes most likely to move revenue, and ship them. It's the easiest way to see how I work, and it's credited to your first month if you start a retainer within 30 days.",
+  },
+  {
+    q: 'How fast will I see results?',
+    a: 'The first fixes ship in week one. Most clients see measurable movement within the first month, and it compounds from there because every part of the store is being worked on together.',
   },
   {
     q: 'Do unused hours roll over?',
@@ -246,13 +283,13 @@ export const FAQS = [
     a: 'Yes. Month to month after the first month, with 30 days notice.',
   },
   {
-    q: 'How fast will I see results?',
-    a: 'Whether you start with a Store Sprint or go straight into a plan, the first week maps where revenue is leaking and ships the first fixes. From there, most clients see measurable improvement within the first several weeks, and it compounds month over month because every part of the store is finally being worked on together.',
-  },
-  {
     q: 'Do you work with agencies?',
     a: 'Yes, as white label dev. See /agencies.',
     link: { href: '/agencies', text: '/agencies' },
+  },
+  {
+    q: 'Why a retainer instead of hiring specialists?',
+    a: 'To properly cover a store you normally need a designer, a developer, an SEO, and a retention person. That is four or five contractors, four or five invoices, and a lot of coordination that lands on you. The retainer gives you that whole range of expertise for one flat monthly price, working together instead of in silos.',
   },
   {
     q: 'Do you guarantee specific results?',

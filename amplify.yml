@@ -10,6 +10,7 @@ frontend:
       commands:
         - npm run build
         - npm run check:terms
+        - npm run check:placeholders
   artifacts:
     baseDirectory: dist
     files:

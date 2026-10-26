@@ -3,7 +3,18 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const DIST = path.resolve('dist');
-const BANNED = [/AI search/i, /\bAEO\b/i, /answer engine/i, /ChatGPT/i, /\bLLMs?\b/i];
+const BANNED = [
+  /AI search/i,
+  /\bAEO\b/i,
+  /answer engine/i,
+  /ChatGPT/i,
+  /\bLLMs?\b/i,
+  // No client brand names, no standalone audit offer, no old audit price.
+  // "Audited" (a verb in Recent Work) is allowed.
+  /\bGEM\b/i,
+  /\baudits?\b/i,
+  /\$2,000/,
+];
 const TEXT_EXT = new Set(['.html', '.xml', '.txt', '.json', '.js', '.css', '.svg', '.webmanifest']);
 
 const files = (dir) =>

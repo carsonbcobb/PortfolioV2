@@ -6,7 +6,8 @@ Static Astro site. Pages: `/` and `/agencies`. The old Create React App site is 
 npm install
 npm run dev          # local dev at http://localhost:4321
 npm run build        # static output in dist/
-npm run check:terms  # fails if banned terms appear anywhere in dist/
+npm run check:terms         # fails if banned terms appear anywhere in dist/
+npm run check:placeholders  # fails while any [bracketed] placeholder is left in dist/
 ```
 
 All copy and pricing live in `src/data/site.ts`.
@@ -17,8 +18,8 @@ All copy and pricing live in `src/data/site.ts`.
 | --- | --- | --- |
 | Cal.com link | `CAL_LINK` env var (Amplify > Environment variables) | "Book a call" falls back to email |
 | Headshot | `public/carson.jpg` | Initials avatar |
-| Logos (Organifi, Charlotte's Web, others) | `public/logos/` + list in `src/data/site.ts` | Only GEM shows |
-| Testimonials | `TESTIMONIAL_1`, `TESTIMONIAL_2` in `src/data/site.ts` | Shown as placeholders in dev, hidden in production |
+| Testimonials | `TESTIMONIAL_1`, `TESTIMONIAL_2` in `src/data/site.ts` | Shown as placeholders in dev, section hidden in production until both are filled |
+| Stats, case study, and Recent Work numbers | `[bracketed]` values in `src/data/site.ts` | `check:placeholders` fails the Amplify build |
 
 ## Amplify rewrites
 
