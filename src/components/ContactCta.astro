@@ -1,0 +1,65 @@
+---
+import Button from './Button.astro';
+import { CAL_LINK, EMAIL_URL, LINKEDIN_URL } from '../data/site';
+
+interface Props {
+  /** May contain <em> */
+  title: string;
+  copy: string;
+  emailUrl?: string;
+}
+
+const { title, copy, emailUrl = EMAIL_URL } = Astro.props;
+---
+
+<section id="contact" class="contact" aria-label="Get in touch">
+  <h2 class="contact__title" set:html={title} />
+  <p class="contact__copy">{copy}</p>
+  <div class="contact__buttons">
+    <Button href={CAL_LINK} track="book_call">Book a call</Button>
+    <Button href={emailUrl} variant="outline">Email me</Button>
+    <Button href={LINKEDIN_URL} variant="outline">LinkedIn</Button>
+  </div>
+</section>
+
+<style>
+  .contact {
+    padding: var(--section-padding-y) var(--container-padding);
+    background: var(--color-bg-alt);
+    text-align: center;
+  }
+
+  .contact__title {
+    max-width: 900px;
+    margin: 0 auto 1rem;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+  }
+
+  .contact__copy {
+    max-width: 640px;
+    margin: 0 auto 1.75rem;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+  }
+
+  .contact__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  @media (max-width: 425px) {
+    .contact__title {
+      font-size: 1.85rem;
+    }
+    .contact__copy {
+      font-size: 1.05rem;
+    }
+    .contact__buttons :global(.btn) {
+      width: 100%;
+    }
+  }
+</style>

@@ -1,0 +1,107 @@
+---
+interface Props {
+  href: string;
+  variant?: 'primary' | 'outline' | 'text';
+  size?: 'md' | 'lg';
+  /** GA4 event to fire on click */
+  track?: 'book_call' | 'email';
+  arrow?: boolean;
+  class?: string;
+}
+
+const { href, variant = 'primary', size = 'lg', track, arrow = false, class: className } = Astro.props;
+const isMail = href.startsWith('mailto:');
+const event = track ?? (isMail ? 'email' : undefined);
+const external = /^https?:\/\//.test(href);
+---
+
+<a
+  href={href}
+  class:list={['btn', `btn--${variant}`, `btn--${size}`, className]}
+  data-track={event}
+  {...external ? { target: '_blank', rel: 'noopener' } : {}}
+>
+  <slot />
+  {arrow && <span class="btn__arrow" aria-hidden="true">→</span>}
+</a>
+
+<style>
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    border-radius: var(--radius-button);
+    font-family: var(--font-sans);
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    transition: var(--transition);
+    cursor: pointer;
+  }
+
+  .btn--lg {
+    padding: var(--button-padding);
+    font-size: 1.1rem;
+  }
+
+  .btn--md {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .btn--primary {
+    background: var(--color-accent);
+    color: #fff;
+  }
+
+  .btn--primary:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(var(--color-accent-rgb), 0.35);
+  }
+
+  .btn--outline {
+    background: var(--color-bg);
+    color: var(--color-text);
+    border: 1px solid var(--color-border-strong);
+  }
+
+  .btn--outline:hover {
+    border-color: var(--color-text);
+    transform: translateY(-2px);
+  }
+
+  .btn--text {
+    padding: 0;
+    color: var(--color-text);
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .btn--text:hover {
+    color: var(--color-accent-text);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .btn:active {
+    transform: translateY(0);
+  }
+
+  .btn__arrow {
+    transition: transform 0.3s ease;
+  }
+
+  .btn:hover .btn__arrow {
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 768px) {
+    .btn--lg {
+      padding: 14px 28px;
+      font-size: 1rem;
+    }
+  }
+</style>

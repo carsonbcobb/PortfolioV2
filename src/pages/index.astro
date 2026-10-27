@@ -1,0 +1,473 @@
+---
+import HomeLayout from '../layouts/HomeLayout.astro';
+import {
+  CAL_LINK,
+  SITE_URL,
+  LINKEDIN_URL,
+  EMAIL,
+  HEADSHOT,
+  HERO_METRICS,
+  HERO_SHIPPED,
+  HERO_NEXT,
+  STATS,
+  VERTICALS,
+  OPTIONS,
+  OWN,
+  RESULTS,
+  FIRST_90,
+  PLANS,
+  STEPS,
+  FAQS,
+} from '../data/site';
+
+const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
+
+// Every booking button goes to CAL_LINK and is tracked as a book_call event.
+const book = {
+  href: CAL_LINK,
+  'data-track': 'book_call',
+  ...(CAL_LINK.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {}),
+};
+
+const year = new Date().getFullYear();
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${SITE_URL}/#carson`,
+    name: 'Carson Cobb',
+    jobTitle: 'Fractional Head of Ecommerce',
+    url: SITE_URL,
+    email: `mailto:${EMAIL}`,
+    sameAs: [LINKEDIN_URL],
+    address: { '@type': 'PostalAddress', addressRegion: 'CA', addressCountry: 'US' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    '@id': `${SITE_URL}/#service`,
+    name: 'Carson Cobb, Fractional Head of Ecommerce',
+    url: SITE_URL,
+    image: `${SITE_URL}/og-image.png`,
+    email: EMAIL,
+    founder: { '@id': `${SITE_URL}/#carson` },
+    areaServed: 'US',
+    priceRange: '$3,000 to $5,500 per month',
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Shopify ecommerce plans',
+      itemListElement: PLANS.map((p) => ({
+        '@type': 'Offer',
+        name: p.name,
+        description: p.summary,
+        price: p.price,
+        priceCurrency: 'USD',
+        ...(p.monthly && {
+          priceSpecification: {
+            '@type': 'UnitPriceSpecification',
+            price: p.price,
+            priceCurrency: 'USD',
+            unitText: 'MONTH',
+            billingDuration: 'P1M',
+          },
+        }),
+      })),
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQS.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+
+<HomeLayout
+  title="Carson Cobb | Fractional Head of Ecommerce for Shopify Brands"
+  description="A senior ecommerce lead who owns your Shopify store and growth: development, design, conversion, email, analytics, and marketing direction. A fraction of the cost of a full time hire."
+  jsonLd={jsonLd}
+>
+  <header class="dark">
+      <nav class="wrap nav" aria-label="Main">
+        <a href="#top" class="nav__brand">Carson Cobb</a>
+        <div class="nav__links">
+          <a href="#results">Results</a>
+          <a href="#own">What I own</a>
+          <a href="#pricing">Pricing</a>
+          <a href="/agencies">For agencies</a>
+          <a {...book} class="btn btn--accent nav__cta">Book a call</a>
+        </div>
+      </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="dark" aria-label="Introduction">
+      <div class="wrap hero" id="top">
+        <div class="hero__text">
+          <div class="hero__pill">
+            <span class="dot" aria-hidden="true"></span>
+            Now booking new retainer clients
+          </div>
+          <h1 class="hero__h1">Your head of ecommerce, <span class="accent">without the full time hire.</span></h1>
+          <p class="hero__sub">
+            I run your Shopify store and the growth around it, so you make more from the traffic you already have. One
+            senior lead who owns the results, without the hiring, managing, or vendor juggling.
+          </p>
+          <div class="btn-row">
+            <a {...book} class="btn btn--accent"
+              >Book an intro call
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+            </a>
+            <a href="#results" class="btn btn--ghost-dark">See the results</a>
+          </div>
+          <p class="hero__fine">
+            <strong>50+ Shopify stores, from startups to ten figure brands.</strong> For brands doing $15K+ a month.
+          </p>
+        </div>
+
+        <div class="hero__panel">
+          <div class="month">
+            <div class="month__head">
+              <span class="tag tag--dim">A typical month with me</span>
+              <span class="month__client">Skincare client</span>
+            </div>
+            <div class="month__metrics">
+              {
+                HERO_METRICS.map((m) => (
+                  <div class="metric">
+                    <div class="metric__label">{m.label}</div>
+                    <div class="metric__value">{m.value}</div>
+                    <div class="metric__change">{m.change}</div>
+                  </div>
+                ))
+              }
+            </div>
+            <div class="month__list">
+              <div class="tag tag--dim">Shipped</div>
+              {
+                HERO_SHIPPED.map((item) => (
+                  <div class="month__item">
+                    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3DDC84" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7" /></svg>
+                    {item}
+                  </div>
+                ))
+              }
+              <div class="month__item month__item--next">
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B6E76" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="8"></circle></svg>
+                {HERO_NEXT}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proof strip -->
+    <section class="proof" aria-label="At a glance">
+      <div class="wrap proof__inner">
+        <div class="proof__stats">
+          {
+            STATS.map((s) => (
+              <div>
+                <div class="proof__value">{s.value}</div>
+                <div class="proof__label">{s.label}</div>
+              </div>
+            ))
+          }
+        </div>
+        <p class="tag">{VERTICALS.join(' · ')}</p>
+      </div>
+    </section>
+
+    <!-- The problem -->
+    <section class="section">
+      <div class="wrap stack">
+        <div class="head">
+          <p class="eyebrow">The problem</p>
+          <h2 class="h2">Most brands pick one of two bad options.</h2>
+          <p class="lede">Your store needs an owner. Here is what that usually costs, and what it costs with me.</p>
+        </div>
+        <div class="grid grid--300">
+          {
+            OPTIONS.map((o) => (
+              <div class:list={['card', 'option', { 'option--dark': o.dark }]}>
+                <span class="tag">{o.tag}</span>
+                <h3 class="h3">{o.title}</h3>
+                <div class="option__price">
+                  {o.price}
+                  <span>{o.unit}</span>
+                </div>
+                <ul class="option__list">
+                  {o.points.map((p) => (
+                    <li>{p}</li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- What I own -->
+    <section id="own" class="section section--sand">
+      <div class="wrap stack">
+        <div class="head head--split">
+          <div class="head">
+            <p class="eyebrow">What I own</p>
+            <h2 class="h2">Every part of running a Shopify store.</h2>
+          </div>
+          <p class="lede head__aside">
+            I do the hands on work myself and direct the rest, so your store, email, and marketing finally pull in the
+            same direction.
+          </p>
+        </div>
+        <div class="grid grid--320">
+          {
+            OWN.map((o) => (
+              <div class="card own">
+                <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8323A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={o.icon} />
+                <h3 class="own__title">{o.title}</h3>
+                <p class="own__text">{o.text}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section id="results" class="section">
+      <div class="wrap stack">
+        <div class="head">
+          <p class="eyebrow">Results</p>
+          <h2 class="h2">What changes when your store has an owner.</h2>
+          <p class="lede">
+            Real outcomes from past clients. Names withheld, since most of my work is under NDA or white label.
+          </p>
+        </div>
+        <div class="grid grid--330">
+          {
+            RESULTS.map((r) => (
+              <article class="card result">
+                <div class="result__top">
+                  <span class="tag tag--dim">{r.tag}</span>
+                  <div class="result__stat">{r.stat}</div>
+                  <div class="result__stat-label">{r.statLabel}</div>
+                </div>
+                <div class="result__body">
+                  <h3 class="result__title">{r.title}</h3>
+                  <div class="result__row">
+                    <strong>Before:</strong> {r.before}
+                  </div>
+                  <div class="result__row">
+                    <strong>After:</strong> {r.after}
+                  </div>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+
+        <!-- Your first 90 days -->
+        <div class="first90">
+          <h3 class="first90__title">Your first 90 days</h3>
+          <div class="grid grid--260 grid--tight">
+            {
+              FIRST_90.map((m) => (
+                <div class="card first90__card">
+                  <span class="tag tag--accent">{m.month}</span>
+                  <div class="first90__name">{m.title}</div>
+                  <p class="own__text">{m.text}</p>
+                </div>
+              ))
+            }
+          </div>
+          <p class="fineprint">Past client outcomes, shown as examples. Not a guarantee of results for any other store.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="section section--sand">
+      <div class="wrap stack">
+        <div class="head">
+          <p class="eyebrow">Pricing</p>
+          <h2 class="h2">Start small, or hand me the keys.</h2>
+          <p class="lede">Flat monthly retainers, billed in advance. No hourly billing, no surprise invoices, month to month.</p>
+        </div>
+
+        <div class="grid grid--320 plans">
+          {
+            PLANS.map((p) => (
+              <div class:list={['card', 'plan', { 'plan--featured': p.featured }]}>
+                {p.featured && <span class="plan__badge">RECOMMENDED</span>}
+                <div class="plan__head">
+                  <span class:list={['tag', { 'tag--dim': p.featured }]}>{p.tag}</span>
+                  <h3 class="h3">{p.name}</h3>
+                  <div class="plan__price">
+                    {usd(p.price)}
+                    <span>{p.unit}</span>
+                  </div>
+                  <p class="plan__summary">{p.summary}</p>
+                </div>
+                <ul class="plan__list">
+                  {p.includes.map((i) => (
+                    <li>
+                      <span aria-hidden="true">✓</span>
+                      {i}
+                    </li>
+                  ))}
+                </ul>
+                <div class="plan__foot">
+                  {p.note && (
+                    <div class="plan__note">
+                      <strong>{p.note.strong}</strong> {p.note.text}
+                    </div>
+                  )}
+                  <a {...book} class:list={['btn', p.featured ? 'btn--accent' : 'btn--outline']}>
+                    {p.cta}
+                  </a>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+        <!-- Lock in 2026 pricing -->
+        <div class="lock">
+          <div class="lock__pill">
+            <span class="lock__icon">
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111214" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 018 0v3"></path></svg>
+            </span>
+            <p><strong>Lock in 2026 pricing.</strong> Start before January 1 and keep today's rate for 12 months.</p>
+          </div>
+          <p class="lock__terms">30 days notice to cancel. Scope set on our first call.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section">
+      <div class="wrap stack">
+        <div class="head">
+          <p class="eyebrow">How it works</p>
+          <h2 class="h2">From first call to first win in a week.</h2>
+        </div>
+        <div class="grid grid--300">
+          {
+            STEPS.map((s) => (
+              <div class="step">
+                <span class="tag tag--accent">{s.when}</span>
+                <h3 class="step__title">{s.title}</h3>
+                <p class="step__text">{s.text}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section section--flush">
+      <div class="wrap">
+        <div class="about">
+          {
+            HEADSHOT ? (
+              <img class="about__photo" src={HEADSHOT} alt="Carson Cobb" width="220" height="260" loading="lazy" />
+            ) : (
+              <div class="about__photo" aria-hidden="true" />
+            )
+          }
+          <div class="about__text">
+            <p class="eyebrow">Who leads your store</p>
+            <h2 class="h2 h2--36">Senior led, start to finish.</h2>
+            <p class="lede">
+              I'm Carson. I've spent 6+ years inside 50+ Shopify stores, from fresh startups to ten figure brands, leading
+              development, conversion, retention, and growth. I lead every engagement personally and stay accountable for
+              the results. When a project needs more hands, I bring in specialists I trust, so you get more capacity
+              without losing your direct line to me.
+            </p>
+            <p class="about__where">Based in California. Working with brands across the US.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--flush">
+      <div class="wrap faq">
+        <div class="faq__head">
+          <p class="eyebrow">FAQ</p>
+          <h2 class="h2 h2--36">Questions, answered.</h2>
+        </div>
+        <div class="faq__list">
+          {
+            FAQS.map((f, i) => (
+              <details open={i === 0}>
+                <summary>{f.q}</summary>
+                <p>
+                  {f.link ? (
+                    <Fragment>
+                      {f.a.slice(0, f.a.indexOf(f.link.text))}
+                      <a href={f.link.href}>{f.link.text}</a>
+                      {f.a.slice(f.a.indexOf(f.link.text) + f.link.text.length)}
+                    </Fragment>
+                  ) : (
+                    f.a
+                  )}
+                </p>
+              </details>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Referral -->
+    <section class="section section--flush">
+      <div class="wrap">
+        <div class="referral">
+          <div class="referral__text">
+            <h3 class="h3">Know a brand that needs an owner?</h3>
+            <p>
+              Introduce us. When they sign, you get <strong>10% of their first 3 months</strong>, paid once their third
+              payment clears.
+            </p>
+          </div>
+          <a href={`mailto:${EMAIL}?subject=Referral`} class="btn btn--outline">Make an intro</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="book" class="dark cta">
+      <div class="wrap cta__inner">
+        <h2 class="h2 cta__title">Let's find the revenue your store is leaving on the table.</h2>
+        <p class="cta__sub">
+          Book a 20 minute intro call. Built for Shopify brands doing $15K+ a month that want a senior owner, not the
+          cheapest option.
+        </p>
+        <div class="btn-row btn-row--center">
+          <a {...book} class="btn btn--accent">Book an intro call</a>
+          <a href={`mailto:${EMAIL}`} class="btn btn--ghost-dark">Email me</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="dark footer">
+    <div class="wrap footer__inner">
+      <span>
+        © {year} Carson Cobb · <a href={`mailto:${EMAIL}`}>{EMAIL}</a> · <a href={LINKEDIN_URL}>LinkedIn</a>
+      </span>
+      <span>Shopify is a trademark of Shopify Inc. Independent contractor, not affiliated with Shopify.</span>
+    </div>
+  </footer>
+</HomeLayout>

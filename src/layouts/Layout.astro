@@ -1,0 +1,52 @@
+---
+import '@fontsource/poppins/latin-400.css';
+import '@fontsource/poppins/latin-500.css';
+import '@fontsource/poppins/latin-600.css';
+import '@fontsource/poppins/latin-700.css';
+import '@fontsource/poppins/latin-800.css';
+// The old site only loaded italic up to 600, so headline <em> renders as 600 italic.
+import '@fontsource/poppins/latin-600-italic.css';
+import poppins800 from '@fontsource/poppins/files/poppins-latin-800-normal.woff2?url';
+import poppins400 from '@fontsource/poppins/files/poppins-latin-400-normal.woff2?url';
+import '../styles/global.css';
+import SiteHead, { type Props as HeadProps } from '../components/SiteHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+// Layout for /agencies and 404. The home page has its own design in HomeLayout.
+type Props = HeadProps;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <SiteHead {...Astro.props} />
+    <link rel="preload" href={poppins800} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={poppins400} as="font" type="font/woff2" crossorigin />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -100px;
+    z-index: 200;
+    padding: 0.5rem 1rem;
+    background: var(--color-text);
+    color: #fff;
+    border-radius: var(--radius-button);
+  }
+
+  .skip-link:focus {
+    top: 1rem;
+  }
+</style>

@@ -5,12 +5,14 @@ frontend:
       commands:
         - nvm install 22
         - nvm use 22
-        - yarn install --ignore-engines
+        - npm ci
     build:
       commands:
-        - yarn run build
+        - npm run build
+        - npm run check:terms
+        - npm run check:placeholders
   artifacts:
-    baseDirectory: build
+    baseDirectory: dist
     files:
       - '**/*'
   cache:

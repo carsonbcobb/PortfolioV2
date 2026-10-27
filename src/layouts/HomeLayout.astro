@@ -1,0 +1,30 @@
+---
+// Geist and Geist Mono (the Google Fonts families in the design), self-hosted so no stylesheet blocks rendering.
+import '@fontsource/geist-sans/latin-400.css';
+import '@fontsource/geist-sans/latin-500.css';
+import '@fontsource/geist-sans/latin-600.css';
+import '@fontsource/geist-sans/latin-700.css';
+import '@fontsource/geist-sans/latin-800.css';
+import '@fontsource/geist-mono/latin-500.css';
+import '@fontsource/geist-mono/latin-600.css';
+import geist800 from '@fontsource/geist-sans/files/geist-sans-latin-800-normal.woff2?url';
+import geist400 from '@fontsource/geist-sans/files/geist-sans-latin-400-normal.woff2?url';
+import '../styles/home.css';
+import SiteHead, { type Props as HeadProps } from '../components/SiteHead.astro';
+
+// Layout for the home page design, which has its own nav and footer in the page.
+type Props = HeadProps;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <SiteHead themeColor="#0F1012" {...Astro.props} />
+    <link rel="preload" href={geist800} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={geist400} as="font" type="font/woff2" crossorigin />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <slot />
+  </body>
+</html>
