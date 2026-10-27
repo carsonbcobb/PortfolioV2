@@ -357,6 +357,7 @@ export const AGENCY_PLANS = [
     unit: ' / 10 hours',
     summary: '$125/hr. For agencies with occasional Shopify requests.',
     includes: [
+      'Billed by actual time tracked, 15 minute minimum per request',
       'Use hours anytime within 90 days',
       '1 to 2 day turnaround on most tickets',
       'Weekly hours report',
@@ -371,6 +372,7 @@ export const AGENCY_PLANS = [
     unit: ' / month',
     summary: '40 reserved hours a month at $100/hr. Guaranteed capacity for agencies with steady Shopify work.',
     includes: [
+      'Billed by actual time tracked, 15 minute minimum per request',
       '40 hours reserved for you every month',
       'Priority queue and same day response',
       'Client facing when you need it, on calls as your team',
@@ -418,6 +420,10 @@ export const AGENCY_FAQS = [
   {
     q: 'What if something takes longer than estimated?',
     a: "I flag it before I go over, never after. You approve the extra time or we adjust scope, so your client's bill never surprises anyone, including you.",
+  },
+  {
+    q: 'How is time billed?',
+    a: 'By actual time tracked, never estimates. Blocks and Partner hours have a 15 minute minimum per request to cover review, testing, and communication. One-off requests have a one hour minimum. You get a weekly report of every request and the time it took.',
   },
   {
     q: 'Can you be client facing?',

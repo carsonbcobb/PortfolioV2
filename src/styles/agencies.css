@@ -196,6 +196,11 @@
   max-width: 900px;
 }
 
+.plans__note {
+  max-width: 900px;
+  text-align: center;
+}
+
 /* White label promise */
 
 .promise {
