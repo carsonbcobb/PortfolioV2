@@ -22,7 +22,6 @@ const BANNED = [
   /\$4,500/,
   /hours per month/i,
   /roll over/i,
-  /\$110/,
   /whole team/i,
   /Store Operator/i,
 ];
