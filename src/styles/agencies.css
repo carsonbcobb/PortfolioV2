@@ -1,0 +1,264 @@
+/* Agencies page design (agencies-design-reference.html). Builds on home.css; only the pieces the home page lacks. */
+
+:root {
+  --amber: #ffc857;
+}
+
+/* Hero panel: an example month of agency tickets */
+
+.tickets {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: var(--dark-card);
+  border: 1px solid var(--dark-line);
+  border-radius: 20px;
+  padding: 26px;
+}
+
+.tickets__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.tickets__title {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tickets__count {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.tickets__example {
+  font-size: 12px;
+  color: var(--dim);
+  border: 1px solid var(--dark-pill);
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+.tickets__stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.tickets__stat {
+  background: var(--dark);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.tickets__stat-label {
+  font-size: 12px;
+  color: var(--dim);
+}
+
+.tickets__stat-value {
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.tickets__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ticket {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  background: var(--dark);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.ticket__text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.ticket__client {
+  font-size: 10px;
+}
+
+.ticket__title {
+  font-size: 14px;
+  color: var(--bright);
+}
+
+.ticket__meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: none;
+}
+
+.ticket__hours {
+  font-size: 13px;
+  color: var(--dim);
+}
+
+.ticket__status {
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 4px 9px;
+}
+
+.ticket__status--live {
+  color: var(--dark);
+  background: var(--green);
+}
+
+.ticket__status--review {
+  color: var(--dark);
+  background: var(--amber);
+}
+
+.ticket__status--building {
+  color: var(--bright);
+  background: var(--dark-pill);
+}
+
+.tickets__hours {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid var(--dark-line);
+  padding-top: 16px;
+}
+
+.tickets__hours-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--dim);
+}
+
+.tickets__hours-used {
+  color: #fff;
+  font-weight: 600;
+}
+
+.tickets__bar {
+  height: 8px;
+  background: var(--dark-pill);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.tickets__bar-fill {
+  width: 70%;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 999px;
+}
+
+/* The problem */
+
+.pain {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--sand);
+  border-color: var(--sand);
+}
+
+.pain__title {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+}
+
+.pain__text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--body);
+}
+
+/* Pricing */
+
+.plans--agency {
+  max-width: 900px;
+}
+
+/* White label promise */
+
+.promise {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+  align-items: center;
+  background: var(--dark);
+  color: #fff;
+  border-radius: 24px;
+  padding: 56px 48px;
+}
+
+.promise__text {
+  flex: 1 1 380px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.promise .promise__eyebrow {
+  color: var(--accent);
+}
+
+.promise .promise__title {
+  color: #fff;
+  font-size: 40px;
+}
+
+.promise__sub {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--soft);
+}
+
+.promise__list {
+  flex: 1 1 380px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 16px;
+  color: var(--bright);
+}
+
+.promise__list li {
+  display: flex;
+  gap: 12px;
+}
+
+.promise__list span {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  /* Not in the design file. Matches the home page's About card on phones. */
+  .promise {
+    padding: 28px;
+  }
+}

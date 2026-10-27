@@ -4,7 +4,7 @@ import path from 'node:path';
 export const SITE_URL = 'https://www.carsoncobb.com';
 export const EMAIL = 'carson@carsoncobb.com';
 export const EMAIL_URL = `mailto:${EMAIL}?subject=Shopify%20store%20inquiry`;
-export const AGENCY_EMAIL_URL = `mailto:${EMAIL}?subject=White%20label%20Shopify%20dev`;
+export const AGENCY_EMAIL_URL = `mailto:${EMAIL}?subject=Agency%20partnership`;
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/carsoncobb';
 export const GA_ID = 'G-PEDB1QHBG3';
 
@@ -273,17 +273,170 @@ export const FAQS = [
   },
 ];
 
-export const AGENCY_SERVICES = [
-  { title: 'Theme Builds & Custom Sections', text: 'New themes, theme migrations, and custom sections your clients can edit themselves.' },
-  { title: 'Recharge & Rebuy Setup', text: 'Subscriptions, bundles, and upsell placements built and styled to match the theme.' },
-  { title: 'Klaviyo Onsite Integration', text: 'Signup forms, back in stock, and onsite tracking wired in properly.' },
-  { title: 'App Installs & Conflicts', text: 'Installing apps cleanly and untangling the ones that fight each other.' },
-  { title: 'Speed & Technical Fixes', text: 'Page speed, broken templates, and the technical debt that slows campaigns down.' },
-  { title: 'Campaign Landing Pages', text: 'Landing pages for paid and email campaigns, built fast and on brand.' },
+// Agencies page copy, taken word for word from the approved design (agencies-design-reference.html).
+
+export const AGENCY_TICKET_STATS = [
+  { label: 'Avg turnaround', value: '1.4 days' },
+  { label: 'Active clients', value: '4' },
+  { label: 'Client calls led', value: '3' },
+];
+
+// status: live, review, or building (sets the pill color).
+export const AGENCY_TICKETS = [
+  { client: 'Skincare client', title: 'Holiday campaign landing page', hours: '6h', status: 'live', label: 'Live' },
+  { client: 'Supplement client', title: 'Subscription offer on product pages', hours: '4h', status: 'live', label: 'Live' },
+  { client: 'Apparel client', title: 'Back in stock and email signup forms', hours: '3h', status: 'review', label: 'In review' },
+  { client: 'Wellness client', title: 'A/B test on a new product page layout', hours: '5h', status: 'building', label: 'Building' },
+  { client: 'Home goods client', title: 'Theme migration and custom sections', hours: '8h', status: 'building', label: 'Building' },
+];
+
+export const AGENCY_STATS = [
+  { value: '50+', label: 'Shopify stores' },
+  { value: '6+ years', label: 'Shopify development' },
+  { value: '1 to 2 days', label: 'turnaround on most tickets' },
+  { value: '100%', label: 'white label, NDA signed upfront' },
+];
+
+export const AGENCY_PAINS = [
+  {
+    tag: '01',
+    title: 'You say no',
+    text: 'The client takes the work, and sometimes the whole account, to an agency that can do it.',
+  },
+  {
+    tag: '02',
+    title: 'You gamble on freelancers',
+    text: 'Missed deadlines, broken themes, and someone who disappears mid project with your client watching.',
+  },
+  {
+    tag: '03',
+    title: 'You hire full time',
+    text: 'A senior Shopify dev on payroll only works if the work is steady every single month.',
+  },
+];
+
+// icon is the inner SVG markup for a 24x24 stroke icon.
+export const AGENCY_SCOPE = [
+  {
+    icon: '<path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/>',
+    title: 'Theme builds and custom sections',
+    text: 'New themes, migrations, and custom sections your clients can edit themselves without calling you.',
+  },
+  {
+    icon: '<path d="M17 2l4 4-4 4M3 11V9a3 3 0 013-3h15M7 22l-4-4 4-4M21 13v2a3 3 0 01-3 3H3"/>',
+    title: 'Subscriptions and upsells',
+    text: 'Subscription programs, bundles, and cart offers, built and styled to match the theme.',
+  },
+  {
+    icon: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
+    title: 'Email and SMS onsite',
+    text: 'Signup forms, back in stock alerts, and onsite tracking wired in properly so your flows run on clean data.',
+  },
+  {
+    icon: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/>',
+    title: 'Campaign landing pages',
+    text: 'Fast, on brand pages for paid and email campaigns, ready before the ads go live.',
+  },
+  {
+    icon: '<path d="M3 17l6-6 4 4 8-8M15 7h6v6"/>',
+    title: 'CRO implementation',
+    text: 'Your test ideas and audit recommendations, actually built and shipped, not stuck in a backlog.',
+  },
+  {
+    icon: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    title: 'Speed and app cleanup',
+    text: 'Slow pages, app conflicts, and technical debt untangled so campaigns convert the way they should.',
+  },
+];
+
+export const AGENCY_PLANS = [
+  {
+    tag: 'Flexible',
+    name: 'Hour Block',
+    price: 1250,
+    unit: ' / 10 hours',
+    summary: '$125/hr. For agencies with occasional Shopify requests.',
+    includes: [
+      'Use hours anytime within 90 days',
+      '1 to 2 day turnaround on most tickets',
+      'Weekly hours report',
+      'Top up anytime',
+    ],
+    featured: false,
+  },
+  {
+    tag: 'Reserved capacity',
+    name: 'Partner',
+    price: 4000,
+    unit: ' / month',
+    summary: '40 reserved hours a month at $100/hr. Guaranteed capacity for agencies with steady Shopify work.',
+    includes: [
+      '40 hours reserved for you every month',
+      'Priority queue and same day response',
+      'Client facing when you need it, on calls as your team',
+      'Extra hours at $100/hr',
+    ],
+    featured: true,
+  },
 ];
 
 export const AGENCY_STEPS = [
-  { title: 'Intro Call', text: 'We talk through your clients, your stack, and how your team likes to work.' },
-  { title: 'Buy A Block', text: 'Prepay a 10 hour block at $100/hr. Volume rate at 40+ hours/month.' },
-  { title: 'Send Tickets', text: 'Send tickets in your Slack or project tools. I ship, and report hours weekly.' },
+  {
+    when: 'Step 1',
+    title: 'Intro call',
+    text: '20 minutes on your clients, your stack, and how your team likes to work. I sign your NDA and non solicit.',
+  },
+  {
+    when: 'Step 2',
+    title: 'Buy hours',
+    text: 'Start with a 10 hour block at $125/hr, or reserve 40 hours a month as a Partner at $100/hr. Paid upfront.',
+  },
+  {
+    when: 'Step 3',
+    title: 'Send tickets',
+    text: 'Drop work in your Slack or project tool. I estimate before I start, ship, and report hours weekly.',
+  },
+];
+
+export const AGENCY_PROMISE = [
+  'I work under your brand, in your tools and email',
+  "On client calls, I'm introduced as part of your team",
+  'I never contact your clients outside your channels',
+  'NDA and non solicit signed before we start',
+  'Your clients never appear in my portfolio',
+];
+
+export const AGENCY_FAQS = [
+  {
+    q: 'How fast can you start?',
+    a: "Usually within a week of our call. Send your first ticket the day your hours are paid, and you'll have an estimate back within one business day.",
+  },
+  {
+    q: 'How fast do you turn work around?',
+    a: 'Most tickets ship in 1 to 2 business days. Larger builds are scoped upfront with a fixed delivery date, so you can promise your client a date and hit it.',
+  },
+  {
+    q: 'What if something takes longer than estimated?',
+    a: "I flag it before I go over, never after. You approve the extra time or we adjust scope, so your client's bill never surprises anyone, including you.",
+  },
+  {
+    q: 'Can you be client facing?',
+    a: 'Yes. I join calls, present work, and lead technical conversations as part of your team, under your brand. Or I stay fully behind the scenes. You decide account by account.',
+  },
+  {
+    q: 'Will you ever work with our clients directly?',
+    a: 'No. The NDA and non solicit are signed before we start. If one of your clients ever reaches out to me on their own, I send them straight back to you.',
+  },
+  {
+    q: 'How do I know the work will hold up?',
+    a: "I've worked inside 50+ Shopify stores, from startups to ten figure brands. Every ticket ships tested on desktop and mobile, with a short video walkthrough your team can forward to the client.",
+  },
+  {
+    q: "What's outside your scope?",
+    a: 'Media buying and high volume content production stay with your team. Everything that happens on the store itself, on Shopify and Shopify Plus, from theme code to apps to performance, I handle.',
+  },
+  {
+    q: 'Do unused hours roll over?',
+    a: 'Hour Blocks are good for 90 days. Partner hours reset each month, since that time is held exclusively for you.',
+  },
 ];

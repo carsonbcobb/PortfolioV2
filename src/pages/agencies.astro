@@ -1,13 +1,36 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Section from '../components/Section.astro';
-import Card from '../components/Card.astro';
-import Button from '../components/Button.astro';
-import ContactCta from '../components/ContactCta.astro';
-import { CAL_LINK, SITE_URL, LINKEDIN_URL, EMAIL, AGENCY_EMAIL_URL, AGENCY_SERVICES, AGENCY_STEPS } from '../data/site';
+import HomeLayout from '../layouts/HomeLayout.astro';
+import '../styles/agencies.css';
+import {
+  CAL_LINK,
+  SITE_URL,
+  LINKEDIN_URL,
+  EMAIL,
+  AGENCY_EMAIL_URL,
+  AGENCY_TICKET_STATS,
+  AGENCY_TICKETS,
+  AGENCY_STATS,
+  AGENCY_PAINS,
+  AGENCY_SCOPE,
+  AGENCY_PLANS,
+  AGENCY_STEPS,
+  AGENCY_PROMISE,
+  AGENCY_FAQS,
+} from '../data/site';
+
+const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
+
+// Every booking button goes to CAL_LINK and is tracked as a book_call event.
+const book = {
+  href: CAL_LINK,
+  'data-track': 'book_call',
+  ...(CAL_LINK.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {}),
+};
+
+const year = new Date().getFullYear();
 
 const description =
-  'Senior Shopify dev capacity for Klaviyo, paid media, CRO, and growth agencies. Your brand, your client relationship. I work under your name, in your Slack and your project tools.';
+  'A senior Shopify developer and ecommerce lead you can put on any account. Behind the scenes in your tools, or on calls with your clients as part of your team. You keep the relationship and the margin.';
 
 const jsonLd = [
   {
@@ -27,183 +50,329 @@ const jsonLd = [
     description,
     founder: { '@id': `${SITE_URL}/#carson` },
     areaServed: 'US',
-    makesOffer: {
-      '@type': 'Offer',
-      name: 'White label Shopify development, 10 hour block',
-      description: 'Prepaid 10 hour blocks at $100/hr. Volume rate at 40+ hours/month.',
-      price: 1000,
-      priceCurrency: 'USD',
-      priceSpecification: {
-        '@type': 'UnitPriceSpecification',
-        price: 100,
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'White label Shopify development',
+      itemListElement: AGENCY_PLANS.map((p) => ({
+        '@type': 'Offer',
+        name: p.name,
+        description: p.summary,
+        price: p.price,
         priceCurrency: 'USD',
-        unitText: 'HOUR',
-      },
+        ...(p.featured && {
+          priceSpecification: {
+            '@type': 'UnitPriceSpecification',
+            price: p.price,
+            priceCurrency: 'USD',
+            unitText: 'MONTH',
+            billingDuration: 'P1M',
+          },
+        }),
+      })),
     },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: AGENCY_FAQS.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
   },
 ];
 ---
 
-<Layout
+<HomeLayout
   title="White Label Shopify Developer for Agencies | Carson Cobb"
   description={description}
   keywords="white label Shopify developer, Shopify developer for agencies, Shopify dev capacity, Shopify development"
   jsonLd={jsonLd}
   ogImage={{ path: '/og-image-agencies.png', alt: 'Carson Cobb, white label Shopify development for agencies' }}
 >
-  <section class="a-hero" aria-label="Introduction">
-    <span class="eyebrow">For Agencies</span>
-    <h1>White label Shopify development <em>for agencies</em>.</h1>
-    <p class="a-hero__copy">{description}</p>
-    <div class="a-hero__ctas">
-      <Button href={CAL_LINK} track="book_call">Book a call</Button>
-      <Button href="#pricing" variant="text">See pricing</Button>
+  <header class="dark">
+    <nav class="wrap nav" aria-label="Main">
+      <a href="/" class="nav__brand">Carson Cobb</a>
+      <div class="nav__links">
+        <a href="/">For brands</a>
+        <a href="#scope">What I take on</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a {...book} class="btn btn--accent nav__cta">Book a call</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="dark" aria-label="Introduction">
+      <div class="wrap hero">
+        <div class="hero__text">
+          <div class="hero__pill">
+            <span class="dot" aria-hidden="true"></span>
+            White label Shopify partner for agencies
+          </div>
+          <h1 class="hero__h1">Say yes to every <span class="accent">Shopify project.</span></h1>
+          <p class="hero__sub">{description}</p>
+          <div class="btn-row">
+            <a {...book} class="btn btn--accent"
+              >Book an intro call
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+            </a>
+            <a href="#pricing" class="btn btn--ghost-dark">See pricing</a>
+          </div>
+          <p class="hero__fine">
+            <strong>50+ Shopify stores, from startups to ten figure brands.</strong> Already working white label for agency
+            partners.
+          </p>
+        </div>
+
+        <div class="hero__panel">
+          <div class="tickets">
+            <div class="tickets__head">
+              <div class="tickets__title">
+                <span class="tag tag--dim">Your agency · This month</span>
+                <span class="tickets__count">12 tickets shipped this month</span>
+              </div>
+              <span class="tickets__example">Example</span>
+            </div>
+            <div class="tickets__stats">
+              {
+                AGENCY_TICKET_STATS.map((s) => (
+                  <div class="tickets__stat">
+                    <div class="tickets__stat-label">{s.label}</div>
+                    <div class="tickets__stat-value">{s.value}</div>
+                  </div>
+                ))
+              }
+            </div>
+            <div class="tickets__list">
+              {
+                AGENCY_TICKETS.map((t) => (
+                  <div class="ticket">
+                    <div class="ticket__text">
+                      <span class="tag tag--dim ticket__client">{t.client}</span>
+                      <span class="ticket__title">{t.title}</span>
+                    </div>
+                    <div class="ticket__meta">
+                      <span class="ticket__hours">{t.hours}</span>
+                      <span class={`ticket__status ticket__status--${t.status}`}>{t.label}</span>
+                    </div>
+                  </div>
+                ))
+              }
+            </div>
+            <div class="tickets__hours">
+              <div class="tickets__hours-row">
+                <span>Reserved hours used</span>
+                <span class="tickets__hours-used">28 of 40</span>
+              </div>
+              <div class="tickets__bar" aria-hidden="true"><div class="tickets__bar-fill"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proof strip -->
+    <section class="proof" aria-label="At a glance">
+      <div class="wrap proof__inner">
+        <div class="proof__stats">
+          {
+            AGENCY_STATS.map((s) => (
+              <div>
+                <div class="proof__value">{s.value}</div>
+                <div class="proof__label">{s.label}</div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- The problem -->
+    <section class="section">
+      <div class="wrap stack">
+        <div class="head">
+          <p class="eyebrow">The problem</p>
+          <h2 class="h2">Every Shopify request you turn down is revenue walking out the door.</h2>
+          <p class="lede">
+            Your clients want dev work you can't always staff. Here's how most agencies handle it, and why it costs them.
+          </p>
+        </div>
+        <div class="grid grid--300">
+          {
+            AGENCY_PAINS.map((p) => (
+              <div class="card pain">
+                <span class="tag">{p.tag}</span>
+                <h3 class="pain__title">{p.title}</h3>
+                <p class="pain__text">{p.text}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- What I take on -->
+    <section id="scope" class="section section--sand">
+      <div class="wrap stack">
+        <div class="head head--split">
+          <div class="head">
+            <p class="eyebrow">What I take on</p>
+            <h2 class="h2">The Shopify work your clients keep asking for.</h2>
+          </div>
+          <p class="lede head__aside">From one off tickets to full builds, shipped clean and on your timeline.</p>
+        </div>
+        <div class="grid grid--320">
+          {
+            AGENCY_SCOPE.map((s) => (
+              <div class="card own">
+                <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8323A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={s.icon} />
+                <h3 class="own__title">{s.title}</h3>
+                <p class="own__text">{s.text}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="section">
+      <div class="wrap stack">
+        <div class="head">
+          <p class="eyebrow">Pricing</p>
+          <h2 class="h2">Simple rates. Your markup.</h2>
+          <p class="lede">
+            Buy a block, send tickets, and bill your client whatever you like. No retainers you don't need, no surprise
+            invoices.
+          </p>
+        </div>
+
+        <div class="grid grid--320 plans plans--agency">
+          {
+            AGENCY_PLANS.map((p) => (
+              <div class:list={['card', 'plan', { 'plan--featured': p.featured }]}>
+                {p.featured && <span class="plan__badge">PRIORITY</span>}
+                <div class="plan__head">
+                  <span class:list={['tag', { 'tag--dim': p.featured }]}>{p.tag}</span>
+                  <h3 class="h3">{p.name}</h3>
+                  <div class="plan__price">
+                    {usd(p.price)}
+                    <span>{p.unit}</span>
+                  </div>
+                  <p class="plan__summary">{p.summary}</p>
+                </div>
+                <ul class="plan__list">
+                  {p.includes.map((i) => (
+                    <li>
+                      <span aria-hidden="true">✓</span>
+                      {i}
+                    </li>
+                  ))}
+                </ul>
+                <div class="plan__foot">
+                  <a {...book} class:list={['btn', p.featured ? 'btn--accent' : 'btn--outline']}>
+                    Book a call
+                  </a>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section section--flush">
+      <div class="wrap stack">
+        <div class="head">
+          <p class="eyebrow">How it works</p>
+          <h2 class="h2">Extra capacity this week, not next quarter.</h2>
+        </div>
+        <div class="grid grid--300">
+          {
+            AGENCY_STEPS.map((s) => (
+              <div class="step">
+                <span class="tag tag--accent">{s.when}</span>
+                <h3 class="step__title">{s.title}</h3>
+                <p class="step__text">{s.text}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- White label promise -->
+    <section class="section section--flush">
+      <div class="wrap">
+        <div class="promise">
+          <div class="promise__text">
+            <p class="eyebrow promise__eyebrow">Your client, always</p>
+            <h2 class="h2 promise__title">Your clients stay your clients.</h2>
+            <p class="promise__sub">
+              I'm an extension of your team, not a competitor. Front and center or fully behind the scenes, the
+              relationship is always yours.
+            </p>
+          </div>
+          <ul class="promise__list">
+            {
+              AGENCY_PROMISE.map((p) => (
+                <li>
+                  <span aria-hidden="true">✓</span>
+                  {p}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section section--flush">
+      <div class="wrap faq">
+        <div class="faq__head">
+          <p class="eyebrow">FAQ</p>
+          <h2 class="h2 h2--36">Questions, answered.</h2>
+        </div>
+        <div class="faq__list">
+          {
+            AGENCY_FAQS.map((f, i) => (
+              <details open={i === 0}>
+                <summary>{f.q}</summary>
+                <p>{f.a}</p>
+              </details>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="book" class="dark cta">
+      <div class="wrap cta__inner">
+        <h2 class="h2 cta__title">Add a senior Shopify lead to your team this week.</h2>
+        <p class="cta__sub">
+          Book a 20 minute intro call. Tell me about your clients and your stack, and I'll tell you honestly whether I'm a
+          fit.
+        </p>
+        <div class="btn-row btn-row--center">
+          <a {...book} class="btn btn--accent">Book an intro call</a>
+          <a href={AGENCY_EMAIL_URL} class="btn btn--ghost-dark">Email me</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="dark footer">
+    <div class="wrap footer__inner">
+      <span>
+        © {year} Carson Cobb · <a href={`mailto:${EMAIL}`}>{EMAIL}</a> · <a href={LINKEDIN_URL}>LinkedIn</a>
+      </span>
+      <span>Shopify is a trademark of Shopify Inc. Independent contractor, not affiliated with Shopify.</span>
     </div>
-  </section>
-
-  <Section id="work" bg="alt" eyebrow="What I Take On" title="Senior dev work, shipped under your name.">
-    <div class="grid grid--3">
-      {
-        AGENCY_SERVICES.map((s) => (
-          <Card class="a-service">
-            <h3>{s.title}</h3>
-            <p>{s.text}</p>
-          </Card>
-        ))
-      }
-    </div>
-  </Section>
-
-  <Section id="pricing" eyebrow="Pricing" title="Simple hourly blocks.">
-    <Card class="a-pricing" featured>
-      <p class="a-pricing__price">$100<span>/hr</span></p>
-      <p class="a-pricing__terms">In prepaid 10 hour blocks. Volume rate at 40+ hours/month.</p>
-      <Button href={CAL_LINK} track="book_call">Book a call</Button>
-    </Card>
-  </Section>
-
-  <Section id="process" bg="alt" eyebrow="How It Works" title="Three steps to extra capacity.">
-    <ol class="grid grid--3 steps">
-      {
-        AGENCY_STEPS.map((s, i) => (
-          <li class="step">
-            <span class="step__num">{String(i + 1).padStart(2, '0')}</span>
-            <h3>{s.title}</h3>
-            <p>{s.text}</p>
-          </li>
-        ))
-      }
-    </ol>
-  </Section>
-
-  <Section id="trust" eyebrow="Your Client, Always" title="Your clients never know I exist.">
-    <p class="a-trust">No poaching, ever. Happy to sign your NDA and non solicit.</p>
-  </Section>
-
-  <ContactCta
-    title="Need more <em>Shopify dev capacity</em>?"
-    copy="Book a 20 minute intro call. Tell me about your clients and your stack, and I will tell you honestly whether I am a fit."
-    emailUrl={AGENCY_EMAIL_URL}
-  />
-</Layout>
-
-<style is:global>
-  .a-hero {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 4rem var(--container-padding) 5rem;
-    text-align: center;
-  }
-
-  .a-hero h1 {
-    font-size: clamp(2.25rem, 5vw, 3.5rem);
-    margin-bottom: 1.5rem;
-  }
-
-  .a-hero__copy {
-    font-size: 1.2rem;
-    line-height: 1.7;
-    color: var(--color-text-secondary);
-    margin-bottom: 1.5rem;
-  }
-
-  .a-hero__ctas {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .a-service h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .a-service p {
-    line-height: 1.7;
-    color: var(--color-text-secondary);
-  }
-
-  .a-pricing {
-    max-width: 520px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .a-pricing__price {
-    font-size: 3.5rem;
-    font-weight: 800;
-    line-height: 1.1;
-    color: var(--color-accent);
-    letter-spacing: var(--letter-spacing-heading);
-  }
-
-  .a-pricing__price span {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--color-text-secondary);
-  }
-
-  .a-pricing__terms {
-    margin: 0.75rem 0 1.75rem;
-    font-size: 1.05rem;
-    line-height: 1.6;
-    color: var(--color-text-secondary);
-  }
-
-  #process .steps {
-    margin-bottom: 0;
-  }
-
-  .a-trust {
-    margin-top: -2rem;
-    text-align: center;
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: var(--color-text-secondary);
-  }
-
-  @media (max-width: 768px) {
-    .a-hero {
-      padding: 2.5rem var(--container-padding) 3rem;
-    }
-    .a-hero h1 {
-      font-size: 2.25rem;
-    }
-    .a-hero__copy {
-      font-size: 1.1rem;
-    }
-    .a-trust {
-      margin-top: -1rem;
-    }
-  }
-
-  @media (max-width: 425px) {
-    .a-hero h1 {
-      font-size: 2rem;
-    }
-    .a-hero__copy {
-      font-size: 1rem;
-    }
-  }
-</style>
+  </footer>
+</HomeLayout>
