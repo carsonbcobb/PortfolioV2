@@ -10,9 +10,10 @@ const BANNED = [
   /ChatGPT/i,
   /\bLLMs?\b/i,
   // No client brand names, no standalone audit offer, no old audit price.
-  // "Audited" (a verb in Recent Work) and the agencies page's "audit recommendations" are allowed.
+  // "Audited" (a verb in Recent Work), the agencies page's "audit recommendations", and the Store Sprint's
+  // "audit of conversion" bullet are allowed.
   /\bGEM\b/i,
-  /\baudits?\b(?! recommendations)/i,
+  /\baudits?\b(?! recommendations| of conversion)/i,
   /\$2,000/,
   // Retired plans, hourly terms, and positioning (Round 3).
   /Essentials/,

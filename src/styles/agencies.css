@@ -161,7 +161,7 @@
 }
 
 .tickets__bar-fill {
-  width: 70%;
+  width: 75%;
   height: 8px;
   background: var(--accent);
   border-radius: 999px;
@@ -194,6 +194,11 @@
 
 .plans--agency {
   max-width: 900px;
+}
+
+.plans__note {
+  max-width: 900px;
+  text-align: center;
 }
 
 /* White label promise */
