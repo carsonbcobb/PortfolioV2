@@ -303,7 +303,7 @@ const jsonLd = [
           <p class="lede">Flat monthly retainers, billed in advance. No hourly billing, no surprise invoices, month to month.</p>
         </div>
 
-        <div class="grid grid--320 plans">
+        <div class="grid plans plans--four">
           {
             PLANS.map((p) => (
               <div class:list={['card', 'plan', { 'plan--featured': p.featured }]}>
@@ -340,6 +340,8 @@ const jsonLd = [
           }
         </div>
 
+        <p class="lock__terms plans__note">Or one-off work at $125/hr with a one hour minimum.</p>
+
         <!-- Lock in 2026 pricing -->
         <div class="lock">
           <div class="lock__pill">
@@ -348,7 +350,7 @@ const jsonLd = [
             </span>
             <p><strong>Lock in 2026 pricing.</strong> Start before January 1 and keep today's rate for 12 months.</p>
           </div>
-          <p class="lock__terms">Need more? Extra work is $110/hr, or move up a plan. 30 days notice to cancel.<br />Just need a quick fix? One-off work is $125/hr with a one hour minimum.</p>
+          <p class="lock__terms">Need more? Extra work is $125/hr, or move up a plan. 30 days notice to cancel.</p>
         </div>
       </div>
     </section>

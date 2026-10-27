@@ -161,7 +161,7 @@
 }
 
 .tickets__bar-fill {
-  width: 70%;
+  width: 75%;
   height: 8px;
   background: var(--accent);
   border-radius: 999px;

@@ -653,6 +653,29 @@ img {
   align-items: stretch;
 }
 
+/* Four plans: 4 across on large desktop, 2x2 on tablet and small desktop, 1 on phones. */
+.plans--four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+}
+
+@media (max-width: 1199px) {
+  .plans--four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .plans--four {
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: auto;
+  }
+}
+
+.plans__note {
+  text-align: center;
+}
+
 .plan {
   display: flex;
   flex-direction: column;
