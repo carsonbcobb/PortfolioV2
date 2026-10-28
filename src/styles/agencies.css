@@ -201,6 +201,42 @@
   text-align: center;
 }
 
+/* Two labeled groups: capacity, then white label client plans */
+
+.plans__group {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.plans__group-head {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 760px;
+}
+
+.plans__intro {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--body);
+}
+
+/* Four client plans: 2x2 at the same width as the capacity cards (4 across wraps the per store prices), 1 on phones. */
+.plans--client {
+  max-width: 900px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+}
+
+@media (max-width: 720px) {
+  .plans--client {
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: auto;
+  }
+}
+
 /* White label promise */
 
 .promise {
