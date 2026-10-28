@@ -187,7 +187,7 @@ export const FIRST_90 = [
 export const WAYS = [
   {
     title: 'Advise',
-    text: 'An audit of your store with clear, ranked recommendations your team can act on. Good if you have developers and want a second set of eyes.',
+    text: 'An audit, or the Advisor plan at $1,000 a month: I review the store, rank what to fix, and your team or agency does the work. Good if you have developers and want someone deciding what matters.',
   },
   {
     title: 'Build',
@@ -200,6 +200,29 @@ export const WAYS = [
 ];
 
 export const PLANS = [
+  {
+    tag: 'Advice only',
+    name: 'Advisor',
+    price: 1000,
+    unit: ' / month',
+    summary: 'A senior set of eyes on your store every month, so your team always knows the highest value thing to fix next.',
+    includes: [
+      'Monthly review of conversion, product pages, cart, speed and email',
+      'Action plan ranked by revenue impact, with exactly what to change',
+      'Monthly strategy call to set priorities',
+      'Tracking of conversion rate, AOV and repeat purchase rate',
+      'Review of what your team or agency ships before it goes live',
+      'Questions by email or Slack within 2 business days',
+      'Up to 8 hours a month',
+    ],
+    note: {
+      strong: '',
+      text: 'Implementation not included. Add an Hour Block or move up to Operator, with your first month credited if you upgrade within 60 days.',
+    },
+    cta: 'Book a call',
+    monthly: true,
+    featured: false,
+  },
   {
     tag: 'For quick fixes',
     name: 'Hour Block',
@@ -312,7 +335,7 @@ export const FAQS = [
   },
   {
     q: 'Which plan is right for me?',
-    a: 'If you mainly need the store built, fixed, and optimized, Operator. If you want one person running ecommerce, including marketing direction and your vendors, Head of Ecommerce. Not sure yet? Start with a Sprint.',
+    a: 'If your team or agency can make the changes and you want someone deciding what matters, Advisor. If you need the store built, fixed, and optimized for you, Operator. If you want one person running ecommerce, including marketing direction and your vendors, Head of Ecommerce. Not sure yet? Start with a Sprint.',
   },
   {
     q: 'Do you create the content and run social yourself?',
