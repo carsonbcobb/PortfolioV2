@@ -13,6 +13,8 @@ import {
   VERTICALS,
   OPTIONS,
   OWN,
+  HOW_I_WORK,
+  WAYS,
   RESULTS,
   FIRST_90,
   PLANS,
@@ -88,8 +90,8 @@ const jsonLd = [
 ---
 
 <HomeLayout
-  title="Carson Cobb | Fractional Head of Ecommerce for Shopify Brands"
-  description="A senior ecommerce lead who owns your Shopify store and growth: development, design, conversion, email, analytics, and marketing direction. A fraction of the cost of a full time hire."
+  title="Carson Cobb | I Run Shopify Stores for Growing Brands"
+  description="Fractional Head of Ecommerce for Shopify brands doing $15K+ a month. Strategy, development, conversion, email, and marketing handled, so you get more revenue and your time back."
   jsonLd={jsonLd}
 >
   <header class="dark">
@@ -97,7 +99,7 @@ const jsonLd = [
         <a href="#top" class="nav__brand">Carson Cobb</a>
         <div class="nav__links">
           <a href="#results">Results</a>
-          <a href="#own">What I own</a>
+          <a href="#own">What I do</a>
           <a href="#pricing">Pricing</a>
           <a href="/agencies">For agencies</a>
           <a {...book} class="btn btn--accent nav__cta">Book a call</a>
@@ -114,10 +116,10 @@ const jsonLd = [
             <span class="dot" aria-hidden="true"></span>
             Now booking new retainer clients
           </div>
-          <h1 class="hero__h1">Your head of ecommerce, <span class="accent">without the full time hire.</span></h1>
+          <h1 class="hero__h1">I run your Shopify store <span class="accent">so you can run your business.</span></h1>
           <p class="hero__sub">
-            I run your Shopify store and the growth around it, so you make more from the traffic you already have. One
-            senior lead who owns the results, without the hiring, managing, or vendor juggling.
+            More revenue from the traffic you already have, and the website off your plate. I handle strategy, development,
+            conversion, email, and marketing, so you can focus on the bigger decisions.
           </p>
           <div class="btn-row">
             <a {...book} class="btn btn--accent"
@@ -190,8 +192,11 @@ const jsonLd = [
       <div class="wrap stack">
         <div class="head">
           <p class="eyebrow">The problem</p>
-          <h2 class="h2">Most brands pick one of two bad options.</h2>
-          <p class="lede">Your store needs an owner. Here is what that usually costs, and what it costs with me.</p>
+          <h2 class="h2">Right now, the store runs through you.</h2>
+          <p class="lede">
+            Every fix, app decision, and freelancer question lands on your desk, and growth waits until you have time. Here
+            are the usual ways out, and what each one costs.
+          </p>
         </div>
         <div class="grid grid--300">
           {
@@ -215,29 +220,46 @@ const jsonLd = [
       </div>
     </section>
 
-    <!-- What I own -->
+    <!-- What I do -->
     <section id="own" class="section section--sand">
       <div class="wrap stack">
         <div class="head head--split">
           <div class="head">
-            <p class="eyebrow">What I own</p>
-            <h2 class="h2">Every part of running a Shopify store.</h2>
+            <p class="eyebrow">What I do</p>
+            <h2 class="h2">Everything Shopify, handled.</h2>
           </div>
           <p class="lede head__aside">
-            I do the hands on work myself and direct the rest, so your store, email, and marketing finally pull in the
-            same direction.
+            Not a task list. I treat your store like a full time head of ecommerce would: set the plan, do the work, and
+            answer for the results.
           </p>
         </div>
-        <div class="grid grid--320">
+
+        <!-- How I work -->
+        <div class="grid grid--four">
           {
-            OWN.map((o) => (
-              <div class="card own">
-                <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8323A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={o.icon} />
-                <h3 class="own__title">{o.title}</h3>
-                <p class="own__text">{o.text}</p>
+            HOW_I_WORK.map((h, i) => (
+              <div class="card first90__card">
+                <span class="tag tag--accent">{String(i + 1).padStart(2, '0')}</span>
+                <h3 class="first90__name">{h.title}</h3>
+                <p class="own__text">{h.text}</p>
               </div>
             ))
           }
+        </div>
+
+        <div class="first90">
+          <p class="tag">What that covers</p>
+          <div class="grid grid--320">
+            {
+              OWN.map((o) => (
+                <div class="card own">
+                  <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8323A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={o.icon} />
+                  <h3 class="own__title">{o.title}</h3>
+                  <p class="own__text">{o.text}</p>
+                </div>
+              ))
+            }
+          </div>
         </div>
       </div>
     </section>
@@ -247,7 +269,7 @@ const jsonLd = [
       <div class="wrap stack">
         <div class="head">
           <p class="eyebrow">Results</p>
-          <h2 class="h2">What changes when your store has an owner.</h2>
+          <h2 class="h2">What changes when someone is running your store.</h2>
           <p class="lede">
             Real outcomes from past clients. Names withheld, since most of my work is under NDA or white label.
           </p>
@@ -291,6 +313,28 @@ const jsonLd = [
           </div>
           <p class="fineprint">Past client outcomes, shown as examples. Not a guarantee of results for any other store.</p>
         </div>
+      </div>
+    </section>
+
+    <!-- Ways to work together -->
+    <section class="section section--flush">
+      <div class="wrap stack">
+        <div class="head">
+          <p class="eyebrow">Ways to work together</p>
+          <h2 class="h2">An audit, a project, or the whole store.</h2>
+          <p class="lede">Whatever your store needs, from a second opinion to someone running it day to day.</p>
+        </div>
+        <div class="grid grid--three grid--tight">
+          {
+            WAYS.map((w) => (
+              <div class="card first90__card">
+                <h3 class="first90__name">{w.title}</h3>
+                <p class="own__text">{w.text}</p>
+              </div>
+            ))
+          }
+        </div>
+        <p class="ways__more"><a href="#pricing">See the plans below.</a></p>
       </div>
     </section>
 
@@ -437,7 +481,7 @@ const jsonLd = [
       <div class="wrap">
         <div class="referral">
           <div class="referral__text">
-            <h3 class="h3">Know a brand that needs an owner?</h3>
+            <h3 class="h3">Know a brand that needs help running their store?</h3>
             <p>
               Introduce us. When they sign, you get <strong>10% of their first 3 months</strong>, paid once their third
               payment clears.
@@ -451,10 +495,10 @@ const jsonLd = [
     <!-- Final CTA -->
     <section id="book" class="dark cta">
       <div class="wrap cta__inner">
-        <h2 class="h2 cta__title">Let's find the revenue your store is leaving on the table.</h2>
+        <h2 class="h2 cta__title">Take the store off your plate.</h2>
         <p class="cta__sub">
-          Book a 20 minute intro call. Built for Shopify brands doing $15K+ a month that want a senior owner, not the
-          cheapest option.
+          Book a 20 minute intro call. We'll look at where your store is losing money and the best place to start. Built
+          for Shopify brands doing $15K+ a month.
         </p>
         <div class="btn-row btn-row--center">
           <a {...book} class="btn btn--accent">Book an intro call</a>

@@ -264,6 +264,28 @@ img {
   grid-template-columns: repeat(auto-fit, minmax(min(330px, 100%), 1fr));
 }
 
+/* Fixed column counts: 3 or 4 across on desktop, stacked on phones (see the 720px query). */
+.grid--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid--four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 1023px) {
+  .grid--four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .grid--three,
+  .grid--four {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 /* Nav */
 
 .nav {
@@ -636,6 +658,7 @@ img {
 }
 
 .first90__name {
+  margin: 0;
   font-size: 22px;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -645,6 +668,15 @@ img {
   margin: 0;
   font-size: 13px;
   color: var(--faint);
+}
+
+/* Ways to work together */
+
+.ways__more {
+  margin: 0;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 /* Pricing */
