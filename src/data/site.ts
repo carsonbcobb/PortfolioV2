@@ -495,7 +495,68 @@ export const AGENCY_PROMISE = [
   'Your clients never appear in my portfolio',
 ];
 
+// Per client plans for agencies to resell. Prices match the homepage PLANS.
+export const AGENCY_CLIENT_PLANS = [
+  {
+    tag: 'Advice only',
+    name: 'Advisor',
+    price: 1000,
+    unit: ' / month per store',
+    summary: 'A monthly store review and ranked fix list, in your branding, so your team always knows what to ship next.',
+    includes: [
+      'Monthly review of conversion, product pages, cart, speed and email',
+      'Ranked action plan your team can execute',
+      "Delivered as your agency's work",
+      'Up to 8 hours a month',
+    ],
+  },
+  {
+    tag: 'Try it first',
+    name: 'Store Sprint',
+    price: 1500,
+    unit: ' one time per store',
+    summary: 'One week. I find the changes most likely to move revenue for your client and ship them.',
+    includes: [
+      'Full store review',
+      'Top fixes shipped, not a PDF',
+      'Unbranded video walkthrough you can send as your own',
+      'Credited to a monthly plan for that store within 30 days',
+    ],
+  },
+  {
+    tag: 'For the store itself',
+    name: 'Operator',
+    price: 3000,
+    unit: ' / month per store',
+    summary: "I run your client's store under your name: development, testing, email and reporting.",
+    includes: [
+      'Development, design, and technical health',
+      'Ongoing conversion testing',
+      'Klaviyo, subscriptions, and upsells',
+      'Monthly report in your branding',
+      'Up to 24 hours a month',
+    ],
+  },
+  {
+    tag: 'For the whole business',
+    name: 'Head of Ecommerce',
+    price: 5500,
+    unit: ' / month per store',
+    summary: 'A senior ecommerce lead for your client, working as part of your team.',
+    includes: [
+      'Everything in Operator',
+      'Marketing, content, and campaign planning',
+      'Client calls as part of your team when you need it',
+      'Up to 44 hours a month',
+    ],
+  },
+];
+
 export const AGENCY_FAQS = [
+  {
+    q: "What's the difference between capacity and white label plans?",
+    a: 'Capacity plans cover your overflow tickets across any client, billed on tracked time. White label plans are for one client store at a fixed monthly price, so you can package them as your own service and set your own markup.',
+  },
   {
     q: 'How fast can you start?',
     a: "Usually within a week of our call. Send your first ticket the day your hours are paid, and you'll have an estimate back within one business day.",
