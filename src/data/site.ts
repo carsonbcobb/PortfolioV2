@@ -72,7 +72,7 @@ export const OPTIONS = [
   },
   {
     tag: 'The better option',
-    title: 'One owner, on retainer',
+    title: 'One person running it, on retainer',
     price: 'From $3,000',
     unit: ' / month',
     points: [
@@ -115,6 +115,26 @@ export const OWN = [
     icon: '<path d="M3 11v2a1 1 0 001 1h3l5 4V6L7 10H4a1 1 0 00-1 1zM16 9a4 4 0 010 6M19 6a8 8 0 010 12"/>',
     title: 'Marketing, content, and brand',
     text: 'Social and content direction, launch and promo planning, brand consistency, and managing your freelancers and agencies.',
+  },
+];
+
+// How I work, shown above the six OWN cards. Numbered 01 to 04 on the page.
+export const HOW_I_WORK = [
+  {
+    title: 'I find the money',
+    text: 'Audits and clear recommendations on where the store is losing sales, ranked by what will pay back fastest.',
+  },
+  {
+    title: 'I build it myself',
+    text: 'Code changes, design, testing, and email, done hands on. Nothing waits in a queue for someone else.',
+  },
+  {
+    title: 'I run everyone else',
+    text: 'Apps, agencies, and freelancers touching the store go through me, so you stop being the project manager.',
+  },
+  {
+    title: 'I report on the numbers',
+    text: "Monthly reporting on conversion, order value, and repeat revenue, and what I'm doing next.",
   },
 ];
 
@@ -164,6 +184,21 @@ export const FIRST_90 = [
   },
 ];
 
+export const WAYS = [
+  {
+    title: 'Advise',
+    text: 'An audit of your store with clear, ranked recommendations your team can act on. Good if you have developers and want a second set of eyes.',
+  },
+  {
+    title: 'Build',
+    text: 'A specific project or a batch of fixes: new product pages, speed, subscriptions, a theme rebuild, Klaviyo flows. I ship it and hand it back.',
+  },
+  {
+    title: 'Run',
+    text: 'I take over the store on a monthly plan. Strategy, development, conversion, email, and reporting, all handled.',
+  },
+];
+
 export const PLANS = [
   {
     tag: 'For quick fixes',
@@ -184,11 +219,12 @@ export const PLANS = [
     featured: false,
   },
   {
-    tag: 'Start here',
+    tag: 'Try it first',
     name: 'Store Sprint',
     price: 1500,
     unit: ' one time',
-    summary: "One week to find what's costing you sales, and fix the biggest problems.",
+    summary:
+      'A one week trial run. I find the changes most likely to move revenue and ship them, and the full fee is credited to a monthly plan.',
     includes: [
       'Full audit of conversion, speed, tracking, and email',
       'Top 5 revenue fixes built and shipped that week',
@@ -226,7 +262,7 @@ export const PLANS = [
     name: 'Head of Ecommerce',
     price: 5500,
     unit: ' / month',
-    summary: 'One senior lead owning the store and its growth.',
+    summary: 'One senior lead running the store and its growth.',
     includes: [
       'Everything in Operator',
       'Marketing, content, and social direction',
@@ -263,12 +299,20 @@ export const STEPS = [
 
 export const FAQS = [
   {
+    q: 'How is this different from hiring a freelancer?',
+    a: 'A freelancer waits for your task list. I write the list, decide what\'s worth doing, do the work, manage anyone else touching the store, and report on the results. You stop managing the website.',
+  },
+  {
+    q: 'How much of my time will this take?',
+    a: 'One strategy call a month on Operator, or a short weekly call on Head of Ecommerce, plus quick approvals when something needs your sign off. Everything else runs through me.',
+  },
+  {
     q: 'Who is this for?',
     a: "Shopify brands doing $15K a month or more, with real traffic and a product that sells. If you're pre-launch or looking for the cheapest developer available, I'm not the right fit, and I'll say so.",
   },
   {
     q: 'Which plan is right for me?',
-    a: 'If you mainly need the store built, fixed, and optimized, Operator. If you want one person owning ecommerce, including marketing direction and your vendors, Head of Ecommerce. Not sure yet? Start with a Sprint.',
+    a: 'If you mainly need the store built, fixed, and optimized, Operator. If you want one person running ecommerce, including marketing direction and your vendors, Head of Ecommerce. Not sure yet? Start with a Sprint.',
   },
   {
     q: 'Do you create the content and run social yourself?',
