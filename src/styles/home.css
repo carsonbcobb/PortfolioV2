@@ -685,22 +685,42 @@ img {
   align-items: stretch;
 }
 
-/* Four plans: 4 across on large desktop, 2x2 on tablet and small desktop, 1 on phones. */
-.plans--four {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+/* Five plans: 3 over 2 (second row centered) on desktop, 2 across on tablet with the last centered, 1 on phones. */
+.plans--five {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   grid-auto-rows: 1fr;
 }
 
-@media (max-width: 1199px) {
-  .plans--four {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+.plans--five > .plan {
+  grid-column: span 2;
+}
+
+.plans--five > .plan:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+@media (max-width: 1023px) {
+  .plans--five {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .plans--five > .plan:nth-child(4) {
+    grid-column: span 2;
+  }
+
+  .plans--five > .plan:nth-child(5) {
+    grid-column: 2 / span 2;
   }
 }
 
 @media (max-width: 720px) {
-  .plans--four {
+  .plans--five {
     grid-template-columns: minmax(0, 1fr);
     grid-auto-rows: auto;
+  }
+
+  .plans--five > .plan:nth-child(n) {
+    grid-column: auto;
   }
 }
 

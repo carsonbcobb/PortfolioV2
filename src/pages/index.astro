@@ -55,7 +55,7 @@ const jsonLd = [
     email: EMAIL,
     founder: { '@id': `${SITE_URL}/#carson` },
     areaServed: 'US',
-    priceRange: '$3,000 to $5,500 per month',
+    priceRange: '$1,000 to $5,500 per month',
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: 'Shopify ecommerce plans',
@@ -347,7 +347,7 @@ const jsonLd = [
           <p class="lede">Flat monthly retainers, billed in advance. No hourly billing, no surprise invoices, month to month.</p>
         </div>
 
-        <div class="grid plans plans--four">
+        <div class="grid plans plans--five">
           {
             PLANS.map((p) => (
               <div class:list={['card', 'plan', { 'plan--featured': p.featured }]}>
@@ -372,7 +372,7 @@ const jsonLd = [
                 <div class="plan__foot">
                   {p.note && (
                     <div class="plan__note">
-                      <strong>{p.note.strong}</strong> {p.note.text}
+                      {p.note.strong && <strong>{p.note.strong}</strong>} {p.note.text}
                     </div>
                   )}
                   <a {...book} class:list={['btn', p.featured ? 'btn--accent' : 'btn--outline']}>
