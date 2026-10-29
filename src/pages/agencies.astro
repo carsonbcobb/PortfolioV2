@@ -3,7 +3,6 @@ import HomeLayout from '../layouts/HomeLayout.astro';
 import '../styles/agencies.css';
 import {
   CAL_LINK,
-  SITE_URL,
   LINKEDIN_URL,
   EMAIL,
   AGENCY_EMAIL_URL,
@@ -18,6 +17,7 @@ import {
   AGENCY_PROMISE,
   AGENCY_FAQS,
 } from '../data/site';
+import { agenciesSchema } from '../data/schema';
 
 const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
 
@@ -33,59 +33,13 @@ const year = new Date().getFullYear();
 const description =
   'A senior Shopify developer and ecommerce lead you can put on any account. Behind the scenes in your tools, or on calls with your clients as part of your team. You keep the relationship and the margin.';
 
-const jsonLd = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'Person',
-    '@id': `${SITE_URL}/#carson`,
-    name: 'Carson Cobb',
-    url: SITE_URL,
-    sameAs: [LINKEDIN_URL],
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'ProfessionalService',
-    name: 'Carson Cobb, White Label Shopify Development',
-    url: `${SITE_URL}/agencies`,
-    email: EMAIL,
-    description,
-    founder: { '@id': `${SITE_URL}/#carson` },
-    areaServed: 'US',
-    hasOfferCatalog: {
-      '@type': 'OfferCatalog',
-      name: 'White label Shopify development',
-      itemListElement: AGENCY_PLANS.map((p) => ({
-        '@type': 'Offer',
-        name: p.name,
-        description: p.summary,
-        price: p.price,
-        priceCurrency: 'USD',
-        ...(p.featured && {
-          priceSpecification: {
-            '@type': 'UnitPriceSpecification',
-            price: p.price,
-            priceCurrency: 'USD',
-            unitText: 'MONTH',
-            billingDuration: 'P1M',
-          },
-        }),
-      })),
-    },
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: AGENCY_FAQS.map((f) => ({
-      '@type': 'Question',
-      name: f.q,
-      acceptedAnswer: { '@type': 'Answer', text: f.a },
-    })),
-  },
-];
+const title = 'White Label Shopify Developer for Agencies | Carson Cobb';
+
+const jsonLd = [agenciesSchema({ title, description })];
 ---
 
 <HomeLayout
-  title="White Label Shopify Developer for Agencies | Carson Cobb"
+  {title}
   description={description}
   keywords="white label Shopify developer, Shopify developer for agencies, Shopify dev capacity, Shopify development"
   jsonLd={jsonLd}

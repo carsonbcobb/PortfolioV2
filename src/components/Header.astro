@@ -8,7 +8,7 @@ const links = [
   { href: '/#pricing', label: 'Pricing' },
   { href: '/agencies', label: 'For agencies' },
 ];
-const current = Astro.url.pathname.replace(/\/$/, '') || '/';
+const current = Astro.url.pathname.replace(/(\.html|\/)$/, '') || '/';
 ---
 
 <header class="site-header">
