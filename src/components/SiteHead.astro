@@ -20,7 +20,8 @@ const {
   themeColor = '#FF5A5F',
 } = Astro.props;
 
-const canonical = new URL(Astro.url.pathname.replace(/\/$/, '') || '/', SITE_URL).href;
+// Pages build as name.html (see astro.config.mjs), but are served and linked without the extension.
+const canonical = new URL(Astro.url.pathname.replace(/(\.html|\/)$/, '') || '/', SITE_URL).href;
 const ogImage = new URL(og.path, SITE_URL).href;
 ---
 

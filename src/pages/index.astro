@@ -2,7 +2,6 @@
 import HomeLayout from '../layouts/HomeLayout.astro';
 import {
   CAL_LINK,
-  SITE_URL,
   LINKEDIN_URL,
   EMAIL,
   HEADSHOT,
@@ -21,6 +20,7 @@ import {
   STEPS,
   FAQS,
 } from '../data/site';
+import { homeSchema } from '../data/schema';
 
 const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
 
@@ -33,65 +33,16 @@ const book = {
 
 const year = new Date().getFullYear();
 
-const jsonLd = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'Person',
-    '@id': `${SITE_URL}/#carson`,
-    name: 'Carson Cobb',
-    jobTitle: 'Fractional Head of Ecommerce',
-    url: SITE_URL,
-    email: `mailto:${EMAIL}`,
-    sameAs: [LINKEDIN_URL],
-    address: { '@type': 'PostalAddress', addressRegion: 'CA', addressCountry: 'US' },
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'ProfessionalService',
-    '@id': `${SITE_URL}/#service`,
-    name: 'Carson Cobb, Fractional Head of Ecommerce',
-    url: SITE_URL,
-    image: `${SITE_URL}/og-image.png`,
-    email: EMAIL,
-    founder: { '@id': `${SITE_URL}/#carson` },
-    areaServed: 'US',
-    priceRange: '$1,000 to $5,500 per month',
-    hasOfferCatalog: {
-      '@type': 'OfferCatalog',
-      name: 'Shopify ecommerce plans',
-      itemListElement: PLANS.map((p) => ({
-        '@type': 'Offer',
-        name: p.name,
-        description: p.summary,
-        price: p.price,
-        priceCurrency: 'USD',
-        ...(p.monthly && {
-          priceSpecification: {
-            '@type': 'UnitPriceSpecification',
-            price: p.price,
-            priceCurrency: 'USD',
-            unitText: 'MONTH',
-            billingDuration: 'P1M',
-          },
-        }),
-      })),
-    },
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: FAQS.map((f) => ({
-      '@type': 'Question',
-      name: f.q,
-      acceptedAnswer: { '@type': 'Answer', text: f.a },
-    })),
-  },
-];
+const title = 'Carson Cobb | I Run Shopify Stores for Growing Brands';
+const description =
+  'Fractional Head of Ecommerce for Shopify brands doing $15K+ a month. Strategy, development, conversion, email, and marketing handled, so you get more revenue and your time back.';
+
+const jsonLd = [homeSchema({ title, description })];
 ---
 
 <HomeLayout
-  title="Carson Cobb | I Run Shopify Stores for Growing Brands"
-  description="Fractional Head of Ecommerce for Shopify brands doing $15K+ a month. Strategy, development, conversion, email, and marketing handled, so you get more revenue and your time back."
+  {title}
+  {description}
   jsonLd={jsonLd}
 >
   <header class="dark">
@@ -344,7 +295,7 @@ const jsonLd = [
         <div class="head">
           <p class="eyebrow">Pricing</p>
           <h2 class="h2">Start small, or hand me the keys.</h2>
-          <p class="lede">Flat monthly retainers, billed in advance. No hourly billing, no surprise invoices, month to month.</p>
+          <p class="lede">Flat monthly retainers, billed in advance. No surprise invoices, month to month.</p>
         </div>
 
         <div class="grid plans plans--five">

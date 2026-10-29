@@ -6,7 +6,12 @@ export const EMAIL = 'carson@carsoncobb.com';
 export const EMAIL_URL = `mailto:${EMAIL}?subject=Shopify%20store%20inquiry`;
 export const AGENCY_EMAIL_URL = `mailto:${EMAIL}?subject=Agency%20partnership`;
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/carsoncobb';
+// LinkedIn company page, listed in the JSON-LD sameAs.
+export const LINKEDIN_COMPANY_URL: string | null = 'https://www.linkedin.com/company/carsoncobb';
 export const GA_ID = 'G-PEDB1QHBG3';
+
+// Rate for extra hours and one off work, used by the JSON-LD.
+export const HOURLY_RATE = 125;
 
 // Cal.com booking link comes from the CAL_LINK env variable at build time.
 // Until it is set, "Book a call" falls back to email so no button is ever dead.
@@ -347,7 +352,7 @@ export const FAQS = [
   },
   {
     q: 'Do you bill hourly?',
-    a: 'No. Plans are flat monthly retainers. Scope is agreed on our first call and reviewed every month.',
+    a: 'Monthly plans are flat fees, billed in advance, with no hourly tracking. If you only need occasional work, Hour Blocks and one off requests are billed at $125/hr.',
   },
   {
     q: 'Can I cancel?',
