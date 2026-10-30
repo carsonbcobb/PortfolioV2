@@ -31,7 +31,7 @@ const ID = {
   agencyPage: `${AGENCIES}#webpage`,
   agencyBreadcrumb: `${AGENCIES}#agency-breadcrumb`,
   agencyService: `${AGENCIES}#agency-service`,
-  agencyCapacity: `${AGENCIES}#agency-capacity`,
+  agencySeniorHours: `${AGENCIES}#agency-senior-hours`,
   agencyWhiteLabel: `${AGENCIES}#agency-white-label`,
   agencyFaq: `${AGENCIES}#faq`,
 };
@@ -307,22 +307,22 @@ export function agenciesSchema(meta: { title: string; description: string }) {
         name: 'White Label Shopify Development and Ecommerce Management for Agencies',
         serviceType: 'White label Shopify development',
         description:
-          "Senior Shopify capacity for agencies: overflow development billed on tracked time, plus the same store management plans brands buy direct, delivered under the agency's name.",
+          'I own client stores end to end, from strategy and CRO to the build, and join calls as part of your team. No specs, no QA, no hand holding. You sell bigger retainers without hiring senior talent.',
         provider: ref(ID.carson),
         areaServed: US,
         audience: {
           '@type': 'BusinessAudience',
           audienceType: 'Marketing and ecommerce agencies',
           description:
-            'Marketing and ecommerce agencies that need senior Shopify capacity for overflow work, or white label store management plans to resell to their client stores.',
+            'Agencies that need a senior Shopify lead for client accounts, or white label store management plans to resell.',
         },
         availableChannel: { '@type': 'ServiceChannel', serviceUrl: CAL_LINK, name: 'Intro call' },
-        hasOfferCatalog: [ref(ID.agencyCapacity), ref(ID.agencyWhiteLabel)],
+        hasOfferCatalog: [ref(ID.agencySeniorHours), ref(ID.agencyWhiteLabel)],
       },
       {
         '@type': 'OfferCatalog',
-        '@id': ID.agencyCapacity,
-        name: 'Capacity for your team',
+        '@id': ID.agencySeniorHours,
+        name: 'Senior hours on demand',
         itemListElement: [
           agencyOffer(
             'hour-block',

@@ -336,7 +336,7 @@ export const FAQS = [
   },
   {
     q: 'Who is this for?',
-    a: "Shopify brands doing $15K a month or more, with real traffic and a product that sells. If you're pre-launch or looking for the cheapest developer available, I'm not the right fit, and I'll say so.",
+    a: "Growing Shopify brands with real traffic and a product that sells. If you're pre-launch or looking for the cheapest developer available, I'm not the right fit, and I'll say so.",
   },
   {
     q: 'Which plan is right for me?',
@@ -431,7 +431,7 @@ export const AGENCY_SCOPE = [
   },
   {
     icon: '<path d="M3 17l6-6 4 4 8-8M15 7h6v6"/>',
-    title: 'CRO implementation',
+    title: 'Own the store roadmap and ship it',
     text: 'Your test ideas and audit recommendations, actually built and shipped, not stuck in a backlog.',
   },
   {
@@ -487,8 +487,8 @@ export const AGENCY_STEPS = [
   },
   {
     when: 'Step 3',
-    title: 'Send tickets',
-    text: 'Drop work in your Slack or project tool. I estimate before I start, ship, and report hours weekly.',
+    title: 'Hand over the account',
+    text: 'Hand me the account or the project. I take it from strategy to launch, as part of your team.',
   },
 ];
 
@@ -559,8 +559,12 @@ export const AGENCY_CLIENT_PLANS = [
 
 export const AGENCY_FAQS = [
   {
-    q: "What's the difference between capacity and white label plans?",
-    a: 'Capacity plans cover your overflow tickets across any client, billed on tracked time. White label plans are for one client store at a fixed monthly price, so you can package them as your own service and set your own markup.',
+    q: 'How is this different from hiring an offshore developer?',
+    a: 'An offshore developer needs a detailed spec and someone on your team to QA the work. I decide what to build, build it, and can talk to your client directly. You get senior judgment, not just hours.',
+  },
+  {
+    q: "What's the difference between senior hours and white label plans?",
+    a: 'Senior hours cover work across any client, billed on tracked time. White label plans are for one client store at a fixed monthly price, so you can package them as your own service and set your own markup.',
   },
   {
     q: 'How fast can you start?',
