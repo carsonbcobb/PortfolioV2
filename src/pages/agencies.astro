@@ -34,6 +34,8 @@ const description =
   'A senior Shopify developer and ecommerce lead you can put on any account. Behind the scenes in your tools, or on calls with your clients as part of your team. You keep the relationship and the margin.';
 
 const title = 'White Label Shopify Developer for Agencies | Carson Cobb';
+const heroSub =
+  'I own client stores end to end, from strategy and CRO to the build, and join calls as part of your team. No specs, no QA, no hand holding. You sell bigger retainers without hiring senior talent.';
 
 const jsonLd = [agenciesSchema({ title, description })];
 ---
@@ -67,8 +69,8 @@ const jsonLd = [agenciesSchema({ title, description })];
             <span class="dot" aria-hidden="true"></span>
             White label Shopify partner for agencies
           </div>
-          <h1 class="hero__h1">Say yes to every <span class="accent">Shopify project.</span></h1>
-          <p class="hero__sub">{description}</p>
+          <h1 class="hero__h1">A senior Shopify lead for your clients. <span class="accent">Under your name.</span></h1>
+          <p class="hero__sub">{heroSub}</p>
           <div class="btn-row">
             <a {...book} class="btn btn--accent"
               >Book an intro call
@@ -150,9 +152,11 @@ const jsonLd = [agenciesSchema({ title, description })];
       <div class="wrap stack">
         <div class="head">
           <p class="eyebrow">The problem</p>
-          <h2 class="h2">Every Shopify request you turn down is revenue walking out the door.</h2>
+          <h2 class="h2">Your growth is capped by senior talent, not demand.</h2>
           <p class="lede">
-            Your clients want dev work you can't always staff. Here's how most agencies handle it, and why it costs them.
+            Junior and offshore developers can follow a spec. What's hard to find is someone who can run an account:
+            decide what to build, build it right the first time, and talk to the client like a partner. Without that
+            person, you turn down bigger clients or stretch your best people thin.
           </p>
         </div>
         <div class="grid grid--300">
@@ -175,9 +179,9 @@ const jsonLd = [agenciesSchema({ title, description })];
         <div class="head head--split">
           <div class="head">
             <p class="eyebrow">What I take on</p>
-            <h2 class="h2">The Shopify work your clients keep asking for.</h2>
+            <h2 class="h2">The accounts and builds that need a senior lead.</h2>
           </div>
-          <p class="lede head__aside">From one off tickets to full builds, shipped clean and on your timeline.</p>
+          <p class="lede head__aside">Strategy, complex builds, and client facing work, delivered as your team.</p>
         </div>
         <div class="grid grid--320">
           {
@@ -207,8 +211,8 @@ const jsonLd = [agenciesSchema({ title, description })];
 
         <div class="plans__group">
           <div class="plans__group-head">
-            <h3 class="h3">Capacity for your team</h3>
-            <p class="plans__intro">Overflow tickets, billed on tracked time.</p>
+            <h3 class="h3">Senior hours on demand</h3>
+            <p class="plans__intro">Senior Shopify work across any client, billed on tracked time.</p>
           </div>
           <div class="grid grid--320 plans plans--agency">
             {
@@ -248,7 +252,7 @@ const jsonLd = [agenciesSchema({ title, description })];
           <div class="plans__group-head">
             <h3 class="h3">White label plans for your clients</h3>
             <p class="plans__intro">
-              The same plans brands buy direct, delivered under your name. Priced per client store. You set the markup.
+              A senior lead who owns one client store under your name. Priced per store. You set the markup.
             </p>
           </div>
           <div class="grid plans plans--client">
@@ -358,11 +362,8 @@ const jsonLd = [agenciesSchema({ title, description })];
     <!-- Final CTA -->
     <section id="book" class="dark cta">
       <div class="wrap cta__inner">
-        <h2 class="h2 cta__title">Add a senior Shopify lead to your team this week.</h2>
-        <p class="cta__sub">
-          Book a 20 minute intro call. Tell me about your clients and your stack, and I'll tell you honestly whether I'm a
-          fit.
-        </p>
+        <h2 class="h2 cta__title">Say yes to bigger clients.</h2>
+        <p class="cta__sub">Book a 20 minute call and we'll talk through the accounts you'd hand me first.</p>
         <div class="btn-row btn-row--center">
           <a {...book} class="btn btn--accent">Book an intro call</a>
           <a href={AGENCY_EMAIL_URL} class="btn btn--ghost-dark">Email me</a>
