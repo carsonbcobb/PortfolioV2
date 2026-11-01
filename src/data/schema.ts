@@ -231,7 +231,7 @@ export function homeSchema(meta: { title: string; description: string }) {
           '@type': 'BusinessAudience',
           audienceType: 'Shopify brands',
           description:
-            'Growing Shopify brands, from startups to ten figure brands, that want someone running the store instead of a full time hire or a stack of vendors.',
+            'Growing Shopify brands doing $10K to $10M a month that want someone running the store instead of a full time hire or a stack of vendors.',
         },
         availableChannel: { '@type': 'ServiceChannel', serviceUrl: CAL_LINK, name: 'Intro call' },
         hasOfferCatalog: ref(ID.brandPlans),

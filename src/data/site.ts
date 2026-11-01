@@ -336,7 +336,7 @@ export const FAQS = [
   },
   {
     q: 'Who is this for?',
-    a: "Growing Shopify brands with real traffic and a product that sells. If you're pre-launch or looking for the cheapest developer available, I'm not the right fit, and I'll say so.",
+    a: "Growing Shopify brands doing $10K to $10M a month, with real traffic and a product that sells. If you're pre-launch or looking for the cheapest developer available, I'm not the right fit, and I'll say so.",
   },
   {
     q: 'Which plan is right for me?',
