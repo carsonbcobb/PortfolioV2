@@ -130,7 +130,7 @@ export const CONTENT_PAGES: ContentPageInfo[] = [
     slug: 'state-of-shopify-subscriptions-2026',
     kind: 'report',
     label: 'State of Shopify Subscriptions 2026',
-    summary: 'Data from 622 Shopify stores and 93,999 products on subscriptions, sold out best sellers, gifting and bundles.',
+    summary: 'Data from 606 Shopify stores and 121,519 products on subscriptions, sold out best sellers, gifting and bundles.',
   },
 ];
 

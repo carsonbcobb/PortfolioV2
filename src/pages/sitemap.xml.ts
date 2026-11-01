@@ -2,12 +2,17 @@ import { execFileSync } from 'node:child_process';
 import type { APIRoute } from 'astro';
 import { SITE_URL } from '../data/site';
 import { CONTENT_PAGES, TOOLS } from '../data/pages';
+import { REPORTS, slugOf } from '../data/reports';
 
 // Each page with the files its content comes from. lastmod is the last commit touching any of them.
 const pages: [string, string[]][] = [
   ['/', ['src/pages/index.astro', 'src/data/site.ts', 'src/data/schema.ts']],
   ['/agencies', ['src/pages/agencies.astro', 'src/data/site.ts', 'src/data/schema.ts']],
   ...CONTENT_PAGES.map((p): [string, string[]] => [`/${p.slug}`, [`src/content/pages/${p.slug}.md`, 'src/data/pages.ts']]),
+  ['/reports', ['src/content/reports/index.md', 'src/pages/reports/index.astro', 'src/data/reports.ts']],
+  ...REPORTS.map(slugOf)
+    .filter((s) => s.startsWith('reports/'))
+    .map((s): [string, string[]] => [`/${s}`, [`src/content/${s}.md`, 'src/data/reports.ts']]),
   ['/tools', ['src/pages/tools/index.astro', 'src/data/pages.ts']],
   ...TOOLS.map((t): [string, string[]] => [`/tools/${t.slug}`, [`src/pages/tools/${t.slug}.astro`, 'src/data/pages.ts']]),
 ];

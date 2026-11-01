@@ -22,6 +22,8 @@ Beauty is crowded. Your customer has seen a dozen brands this week, most of them
 
 That's a store problem as much as a marketing problem. I'm Carson Cobb, and I run Shopify stores for growing DTC brands on monthly retainers. Over 6+ years I've worked on 50+ Shopify stores, and beauty and skincare are where some of my best results have come from.
 
+In my latest check of 124 beauty and skincare stores, two thirds had subscriptions set up but only 18% covered every best seller. [See the reports.](/reports)
+
 ## The problems I see in beauty and skincare stores
 
 ### Product pages that don't answer the real questions
