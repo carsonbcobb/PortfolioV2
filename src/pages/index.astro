@@ -1,8 +1,8 @@
 ---
 import HomeLayout from '../layouts/HomeLayout.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 import {
   CAL_LINK,
-  LINKEDIN_URL,
   EMAIL,
   HEADSHOT,
   HERO_METRICS,
@@ -31,11 +31,9 @@ const book = {
   ...(CAL_LINK.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {}),
 };
 
-const year = new Date().getFullYear();
-
 const title = 'Carson Cobb | I Run Shopify Stores for Growing Brands';
 const description =
-  'Fractional Head of Ecommerce for growing Shopify brands. Strategy, development, conversion, email, and marketing handled, so you get more revenue and your time back.';
+  'Fractional Head of Ecommerce for growing Shopify brands. Strategy, development, conversion, email and marketing handled, so you get more revenue and time back.';
 
 const jsonLd = [homeSchema({ title, description })];
 ---
@@ -263,6 +261,10 @@ const jsonLd = [homeSchema({ title, description })];
             }
           </div>
           <p class="fineprint">Past client outcomes, shown as examples. Not a guarantee of results for any other store.</p>
+          <p class="fineprint report-link">
+            I checked 622 Shopify stores to see how many actually offer subscriptions.
+            <a href="/state-of-shopify-subscriptions-2026">See the data.</a>
+          </p>
         </div>
       </div>
     </section>
@@ -458,12 +460,5 @@ const jsonLd = [homeSchema({ title, description })];
     </section>
   </main>
 
-  <footer class="dark footer">
-    <div class="wrap footer__inner">
-      <span>
-        © {year} Carson Cobb · <a href={`mailto:${EMAIL}`}>{EMAIL}</a> · <a href={LINKEDIN_URL}>LinkedIn</a>
-      </span>
-      <span>Shopify is a trademark of Shopify Inc. Independent contractor, not affiliated with Shopify.</span>
-    </div>
-  </footer>
+  <SiteFooter />
 </HomeLayout>

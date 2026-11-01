@@ -1,0 +1,71 @@
+---
+import ContentPage from '../../layouts/ContentPage.astro';
+import { toolSchema } from '../../data/schema';
+import { toolBySlug } from '../../data/pages';
+import '../../styles/tools.css';
+
+const tool = toolBySlug('free-shipping-calculator');
+const intro =
+  "Your free shipping line should get people to add one more item, not scare them off. Put in your numbers and I'll suggest where to set it.";
+const jsonLd = [toolSchema(tool)];
+---
+
+<ContentPage
+  title={tool.title}
+  description={tool.description}
+  h1="Free shipping threshold calculator"
+  {intro}
+  trail={[{ name: 'Tools', href: '/tools' }, { name: tool.name }]}
+  {jsonLd}
+>
+  <div class="section tool-body">
+    <div class="wrap">
+      <section class="cc-tool" id="free-shipping-calculator">
+        <h2>Where should your free shipping line be?</h2>
+        <p class="cc-lead">A good threshold sits just above what most carts already reach, so a small add on gets people over it. Runs in your browser, nothing is saved.</p>
+        <form class="cc-grid" oninput="ccShip()">
+          <label>Average order value ($)<input type="number" id="f-aov" value="48" min="0" step="0.01"></label>
+          <label>Price of your best selling product ($)<input type="number" id="f-hero" value="34" min="0" step="0.01"></label>
+          <label>Price of your cheapest add on ($)<input type="number" id="f-addon" value="12" min="0" step="0.01"></label>
+          <label>Your current free shipping threshold ($, 0 if none)<input type="number" id="f-now" value="75" min="0" step="1"></label>
+          <label>Average shipping cost you pay per order ($)<input type="number" id="f-cost" value="8" min="0" step="0.01"></label>
+          <label>Gross margin (%)<input type="number" id="f-margin" value="65" min="0" max="100"></label>
+        </form>
+        <div class="cc-results" aria-live="polite">
+          <div><span class="cc-num" id="f-rec">$0</span><span class="cc-lbl">suggested threshold</span></div>
+          <div><span class="cc-num" id="f-gap">$0</span><span class="cc-lbl">gap from a typical cart today</span></div>
+          <div><span class="cc-num" id="f-ok">-</span><span class="cc-lbl">does free shipping pay for itself?</span></div>
+        </div>
+        <ul class="cc-list" id="f-notes"></ul>
+        <a class="cc-cta" href="/#book">Want me to look at your numbers? Book a 20 minute intro call</a>
+      </section>
+      <script is:inline>
+      function ccShip(){
+        const v=id=>parseFloat(document.getElementById(id).value)||0;
+        const aov=v('f-aov'),hero=v('f-hero'),addon=v('f-addon'),now=v('f-now'),cost=v('f-cost'),margin=v('f-margin')/100;
+        // aim roughly 15 to 30 percent above AOV, rounded to a clean number, and reachable with hero plus one add on
+        let target=aov*1.2;
+        const reach=hero+addon;
+        if(reach>target) target=Math.max(target,Math.min(reach,aov*1.35));
+        const clean=Math.ceil(target/5)*5;
+        const rec=clean;
+        const gap=Math.max(0,rec-aov);
+        const extraMargin=gap*margin;
+        const pays=extraMargin>=cost*0.5;
+        const f=n=>'$'+(Math.round(n*100)/100).toLocaleString();
+        document.getElementById('f-rec').textContent=f(rec);
+        document.getElementById('f-gap').textContent=f(gap);
+        document.getElementById('f-ok').textContent=pays?'Likely yes':'Check margins';
+        const notes=[];
+        if(now>0&&now>aov*1.6) notes.push('Your current line is far above a typical cart, so most shoppers never try to reach it. Lowering it toward '+f(rec)+' should turn it into a reason to add one more item.');
+        if(now>0&&now<aov) notes.push('Your current line is below your average order, so you pay shipping on most orders without getting a bigger cart in return.');
+        if(now>0&&Math.abs((now-hero*Math.round(now/hero)))<1&&Math.round(now/hero)>1) notes.push('Watch for carts that land a few cents under the line, for example several of your best seller. Set the line so a common combination clears it.');
+        if(hero>=rec) notes.push('Your best seller alone clears the suggested line. Consider a slightly higher line paired with a cheap add on shown in the cart.');
+        notes.push('Show progress to free shipping in the cart and suggest the add on that closes the gap.');
+        document.getElementById('f-notes').innerHTML=notes.map(n=>'<li>'+n+'</li>').join('');
+      }
+      ccShip();
+      </script>
+    </div>
+  </div>
+</ContentPage>

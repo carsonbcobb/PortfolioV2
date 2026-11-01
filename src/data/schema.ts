@@ -359,3 +359,203 @@ export function agenciesSchema(meta: { title: string; description: string }) {
     ],
   };
 }
+
+// Content pages, the data report, and tools. Each page repeats the shared Person, Organization and
+// ContactPoint nodes under the same @id, so every page describes the same Carson Cobb.
+
+const shared = () => [person, business, contact, { '@type': 'WebSite', '@id': ID.website }];
+
+const breadcrumb = (id: string, trail: { name: string; url: string }[]) => ({
+  '@type': 'BreadcrumbList',
+  '@id': id,
+  itemListElement: [{ name: 'Home', url: HOME }, ...trail].map((t, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: t.name,
+    item: t.url,
+  })),
+});
+
+const isoDate = (d: Date | string) => (d instanceof Date ? d.toISOString().slice(0, 10) : String(d));
+
+interface ContentSchemaInput {
+  slug: string;
+  title: string;
+  description: string;
+  h1: string;
+  label: string;
+  kind: 'service' | 'industry' | 'guide' | 'report';
+  faqs: { q: string; a: string }[];
+  service?: { name: string; serviceType: string; audience: string };
+  datePublished?: Date | string;
+  dateModified?: Date | string;
+}
+
+export function contentSchema(p: ContentSchemaInput) {
+  const url = `${SITE_URL}/${p.slug}`;
+  const pageId = `${url}#webpage`;
+  const crumbId = `${url}#breadcrumb`;
+  const serviceId = `${url}#service`;
+  const articleId = `${url}#article`;
+  const datasetId = `${url}#dataset`;
+  const faqId = `${url}#faq`;
+  const main = p.service ? serviceId : p.kind === 'report' ? articleId : undefined;
+  const published = p.datePublished ? isoDate(p.datePublished) : undefined;
+  const modified = p.dateModified ? isoDate(p.dateModified) : published;
+
+  const graph: object[] = [
+    ...shared(),
+    {
+      '@type': 'WebPage',
+      '@id': pageId,
+      url,
+      name: p.title,
+      description: p.description,
+      isPartOf: ref(ID.website),
+      breadcrumb: ref(crumbId),
+      ...(main ? { about: ref(main), mainEntity: ref(main) } : {}),
+      inLanguage: 'en-US',
+    },
+    breadcrumb(crumbId, [{ name: p.label, url }]),
+  ];
+
+  if (p.service) {
+    graph.push({
+      '@type': 'Service',
+      '@id': serviceId,
+      name: p.service.name,
+      serviceType: p.service.serviceType,
+      description: p.description,
+      url,
+      provider: ref(ID.carson),
+      areaServed: US,
+      audience: { '@type': 'BusinessAudience', audienceType: p.service.audience },
+      availableChannel: { '@type': 'ServiceChannel', serviceUrl: CAL_LINK, name: 'Intro call' },
+    });
+  }
+
+  if (p.kind === 'report') {
+    graph.push(
+      {
+        '@type': 'Article',
+        '@id': articleId,
+        headline: p.h1,
+        description: p.description,
+        url,
+        mainEntityOfPage: ref(pageId),
+        image: `${SITE_URL}/og-image.png`,
+        datePublished: published,
+        dateModified: modified,
+        author: ref(ID.carson),
+        publisher: ref(ID.business),
+        about: ref(datasetId),
+        inLanguage: 'en-US',
+      },
+      {
+        '@type': 'Dataset',
+        '@id': datasetId,
+        name: 'State of Shopify Subscriptions 2026',
+        description:
+          'Public storefront data from 622 US facing Shopify stores and 93,999 products in supplements, beauty and skincare, food and beverage, pet, home and apparel, checked October 31, 2026. Measures subscription availability on sampled products, sold out products in best sellers collections, gift collections and gift cards, bundles, and typical product price.',
+        url,
+        creator: ref(ID.carson),
+        datePublished: published,
+        dateModified: modified,
+        temporalCoverage: '2026-10-31',
+        spatialCoverage: US,
+        isAccessibleForFree: true,
+        measurementTechnique: "Reading each store's public Shopify product data, up to 500 products per store",
+        variableMeasured: [
+          'Share of stores offering subscriptions on sampled products',
+          'Sold out products in best sellers collections',
+          'Gift collections and gift card products',
+          'Bundle, kit, set and pack products',
+          'Typical product price',
+        ],
+        keywords: ['Shopify', 'subscriptions', 'subscribe and save', 'ecommerce', 'DTC'],
+        inLanguage: 'en-US',
+      },
+    );
+  }
+
+  graph.push(faqPage(faqId, pageId, p.faqs));
+  return { '@context': 'https://schema.org', '@graph': graph };
+}
+
+export function toolSchema(t: { slug: string; name: string; title: string; description: string }) {
+  const url = `${SITE_URL}/tools/${t.slug}`;
+  const pageId = `${url}#webpage`;
+  const crumbId = `${url}#breadcrumb`;
+  const appId = `${url}#app`;
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      ...shared(),
+      {
+        '@type': 'WebPage',
+        '@id': pageId,
+        url,
+        name: t.title,
+        description: t.description,
+        isPartOf: ref(ID.website),
+        breadcrumb: ref(crumbId),
+        mainEntity: ref(appId),
+        inLanguage: 'en-US',
+      },
+      breadcrumb(crumbId, [
+        { name: 'Tools', url: `${SITE_URL}/tools` },
+        { name: t.name, url },
+      ]),
+      {
+        '@type': 'WebApplication',
+        '@id': appId,
+        name: t.name,
+        description: t.description,
+        url,
+        applicationCategory: 'BusinessApplication',
+        operatingSystem: 'Any',
+        browserRequirements: 'Requires JavaScript',
+        isAccessibleForFree: true,
+        offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD' },
+        author: ref(ID.carson),
+        provider: ref(ID.carson),
+        inLanguage: 'en-US',
+      },
+    ],
+  };
+}
+
+export function toolsIndexSchema(
+  meta: { title: string; description: string },
+  tools: { slug: string; name: string }[],
+) {
+  const url = `${SITE_URL}/tools`;
+  const pageId = `${url}#webpage`;
+  const crumbId = `${url}#breadcrumb`;
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      ...shared(),
+      {
+        '@type': 'CollectionPage',
+        '@id': pageId,
+        url,
+        name: meta.title,
+        description: meta.description,
+        isPartOf: ref(ID.website),
+        breadcrumb: ref(crumbId),
+        mainEntity: {
+          '@type': 'ItemList',
+          itemListElement: tools.map((t, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            name: t.name,
+            url: `${url}/${t.slug}`,
+          })),
+        },
+        inLanguage: 'en-US',
+      },
+      breadcrumb(crumbId, [{ name: 'Tools', url }]),
+    ],
+  };
+}

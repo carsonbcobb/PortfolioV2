@@ -1,0 +1,62 @@
+---
+// Footer for every page: link columns, then the contact and trademark line.
+import { EMAIL, LINKEDIN_URL } from '../data/site';
+import { CONTENT_PAGES, TOOLS } from '../data/pages';
+
+const year = new Date().getFullYear();
+const link = (slug: string) => ({ href: `/${slug}`, label: CONTENT_PAGES.find((p) => p.slug === slug)!.label });
+
+const columns = [
+  {
+    title: 'Services',
+    links: CONTENT_PAGES.filter((p) => p.kind === 'service').map((p) => link(p.slug)),
+  },
+  {
+    title: 'Industries',
+    links: CONTENT_PAGES.filter((p) => p.kind === 'industry').map((p) => link(p.slug)),
+  },
+  {
+    title: 'Resources',
+    links: [
+      link('state-of-shopify-subscriptions-2026'),
+      ...TOOLS.map((t) => ({ href: `/tools/${t.slug}`, label: t.name })),
+      link('recharge-vs-skio-vs-loop'),
+      link('agency-vs-fractional-head-of-ecommerce'),
+    ],
+  },
+  {
+    title: 'Carson Cobb',
+    links: [
+      { href: '/', label: 'For brands' },
+      { href: '/agencies', label: 'For agencies' },
+      { href: '/#pricing', label: 'Pricing' },
+      { href: '/tools', label: 'All tools' },
+    ],
+  },
+];
+---
+
+<footer class="dark footer">
+  <nav class="wrap footer__cols" aria-label="Footer">
+    {
+      columns.map((c) => (
+        <div class="footer__col">
+          <p class="tag tag--dim">{c.title}</p>
+          <ul>
+            {c.links.map((l) => (
+              <li>
+                <a href={l.href}>{l.label}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </nav>
+  <div class="wrap footer__inner">
+    <span>
+      © {year} Carson Cobb · <a href={`mailto:${EMAIL}`}>{EMAIL}</a> · <a href={LINKEDIN_URL}>LinkedIn</a>
+    </span>
+    <span>Shopify is a trademark of Shopify Inc. Independent contractor, not affiliated with Shopify.</span>
+  </div>
+</footer>

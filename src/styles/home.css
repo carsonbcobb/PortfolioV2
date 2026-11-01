@@ -1058,6 +1058,44 @@ img {
   color: #fff;
 }
 
+.footer__cols {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px;
+  padding-top: 56px;
+  padding-bottom: 48px;
+}
+
+.footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer__col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+}
+
+.footer__col a {
+  text-decoration: none;
+}
+
+.footer__cols + .footer__inner {
+  border-top: 1px solid var(--dark-rule);
+}
+
+@media (max-width: 900px) {
+  .footer__cols {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 720px) {
   .h2 {
     font-size: 32px;
@@ -1072,4 +1110,16 @@ img {
   .cta .cta__title {
     font-size: 40px;
   }
+}
+
+/* Link to the subscriptions report, under the results. */
+.report-link {
+  margin-top: 12px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.report-link a {
+  color: var(--accent-text);
+  font-weight: 600;
 }

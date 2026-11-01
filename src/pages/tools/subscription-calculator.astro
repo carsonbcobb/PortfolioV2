@@ -1,0 +1,62 @@
+---
+import ContentPage from '../../layouts/ContentPage.astro';
+import { toolSchema } from '../../data/schema';
+import { toolBySlug } from '../../data/pages';
+import '../../styles/tools.css';
+
+const tool = toolBySlug('subscription-calculator');
+const intro =
+  "Most stores I audit are leaving subscription revenue on the table. Put in your own numbers and see what a well set up offer could add.";
+const jsonLd = [toolSchema(tool)];
+---
+
+<ContentPage
+  title={tool.title}
+  description={tool.description}
+  h1="Subscription revenue calculator"
+  {intro}
+  trail={[{ name: 'Tools', href: '/tools' }, { name: tool.name }]}
+  {jsonLd}
+>
+  <div class="section tool-body">
+    <div class="wrap">
+      <section class="cc-tool" id="subscription-calculator">
+        <h2>What would subscriptions add to your store?</h2>
+        <p class="cc-lead">Put in your real numbers. Everything runs in your browser and nothing is saved.</p>
+        <form class="cc-grid" oninput="ccSub()">
+          <label>Orders per month<input type="number" id="s-orders" value="1000" min="0"></label>
+          <label>Average order value ($)<input type="number" id="s-aov" value="55" min="0" step="0.01"></label>
+          <label>Share of orders that are reorderable products (%)<input type="number" id="s-eligible" value="70" min="0" max="100"></label>
+          <label>Expected subscribe rate on those orders (%)<input type="number" id="s-rate" value="20" min="0" max="100"></label>
+          <label>Subscribe and save discount (%)<input type="number" id="s-disc" value="10" min="0" max="50"></label>
+          <label>Average months a subscriber stays<input type="number" id="s-months" value="5" min="1" step="0.5"></label>
+          <label>Reorders a one time buyer makes in that window<input type="number" id="s-oneoff" value="0.6" min="0" step="0.1"></label>
+        </form>
+        <div class="cc-results" aria-live="polite">
+          <div><span class="cc-num" id="s-new-subs">0</span><span class="cc-lbl">new subscribers a month</span></div>
+          <div><span class="cc-num" id="s-monthly">$0</span><span class="cc-lbl">extra revenue a month once it builds</span></div>
+          <div><span class="cc-num" id="s-yearly">$0</span><span class="cc-lbl">extra revenue in year one</span></div>
+        </div>
+        <p class="cc-note">How it works: each new subscriber is worth their discounted order times the months they stay, minus the reorders they would have placed anyway. Subscribers are added every month, so revenue stacks up over the year. Most stores I audit land between 10% and 30% subscribe rate on reorderable products once the offer is set up well.</p>
+        <a class="cc-cta" href="/#book">Want help setting it up? Book a 20 minute intro call</a>
+      </section>
+      <script is:inline>
+      function ccSub(){
+        const v=id=>parseFloat(document.getElementById(id).value)||0;
+        const orders=v('s-orders'),aov=v('s-aov'),elig=v('s-eligible')/100,rate=v('s-rate')/100,disc=v('s-disc')/100,months=v('s-months'),oneoff=v('s-oneoff');
+        const subs=orders*elig*rate;
+        const perSubLift=aov*(1-disc)*months - aov*(1+oneoff);
+        const perSubMonthly=months>0?perSubLift/months:0;
+        // steady state monthly lift: subscribers active at once is roughly new subs times months stayed
+        const monthly=Math.max(0,subs*Math.min(months,12)*perSubMonthly);
+        let year=0;for(let m=1;m<=12;m++){year+=Math.max(0,subs*Math.min(m,months)*perSubMonthly);}
+        const f=n=>'$'+Math.round(n).toLocaleString();
+        document.getElementById('s-new-subs').textContent=Math.round(subs).toLocaleString();
+        document.getElementById('s-monthly').textContent=f(monthly);
+        document.getElementById('s-yearly').textContent=f(year);
+      }
+      ccSub();
+      </script>
+    </div>
+  </div>
+</ContentPage>
