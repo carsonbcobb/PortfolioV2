@@ -360,7 +360,7 @@ export function agenciesSchema(meta: { title: string; description: string }) {
   };
 }
 
-// Content pages, the data report, and tools. Each page repeats the shared Person, Organization and
+// Content pages, reports, and tools. Each page repeats the shared Person, Organization and
 // ContactPoint nodes under the same @id, so every page describes the same Carson Cobb.
 
 const shared = () => [person, business, contact, { '@type': 'WebSite', '@id': ID.website }];
@@ -376,19 +376,13 @@ const breadcrumb = (id: string, trail: { name: string; url: string }[]) => ({
   })),
 });
 
-const isoDate = (d: Date | string) => (d instanceof Date ? d.toISOString().slice(0, 10) : String(d));
-
 interface ContentSchemaInput {
   slug: string;
   title: string;
   description: string;
-  h1: string;
   label: string;
-  kind: 'service' | 'industry' | 'guide' | 'report';
   faqs: { q: string; a: string }[];
   service?: { name: string; serviceType: string; audience: string };
-  datePublished?: Date | string;
-  dateModified?: Date | string;
 }
 
 export function contentSchema(p: ContentSchemaInput) {
@@ -396,12 +390,8 @@ export function contentSchema(p: ContentSchemaInput) {
   const pageId = `${url}#webpage`;
   const crumbId = `${url}#breadcrumb`;
   const serviceId = `${url}#service`;
-  const articleId = `${url}#article`;
-  const datasetId = `${url}#dataset`;
   const faqId = `${url}#faq`;
-  const main = p.service ? serviceId : p.kind === 'report' ? articleId : undefined;
-  const published = p.datePublished ? isoDate(p.datePublished) : undefined;
-  const modified = p.dateModified ? isoDate(p.dateModified) : published;
+  const main = p.service ? serviceId : undefined;
 
   const graph: object[] = [
     ...shared(),
@@ -432,50 +422,6 @@ export function contentSchema(p: ContentSchemaInput) {
       audience: { '@type': 'BusinessAudience', audienceType: p.service.audience },
       availableChannel: { '@type': 'ServiceChannel', serviceUrl: CAL_LINK, name: 'Intro call' },
     });
-  }
-
-  if (p.kind === 'report') {
-    graph.push(
-      {
-        '@type': 'Article',
-        '@id': articleId,
-        headline: p.h1,
-        description: p.description,
-        url,
-        mainEntityOfPage: ref(pageId),
-        image: `${SITE_URL}/og-image.png`,
-        datePublished: published,
-        dateModified: modified,
-        author: ref(ID.carson),
-        publisher: ref(ID.business),
-        about: ref(datasetId),
-        inLanguage: 'en-US',
-      },
-      {
-        '@type': 'Dataset',
-        '@id': datasetId,
-        name: 'State of Shopify Subscriptions 2026',
-        description:
-          'Public storefront data from 622 US facing Shopify stores and 93,999 products in supplements, beauty and skincare, food and beverage, pet, home and apparel, checked October 31, 2026. Measures subscription availability on sampled products, sold out products in best sellers collections, gift collections and gift cards, bundles, and typical product price.',
-        url,
-        creator: ref(ID.carson),
-        datePublished: published,
-        dateModified: modified,
-        temporalCoverage: '2026-10-31',
-        spatialCoverage: US,
-        isAccessibleForFree: true,
-        measurementTechnique: "Reading each store's public Shopify product data, up to 500 products per store",
-        variableMeasured: [
-          'Share of stores offering subscriptions on sampled products',
-          'Sold out products in best sellers collections',
-          'Gift collections and gift card products',
-          'Bundle, kit, set and pack products',
-          'Typical product price',
-        ],
-        keywords: ['Shopify', 'subscriptions', 'subscribe and save', 'ecommerce', 'DTC'],
-        inLanguage: 'en-US',
-      },
-    );
   }
 
   graph.push(faqPage(faqId, pageId, p.faqs));
@@ -556,6 +502,133 @@ export function toolsIndexSchema(
         inLanguage: 'en-US',
       },
       breadcrumb(crumbId, [{ name: 'Tools', url }]),
+    ],
+  };
+}
+
+const REPORTS_URL = `${SITE_URL}/reports`;
+
+interface ReportSchemaInput {
+  /** Path without the leading slash */
+  slug: string;
+  title: string;
+  description: string;
+  h1: string;
+  faqs: { q: string; a: string }[];
+  datePublished: string;
+  dateModified: string;
+  /** The day the data was checked */
+  checked: string;
+  /** Column headers of the report's tables */
+  variables: string[];
+  stores?: number;
+  products?: number;
+}
+
+// A data report: the Article, the Dataset behind it, the FAQ, and Home > Reports > report.
+export function reportSchema(p: ReportSchemaInput) {
+  const url = `${SITE_URL}/${p.slug}`;
+  const pageId = `${url}#webpage`;
+  const crumbId = `${url}#breadcrumb`;
+  const articleId = `${url}#article`;
+  const datasetId = `${url}#dataset`;
+  const size = [
+    p.stores && `${p.stores.toLocaleString('en-US')} stores`,
+    p.products && `${p.products.toLocaleString('en-US')} products`,
+  ].filter(Boolean);
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      ...shared(),
+      {
+        '@type': 'WebPage',
+        '@id': pageId,
+        url,
+        name: p.title,
+        description: p.description,
+        isPartOf: ref(ID.website),
+        breadcrumb: ref(crumbId),
+        about: ref(articleId),
+        mainEntity: ref(articleId),
+        inLanguage: 'en-US',
+      },
+      breadcrumb(crumbId, [
+        { name: 'Reports', url: REPORTS_URL },
+        { name: p.h1, url },
+      ]),
+      {
+        '@type': 'Article',
+        '@id': articleId,
+        headline: p.h1,
+        description: p.description,
+        url,
+        mainEntityOfPage: ref(pageId),
+        image: `${SITE_URL}/og-image.png`,
+        datePublished: p.datePublished,
+        dateModified: p.dateModified,
+        author: ref(ID.carson),
+        publisher: ref(ID.business),
+        about: ref(datasetId),
+        inLanguage: 'en-US',
+      },
+      {
+        '@type': 'Dataset',
+        '@id': datasetId,
+        name: `${p.h1} data`,
+        description: p.description,
+        url,
+        creator: ref(ID.carson),
+        datePublished: p.datePublished,
+        dateModified: p.dateModified,
+        temporalCoverage: p.checked,
+        spatialCoverage: US,
+        isAccessibleForFree: true,
+        ...(size.length ? { size: size.join(', ') } : {}),
+        measurementTechnique: "Reading each store's public Shopify storefront data",
+        variableMeasured: p.variables,
+        keywords: ['Shopify', 'ecommerce', 'benchmarks', 'DTC'],
+        inLanguage: 'en-US',
+      },
+      faqPage(`${url}#faq`, pageId, p.faqs),
+    ],
+  };
+}
+
+// The /reports hub: a CollectionPage listing every report, plus its FAQ.
+export function reportsIndexSchema(
+  meta: { title: string; description: string; dateModified?: string },
+  reports: { slug: string; name: string }[],
+  faqs: { q: string; a: string }[],
+) {
+  const pageId = `${REPORTS_URL}#webpage`;
+  const crumbId = `${REPORTS_URL}#breadcrumb`;
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      ...shared(),
+      {
+        '@type': 'CollectionPage',
+        '@id': pageId,
+        url: REPORTS_URL,
+        name: meta.title,
+        description: meta.description,
+        isPartOf: ref(ID.website),
+        breadcrumb: ref(crumbId),
+        ...(meta.dateModified ? { dateModified: meta.dateModified } : {}),
+        author: ref(ID.carson),
+        mainEntity: {
+          '@type': 'ItemList',
+          itemListElement: reports.map((r, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            name: r.name,
+            url: `${SITE_URL}/${r.slug}`,
+          })),
+        },
+        inLanguage: 'en-US',
+      },
+      breadcrumb(crumbId, [{ name: 'Reports', url: REPORTS_URL }]),
+      faqPage(`${REPORTS_URL}#faq`, pageId, faqs),
     ],
   };
 }

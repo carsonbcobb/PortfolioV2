@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import { SITE_URL, EMAIL, CAL_LINK, HOURLY_RATE, PLANS, AGENCY_PLANS, AGENCY_CLIENT_PLANS } from '../data/site';
 import { CONTENT_PAGES, TOOLS } from '../data/pages';
+import { REPORT_HUB, REPORTS, slugOf } from '../data/reports';
 
 // Plain markdown summary of the site at /llms.txt. Built from the same data as the pages,
 // so plans and prices here always match the pricing cards.
@@ -55,9 +56,13 @@ export const GET: APIRoute = () => {
     '',
     ...pages('industry'),
     '',
-    '## Guides and data',
+    '## Reports',
     '',
-    ...pages('report'),
+    `- [All reports](${url('/reports')}): ${REPORT_HUB.frontmatter.description}`,
+    ...REPORTS.map((r) => `- [${r.frontmatter.h1}](${url(`/${slugOf(r)}`)}): ${r.frontmatter.description}`),
+    '',
+    '## Guides',
+    '',
     ...pages('guide'),
     '',
     '## Tools',

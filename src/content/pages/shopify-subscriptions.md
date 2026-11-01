@@ -22,7 +22,7 @@ Most Shopify stores I audit already have a subscription app installed. They're p
 
 Not because subscriptions don't work for their products. Because the setup has gaps nobody has had time to look at. A plan that exists in the admin but never shows on the page. A discount that's too small to matter. A cancel button that lets a customer leave without ever hearing a better offer.
 
-I checked 622 Shopify stores to see how many actually offer subscriptions. [See the data.](/state-of-shopify-subscriptions-2026)
+[See what 314 brands actually offer.](/reports/shopify-subscription-benchmarks-2026)
 
 I'm Carson Cobb. I run Shopify stores for growing DTC brands on monthly retainers, and subscription revenue is one of the first places I look. Over 6+ years and 50+ Shopify stores, I've learned that the biggest wins usually aren't new tools. They're fixing what's already there.
 

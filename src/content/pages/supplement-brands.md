@@ -24,7 +24,7 @@ That's why I treat supplement stores differently. I'm Carson Cobb, and I run Sho
 
 The good news is that most of them are fixable without a new platform, a new theme or a new agency.
 
-I checked 622 Shopify stores to see how many actually offer subscriptions. [See the data.](/state-of-shopify-subscriptions-2026)
+[See what 314 brands actually offer.](/reports/shopify-subscription-benchmarks-2026)
 
 ## The problems I see in supplement stores
 

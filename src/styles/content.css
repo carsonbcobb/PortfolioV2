@@ -221,3 +221,45 @@
     font-size: 26px;
   }
 }
+
+/* Report dates, callouts and the /reports cards */
+
+.page-hero__dates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.prose blockquote {
+  margin: 0 0 28px;
+  padding: 20px 24px;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 12px 12px 0;
+  background: var(--sand);
+  color: var(--body);
+}
+
+.prose blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+.report-list {
+  margin: 8px 0 56px;
+}
+
+.report-card__date {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}

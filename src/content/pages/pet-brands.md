@@ -24,6 +24,8 @@ That loyalty is a gift. But only if the store makes reordering easy. Too many pe
 
 I'm Carson Cobb. I run Shopify stores for growing DTC brands on monthly retainers. Over 6+ years I've worked on 50+ Shopify stores, and pet food, treats and supplements share a set of problems that are very fixable.
 
+In my latest check of 41 pet stores, 68% offered subscriptions but 30% left every best seller without one. [See the reports.](/reports)
+
 ## The problems I see in pet stores
 
 ### Autoship that doesn't match the bag

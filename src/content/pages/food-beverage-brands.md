@@ -24,6 +24,8 @@ The question is whether your store catches that reorder, or lets the customer dr
 
 I'm Carson Cobb. I run Shopify stores for growing DTC brands on monthly retainers. Over 6+ years I've worked on 50+ Shopify stores across CPG, supplements, beauty and apparel. Coffee, tea, snacks, sauces and drinks share a set of problems I see again and again, and most of them are fixable without a new theme or a new agency.
 
+In my latest check of 149 food and beverage stores, 67% offered subscriptions but only 9% offered them on every product checked. [See the reports.](/reports)
+
 ## The problems I see in food and beverage stores
 
 ### Subscriptions that don't match how people eat and drink
