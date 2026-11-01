@@ -1,0 +1,56 @@
+---
+// One route per markdown file in src/content/pages, at the slug in its frontmatter.
+import type { MarkdownInstance } from 'astro';
+import ContentPage from '../layouts/ContentPage.astro';
+import { contentSchema } from '../data/schema';
+import { pageBySlug } from '../data/pages';
+
+interface Frontmatter {
+  title: string;
+  description: string;
+  slug: string;
+  h1: string;
+  datePublished?: Date | string;
+  dateModified?: Date | string;
+  faq?: { question: string; answer: string }[];
+}
+
+export function getStaticPaths() {
+  const files = import.meta.glob<MarkdownInstance<Frontmatter>>('../content/pages/*.md', { eager: true });
+  return Object.values(files).map((page) => ({
+    params: { slug: page.frontmatter.slug.replace(/^\//, '') },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props as { page: MarkdownInstance<Frontmatter> };
+const fm = page.frontmatter;
+const slug = fm.slug.replace(/^\//, '');
+const info = pageBySlug(slug);
+const faqs = (fm.faq ?? []).map((f) => ({ q: f.question, a: f.answer }));
+
+const jsonLd = [
+  contentSchema({
+    slug,
+    title: fm.title,
+    description: fm.description,
+    h1: fm.h1,
+    label: info.label,
+    kind: info.kind,
+    faqs,
+    service: info.service,
+    datePublished: fm.datePublished,
+    dateModified: fm.dateModified,
+  }),
+];
+---
+
+<ContentPage title={fm.title} description={fm.description} h1={fm.h1} trail={[{ name: info.label }]} {faqs} {jsonLd}>
+  <section class="section page-body">
+    <div class="wrap">
+      <article class="prose">
+        <page.Content />
+      </article>
+    </div>
+  </section>
+</ContentPage>

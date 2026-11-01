@@ -1,0 +1,200 @@
+/* The three tools' own styles (from their source snippets), merged, with their variables mapped onto
+   the site's tokens. Global, not scoped, because the tools build some of their markup with innerHTML. */
+
+.cc-tool {
+  --surface: #fff;
+  --surface-2: var(--sand);
+  --border: var(--line);
+  --accent-fg: var(--ink);
+  --space-4: 0px;
+  --space-6: 0px;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: var(--space-6, 32px) var(--space-4, 16px);
+  font-family: inherit;
+}
+
+.cc-tool h2 {
+  margin: 0 0 14px;
+  font-size: 32px;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.cc-lead,
+.cc-note {
+  color: var(--muted, #555);
+}
+
+.cc-lead {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.cc-note {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 16px;
+}
+
+.cc-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.cc-row input {
+  flex: 1;
+  min-width: 200px;
+  font: inherit;
+  padding: 12px 16px;
+  border: 1px solid var(--border, #ccc);
+  border-radius: 999px;
+  background: var(--surface, #fff);
+  color: inherit;
+}
+
+.cc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.cc-grid label {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.cc-grid input {
+  font: inherit;
+  font-weight: 400;
+  padding: 10px 12px;
+  border: 1px solid var(--border, #ccc);
+  border-radius: 8px;
+  background: var(--surface, #fff);
+  color: inherit;
+}
+
+.cc-tool input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+/* Buttons match the site's accent pill button. */
+.cc-row button,
+.cc-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 26px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--accent, #111);
+  color: var(--accent-fg, #fff);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.cc-cta {
+  margin-top: 12px;
+}
+
+.cc-cta:hover {
+  color: var(--accent-fg, #fff);
+}
+
+.cc-row button:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.cc-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
+  gap: 16px;
+  padding: 20px;
+  border-radius: 12px;
+  background: var(--surface-2, #f4f4f2);
+}
+
+.cc-num {
+  display: block;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.cc-lbl {
+  font-size: 14px;
+  color: var(--muted, #555);
+}
+
+.cc-list {
+  font-size: 15px;
+  line-height: 1.5;
+  margin-top: 16px;
+  color: var(--body);
+}
+
+.cc-list li {
+  margin-bottom: 6px;
+}
+
+.cc-results-list {
+  display: grid;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.cc-item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--surface-2, #f4f4f2);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--body);
+}
+
+.cc-item b {
+  color: var(--ink);
+}
+
+#sc-out > p {
+  color: var(--body);
+}
+
+@media (max-width: 520px) {
+  .cc-item {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tool-body {
+  padding: 72px 0 96px;
+}
+
+@media (max-width: 720px) {
+  .tool-body {
+    padding: 48px 0 72px;
+  }
+  .cc-tool h2 {
+    font-size: 26px;
+  }
+}

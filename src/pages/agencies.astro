@@ -1,9 +1,9 @@
 ---
 import HomeLayout from '../layouts/HomeLayout.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 import '../styles/agencies.css';
 import {
   CAL_LINK,
-  LINKEDIN_URL,
   EMAIL,
   AGENCY_EMAIL_URL,
   AGENCY_TICKET_STATS,
@@ -28,10 +28,8 @@ const book = {
   ...(CAL_LINK.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {}),
 };
 
-const year = new Date().getFullYear();
-
 const description =
-  'A senior Shopify developer and ecommerce lead you can put on any account. Behind the scenes in your tools, or on calls with your clients as part of your team. You keep the relationship and the margin.';
+  'A senior Shopify lead you can put on any account, behind the scenes or on calls with your clients as your team. You keep the relationship and the margin.';
 
 const title = 'White Label Shopify Developer for Agencies | Carson Cobb';
 const heroSub =
@@ -372,12 +370,5 @@ const jsonLd = [agenciesSchema({ title, description })];
     </section>
   </main>
 
-  <footer class="dark footer">
-    <div class="wrap footer__inner">
-      <span>
-        © {year} Carson Cobb · <a href={`mailto:${EMAIL}`}>{EMAIL}</a> · <a href={LINKEDIN_URL}>LinkedIn</a>
-      </span>
-      <span>Shopify is a trademark of Shopify Inc. Independent contractor, not affiliated with Shopify.</span>
-    </div>
-  </footer>
+  <SiteFooter />
 </HomeLayout>

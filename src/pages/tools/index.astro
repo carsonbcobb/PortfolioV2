@@ -1,0 +1,30 @@
+---
+import ContentPage from '../../layouts/ContentPage.astro';
+import { toolsIndexSchema } from '../../data/schema';
+import { TOOLS } from '../../data/pages';
+
+const title = 'Shopify Tools for Growing Brands | Carson Cobb';
+const description =
+  'Calculators and a store check for Shopify brands: subscription revenue, free shipping threshold, and a quick look at where a store leaks revenue.';
+const intro =
+  'Quick tools built from the checks I run in every store audit. Everything runs in your browser and nothing is saved.';
+const jsonLd = [toolsIndexSchema({ title, description }, TOOLS)];
+---
+
+<ContentPage {title} {description} h1="Tools for Shopify brands" {intro} trail={[{ name: 'Tools' }]} {jsonLd}>
+  <section class="section page-body">
+    <div class="wrap">
+      <div class="tool-list">
+        {
+          TOOLS.map((t) => (
+            <a class="card tool-card" href={`/tools/${t.slug}`}>
+              <h2 class="h3">{t.name}</h2>
+              <p>{t.summary}</p>
+              <span class="tool-card__go">Open the tool →</span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</ContentPage>

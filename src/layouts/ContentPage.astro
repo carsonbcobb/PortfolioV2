@@ -1,0 +1,84 @@
+---
+// Layout for content pages and tools: the homepage design, nav and footer, with a dark title band,
+// the page body, an optional FAQ, and the homepage's closing call to action.
+import HomeLayout from './HomeLayout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { CAL_LINK, EMAIL } from '../data/site';
+import '../styles/content.css';
+
+interface Props {
+  title: string;
+  description: string;
+  h1: string;
+  /** Short intro under the H1 */
+  intro?: string;
+  /** Breadcrumb trail after Home; the last item is this page */
+  trail: { name: string; href?: string }[];
+  faqs?: { q: string; a: string }[];
+  jsonLd: object[];
+}
+
+const { title, description, h1, intro, trail, faqs = [], jsonLd } = Astro.props;
+---
+
+<HomeLayout {title} {description} {jsonLd}>
+  <SiteNav />
+
+  <main id="main">
+    <section class="dark" aria-label="Introduction">
+      <div class="wrap page-hero">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="/">Home</a></li>
+            {
+              trail.map((t) => (
+                <li>{t.href ? <a href={t.href}>{t.name}</a> : <span aria-current="page">{t.name}</span>}</li>
+              ))
+            }
+          </ol>
+        </nav>
+        <h1 class="page-hero__h1">{h1}</h1>
+        {intro && <p class="hero__sub">{intro}</p>}
+      </div>
+    </section>
+
+    <slot />
+
+    {
+      faqs.length > 0 && (
+        <section class="section section--sand" id="faq">
+          <div class="wrap faq">
+            <div class="faq__head">
+              <p class="eyebrow">FAQ</p>
+              <h2 class="h2 h2--36">Questions, answered.</h2>
+            </div>
+            <div class="faq__list">
+              {faqs.map((f, i) => (
+                <details open={i === 0}>
+                  <summary>{f.q}</summary>
+                  <p>{f.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      )
+    }
+
+    <section class="dark cta">
+      <div class="wrap cta__inner">
+        <h2 class="h2 cta__title">Take the store off your plate.</h2>
+        <p class="cta__sub">
+          Book a 20 minute intro call. We'll look at where your store is losing money and the best place to start.
+        </p>
+        <div class="btn-row btn-row--center">
+          <a href={CAL_LINK} data-track="book_call" target="_blank" rel="noopener" class="btn btn--accent">Book an intro call</a>
+          <a href={`mailto:${EMAIL}`} class="btn btn--ghost-dark">Email me</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</HomeLayout>

@@ -1,0 +1,17 @@
+---
+// Dark top nav for content and tool pages. Same look as the homepage nav, with links back to its sections.
+import { CAL_LINK } from '../data/site';
+---
+
+<header class="dark">
+  <nav class="wrap nav" aria-label="Main">
+    <a href="/" class="nav__brand">Carson Cobb</a>
+    <div class="nav__links">
+      <a href="/#results">Results</a>
+      <a href="/#own">What I do</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/agencies">For agencies</a>
+      <a href={CAL_LINK} data-track="book_call" target="_blank" rel="noopener" class="btn btn--accent nav__cta">Book a call</a>
+    </div>
+  </nav>
+</header>
