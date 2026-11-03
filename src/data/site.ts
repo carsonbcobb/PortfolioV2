@@ -238,7 +238,7 @@ export const PLANS = [
       'Send any fix, update, or small build',
       'Most requests done in 1 to 2 business days',
       'Pay only for time used, 15 minute minimum per request',
-      'Hours good for 90 days',
+      'Hours good for 60 days',
       'Weekly report of everything shipped',
     ],
     note: null,
@@ -450,7 +450,7 @@ export const AGENCY_PLANS = [
     summary: '$125/hr. For agencies with occasional Shopify requests.',
     includes: [
       'Billed by actual time tracked, 15 minute minimum per request',
-      'Use hours anytime within 90 days',
+      'Use hours anytime within 60 days',
       '1 to 2 day turnaround on most tickets',
       'Weekly hours report',
       'Top up anytime',
@@ -600,6 +600,6 @@ export const AGENCY_FAQS = [
   },
   {
     q: 'Do unused hours roll over?',
-    a: 'Hour Blocks are good for 90 days. Partner hours reset each month, since that time is held exclusively for you.',
+    a: 'Hour Blocks are good for 60 days. Partner hours reset each month, since that time is held exclusively for you.',
   },
 ];

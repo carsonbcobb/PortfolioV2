@@ -159,7 +159,7 @@ const BRAND_OFFERS: { slug: string; name: string; unit: Unit; description: strin
     name: 'Hour Block',
     unit: 'block',
     description:
-      '10 hours of hands on Shopify work billed on tracked time, 15 minute minimum per request, usable within 90 days.',
+      '10 hours of hands on Shopify work billed on tracked time, 15 minute minimum per request, usable within 60 days.',
   },
   {
     slug: 'store-sprint',
@@ -327,7 +327,7 @@ export function agenciesSchema(meta: { title: string; description: string }) {
           agencyOffer(
             'hour-block',
             'Hour Block',
-            '10 hours of Shopify work for your team, billed on tracked time, 15 minute minimum per request, usable within 90 days.',
+            '10 hours of Shopify work for your team, billed on tracked time, 15 minute minimum per request, usable within 60 days.',
             priceOf(AGENCY_PLANS, 'Hour Block'),
             'block',
           ),
@@ -629,6 +629,32 @@ export function reportsIndexSchema(
       },
       breadcrumb(crumbId, [{ name: 'Reports', url: REPORTS_URL }]),
       faqPage(`${REPORTS_URL}#faq`, pageId, faqs),
+    ],
+  };
+}
+
+// /results: a WebPage about Carson Cobb's work, and Home > Results. No reviews, ratings or client names.
+export function resultsSchema(meta: { title: string; description: string }) {
+  const url = `${SITE_URL}/results`;
+  const pageId = `${url}#webpage`;
+  const crumbId = `${url}#breadcrumb`;
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      ...shared(),
+      {
+        '@type': 'WebPage',
+        '@id': pageId,
+        url,
+        name: meta.title,
+        description: meta.description,
+        isPartOf: ref(ID.website),
+        breadcrumb: ref(crumbId),
+        author: ref(ID.carson),
+        about: ref(ID.carson),
+        inLanguage: 'en-US',
+      },
+      breadcrumb(crumbId, [{ name: 'Results', url }]),
     ],
   };
 }
