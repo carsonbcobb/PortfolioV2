@@ -8,6 +8,7 @@ import { REPORTS, slugOf } from '../data/reports';
 const pages: [string, string[]][] = [
   ['/', ['src/pages/index.astro', 'src/data/site.ts', 'src/data/schema.ts']],
   ['/agencies', ['src/pages/agencies.astro', 'src/data/site.ts', 'src/data/schema.ts']],
+  ['/results', ['src/content/results.md', 'src/pages/results.astro', 'src/data/results.ts']],
   ...CONTENT_PAGES.map((p): [string, string[]] => [`/${p.slug}`, [`src/content/pages/${p.slug}.md`, 'src/data/pages.ts']]),
   ['/reports', ['src/content/reports/index.md', 'src/pages/reports/index.astro', 'src/data/reports.ts']],
   ...REPORTS.map(slugOf)

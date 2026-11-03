@@ -19,10 +19,12 @@ interface Props {
   /** Reports: ISO dates shown under the H1. Updated only shows when it differs from published. */
   dates?: { published?: string; modified?: string };
   faqs?: { q: string; a: string }[];
+  /** Closing call to action heading, if not the default */
+  ctaTitle?: string;
   jsonLd: object[];
 }
 
-const { title, description, h1, intro, trail, dates, faqs = [], jsonLd } = Astro.props;
+const { title, description, h1, intro, trail, dates, faqs = [], ctaTitle = 'Take the store off your plate.', jsonLd } = Astro.props;
 const updated = dates?.modified && dates.modified !== dates.published ? dates.modified : undefined;
 ---
 
@@ -88,7 +90,7 @@ const updated = dates?.modified && dates.modified !== dates.published ? dates.mo
 
     <section class="dark cta">
       <div class="wrap cta__inner">
-        <h2 class="h2 cta__title">Take the store off your plate.</h2>
+        <h2 class="h2 cta__title">{ctaTitle}</h2>
         <p class="cta__sub">
           Book a 20 minute intro call. We'll look at where your store is losing money and the best place to start.
         </p>

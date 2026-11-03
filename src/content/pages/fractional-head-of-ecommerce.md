@@ -24,6 +24,8 @@ The usual answers are a full time hire at $150K+ a year, or a handful of vendors
 
 I'm Carson Cobb. I run Shopify stores for growing DTC brands on monthly retainers. Over 6+ years I've worked on 50+ Shopify stores and supported more than $40M in client revenue. A fractional head of ecommerce engagement is the deepest version of that work: I own the channel, not just a task list.
 
+You can see the work behind those numbers, area by area, on my [results page](/results).
+
 ## What a fractional head of ecommerce actually does
 
 The title sounds bigger than it is. In practice it means one person is responsible for how your Shopify store makes money, and that person is me.

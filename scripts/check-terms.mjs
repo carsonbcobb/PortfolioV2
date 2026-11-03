@@ -4,10 +4,7 @@ import path from 'node:path';
 
 const DIST = path.resolve('dist');
 const BANNED = [
-  /AI search/i,
-  /\bAEO\b/i,
-  /answer engine/i,
-  /ChatGPT/i,
+  // AEO, AI search and AI platform names are allowed since the /results AEO section (Nov 2026).
   /\bLLMs?\b/i,
   // No client brand names and no old audit price. Audits themselves are now offered (Ways to work together).
   /\bGEM\b/i,

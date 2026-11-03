@@ -47,6 +47,7 @@ export const GET: APIRoute = () => {
     '',
     `- [Home](${url('/')}): What I do for growing Shopify brands, results, plans and FAQ.`,
     `- [For agencies](${url('/agencies')}): White label Shopify work and plans for agencies.`,
+    `- [Results](${url('/results')}): What running a Shopify store covers, from conversion and testing to operations, and the client results behind each part.`,
     '',
     '## Services',
     '',

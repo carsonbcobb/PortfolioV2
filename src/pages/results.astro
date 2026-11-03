@@ -1,0 +1,116 @@
+---
+// /results, from src/content/results.md: the at a glance strip, one block per discipline with a sticky
+// jump menu, the industries table, and how the numbers are measured.
+import ContentPage from '../layouts/ContentPage.astro';
+import { resultsSchema } from '../data/schema';
+import { RESULTS_META as fm, INTRO, GLANCE, WORK, BRANDS, MEASURED, CLOSING } from '../data/results';
+import '../styles/results.css';
+
+const jsonLd = [resultsSchema({ title: fm.title, description: fm.description })];
+---
+
+<ContentPage
+  title={fm.title}
+  description={fm.description}
+  h1={fm.h1}
+  intro={INTRO[0]}
+  trail={[{ name: 'Results' }]}
+  ctaTitle={CLOSING}
+  {jsonLd}
+>
+  <section class="proof" aria-labelledby="at-a-glance">
+    <div class="wrap proof__inner">
+      <h2 class="eyebrow" id="at-a-glance">{GLANCE.title}</h2>
+      <div class="proof__stats">
+        {
+          GLANCE.stats.map((s) => (
+            <div>
+              <div class="proof__value">{s.value}</div>
+              <div class="proof__label">{s.label}</div>
+            </div>
+          ))
+        }
+      </div>
+      {INTRO.slice(1).map((p) => <p class="lede" set:html={p} />)}
+    </div>
+  </section>
+
+  <section class="section section--sand" aria-labelledby="the-work">
+    <div class="wrap stack">
+      <div class="head">
+        <p class="eyebrow">The work</p>
+        <h2 class="h2" id="the-work">{WORK.title}</h2>
+      </div>
+
+      <nav class="jump" aria-label="Jump to a discipline">
+        <ul>
+          {
+            WORK.disciplines.map((d) => (
+              <li>
+                <a href={`#${d.id}`}>{d.name}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <div class="disciplines">
+        {
+          WORK.disciplines.map((d) => (
+            <article class="card discipline" id={d.id}>
+              <h3 class="h3">{d.name}</h3>
+              {d.text.map((p) => (
+                <p class="discipline__text" set:html={p} />
+              ))}
+              <ul class="wins">
+                {d.results.map((r) => (
+                  <li class:list={['wins__item', { 'wins__item--plain': !r.big }]}>
+                    {r.big && <span class="wins__big">{r.big}</span>}
+                    <span class="wins__text" set:html={r.text} />
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="brands">
+    <div class="wrap stack">
+      <div class="head">
+        <h2 class="h2 h2--36" id="brands">{BRANDS.title}</h2>
+      </div>
+      <div class="prose results-table">
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Industries">
+          <table>
+            <thead>
+              <tr>{BRANDS.head.map((h) => <th set:html={h} />)}</tr>
+            </thead>
+            <tbody>
+              {BRANDS.rows.map((row) => <tr>{row.map((c) => <td set:html={c} />)}</tr>)}
+            </tbody>
+          </table>
+        </div>
+        {BRANDS.note.map((p) => <p class="fineprint" set:html={p} />)}
+      </div>
+
+      <div class="head measured">
+        <h2 class="h3">{MEASURED.title}</h2>
+        {MEASURED.text.map((p) => <p class="lede" set:html={p} />)}
+      </div>
+    </div>
+  </section>
+</ContentPage>
+
+<script is:inline>
+  // Keep jump targets clear of the sticky menu, whose height changes as it wraps.
+  (() => {
+    const jump = document.querySelector('.jump');
+    if (!jump) return;
+    const set = () => document.documentElement.style.setProperty('--jump-h', `${jump.offsetHeight}px`);
+    set();
+    if ('ResizeObserver' in window) new ResizeObserver(set).observe(jump);
+  })();
+</script>

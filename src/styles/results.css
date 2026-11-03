@@ -1,0 +1,145 @@
+/* /results. Builds on home.css and content.css pieces: the proof strip, cards, and the prose table. */
+
+/* Sticky jump menu. Wraps on desktop, scrolls sideways on phones. */
+.jump {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  margin: 0 -8px;
+  padding: 12px 8px;
+  background: var(--sand);
+  border-bottom: 1px solid var(--line);
+}
+
+.jump ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.jump a {
+  display: inline-block;
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.jump a:hover {
+  border-color: var(--ink);
+}
+
+/* Disciplines: two columns on desktop, one on phones. */
+.disciplines {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* Jump targets land below the sticky menu. --jump-h is measured on load and on resize (results.astro);
+   the fallbacks match the menu's usual height. */
+:root {
+  --jump-h: 140px;
+}
+
+.discipline {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  scroll-margin-top: calc(var(--jump-h) + 24px);
+}
+
+.discipline__text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--body);
+}
+
+.wins {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.wins__item {
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+  gap: 16px;
+  align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.wins__item--plain {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.wins__big {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--accent-text);
+}
+
+.wins__text {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--body);
+}
+
+.wins__text strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.results-table {
+  max-width: none;
+}
+
+.results-table .fineprint {
+  margin-top: 0;
+}
+
+.measured {
+  gap: 12px;
+}
+
+@media (max-width: 900px) {
+  .disciplines {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  :root {
+    --jump-h: 54px;
+  }
+  .jump {
+    margin: 0 -16px;
+    padding: 10px 16px;
+  }
+  .jump ul {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .wins__item {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+}
