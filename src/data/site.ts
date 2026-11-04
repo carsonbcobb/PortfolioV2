@@ -10,14 +10,11 @@ export const LINKEDIN_URL = 'https://www.linkedin.com/in/carsoncobb';
 export const LINKEDIN_COMPANY_URL: string | null = 'https://www.linkedin.com/company/carsoncobb';
 export const GA_ID = 'G-PEDB1QHBG3';
 
-// Rate for extra hours and one off work, used by the JSON-LD.
-export const HOURLY_RATE = 125;
-
 // Cal.com booking link comes from the CAL_LINK env variable at build time.
-// Until it is set, "Book a call" falls back to email so no button is ever dead.
+// Until it is set, booking buttons fall back to email so no button is ever dead.
 const calLink = (import.meta.env.CAL_LINK ?? process.env.CAL_LINK ?? '').trim();
 if (!calLink) {
-  console.warn('[carsoncobb] CAL_LINK is not set. "Book a call" buttons will fall back to email.');
+  console.warn('[carsoncobb] CAL_LINK is not set. Booking buttons will fall back to email.');
 }
 export const CAL_LINK = calLink || EMAIL_URL;
 
@@ -41,53 +38,7 @@ export const HERO_SHIPPED = [
 ];
 export const HERO_NEXT = 'Next: subscription page test, social content plan';
 
-export const STATS = [
-  { value: '50+', label: 'Shopify stores' },
-  { value: '6+ years', label: 'running and building stores' },
-  { value: '$40M+', label: 'in client revenue supported' },
-  { value: '2.1x', label: 'avg conversion lift on rebuilt pages' },
-];
-
 export const VERTICALS = ['Supplements', 'Beauty', 'Skincare', 'Wellness', 'Food & Beverage', 'Apparel', 'Home'];
-
-export const OPTIONS = [
-  {
-    tag: 'Option 1',
-    title: 'Hire full time',
-    price: '$150K+',
-    unit: ' / year',
-    points: [
-      'Salary, benefits, and recruiting fees',
-      'Months to hire, then more months to ramp',
-      'Still need a developer and designer underneath them',
-    ],
-    dark: false,
-  },
-  {
-    tag: 'Option 2',
-    title: 'Stitch together vendors',
-    price: '4 invoices',
-    unit: ' / month',
-    points: [
-      'Developer, designer, email agency, social freelancer',
-      'None of them talk, none of them own revenue',
-      'You become the project manager',
-    ],
-    dark: false,
-  },
-  {
-    tag: 'The better option',
-    title: 'One person running it, on retainer',
-    price: 'From $3,000',
-    unit: ' / month',
-    points: [
-      'Senior lead who builds and directs everything',
-      'First changes ship in week one',
-      'Month to month, no recruiting, no ramp',
-    ],
-    dark: true,
-  },
-];
 
 // Icon markup is the inner SVG of a 24×24 stroke icon.
 export const OWN = [
@@ -109,7 +60,7 @@ export const OWN = [
   {
     icon: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
     title: 'Retention and email',
-    text: 'Klaviyo flows and campaigns, subscriptions, upsells, and post-purchase, so every customer is worth more over time.',
+    text: 'Klaviyo flows and campaigns, subscriptions, upsells, and post purchase, so every customer is worth more over time.',
   },
   {
     icon: '<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
@@ -156,7 +107,7 @@ export const RESULTS = [
   {
     tag: 'Subscriptions · Retention',
     stat: '7% → 32%',
-    statLabel: 'subscription opt-in',
+    statLabel: 'subscription opt in',
     title: 'Over 4x more customers choosing subscribe and save.',
     before: 'strong first orders, weak repeat revenue, and subscription and upsell apps working against each other.',
     after: 'subscribing is the obvious choice on every page, every order gets a relevant upsell, and AOV is up 18%.',
@@ -189,174 +140,150 @@ export const FIRST_90 = [
   },
 ];
 
-export const WAYS = [
+// Pricing: start with the audit, then a fixed price Build or a retainer.
+export const AUDIT = {
+  tag: 'Start here',
+  name: 'AI Search and Conversion Audit',
+  price: 1500,
+  unit: ' one time',
+  includes: [
+    '50 buyer question test in ChatGPT',
+    'Competitor and citation analysis',
+    'Conversion leak review',
+    'Prioritized plan',
+  ],
+  note: 'The full $1,500 is credited toward a Build started within 30 days.',
+};
+
+export const BUILD = {
+  tag: 'Fixed price, 3 to 4 weeks',
+  name: 'Build',
+  tiers: [
+    { label: 'Up to 50 products', price: 5000, from: false },
+    { label: '50 to 500 products', price: 7500, from: false },
+    { label: '500+ products', price: 10000, from: true },
+  ],
+  includes: [
+    'On site AI search work across every template',
+    'Conversion rebuild of key pages',
+    'Measurement setup: post purchase survey, AI traffic tracking and a baseline',
+    'A retest of the same questions after 30 days',
+  ],
+  note: 'I take 3 Builds a month.',
+};
+
+// price null shows "Let's talk".
+export const RETAINERS = [
   {
-    title: 'Advise',
-    text: 'An audit, or the Advisor plan at $1,000 a month: I review the store, rank what to fix, and your team or agency does the work. Good if you have developers and want someone deciding what matters.',
+    name: 'Growth',
+    price: 4500 as number | null,
+    unit: '/month',
+    summary: 'I grow your traffic from AI search and your conversion rate.',
+    includes: [
+      'Monthly AI search tracking and report',
+      'Ongoing on site AI and conversion testing',
+      'Off site work: getting into the lists and articles AI cites, affiliate and publisher outreach, review strategy and Amazon listing improvements',
+    ],
+    note: null as string | null,
+    featured: false,
   },
   {
-    title: 'Build',
-    text: 'A specific project or a batch of fixes: new product pages, speed, subscriptions, a theme rebuild, Klaviyo flows. I ship it and hand it back.',
+    name: 'Full',
+    price: 7500,
+    unit: '/month',
+    summary: 'Your ecommerce lead, working at your direction.',
+    includes: [
+      'Everything in Growth',
+      'I propose the roadmap and you decide',
+      'I plan and build launches, promotions and holidays for your sign off',
+      'I run Klaviyo day to day in your brand voice',
+      'I manage subscriptions, merchandising, apps and vendors so you have one point of contact',
+      "A weekly report on what changed and what's next",
+      'I handle QA so issues get caught before customers see them',
+    ],
+    note: 'You choose how hands on you want to be.',
+    featured: true,
   },
   {
-    title: 'Run',
-    text: 'I take over the store on a monthly plan. Strategy, development, conversion, email, and reporting, all handled.',
+    name: 'Dedicated',
+    price: null,
+    unit: '',
+    summary: 'Full time capacity for brands that need it.',
+    includes: [],
+    note: "Let's talk.",
+    featured: false,
   },
 ];
 
-export const PLANS = [
-  {
-    tag: 'Advice only',
-    name: 'Advisor',
-    price: 1000,
-    unit: ' / month',
-    summary: 'A senior set of eyes on your store every month, so your team always knows the highest value thing to fix next.',
-    includes: [
-      'Monthly review of conversion, product pages, cart, speed and email',
-      'Action plan ranked by revenue impact, with exactly what to change',
-      'Monthly strategy call to set priorities',
-      'Tracking of conversion rate, AOV and repeat purchase rate',
-      'Review of what your team or agency ships before it goes live',
-      'Questions by email or Slack within 2 business days',
-      'Up to 8 hours a month',
-    ],
-    note: {
-      strong: '',
-      text: 'Implementation not included. Add an Hour Block or move up to Operator, with your first month credited if you upgrade within 60 days.',
-    },
-    cta: 'Book a call',
-    monthly: true,
-    featured: false,
-  },
-  {
-    tag: 'For quick fixes',
-    name: 'Hour Block',
-    price: 1250,
-    unit: ' / 10 hours',
-    summary: 'A senior Shopify developer on call, with no monthly commitment.',
-    includes: [
-      'Send any fix, update, or small build',
-      'Most requests done in 1 to 2 business days',
-      'Pay only for time used, 15 minute minimum per request',
-      'Hours good for 60 days',
-      'Weekly report of everything shipped',
-    ],
-    note: null,
-    cta: 'Book a call',
-    monthly: false,
-    featured: false,
-  },
-  {
-    tag: 'Try it first',
-    name: 'Store Sprint',
-    price: 1500,
-    unit: ' one time',
-    summary:
-      'A one week trial run. I find the changes most likely to move revenue and ship them, and the full fee is credited to a monthly plan.',
-    includes: [
-      'Full audit of conversion, speed, tracking, and email',
-      'Top 5 revenue fixes built and shipped that week',
-      'A prioritized 90 day roadmap for everything else',
-      'Baseline numbers captured so you can see the lift',
-      'Video walkthrough of every change and the plan',
-      '100% credited to a retainer within 30 days',
-    ],
-    note: { strong: 'Paid upfront.', text: 'Fixes live within seven days of kickoff.' },
-    cta: 'Book a Sprint',
-    monthly: false,
-    featured: false,
-  },
-  {
-    tag: 'For the store itself',
-    name: 'Operator',
-    price: 3000,
-    unit: ' / month',
-    summary: 'Your store built, fixed, and optimized continuously.',
-    includes: [
-      'Development, design, and technical health',
-      'Ongoing conversion testing',
-      'Klaviyo, subscriptions, and upsells',
-      'Monthly performance report and strategy call',
-      '1 business day response',
-      'Up to 24 hours of work a month',
-    ],
-    note: null,
-    cta: 'Book a call',
-    monthly: true,
-    featured: false,
-  },
-  {
-    tag: 'For the whole business',
-    name: 'Head of Ecommerce',
-    price: 5500,
-    unit: ' / month',
-    summary: 'One senior lead running the store and its growth.',
-    includes: [
-      'Everything in Operator',
-      'Marketing, content, and social direction',
-      'Launch, promo, and campaign planning',
-      'Manage your freelancers and agencies',
-      'Weekly strategy call and live KPI dashboard',
-      'Same day response on weekdays',
-      'Up to 44 hours of work a month',
-    ],
-    note: null,
-    cta: 'Book a call',
-    monthly: true,
-    featured: true,
-  },
+// Retainer comparison table: one row per term, one value per retainer in RETAINERS order.
+export const RETAINER_ROWS = [
+  { label: 'Price', values: ['$4,500/month', '$7,500/month', "Let's talk"] },
+  { label: 'Capacity', values: ['Up to 30 hours a month', 'Up to 60 hours a month', 'Full time capacity'] },
+  { label: 'Calls', values: ['Check in every 2 weeks', 'Weekly call, plus 1 extra call a week when needed', 'Built around your team'] },
+  { label: 'Response time', values: ['Within 1 business day', 'Same business day', 'Same business day'] },
+  { label: 'Minimum', values: ['3 months', '3 months', 'Custom'] },
 ];
+
+export const RETAINER_NOTE =
+  "Retainers are part time by design. If you need more in a month, we move you up a tier or quote the extra work as a fixed add on. Out of office days are always shared in advance. Any retainer can implement your audit plan at the retainer's pace; the Build is the fast lane.";
 
 export const STEPS = [
   {
-    when: 'Day 1',
-    title: 'Intro call',
-    text: "20 minutes on your goals, your numbers, and where the store stands. If I'm not the right fit, I'll tell you.",
+    when: 'Step 1',
+    title: 'AI Search and Conversion Audit',
+    text: "I test 50 real buyer questions in ChatGPT, built from your own customers' language, and show where you're recommended, who shows up instead and why. Then I map where your store is losing sales. You get a prioritized plan.",
   },
   {
-    when: 'Week 1',
-    title: 'First fixes ship',
-    text: 'Sprint or retainer, the first week maps where revenue is leaking and the first changes go live.',
+    when: 'Step 2',
+    title: 'Build or retainer',
+    text: 'Implement the plan in a fixed 3 to 4 week Build, or on a retainer that implements it and keeps growing from there.',
   },
   {
-    when: 'Month 1 and on',
-    title: 'I own it',
-    text: 'A clear plan each month, regular check ins, and reporting on the numbers that matter. It compounds from there.',
+    when: 'Step 3',
+    title: 'Measure',
+    text: 'I rerun the same questions and track AI driven traffic and sales, so you can see what changed.',
   },
 ];
 
-export const FAQS = [
+// The 20 minute call, wherever it is described.
+export const CALL_NAME = 'AI Search Review';
+export const CALL_TEXT =
+  "Before the call I run your top buyer questions through ChatGPT. On the call I'll show you where you're recommended, who shows up instead, and what's driving it.";
+export const CTA_LABEL = 'See if ChatGPT recommends you';
+export const HEADER_CTA_LABEL = 'Check your AI visibility';
+
+export const FAQS: { q: string; a: string; link?: { href: string; text: string } }[] = [
+  {
+    q: 'What is AI search?',
+    a: "Shoppers asking ChatGPT, Google's AI answers and similar tools what to buy, and getting a short list of recommended brands.",
+  },
+  {
+    q: 'Can you guarantee ChatGPT will recommend us?',
+    a: 'No one honestly can. I measure your mention rate across 50 real buyer questions before and after the work, and track AI driven traffic and sales, so you see exactly what moved. On site work is one part; reviews, press, lists and retail listings matter too, and the audit shows which ones apply to you.',
+  },
+  {
+    q: 'How do you measure AI traffic when most of it shows up as direct?',
+    a: 'AI referral traffic, a post purchase survey, branded and direct traffic growth, and the high converting visitor segment that AI research produces.',
+  },
+  {
+    q: 'Why is there a 3 month minimum on retainers?',
+    a: 'AI search and off site work take 60 to 90 days to show. The audit and Build are the low commitment ways to start.',
+  },
+  {
+    q: 'Do I stay in control?',
+    a: 'Always. I propose, you decide, and nothing goes live without your sign off.',
+  },
+  {
+    q: 'Who do you work with?',
+    a: 'Shopify brands, especially in wellness, supplements and beauty, from startups to billion dollar companies.',
+  },
   {
     q: 'How is this different from hiring a freelancer?',
-    a: 'A freelancer waits for your task list. I write the list, decide what\'s worth doing, do the work, manage anyone else touching the store, and report on the results. You stop managing the website.',
-  },
-  {
-    q: 'How much of my time will this take?',
-    a: 'One strategy call a month on Operator, or a short weekly call on Head of Ecommerce, plus quick approvals when something needs your sign off. Everything else runs through me.',
-  },
-  {
-    q: 'Who is this for?',
-    a: "Growing Shopify brands doing $10K to $10M a month, with real traffic and a product that sells. If you're pre-launch or looking for the cheapest developer available, I'm not the right fit, and I'll say so.",
-  },
-  {
-    q: 'Which plan is right for me?',
-    a: 'If your team or agency can make the changes and you want someone deciding what matters, Advisor. If you need the store built, fixed, and optimized for you, Operator. If you want one person running ecommerce, including marketing direction and your vendors, Head of Ecommerce. Not sure yet? Start with a Sprint.',
+    a: "A freelancer waits for your task list. I bring the plan, rank what's worth doing, do the work, and report on what moved. You decide what goes live.",
   },
   {
     q: 'Do you create the content and run social yourself?',
     a: 'I set the direction, plan the content, and create what fits, like site content, email, and product pages. For high volume production I direct your team or freelancers so it stays on brand and tied to revenue.',
-  },
-  {
-    q: 'How fast will I see results?',
-    a: 'The first changes ship in week one. Most clients see measurable movement within the first month.',
-  },
-  {
-    q: 'Do you bill hourly?',
-    a: 'Monthly plans are flat fees, billed in advance, with no hourly tracking. If you only need occasional work, Hour Blocks and one off requests are billed at $125/hr.',
-  },
-  {
-    q: 'Can I cancel?',
-    a: 'Yes. Month to month after the first month, with 30 days notice.',
   },
   {
     q: 'Do you work with agencies?',
@@ -431,7 +358,7 @@ export const AGENCY_SCOPE = [
   },
   {
     icon: '<path d="M3 17l6-6 4 4 8-8M15 7h6v6"/>',
-    title: 'Own the store roadmap and ship it',
+    title: 'Run the store roadmap and ship it',
     text: 'Your test ideas and audit recommendations, actually built and shipped, not stuck in a backlog.',
   },
   {
@@ -443,32 +370,16 @@ export const AGENCY_SCOPE = [
 
 export const AGENCY_PLANS = [
   {
-    tag: 'Flexible',
-    name: 'Hour Block',
-    price: 1250,
-    unit: ' / 10 hours',
-    summary: '$125/hr. For agencies with occasional Shopify requests.',
-    includes: [
-      'Billed by actual time tracked, 15 minute minimum per request',
-      'Use hours anytime within 60 days',
-      '1 to 2 day turnaround on most tickets',
-      'Weekly hours report',
-      'Top up anytime',
-    ],
-    featured: false,
-  },
-  {
     tag: 'Reserved capacity',
     name: 'Partner',
     price: 4000,
     unit: ' / month',
     summary: '32 reserved hours a month. Guaranteed capacity for agencies with steady Shopify work.',
     includes: [
-      'Billed by actual time tracked, 15 minute minimum per request',
       '32 hours reserved for you every month',
       'Priority queue and same day response',
       'Client facing when you need it, on calls as your team',
-      'Extra hours at $125/hr',
+      'Weekly report of everything shipped',
     ],
     featured: true,
   },
@@ -482,8 +393,8 @@ export const AGENCY_STEPS = [
   },
   {
     when: 'Step 2',
-    title: 'Buy hours',
-    text: 'Start with a 10 hour block, or reserve 32 hours a month as a Partner. $125/hr either way, paid upfront.',
+    title: 'Pick a plan',
+    text: 'Reserve 32 hours a month as a Partner, or choose a white label plan for one client store. Paid upfront.',
   },
   {
     when: 'Step 3',
@@ -500,7 +411,7 @@ export const AGENCY_PROMISE = [
   'Your clients never appear in my portfolio',
 ];
 
-// Per client plans for agencies to resell. Prices match the homepage PLANS.
+// Per client plans for agencies to resell, priced per store.
 export const AGENCY_CLIENT_PLANS = [
   {
     tag: 'Advice only',
@@ -564,11 +475,11 @@ export const AGENCY_FAQS = [
   },
   {
     q: "What's the difference between senior hours and white label plans?",
-    a: 'Senior hours cover work across any client, billed on tracked time. White label plans are for one client store at a fixed monthly price, so you can package them as your own service and set your own markup.',
+    a: 'Partner capacity covers work across any client, with 32 hours held for you every month. White label plans are for one client store at a fixed monthly price, so you can package them as your own service and set your own markup.',
   },
   {
     q: 'How fast can you start?',
-    a: "Usually within a week of our call. Send your first ticket the day your hours are paid, and you'll have an estimate back within one business day.",
+    a: "Usually within a week of our call. Send your first ticket the day your plan starts, and you'll have an estimate back within one business day.",
   },
   {
     q: 'How fast do you turn work around?',
@@ -577,10 +488,6 @@ export const AGENCY_FAQS = [
   {
     q: 'What if something takes longer than estimated?',
     a: "I flag it before I go over, never after. You approve the extra time or we adjust scope, so your client's bill never surprises anyone, including you.",
-  },
-  {
-    q: 'How is time billed?',
-    a: 'By actual time tracked, never estimates. Blocks and Partner hours have a 15 minute minimum per request to cover review, testing, and communication. One-off requests have a one hour minimum. You get a weekly report of every request and the time it took.',
   },
   {
     q: 'Can you be client facing?',
@@ -600,6 +507,6 @@ export const AGENCY_FAQS = [
   },
   {
     q: 'Do unused hours roll over?',
-    a: 'Hour Blocks are good for 60 days. Partner hours reset each month, since that time is held exclusively for you.',
+    a: 'No. Partner hours reset each month, since that time is held exclusively for you.',
   },
 ];

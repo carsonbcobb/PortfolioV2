@@ -20,7 +20,7 @@ faq:
 
 If you sell something people reorder on Shopify, you'll end up choosing between a short list of subscription apps. Recharge, Skio and Loop are the three I get asked about most.
 
-I'm Carson Cobb. I run Shopify stores for growing DTC brands on monthly retainers, and I set up and fix subscription programs as part of that work. I've spent the most time inside Recharge and Skio. I don't get paid by any of these vendors, and I'll tell you where each one fits and where it doesn't.
+I'm Carson Cobb. I help Shopify brands get recommended in ChatGPT and Google's AI answers, then make the store convert that traffic, and I set up and fix subscription programs as part of my work. I've spent the most time inside Recharge and Skio. I don't get paid by any of these vendors, and I'll tell you where each one fits and where it doesn't.
 
 One thing first. The app is rarely the reason a subscription program underperforms. Most of the leaks I find in audits, like a hero product with no subscribe option or a widget that never renders on the product page, would follow you to any app. If that sounds like your store, start with my [Shopify subscriptions page](/shopify-subscriptions).
 
@@ -99,11 +99,11 @@ What that means in practice is still unclear. If you're choosing Skio specifical
 
 ## Want help choosing or fixing your setup?
 
-If you want a second set of eyes before you commit, or you want someone to own your subscription program after you pick, that's what I do. A one week Store Sprint ($1,500 one time, credited to a retainer) is a good start, and the Operator plan ($3,000/mo) is where I run subscriptions as part of the whole store. See all plans on the [pricing section](/#pricing). If you're a supplement or wellness brand, my [supplement brands page](/supplement-brands) covers the extra things I'd check.
+If you want a second set of eyes before you commit, or you want someone to lead your subscription program after you pick, that's what I do. The AI Search and Conversion Audit ($1,500, credited toward a Build started within 30 days) is a good start, and the Full retainer ($7,500/month) is where I run subscriptions as part of the whole store, at your direction. See all options on the [pricing section](/#pricing). If you're a supplement or wellness brand, my [supplement brands page](/supplement-brands) covers the extra things I'd check.
 
-Book a 20 minute intro call and tell me which apps you're weighing. I'll tell you what I'd pick for your store and why.
+Book a 20 minute AI Search Review. Before the call I run your top buyer questions through ChatGPT. On the call I'll show you where you're recommended, who shows up instead, and what's driving it. Tell me which apps you're weighing. I'll tell you what I'd pick for your store and why.
 
-[Book your intro call](/#pricing)
+[Book a 20 minute AI Search Review](/#book)
 
 ## Sources
 

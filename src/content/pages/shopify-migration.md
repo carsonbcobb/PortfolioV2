@@ -15,14 +15,14 @@ faq:
   - question: "How long does a migration take?"
     answer: "It depends on catalog size, subscriptions and how much custom work the old store has. I scope it after an audit and give you a timeline based on your store, not a template."
   - question: "How is migration work priced?"
-    answer: "I start with a one week Store Sprint to audit the current store and plan the move. The build itself runs on the Operator or Head of Ecommerce plan, and the Sprint fee is credited toward it."
+    answer: "I start with the $1,500 AI Search and Conversion Audit to review the current store and give you a prioritized plan. The migration or rebuild itself runs as part of the Full retainer at $7,500/month."
 ---
 
 A migration is the riskiest project most growing brands ever take on. You're moving the thing that makes all your money while it's still making money.
 
 When it goes well, nobody notices. Customers keep ordering, subscribers keep getting their boxes, and search traffic holds. When it goes badly, you find out a week later from a dip in revenue, a pile of support tickets and pages that used to rank now showing errors.
 
-I'm Carson Cobb. I run Shopify stores for growing DTC brands on monthly retainers. Over 6+ years and 50+ Shopify stores, I've rebuilt themes and moved stores onto Shopify, and the projects that go smoothly all have one thing in common: the boring details were planned before launch day.
+I'm Carson Cobb. I help Shopify brands get recommended in ChatGPT and Google's AI answers, then make the store convert that traffic. Over 6+ years and 50+ Shopify stores, I've rebuilt themes and moved stores onto Shopify, and the projects that go smoothly all have one thing in common: the boring details were planned before launch day.
 
 ## Moving to Shopify from another platform
 
@@ -82,17 +82,17 @@ Launch day should be uneventful. I aim for that with a simple routine:
 
 ## How the work is packaged
 
-**Store Sprint, $1,500 one time.** One week. I audit the current store and build the migration plan: structure, redirects, reviews and subscriptions. If you move to a retainer, the $1,500 is credited toward it.
+**AI Search and Conversion Audit, $1,500.** I review the current store, test how ChatGPT recommends you today, find where it leaks conversions, and give you a prioritized plan. That gives us a baseline before anything moves.
 
-**Operator, $3,000/mo** or **Head of Ecommerce, $5,500/mo.** The migration or rebuild runs as part of the retainer, and I keep running the store after launch so nothing gets dropped in a handoff. Extra work beyond a plan is $125/hr. More on the deeper plan on my [fractional head of ecommerce page](/fractional-head-of-ecommerce).
+**Full, $7,500/month.** The migration or rebuild runs as part of the retainer, with every launch step brought to you for sign off, and I keep supporting the store after launch so nothing gets dropped in a handoff. 3 month minimum. More on my [fractional head of ecommerce page](/fractional-head-of-ecommerce).
 
-See all plans on the [pricing section](/#pricing).
+See all options on the [pricing section](/#pricing).
 
-## Book a 20 minute intro call
+## Book a 20 minute AI Search Review
 
-If you're planning a migration or a rebuild, talk to me before you pick a launch date. Book a 20 minute intro call, tell me where you're moving from and what you're worried about, and I'll tell you what I'd plan for first.
+If you're planning a migration or a rebuild, talk to me before you pick a launch date. Book a 20 minute AI Search Review. Before the call I run your top buyer questions through ChatGPT. On the call I'll show you where you're recommended, who shows up instead, and what's driving it. Tell me where you're moving from and what you're worried about, and I'll tell you what I'd plan for first.
 
-[Book your intro call](/#pricing)
+[Book a 20 minute AI Search Review](/#book)
 
 ## Sources
 

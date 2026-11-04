@@ -11,18 +11,18 @@ faq:
   - question: "Can you fix our existing flows instead of starting over?"
     answer: "Usually, yes. Most accounts I audit have the right flows switched on but with broken timing, missing filters or emails that no longer match the store. I fix what's there before building anything new."
   - question: "Do you run campaigns and newsletters?"
-    answer: "On the Operator and Head of Ecommerce plans, campaigns are part of the promo calendar I plan with you. The flows come first, because they keep earning every day without anyone pressing send."
+    answer: "On the Full retainer, campaigns are part of the promo calendar I plan with you. The flows come first, because they keep earning every day without anyone pressing send."
   - question: "Does Klaviyo work with Recharge and Skio?"
     answer: "I connect subscription data from Recharge or Skio to Klaviyo for every subscription client, so subscriber emails can use real order dates and subscription status. I check the setup on your account before building on it."
   - question: "How do we get started?"
-    answer: "Most brands start with a one week Store Sprint, where I audit the store and the Klaviyo account and fix the highest impact problems that week. The Sprint fee is credited to a retainer if you continue."
+    answer: "Most brands start with the $1,500 AI Search and Conversion Audit, where I review the store, the Klaviyo account and how ChatGPT recommends you, then give you a prioritized plan. If you start a Build within 30 days, the full $1,500 is credited toward it."
 ---
 
 Most Shopify brands I work with already pay for Klaviyo. A welcome series runs. A cart email goes out. And then nobody touches it for two years.
 
 Meanwhile the store changes. New products launch, the subscription offer changes, the theme gets swapped, and the emails keep describing a store that doesn't exist anymore.
 
-I'm Carson Cobb. I run Shopify stores for growing DTC brands on monthly retainers, and Klaviyo is part of almost every store I run. I treat email as part of the store, not a separate channel, because the best flows are built on what happens on the site.
+I'm Carson Cobb. I help Shopify brands get recommended in ChatGPT and Google's AI answers, then make the store convert that traffic, and Klaviyo is part of almost every store I work on. I treat email as part of the store, not a separate channel, because the best flows are built on what happens on the site.
 
 ## The core Klaviyo flows every Shopify store needs
 
@@ -83,18 +83,16 @@ That's also why I fix tracking first. If the store isn't sending clean order and
 
 ## How the work is packaged
 
-**Store Sprint, $1,500 one time.** One week. I audit your Klaviyo account along with the rest of the store and fix the highest impact problems that same week. If you move to a retainer, the $1,500 is credited toward it.
+**AI Search and Conversion Audit, $1,500.** I review your Klaviyo account along with the rest of the store, run 50 buyer questions through ChatGPT, and give you a prioritized plan. If you start a Build within 30 days, the full $1,500 is credited toward it.
 
-**Operator, $3,000/mo.** The plan I recommend for most growing brands. Klaviyo flows, segments and campaigns are part of running the store month to month.
+**Full, $7,500/month.** Your ecommerce lead, working at your direction. Klaviyo flows, segments and campaigns are handled day to day as part of the store, with launches and promotions brought to you for sign off. 3 month minimum.
 
-**Hour Block, $1,250 for 10 hours.** If you only need a set of flows rebuilt and your team will run campaigns.
-
-All plans are on the [pricing section](/#pricing). In the first 90 days of a retainer, email is the main focus of month 2, after tracking, speed and key pages are fixed in month 1.
+All options are on the [pricing section](/#pricing). In the first 90 days of a retainer, email is the main focus of month 2, after tracking, speed and key pages are fixed in month 1.
 
 Across my work, I've supported more than $40M in client revenue for growing brands. If you sell something people reorder, like [supplements](/supplement-brands) or [pet food](/pet-brands), email timing matters even more.
 
-## Book a 20 minute intro call
+## Book a 20 minute AI Search Review
 
-If your Klaviyo account hasn't been touched in a while, it's probably leaving orders on the table. Book a 20 minute intro call, tell me what flows you have running, and I'll tell you where I'd start.
+If your Klaviyo account hasn't been touched in a while, it's probably leaving orders on the table. Book a 20 minute AI Search Review. Before the call I run your top buyer questions through ChatGPT. On the call I'll show you where you're recommended, who shows up instead, and what's driving it. Tell me what flows you have running, and I'll tell you where I'd start.
 
-[Book your intro call](/#pricing)
+[Book a 20 minute AI Search Review](/#book)

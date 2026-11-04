@@ -11,11 +11,11 @@ faq:
   - question: "Can you fix my subscription setup without migrating apps?"
     answer: "Usually, yes. Most of the leaks I find have nothing to do with which app you use. They're offer, widget and flow problems, and I fix them inside the app you already pay for. I only recommend a migration when the app is truly holding you back."
   - question: "Do you only do subscriptions?"
-    answer: "No. Subscriptions are one part of running a store. On the Operator plan I handle subscriptions along with product pages, speed, merchandising, email and everything else that moves revenue."
+    answer: "No. Subscriptions are one part of running a store. On the Full retainer I handle subscriptions along with product pages, speed, merchandising, email and everything else that moves revenue."
   - question: "What do I need to give you to get started?"
     answer: "Collaborator access to Shopify, access to your subscription app and Klaviyo, and a quick rundown of your hero products and margins. I handle the rest."
   - question: "Is there a long contract?"
-    answer: "No. The Store Sprint is a one time project, and the monthly plans run month to month."
+    answer: "The $1,500 AI Search and Conversion Audit is a one time project. Retainers have a 3 month minimum."
 ---
 
 Most Shopify stores I audit already have a subscription app installed. They're paying for it every month. And the subscription option is still quietly losing them money.
@@ -24,7 +24,7 @@ Not because subscriptions don't work for their products. Because the setup has g
 
 [See what 314 brands actually offer.](/reports/shopify-subscription-benchmarks-2026)
 
-I'm Carson Cobb. I run Shopify stores for growing DTC brands on monthly retainers, and subscription revenue is one of the first places I look. Over 6+ years and 50+ Shopify stores, I've learned that the biggest wins usually aren't new tools. They're fixing what's already there.
+I'm Carson Cobb. I help Shopify brands get recommended in ChatGPT and Google's AI answers, then make the store convert that traffic, and subscription revenue is one of the first places I look. Over 6+ years and 50+ Shopify stores, I've learned that the biggest wins usually aren't new tools. They're fixing what's already there.
 
 ## Who this is for
 
@@ -87,11 +87,11 @@ I build subscriber specific flows in Klaviyo: welcome, upcoming charge reminder,
 
 You don't need a giant project to fix this. There are two ways I usually start.
 
-**Store Sprint, $1,500 one time.** One week. I audit your subscription setup along with the rest of the store, then fix the highest impact problems that same week. If you move to a retainer afterward, the $1,500 is credited toward it. This is the right fit if you want to see how I work before committing.
+**AI Search and Conversion Audit, $1,500.** I review your subscription setup along with the rest of the store, look for conversion leaks, and test how ChatGPT recommends you. You get a prioritized plan. If you start a Build within 30 days, the full $1,500 is credited toward it. This is the right fit if you want to see how I work before committing.
 
-**Operator, $3,000/mo.** This is the plan I recommend for most growing brands. I own subscriptions as part of running the store month to month: offer tests, widget changes, flows, cancellation insights, and everything else on the site that affects revenue. You get one person who knows your store deeply instead of a rotating cast.
+**Full, $7,500/month.** I lead subscriptions as part of the store, working at your direction: offer tests, widget changes, flows, cancellation insights, and everything else on the site that affects revenue. You get one person who knows your store deeply instead of a rotating cast. 3 month minimum.
 
-There are also lighter and heavier options, from the Advisor plan to a full Head of Ecommerce engagement. You can see all of them on the [pricing section](/#pricing).
+There's also the **Growth** retainer at $4,500/month for ongoing AI search and conversion work. You can see every option on the [pricing section](/#pricing).
 
 ## Proof: subscribe opt in from 7% to 32%
 
@@ -103,8 +103,8 @@ That's the kind of change that compounds. Every one of those subscribers is reve
 
 Across all my work, rebuilt pages average a 2.1x conversion lift, and I've supported more than $40M in client revenue. If you sell supplements or wellness products specifically, my page for [supplement brands](/supplement-brands) covers the extra challenges that come with that category.
 
-## Book a 20 minute intro call
+## Book a 20 minute AI Search Review
 
-If you think your subscription program should be doing more, it probably should. Book a 20 minute intro call and tell me about your store, your app and your hero products. I'll tell you honestly where I'd look first and which plan makes sense.
+If you think your subscription program should be doing more, it probably should. Book a 20 minute AI Search Review. Before the call I run your top buyer questions through ChatGPT. On the call I'll show you where you're recommended, who shows up instead, and what's driving it. Tell me about your store, your app and your hero products. I'll tell you honestly where I'd look first and which plan makes sense.
 
-[Book your intro call](/#pricing)
+[Book a 20 minute AI Search Review](/#book)

@@ -89,4 +89,4 @@ Typical price also sets where your free shipping line should sit. In the [tech s
 - **Payments and shipping:** from each store's published settings. Ship to one country means the store lists a single shipping country.
 - **Free shipping threshold:** thresholds shown on homepages in the tech stack sample.
 
-No store is named in this report. Want me to look at your product pages? [Book a 20 minute intro call](/#book).
+No store is named in this report. Want me to look at your product pages? [Book a 20 minute AI Search Review](/#book).

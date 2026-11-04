@@ -1,10 +1,11 @@
 ---
 import Button from './Button.astro';
+import { HEADER_CTA_LABEL } from '../data/site';
 import { CAL_LINK } from '../data/site';
 
 const links = [
-  { href: '/#results', label: 'Results' },
-  { href: '/#own', label: 'What I own' },
+  { href: '/results', label: 'Results' },
+  { href: '/#own', label: 'What I do' },
   { href: '/#pricing', label: 'Pricing' },
   { href: '/agencies', label: 'For agencies' },
 ];
@@ -30,7 +31,7 @@ const current = Astro.url.pathname.replace(/(\.html|\/)$/, '') || '/';
     <a href="/" class="site-header__brand">Carson Cobb</a>
 
     <div class="site-header__cta">
-      <Button href={CAL_LINK} size="md" track="book_call">Book a call</Button>
+      <Button href={CAL_LINK} size="md" track="book_call">{HEADER_CTA_LABEL}</Button>
     </div>
 
     <button class="site-header__toggle" popovertarget="mobile-menu" aria-label="Open menu">
@@ -53,7 +54,7 @@ const current = Astro.url.pathname.replace(/(\.html|\/)$/, '') || '/';
         }
       </ul>
     </nav>
-    <Button href={CAL_LINK} track="book_call">Book a call</Button>
+    <Button href={CAL_LINK} track="book_call">{HEADER_CTA_LABEL}</Button>
   </div>
 </header>
 

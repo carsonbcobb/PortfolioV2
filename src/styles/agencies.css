@@ -192,8 +192,9 @@
 
 /* Pricing */
 
+/* One Partner card, kept at plan card width. */
 .plans--agency {
-  max-width: 900px;
+  max-width: 440px;
 }
 
 .plans__note {

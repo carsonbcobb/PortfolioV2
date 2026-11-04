@@ -19,7 +19,7 @@ export const CONTENT_PAGES: ContentPageInfo[] = [
     slug: 'fractional-head-of-ecommerce',
     kind: 'service',
     label: 'Fractional Head of Ecommerce',
-    summary: 'What a fractional Head of Ecommerce owns, what it costs, and when it fits a growing Shopify brand.',
+    summary: 'What a fractional Head of Ecommerce leads, what it costs, and when it fits a growing Shopify brand.',
     service: {
       name: 'Fractional Head of Ecommerce for Shopify brands',
       serviceType: 'Fractional ecommerce management',
@@ -118,7 +118,7 @@ export const CONTENT_PAGES: ContentPageInfo[] = [
     slug: 'agency-vs-fractional-head-of-ecommerce',
     kind: 'guide',
     label: 'Agency vs fractional lead',
-    summary: 'An honest comparison of hiring an agency or a fractional Head of Ecommerce: cost, ownership and speed.',
+    summary: 'An honest comparison of hiring an agency or a fractional Head of Ecommerce: cost, accountability and speed.',
   },
   {
     slug: 'recharge-vs-skio-vs-loop',

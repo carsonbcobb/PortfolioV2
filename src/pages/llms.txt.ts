@@ -1,5 +1,18 @@
 import type { APIRoute } from 'astro';
-import { SITE_URL, EMAIL, CAL_LINK, HOURLY_RATE, PLANS, AGENCY_PLANS, AGENCY_CLIENT_PLANS } from '../data/site';
+import {
+  SITE_URL,
+  EMAIL,
+  CAL_LINK,
+  AUDIT,
+  BUILD,
+  RETAINERS,
+  RETAINER_ROWS,
+  RETAINER_NOTE,
+  CALL_NAME,
+  CALL_TEXT,
+  AGENCY_PLANS,
+  AGENCY_CLIENT_PLANS,
+} from '../data/site';
 import { CONTENT_PAGES, TOOLS } from '../data/pages';
 import { REPORT_HUB, REPORTS, slugOf } from '../data/reports';
 
@@ -20,22 +33,27 @@ export const GET: APIRoute = () => {
   const text = [
     '# Carson Cobb',
     '',
-    '> Fractional Head of Ecommerce for growing Shopify brands. I run the store on a monthly plan: strategy, development, conversion, email, subscriptions and reporting, led by one senior person.',
+    "> AI search and CRO for Shopify brands. I get products recommended in ChatGPT and Google's AI answers, then make sure the store turns that traffic into sales.",
     '',
-    'I have spent 6+ years inside 50+ Shopify stores, from startups to ten figure brands. I work with growing Shopify brands doing $10K to $10M a month, and with agencies that need a senior Shopify lead under their own name. Based in California, working with brands across the US.',
+    'I have spent 6+ years inside 50+ Shopify stores, from startups to ten figure brands. I work with Shopify brands, especially in wellness, supplements and beauty, from startups to billion dollar companies, and with agencies that need a senior Shopify lead under their own name. Founders stay in control: I propose, you decide, and nothing goes live without your sign off. Based in California, working with brands across the US.',
     '',
-    `Contact: ${EMAIL}. Book a 20 minute intro call: ${CAL_LINK}`,
+    `Contact: ${EMAIL}. Book a 20 minute ${CALL_NAME}: ${CAL_LINK}. ${CALL_TEXT}`,
     '',
-    '## Plans for brands',
+    '## Offers for brands',
     '',
-    ...PLANS.map(plan),
-    `- **One off work**: ${usd(HOURLY_RATE)}/hr with a one hour minimum.`,
+    `- **${AUDIT.name}**: ${usd(AUDIT.price)} one time. ${AUDIT.includes.join(', ')}. ${AUDIT.note}`,
+    `- **${BUILD.name}**: fixed price, 3 to 4 weeks. ${BUILD.tiers.map((t) => `${t.label}: ${t.from ? 'from ' : ''}${usd(t.price)}`).join('; ')}. Includes ${BUILD.includes.map((i) => i.charAt(0).toLowerCase() + i.slice(1)).join(', ')}. ${BUILD.note}`,
+    ...RETAINERS.map((r, i) => {
+      const terms = RETAINER_ROWS.map((row) => `${row.label.toLowerCase()} ${row.values[i]}`).join(', ');
+      const scope = r.includes.length ? ` ${r.includes.join('; ')}.` : '';
+      return `- **${r.name} retainer**: ${r.summary}${scope} Terms: ${terms}.`;
+    }),
     '',
-    'Monthly plans are billed in advance and run month to month, with 30 days notice to cancel.',
+    RETAINER_NOTE,
     '',
     '## Plans for agencies',
     '',
-    'Senior hours on demand:',
+    'Reserved senior capacity:',
     '',
     ...AGENCY_PLANS.map(plan),
     '',
@@ -45,7 +63,7 @@ export const GET: APIRoute = () => {
     '',
     '## Main pages',
     '',
-    `- [Home](${url('/')}): What I do for growing Shopify brands, results, plans and FAQ.`,
+    `- [Home](${url('/')}): AI search and CRO for Shopify brands: the problem, how it works, pricing and FAQ.`,
     `- [For agencies](${url('/agencies')}): White label Shopify work and plans for agencies.`,
     `- [Results](${url('/results')}): What running a Shopify store covers, from conversion and testing to operations, and the client results behind each part.`,
     '',

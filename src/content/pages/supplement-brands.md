@@ -15,12 +15,12 @@ faq:
   - question: "Do you handle Amazon or wholesale too?"
     answer: "My focus is your Shopify store and the apps and email that connect to it. That's where I go deep."
   - question: "How do we get started?"
-    answer: "Most supplement brands start with a one week Store Sprint, then move to the Operator plan. The Sprint fee is credited to the retainer if you continue."
+    answer: "Most supplement brands start with the $1,500 AI Search and Conversion Audit. If you start a Build within 30 days, the full $1,500 is credited toward it."
 ---
 
 Supplement brands live and die on the second order. The first order is expensive. You paid for it with ads, influencers, sampling and discounts. The second, third and fourth orders are where the business actually makes money.
 
-That's why I treat supplement stores differently. I'm Carson Cobb, and I run Shopify stores for growing DTC brands on monthly retainers. Over 6+ years I've worked on 50+ Shopify stores, many of them in supplements and wellness, and the same problems show up again and again.
+That's why I treat supplement stores differently. I'm Carson Cobb, and I help Shopify brands get recommended in ChatGPT and Google's AI answers, then make the store convert that traffic. Over 6+ years I've worked on 50+ Shopify stores, many of them in supplements and wellness, and the same problems show up again and again.
 
 The good news is that most of them are fixable without a new platform, a new theme or a new agency.
 
@@ -95,14 +95,14 @@ Across my work, rebuilt pages average a 2.1x conversion lift, and I've supported
 
 ## How to work with me
 
-Most supplement brands start with a **Store Sprint** for $1,500 one time. It's one week. I audit the store and fix the highest impact problems that same week. If you continue on a retainer, the $1,500 is credited toward it.
+Most supplement brands start with the **AI Search and Conversion Audit** for $1,500. I run 50 buyer questions through ChatGPT, look at which competitors and sources get cited instead of you, review where the store leaks conversions, and give you a prioritized plan. If you start a Build within 30 days, the full $1,500 is credited toward it.
 
-From there, the plan I recommend is **Operator** at $3,000/mo. I run the store with you month to month: subscriptions, speed, product pages, merchandising, email and whatever else moves revenue. For brands that need someone to own the whole channel, there's **Head of Ecommerce** at $5,500/mo.
+The **Build** is a fixed price project that takes 3 to 4 weeks and starts at $5,000, based on catalog size. After that, the **Growth** retainer at $4,500/month keeps the AI search and conversion work going. For brands that want one person leading the whole channel at their direction, there's **Full** at $7,500/month, which I explain on my [fractional head of ecommerce page](/fractional-head-of-ecommerce).
 
 Every plan is listed on the [pricing section](/#pricing).
 
-## Book a 20 minute intro call
+## Book a 20 minute AI Search Review
 
-If your supplement brand is growing but the store feels like it's leaking, let's talk. Book a 20 minute intro call, tell me what you sell and what's frustrating you, and I'll tell you where I'd look first.
+If your supplement brand is growing but the store feels like it's leaking, let's talk. Book a 20 minute AI Search Review. Before the call I run your top buyer questions through ChatGPT. On the call I'll show you where you're recommended, who shows up instead, and what's driving it. Tell me what you sell and what's frustrating you, and I'll tell you where I'd look first.
 
-[Book your intro call](/#pricing)
+[Book a 20 minute AI Search Review](/#book)
