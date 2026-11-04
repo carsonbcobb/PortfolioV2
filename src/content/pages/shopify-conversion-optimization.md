@@ -15,14 +15,14 @@ faq:
   - question: "How long before I see results?"
     answer: "Fixes to speed and product pages usually show up in conversion within the first few weeks, because every visitor sees them right away. Testing builds on that over the following months."
   - question: "How do we get started?"
-    answer: "Most brands start with a one week Store Sprint, where I audit the store and fix the highest impact problems that week. The Sprint fee is credited to a retainer if you continue."
+    answer: "Most brands start with the $1,500 AI Search and Conversion Audit, where I review where the store leaks conversions and how ChatGPT recommends you, then give you a prioritized plan. If you start a Build within 30 days, the full $1,500 is credited toward it."
 ---
 
 Most growing brands try to fix a revenue problem by buying more traffic. More ads, more influencers, more discounts. But if the store converts poorly, every one of those new visitors costs more than it should.
 
 Raising conversion is the cheapest growth there is. You already paid for the click. The only question is whether the store finishes the job.
 
-I'm Carson Cobb. I run Shopify stores for growing DTC brands on monthly retainers. Over 6+ years and 50+ Shopify stores, conversion work is the thing I've done most, and rebuilt pages average a 2.1x conversion lift.
+I'm Carson Cobb. I help Shopify brands get recommended in ChatGPT and Google's AI answers, then make the store convert that traffic. Over 6+ years and 50+ Shopify stores, conversion work is the thing I've done most, and rebuilt pages average a 2.1x conversion lift.
 
 ## Why your Shopify store isn't converting
 
@@ -82,16 +82,16 @@ Across my work I've supported more than $40M in client revenue. If you're in bea
 
 ## How the work is packaged
 
-**Store Sprint, $1,500 one time.** One week. I audit conversion across the store, then fix the highest impact problems that same week. If you move to a retainer, the $1,500 is credited toward it.
+**AI Search and Conversion Audit, $1,500.** A conversion leak review across the store, a 50 buyer question test in ChatGPT, competitor and citation analysis, and a prioritized plan. If you start a Build within 30 days, the full $1,500 is credited toward it.
 
-**Operator, $3,000/mo.** The plan I recommend for most growing brands. I run conversion work month to month along with subscriptions, email, merchandising and everything else that moves revenue.
+**Build, fixed price, 3 to 4 weeks.** From $5,000, based on catalog size. A conversion rebuild of your key pages, AI search work across every template, and measurement set up so we can see what moved.
 
-**Head of Ecommerce, $5,500/mo.** For brands that want one person to own the whole channel. More on my [fractional head of ecommerce page](/fractional-head-of-ecommerce).
+**Growth, $4,500/month.** Ongoing conversion testing and AI search work, with a check in every 2 weeks. For brands that want one person leading the whole channel at their direction, there's **Full** at $7,500/month. More on my [fractional head of ecommerce page](/fractional-head-of-ecommerce).
 
-There are also lighter options, from the Advisor plan to an Hour Block. See all plans on the [pricing section](/#pricing).
+Retainers have a 3 month minimum. See all options on the [pricing section](/#pricing).
 
-## Book a 20 minute intro call
+## Book a 20 minute AI Search Review
 
-If you're paying for traffic that isn't turning into orders, let's look at why. Book a 20 minute intro call, tell me about your store and your best sellers, and I'll tell you where I'd look first.
+If you're paying for traffic that isn't turning into orders, let's look at why. Book a 20 minute AI Search Review. Before the call I run your top buyer questions through ChatGPT. On the call I'll show you where you're recommended, who shows up instead, and what's driving it. Tell me about your store and your best sellers, and I'll tell you where I'd look first.
 
-[Book your intro call](/#pricing)
+[Book a 20 minute AI Search Review](/#book)

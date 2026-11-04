@@ -15,12 +15,12 @@ faq:
   - question: "Do you run our ads or influencer program?"
     answer: "No. I focus on the Shopify store, subscriptions and email, which is where your ad and influencer traffic lands. Making that landing convert is the job."
   - question: "How do we get started?"
-    answer: "Most beauty brands start with a one week Store Sprint, then move to the Operator plan. The Sprint fee is credited to the retainer if you continue."
+    answer: "Most beauty brands start with the $1,500 AI Search and Conversion Audit. If you start a Build within 30 days, the full $1,500 is credited toward it."
 ---
 
 Beauty is crowded. Your customer has seen a dozen brands this week, most of them on a phone, most of them from an ad or a creator. When they land on your store, you get a few seconds to look better than all of them.
 
-That's a store problem as much as a marketing problem. I'm Carson Cobb, and I run Shopify stores for growing DTC brands on monthly retainers. Over 6+ years I've worked on 50+ Shopify stores, and beauty and skincare are where some of my best results have come from.
+That's a store problem as much as a marketing problem. I'm Carson Cobb, and I help Shopify brands get recommended in ChatGPT and Google's AI answers, then make the store convert that traffic. Over 6+ years I've worked on 50+ Shopify stores, and beauty and skincare are where some of my best results have come from.
 
 In my latest check of 124 beauty and skincare stores, two thirds had subscriptions set up but only 18% covered every best seller. [See the reports.](/reports)
 
@@ -85,14 +85,14 @@ Across my work, rebuilt pages average a 2.1x conversion lift, and I've supported
 
 ## How to work with me
 
-Most beauty brands start with a **Store Sprint** for $1,500 one time. It's one week. I audit the store and fix the highest impact problems that same week. If you continue on a retainer, the $1,500 is credited toward it.
+Most beauty brands start with the **AI Search and Conversion Audit** for $1,500. I run 50 buyer questions through ChatGPT, look at which competitors and sources get cited instead of you, review where the store leaks conversions, and give you a prioritized plan. If you start a Build within 30 days, the full $1,500 is credited toward it.
 
-From there, the plan I recommend is **Operator** at $3,000/mo. I run the store with you month to month. For brands that want one person to own the whole channel, there's **Head of Ecommerce** at $5,500/mo, which I explain on my [fractional head of ecommerce page](/fractional-head-of-ecommerce).
+The **Build** is a fixed price project that takes 3 to 4 weeks and starts at $5,000, based on catalog size. After that, the **Growth** retainer at $4,500/month keeps the AI search and conversion work going. For brands that want one person leading the whole channel at their direction, there's **Full** at $7,500/month, which I explain on my [fractional head of ecommerce page](/fractional-head-of-ecommerce).
 
 Every plan is listed on the [pricing section](/#pricing).
 
-## Book a 20 minute intro call
+## Book a 20 minute AI Search Review
 
-If your beauty brand is getting attention but the store isn't turning it into orders, let's talk. Book a 20 minute intro call, tell me what you sell and where you think the store is leaking, and I'll tell you where I'd look first.
+If your beauty brand is getting attention but the store isn't turning it into orders, let's talk. Book a 20 minute AI Search Review. Before the call I run your top buyer questions through ChatGPT. On the call I'll show you where you're recommended, who shows up instead, and what's driving it. Tell me what you sell and where you think the store is leaking, and I'll tell you where I'd look first.
 
-[Book your intro call](/#pricing)
+[Book a 20 minute AI Search Review](/#book)

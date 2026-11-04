@@ -50,4 +50,4 @@ Run the same checks on your own store:
 
 Every Shopify store publishes its products, collections, pages, basic settings and subscription plans so the storefront can work. I read that public data directly from each store, and for the tech stack report I load each homepage and record which outside services it calls. Nothing behind a login, no private data and no estimates. Each report explains its definitions and limits in a "How this was done" section.
 
-Want to see how your store compares to these benchmarks? [Book a 20 minute intro call](/#book).
+Want to see how your store compares to these benchmarks? [Book a 20 minute AI Search Review](/#book).

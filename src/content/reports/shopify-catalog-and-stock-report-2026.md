@@ -85,4 +85,4 @@ The best sellers collection is often in the main menu and on the homepage. When 
 - **Launch pace:** based on each product's creation date. A store migration or product import can reset creation dates, so this measures how fresh the catalog is, not a perfect launch count.
 - **Data:** each store's public product and collection data, checked November 1, 2026.
 
-No store is named in this report. Want help tightening your catalog before the holidays? [Book a 20 minute intro call](/#book).
+No store is named in this report. Want help tightening your catalog before the holidays? [Book a 20 minute AI Search Review](/#book).

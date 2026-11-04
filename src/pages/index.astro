@@ -8,19 +8,29 @@ import {
   HERO_METRICS,
   HERO_SHIPPED,
   HERO_NEXT,
-  STATS,
   VERTICALS,
-  OPTIONS,
   OWN,
   HOW_I_WORK,
-  WAYS,
   RESULTS,
   FIRST_90,
-  PLANS,
+  AUDIT,
+  BUILD,
+  RETAINERS,
+  RETAINER_ROWS,
+  RETAINER_NOTE,
   STEPS,
   FAQS,
+  CALL_NAME,
+  CALL_TEXT,
+  CTA_LABEL,
+  HEADER_CTA_LABEL,
 } from '../data/site';
+import { GLANCE } from '../data/results';
 import { homeSchema } from '../data/schema';
+import '../styles/content.css';
+
+// The stat strip uses the first four numbers from /results, so the two pages always match.
+const STATS = GLANCE.stats.slice(0, 4);
 
 const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
 
@@ -31,9 +41,9 @@ const book = {
   ...(CAL_LINK.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {}),
 };
 
-const title = 'Carson Cobb | I Run Shopify Stores for Growing Brands';
+const title = 'AI Search and CRO for Shopify Brands | Carson Cobb';
 const description =
-  'Fractional Head of Ecommerce for growing Shopify brands. Strategy, development, conversion, email and marketing handled, so you get more revenue and time back.';
+  'More customers from AI search and more sales from every visit. AI search and conversion work for Shopify brands, from audit to ongoing growth.';
 
 const jsonLd = [homeSchema({ title, description })];
 ---
@@ -52,7 +62,7 @@ const jsonLd = [homeSchema({ title, description })];
           <a href="#pricing">Pricing</a>
           <a href="/reports">Reports</a>
           <a href="/agencies">For agencies</a>
-          <a {...book} class="btn btn--accent nav__cta">Book a call</a>
+          <a {...book} class="btn btn--accent nav__cta">{HEADER_CTA_LABEL}</a>
         </div>
       </nav>
   </header>
@@ -66,17 +76,17 @@ const jsonLd = [homeSchema({ title, description })];
             <span class="dot" aria-hidden="true"></span>
             Now booking new retainer clients
           </div>
-          <h1 class="hero__h1">I run your Shopify store <span class="accent">so you can run your business.</span></h1>
+          <h1 class="hero__h1">More customers from AI. <span class="accent">More sales from every visit.</span></h1>
           <p class="hero__sub">
-            More revenue from the traffic you already have, and the website off your plate. I handle strategy, development,
-            conversion, email, and marketing, so you can focus on the bigger decisions.
+            AI search and CRO for Shopify brands. I get your products recommended in ChatGPT and Google's AI answers, then
+            make sure your store turns that traffic into sales.
           </p>
           <div class="btn-row">
             <a {...book} class="btn btn--accent"
-              >Book an intro call
+              >{CTA_LABEL}
               <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
             </a>
-            <a href="#results" class="btn btn--ghost-dark">See the results</a>
+            <a href="/results" class="btn btn--ghost-dark">See results</a>
           </div>
           <p class="hero__fine">
             <strong>50+ Shopify stores, from startups to ten figure brands.</strong> For growing brands.
@@ -142,30 +152,13 @@ const jsonLd = [homeSchema({ title, description })];
       <div class="wrap stack">
         <div class="head">
           <p class="eyebrow">The problem</p>
-          <h2 class="h2">Right now, the store runs through you.</h2>
+          <h2 class="h2">Your customers are asking AI what to buy.</h2>
           <p class="lede">
-            Every fix, app decision, and freelancer question lands on your desk, and growth waits until you have time. Here
-            are the usual ways out, and what each one costs.
+            Shoppers now ask ChatGPT for the best product for their exact problem, and it answers with a short list of
+            brands. Those shoppers arrive ready to buy and convert far better than other traffic. If your store isn't giving
+            AI the right information, you're not on that list, and a competitor is. And when they do find you, your store
+            has to close the sale.
           </p>
-        </div>
-        <div class="grid grid--300">
-          {
-            OPTIONS.map((o) => (
-              <div class:list={['card', 'option', { 'option--dark': o.dark }]}>
-                <span class="tag">{o.tag}</span>
-                <h3 class="h3">{o.title}</h3>
-                <div class="option__price">
-                  {o.price}
-                  <span>{o.unit}</span>
-                </div>
-                <ul class="option__list">
-                  {o.points.map((p) => (
-                    <li>{p}</li>
-                  ))}
-                </ul>
-              </div>
-            ))
-          }
         </div>
       </div>
     </section>
@@ -270,95 +263,12 @@ const jsonLd = [homeSchema({ title, description })];
       </div>
     </section>
 
-    <!-- Ways to work together -->
+    <!-- How it works -->
     <section class="section section--flush">
       <div class="wrap stack">
         <div class="head">
-          <p class="eyebrow">Ways to work together</p>
-          <h2 class="h2">An audit, a project, or the whole store.</h2>
-          <p class="lede">Whatever your store needs, from a second opinion to someone running it day to day.</p>
-        </div>
-        <div class="grid grid--three grid--tight">
-          {
-            WAYS.map((w) => (
-              <div class="card first90__card">
-                <h3 class="first90__name">{w.title}</h3>
-                <p class="own__text">{w.text}</p>
-              </div>
-            ))
-          }
-        </div>
-        <p class="ways__more"><a href="#pricing">See the plans below.</a></p>
-      </div>
-    </section>
-
-    <!-- Pricing -->
-    <section id="pricing" class="section section--sand">
-      <div class="wrap stack">
-        <div class="head">
-          <p class="eyebrow">Pricing</p>
-          <h2 class="h2">Start small, or hand me the keys.</h2>
-          <p class="lede">Flat monthly retainers, billed in advance. No surprise invoices, month to month.</p>
-        </div>
-
-        <div class="grid plans plans--five">
-          {
-            PLANS.map((p) => (
-              <div class:list={['card', 'plan', { 'plan--featured': p.featured }]}>
-                {p.featured && <span class="plan__badge">RECOMMENDED</span>}
-                <div class="plan__head">
-                  <span class:list={['tag', { 'tag--dim': p.featured }]}>{p.tag}</span>
-                  <h3 class="h3">{p.name}</h3>
-                  <div class="plan__price">
-                    {usd(p.price)}
-                    <span>{p.unit}</span>
-                  </div>
-                  <p class="plan__summary">{p.summary}</p>
-                </div>
-                <ul class="plan__list">
-                  {p.includes.map((i) => (
-                    <li>
-                      <span aria-hidden="true">✓</span>
-                      {i}
-                    </li>
-                  ))}
-                </ul>
-                <div class="plan__foot">
-                  {p.note && (
-                    <div class="plan__note">
-                      {p.note.strong && <strong>{p.note.strong}</strong>} {p.note.text}
-                    </div>
-                  )}
-                  <a {...book} class:list={['btn', p.featured ? 'btn--accent' : 'btn--outline']}>
-                    {p.cta}
-                  </a>
-                </div>
-              </div>
-            ))
-          }
-        </div>
-
-        <p class="lock__terms plans__note">Or one-off work at $125/hr with a one hour minimum.</p>
-
-        <!-- Lock in 2026 pricing -->
-        <div class="lock">
-          <div class="lock__pill">
-            <span class="lock__icon">
-              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111214" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 018 0v3"></path></svg>
-            </span>
-            <p><strong>Lock in 2026 pricing.</strong> Start before January 1 and keep today's rate for 12 months.</p>
-          </div>
-          <p class="lock__terms">Need more? Extra work is $125/hr, or move up a plan. 30 days notice to cancel.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- How it works -->
-    <section class="section">
-      <div class="wrap stack">
-        <div class="head">
           <p class="eyebrow">How it works</p>
-          <h2 class="h2">From first call to first win in a week.</h2>
+          <h2 class="h2">Audit, build, measure.</h2>
         </div>
         <div class="grid grid--300">
           {
@@ -370,6 +280,152 @@ const jsonLd = [homeSchema({ title, description })];
               </div>
             ))
           }
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="section section--sand">
+      <div class="wrap stack">
+        <div class="head">
+          <p class="eyebrow">Pricing</p>
+          <h2 class="h2">Start with the audit. Grow from there.</h2>
+        </div>
+
+        <!-- Audit and Build -->
+        <div class="grid grid--320 plans plans--start">
+          <div class="card plan plan--featured">
+            <span class="plan__badge">{AUDIT.tag.toUpperCase()}</span>
+            <div class="plan__head">
+              <span class="tag tag--dim">One time</span>
+              <h3 class="h3">{AUDIT.name}</h3>
+              <div class="plan__price">
+                {usd(AUDIT.price)}
+              </div>
+            </div>
+            <ul class="plan__list">
+              {
+                AUDIT.includes.map((i) => (
+                  <li>
+                    <span aria-hidden="true">✓</span>
+                    {i}
+                  </li>
+                ))
+              }
+            </ul>
+            <div class="plan__foot">
+              <div class="plan__note">{AUDIT.note}</div>
+              <a {...book} class="btn btn--accent">{CTA_LABEL}</a>
+            </div>
+          </div>
+
+          <div class="card plan">
+            <div class="plan__head">
+              <span class="tag">{BUILD.tag}</span>
+              <h3 class="h3">{BUILD.name}</h3>
+              <ul class="plan__tiers">
+                {
+                  BUILD.tiers.map((t) => (
+                    <li>
+                      <span>{t.label}</span>
+                      <strong>
+                        {t.from ? 'from ' : ''}
+                        {usd(t.price)}
+                      </strong>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+            <ul class="plan__list">
+              {
+                BUILD.includes.map((i) => (
+                  <li>
+                    <span aria-hidden="true">✓</span>
+                    {i}
+                  </li>
+                ))
+              }
+            </ul>
+            <div class="plan__foot">
+              <div class="plan__note">{BUILD.note}</div>
+              <a {...book} class="btn btn--outline">{CTA_LABEL}</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Retainers -->
+        <div class="plans__group">
+          <h3 class="h3">Retainers</h3>
+          <div class="grid grid--three plans plans--retainers">
+            {
+              RETAINERS.map((r) => (
+                <div class:list={['card', 'plan', { 'plan--featured': r.featured }]}>
+                  <div class="plan__head">
+                    <span class:list={['tag', { 'tag--dim': r.featured }]}>Retainer</span>
+                    <h3 class="h3">{r.name}</h3>
+                    <div class="plan__price">
+                      {r.price === null ? "Let's talk" : usd(r.price)}
+                      {r.price !== null && <span>{r.unit}</span>}
+                    </div>
+                    <p class="plan__summary">{r.summary}</p>
+                  </div>
+                  {r.includes.length > 0 && (
+                    <ul class="plan__list">
+                      {r.includes.map((i) => (
+                        <li>
+                          <span aria-hidden="true">✓</span>
+                          {i}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  <div class="plan__foot">
+                    {r.note && <div class="plan__note">{r.note}</div>}
+                    <a {...book} class:list={['btn', r.featured ? 'btn--accent' : 'btn--outline']}>
+                      {CTA_LABEL}
+                    </a>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+
+          <div class="prose retainers">
+            <div class="table-scroll" tabindex="0" role="region" aria-label="Retainer comparison">
+              <table>
+                <thead>
+                  <tr>
+                    <th><span class="visually-hidden">Term</span></th>
+                    {RETAINERS.map((r) => <th scope="col">{r.name}</th>)}
+                  </tr>
+                </thead>
+                <tbody>
+                  {
+                    RETAINER_ROWS.map((row) => (
+                      <tr>
+                        <th scope="row">{row.label}</th>
+                        {row.values.map((v) => (
+                          <td>{v}</td>
+                        ))}
+                      </tr>
+                    ))
+                  }
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <p class="lock__terms plans__note">{RETAINER_NOTE}</p>
+        </div>
+
+        <!-- Lock in 2026 pricing -->
+        <div class="lock">
+          <div class="lock__pill">
+            <span class="lock__icon">
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111214" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 018 0v3"></path></svg>
+            </span>
+            <p><strong>Lock in 2026 pricing.</strong> Start before January 1 and keep today's rate for 12 months.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -449,12 +505,10 @@ const jsonLd = [homeSchema({ title, description })];
     <!-- Final CTA -->
     <section id="book" class="dark cta">
       <div class="wrap cta__inner">
-        <h2 class="h2 cta__title">Take the store off your plate.</h2>
-        <p class="cta__sub">
-          Book a 20 minute intro call. We'll look at where your store is losing money and the best place to start.
-        </p>
+        <h2 class="h2 cta__title">See where you stand in AI search.</h2>
+        <p class="cta__sub">Book a 20 minute {CALL_NAME}. {CALL_TEXT}</p>
         <div class="btn-row btn-row--center">
-          <a {...book} class="btn btn--accent">Book an intro call</a>
+          <a {...book} class="btn btn--accent">{CTA_LABEL}</a>
           <a href={`mailto:${EMAIL}`} class="btn btn--ghost-dark">Email me</a>
         </div>
       </div>

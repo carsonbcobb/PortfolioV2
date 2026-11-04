@@ -112,4 +112,4 @@ $50 was the most common threshold (22% of stores showing one), then $75 and $100
 - **Outside companies:** distinct domains called from the homepage, excluding the store's own domain and Shopify.
 - **Free shipping:** dollar amounts in homepage text that mention free shipping, such as an announcement bar or "you're $50 away" cart message, excluding international offers.
 
-No store is named in this report. Want to know what's slowing your store down? [Book a 20 minute intro call](/#book).
+No store is named in this report. Want to know what's slowing your store down? [Book a 20 minute AI Search Review](/#book).

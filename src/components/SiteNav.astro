@@ -1,6 +1,6 @@
 ---
 // Dark top nav for content and tool pages. Same look as the homepage nav, with links back to its sections.
-import { CAL_LINK } from '../data/site';
+import { CAL_LINK, HEADER_CTA_LABEL } from '../data/site';
 ---
 
 <header class="dark">
@@ -12,7 +12,7 @@ import { CAL_LINK } from '../data/site';
       <a href="/#pricing">Pricing</a>
       <a href="/reports">Reports</a>
       <a href="/agencies">For agencies</a>
-      <a href={CAL_LINK} data-track="book_call" target="_blank" rel="noopener" class="btn btn--accent nav__cta">Book a call</a>
+      <a href={CAL_LINK} data-track="book_call" target="_blank" rel="noopener" class="btn btn--accent nav__cta">{HEADER_CTA_LABEL}</a>
     </div>
   </nav>
 </header>

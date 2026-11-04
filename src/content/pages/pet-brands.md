@@ -15,14 +15,14 @@ faq:
   - question: "Can you write health claims for pet supplements?"
     answer: "I build product pages with clear places for approved claims, ingredients and feeding directions. The claims themselves should be approved by your team. I make the store easy to keep accurate."
   - question: "How do we get started?"
-    answer: "Most pet brands start with a one week Store Sprint, then move to the Operator plan. The Sprint fee is credited to the retainer if you continue."
+    answer: "Most pet brands start with the $1,500 AI Search and Conversion Audit. If you start a Build within 30 days, the full $1,500 is credited toward it."
 ---
 
 Pet owners are some of the most loyal customers there are. Once a dog does well on a food, or a cat finally likes a treat, the owner doesn't want to switch. They want the same thing, on time, every time.
 
 That loyalty is a gift. But only if the store makes reordering easy. Too many pet stores make owners remember, come back, find the product and check out again, every few weeks, forever.
 
-I'm Carson Cobb. I run Shopify stores for growing DTC brands on monthly retainers. Over 6+ years I've worked on 50+ Shopify stores, and pet food, treats and supplements share a set of problems that are very fixable.
+I'm Carson Cobb. I help Shopify brands get recommended in ChatGPT and Google's AI answers, then make the store convert that traffic. Over 6+ years I've worked on 50+ Shopify stores, and pet food, treats and supplements share a set of problems that are very fixable.
 
 In my latest check of 41 pet stores, 68% offered subscriptions but 30% left every best seller without one. [See the reports.](/reports)
 
@@ -86,14 +86,14 @@ I keep client names private, but the numbers are real. Across my work, rebuilt p
 
 ## How to work with me
 
-Most pet brands start with a **Store Sprint** for $1,500 one time. It's one week. I audit the store and fix the highest impact problems that same week. If you continue on a retainer, the $1,500 is credited toward it.
+Most pet brands start with the **AI Search and Conversion Audit** for $1,500. I run 50 buyer questions through ChatGPT, look at which competitors and sources get cited instead of you, review where the store leaks conversions, and give you a prioritized plan. If you start a Build within 30 days, the full $1,500 is credited toward it.
 
-From there, the plan I recommend is **Operator** at $3,000/mo. I run the store with you month to month. For brands that want one person to own the channel, there's **Head of Ecommerce** at $5,500/mo. See my [fractional head of ecommerce page](/fractional-head-of-ecommerce).
+The **Build** is a fixed price project that takes 3 to 4 weeks and starts at $5,000, based on catalog size. After that, the **Growth** retainer at $4,500/month keeps the AI search and conversion work going. For brands that want one person leading the whole channel at their direction, there's **Full** at $7,500/month, which I explain on my [fractional head of ecommerce page](/fractional-head-of-ecommerce).
 
 Every plan is listed on the [pricing section](/#pricing).
 
-## Book a 20 minute intro call
+## Book a 20 minute AI Search Review
 
-If pet owners love your product but the store makes them work to reorder, let's fix that. Book a 20 minute intro call, tell me what you sell and how autoship is set up today, and I'll tell you where I'd look first.
+If pet owners love your product but the store makes them work to reorder, let's fix that. Book a 20 minute AI Search Review. Before the call I run your top buyer questions through ChatGPT. On the call I'll show you where you're recommended, who shows up instead, and what's driving it. Tell me what you sell and how autoship is set up today, and I'll tell you where I'd look first.
 
-[Book your intro call](/#pricing)
+[Book a 20 minute AI Search Review](/#book)

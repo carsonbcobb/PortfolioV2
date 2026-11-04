@@ -64,7 +64,7 @@ const jsonLd = [toolSchema(tool)];
         f.push(['Gifting',(giftCol?'Gift collection found with '+giftCol+' products. ':'No gift collection found. ')+(giftCard?'Gift card available.':'No gift card product found.')]);
         f.push(['Bundles',bundles?bundles+' products look like bundles, kits or packs.':'No bundles or kits found. Bundles are one of the easiest ways to raise order value.']);
         f.push(['Pricing','Typical product price is about $'+med.toFixed(2)+'. Set your free shipping line just above what a normal cart reaches.']);
-        out.innerHTML='<div class="cc-results-list">'+f.map(x=>'<div class="cc-item"><b>'+x[0]+'</b><span>'+x[1]+'</span></div>').join('')+'</div><a class="cc-cta" href="/#book">Want the full audit? Book a 20 minute intro call</a>';
+        out.innerHTML='<div class="cc-results-list">'+f.map(x=>'<div class="cc-item"><b>'+x[0]+'</b><span>'+x[1]+'</span></div>').join('')+'</div><a class="cc-cta" href="/#book">Want the full audit? Book a 20 minute AI Search Review</a>';
         btn.disabled=false;
       }
       </script>

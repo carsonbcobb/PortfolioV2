@@ -7,9 +7,11 @@ import {
   LINKEDIN_URL,
   LINKEDIN_COMPANY_URL,
   HEADSHOT,
-  HOURLY_RATE,
-  PLANS,
+  AUDIT,
+  BUILD,
+  RETAINERS,
   FAQS,
+  CALL_NAME,
   AGENCY_PLANS,
   AGENCY_CLIENT_PLANS,
   AGENCY_FAQS,
@@ -51,12 +53,17 @@ const person = {
   name: 'Carson Cobb',
   url: HOME,
   image: new URL(HEADSHOT ?? '/logo.png', SITE_URL).href,
-  jobTitle: 'Fractional Head of Ecommerce',
+  jobTitle: 'AI Search and CRO Consultant for Shopify Brands',
   description:
-    'Fractional Head of Ecommerce who runs Shopify stores for growing brands: strategy, development, conversion, email, and reporting. 6+ years and 50+ Shopify stores, from startups to ten figure brands.',
+    "AI search and CRO for Shopify brands. I get products recommended in ChatGPT and Google's AI answers, then make sure the store turns that traffic into sales. 6+ years and 50+ Shopify stores, from startups to ten figure brands.",
   email: EMAIL,
   ...sameAs(LINKEDIN_URL, LINKEDIN_COMPANY_URL),
   knowsAbout: [
+    'AI search',
+    'Answer engine optimization (AEO)',
+    'Generative engine optimization',
+    'Structured data',
+    'Schema.org',
     'Shopify',
     'Shopify Plus',
     'Shopify theme development',
@@ -83,6 +90,9 @@ const business = {
   name: 'Carson Cobb',
   url: HOME,
   logo: `${SITE_URL}/logo.png`,
+  description:
+    'AI search and conversion rate optimization for Shopify brands: getting products recommended in ChatGPT and Google AI answers, structured data, and store conversion work, from audit to ongoing growth.',
+  knowsAbout: ['AI search', 'Answer engine optimization (AEO)', 'Structured data', 'Conversion rate optimization', 'Shopify'],
   founder: ref(ID.carson),
   ...sameAs(LINKEDIN_COMPANY_URL),
   areaServed: US,
@@ -109,16 +119,14 @@ const website = {
 
 // Offers
 
-type Unit = 'month' | 'hour' | 'block' | 'once';
+type Unit = 'month' | 'once';
 
 const UNITS: Record<Unit, { referenceQuantity: object; unitText: string }> = {
   month: { referenceQuantity: { '@type': 'QuantitativeValue', value: 1, unitCode: 'MON' }, unitText: 'per month' },
-  hour: { referenceQuantity: { '@type': 'QuantitativeValue', value: 1, unitCode: 'HUR' }, unitText: 'per hour' },
-  block: { referenceQuantity: { '@type': 'QuantitativeValue', value: 10, unitCode: 'HUR' }, unitText: 'per 10 hours' },
   once: { referenceQuantity: { '@type': 'QuantitativeValue', value: 1, unitText: 'one time' }, unitText: 'one time' },
 };
 
-const offer = (o: { id: string; name: string; description: string; url: string; service: string; price: number; unit: Unit }) => ({
+const offer = (o: { id: string; name: string; description: string; url: string; service: string; price: number; unit: Unit; from?: boolean }) => ({
   '@type': 'Offer',
   '@id': o.id,
   name: o.name,
@@ -130,7 +138,7 @@ const offer = (o: { id: string; name: string; description: string; url: string; 
   priceCurrency: 'USD',
   priceSpecification: {
     '@type': 'UnitPriceSpecification',
-    price: o.price,
+    ...(o.from ? { minPrice: o.price } : { price: o.price }),
     priceCurrency: 'USD',
     ...UNITS[o.unit],
   },
@@ -145,21 +153,14 @@ const priceOf = (plans: { name: string; price: number }[], name: string) => {
   return plan.price;
 };
 
-// Brand plans, in card order. Descriptions are the schema summaries; hours and terms match the cards.
-const BRAND_OFFERS: { slug: string; name: string; unit: Unit; description: string }[] = [
+// White label plans agencies resell per client store. Prices come from AGENCY_CLIENT_PLANS.
+const AGENCY_CLIENT_OFFERS: { slug: string; name: string; unit: Unit; description: string }[] = [
   {
     slug: 'advisor',
     name: 'Advisor',
     unit: 'month',
     description:
-      'Monthly store review with a ranked list of fixes, a monthly strategy call, and async questions. Up to 8 hours a month. Implementation not included.',
-  },
-  {
-    slug: 'hour-block',
-    name: 'Hour Block',
-    unit: 'block',
-    description:
-      '10 hours of hands on Shopify work billed on tracked time, 15 minute minimum per request, usable within 60 days.',
+      'Monthly store review with a ranked list of fixes your team can execute. Up to 8 hours a month. Implementation not included.',
   },
   {
     slug: 'store-sprint',
@@ -180,11 +181,10 @@ const BRAND_OFFERS: { slug: string; name: string; unit: Unit; description: strin
     name: 'Head of Ecommerce',
     unit: 'month',
     description:
-      'Everything in Operator plus marketing and content direction, campaign planning, and managing freelancers and agencies. Up to 44 hours a month.',
+      'Everything in Operator plus marketing and content direction, campaign planning, and client calls as part of your team. Up to 44 hours a month.',
   },
 ];
 
-const EXTRA_HOURS = 'Extra hours on any plan, or one off requests with a one hour minimum.';
 const WHITE_LABEL = " Per client store, delivered under your agency's name.";
 
 const faqPage = (id: string, page: string, faqs: { q: string; a: string }[]) => ({
@@ -200,6 +200,8 @@ const faqPage = (id: string, page: string, faqs: { q: string; a: string }[]) => 
 
 export function homeSchema(meta: { title: string; description: string }) {
   const url = `${SITE_URL}/#pricing`;
+  const brandOffer = (slug: string, name: string, description: string, price: number, unit: Unit, from = false) =>
+    offer({ id: `${SITE_URL}/#offer-${slug}`, name, description, url, service: ID.brandService, price, unit, from });
   return {
     '@context': 'https://schema.org',
     '@graph': [
@@ -221,19 +223,19 @@ export function homeSchema(meta: { title: string; description: string }) {
       {
         '@type': 'Service',
         '@id': ID.brandService,
-        name: 'Fractional Head of Ecommerce for Shopify Brands',
-        serviceType: 'Fractional ecommerce management',
+        name: 'AI Search and CRO for Shopify Brands',
+        serviceType: 'AI search optimization and conversion rate optimization',
         description:
-          'I run Shopify stores for growing brands so founders can focus on the bigger decisions. Strategy, development, conversion testing, email and retention, analytics, and marketing direction, handled by one senior lead.',
+          "I get Shopify brands recommended in ChatGPT and Google's AI answers, then make sure the store turns that traffic into sales. Start with an audit, then a fixed price Build or a retainer. Founders stay in control: I propose, you decide.",
         provider: ref(ID.carson),
         areaServed: US,
         audience: {
           '@type': 'BusinessAudience',
           audienceType: 'Shopify brands',
           description:
-            'Growing Shopify brands doing $10K to $10M a month that want someone running the store instead of a full time hire or a stack of vendors.',
+            'Shopify brands, especially in wellness, supplements and beauty, from startups to billion dollar companies.',
         },
-        availableChannel: { '@type': 'ServiceChannel', serviceUrl: CAL_LINK, name: 'Intro call' },
+        availableChannel: { '@type': 'ServiceChannel', serviceUrl: CAL_LINK, name: `${CALL_NAME}, 20 minutes` },
         hasOfferCatalog: ref(ID.brandPlans),
       },
       {
@@ -241,26 +243,26 @@ export function homeSchema(meta: { title: string; description: string }) {
         '@id': ID.brandPlans,
         name: 'Plans for brands',
         itemListElement: [
-          ...BRAND_OFFERS.map((o) =>
-            offer({
-              id: `${SITE_URL}/#offer-${o.slug}`,
-              name: o.name,
-              description: o.description,
-              url,
-              service: ID.brandService,
-              price: priceOf(PLANS, o.name),
-              unit: o.unit,
-            }),
+          brandOffer('audit', AUDIT.name, `${AUDIT.includes.join(', ')}. ${AUDIT.note}`, AUDIT.price, 'once'),
+          ...BUILD.tiers.map((t) =>
+            brandOffer(
+              `build-${t.price}`,
+              `${BUILD.name}, ${t.label.toLowerCase()}`,
+              `Fixed price, 3 to 4 weeks${t.from ? ', price depends on catalog size' : ''}. ${BUILD.includes.join(', ')}.`,
+              t.price,
+              'once',
+              t.from,
+            ),
           ),
-          offer({
-            id: `${SITE_URL}/#offer-extra-hours`,
-            name: 'Additional work',
-            description: EXTRA_HOURS,
-            url,
-            service: ID.brandService,
-            price: HOURLY_RATE,
-            unit: 'hour',
-          }),
+          ...RETAINERS.filter((r) => r.price !== null).map((r) =>
+            brandOffer(
+              `retainer-${r.name.toLowerCase()}`,
+              `${r.name} retainer`,
+              `${r.summary} 3 month minimum.`,
+              r.price as number,
+              'month',
+            ),
+          ),
         ],
       },
       faqPage(ID.homeFaq, ID.homePage, FAQS),
@@ -307,7 +309,7 @@ export function agenciesSchema(meta: { title: string; description: string }) {
         name: 'White Label Shopify Development and Ecommerce Management for Agencies',
         serviceType: 'White label Shopify development',
         description:
-          'I own client stores end to end, from strategy and CRO to the build, and join calls as part of your team. No specs, no QA, no hand holding. You sell bigger retainers without hiring senior talent.',
+          'I lead client stores end to end, from strategy and CRO to the build, and join calls as part of your team. No specs, no QA, no hand holding. You sell bigger retainers without hiring senior talent.',
         provider: ref(ID.carson),
         areaServed: US,
         audience: {
@@ -322,28 +324,14 @@ export function agenciesSchema(meta: { title: string; description: string }) {
       {
         '@type': 'OfferCatalog',
         '@id': ID.agencySeniorHours,
-        name: 'Senior hours on demand',
+        name: 'Reserved senior capacity',
         itemListElement: [
-          agencyOffer(
-            'hour-block',
-            'Hour Block',
-            '10 hours of Shopify work for your team, billed on tracked time, 15 minute minimum per request, usable within 60 days.',
-            priceOf(AGENCY_PLANS, 'Hour Block'),
-            'block',
-          ),
           agencyOffer(
             'partner',
             'Partner',
-            '32 reserved hours a month, billed on tracked time, with a priority queue and same day response. Extra hours at $125/hr.',
+            '32 reserved hours a month for work across any client, with a priority queue and same day response.',
             priceOf(AGENCY_PLANS, 'Partner'),
             'month',
-          ),
-          agencyOffer(
-            'one-off',
-            'One off requests',
-            'One off requests without a block, billed at $125/hr with a one hour minimum.',
-            HOURLY_RATE,
-            'hour',
           ),
         ],
       },
@@ -351,7 +339,7 @@ export function agenciesSchema(meta: { title: string; description: string }) {
         '@type': 'OfferCatalog',
         '@id': ID.agencyWhiteLabel,
         name: 'White label plans for your clients',
-        itemListElement: BRAND_OFFERS.filter((o) => o.slug !== 'hour-block').map((o) =>
+        itemListElement: AGENCY_CLIENT_OFFERS.map((o) =>
           agencyOffer(o.slug, o.name, o.description + WHITE_LABEL, priceOf(AGENCY_CLIENT_PLANS, o.name), o.unit),
         ),
       },
@@ -420,7 +408,7 @@ export function contentSchema(p: ContentSchemaInput) {
       provider: ref(ID.carson),
       areaServed: US,
       audience: { '@type': 'BusinessAudience', audienceType: p.service.audience },
-      availableChannel: { '@type': 'ServiceChannel', serviceUrl: CAL_LINK, name: 'Intro call' },
+      availableChannel: { '@type': 'ServiceChannel', serviceUrl: CAL_LINK, name: `${CALL_NAME}, 20 minutes` },
     });
   }
 

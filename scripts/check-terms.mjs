@@ -4,8 +4,7 @@ import path from 'node:path';
 
 const DIST = path.resolve('dist');
 const BANNED = [
-  // AEO, AI search and AI platform names are allowed since the /results AEO section (Nov 2026).
-  /\bLLMs?\b/i,
+  // AEO, AI search, LLM and AI platform names are allowed since the AI search and CRO repositioning (Nov 2026).
   // No client brand names and no old audit price. Audits themselves are now offered (Ways to work together).
   /\bGEM\b/i,
   /\$2,000/,
@@ -14,10 +13,15 @@ const BANNED = [
   /Full Ownership/,
   /\$1,500\/mo/,
   /\$2,500/,
-  /\$4,500/,
   /hours per month/i,
   /whole team/i,
   /Store Operator/i,
+  // No hourly pricing anywhere (AI search and CRO repositioning).
+  /\$125\b/,
+  /hour block/i,
+  /\bhourly\b/i,
+  /per hour/i,
+  /\/hr\b/,
 ];
 const TEXT_EXT = new Set(['.html', '.xml', '.txt', '.json', '.js', '.css', '.svg', '.webmanifest']);
 
