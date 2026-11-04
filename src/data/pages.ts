@@ -11,10 +11,23 @@ export interface ContentPageInfo {
   /** One line summary for llms.txt */
   summary: string;
   /** Service and industry pages: the Service entry in the JSON-LD */
-  service?: { name: string; serviceType: string; audience: string };
+  service?: { name: string; serviceType: string; audience: string; offers?: boolean };
 }
 
 export const CONTENT_PAGES: ContentPageInfo[] = [
+  {
+    slug: 'ai-search',
+    kind: 'service',
+    label: 'AI search optimization',
+    summary:
+      'How AI assistants decide what to recommend, and the on site and off site work that gets a Shopify brand recommended, with how it is measured.',
+    service: {
+      name: 'AI search optimization for Shopify brands',
+      serviceType: 'AI search optimization (AEO and GEO)',
+      audience: 'Shopify brands',
+      offers: true,
+    },
+  },
   {
     slug: 'fractional-head-of-ecommerce',
     kind: 'service',
@@ -40,12 +53,14 @@ export const CONTENT_PAGES: ContentPageInfo[] = [
   {
     slug: 'shopify-conversion-optimization',
     kind: 'service',
-    label: 'Conversion optimization',
-    summary: 'Raising conversion with better product pages, cart, checkout and mobile speed, then testing.',
+    label: 'Conversion rate optimization',
+    summary:
+      'Conversion rate optimization built for high intent AI traffic and everyone else: product pages, cart, checkout, mobile speed and testing.',
     service: {
-      name: 'Shopify conversion optimization',
+      name: 'Conversion rate optimization for Shopify brands',
       serviceType: 'Conversion rate optimization',
-      audience: 'Growing Shopify brands',
+      audience: 'Shopify brands',
+      offers: true,
     },
   },
   {

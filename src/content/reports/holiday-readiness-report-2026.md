@@ -70,4 +70,4 @@ Once shipping cutoffs pass, a store without a gift card has far fewer ways to ca
 - **Bundle collection:** a published collection with products whose address contains, as a separate word, bundle, kit, set, gift set, pack, variety pack, sampler, stack or build your own.
 - **Data:** each store's public product and collection data, checked November 1, 2026.
 
-No store is named in this report. Want a second pair of eyes on your holiday setup? [Book a 20 minute AI Search Review](/#book).
+No store is named in this report. Want a second pair of eyes on your holiday setup? [Book a 20 minute AI Search Review](/ai-visibility-check#book).

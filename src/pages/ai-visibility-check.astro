@@ -1,0 +1,303 @@
+---
+// /ai-visibility-check: the AI Visibility Check as a step flow inside one screen.
+// Step 1 takes the store URL and confirms the detected brand and category, step 2 runs the check
+// (the Worker in worker/ streams NDJSON) and collects the email, step 3 is the score, steps 4 to 7
+// are one section each, and step 8 is the close with the booking calendar.
+// Explanatory content and the FAQ sit below the tool for search.
+import HomeLayout from '../layouts/HomeLayout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import {
+  CHECK_API_URL,
+  TURNSTILE_SITE_KEY,
+  STRIPE_AUDIT_LINK,
+  CAL_LINK,
+  CAL_EMBED,
+  AUDIT,
+  CHECK_FAQS,
+  CALL_NAME,
+  CALL_TEXT,
+} from '../data/site';
+import { checkSchema } from '../data/schema';
+import '../styles/content.css';
+import '../styles/check.css';
+
+const title = 'Does ChatGPT Recommend Your Brand? Free Check | Carson Cobb';
+const description =
+  'Free AI Visibility Check for Shopify brands. See if ChatGPT recommends you for 3 buyer questions, what it says about you, and if AI can read your store.';
+
+const ready = Boolean(CHECK_API_URL && TURNSTILE_SITE_KEY);
+const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
+const auditHref = STRIPE_AUDIT_LINK || CAL_LINK;
+const auditTrack = STRIPE_AUDIT_LINK ? 'audit_checkout' : 'book_call';
+const ext = (href: string) => (href.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {});
+
+const SCORES = [
+  {
+    name: 'AI visibility',
+    weight: 40,
+    text: 'How often ChatGPT names your brand across 3 buyer questions for your category, and how high in the answer. Being cited as a source counts too. You also see the sources AI cited for each answer and whether you appear in them.',
+    affects:
+      'Your product data and structured data, and whether the lists, reviews, articles and forums AI cites in your category mention you.',
+  },
+  {
+    name: 'Site readiness',
+    weight: 25,
+    text: 'Whether the structured data AI reads is present and complete on each page type, and whether your products have the details AI uses to recommend them. Your product page is shown side by side with the competitor AI named most.',
+    affects:
+      'What your theme outputs, duplicate schema from apps (review apps especially), thin product descriptions, missing images and missing SKUs.',
+  },
+  {
+    name: 'Brand accuracy',
+    weight: 20,
+    text: 'Whether ChatGPT describes your brand and what you sell correctly when someone asks about you by name.',
+    affects:
+      'Your About page and Organization schema, consistent descriptions across your site, and what Amazon, press and reviews say about you.',
+  },
+  {
+    name: 'Crawler access',
+    weight: 15,
+    text: 'Whether AI crawlers are allowed in your robots.txt and can actually load your pages.',
+    affects: 'robots.txt rules, and bot protection or firewall settings that block AI crawlers without anyone noticing.',
+  },
+];
+
+const jsonLd = [checkSchema({ title, description, faqs: CHECK_FAQS })];
+---
+
+<HomeLayout {title} {description} {jsonLd}>
+  <SiteNav />
+
+  <main id="main">
+    <section class="dark flow" id="flow" aria-label="AI Visibility Check" data-step="1">
+      <p class="visually-hidden" id="flow-live" aria-live="polite"></p>
+
+      <!-- Step 1: your store -->
+      <div class="flow__step is-active" data-step="1">
+        <div class="wrap flow__inner flow__inner--center">
+          <p class="eyebrow">Free AI Visibility Check</p>
+          <h1 class="flow__h1" tabindex="-1">Does ChatGPT recommend your brand?</h1>
+          <p class="flow__sub">
+            I'll ask ChatGPT 5 real buyer questions in your category, check what it says about you, and test whether AI
+            can read your store.
+          </p>
+          {
+            ready ? (
+              <Fragment>
+                <form id="store-form" class="flow__form" novalidate>
+                  <label class="visually-hidden" for="store-url">Store URL</label>
+                  <input id="store-url" name="url" type="text" inputmode="url" autocomplete="url" placeholder="yourstore.com" required />
+                  <button type="submit" class="btn btn--accent" data-label="Check my AI visibility">Check my AI visibility</button>
+                </form>
+                <form id="confirm-form" class="flow__confirm" novalidate hidden>
+                  <p class="flow__confirm-lede">Is this right? Edit anything that isn't.</p>
+                  <div class="chips">
+                    <label class="chip">
+                      <span>Brand</span>
+                      <input name="brand" type="text" maxlength="60" required />
+                    </label>
+                    <label class="chip">
+                      <span>Category</span>
+                      <input name="category" type="text" maxlength="80" placeholder="your main category" required />
+                    </label>
+                  </div>
+                  <div class="flow__actions">
+                    <button type="submit" class="btn btn--accent">Start the check</button>
+                    <button type="button" class="flow__link" data-action="change-store">Change store</button>
+                  </div>
+                </form>
+                <p class="flow__fine" id="store-fine">Takes about a minute. No login.</p>
+                <p class="flow__error" id="store-error" role="alert" hidden></p>
+                <div id="ts-box" class="flow__turnstile"></div>
+              </Fragment>
+            ) : (
+              <p class="flow__notice">
+                The check is being set up. In the meantime,{' '}
+                <a href={CAL_LINK} data-track="book_call" {...ext(CAL_LINK)}>book a 20 minute AI Search Review</a> and I'll run it
+                for you.
+              </p>
+            )
+          }
+        </div>
+      </div>
+
+      <!-- Step 2: running, and the email -->
+      <div class="flow__step" data-step="2" hidden>
+        <div class="wrap flow__inner flow__inner--split">
+          <div class="flow__col">
+            <p class="eyebrow">Running your check</p>
+            <h2 class="flow__h2" tabindex="-1" id="run-title">Checking your store</h2>
+            <ol class="run" id="run-list"></ol>
+            <p class="flow__error" id="run-error" role="alert" hidden></p>
+            <button type="button" class="btn btn--outline-dark" data-action="restart" id="run-retry" hidden>Try again</button>
+          </div>
+          <form id="email-form" class="card card--dark flow__email" novalidate>
+            <label for="email" class="flow__email-q">Where should I send your full report?</label>
+            <div class="flow__email-row">
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="you@yourbrand.com" required />
+              <button type="submit" class="btn btn--accent">Send it</button>
+            </div>
+            <p class="flow__fine" id="email-note">Your results open as soon as the check finishes and you've added your email.</p>
+            <p class="flow__error" id="email-error" role="alert" hidden></p>
+          </form>
+        </div>
+      </div>
+
+      <!-- Step 3: the score -->
+      <div class="flow__step" data-step="3" hidden>
+        <div class="wrap flow__inner flow__inner--split">
+          <div class="score">
+            <svg class="dial" viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="dial__track" cx="60" cy="60" r="52"></circle>
+              <circle class="dial__fill" cx="60" cy="60" r="52" pathLength="100"></circle>
+            </svg>
+            <div class="score__num"><span id="score-num">0</span><small>of 100</small></div>
+          </div>
+          <div class="flow__col">
+            <p class="eyebrow" id="score-eyebrow">Your AI visibility score</p>
+            <h2 class="flow__h2" tabindex="-1" id="score-verdict"></h2>
+            <ol class="findings" id="findings"></ol>
+            <div class="flow__actions">
+              <button type="button" class="btn btn--accent" data-action="next">See the breakdown</button>
+              <button type="button" class="flow__link" data-action="close">Walk through it with me</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Steps 4 to 7: one section each. Filled in by the script. -->
+      <div class="flow__step" data-step="4" hidden><div class="wrap flow__inner"><div class="card card--dark sect" id="sect-visibility"></div></div></div>
+      <div class="flow__step" data-step="5" hidden><div class="wrap flow__inner"><div class="card card--dark sect" id="sect-accuracy"></div></div></div>
+      <div class="flow__step" data-step="6" hidden><div class="wrap flow__inner"><div class="card card--dark sect" id="sect-crawlers"></div></div></div>
+      <div class="flow__step" data-step="7" hidden><div class="wrap flow__inner"><div class="card card--dark sect" id="sect-readiness"></div></div></div>
+
+      <!-- Step 8: what this means -->
+      <div class="flow__step" data-step="8" hidden>
+        <div class="wrap flow__inner flow__inner--close">
+          <div class="close__text">
+            <p class="eyebrow">What this means</p>
+            <h2 class="flow__h2" tabindex="-1"><span class="close__score" id="close-score"></span> This check ran 3 questions. Your buyers ask hundreds.</h2>
+            <p class="flow__body">
+              The full audit runs 50 built from your customers' own language, maps the sources AI trusts in your category,
+              and finds where your store loses the sale.
+            </p>
+            <div class="close__why">
+              <p class="close__why-title">Why schema alone won't fix this</p>
+              <p>Of the four areas above, schema touches one. Getting recommended takes all four, plus a store that converts the traffic.</p>
+            </div>
+            <div class="close__book">
+              <p class="close__book-title" id="book-title">Walk through your results with me</p>
+              <button type="button" class="btn btn--accent" data-action="open-calendar" id="open-calendar">Walk through your results with me</button>
+            </div>
+            <p class="flow__fine">Reviews are for brands doing $20K+ a month. Under that, the full audit is the best place to start.</p>
+            <p class="close__audit">
+              <a href={auditHref} data-track={auditTrack} {...ext(auditHref)}>Ready now? Book the audit, {usd(AUDIT.price)}</a>
+            </p>
+            <p class="flow__fine" id="sent-line"></p>
+          </div>
+          <div class="close__calendar" id="calendar-inline" hidden></div>
+        </div>
+      </div>
+
+      <!-- Back, progress dots and Next on every result step -->
+      <nav class="flow__nav" aria-label="Report steps" hidden>
+        <div class="wrap flow__nav-inner">
+          <button type="button" class="flow__nav-btn" data-action="back">← Back</button>
+          <ol class="dots" id="dots"></ol>
+          <button type="button" class="flow__nav-btn flow__nav-btn--next" data-action="next">Next →</button>
+        </div>
+      </nav>
+
+      <dialog class="cal-modal" id="cal-modal" aria-labelledby="cal-modal-title">
+        <div class="cal-modal__head">
+          <p id="cal-modal-title">Book a 20 minute AI Search Review</p>
+          <button type="button" class="flow__link" data-action="close-calendar">Close</button>
+        </div>
+        <div class="cal-modal__body" id="calendar-modal"></div>
+        <p class="flow__fine">Calendar not loading? <a href={CAL_LINK} target="_blank" rel="noopener" data-track="book_call">Open it in a new tab</a>.</p>
+      </dialog>
+    </section>
+
+    <!-- Booking, for links from other pages (/ai-visibility-check#book) -->
+    <section id="book" class="section section--sand" aria-labelledby="book-direct">
+      <div class="wrap stack">
+        <div class="head">
+          <p class="eyebrow">Prefer to talk it through?</p>
+          <h2 class="h2" id="book-direct">Book a 20 minute {CALL_NAME}.</h2>
+          <p class="lede">{CALL_TEXT}</p>
+        </div>
+        <div class="btn-row">
+          <a href={CAL_LINK} data-track="book_call" class="btn btn--accent" {...ext(CAL_LINK)}>Book a call</a>
+        </div>
+        <p class="fineprint">Reviews are for brands doing $20K+ a month. Under that, the full audit is the best place to start.</p>
+      </div>
+    </section>
+
+    <section class="section page-body" aria-labelledby="scores-title">
+      <div class="wrap">
+        <article class="prose">
+          <h2 id="scores-title">What does each score mean?</h2>
+          <p>
+            Your overall score runs from 0 to 100. It weights the four checks by how much they affect whether AI recommends
+            you: AI visibility 40%, site readiness 25%, brand accuracy 20% and crawler access 15%.
+          </p>
+          {
+            SCORES.map((s) => (
+              <Fragment>
+                <h3>
+                  {s.name} ({s.weight}%)
+                </h3>
+                <p>{s.text}</p>
+                <p>
+                  <strong>What affects it:</strong> {s.affects}
+                </p>
+              </Fragment>
+            ))
+          }
+          <h2>Why does this matter?</h2>
+          <p>
+            Shoppers increasingly ask ChatGPT what to buy, and it answers with a short list of brands. Those shoppers arrive
+            ready to buy. If AI can't read your store or doesn't trust it, you're not on the list, and you never see the
+            lost sale in your analytics. Read more about <a href="/ai-search">how AI search works</a> and
+            <a href="/shopify-conversion-optimization">how to convert that traffic</a>.
+          </p>
+          <h2>How is this check different from the full audit?</h2>
+          <p>
+            This check asks 3 questions written for your category. The <a href="/pricing#audit">AI Search and Conversion
+            Audit</a> runs 50 questions built from your own customers' language, repeats them, maps the competitors and
+            sources AI cites instead of you, and adds a full conversion review and a prioritized plan.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--sand" id="faq">
+      <div class="wrap faq">
+        <div class="faq__head">
+          <p class="eyebrow">FAQ</p>
+          <h2 class="h2 h2--36">Questions, answered.</h2>
+        </div>
+        <div class="faq__list">
+          {
+            CHECK_FAQS.map((f, i) => (
+              <details open={i === 0}>
+                <summary>{f.q}</summary>
+                <p>{f.a}</p>
+              </details>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</HomeLayout>
+
+{
+  ready && (
+    <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=aivcTurnstile" async defer />
+  )
+}
+
+<script is:inline src="/check-flow.js" data-api={CHECK_API_URL} data-sitekey={TURNSTILE_SITE_KEY} data-cal={CAL_EMBED} defer></script>

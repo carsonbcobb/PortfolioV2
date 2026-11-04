@@ -1,18 +1,22 @@
 ---
-// Dark top nav for content and tool pages. Same look as the homepage nav, with links back to its sections.
-import { CAL_LINK, HEADER_CTA_LABEL } from '../data/site';
+// Dark top nav on every page: real pages only, plus the AI Visibility Check button.
+import { NAV_LINKS, CHECK_PATH, HEADER_CTA_LABEL } from '../data/site';
+
+const here = Astro.url.pathname.replace(/(\.html|\/)$/, '') || '/';
 ---
 
 <header class="dark">
   <nav class="wrap nav" aria-label="Main">
     <a href="/" class="nav__brand">Carson Cobb</a>
     <div class="nav__links">
-      <a href="/results">Results</a>
-      <a href="/#own">What I do</a>
-      <a href="/#pricing">Pricing</a>
-      <a href="/reports">Reports</a>
-      <a href="/agencies">For agencies</a>
-      <a href={CAL_LINK} data-track="book_call" target="_blank" rel="noopener" class="btn btn--accent nav__cta">{HEADER_CTA_LABEL}</a>
+      {
+        NAV_LINKS.map((l) => (
+          <a href={l.href} aria-current={here === l.href ? 'page' : undefined}>
+            {l.label}
+          </a>
+        ))
+      }
     </div>
+    <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent nav__cta">{HEADER_CTA_LABEL}</a>
   </nav>
 </header>

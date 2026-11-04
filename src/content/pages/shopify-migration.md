@@ -28,9 +28,9 @@ I'm Carson Cobb. I help Shopify brands get recommended in ChatGPT and Google's A
 
 If you're moving from another platform, the work is mostly about mapping. Every product, variant, collection, customer, order history and page on the old store needs a home on the new one.
 
-I start with an audit of what you have, what's worth keeping, and what's only there because nobody cleaned it up. Then I plan the new structure in Shopify: products and variants, collections, metafields and metaobjects for structured content, and the apps you actually need.
+I start with an audit of what you have, what's worth keeping, and what's only there because nobody cleaned it up. Then I plan the new structure in Shopify: products and variants, collections, how product details are stored, and the apps you actually need.
 
-This is also a chance to fix things. Product data that lived in random text blocks can move into structured fields. Apps you were paying for out of habit can stay behind.
+This is also a chance to fix things. Product details that lived in random text blocks can be built into the site properly, so they stay accurate as your catalog changes. Apps you were paying for out of habit can stay behind.
 
 ## Rebuilding your Shopify theme
 
@@ -86,13 +86,13 @@ Launch day should be uneventful. I aim for that with a simple routine:
 
 **Full, $7,500/month.** The migration or rebuild runs as part of the retainer, with every launch step brought to you for sign off, and I keep supporting the store after launch so nothing gets dropped in a handoff. 3 month minimum. More on my [fractional head of ecommerce page](/fractional-head-of-ecommerce).
 
-See all options on the [pricing section](/#pricing).
+See all options on the [pricing page](/pricing).
 
 ## Book a 20 minute AI Search Review
 
 If you're planning a migration or a rebuild, talk to me before you pick a launch date. Book a 20 minute AI Search Review. Before the call I run your top buyer questions through ChatGPT. On the call I'll show you where you're recommended, who shows up instead, and what's driving it. Tell me where you're moving from and what you're worried about, and I'll tell you what I'd plan for first.
 
-[Book a 20 minute AI Search Review](/#book)
+[Book a 20 minute AI Search Review](/ai-visibility-check#book)
 
 ## Sources
 

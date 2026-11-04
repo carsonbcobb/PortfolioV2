@@ -87,7 +87,7 @@ That's also why I fix tracking first. If the store isn't sending clean order and
 
 **Full, $7,500/month.** Your ecommerce lead, working at your direction. Klaviyo flows, segments and campaigns are handled day to day as part of the store, with launches and promotions brought to you for sign off. 3 month minimum.
 
-All options are on the [pricing section](/#pricing). In the first 90 days of a retainer, email is the main focus of month 2, after tracking, speed and key pages are fixed in month 1.
+All options are on the [pricing page](/pricing). In the first 90 days of a retainer, email is the main focus of month 2, after tracking, speed and key pages are fixed in month 1.
 
 Across my work, I've supported more than $40M in client revenue for growing brands. If you sell something people reorder, like [supplements](/supplement-brands) or [pet food](/pet-brands), email timing matters even more.
 
@@ -95,4 +95,4 @@ Across my work, I've supported more than $40M in client revenue for growing bran
 
 If your Klaviyo account hasn't been touched in a while, it's probably leaving orders on the table. Book a 20 minute AI Search Review. Before the call I run your top buyer questions through ChatGPT. On the call I'll show you where you're recommended, who shows up instead, and what's driving it. Tell me what flows you have running, and I'll tell you where I'd start.
 
-[Book a 20 minute AI Search Review](/#book)
+[Book a 20 minute AI Search Review](/ai-visibility-check#book)

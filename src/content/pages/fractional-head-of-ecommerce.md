@@ -20,7 +20,7 @@ faq:
 
 At some point every growing brand hits the same wall. The founder is still the one deciding what goes on the homepage, chasing the developer, approving email, and wondering why conversion dropped last Tuesday. Nobody leads the store. Everybody touches it.
 
-The usual answers are a full time hire at $150K+ a year, or a handful of vendors stitched together with you in the middle. Neither one is great when you're growing but not yet huge.
+The usual answers are a full time hire, which typically costs $150K+ a year, or a handful of vendors stitched together with you in the middle. Neither one is great when you're growing but not yet huge.
 
 I'm Carson Cobb. I help Shopify brands get recommended in ChatGPT and Google's AI answers, then make the store convert that traffic. Over 6+ years I've worked on 50+ Shopify stores and supported more than $40M in client revenue. A fractional head of ecommerce engagement is the deepest version of that work: I lead the channel at your direction, not just a task list.
 
@@ -46,7 +46,7 @@ You stop being the project manager for your own website.
 
 There's no single right answer. Here's how I'd think about it.
 
-**A full time head of ecommerce** makes sense when the channel needs someone inside the business every day, leading a team of their own. You're paying $150K+ a year before benefits, and it can take months to find the right person. For a brand that's growing but not yet at that scale, it's a lot of fixed cost for one role.
+**A full time head of ecommerce** makes sense when the channel needs someone inside the business every day, leading a team of their own. A typical full time salary for the role is $150K+ a year before benefits, and it can take months to find the right person. For a brand that's growing but not yet at that scale, it's a lot of fixed cost for one role.
 
 **An agency** makes sense when you have a clearly scoped project, like a full redesign, and someone on your team who can manage it. Agencies are built to deliver projects. They're less often built to lead your numbers month after month.
 
@@ -78,11 +78,19 @@ Not every month looks like that. Some months are mostly groundwork. But the poin
 
 ## Plans
 
-This work is the **Full retainer at $7,500/month**, with a 3 month minimum. Up to 60 hours a month and a weekly call. I act as your ecommerce lead, working at your direction: roadmap, launches and promotions for your sign off, Klaviyo day to day, subscriptions, merchandising, apps and vendors, plus the AI search and conversion work. You get a weekly report and QA on everything that ships.
+This work runs on one of three retainers, each with a 3 month minimum except Dedicated, which is custom.
 
-If you want the AI search and conversion work without the full ecommerce lead role, **Growth at $4,500/month** covers that. Most brands start with the **$1,500 AI Search and Conversion Audit**.
+| Retainer | Price | Capacity | Calls |
+| --- | --- | --- | --- |
+| Growth | $4,500/month | Up to 30 hours a month | Check in every 2 weeks |
+| Full | $7,500/month | Up to 60 hours a month | Weekly call, plus 1 extra call a week when needed |
+| Dedicated | Let's talk | Full time capacity | Built around your team |
 
-Every option is listed on the [pricing section](/#pricing).
+**Full** is the fractional head of ecommerce role. I act as your ecommerce lead, working at your direction: roadmap, launches and promotions for your sign off, Klaviyo day to day, subscriptions, merchandising, apps and vendors, plus the AI search and conversion work. You get a weekly report and QA on everything that ships.
+
+**Growth** covers the AI search and conversion work without the full ecommerce lead role. **Dedicated** is full time capacity for brands that need it. Most brands start with the **$1,500 AI Search and Conversion Audit**.
+
+Every option is listed on the [pricing page](/pricing).
 
 ## Who this is a good fit for
 
@@ -94,4 +102,4 @@ It's probably not a fit if you want someone to only run ads, or if you need a te
 
 If you're tired of being the person who holds the whole store together, let's talk. Before the call I run your top buyer questions through ChatGPT. On the call I'll show you where you're recommended, who shows up instead, and what's driving it. I'll also tell you honestly which plan makes sense, or whether you need a full time hire instead.
 
-[Book a 20 minute AI Search Review](/#book)
+[Book a 20 minute AI Search Review](/ai-visibility-check#book)

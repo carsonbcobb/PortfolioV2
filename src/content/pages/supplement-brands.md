@@ -44,7 +44,7 @@ For a product someone uses every single day, a subscription should be the obviou
 
 Supplement product pages have to do a lot. They need to sell, explain ingredients, show the supplement facts panel, carry the right disclaimers and stay inside the claims your team has approved.
 
-What usually happens is that claims get pasted into random text blocks, disclaimers get dropped when someone edits a page, and nobody can tell which version is current. I build product templates where claims, disclaimers, ingredient details and the facts panel live in structured fields using Shopify metafields and metaobjects. Your team updates them in one place, and every page stays consistent.
+What usually happens is that claims get pasted into random text blocks, disclaimers get dropped when someone edits a page, and nobody can tell which version is current. I build product templates where claims, disclaimers, ingredient details and the facts panel are built into the site, so every page stays consistent and accurate as your catalog changes.
 
 To be clear, I don't write or approve health claims. That belongs with your regulatory team. I make the store easy to keep right.
 
@@ -76,7 +76,7 @@ When I work with a supplement brand, I usually focus on these areas in roughly t
 
 1. **Subscriptions.** Plans on every daily product, the right frequencies, a clear default, and a cancel flow that offers skip, pause and swap before goodbye.
 2. **Reorder flows.** Klaviyo reminders timed to serving counts, plus subscriber flows for upcoming charges and failed payments.
-3. **Product page templates.** Structured fields for claims, disclaimers and ingredients, and a layout built for mobile shoppers coming from ads.
+3. **Product page templates.** Claims, disclaimers and ingredients built into every page, and a layout built for mobile shoppers coming from ads.
 4. **Speed.** App and script audit, image cleanup, and theme fixes until mobile pages load fast.
 5. **Bundles and stacks.** Subscribable bundles with clean inventory and clear savings.
 6. **Stock and merchandising.** Back in stock signups, sold out handling and a free shipping threshold that matches real carts.
@@ -99,10 +99,10 @@ Most supplement brands start with the **AI Search and Conversion Audit** for $1,
 
 The **Build** is a fixed price project that takes 3 to 4 weeks and starts at $5,000, based on catalog size. After that, the **Growth** retainer at $4,500/month keeps the AI search and conversion work going. For brands that want one person leading the whole channel at their direction, there's **Full** at $7,500/month, which I explain on my [fractional head of ecommerce page](/fractional-head-of-ecommerce).
 
-Every plan is listed on the [pricing section](/#pricing).
+Every plan is listed on the [pricing page](/pricing).
 
 ## Book a 20 minute AI Search Review
 
 If your supplement brand is growing but the store feels like it's leaking, let's talk. Book a 20 minute AI Search Review. Before the call I run your top buyer questions through ChatGPT. On the call I'll show you where you're recommended, who shows up instead, and what's driving it. Tell me what you sell and what's frustrating you, and I'll tell you where I'd look first.
 
-[Book a 20 minute AI Search Review](/#book)
+[Book a 20 minute AI Search Review](/ai-visibility-check#book)

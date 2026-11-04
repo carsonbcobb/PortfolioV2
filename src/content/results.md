@@ -1,13 +1,20 @@
 ---
-title: "Shopify Results and Case Studies | Carson Cobb"
-description: "Everything it takes to run a Shopify store, and the results: conversion, testing, affiliates, subscriptions, email, design, speed, search and operations."
+title: "AI Search and CRO Results for Shopify | Carson Cobb"
+description: "AI search and CRO results for Shopify brands: 50+ AEO audits, 4,000+ products made readable to AI, and conversion, testing and subscription wins."
 slug: "/results"
 h1: "Results"
 ---
 
-I run Shopify stores. Not one piece of them, all of it: the testing, the traffic, the offers, the emails, the design, the speed, the data and the operations underneath. I've done that work for seed stage startups and for billion dollar companies, across supplements, skincare, food, apparel, travel and more, for 6+ years.
+I get Shopify brands recommended by AI and turn that traffic into sales. I've done the work behind both for seed stage startups and for billion dollar companies, across supplements, skincare, food, apparel, travel and more, for 6+ years.
 
 Almost every client is under NDA, so no names here. The work and the numbers are real.
+
+## AI search
+
+- **50+** AEO audits and roadmaps
+- **30+** sites optimized for AI search
+- **4,000+** products restructured with machine readable attributes
+- **48%** average organic traffic growth
 
 ## At a glance
 
@@ -18,7 +25,16 @@ Almost every client is under NDA, so no names here. The work and the numbers are
 - **100+** landing pages built for paid, affiliate and email traffic
 - **15+** industries, from startups to billion dollar brands
 
-## What it takes to run a store, and what it's produced
+## What it takes, and what it's produced
+
+### SEO, AEO and AI search
+Shoppers now ask ChatGPT, Perplexity, Gemini and Google's AI results what to buy, and those tools recommend the brands whose data they can read and trust. I audit stores for AI search readiness, write the roadmap, and then do the work, for national brands in vitamins, skincare, cosmetics, food, pet and wellness. That means complete product structured data built from each store's real attributes (ingredients, certifications, nutrition, identifiers, country of origin), fixing duplicate and conflicting schema from review apps, structuring shade and variant data, answer first product content and FAQs, clean crawler access, and the SEO fundamentals underneath it all.
+
+- **50+** AEO audits and roadmaps
+- **30+** Sites optimized for AI search
+- **4,000+** Products restructured with machine readable attributes
+- **6** AI platforms optimized for: ChatGPT, Perplexity, Gemini, Claude, Copilot and Google AI Overviews
+- **48%** Average organic traffic growth
 
 ### Conversion and A/B testing
 Every change I make is measured. I find where buyers drop off, decide what to test, build the test, read the result and ship the winner. I've run testing programs for global travel brands, clinical skincare, bestselling books, food brands and supplement brands doing nine figures, and I run the same process on every store I manage today.
@@ -69,15 +85,6 @@ Full builds, full rebuilds, theme migrations and speed work. A faster store conv
 - **3 to 6 weeks** Average time for a complete rebuild
 - **31 → 85** Mobile performance score for a women's intimates brand
 
-### SEO, AEO and AI search
-Shoppers now ask ChatGPT, Perplexity, Gemini and Google's AI results what to buy, and those tools recommend the brands whose data they can read and trust. I audit stores for AI search readiness, write the roadmap, and then do the work, for national brands in vitamins, skincare, cosmetics, food, pet and wellness. That means complete product structured data built from each store's real attributes (ingredients, certifications, nutrition, identifiers, country of origin), fixing duplicate and conflicting schema from review apps, structuring shade and variant data, answer first product content and FAQs, clean crawler access, and the SEO fundamentals underneath it all.
-
-- **25+** AEO audits and roadmaps written for national brands
-- **15+** Brands with AEO and structured data implemented end to end
-- **4,000+** Products restructured with machine readable attributes
-- **6** AI platforms optimized for: ChatGPT, Perplexity, Gemini, Claude, Copilot and Google AI Overviews
-- **48%** Average organic traffic growth
-
 ### Operations behind the store
 The part customers never see: shipping rules, inventory and backorders, order routing, logistics, app stacks and integrations. I tie it all together inside Shopify so a small team can ship without workarounds.
 
@@ -97,7 +104,7 @@ I lead designers and developers, work alongside marketing, affiliate and operati
 - **8** Agencies partnered with
 - **25+** National brands supported through agency partners
 
-## Brands I've built and run stores for
+## Brands I've worked with
 
 | Industry | Kinds of brands |
 | --- | --- |
@@ -123,4 +130,4 @@ Direct clients and agency work combined. Brand types are described, not named, b
 
 Results come from each client's own analytics, comparing the same period or the same traffic before and after the work. Numbers are shared without names and are examples, not guarantees.
 
-Want to see what's possible for your store? [Book a 20 minute AI Search Review](/#book).
+Want to see what's possible for your store? [Book a 20 minute AI Search Review](/ai-visibility-check#book).

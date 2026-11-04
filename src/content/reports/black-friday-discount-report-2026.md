@@ -88,4 +88,4 @@ Black Friday makes this worse, because markdowns get deeper and every subscriber
 - **Black Friday collection:** a published collection whose address or title contains Black Friday, BFCM or Cyber. About one in seven of these carry an earlier year in the address, so this counts published pages, not pages built for 2026. Sale collection: an address with sale, clearance, outlet, deals or last chance as a separate word (so wholesale doesn't count).
 - **Subscriptions versus markdowns:** compares each store's median markdown with its most common recurring subscription discount (checked on up to 20 products per store, best sellers first). Plans with no price change count as 0%. Leaving those out, the share is 63%.
 
-No store is named in this report. Want to see how your store compares before the sale? [Book a 20 minute AI Search Review](/#book).
+No store is named in this report. Want to see how your store compares before the sale? [Book a 20 minute AI Search Review](/ai-visibility-check#book).

@@ -143,3 +143,47 @@
     gap: 4px;
   }
 }
+
+/* AI search stats at the top of the page */
+.results-ai__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.results-ai__value {
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--accent-text);
+}
+
+.results-ai__label {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--body);
+}
+
+@media (max-width: 1023px) {
+  .results-ai__stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .results-ai__stats {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* The AI search discipline carries the three outcome cases, so it spans the full width. */
+.discipline:has(.cases) {
+  grid-column: 1 / -1;
+}
+.cases {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 8px;
+}

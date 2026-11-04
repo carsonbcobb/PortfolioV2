@@ -107,4 +107,4 @@ Supplements and pet are the least ready for gift shoppers. A gift card alone cov
 - **Gifting:** published collections with gift, holiday, Christmas, Xmas or stocking in the address or title and at least one product, plus gift card products.
 - **Bundles:** published collections with products whose address contains bundle, kit, set, pack, sampler, stack or build your own.
 
-No store is named here. If you want to see how your store compares, [book a 20 minute AI Search Review](/#book) and I'll walk through it with you.
+No store is named here. If you want to see how your store compares, [book a 20 minute AI Search Review](/ai-visibility-check#book) and I'll walk through it with you.

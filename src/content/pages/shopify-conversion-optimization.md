@@ -1,8 +1,8 @@
 ---
-title: "Shopify Conversion Optimization | Carson Cobb"
-description: "I raise Shopify conversion by fixing product pages, cart, checkout and mobile speed, then testing. Rebuilt pages average a 2.1x conversion lift."
+title: "Shopify Conversion Rate Optimization | Carson Cobb"
+description: "Conversion rate optimization for Shopify brands, built for high intent AI traffic and everyone else. Rebuilt pages average a 2.1x conversion lift."
 slug: "/shopify-conversion-optimization"
-h1: "Shopify conversion optimization that pays for itself"
+h1: "Conversion rate optimization for Shopify brands"
 faq:
   - question: "How much can conversion rate optimization raise my sales?"
     answer: "It depends on where your store starts. Across my work, rebuilt pages average a 2.1x conversion lift, and one skincare brand saw conversion rise 71% at the same ad spend. A store that's already tight will see smaller gains, and I'll tell you that upfront."
@@ -18,13 +18,19 @@ faq:
     answer: "Most brands start with the $1,500 AI Search and Conversion Audit, where I review where the store leaks conversions and how ChatGPT recommends you, then give you a prioritized plan. If you start a Build within 30 days, the full $1,500 is credited toward it."
 ---
 
-Most growing brands try to fix a revenue problem by buying more traffic. More ads, more influencers, more discounts. But if the store converts poorly, every one of those new visitors costs more than it should.
+Conversion rate optimization for Shopify brands, built for high intent AI traffic and everyone else. I rebuild the pages, offers and funnels where shoppers drop off, then test, so more of the traffic you already have turns into revenue. Rebuilt pages average a 2.1x conversion lift.
 
-Raising conversion is the cheapest growth there is. You already paid for the click. The only question is whether the store finishes the job.
+This is the second engine. [AI search](/ai-search) gets you recommended. Conversion work makes sure the store closes the sale when those shoppers arrive.
 
-I'm Carson Cobb. I help Shopify brands get recommended in ChatGPT and Google's AI answers, then make the store convert that traffic. Over 6+ years and 50+ Shopify stores, conversion work is the thing I've done most, and rebuilt pages average a 2.1x conversion lift.
+## Why does AI traffic need a store that converts?
 
-## Why your Shopify store isn't converting
+A shopper who arrives from ChatGPT has already compared options and been told why you fit. They are ready to buy. If the product page doesn't confirm what AI told them, if the price or shipping surprises them, or if the page is slow on a phone, you lose the most valuable visitor you'll get all day.
+
+The same fixes help every other visitor too. Most growing brands try to fix a revenue problem by buying more traffic. But if the store converts poorly, every new visitor costs more than it should. Raising conversion is the cheapest growth there is: you already paid for the click.
+
+Over 6+ years and 50+ Shopify stores, conversion work is where my career started, and it's what makes AI search pay off. I've done it from seed stage startups to billion dollar brands.
+
+## Why isn't your Shopify store converting?
 
 When I audit a store, the problems are rarely mysterious. They're usually small things that pile up:
 
@@ -36,7 +42,7 @@ When I audit a store, the problems are rarely mysterious. They're usually small 
 
 None of these needs a new platform. They need someone to look closely and fix them in the right order.
 
-## Product pages
+## What do I fix on product pages?
 
 The product page is where most sales are won or lost, so it's where I spend the most time.
 
@@ -44,9 +50,7 @@ I look at what a shopper sees in the first screen on mobile: the product, the pr
 
 For products people reorder, I make sure subscribe and save is visible and set up well. My [Shopify subscriptions page](/shopify-subscriptions) covers that in detail.
 
-I also build product templates on structured fields, using Shopify metafields and metaobjects, so your team can update content in one place without breaking the layout.
-
-## Cart and checkout
+## What about cart and checkout?
 
 The cart is your last chance to raise order value before the customer pays. Most carts waste it.
 
@@ -54,7 +58,7 @@ I set up the cart so it does three jobs: shows progress toward free shipping, of
 
 At checkout, I focus on what you control: making sure discounts apply cleanly, shipping options are clear, trust signals are in place, and nothing surprises the shopper at the last step.
 
-## Mobile speed
+## How much does mobile speed matter?
 
 Speed is where I find some of the biggest wins, because a slow page loses people before they see anything.
 
@@ -62,7 +66,7 @@ Most slow Shopify stores aren't slowed down by the theme. They're slowed down by
 
 One supplement brand I worked with had product pages taking 7.9 seconds to load on mobile. After the cleanup they loaded in 2.1 seconds, and conversion rose 24%. Same ads, same products, same prices.
 
-## Testing and measurement
+## How do testing and measurement work?
 
 Before I change anything, I check the tracking. If orders, add to carts and revenue aren't recorded correctly, every decision after that is a guess.
 
@@ -80,7 +84,7 @@ That's the point of this work. Every dollar you were already spending started wo
 
 Across my work I've supported more than $40M in client revenue. If you're in beauty, my page for [beauty and skincare brands](/beauty-skincare-brands) covers the extra things I check in that category.
 
-## How the work is packaged
+## What does it cost?
 
 **AI Search and Conversion Audit, $1,500.** A conversion leak review across the store, a 50 buyer question test in ChatGPT, competitor and citation analysis, and a prioritized plan. If you start a Build within 30 days, the full $1,500 is credited toward it.
 
@@ -88,10 +92,8 @@ Across my work I've supported more than $40M in client revenue. If you're in bea
 
 **Growth, $4,500/month.** Ongoing conversion testing and AI search work, with a check in every 2 weeks. For brands that want one person leading the whole channel at their direction, there's **Full** at $7,500/month. More on my [fractional head of ecommerce page](/fractional-head-of-ecommerce).
 
-Retainers have a 3 month minimum. See all options on the [pricing section](/#pricing).
+Retainers have a 3 month minimum. Every option is on the [pricing page](/pricing).
 
-## Book a 20 minute AI Search Review
+## Where do you stand today?
 
-If you're paying for traffic that isn't turning into orders, let's look at why. Book a 20 minute AI Search Review. Before the call I run your top buyer questions through ChatGPT. On the call I'll show you where you're recommended, who shows up instead, and what's driving it. Tell me about your store and your best sellers, and I'll tell you where I'd look first.
-
-[Book a 20 minute AI Search Review](/#book)
+If you're paying for traffic that isn't turning into orders, start with the free [AI Visibility Check](/ai-visibility-check). It shows whether ChatGPT recommends you, what it says about your brand, and whether your store is ready for the shoppers it sends.

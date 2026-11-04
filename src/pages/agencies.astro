@@ -1,5 +1,6 @@
 ---
 import HomeLayout from '../layouts/HomeLayout.astro';
+import SiteNav from '../components/SiteNav.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import '../styles/agencies.css';
 import {
@@ -11,15 +12,13 @@ import {
   AGENCY_STATS,
   AGENCY_PAINS,
   AGENCY_SCOPE,
-  AGENCY_PLANS,
-  AGENCY_CLIENT_PLANS,
+  AGENCY_PARTNER_INTRO,
+  AGENCY_PARTNER_PLANS,
   AGENCY_STEPS,
   AGENCY_PROMISE,
   AGENCY_FAQS,
 } from '../data/site';
 import { agenciesSchema } from '../data/schema';
-
-const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
 
 // Every booking button goes to CAL_LINK and is tracked as a book_call event.
 const book = {
@@ -29,11 +28,11 @@ const book = {
 };
 
 const description =
-  'A senior Shopify lead you can put on any account, behind the scenes or on calls with your clients as your team. You keep the relationship and the margin.';
+  'White label AI search and CRO for agencies with Shopify clients. You sell it, I implement it under your name: audits, structured data and conversion work.';
 
-const title = 'White Label Shopify Developer for Agencies | Carson Cobb';
+const title = 'AI Search and CRO Partner for Agencies | Carson Cobb';
 const heroSub =
-  'I lead client stores end to end, from strategy and CRO to the build, and join calls as part of your team. No specs, no QA, no hand holding. You sell bigger retainers without hiring senior talent.';
+  'You sell AI search and conversion work to your Shopify clients. I implement it under your name: AI visibility audits, structured data, answer first content and conversion testing. You keep the relationship and the margin.';
 
 const jsonLd = [agenciesSchema({ title, description })];
 ---
@@ -41,23 +40,11 @@ const jsonLd = [agenciesSchema({ title, description })];
 <HomeLayout
   {title}
   description={description}
-  keywords="white label Shopify developer, Shopify developer for agencies, Shopify dev capacity, Shopify development"
+  keywords="white label AI search, AEO for agencies, white label CRO, Shopify AI search partner, white label Shopify"
   jsonLd={jsonLd}
-  ogImage={{ path: '/og-image-agencies.png', alt: 'Carson Cobb, white label Shopify development for agencies' }}
+  ogImage={{ path: '/og-image-agencies.png', alt: 'Carson Cobb, white label AI search and CRO for agencies' }}
 >
-  <header class="dark">
-    <nav class="wrap nav" aria-label="Main">
-      <a href="/" class="nav__brand">Carson Cobb</a>
-      <div class="nav__links">
-        <a href="/">For brands</a>
-        <a href="#scope">What I take on</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
-        <a href="/reports">Reports</a>
-        <a {...book} class="btn btn--accent nav__cta">Book a call</a>
-      </div>
-    </nav>
-  </header>
+  <SiteNav />
 
   <main id="main">
     <!-- Hero -->
@@ -66,9 +53,9 @@ const jsonLd = [agenciesSchema({ title, description })];
         <div class="hero__text">
           <div class="hero__pill">
             <span class="dot" aria-hidden="true"></span>
-            White label Shopify partner for agencies
+            AI search and CRO implementation partner
           </div>
-          <h1 class="hero__h1">A senior Shopify lead for your clients. <span class="accent">Under your name.</span></h1>
+          <h1 class="hero__h1">AI search and CRO for your clients. <span class="accent">Under your name.</span></h1>
           <p class="hero__sub">{heroSub}</p>
           <div class="btn-row">
             <a {...book} class="btn btn--accent"
@@ -78,8 +65,8 @@ const jsonLd = [agenciesSchema({ title, description })];
             <a href="#pricing" class="btn btn--ghost-dark">See pricing</a>
           </div>
           <p class="hero__fine">
-            <strong>50+ Shopify stores, from startups to ten figure brands.</strong> Already working white label for agency
-            partners.
+            <strong>50+ AEO audits. 30+ sites optimized for AI search. 50+ Shopify stores, from startups to billion dollar brands.</strong>
+            Already working white label for agency partners.
           </p>
         </div>
 
@@ -111,19 +98,11 @@ const jsonLd = [agenciesSchema({ title, description })];
                       <span class="ticket__title">{t.title}</span>
                     </div>
                     <div class="ticket__meta">
-                      <span class="ticket__hours">{t.hours}</span>
                       <span class={`ticket__status ticket__status--${t.status}`}>{t.label}</span>
                     </div>
                   </div>
                 ))
               }
-            </div>
-            <div class="tickets__hours">
-              <div class="tickets__hours-row">
-                <span>Reserved hours used</span>
-                <span class="tickets__hours-used">24 of 32</span>
-              </div>
-              <div class="tickets__bar" aria-hidden="true"><div class="tickets__bar-fill"></div></div>
             </div>
           </div>
         </div>
@@ -152,11 +131,11 @@ const jsonLd = [agenciesSchema({ title, description })];
       <div class="wrap stack">
         <div class="head">
           <p class="eyebrow">The problem</p>
-          <h2 class="h2">Your growth is capped by senior talent, not demand.</h2>
+          <h2 class="h2">Your clients are asking about AI search.</h2>
           <p class="lede">
-            Junior and offshore developers can follow a spec. What's hard to find is someone who can run an account:
-            decide what to build, build it right the first time, and talk to the client like a partner. Without that
-            person, you turn down bigger clients or stretch your best people thin.
+            Shoppers now ask ChatGPT what to buy, and your clients want to know why a competitor shows up and they don't.
+            Most agencies don't have someone who can answer that, let alone fix it, and convert the traffic once it
+            arrives. Without that person, you turn the work down or learn on a client's account.
           </p>
         </div>
         <div class="grid grid--300">
@@ -179,9 +158,9 @@ const jsonLd = [agenciesSchema({ title, description })];
         <div class="head head--split">
           <div class="head">
             <p class="eyebrow">What I take on</p>
-            <h2 class="h2">The accounts and builds that need a senior lead.</h2>
+            <h2 class="h2">AI search and CRO work, delivered as your team.</h2>
           </div>
-          <p class="lede head__aside">Strategy, complex builds, and client facing work, delivered as your team.</p>
+          <p class="lede head__aside">Audits, implementation and reporting, under your brand and in your tools.</p>
         </div>
         <div class="grid grid--320">
           {
@@ -202,91 +181,34 @@ const jsonLd = [agenciesSchema({ title, description })];
       <div class="wrap stack">
         <div class="head">
           <p class="eyebrow">Pricing</p>
-          <h2 class="h2">Simple rates. Your markup.</h2>
-          <p class="lede">
-            Reserve senior capacity or resell a plan per client store, and bill your client whatever you like. No surprise
-            invoices.
-          </p>
+          <h2 class="h2">Partner pricing.</h2>
+          <p class="lede">{AGENCY_PARTNER_INTRO}</p>
         </div>
-
-        <div class="plans__group">
-          <div class="plans__group-head">
-            <h3 class="h3">Reserved senior capacity</h3>
-            <p class="plans__intro">Senior Shopify work across any client, with hours held for you every month.</p>
-          </div>
-          <div class="grid grid--320 plans plans--agency">
-            {
-              AGENCY_PLANS.map((p) => (
-                <div class:list={['card', 'plan', { 'plan--featured': p.featured }]}>
-                  {p.featured && <span class="plan__badge">PRIORITY</span>}
-                  <div class="plan__head">
-                    <span class:list={['tag', { 'tag--dim': p.featured }]}>{p.tag}</span>
-                    <h3 class="h3">{p.name}</h3>
-                    <div class="plan__price">
-                      {usd(p.price)}
-                      <span>{p.unit}</span>
-                    </div>
-                    <p class="plan__summary">{p.summary}</p>
-                  </div>
-                  <ul class="plan__list">
-                    {p.includes.map((i) => (
-                      <li>
-                        <span aria-hidden="true">✓</span>
-                        {i}
-                      </li>
-                    ))}
-                  </ul>
-                  <div class="plan__foot">
-                    <a {...book} class:list={['btn', p.featured ? 'btn--accent' : 'btn--outline']}>
-                      Book a call
-                    </a>
-                  </div>
+        <div class="grid grid--320 plans plans--agency">
+          {
+            AGENCY_PARTNER_PLANS.map((p) => (
+              <div class:list={['card', 'plan', { 'plan--featured': p.featured }]}>
+                <div class="plan__head">
+                  <span class:list={['tag', { 'tag--dim': p.featured }]}>{p.tag}</span>
+                  <h3 class="h3">{p.name}</h3>
+                  <p class="plan__summary">{p.summary}</p>
                 </div>
-              ))
-            }
-          </div>
-        </div>
-
-        <div class="plans__group">
-          <div class="plans__group-head">
-            <h3 class="h3">White label plans for your clients</h3>
-            <p class="plans__intro">
-              A senior lead who runs one client store under your name. Priced per store. You set the markup.
-            </p>
-          </div>
-          <div class="grid plans plans--client">
-            {
-              AGENCY_CLIENT_PLANS.map((p) => (
-                <div class="card plan">
-                  <div class="plan__head">
-                    <span class="tag">{p.tag}</span>
-                    <h3 class="h3">{p.name}</h3>
-                    <div class="plan__price">
-                      {usd(p.price)}
-                      <span>{p.unit}</span>
-                    </div>
-                    <p class="plan__summary">{p.summary}</p>
-                  </div>
-                  <ul class="plan__list">
-                    {p.includes.map((i) => (
-                      <li>
-                        <span aria-hidden="true">✓</span>
-                        {i}
-                      </li>
-                    ))}
-                  </ul>
-                  <div class="plan__foot">
-                    <a {...book} class="btn btn--outline">
-                      Book a call
-                    </a>
-                  </div>
+                <ul class="plan__list">
+                  {p.includes.map((i) => (
+                    <li>
+                      <span aria-hidden="true">✓</span>
+                      {i}
+                    </li>
+                  ))}
+                </ul>
+                <div class="plan__foot">
+                  <a {...book} class:list={['btn', p.featured ? 'btn--accent' : 'btn--outline']}>
+                    Book a call
+                  </a>
                 </div>
-              ))
-            }
-          </div>
-          <p class="lock__terms plans__note">
-            Need more in a month? Move up a plan or get a fixed quote. 30 days notice to cancel monthly plans.
-          </p>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -296,7 +218,7 @@ const jsonLd = [agenciesSchema({ title, description })];
       <div class="wrap stack">
         <div class="head">
           <p class="eyebrow">How it works</p>
-          <h2 class="h2">Extra capacity this week, not next quarter.</h2>
+          <h2 class="h2">Sell AI search this week, not next quarter.</h2>
         </div>
         <div class="grid grid--300">
           {
@@ -361,8 +283,8 @@ const jsonLd = [agenciesSchema({ title, description })];
     <!-- Final CTA -->
     <section id="book" class="dark cta">
       <div class="wrap cta__inner">
-        <h2 class="h2 cta__title">Say yes to bigger clients.</h2>
-        <p class="cta__sub">Book a 20 minute call and we'll talk through the accounts you'd hand me first.</p>
+        <h2 class="h2 cta__title">Sell AI search and CRO without hiring for it.</h2>
+        <p class="cta__sub">Book a 20 minute call and we'll talk through the client accounts you'd hand me first.</p>
         <div class="btn-row btn-row--center">
           <a {...book} class="btn btn--accent">Book an intro call</a>
           <a href={AGENCY_EMAIL_URL} class="btn btn--ghost-dark">Email me</a>

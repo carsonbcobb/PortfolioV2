@@ -106,10 +106,6 @@
   flex: none;
 }
 
-.ticket__hours {
-  font-size: 13px;
-  color: var(--dim);
-}
 
 .ticket__status {
   font-size: 11px;
@@ -133,39 +129,10 @@
   background: var(--dark-pill);
 }
 
-.tickets__hours {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  border-top: 1px solid var(--dark-line);
-  padding-top: 16px;
-}
 
-.tickets__hours-row {
-  display: flex;
-  justify-content: space-between;
-  font-size: 13px;
-  color: var(--dim);
-}
 
-.tickets__hours-used {
-  color: #fff;
-  font-weight: 600;
-}
 
-.tickets__bar {
-  height: 8px;
-  background: var(--dark-pill);
-  border-radius: 999px;
-  overflow: hidden;
-}
 
-.tickets__bar-fill {
-  width: 75%;
-  height: 8px;
-  background: var(--accent);
-  border-radius: 999px;
-}
 
 /* The problem */
 
@@ -192,49 +159,15 @@
 
 /* Pricing */
 
-/* One Partner card, kept at plan card width. */
+/* Partner pricing: the three main offers, white label. */
 .plans--agency {
-  max-width: 440px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.plans__note {
-  max-width: 900px;
-  text-align: center;
-}
-
-/* Two labeled groups: capacity, then white label client plans */
-
-.plans__group {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.plans__group-head {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  max-width: 760px;
-}
-
-.plans__intro {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--body);
-}
-
-/* Four client plans: 2x2 at the same width as the capacity cards (4 across wraps the per store prices), 1 on phones. */
-.plans--client {
-  max-width: 900px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-auto-rows: 1fr;
-}
-
-@media (max-width: 720px) {
-  .plans--client {
+@media (max-width: 960px) {
+  .plans--agency {
     grid-template-columns: minmax(0, 1fr);
-    grid-auto-rows: auto;
+    max-width: 560px;
   }
 }
 

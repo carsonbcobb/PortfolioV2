@@ -32,7 +32,7 @@ A skincare shopper wants to know three things fast. Will this work for my skin? 
 
 Most product pages bury those answers under brand copy or hide them in tabs nobody opens. I rebuild the page so the first screen on mobile shows the product, the price, who it's for and the main result, with ingredients, directions and reviews right where doubt shows up.
 
-I build these templates on Shopify metafields and metaobjects, so key ingredients, skin types and directions live in structured fields. Your team updates them once and every page stays consistent.
+Key ingredients, skin types and directions are built into your site, so every page stays consistent and accurate as your catalog changes.
 
 ### Shades and sizes that confuse people
 
@@ -67,7 +67,7 @@ Holiday sets and gift bundles are big for beauty. They're also often built the w
 When I work with a beauty brand, I usually focus on these areas in roughly this order:
 
 1. **Tracking and speed.** Clean numbers first, then mobile pages that load fast.
-2. **Product page templates.** Structured fields for ingredients, skin types and directions, with reviews and shades handled properly.
+2. **Product page templates.** Ingredients, skin types and directions built into every page, with reviews and shades handled properly.
 3. **Routines and bundles.** Sets that raise order value, shown on product pages and in the cart.
 4. **Subscriptions and replenishment.** Reorder timing per product, with subscribe and save where it fits. See my [Shopify subscriptions page](/shopify-subscriptions).
 5. **Email.** Klaviyo flows built around routines and reorders, not generic newsletters.
@@ -89,10 +89,10 @@ Most beauty brands start with the **AI Search and Conversion Audit** for $1,500.
 
 The **Build** is a fixed price project that takes 3 to 4 weeks and starts at $5,000, based on catalog size. After that, the **Growth** retainer at $4,500/month keeps the AI search and conversion work going. For brands that want one person leading the whole channel at their direction, there's **Full** at $7,500/month, which I explain on my [fractional head of ecommerce page](/fractional-head-of-ecommerce).
 
-Every plan is listed on the [pricing section](/#pricing).
+Every plan is listed on the [pricing page](/pricing).
 
 ## Book a 20 minute AI Search Review
 
 If your beauty brand is getting attention but the store isn't turning it into orders, let's talk. Book a 20 minute AI Search Review. Before the call I run your top buyer questions through ChatGPT. On the call I'll show you where you're recommended, who shows up instead, and what's driving it. Tell me what you sell and where you think the store is leaking, and I'll tell you where I'd look first.
 
-[Book a 20 minute AI Search Review](/#book)
+[Book a 20 minute AI Search Review](/ai-visibility-check#book)

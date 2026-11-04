@@ -1,0 +1,30 @@
+name = "ai-visibility-check"
+main = "src/index.ts"
+compatibility_date = "2026-11-01"
+workers_dev = true
+
+# KV namespace for the report cache and the rate limit counters.
+# Create it once with:
+#   npx wrangler kv namespace create CHECKS
+# then paste the id it prints below (replace the placeholder).
+[[kv_namespaces]]
+binding = "CHECKS"
+id = "67995bbaaaec4e02a7fcf4d3a0b872cd"
+
+[vars]
+DAILY_CHECK_LIMIT = "50"
+ALLOWED_ORIGINS = "https://www.carsoncobb.com,https://carsoncobb.com,http://localhost:4321"
+BOOKING_URL = "https://calendar.app.google/arLBYoErUBfsuqfN9"
+FROM_EMAIL = "Carson Cobb <check@carsoncobb.com>"
+NOTIFY_EMAIL = "carson@carsoncobb.com"
+SMALL_MODEL = "gpt-6-luna"
+SEARCH_MODEL = "gpt-6-luna"
+# Buyer questions only. Empty means SEARCH_MODEL. Fallback if luna answers look thin: "gpt-5.4-mini".
+BUYER_MODEL = ""
+OPENAI_BASE_URL = "https://api.openai.com/v1"
+
+# Secrets (never put these in this file). Set each with `npx wrangler secret put NAME`:
+#   OPENAI_API_KEY
+#   TURNSTILE_SECRET_KEY
+#   RESEND_API_KEY   (optional; emails are skipped when it is not set)
+# For local dev, put them in worker/.dev.vars (gitignored).
