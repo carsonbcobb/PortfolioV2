@@ -1,6 +1,6 @@
 ---
 // /ai-visibility-check: the AI Visibility Check as a step flow inside one screen.
-// Step 1 takes the store URL and confirms the detected brand and category, step 2 runs the check
+// Step 1 takes the store URL and confirms the detected brand, step 2 runs the check
 // (the Worker in worker/ streams NDJSON) and collects the email, step 3 is the score, steps 4 to 7
 // are one section each, and step 8 is the close with the booking calendar.
 // Explanatory content and the FAQ sit below the tool for search.
@@ -25,7 +25,7 @@ import '../styles/sales.css';
 
 const title = 'Does ChatGPT Recommend Your Brand? Free Check | Carson Cobb';
 const description =
-  'Free AI Visibility Check for Shopify brands. See if ChatGPT recommends you for 3 buyer questions, what it says about you, and if AI can read your store.';
+  'Free AI Visibility Check for Shopify brands. See if ChatGPT recommends your products, what it says about you, and if AI can read your store.';
 
 const ready = Boolean(CHECK_API_URL && TURNSTILE_SITE_KEY);
 const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
@@ -33,33 +33,31 @@ const auditHref = STRIPE_AUDIT_LINK || CAL_LINK;
 const auditTrack = STRIPE_AUDIT_LINK ? 'audit_checkout' : 'book_call';
 const ext = (href: string) => (href.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {});
 
+// What each score measures and why it matters. Never how to fix it: that is the audit.
 const SCORES = [
   {
     name: 'AI visibility',
     weight: 40,
-    text: 'How often ChatGPT names your brand across 3 buyer questions for your category, and how high in the answer. Being cited as a source counts too. You also see the sources AI cited for each answer and whether you appear in them.',
-    affects:
-      'Your product data and structured data, and whether the lists, reviews, articles and forums AI cites in your category mention you.',
+    checked: 'Whether ChatGPT names your brand when shoppers ask about products like your best sellers, how high it puts you, and which sources it leans on for the answer.',
+    means: 'A low score means shoppers who are ready to buy are being sent to the products AI names instead of yours.',
   },
   {
     name: 'Site readiness',
     weight: 25,
-    text: 'Whether the structured data AI reads is present and complete on each page type, and whether your products have the details AI uses to recommend them. Your product page is shown side by side with the competitor AI named most.',
-    affects:
-      'What your theme outputs, duplicate schema from apps (review apps especially), thin product descriptions, missing images and missing SKUs.',
+    checked: 'How much your top product pages tell AI about each product, and how your product page compares with the competitor AI named most.',
+    means: "A low score means AI can't describe your products with confidence, so it's less likely to recommend them or more likely to get them wrong.",
   },
   {
     name: 'Brand accuracy',
     weight: 20,
-    text: 'Whether ChatGPT describes your brand and what you sell correctly when someone asks about you by name.',
-    affects:
-      'Your About page and Organization schema, consistent descriptions across your site, and what Amazon, press and reviews say about you.',
+    checked: 'Whether ChatGPT describes your brand and what you sell correctly when someone asks about you by name.',
+    means: 'A low score means shoppers who already know your name get the wrong picture before they reach your store.',
   },
   {
     name: 'Crawler access',
     weight: 15,
-    text: 'Whether AI crawlers are allowed in your robots.txt and can actually load your pages.',
-    affects: 'robots.txt rules, and bot protection or firewall settings that block AI crawlers without anyone noticing.',
+    checked: 'Whether the crawlers behind ChatGPT and other AI tools can reach your store at all.',
+    means: "A low score means AI can't read your pages, so it can't recommend what's on them.",
   },
 ];
 
@@ -91,8 +89,8 @@ const jsonLd = [checkSchema({ title, description, faqs: CHECK_FAQS })];
           <p class="eyebrow">Free AI Visibility Check</p>
           <h1 class="flow__h1" tabindex="-1">Does ChatGPT recommend your brand?</h1>
           <p class="flow__sub">
-            Enter your store. In about a minute you'll see whether ChatGPT names you for 3 real buyer questions in your
-            category, who it names instead, and whether AI can read your product pages.
+            Enter your store. In about a minute you'll see whether ChatGPT recommends your products when shoppers ask
+            about products like yours, who it names instead, and whether AI can read your product pages.
           </p>
           {
             ready ? (
@@ -108,10 +106,6 @@ const jsonLd = [checkSchema({ title, description, faqs: CHECK_FAQS })];
                     <label class="chip">
                       <span>Brand</span>
                       <input name="brand" type="text" maxlength="60" required />
-                    </label>
-                    <label class="chip">
-                      <span>Category</span>
-                      <input name="category" type="text" maxlength="80" placeholder="your main category" required />
                     </label>
                   </div>
                   <div class="flow__actions">
@@ -193,15 +187,11 @@ const jsonLd = [checkSchema({ title, description, faqs: CHECK_FAQS })];
         <div class="wrap flow__inner flow__inner--close">
           <div class="close__text">
             <p class="eyebrow">What this means</p>
-            <h2 class="flow__h2" tabindex="-1"><span class="close__score" id="close-score"></span> This check ran 3 questions. Your buyers ask hundreds.</h2>
+            <h2 class="flow__h2" tabindex="-1"><span class="close__score" id="close-score"></span> This is one run. Your buyers ask far more.</h2>
             <p class="flow__body">
-              The full audit runs 50 built from your customers' own language, maps the sources AI trusts in your category,
-              and finds where your store loses the sale.
+              The full audit tests your products against the questions your own customers ask, across repeated runs. It
+              finds the competing products and sources AI relies on instead of you, and where your store loses the sale.
             </p>
-            <div class="close__why">
-              <p class="close__why-title">Why schema alone won't fix this</p>
-              <p>Of the four areas above, schema touches one. Getting recommended takes all four, plus a store that converts the traffic.</p>
-            </div>
             <div class="close__book">
               <p class="close__book-title" id="book-title">Prefer to talk it through?</p>
               <p class="flow__body">{CALL_TEXT}</p>
@@ -245,7 +235,7 @@ const jsonLd = [checkSchema({ title, description, faqs: CHECK_FAQS })];
             <p class="tag">Free</p>
             <h3 class="h3">This check</h3>
             <ul>
-              <li>3 questions written for your category</li>
+              <li>Questions built from your products</li>
               <li>One run</li>
               <li>A snapshot of where you stand today</li>
             </ul>
@@ -254,9 +244,9 @@ const jsonLd = [checkSchema({ title, description, faqs: CHECK_FAQS })];
             <p class="tag tag--accent">{usd(AUDIT.price)} one time</p>
             <h3 class="h3">{AUDIT.name}</h3>
             <ul>
-              <li>50 questions from your own customers' language</li>
+              <li>Your products tested against the questions your own customers ask</li>
               <li>Repeated across runs</li>
-              <li>The competitors and sources AI uses instead of you</li>
+              <li>The competing products and sources AI uses instead of you</li>
               <li>A conversion review</li>
               <li>A prioritized plan</li>
             </ul>
@@ -302,10 +292,13 @@ const jsonLd = [checkSchema({ title, description, faqs: CHECK_FAQS })];
                   <span>{sc.name}</span>
                   <span class="score-card__weight">{sc.weight}%</span>
                 </summary>
-                <p>{sc.text}</p>
                 <p>
-                  <strong>What affects it:</strong> {sc.affects}
+                  <strong>What we check:</strong> {sc.checked}
                 </p>
+                <p>
+                  <strong>Why it matters:</strong> {sc.means}
+                </p>
+                <p>The full audit covers what to do about it.</p>
               </details>
             ))
           }

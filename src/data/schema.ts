@@ -55,7 +55,7 @@ const person = {
   image: new URL(HEADSHOT ?? '/logo.png', SITE_URL).href,
   jobTitle: 'AI Search and CRO Specialist for Shopify Brands',
   description:
-    "AI search and CRO specialist for Shopify brands. I get products recommended in ChatGPT and Google's AI answers, then make sure the store turns that traffic into sales. 50+ AEO audits, 30+ sites optimized for AI search and 50+ Shopify stores, from startups to billion dollar brands.",
+    "AI search and CRO specialist for Shopify brands. I get products recommended in ChatGPT and Google's AI answers, then make sure the store turns that traffic into sales. 50+ AI search audits, 30+ sites optimized for AI search and 50+ Shopify stores, from startups to billion dollar brands.",
   email: EMAIL,
   ...sameAs(LINKEDIN_URL, LINKEDIN_COMPANY_URL),
   knowsAbout: [
@@ -316,17 +316,17 @@ export function checkSchema(meta: { title: string; description: string; faqs: { 
         '@id': appId,
         name: 'AI Visibility Check',
         description:
-          'Checks whether ChatGPT recommends a Shopify brand for 3 buyer questions, how accurately it describes the brand, whether AI crawlers can reach the store, and how complete its structured data and product data are. Returns a score from 0 to 100.',
+          "Checks whether ChatGPT recommends a Shopify brand's products for questions built from its top products, how accurately it describes the brand, whether AI crawlers can reach the store, and what its top product pages tell AI. Returns a score from 0 to 100.",
         url,
         applicationCategory: 'BusinessApplication',
         operatingSystem: 'Any',
         browserRequirements: 'Requires JavaScript',
         isAccessibleForFree: true,
         featureList: [
-          'AI visibility across 3 buyer questions in ChatGPT with web search',
+          'AI visibility for buyer questions built from the store\'s own products, in ChatGPT with web search',
           'Brand accuracy check',
           'AI crawler access for GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended and Applebot-Extended',
-          'Structured data and product data readiness',
+          'Product page readiness across the store\'s top products',
         ],
         offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD' },
         author: ref(ID.carson),
@@ -339,7 +339,7 @@ export function checkSchema(meta: { title: string; description: string; faqs: { 
 }
 
 export const AGENCY_DESCRIPTION =
-  'Agencies sell AI search and conversion work to their Shopify clients, and I implement it under their name: AI visibility audits, structured data, answer first content, off site work and conversion testing. White label, NDA signed upfront.';
+  'Agencies sell AI search and conversion work to their Shopify clients, and I implement it under their name: AI visibility audits, product data, product pages that answer buyer questions, off site work and conversion testing. White label, NDA signed upfront.';
 
 export function agenciesSchema(meta: { title: string; description: string }) {
   const url = `${AGENCIES}#pricing`;

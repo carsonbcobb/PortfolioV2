@@ -9,6 +9,8 @@ export interface Env {
   SEARCH_MODEL: string;
   /** Optional model for the buyer questions only; empty means SEARCH_MODEL. */
   BUYER_MODEL?: string;
+  /** Used for the last retry when the primary model keeps failing. Empty means no fallback. */
+  FALLBACK_MODEL?: string;
   OPENAI_BASE_URL: string;
   OPENAI_API_KEY?: string;
   TURNSTILE_SECRET_KEY?: string;
@@ -20,6 +22,8 @@ export type ProgressStep = "setup" | SectionKey;
 
 export interface SectionError {
   error: string;
+  /** True while the section is still finishing after the first results were sent. */
+  pending?: boolean;
 }
 
 export interface Source {
@@ -50,6 +54,8 @@ export interface SourcesSummary {
 
 export interface VisibilityQuestion {
   question: string;
+  /** The store product this question was built from. */
+  product?: string;
   mentioned: boolean;
   position: number | null;
   cited: boolean;
@@ -118,48 +124,38 @@ export interface CrawlersSection {
   llmsTxt: boolean;
 }
 
-export type SchemaColumn =
-  | "Organization"
-  | "WebSite"
-  | "Product"
-  | "BreadcrumbList"
-  | "ItemList"
-  | "FAQPage"
-  | "Article";
-
-export type CellValue = "present" | "incomplete" | "missing" | null;
-export type PageType = "Homepage" | "Collection" | "Product" | "FAQ" | "Blog" | "Article" | "About";
-
-export interface ReadinessPage {
-  type: PageType;
-  url: string | null;
-  found: boolean;
-  cells: Record<SchemaColumn, CellValue>;
+/** One product detail and how many of the checked product pages give it to AI. */
+export interface ReadinessRow {
+  key: string;
+  label: string;
+  on: number;
+  of: number;
+  status: "good" | "partial" | "missing";
 }
 
-export interface ProductStats {
-  total: number;
-  thin: number;
-  missingImages: number;
-  missingSku: number;
-  incomplete: number;
+/** One checked product page and the details it gives AI. */
+export interface ReadinessProduct {
+  title: string;
+  url: string;
+  has: Record<string, boolean>;
 }
 
 export interface ReadinessSection {
   score: number;
-  columns: SchemaColumn[];
-  pages: ReadinessPage[];
-  duplicates: string[];
-  products: ProductStats;
-  /** Schema product details on the product page that was scanned, or null if none was found. */
+  /** Product pages read for this section. */
+  checked: number;
+  rows: ReadinessRow[];
+  products: ReadinessProduct[];
+  /** Product detail fields on the first product page, for the competitor side by side. */
   productDetails: ProductDetails | null;
 }
 
 export interface Report {
   domain: string;
   url: string;
-  category: string;
   brand: string;
+  /** The store's top products the buyer questions were built from. */
+  products?: string[];
   checkedAt: string;
   overall: {
     score: number;
@@ -177,7 +173,13 @@ export interface Report {
   /** Absent or null when no competitor came up or its site could not be read. */
   competitor?: CompetitorCompare | null;
   weights: Record<SectionKey, number>;
-  cost: { usd: number; calls: number; searches: number; tokens: { input: number; output: number } };
+  cost: {
+    usd: number;
+    calls: number;
+    searches: number;
+    tokens: { input: number; output: number };
+    log?: { step: string; model: string; input: number; cached: number; output: number; reasoning: number; searches: number; actions?: string[]; usd: number }[];
+  };
   ms: number;
 }
 
@@ -186,12 +188,14 @@ export interface StoreContext {
   url: URL; // normalized homepage URL (origin + "/")
   origin: string;
   domain: string;
-  category: string;
   brand: string;
   homepageHtml: string | null;
   homepageStatus: number | null;
   homepageFinalUrl: string | null;
-  products: ShopifyProduct[]; // first ~10 from products.json, may be empty
+  /** The product feed (up to 250), read once per run and reused by every section. May be empty. */
+  products: ShopifyProduct[];
+  /** The store's featured or best selling products, best first (up to 8). */
+  top: ShopifyProduct[];
 }
 
 export interface ShopifyProduct {
@@ -202,7 +206,7 @@ export interface ShopifyProduct {
   product_type?: string;
   vendor?: string;
   images?: unknown[];
-  variants?: { sku?: string | null }[];
+  variants?: { sku?: string | null; price?: string | null; available?: boolean }[];
 }
 
 export type Emit = (obj: Record<string, unknown>) => void;

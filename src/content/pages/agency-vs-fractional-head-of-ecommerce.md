@@ -9,7 +9,7 @@ faq:
   - question: "When is an agency the better choice?"
     answer: "When you have a large, clearly scoped project like a full rebrand and redesign, need a team of specialists working at once, and have someone in house who can manage the agency. In that case, an agency can be the right call."
   - question: "Can I use both?"
-    answer: "Yes, and many brands do. A fractional head of ecommerce can lead the roadmap and the numbers, and brief an agency or specialist for specific projects. I work alongside agencies and freelancers often."
+    answer: "Yes, and many brands do. A fractional head of ecommerce can lead the plan and the numbers, and brief an agency or specialist for specific projects. I work alongside agencies and freelancers often."
   - question: "Who is accountable for results with a fractional head of ecommerce?"
     answer: "I am. I propose the priorities, you decide, and I do much of the work, brief anyone else involved, and report on what moved. That's the main difference from buying hours or deliverables."
   - question: "What about hiring a full time head of ecommerce?"
@@ -30,7 +30,7 @@ I'm Carson Cobb. I help Shopify brands get recommended in ChatGPT and Google's A
 
 **Stitching vendors together** is what most brands end up with by default. A developer here, a designer there, an email freelancer, an agency for a project. That's often about four invoices a month, and you're the one connecting them.
 
-**A fractional head of ecommerce** is one senior person who leads the store, the roadmap and the vendors on a monthly retainer, while you stay in control. With me, retainers start at $4,500/month.
+**A fractional head of ecommerce** is one senior person who leads the store, the plan and the vendors on a monthly retainer, while you stay in control. With me, retainers start at $4,500/month.
 
 Agencies sit somewhere in the middle. Some are excellent. The question is less whether they're good and more whether their model fits what you need right now.
 
@@ -44,10 +44,10 @@ With a full time hire, you pay a salary whether there's a full month of senior w
 
 With a fractional head of ecommerce, you pay one retainer, and the management is part of the job. My options:
 
-* **AI Search and Conversion Audit, $1,500.** A 50 buyer question test in ChatGPT, competitor and citation analysis, a conversion leak review and a prioritized plan. Credited toward a Build started within 30 days.
+* **AI Search and Conversion Audit, $1,500.** Your products tested against the questions your buyers ask in ChatGPT, the competing products and sources AI uses instead of you, a conversion leak review and a prioritized plan. Credited toward a Build started within 30 days.
 * **Build, fixed price, 3 to 4 weeks.** From $5,000, based on catalog size. AI search work across every template, a conversion rebuild of key pages and measurement setup.
 * **Growth, $4,500/month.** Ongoing AI search tracking, on site and off site AI search work, and conversion testing.
-* **Full, $7,500/month.** Your ecommerce lead, working at your direction. Everything in Growth plus the roadmap, launches, Klaviyo, apps and vendors.
+* **Full, $7,500/month.** Your ecommerce lead, working at your direction. Everything in Growth plus the plan, launches, Klaviyo, apps and vendors.
 
 Retainers have a 3 month minimum. All options are on the [pricing page](/pricing).
 
@@ -89,7 +89,7 @@ A fractional lead tends to fit better when:
 * You need ongoing improvements more than one big project, including how you show up in ChatGPT and Google's AI answers.
 * You aren't ready for a $150K+ a year hire, or you want to get the channel in shape before you make one.
 
-Here's what that looks like in practice. In the first 90 days, I fix tracking, speed and key pages in month 1, raise order value with upsells, subscriptions and email in month 2, and set up a testing roadmap and promo calendar in month 3. In a sample month for a skincare client, conversion went from 2.1% to 3.2% and average order value from $58 to $64. More on my [fractional head of ecommerce page](/fractional-head-of-ecommerce).
+Here's what that looks like in practice. In the first 90 days, I fix tracking, speed and key pages in month 1, raise order value with upsells, subscriptions and email in month 2, and set up a testing plan and promo calendar in month 3. In a sample month for a skincare client, conversion went from 2.1% to 3.2% and average order value from $58 to $64. More on my [fractional head of ecommerce page](/fractional-head-of-ecommerce).
 
 ## Quick comparison
 

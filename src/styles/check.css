@@ -464,6 +464,10 @@
   flex-direction: column;
   gap: 14px;
   min-height: 0;
+  /* A card taller than the stage (the 10 row readiness table on a phone) scrolls inside itself
+     instead of spilling under the Back / Next bar. */
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 .sect__cost {
   margin: auto 0 0;
@@ -795,19 +799,23 @@
   color: var(--accent);
 }
 
-/* Step 7: page type by schema grid */
-.grid7 {
+/* Step 7: product details across the top product pages */
+.ready__lead {
+  margin: 0;
+}
+.ready {
   width: 100%;
   border-collapse: collapse;
   font-size: 14px;
 }
-.grid7 th,
-.grid7 td {
-  padding: 7px 4px;
+.ready th,
+.ready td {
+  padding: 8px 6px;
   border-bottom: 1px solid var(--dark-line);
-  text-align: center;
+  text-align: left;
+  vertical-align: middle;
 }
-.grid7 thead th {
+.ready thead th {
   font-family: var(--mono);
   font-size: 11px;
   font-weight: 600;
@@ -815,52 +823,78 @@
   text-transform: uppercase;
   color: var(--dim);
 }
-.grid7 abbr {
-  text-decoration: none;
-}
-.grid7 tbody th {
-  text-align: left;
+.ready tbody th {
   font-weight: 600;
+}
+.ready__count {
+  color: var(--soft);
   white-space: nowrap;
 }
-.grid7__nf {
-  font-weight: 400;
-  font-size: 12px;
-  color: var(--faint);
-}
-.cell {
+.ready__status {
   display: inline-block;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  vertical-align: middle;
+  padding: 2px 8px;
+  border: 1px solid var(--dark-btn);
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
-.cell--present {
-  background: var(--green);
+.ready__status--good {
+  border-color: var(--green);
+  color: var(--green);
 }
-.cell--incomplete {
-  border: 2px solid var(--accent);
+.ready__status--partial {
+  border-color: var(--soft);
+  color: var(--soft);
 }
-.cell--missing {
-  background: var(--accent);
+.ready__status--missing {
+  border-color: var(--accent);
+  color: var(--accent);
 }
-.cell--na {
-  width: 4px;
-  height: 4px;
-  background: var(--dark-btn);
+.ready__more {
+  border-top: 1px solid var(--dark-line);
+  padding-top: 10px;
 }
-.legend {
+.ready__more > summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+}
+.ready__more[open] > summary {
+  margin-bottom: 10px;
+}
+.ready__products {
   margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 18px;
-  font-size: 13px;
-  color: var(--dim);
-}
-.legend > span {
-  display: inline-flex;
-  align-items: center;
+  padding: 0;
+  list-style: none;
+  display: grid;
   gap: 8px;
+  font-size: 14px;
+}
+.ready__products li {
+  display: grid;
+  gap: 2px;
+}
+.ready__products span {
+  color: var(--soft);
+}
+.q__product {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--dim);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sect__wait {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 /* Step 8: the close */
@@ -1199,19 +1233,10 @@
   .bot {
     padding: 7px 10px;
   }
-  .grid7 {
+  .ready th,
+  .ready td {
+    padding: 7px 4px;
     font-size: 13px;
-  }
-  .grid7 th,
-  .grid7 td {
-    padding: 6px 2px;
-  }
-  .grid7 thead th {
-    font-size: 10px;
-    letter-spacing: 0.02em;
-  }
-  .grid7__nf {
-    display: none;
   }
   .close__text {
     justify-content: flex-start;

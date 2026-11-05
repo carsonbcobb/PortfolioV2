@@ -5,7 +5,7 @@ slug: "/pet-brands"
 h1: "Shopify for pet food, treat and supplement brands"
 faq:
   - question: "Do you work with pet food and pet supplement brands?"
-    answer: "Yes. Pet food, treats and supplements are a natural fit for what I do, because pets eat on a schedule and owners reorder on a schedule. The same subscription, bundle and speed problems I fix in other categories show up in pet stores all the time."
+    answer: "Yes. Pet food, treats and supplements are a natural fit for what I do, because pets eat on a schedule and owners reorder on a schedule. The same subscription, bundle and speed problems I fix for other brands show up in pet stores all the time."
   - question: "How do you set up autoship on Shopify?"
     answer: "Autoship is a subscription. I set it up in Recharge, Skio or native Shopify selling plans, with frequencies based on bag size, serving size and how many pets a household has, plus easy skip, pause and swap options so owners don't cancel when they have too much."
   - question: "Should we sell a trial pack?"
@@ -86,7 +86,7 @@ I keep client names private, but the numbers are real. Across my work, rebuilt p
 
 ## How to work with me
 
-Most pet brands start with the **AI Search and Conversion Audit** for $1,500. I run 50 buyer questions through ChatGPT, look at which competitors and sources get cited instead of you, review where the store leaks conversions, and give you a prioritized plan. If you start a Build within 30 days, the full $1,500 is credited toward it.
+Most pet brands start with the **AI Search and Conversion Audit** for $1,500. I test your products against the questions your buyers ask in ChatGPT, look at which competing products and sources AI uses instead of you, review where the store leaks conversions, and give you a prioritized plan. If you start a Build within 30 days, the full $1,500 is credited toward it.
 
 The **Build** is a fixed price project that takes 3 to 4 weeks and starts at $5,000, based on catalog size. After that, the **Growth** retainer at $4,500/month keeps the AI search and conversion work going. For brands that want one person leading the whole channel at their direction, there's **Full** at $7,500/month, which I explain on my [fractional head of ecommerce page](/fractional-head-of-ecommerce).
 

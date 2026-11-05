@@ -1,8 +1,8 @@
 ---
-title: "Product Data Depth 2026: Can AI Answer From Your Pages?"
-description: "39% of 121,519 Shopify products have under 300 characters of description. How deep product data is, by category, and what answer first content looks like."
-slug: "/reports/product-data-depth-answer-first-content"
-h1: "Product data depth and answer first content"
+title: "How Deep Is Shopify Product Data? (2026)"
+description: "39% of 121,519 Shopify products have under 300 characters of description. How deep product data is, by category, and what product copy should lead with."
+slug: "/reports/shopify-product-data-depth-2026"
+h1: "How deep Shopify product data really is"
 datePublished: 2026-11-04
 dateModified: 2026-11-04
 reportStores: 606
@@ -12,8 +12,8 @@ faq:
     answer: "Across 121,519 products from 606 US Shopify stores, the median description was 372 characters of text, about 60 words. 39% had under 300 characters and 8% had no description at all."
   - question: "Why does product description length matter for AI search?"
     answer: "AI assistants answer specific questions like who a product is for, what is in it and how to use it. If the product page doesn't state those facts, the assistant has to find them elsewhere or leave the product out. Length isn't the goal. Answers are."
-  - question: "What is answer first content?"
-    answer: "Writing that states the answer to a shopper's question in the first sentence, then supports it. On a product page it means short, direct statements like who it's for, what it does, what's in it and how to use it, in text a machine can read."
+  - question: "What should a product description cover?"
+    answer: "The facts buyers ask about, stated plainly near the top: who it's for, what it does, what's in it or what it's made of, how to use it, and how it compares. Then the story and the brand voice. Product copy that leads with those facts gives AI something accurate to quote."
 ---
 
 **By Carson Cobb. Data checked November 2026.**
@@ -64,9 +64,9 @@ Some of these facts live elsewhere on the page, in tabs, images or accordions lo
 
 Most brands have already done the hard part, writing the answers. Labeling them is the cheap part, and it's the part that's usually missing.
 
-## What answer first looks like on a product page
+## What product copy should lead with
 
-Answer first means each block of text starts with the answer, then supports it. On a product page that usually means five short statements, in plain text, near the top of the description:
+Product copy that leads with the facts buyers ask about states each fact first, then supports it. On a product page that usually means five short statements, in plain text, near the top of the description:
 
 1. **Who it's for.** "For dogs over 7 with stiff joints."
 2. **What it does.** One sentence, no adjectives doing the work.

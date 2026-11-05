@@ -1,0 +1,25 @@
+---
+// This report moved to /reports/shopify-product-data-depth-2026. The real 301 is an Amplify "Rewrites and
+// redirects" rule (source /reports/product-data-depth-answer-first-content, target
+// /reports/shopify-product-data-depth-2026, type 301). This page only catches old links if that rule is
+// missing: it forwards at once, is kept out of search, and is not in the sitemap or llms.txt.
+import { SITE_URL } from '../../data/site';
+const path = '/reports/shopify-product-data-depth-2026';
+const target = `${SITE_URL}${path}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="refresh" content={`0; url=${path}`} />
+    <link rel="canonical" href={target} />
+    <title>Moved: How deep Shopify product data really is</title>
+  </head>
+  <body>
+    <h1>This report has moved</h1>
+    <p>Read it at <a href={path}>How deep Shopify product data really is</a>.</p>
+  </body>
+</html>

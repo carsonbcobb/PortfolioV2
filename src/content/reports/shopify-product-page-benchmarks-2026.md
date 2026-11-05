@@ -20,7 +20,7 @@ faq:
 
 **By Carson Cobb, Fractional Head of Ecommerce. Data checked November 2026.**
 
-The product page is where the sale happens or doesn't. Most advice about product pages is opinion. This report is what 606 growing Shopify brands actually publish: how many photos, how much copy, how often video, and how they price. What AI reads from these pages is covered in the [product data depth report](/reports/product-data-depth-answer-first-content).
+The product page is where the sale happens or doesn't. Most advice about product pages is opinion. This report is what 606 growing Shopify brands actually publish: how many photos, how much copy, how often video, and how they price. What AI reads from these pages is covered in the [product data depth report](/reports/shopify-product-data-depth-2026).
 
 ## The short version
 

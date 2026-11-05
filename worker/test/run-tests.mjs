@@ -17,10 +17,10 @@ fs.mkdirSync(out, { recursive: true });
 
 const MOCK_PORT = 8790;
 const STORES = [
-  { url: "https://www.allbirds.com", category: "sneakers" },
-  { url: "brooklinen.com", category: "bed sheets" },
+  { url: "https://www.allbirds.com" },
+  { url: "brooklinen.com" },
 ];
-const FAIL_STORE = { url: "https://www.deathwishcoffee.com", category: "coffee" };
+const FAIL_STORE = { url: "https://www.deathwishcoffee.com" };
 const IP_A = "198.51.100.10";
 const IP_B = "198.51.100.20";
 const ORIGIN = "http://localhost:4321";
@@ -95,13 +95,13 @@ async function check(body, ip = IP_A) {
   return { status: res.status, headers: res.headers, text, lines, json, ms };
 }
 
-const form = (url, category = "sneakers") => ({ url, category, email: "test@example.com", token: "XXXX.DUMMY.TOKEN.XXXX" });
+const form = (url) => ({ url, email: "test@example.com", token: "XXXX.DUMMY.TOKEN.XXXX" });
 const done = (r) => r.lines.find((l) => l.type === "done");
 const mock = (p, body) =>
   fetch(`http://127.0.0.1:${MOCK_PORT}${p}`, { method: body ? "POST" : "GET", body: body && JSON.stringify(body) }).then((r) => r.json());
 
 function validReport(rep) {
-  const keys = ["domain", "url", "category", "brand", "checkedAt", "overall", "sections", "weights", "cost", "ms"];
+  const keys = ["domain", "url", "brand", "products", "checkedAt", "overall", "sections", "weights", "cost", "ms"];
   const sec = ["visibility", "accuracy", "crawlers", "readiness"];
   return (
     rep &&
@@ -146,9 +146,9 @@ async function main() {
 
   // bad_request
   for (const [name, body] of [
-    ["missing url", { category: "x", token: "t" }],
+    ["missing url", { token: "t" }],
     ["bad email", { ...form("allbirds.com"), email: "not-an-email" }],
-    ["category over 80 chars", { ...form("allbirds.com"), category: "x".repeat(81) }],
+    ["brand over 60 chars", { ...form("allbirds.com"), brand: "x".repeat(61) }],
     ["missing token", { ...form("allbirds.com"), token: "" }],
   ]) {
     const r = await check(body);
@@ -172,7 +172,7 @@ async function main() {
     r = await post("/detect", { url: "http://127.0.0.1" });
     record("/detect rejects a private address", r.status === 400 && r.json?.error === "invalid_url", r.json?.message);
     r = await post("/detect", { url: "allbirds.com" });
-    record("/detect reads brand and category", r.status === 200 && !!r.json?.brand && typeof r.json?.category === "string", JSON.stringify(r.json));
+    record("/detect reads the brand", r.status === 200 && !!r.json?.brand && !("category" in r.json), JSON.stringify(r.json));
     const rep = await fetch(base + "/report?domain=example.com", { headers: { origin: ORIGIN } });
     record("/report 404 for a store with no saved report", rep.status === 404);
   }
@@ -199,7 +199,7 @@ async function main() {
   const timings = {};
   for (const s of STORES) {
     await mock("/__reset", {});
-    const r = await check(form(s.url, s.category), IP_A);
+    const r = await check(form(s.url), IP_A);
     const rep = done(r)?.report;
     const ticket = done(r)?.ticket;
     if (ticket) {
@@ -247,7 +247,7 @@ async function main() {
 
   // Cache hit
   {
-    const r = await check(form(STORES[0].url, STORES[0].category), IP_A);
+    const r = await check(form(STORES[0].url), IP_A);
     record(
       "Cache hit returns instantly",
       r.status === 200 && r.lines.length === 1 && r.lines[0].type === "done" && r.lines[0].cached === true && r.ms < 1500,
@@ -258,7 +258,7 @@ async function main() {
   // One section failing (search calls return 500). IP A: check 3.
   {
     await mock("/__mode", { failSearch: true });
-    const r = await check(form(FAIL_STORE.url, FAIL_STORE.category), IP_A);
+    const r = await check(form(FAIL_STORE.url), IP_A);
     await mock("/__mode", { failSearch: false });
     const rep = done(r)?.report;
     fs.writeFileSync(path.join(out, `failure-${rep?.domain || "store"}.ndjson`), r.text);
@@ -273,16 +273,16 @@ async function main() {
       `${(r.ms / 1000).toFixed(1)}s, errors: ${errs.join(",")}, ok: ${oks.join(",")}, message: "${rep?.sections.visibility.error}"`,
     );
     record("Overall reweights over successful sections", rep && rep.overall.score === expectedScore, `overall ${rep?.overall.score}, expected ${expectedScore}`);
-    const again = await check(form(FAIL_STORE.url, FAIL_STORE.category), IP_B);
+    const again = await check(form(FAIL_STORE.url), IP_B);
     // A report with failed sections is not cached, so this is a fresh check from IP B (its 1st), not a cache hit.
     record("Report with a failed section is not cached", again.status === 200 && !again.lines.some((l) => l.cached), `${(again.ms / 1000).toFixed(1)}s`);
   }
 
   // 4th fresh check from IP A in one day -> 429
   {
-    const r = await check(form("https://www.kyliecosmetics.com", "lip kits"), IP_A);
+    const r = await check(form("https://www.kyliecosmetics.com"), IP_A);
     record("4th fresh check from one IP returns 429", r.status === 429 && r.json?.error === "rate_limited", r.json?.message);
-    const c = await check(form(STORES[0].url, STORES[0].category), IP_A);
+    const c = await check(form(STORES[0].url), IP_A);
     record("Cache hit still served after the IP limit", c.status === 200 && c.lines[0]?.cached === true);
   }
   stop(w);

@@ -1,11 +1,11 @@
 ---
 title: "Fractional Head of Ecommerce for Shopify | Carson Cobb"
-description: "A fractional head of ecommerce for Shopify brands. I lead the roadmap, store, AI search and vendors on a monthly retainer, not a full time salary."
+description: "A fractional head of ecommerce for Shopify brands. I lead the plan, store, AI search and vendors on a monthly retainer, not a full time salary."
 slug: "/fractional-head-of-ecommerce"
 h1: "A fractional head of ecommerce for your Shopify store"
 faq:
   - question: "What does a fractional head of ecommerce do?"
-    answer: "I lead the Shopify channel the way a full time hire would: the roadmap, the numbers, the store, AI search and conversion, the apps, email and the vendors around it. You decide, and nothing goes live without your sign off. The difference is you pay a monthly retainer instead of a salary, and I bring patterns from 50+ Shopify stores with me."
+    answer: "I lead the Shopify channel the way a full time hire would: the plan, the numbers, the store, AI search and conversion, the apps, email and the vendors around it. You decide, and nothing goes live without your sign off. The difference is you pay a monthly retainer instead of a salary, and I bring patterns from 50+ Shopify stores with me."
   - question: "How is this different from hiring an agency?"
     answer: "An agency usually delivers projects someone else on your side has to scope and manage. As your fractional head of ecommerce, I'm the one scoping and managing. I propose what matters this month, you decide, and I do much of the work myself. My agency vs fractional comparison goes deeper."
   - question: "Can you manage the freelancers and agencies we already have?"
@@ -32,7 +32,7 @@ The title sounds bigger than it is. In practice it means one person leads the wo
 
 That covers:
 
-* **The roadmap.** What we fix, build and test each month, ranked by revenue impact, not by who asked loudest. I propose, you decide.
+* **The plan.** What we fix, build and test each month, ranked by revenue impact, not by who asked loudest. I propose, you decide.
 * **The numbers.** Conversion rate, average order value, subscription share, repeat rate, and the tracking underneath them so we can trust what we see.
 * **The store.** Product pages, collections, cart, speed, merchandising and promos. I do most of this work myself, and nothing goes live without your sign off.
 * **AI search and conversion.** How ChatGPT and Google's AI answers describe and recommend you, and how well the store turns that traffic into orders.
@@ -62,7 +62,7 @@ I work the same way on almost every store, because the order matters.
 
 **Month 2: order value.** Upsells and bundles in Rebuy or your theme, a real subscription offer in Recharge or Skio, and Klaviyo flows that bring people back. If subscriptions are part of your business, my [Shopify subscriptions page](/shopify-subscriptions) covers how I approach them.
 
-**Month 3: testing roadmap and promo calendar.** By now I know your store well enough to plan tests that matter and to map out promos ahead of time, so the next sale isn't put together the night before.
+**Month 3: testing plan and promo calendar.** By now I know your store well enough to plan tests that matter and to map out promos ahead of time, so the next sale isn't put together the night before.
 
 After 90 days the work becomes a steady rhythm: test, fix, ship, report.
 
@@ -86,7 +86,7 @@ This work runs on one of three retainers, each with a 3 month minimum except Ded
 | Full | $7,500/month | Up to 60 hours a month | Weekly call, plus 1 extra call a week when needed |
 | Dedicated | Let's talk | Full time capacity | Built around your team |
 
-**Full** is the fractional head of ecommerce role. I act as your ecommerce lead, working at your direction: roadmap, launches and promotions for your sign off, Klaviyo day to day, subscriptions, merchandising, apps and vendors, plus the AI search and conversion work. You get a weekly report and QA on everything that ships.
+**Full** is the fractional head of ecommerce role. I act as your ecommerce lead, working at your direction: the plan, launches and promotions for your sign off, Klaviyo day to day, subscriptions, merchandising, apps and vendors, plus the AI search and conversion work. You get a weekly report and QA on everything that ships.
 
 **Growth** covers the AI search and conversion work without the full ecommerce lead role. **Dedicated** is full time capacity for brands that need it. Most brands start with the **$1,500 AI Search and Conversion Audit**.
 

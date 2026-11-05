@@ -48,6 +48,6 @@ One supplement brand I worked with had product pages taking 7.9 seconds to load 
 
 Before I change anything, I check the tracking. If orders, add to carts and revenue aren't recorded correctly, every decision after that is a guess.
 
-Once the numbers are right and the obvious problems are fixed, I build a testing roadmap. Each test has a clear idea behind it, a single change to measure, and enough traffic to read the result. Then I ship the winners and write down what we learned so the next test is smarter.
+Once the numbers are right and the obvious problems are fixed, I build a testing plan. Each test has a clear idea behind it, a single change to measure, and enough traffic to read the result. Then I ship the winners and write down what we learned so the next test is smarter.
 
 If your store doesn't have the traffic for clean tests yet, that's fine. I'll fix the clear problems first and introduce testing when it makes sense.

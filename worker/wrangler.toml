@@ -21,6 +21,8 @@ SMALL_MODEL = "gpt-6-luna"
 SEARCH_MODEL = "gpt-6-luna"
 # Buyer questions only. Empty means SEARCH_MODEL. Fallback if luna answers look thin: "gpt-5.4-mini".
 BUYER_MODEL = ""
+# Last try for any call when the primary model keeps failing (rate limits, outages). Empty disables it.
+FALLBACK_MODEL = "gpt-5.4-mini"
 OPENAI_BASE_URL = "https://api.openai.com/v1"
 
 # Secrets (never put these in this file). Set each with `npx wrangler secret put NAME`:

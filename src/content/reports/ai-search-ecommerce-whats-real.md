@@ -72,7 +72,7 @@ OpenAI launched Instant Checkout in September 2025 and pulled back from it in Ma
 Google's AI optimization guide lists llms.txt as something you can skip. No major AI search product says it reads the file, and the public crawler log data shows AI bots rarely request it. Shopify now generates one for 95% of stores anyway. Details in [Does llms.txt do anything?](/reports/does-llms-txt-do-anything)
 
 ### 8. Chunking content for AI helps. **Unproven.**
-Google's same guide groups content chunking and AI specific rewriting with the tactics you don't need. What does help is a page that answers real questions clearly, which was good practice before AI. See [product data depth](/reports/product-data-depth-answer-first-content).
+Google's same guide groups content chunking and AI specific rewriting with the tactics you don't need. What does help is a page that answers real questions clearly, which was good practice before AI. See [product data depth](/reports/shopify-product-data-depth-2026).
 
 ### 9. Structured data helps AI describe products. **Likely.**
 Microsoft's Fabrice Canel said publicly that schema markup helps Microsoft's models understand content. Google says no special markup is required for its AI features, while its standard product structured data still feeds its shopping results. In my own test of 24 products, ChatGPT gave the right price for all 20 that had product structured data, and couldn't find a price for 2 of the 4 that had none. Ratings were less reliable either way. See [Does schema change what ChatGPT says?](/reports/does-schema-change-what-chatgpt-says)
