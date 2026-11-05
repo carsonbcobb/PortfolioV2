@@ -1,6 +1,6 @@
 ---
 title: "Does Schema Change What ChatGPT Says About a Product?"
-description: "I asked ChatGPT the price and rating of 24 Shopify products with clean, duplicate, partial or no structured data, then checked every answer against the page."
+description: "I asked ChatGPT the price and rating of 24 Shopify products with clean, duplicate, partial or no structured data, and checked each answer on the page."
 slug: "/reports/does-schema-change-what-chatgpt-says"
 h1: "Does schema change what ChatGPT says?"
 datePublished: 2026-11-04

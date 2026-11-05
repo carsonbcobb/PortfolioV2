@@ -2,7 +2,7 @@ import { execFileSync } from 'node:child_process';
 import type { APIRoute } from 'astro';
 import { SITE_URL } from '../data/site';
 import { CONTENT_PAGES, TOOLS } from '../data/pages';
-import { REPORTS, slugOf } from '../data/reports';
+import { REPORTS, DESIGNED_PAGES, slugOf } from '../data/reports';
 
 // Each page with the files its content comes from. lastmod is the last commit touching any of them.
 const pages: [string, string[]][] = [
@@ -11,7 +11,11 @@ const pages: [string, string[]][] = [
   ['/pricing', ['src/pages/pricing.astro', 'src/data/site.ts', 'src/data/schema.ts']],
   ['/ai-visibility-check', ['src/pages/ai-visibility-check.astro', 'src/data/site.ts', 'src/data/schema.ts']],
   ['/results', ['src/content/results.md', 'src/pages/results.astro', 'src/data/results.ts']],
-  ...CONTENT_PAGES.map((p): [string, string[]] => [`/${p.slug}`, [`src/content/pages/${p.slug}.md`, 'src/data/pages.ts']]),
+  // Designed pages (ai-search, shopify-conversion-optimization) also render from their own route file.
+  ...CONTENT_PAGES.map((p): [string, string[]] => [
+    `/${p.slug}`,
+    [`src/content/pages/${p.slug}.md`, 'src/data/pages.ts', ...(DESIGNED_PAGES.includes(p.slug) ? [`src/pages/${p.slug}.astro`] : [])],
+  ]),
   ['/reports', ['src/content/reports/index.md', 'src/pages/reports/index.astro', 'src/data/reports.ts']],
   ...REPORTS.map(slugOf)
     .filter((s) => s.startsWith('reports/'))

@@ -111,7 +111,7 @@ export const BRANDS = {
 };
 
 // The last paragraph with the intro call link becomes the closing call to action.
-const measured = section('How these numbers');
+const measured = section('How I measure');
 const measuredParas = paragraphs(measured.body);
 const closing = measuredParas.find((p) => /\]\(\/ai-visibility-check#book\)/.test(p));
 export const MEASURED = {

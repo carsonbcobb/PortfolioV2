@@ -126,7 +126,9 @@ I lead designers and developers, work alongside marketing, affiliate and operati
 
 Direct clients and agency work combined. Brand types are described, not named, because almost every client is under NDA.
 
-## How these numbers are measured
+## How I measure
+
+AI visibility is measured on the same buyer questions before and after the work, in repeated runs. Conversion results compare the same store before and after launch.
 
 Results come from each client's own analytics, comparing the same period or the same traffic before and after the work. Numbers are shared without names and are examples, not guarantees.
 

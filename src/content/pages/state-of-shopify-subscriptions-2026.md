@@ -1,6 +1,6 @@
 ---
 title: "State of Shopify Subscriptions 2026: Data From 606 Stores"
-description: "I checked 606 Shopify stores and 121,519 products for subscriptions, sold out best sellers, gifting and bundles. Here's what growing brands leave on the table."
+description: "I checked 606 Shopify stores and 121,519 products for subscriptions, sold out best sellers, gifting and bundles. What growing brands leave on the table."
 slug: "/state-of-shopify-subscriptions-2026"
 h1: "The State of Shopify Subscriptions 2026"
 datePublished: 2026-10-31

@@ -7,13 +7,19 @@ faq:
   - question: "Which Klaviyo flows should every Shopify store have?"
     answer: "Start with these: welcome, browse abandonment, cart and checkout abandonment, post purchase, back in stock and winback. If you sell subscriptions, add subscriber flows for upcoming orders, failed payments and cancellations."
   - question: "Do you write the emails too?"
-    answer: "Yes. I write short, plain emails in your brand's voice and build them in Klaviyo. If you have a designer or copywriter you like, I'll work with them and handle the flow logic and setup."
+    answer: "Yes. I write and build the emails in your brand's templates, in your brand's voice. Photography and new brand design come from you or your designer. If you have a copywriter you like, I'll work with them and handle the flow logic and setup."
+  - question: "Can I hire you just for email?"
+    answer: "Email and Klaviyo work is part of the Full retainer. It isn't sold on its own."
+  - question: "We don't use Klaviyo yet. Can you set it up?"
+    answer: "Yes. I can set up Klaviyo from scratch."
   - question: "Can you fix our existing flows instead of starting over?"
     answer: "Usually, yes. Most accounts I audit have the right flows switched on but with broken timing, missing filters or emails that no longer match the store. I fix what's there before building anything new."
   - question: "Do you run campaigns and newsletters?"
     answer: "On the Full retainer, campaigns are part of the promo calendar I plan with you. The flows come first, because they keep earning every day without anyone pressing send."
-  - question: "Does Klaviyo work with Recharge and Skio?"
-    answer: "I connect subscription data from Recharge or Skio to Klaviyo for every subscription client, so subscriber emails can use real order dates and subscription status. I check the setup on your account before building on it."
+  - question: "Which subscription apps do you work with?"
+    answer: "Recharge, Skio, Loop, Shopify's own subscriptions, and other major subscription apps. I connect subscription data to Klaviyo for every subscription client, so subscriber emails can use real order dates and subscription status. I check the setup on your account before building on it."
+  - question: "What do you report on?"
+    answer: "Flow and campaign revenue, email's share of store revenue, list growth and subscriber churn, in the monthly report."
   - question: "How do we get started?"
     answer: "Most brands start with the $1,500 AI Search and Conversion Audit, where I review the store, the Klaviyo account and how ChatGPT recommends you, then give you a prioritized plan. If you start a Build within 30 days, the full $1,500 is credited toward it."
 ---
@@ -85,7 +91,7 @@ That's also why I fix tracking first. If the store isn't sending clean order and
 
 **AI Search and Conversion Audit, $1,500.** I review your Klaviyo account along with the rest of the store, test your products against the questions your buyers ask in ChatGPT, and give you a prioritized plan. If you start a Build within 30 days, the full $1,500 is credited toward it.
 
-**Full, $7,500/month.** Your ecommerce lead, working at your direction. Klaviyo flows, segments and campaigns are handled day to day as part of the store, with launches and promotions brought to you for sign off. 3 month minimum.
+**Full, $7,500/month.** Your ecommerce lead, working at your direction. Klaviyo flows, segments and campaigns are handled day to day as part of the store, with launches and promotions brought to you for sign off. Email is part of Full and isn't sold on its own. I do the work myself; if something needs more than 60 hours, or a specialist skill like photography, I tell you up front and either quote it or recommend someone you hire directly. 3 month minimum.
 
 All options are on the [pricing page](/pricing). In the first 90 days of a retainer, email is the main focus of month 2, after tracking, speed and key pages are fixed in month 1.
 

@@ -99,6 +99,20 @@
   color: var(--accent);
 }
 
+/* A one line list of the reports behind a section's claims. */
+.research {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.research a {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .shelf-note {
   display: flex;
   align-items: baseline;

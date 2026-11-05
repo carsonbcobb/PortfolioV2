@@ -3,7 +3,7 @@
 // Reports get their dates near the top, a Reports breadcrumb, and Article and Dataset JSON-LD.
 import ContentPage from '../layouts/ContentPage.astro';
 import { contentSchema, reportSchema } from '../data/schema';
-import { pageBySlug } from '../data/pages';
+import { pageBySlug, CONTENT_PAGES } from '../data/pages';
 import { MARKDOWN_PAGES, DESIGNED_PAGES, AI_RESEARCH, slugOf, isReportPage, isoDate, checkedDate, tableHeaders, type MarkdownPage } from '../data/reports';
 
 export function getStaticPaths() {
@@ -21,6 +21,9 @@ const faqs = (fm.faq ?? []).map((f) => ({ q: f.question, a: f.answer }));
 const report = isReportPage(page);
 
 let trail: { name: string; href?: string }[];
+// Every report links to the service page its findings support: AI search research to /ai-search,
+// store research to /shopify-conversion-optimization, unless the report already links a service page.
+let related: { href: string; label: string } | undefined;
 let jsonLd: object[];
 let dates: { published?: string; modified?: string } | undefined;
 
@@ -32,6 +35,12 @@ if (report) {
   const ai = AI_RESEARCH.includes(page);
   const fromChats = ai && /temporary (ChatGPT )?chat/i.test(page.rawContent());
   trail = [{ name: 'Reports', href: '/reports' }, { name: fm.h1 }];
+  const services = CONTENT_PAGES.filter((p) => p.kind === 'service');
+  const linksService = services.some((p) => page.rawContent().includes(`](/${p.slug})`));
+  if (!linksService) {
+    const target = services.find((p) => p.slug === (ai ? 'ai-search' : 'shopify-conversion-optimization'))!;
+    related = { href: `/${target.slug}`, label: target.service!.name };
+  }
   jsonLd = [
     reportSchema({
       slug,
@@ -63,6 +72,13 @@ if (report) {
     <div class="wrap">
       <article class="prose">
         <page.Content />
+        {
+          related && (
+            <p class="report-related">
+              Related service: <a href={related.href}>{related.label}</a>
+            </p>
+          )
+        }
       </article>
     </div>
   </section>

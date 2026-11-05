@@ -221,7 +221,7 @@ export const RESULTS = [
 export const ABOUT = {
   heading: 'Why me.',
   text: "I'm Carson. I've led AI search work for national brands in vitamins, skincare, cosmetics, food, pet and wellness, from the audit and plan to the implementation. Before that I spent years running conversion and testing programs, affiliate programs and full rebuilds for Shopify brands from seed stage startups to billion dollar companies. That combination is the point: I know what makes AI recommend a brand, and I know what makes the visitor buy.",
-  where: 'Based in California. Working with brands across the US.',
+  where: 'Based in California. Working remotely with brands anywhere, in English.',
 };
 
 export const REFERRAL = {
@@ -236,27 +236,31 @@ export const AUDIT = {
   price: 1500,
   unit: ' one time',
   includes: [
-    'Delivered in 5 business days',
+    'Delivered within 5 business days of receiving access',
+    "Questions built from your customers' own language (reviews, support questions, search terms), focused on the products that matter most to your revenue. You see the list.",
+    "Tested in ChatGPT and other major AI assistants, including Google's AI answers",
     'A written report: how often AI recommends your products for the questions your buyers ask, which competing products it names instead and why, the sources it relies on, what AI gets wrong about your products, crawler access, and your top conversion leaks',
     'A recorded video walkthrough, or a short call if you prefer',
-    'A prioritized plan with what each fix is worth',
+    'A prioritized plan: each fix ranked by estimated revenue impact, based on your own traffic, conversion rate and order value, against the effort it takes. The plan is yours to keep and use with any team.',
   ],
-  summary: 'Your products tested against the questions your buyers ask, the competing products and sources AI uses instead of you, your top conversion leaks and a prioritized plan, in 5 business days.',
+  summary: 'Your products tested against the questions your buyers ask, the competing products and sources AI uses instead of you, your top conversion leaks and a prioritized plan, within 5 business days of receiving access.',
   note: 'The full $1,500 is credited toward a Build started within 30 days.',
 };
 
 export const BUILD = {
   tag: 'Fixed price, 3 to 4 weeks',
   name: 'Build',
+  // min and max are active products. Variants and archived products don't count; bundles do.
   tiers: [
-    { label: 'Up to 50 products', price: 5000, from: false },
-    { label: '50 to 500 products', price: 7500, from: false },
-    { label: '500+ products', price: 10000, from: true },
+    { label: '1 to 50 products', price: 5000, from: false, min: 1, max: 50 as number | null },
+    { label: '51 to 500 products', price: 7500, from: false, min: 51, max: 500 },
+    { label: '501+ products', price: 10000, from: true, min: 501, max: null },
   ],
+  counts: "Active products count. Variants and archived products don't, and bundles count as products.",
   includes: [
-    'On site AI search work across every template',
-    'Product pages that answer buyer questions, for your top products',
-    'AI crawler access fixed',
+    'Structured data implemented in your theme for every active product, not just recommended',
+    'Product pages that answer buyer questions, for your top products by revenue',
+    'AI crawler access fixed inside Shopify and your theme. If a CDN or an app blocks AI crawlers, I document the fix and work with that vendor.',
     'Conversion rebuild of your product page template, collection template and cart',
     'Measurement setup: post purchase survey, AI traffic tracking and a baseline',
     'A retest of the same questions after 30 days',
@@ -272,11 +276,12 @@ export const RETAINERS = [
     unit: '/month',
     summary: 'I grow your traffic from AI search and your conversion rate.',
     includes: [
-      'Monthly AI search tracking and report',
-      'Ongoing on site AI and conversion testing',
-      'Off site work: getting into the lists and articles AI cites, affiliate and publisher outreach, review strategy and Amazon listing improvements',
+      "A monthly report: how often AI recommends your products and where, whether it describes them accurately, AI referred traffic and sales, conversion rate, post purchase survey answers, what shipped and what's next",
+      'Tests and page improvements planned each month within your hours, in order of expected impact',
+      "Off site work I do myself: I find the reviews, comparisons and publications that matter for your products, pitch them and follow up. I don't just hand you a list.",
+      'Affiliate and publisher outreach, review strategy and Amazon listing improvements',
     ],
-    note: null as string | null,
+    note: 'Best for brands with a store that works and an internal team. Move up to Full when you need someone running the channel day to day: launches, email, subscriptions, apps and vendors.' as string | null,
     featured: false,
   },
   {
@@ -288,7 +293,8 @@ export const RETAINERS = [
       'Everything in Growth',
       'I propose the plan and you decide',
       'I plan and build launches, promotions and holidays for your sign off',
-      'I run Klaviyo day to day in your brand voice',
+      'I run Klaviyo day to day in your brand voice. Email is part of Full and isn\'t sold on its own.',
+      'First 90 days: tracking, speed and key pages in month 1, then email in month 2',
       'I manage subscriptions, merchandising, apps and vendors so you have one point of contact',
       "A weekly report on what changed and what's next",
       'I handle QA so issues get caught before customers see them',
@@ -317,7 +323,45 @@ export const RETAINER_ROWS = [
 ];
 
 export const RETAINER_NOTE =
-  "Retainers are part time by design. If you need more in a month, we move you up a tier or quote the extra work as a fixed add on. Out of office days are always shared in advance. Any retainer can implement your audit plan at the retainer's pace; the Build is the fast lane.";
+  "Response times are in US Pacific business hours, Monday to Friday. Retainers are part time by design. If you need more in a month, we move you up a tier or quote the extra work as a fixed add on. Out of office days are always shared in advance. Any retainer can implement your audit plan at the retainer's pace; the Build is the fast lane.";
+
+// Fit and terms, shown under the pricing cards. The Offer descriptions in schema.ts reuse these lines.
+export const TERMS = {
+  bestFit:
+    "Shopify brands doing $20K or more a month online, especially with products people reorder or compare before buying. Signs it fits: AI assistants recommend competitors for your products or describe them wrong, traffic is steady but conversion or repeat orders aren't growing, product pages are thin, inconsistent or slow, or subscriptions and email underperform. Under $20K a month, the audit is the best place to start.",
+  notFit:
+    'You need paid ads management, one off development tasks, a brand new store with no traffic yet, or someone who guarantees a ChatGPT ranking. Stores not on Shopify get partial service.',
+  start:
+    'Shopify collaborator access, analytics access, Google Search Console, and access to your review, subscription and email apps where they apply. The audit needs view access only.',
+  who:
+    'You work with me directly. I do the work myself, with no handoff to a junior team or an offshore team. On the Full retainer, if something needs more than 60 hours, or a specialist skill like photography, I tell you up front and either quote it or recommend someone you hire directly.',
+  buildScope:
+    'Off site work, like outreach, reviews and lists, is not part of the Build. It is in the Growth retainer.',
+  timing: 'The Build timeline starts once access is in place, and assumes your feedback within 3 business days.',
+  approvals:
+    'You approve the plan and every change before it goes live. The Build includes two revision rounds: you sign off on the plan, and on a preview before anything goes live.',
+  support: '14 days of fixes for anything I built, at no charge.',
+  ownership: 'You own all code, content, data and tracking once the work is paid. The audit plan is yours to keep and use with any team.',
+  costs: 'App subscriptions and paid tools are billed to you directly, and nothing new is added without your approval.',
+  hours: "Unused retainer hours don't roll over to the next month.",
+  cancel: 'After the 3 month minimum, retainers continue month to month and can be cancelled with 30 days written notice.',
+};
+
+export const TERMS_LIST = [
+  { q: 'Who is the best fit?', a: TERMS.bestFit },
+  { q: "Who isn't a fit?", a: TERMS.notFit },
+  { q: 'What do you need to start?', a: TERMS.start },
+  { q: 'Who does the work?', a: TERMS.who },
+  {
+    q: 'How are Build tiers counted?',
+    a: `${BUILD.tiers.map((t) => `${t.label}, ${t.from ? 'from ' : ''}$${t.price.toLocaleString('en-US')}`).join('. ')}. ${BUILD.counts} ${TERMS.timing} ${TERMS.buildScope}`,
+  },
+  { q: 'How do revisions and approvals work?', a: TERMS.approvals },
+  { q: 'What support is there after launch?', a: TERMS.support },
+  { q: 'Who owns the work?', a: TERMS.ownership },
+  { q: 'Who pays for apps and tools?', a: TERMS.costs },
+  { q: 'What about unused hours and cancelling?', a: `${TERMS.hours} ${TERMS.cancel}` },
+];
 
 export const STEPS = [
   {
@@ -368,7 +412,15 @@ export const FAQS: { q: string; a: string; link?: { href: string; text: string }
   },
   {
     q: 'Who do you work with?',
-    a: 'Shopify brands, especially in wellness, supplements and beauty, from startups to billion dollar companies.',
+    a: "Shopify brands, especially in wellness, supplements and beauty, from startups to billion dollar companies. I work fully remote with brands anywhere, in English. I'm based in California and work US Pacific business hours.",
+  },
+  {
+    q: "Who do you work with, and who isn't a fit?",
+    a: "The best fit is a Shopify brand doing $20K or more a month online, especially with products people reorder or compare before buying. Under that, the audit is the best place to start. It isn't a fit if you need paid ads management, one off development tasks, a brand new store with no traffic yet, or someone who guarantees a ChatGPT ranking. Stores not on Shopify get partial service.",
+  },
+  {
+    q: 'Will I work with you directly?',
+    a: 'Yes. You work with me directly, and I do the work myself, with no handoff to a junior team or an offshore team. We talk over email and video calls, plus Slack if your team uses it.',
   },
   {
     q: 'Do you work with agencies?',
@@ -380,11 +432,11 @@ export const FAQS: { q: string; a: string; link?: { href: string; text: string }
 export const PRICING_FAQS = [
   {
     q: 'Where should I start?',
-    a: 'With the AI Search and Conversion Audit, $1,500. The full $1,500 is credited toward a Build started within 30 days.',
+    a: 'With the AI Search and Conversion Audit, $1,500, before any implementation, or whenever you want an outside view of where you stand. The audit is the diagnosis and the plan; implementation is the Build or a retainer. The full $1,500 is credited toward a Build started within 30 days.',
   },
   {
     q: 'How is the Build priced?',
-    a: 'A fixed price by catalog size: $5,000 for up to 50 products, $7,500 for 50 to 500, and from $10,000 for 500 or more. It takes 3 to 4 weeks, and I take 3 Builds a month.',
+    a: "A fixed price by catalog size: $5,000 for 1 to 50 products, $7,500 for 51 to 500, and from $10,000 for 501 or more. Active products count; variants and archived products don't, and bundles count as products. It takes 3 to 4 weeks, and I take 3 Builds a month.",
   },
   {
     q: 'Why is there a 3 month minimum on retainers?',

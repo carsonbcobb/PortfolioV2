@@ -1,6 +1,6 @@
 ---
 title: "AI Search and Ecommerce Research | Carson Cobb"
-description: "How AI assistants read, describe and recommend Shopify brands, and how Shopify stores convert. Built from data I collect from live stores and live AI answers."
+description: "How AI assistants read, describe and recommend Shopify brands, and how Shopify stores convert. Built from data I collect from live stores and AI answers."
 slug: "/reports"
 h1: "AI search and ecommerce research"
 dateModified: 2026-11-04
