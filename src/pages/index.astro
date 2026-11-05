@@ -1,141 +1,76 @@
 ---
 import HomeLayout from '../layouts/HomeLayout.astro';
+import SiteNav from '../components/SiteNav.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import {
-  CAL_LINK,
   EMAIL,
   HEADSHOT,
-  HERO_METRICS,
-  HERO_SHIPPED,
-  HERO_NEXT,
+  HOME_STATS,
   VERTICALS,
-  OWN,
-  HOW_I_WORK,
+  HERO_PROOF,
+  SCHEMA_ALONE,
+  SHIFT,
+  ENGINES,
+  ENGINES_NOTE,
+  CHAT_MOCK,
   RESULTS,
-  FIRST_90,
   AUDIT,
   BUILD,
   RETAINERS,
-  RETAINER_ROWS,
-  RETAINER_NOTE,
   STEPS,
   FAQS,
-  CALL_NAME,
-  CALL_TEXT,
+  ABOUT,
+  CHECK_PATH,
   CTA_LABEL,
   HEADER_CTA_LABEL,
 } from '../data/site';
-import { GLANCE } from '../data/results';
 import { homeSchema } from '../data/schema';
 import '../styles/content.css';
 
-// The stat strip uses the first four numbers from /results, so the two pages always match.
-const STATS = GLANCE.stats.slice(0, 4);
-
 const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
-
-// Every booking button goes to CAL_LINK and is tracked as a book_call event.
-const book = {
-  href: CAL_LINK,
-  'data-track': 'book_call',
-  ...(CAL_LINK.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {}),
-};
+const lowestRetainer = Math.min(...RETAINERS.filter((r) => r.price !== null).map((r) => r.price as number));
 
 const title = 'AI Search and CRO for Shopify Brands | Carson Cobb';
 const description =
-  'More customers from AI search and more sales from every visit. AI search and conversion work for Shopify brands, from audit to ongoing growth.';
+  'I get Shopify brands recommended in ChatGPT and Google AI answers, then turn that traffic into sales. AI search and CRO, from audit to ongoing growth.';
 
-const jsonLd = [homeSchema({ title, description })];
+// The homepage FAQ covers AI search and pricing only.
+const faqs = FAQS.filter((f) => !f.q.startsWith('Do you work with agencies'));
+
+const jsonLd = [homeSchema({ title, description, faqs })];
 ---
 
-<HomeLayout
-  {title}
-  {description}
-  jsonLd={jsonLd}
->
-  <header class="dark">
-      <nav class="wrap nav" aria-label="Main">
-        <a href="#top" class="nav__brand">Carson Cobb</a>
-        <div class="nav__links">
-          <a href="/results">Results</a>
-          <a href="#own">What I do</a>
-          <a href="#pricing">Pricing</a>
-          <a href="/reports">Reports</a>
-          <a href="/agencies">For agencies</a>
-          <a {...book} class="btn btn--accent nav__cta">{HEADER_CTA_LABEL}</a>
-        </div>
-      </nav>
-  </header>
+<HomeLayout {title} {description} {jsonLd}>
+  <SiteNav />
 
   <main id="main">
     <!-- Hero -->
     <section class="dark" aria-label="Introduction">
-      <div class="wrap hero" id="top">
+      <div class="wrap hero hero--solo">
         <div class="hero__text">
-          <div class="hero__pill">
-            <span class="dot" aria-hidden="true"></span>
-            Now booking new retainer clients
-          </div>
           <h1 class="hero__h1">More customers from AI. <span class="accent">More sales from every visit.</span></h1>
           <p class="hero__sub">
             AI search and CRO for Shopify brands. I get your products recommended in ChatGPT and Google's AI answers, then
             make sure your store turns that traffic into sales.
           </p>
           <div class="btn-row">
-            <a {...book} class="btn btn--accent"
+            <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent"
               >{CTA_LABEL}
               <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
             </a>
             <a href="/results" class="btn btn--ghost-dark">See results</a>
           </div>
-          <p class="hero__fine">
-            <strong>50+ Shopify stores, from startups to ten figure brands.</strong> For growing brands.
-          </p>
-        </div>
-
-        <div class="hero__panel">
-          <div class="month">
-            <div class="month__head">
-              <span class="tag tag--dim">A typical month with me</span>
-              <span class="month__client">Skincare client</span>
-            </div>
-            <div class="month__metrics">
-              {
-                HERO_METRICS.map((m) => (
-                  <div class="metric">
-                    <div class="metric__label">{m.label}</div>
-                    <div class="metric__value">{m.value}</div>
-                    <div class="metric__change">{m.change}</div>
-                  </div>
-                ))
-              }
-            </div>
-            <div class="month__list">
-              <div class="tag tag--dim">Shipped</div>
-              {
-                HERO_SHIPPED.map((item) => (
-                  <div class="month__item">
-                    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3DDC84" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7" /></svg>
-                    {item}
-                  </div>
-                ))
-              }
-              <div class="month__item month__item--next">
-                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B6E76" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="8"></circle></svg>
-                {HERO_NEXT}
-              </div>
-            </div>
-          </div>
+          <p class="hero__proof">{HERO_PROOF.join(' · ')}</p>
         </div>
       </div>
     </section>
 
-    <!-- Proof strip -->
+    <!-- Stat strip -->
     <section class="proof" aria-label="At a glance">
       <div class="wrap proof__inner">
         <div class="proof__stats">
           {
-            STATS.map((s) => (
+            HOME_STATS.map((s) => (
               <div>
                 <div class="proof__value">{s.value}</div>
                 <div class="proof__label">{s.label}</div>
@@ -147,11 +82,11 @@ const jsonLd = [homeSchema({ title, description })];
       </div>
     </section>
 
-    <!-- The problem -->
+    <!-- The shift -->
     <section class="section">
       <div class="wrap stack">
         <div class="head">
-          <p class="eyebrow">The problem</p>
+          <p class="eyebrow">The shift</p>
           <h2 class="h2">Your customers are asking AI what to buy.</h2>
           <p class="lede">
             Shoppers now ask ChatGPT for the best product for their exact problem, and it answers with a short list of
@@ -160,62 +95,136 @@ const jsonLd = [homeSchema({ title, description })];
             has to close the sale.
           </p>
         </div>
-      </div>
-    </section>
-
-    <!-- What I do -->
-    <section id="own" class="section section--sand">
-      <div class="wrap stack">
-        <div class="head head--split">
-          <div class="head">
-            <p class="eyebrow">What I do</p>
-            <h2 class="h2">Everything Shopify, handled.</h2>
-          </div>
-          <p class="lede head__aside">
-            Not a task list. I treat your store like a full time head of ecommerce would: set the plan, do the work, and
-            answer for the results.
-          </p>
-        </div>
-
-        <!-- How I work -->
-        <div class="grid grid--four">
+        <div class="grid grid--three shift">
           {
-            HOW_I_WORK.map((h, i) => (
-              <div class="card first90__card">
+            SHIFT.map((s, i) => (
+              <div class="shift__item">
                 <span class="tag tag--accent">{String(i + 1).padStart(2, '0')}</span>
-                <h3 class="first90__name">{h.title}</h3>
-                <p class="own__text">{h.text}</p>
+                <h3 class="step__title">{s.title}</h3>
+                <p class="step__text">{s.text}</p>
               </div>
             ))
           }
         </div>
+      </div>
+    </section>
 
-        <div class="first90">
-          <p class="tag">What that covers</p>
-          <div class="grid grid--320">
-            {
-              OWN.map((o) => (
-                <div class="card own">
-                  <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8323A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={o.icon} />
-                  <h3 class="own__title">{o.title}</h3>
-                  <p class="own__text">{o.text}</p>
-                </div>
-              ))
-            }
+    <!-- Two engines -->
+    <section class="section section--sand" aria-labelledby="engines">
+      <div class="wrap stack">
+        <div class="head">
+          <p class="eyebrow">What I do</p>
+          <h2 class="h2" id="engines">Two engines. One goal: more sales from AI.</h2>
+        </div>
+        <div class="grid engines">
+          {
+            ENGINES.map((e) => (
+              <article class="card engine">
+                <span class="tag tag--accent">{e.tag}</span>
+                <h3 class="engine__title">{e.title}</h3>
+                <p class="engine__text">{e.text}</p>
+                <a class="engine__link" href={e.link.href}>
+                  {e.link.text} →
+                </a>
+              </article>
+            ))
+          }
+        </div>
+        <p class="engines__note">{ENGINES_NOTE}</p>
+      </div>
+    </section>
+
+    <!-- What AI sees -->
+    <section class="section" aria-labelledby="ai-sees">
+      <div class="wrap ai-sees">
+        <div class="head ai-sees__text">
+          <p class="eyebrow">What AI sees</p>
+          <h2 class="h2" id="ai-sees">This is the new shelf.</h2>
+          <p class="lede">
+            When a shopper asks ChatGPT what to buy, it names a few brands and moves on. There is no page two.
+          </p>
+          <p class="ai-sees__callout">{CHAT_MOCK.callout}</p>
+          <div class="btn-row">
+            <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent">{HEADER_CTA_LABEL}</a>
+          </div>
+        </div>
+        <figure class="chat" aria-label="Example of an AI shopping answer with placeholder brands">
+          <div class="chat__bar" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="chat__body">
+            <p class="chat__bubble chat__bubble--user">{CHAT_MOCK.question}</p>
+            <div class="chat__bubble chat__bubble--ai">
+              <p>{CHAT_MOCK.intro}</p>
+              <ol>
+                {
+                  CHAT_MOCK.picks.map((p) => (
+                    <li>
+                      <strong>{p.name}.</strong> {p.text}
+                    </li>
+                  ))
+                }
+              </ol>
+            </div>
+          </div>
+          <figcaption class="chat__caption">Example answer. Brand names are placeholders.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Why schema alone won't get you recommended -->
+    <section class="section section--sand" aria-labelledby="schema-alone">
+      <div class="wrap stack">
+        <div class="head">
+          <p class="eyebrow">Beyond schema</p>
+          <h2 class="h2" id="schema-alone">{SCHEMA_ALONE.heading}</h2>
+          <p class="lede">{SCHEMA_ALONE.text}</p>
+        </div>
+        <div class="levers">
+          {
+            SCHEMA_ALONE.cards.map((c, i) => (
+              <div class="card lever">
+                <span class="tag tag--accent">{String(i + 1).padStart(2, '0')}</span>
+                <h3 class="lever__title">{c.title}</h3>
+                <p class="lever__text">{c.text}</p>
+              </div>
+            ))
+          }
+          <div class="card lever lever--wide">
+            <span class="tag tag--accent">Then</span>
+            <h3 class="lever__title">{SCHEMA_ALONE.wide.title}</h3>
+            <p class="lever__text">{SCHEMA_ALONE.wide.text}</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Results -->
-    <section id="results" class="section">
+    <!-- How it works -->
+    <section class="section">
       <div class="wrap stack">
         <div class="head">
-          <p class="eyebrow">Results</p>
-          <h2 class="h2">What changes when someone is running your store.</h2>
-          <p class="lede">
-            Real outcomes from past clients. Names withheld, since most of my work is under NDA or white label.
-          </p>
+          <p class="eyebrow">How it works</p>
+          <h2 class="h2">Audit, build, measure.</h2>
+        </div>
+        <div class="grid grid--300">
+          {
+            STEPS.map((s) => (
+              <div class="step">
+                <span class="tag tag--accent">{s.when}</span>
+                <h3 class="step__title">{s.title}</h3>
+                <p class="step__text">{s.text}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Proof -->
+    <section id="results" class="section section--flush">
+      <div class="wrap stack">
+        <div class="head">
+          <p class="eyebrow">Proof</p>
+          <h2 class="h2">Recommended by AI. Chosen at checkout.</h2>
+          <p class="lede">Real outcomes from past clients. Names withheld, since most of my work is under NDA or white label.</p>
         </div>
         <div class="grid grid--330">
           {
@@ -240,198 +249,43 @@ const jsonLd = [homeSchema({ title, description })];
           }
         </div>
         <p class="ways__more"><a href="/results">See all results →</a></p>
-
-        <!-- Your first 90 days -->
-        <div class="first90">
-          <h3 class="first90__title">Your first 90 days</h3>
-          <div class="grid grid--260 grid--tight">
-            {
-              FIRST_90.map((m) => (
-                <div class="card first90__card">
-                  <span class="tag tag--accent">{m.month}</span>
-                  <div class="first90__name">{m.title}</div>
-                  <p class="own__text">{m.text}</p>
-                </div>
-              ))
-            }
-          </div>
-          <p class="fineprint">Past client outcomes, shown as examples. Not a guarantee of results for any other store.</p>
-          <p class="fineprint report-link">
-            I check hundreds of Shopify stores every quarter. <a href="/reports">See the reports.</a>
-          </p>
-        </div>
+        <p class="fineprint">Past client outcomes, shown as examples. Not a guarantee of results for any other store.</p>
       </div>
     </section>
 
-    <!-- How it works -->
-    <section class="section section--flush">
-      <div class="wrap stack">
-        <div class="head">
-          <p class="eyebrow">How it works</p>
-          <h2 class="h2">Audit, build, measure.</h2>
-        </div>
-        <div class="grid grid--300">
-          {
-            STEPS.map((s) => (
-              <div class="step">
-                <span class="tag tag--accent">{s.when}</span>
-                <h3 class="step__title">{s.title}</h3>
-                <p class="step__text">{s.text}</p>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing -->
-    <section id="pricing" class="section section--sand">
+    <!-- Pricing summary -->
+    <section class="section section--sand" aria-labelledby="pricing-summary">
       <div class="wrap stack">
         <div class="head">
           <p class="eyebrow">Pricing</p>
-          <h2 class="h2">Start with the audit. Grow from there.</h2>
+          <h2 class="h2" id="pricing-summary">Start with the audit. Grow from there.</h2>
         </div>
-
-        <!-- Audit and Build -->
-        <div class="grid grid--320 plans plans--start">
-          <div class="card plan plan--featured">
-            <span class="plan__badge">{AUDIT.tag.toUpperCase()}</span>
-            <div class="plan__head">
-              <span class="tag tag--dim">One time</span>
-              <h3 class="h3">{AUDIT.name}</h3>
-              <div class="plan__price">
-                {usd(AUDIT.price)}
-              </div>
-            </div>
-            <ul class="plan__list">
-              {
-                AUDIT.includes.map((i) => (
-                  <li>
-                    <span aria-hidden="true">✓</span>
-                    {i}
-                  </li>
-                ))
-              }
-            </ul>
-            <div class="plan__foot">
-              <div class="plan__note">{AUDIT.note}</div>
-              <a {...book} class="btn btn--accent">{CTA_LABEL}</a>
-            </div>
-          </div>
-
-          <div class="card plan">
-            <div class="plan__head">
-              <span class="tag">{BUILD.tag}</span>
-              <h3 class="h3">{BUILD.name}</h3>
-              <ul class="plan__tiers">
-                {
-                  BUILD.tiers.map((t) => (
-                    <li>
-                      <span>{t.label}</span>
-                      <strong>
-                        {t.from ? 'from ' : ''}
-                        {usd(t.price)}
-                      </strong>
-                    </li>
-                  ))
-                }
-              </ul>
-            </div>
-            <ul class="plan__list">
-              {
-                BUILD.includes.map((i) => (
-                  <li>
-                    <span aria-hidden="true">✓</span>
-                    {i}
-                  </li>
-                ))
-              }
-            </ul>
-            <div class="plan__foot">
-              <div class="plan__note">{BUILD.note}</div>
-              <a {...book} class="btn btn--outline">{CTA_LABEL}</a>
-            </div>
-          </div>
+        <div class="grid grid--three price-summary">
+          <a class="card price-card" href="/pricing#audit">
+            <span class="tag">One time</span>
+            <h3 class="h3">Audit</h3>
+            <div class="plan__price">{usd(AUDIT.price)}</div>
+            <p class="plan__summary">{AUDIT.summary} Credited toward a Build within 30 days.</p>
+          </a>
+          <a class="card price-card" href="/pricing#build">
+            <span class="tag">Fixed price, 3 to 4 weeks</span>
+            <h3 class="h3">Build</h3>
+            <div class="plan__price"><span>from</span> {usd(Math.min(...BUILD.tiers.map((t) => t.price)))}</div>
+            <p class="plan__summary">On site AI search work, answer first content, a conversion rebuild of your product page, collection and cart, and measurement.</p>
+          </a>
+          <a class="card price-card" href="/pricing#retainers">
+            <span class="tag">3 month minimum</span>
+            <h3 class="h3">Retainers</h3>
+            <div class="plan__price"><span>from</span> {usd(lowestRetainer)}<span>/month</span></div>
+            <p class="plan__summary">Ongoing AI search and conversion work, tracked and reported every month.</p>
+          </a>
         </div>
-
-        <!-- Retainers -->
-        <div class="plans__group">
-          <h3 class="h3">Retainers</h3>
-          <div class="grid grid--three plans plans--retainers">
-            {
-              RETAINERS.map((r) => (
-                <div class:list={['card', 'plan', { 'plan--featured': r.featured }]}>
-                  <div class="plan__head">
-                    <span class:list={['tag', { 'tag--dim': r.featured }]}>Retainer</span>
-                    <h3 class="h3">{r.name}</h3>
-                    <div class="plan__price">
-                      {r.price === null ? "Let's talk" : usd(r.price)}
-                      {r.price !== null && <span>{r.unit}</span>}
-                    </div>
-                    <p class="plan__summary">{r.summary}</p>
-                  </div>
-                  {r.includes.length > 0 && (
-                    <ul class="plan__list">
-                      {r.includes.map((i) => (
-                        <li>
-                          <span aria-hidden="true">✓</span>
-                          {i}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                  <div class="plan__foot">
-                    {r.note && <div class="plan__note">{r.note}</div>}
-                    <a {...book} class:list={['btn', r.featured ? 'btn--accent' : 'btn--outline']}>
-                      {CTA_LABEL}
-                    </a>
-                  </div>
-                </div>
-              ))
-            }
-          </div>
-
-          <div class="prose retainers">
-            <div class="table-scroll" tabindex="0" role="region" aria-label="Retainer comparison">
-              <table>
-                <thead>
-                  <tr>
-                    <th><span class="visually-hidden">Term</span></th>
-                    {RETAINERS.map((r) => <th scope="col">{r.name}</th>)}
-                  </tr>
-                </thead>
-                <tbody>
-                  {
-                    RETAINER_ROWS.map((row) => (
-                      <tr>
-                        <th scope="row">{row.label}</th>
-                        {row.values.map((v) => (
-                          <td>{v}</td>
-                        ))}
-                      </tr>
-                    ))
-                  }
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <p class="lock__terms plans__note">{RETAINER_NOTE}</p>
-        </div>
-
-        <!-- Lock in 2026 pricing -->
-        <div class="lock">
-          <div class="lock__pill">
-            <span class="lock__icon">
-              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111214" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 018 0v3"></path></svg>
-            </span>
-            <p><strong>Lock in 2026 pricing.</strong> Start before January 1 and keep today's rate for 12 months.</p>
-          </div>
-        </div>
+        <p class="ways__more"><a href="/pricing">See full pricing →</a></p>
       </div>
     </section>
 
     <!-- About -->
-    <section class="section section--flush">
+    <section class="section">
       <div class="wrap">
         <div class="about">
           {
@@ -442,15 +296,10 @@ const jsonLd = [homeSchema({ title, description })];
             )
           }
           <div class="about__text">
-            <p class="eyebrow">Who leads your store</p>
-            <h2 class="h2 h2--36">Senior led, start to finish.</h2>
-            <p class="lede">
-              I'm Carson. I've spent 6+ years inside 50+ Shopify stores, from fresh startups to ten figure brands, leading
-              development, conversion, retention, and growth. I lead every engagement personally and stay accountable for
-              the results. When a project needs more hands, I bring in specialists I trust, so you get more capacity
-              without losing your direct line to me.
-            </p>
-            <p class="about__where">Based in California. Working with brands across the US.</p>
+            <p class="eyebrow">About</p>
+            <h2 class="h2 h2--36">{ABOUT.heading}</h2>
+            <p class="lede">{ABOUT.text}</p>
+            <p class="about__where">{ABOUT.where}</p>
           </div>
         </div>
       </div>
@@ -465,39 +314,13 @@ const jsonLd = [homeSchema({ title, description })];
         </div>
         <div class="faq__list">
           {
-            FAQS.map((f, i) => (
+            faqs.map((f, i) => (
               <details open={i === 0}>
                 <summary>{f.q}</summary>
-                <p>
-                  {f.link ? (
-                    <Fragment>
-                      {f.a.slice(0, f.a.indexOf(f.link.text))}
-                      <a href={f.link.href}>{f.link.text}</a>
-                      {f.a.slice(f.a.indexOf(f.link.text) + f.link.text.length)}
-                    </Fragment>
-                  ) : (
-                    f.a
-                  )}
-                </p>
+                <p>{f.a}</p>
               </details>
             ))
           }
-        </div>
-      </div>
-    </section>
-
-    <!-- Referral -->
-    <section class="section section--flush">
-      <div class="wrap">
-        <div class="referral">
-          <div class="referral__text">
-            <h3 class="h3">Know a brand that needs help running their store?</h3>
-            <p>
-              Introduce us. When they sign, you get <strong>10% of their first 3 months</strong>, paid once their third
-              payment clears.
-            </p>
-          </div>
-          <a href={`mailto:${EMAIL}?subject=Referral`} class="btn btn--outline">Make an intro</a>
         </div>
       </div>
     </section>
@@ -506,9 +329,12 @@ const jsonLd = [homeSchema({ title, description })];
     <section id="book" class="dark cta">
       <div class="wrap cta__inner">
         <h2 class="h2 cta__title">See where you stand in AI search.</h2>
-        <p class="cta__sub">Book a 20 minute {CALL_NAME}. {CALL_TEXT}</p>
+        <p class="cta__sub">
+          Run the free AI Visibility Check. In about a minute you'll see whether ChatGPT recommends you, who it recommends
+          instead, and what's holding you back.
+        </p>
         <div class="btn-row btn-row--center">
-          <a {...book} class="btn btn--accent">{CTA_LABEL}</a>
+          <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent">{HEADER_CTA_LABEL}</a>
           <a href={`mailto:${EMAIL}`} class="btn btn--ghost-dark">Email me</a>
         </div>
       </div>

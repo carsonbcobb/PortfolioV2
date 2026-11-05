@@ -4,7 +4,7 @@
 import HomeLayout from './HomeLayout.astro';
 import SiteNav from '../components/SiteNav.astro';
 import SiteFooter from '../components/SiteFooter.astro';
-import { CAL_LINK, EMAIL, CALL_NAME, CALL_TEXT, CTA_LABEL } from '../data/site';
+import { EMAIL, CHECK_PATH, HEADER_CTA_LABEL } from '../data/site';
 import { shortDate } from '../data/reports';
 import '../styles/content.css';
 
@@ -21,10 +21,23 @@ interface Props {
   faqs?: { q: string; a: string }[];
   /** Closing call to action heading, if not the default */
   ctaTitle?: string;
+  /** Hide the closing call to action (the AI Visibility Check page has its own) */
+  hideCta?: boolean;
   jsonLd: object[];
 }
 
-const { title, description, h1, intro, trail, dates, faqs = [], ctaTitle = 'See where you stand in AI search.', jsonLd } = Astro.props;
+const {
+  title,
+  description,
+  h1,
+  intro,
+  trail,
+  dates,
+  faqs = [],
+  ctaTitle = 'See where you stand in AI search.',
+  hideCta = false,
+  jsonLd,
+} = Astro.props;
 const updated = dates?.modified && dates.modified !== dates.published ? dates.modified : undefined;
 ---
 
@@ -88,16 +101,27 @@ const updated = dates?.modified && dates.modified !== dates.published ? dates.mo
       )
     }
 
-    <section class="dark cta">
-      <div class="wrap cta__inner">
-        <h2 class="h2 cta__title">{ctaTitle}</h2>
-        <p class="cta__sub">Book a 20 minute {CALL_NAME}. {CALL_TEXT}</p>
-        <div class="btn-row btn-row--center">
-          <a href={CAL_LINK} data-track="book_call" target="_blank" rel="noopener" class="btn btn--accent">{CTA_LABEL}</a>
-          <a href={`mailto:${EMAIL}`} class="btn btn--ghost-dark">Email me</a>
-        </div>
-      </div>
-    </section>
+    {
+      !hideCta && (
+        <section class="dark cta">
+          <div class="wrap cta__inner">
+            <h2 class="h2 cta__title">{ctaTitle}</h2>
+            <p class="cta__sub">
+              Run the free AI Visibility Check. In about a minute you'll see whether ChatGPT recommends you, who it
+              recommends instead, and what's holding you back.
+            </p>
+            <div class="btn-row btn-row--center">
+              <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent">
+                {HEADER_CTA_LABEL}
+              </a>
+              <a href={`mailto:${EMAIL}`} class="btn btn--ghost-dark">
+                Email me
+              </a>
+            </div>
+          </div>
+        </section>
+      )
+    }
   </main>
 
   <SiteFooter />

@@ -61,15 +61,18 @@ const section = (prefix: string) => {
 
 export const INTRO = paragraphs(introBlock).map(inline);
 
-const glance = section('At a glance');
-export const GLANCE = {
-  title: glance.title,
-  stats: bullets(glance.body).map((b) => {
+const statsOf = (body: string) =>
+  bullets(body).map((b) => {
     const m = b.match(/^\*\*(.+?)\*\*\s+(.*)$/);
-    if (!m) throw new Error(`At a glance item needs a bold number first: ${b}`);
+    if (!m) throw new Error(`Stat needs a bold number first: ${b}`);
     return { value: m[1], label: m[2] };
-  }),
-};
+  });
+
+const ai = section('AI search');
+export const AI_SEARCH = { title: ai.title, stats: statsOf(ai.body) };
+
+const glance = section('At a glance');
+export const GLANCE = { title: glance.title, stats: statsOf(glance.body) };
 
 const work = section('What it takes');
 export const WORK = {
@@ -110,9 +113,9 @@ export const BRANDS = {
 // The last paragraph with the intro call link becomes the closing call to action.
 const measured = section('How these numbers');
 const measuredParas = paragraphs(measured.body);
-const closing = measuredParas.find((p) => /\]\(\/#book\)/.test(p));
+const closing = measuredParas.find((p) => /\]\(\/ai-visibility-check#book\)/.test(p));
 export const MEASURED = {
   title: measured.title,
   text: measuredParas.filter((p) => p !== closing).map(inline),
 };
-export const CLOSING = closing ? closing.replace(/\s*\[[^\]]+\]\(\/#book\)\.?$/, '').trim() : undefined;
+export const CLOSING = closing ? closing.replace(/\s*\[[^\]]+\]\(\/ai-visibility-check#book\)\.?$/, '').trim() : undefined;

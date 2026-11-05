@@ -3,7 +3,8 @@
 // jump menu, the industries table, and how the numbers are measured.
 import ContentPage from '../layouts/ContentPage.astro';
 import { resultsSchema } from '../data/schema';
-import { RESULTS_META as fm, INTRO, GLANCE, WORK, BRANDS, MEASURED, CLOSING } from '../data/results';
+import { RESULTS_META as fm, INTRO, AI_SEARCH, GLANCE, WORK, BRANDS, MEASURED, CLOSING } from '../data/results';
+import { AI_CASES, AI_CASES_NOTE } from '../data/site';
 import '../styles/results.css';
 
 const jsonLd = [resultsSchema({ title: fm.title, description: fm.description })];
@@ -18,6 +19,25 @@ const jsonLd = [resultsSchema({ title: fm.title, description: fm.description })]
   ctaTitle={CLOSING}
   {jsonLd}
 >
+  <section class="section results-ai" aria-labelledby="ai-search-results">
+    <div class="wrap stack">
+      <div class="head">
+        <h2 class="h2" id="ai-search-results">{AI_SEARCH.title}</h2>
+      </div>
+      <div class="grid grid--four results-ai__stats">
+        {
+          AI_SEARCH.stats.map((s) => (
+            <div class="card results-ai__stat">
+              <div class="results-ai__value">{s.value}</div>
+              <div class="results-ai__label">{s.label}</div>
+            </div>
+          ))
+        }
+      </div>
+      <p class="ways__more"><a href="/ai-search">How AI search works →</a></p>
+    </div>
+  </section>
+
   <section class="proof" aria-labelledby="at-a-glance">
     <div class="wrap proof__inner">
       <h2 class="eyebrow" id="at-a-glance">{GLANCE.title}</h2>
@@ -59,6 +79,31 @@ const jsonLd = [resultsSchema({ title: fm.title, description: fm.description })]
           WORK.disciplines.map((d) => (
             <article class="card discipline" id={d.id}>
               <h3 class="h3">{d.name}</h3>
+              {d.id === 'seo-aeo-and-ai-search' && (
+                <div class="cases">
+                  <div class="grid grid--330">
+                    {AI_CASES.map((r) => (
+                      <article class="card result">
+                        <div class="result__top">
+                          <span class="tag tag--dim">{r.tag}</span>
+                          <div class="result__stat">{r.stat}</div>
+                          <div class="result__stat-label">{r.statLabel}</div>
+                        </div>
+                        <div class="result__body">
+                          <h4 class="result__title">{r.title}</h4>
+                          <div class="result__row">
+                            <strong>Before:</strong> {r.before}
+                          </div>
+                          <div class="result__row">
+                            <strong>After:</strong> {r.after}
+                          </div>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                  <p class="fineprint">{AI_CASES_NOTE}</p>
+                </div>
+              )}
               {d.text.map((p) => (
                 <p class="discipline__text" set:html={p} />
               ))}

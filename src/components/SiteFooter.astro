@@ -1,6 +1,6 @@
 ---
 // Footer for every page: link columns, then the contact and trademark line.
-import { EMAIL, LINKEDIN_URL } from '../data/site';
+import { EMAIL, LINKEDIN_URL, REFERRAL, CHECK_PATH } from '../data/site';
 import { CONTENT_PAGES, TOOLS } from '../data/pages';
 
 const year = new Date().getFullYear();
@@ -9,7 +9,14 @@ const link = (slug: string) => ({ href: `/${slug}`, label: CONTENT_PAGES.find((p
 const columns = [
   {
     title: 'Services',
-    links: CONTENT_PAGES.filter((p) => p.kind === 'service').map((p) => link(p.slug)),
+    links: [
+      { href: '/ai-search', label: 'AI search optimization' },
+      { href: '/shopify-conversion-optimization', label: 'Conversion optimization' },
+      { href: '/pricing', label: 'Pricing' },
+      ...CONTENT_PAGES.filter((p) => p.kind === 'service' && !['ai-search', 'shopify-conversion-optimization'].includes(p.slug)).map((p) =>
+        link(p.slug),
+      ),
+    ],
   },
   {
     title: 'Industries',
@@ -18,6 +25,7 @@ const columns = [
   {
     title: 'Resources',
     links: [
+      { href: CHECK_PATH, label: 'AI Visibility Check' },
       { href: '/reports', label: 'Reports' },
       link('state-of-shopify-subscriptions-2026'),
       ...TOOLS.map((t) => ({ href: `/tools/${t.slug}`, label: t.name })),
@@ -28,10 +36,10 @@ const columns = [
   {
     title: 'Carson Cobb',
     links: [
-      { href: '/', label: 'For brands' },
-      { href: '/agencies', label: 'For agencies' },
+      { href: '/', label: 'Home' },
       { href: '/results', label: 'Results' },
-      { href: '/#pricing', label: 'Pricing' },
+      { href: '/pricing', label: 'Pricing' },
+      { href: '/agencies', label: 'Agencies' },
       { href: '/tools', label: 'All tools' },
     ],
   },
@@ -39,6 +47,13 @@ const columns = [
 ---
 
 <footer class="dark footer">
+  <div class="wrap footer__referral">
+    <div>
+      <p class="footer__referral-title">{REFERRAL.title}</p>
+      <p>{REFERRAL.text}</p>
+    </div>
+    <a href={`mailto:${EMAIL}?subject=Referral`} class="btn btn--ghost-dark">Make an intro</a>
+  </div>
   <nav class="wrap footer__cols" aria-label="Footer">
     {
       columns.map((c) => (

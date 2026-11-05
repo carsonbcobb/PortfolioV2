@@ -71,11 +71,11 @@ const ogImage = new URL(og.path, SITE_URL).href;
       document.head.appendChild(s);
     });
   });
-  // Fire GA4 events for "Book a call" and email clicks.
+  // Fire GA4 events for tracked links (book_call, visibility_check, ...) and email clicks.
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[data-track], a[href^="mailto:"]');
     if (!a) return;
-    gtag('event', a.dataset.track === 'book_call' ? 'book_call_click' : 'email_click', {
+    gtag('event', a.dataset.track ? a.dataset.track + '_click' : 'email_click', {
       link_url: a.href,
       link_text: a.textContent.trim(),
       page_path: location.pathname,

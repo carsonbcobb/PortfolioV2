@@ -130,4 +130,4 @@ If you're weighing a switch, I compare the three most common options in [Recharg
 - **Apps:** taken from the app ID each selling plan group publishes. Recharge was confirmed by matching its ID with Recharge scripts on store homepages. Apps that publish only a numeric ID I could not confirm are grouped as other or unidentified.
 - **Subscription page:** a published page whose address contains subscribe, subscription or autoship.
 
-No store is named in this report. Want to know how your offer compares? [Book a 20 minute AI Search Review](/#book).
+No store is named in this report. Want to know how your offer compares? [Book a 20 minute AI Search Review](/ai-visibility-check#book).

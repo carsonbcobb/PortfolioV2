@@ -62,7 +62,7 @@ On the store side I set up shipping rules and order cutoffs that match your fulf
 
 You can't taste a product through a screen. The page has to do that work: flavor notes in plain words, how people use it, what it pairs with, and reviews that talk about taste. Most pages lean on a pretty photo and a paragraph of brand story.
 
-I rebuild product pages for mobile with the reasons to buy up top, and use Shopify metafields for things like roast level, heat level, ingredients and allergens so they stay consistent across the catalog.
+I rebuild product pages for mobile with the reasons to buy up top, with details like roast level, heat level, ingredients and allergens built into your site so they stay accurate as your catalog changes.
 
 ## What I do for food and beverage brands
 
@@ -87,10 +87,10 @@ Most food and beverage brands start with the **AI Search and Conversion Audit** 
 
 The **Build** is a fixed price project that takes 3 to 4 weeks and starts at $5,000, based on catalog size. After that, the **Growth** retainer at $4,500/month keeps the AI search and conversion work going. For brands that want one person leading the whole channel at their direction, there's **Full** at $7,500/month, which I explain on my [fractional head of ecommerce page](/fractional-head-of-ecommerce).
 
-Every plan is listed on the [pricing section](/#pricing).
+Every plan is listed on the [pricing page](/pricing).
 
 ## Book a 20 minute AI Search Review
 
 If people love your product but the store isn't catching their reorders, let's talk. Book a 20 minute AI Search Review. Before the call I run your top buyer questions through ChatGPT. On the call I'll show you where you're recommended, who shows up instead, and what's driving it. Tell me what you sell and how you ship it, and I'll tell you where I'd look first.
 
-[Book a 20 minute AI Search Review](/#book)
+[Book a 20 minute AI Search Review](/ai-visibility-check#book)

@@ -61,7 +61,7 @@ I make sure sold out never means dead end:
 
 Owners want to know what's in it, how much to feed, whether it's right for their pet's age or size, and whether other owners had good results. Most pages answer some of that in a long paragraph.
 
-I rebuild product pages for mobile with the key answers up top, feeding guides and ingredients in clear sections, and reviews where doubt shows up. I use Shopify metafields and metaobjects for things like life stage, size, protein source and feeding amounts, so your team can update them once and keep every page consistent. For pet supplements, I build clear places for the claims your team has approved. I don't write or approve claims myself.
+I rebuild product pages for mobile with the key answers up top, feeding guides and ingredients in clear sections, and reviews where doubt shows up. Details like life stage, size, protein source and feeding amounts are built into your site, so they stay accurate as your catalog changes. For pet supplements, I build clear places for the claims your team has approved. I don't write or approve claims myself.
 
 ### Slow pages on mobile
 
@@ -90,10 +90,10 @@ Most pet brands start with the **AI Search and Conversion Audit** for $1,500. I 
 
 The **Build** is a fixed price project that takes 3 to 4 weeks and starts at $5,000, based on catalog size. After that, the **Growth** retainer at $4,500/month keeps the AI search and conversion work going. For brands that want one person leading the whole channel at their direction, there's **Full** at $7,500/month, which I explain on my [fractional head of ecommerce page](/fractional-head-of-ecommerce).
 
-Every plan is listed on the [pricing section](/#pricing).
+Every plan is listed on the [pricing page](/pricing).
 
 ## Book a 20 minute AI Search Review
 
 If pet owners love your product but the store makes them work to reorder, let's fix that. Book a 20 minute AI Search Review. Before the call I run your top buyer questions through ChatGPT. On the call I'll show you where you're recommended, who shows up instead, and what's driving it. Tell me what you sell and how autoship is set up today, and I'll tell you where I'd look first.
 
-[Book a 20 minute AI Search Review](/#book)
+[Book a 20 minute AI Search Review](/ai-visibility-check#book)

@@ -91,7 +91,7 @@ You don't need a giant project to fix this. There are two ways I usually start.
 
 **Full, $7,500/month.** I lead subscriptions as part of the store, working at your direction: offer tests, widget changes, flows, cancellation insights, and everything else on the site that affects revenue. You get one person who knows your store deeply instead of a rotating cast. 3 month minimum.
 
-There's also the **Growth** retainer at $4,500/month for ongoing AI search and conversion work. You can see every option on the [pricing section](/#pricing).
+There's also the **Growth** retainer at $4,500/month for ongoing AI search and conversion work. You can see every option on the [pricing page](/pricing).
 
 ## Proof: subscribe opt in from 7% to 32%
 
@@ -107,4 +107,4 @@ Across all my work, rebuilt pages average a 2.1x conversion lift, and I've suppo
 
 If you think your subscription program should be doing more, it probably should. Book a 20 minute AI Search Review. Before the call I run your top buyer questions through ChatGPT. On the call I'll show you where you're recommended, who shows up instead, and what's driving it. Tell me about your store, your app and your hero products. I'll tell you honestly where I'd look first and which plan makes sense.
 
-[Book a 20 minute AI Search Review](/#book)
+[Book a 20 minute AI Search Review](/ai-visibility-check#book)

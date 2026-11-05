@@ -49,7 +49,7 @@ With a fractional head of ecommerce, you pay one retainer, and the management is
 * **Growth, $4,500/month.** Ongoing AI search tracking, on site and off site AI search work, and conversion testing.
 * **Full, $7,500/month.** Your ecommerce lead, working at your direction. Everything in Growth plus the roadmap, launches, Klaviyo, apps and vendors.
 
-Retainers have a 3 month minimum. All options are on the [pricing section](/#pricing).
+Retainers have a 3 month minimum. All options are on the [pricing page](/pricing).
 
 ## Who is accountable for the outcome
 
@@ -104,4 +104,4 @@ Here's what that looks like in practice. In the first 90 days, I fix tracking, s
 
 If you're weighing an agency against a fractional lead, I'm happy to tell you which one I think fits, even if it isn't me. Before the call I run your top buyer questions through ChatGPT. On the call I'll show you where you're recommended, who shows up instead, and what's driving it. Tell me who's working on the store today, and I'll give you a straight answer.
 
-[Book a 20 minute AI Search Review](/#book)
+[Book a 20 minute AI Search Review](/ai-visibility-check#book)
