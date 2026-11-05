@@ -2,6 +2,7 @@
 import HomeLayout from '../layouts/HomeLayout.astro';
 import SiteNav from '../components/SiteNav.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import PriceSummary from '../components/PriceSummary.astro';
 import {
   EMAIL,
   HEADSHOT,
@@ -14,9 +15,6 @@ import {
   ENGINES_NOTE,
   CHAT_MOCK,
   RESULTS,
-  AUDIT,
-  BUILD,
-  RETAINERS,
   STEPS,
   FAQS,
   ABOUT,
@@ -26,9 +24,6 @@ import {
 } from '../data/site';
 import { homeSchema } from '../data/schema';
 import '../styles/content.css';
-
-const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
-const lowestRetainer = Math.min(...RETAINERS.filter((r) => r.price !== null).map((r) => r.price as number));
 
 const title = 'AI Search and CRO for Shopify Brands | Carson Cobb';
 const description =
@@ -194,6 +189,11 @@ const jsonLd = [homeSchema({ title, description, faqs })];
             <p class="lever__text">{SCHEMA_ALONE.wide.text}</p>
           </div>
         </div>
+        <p class="research-line">
+          The research behind this: the <a href="/reports/shopify-ai-readiness-index-2026">Shopify AI Readiness Index 2026</a>
+          and <a href="/reports/who-chatgpt-recommends-2026">Who ChatGPT recommends</a>.
+          <a href="/reports" class="research-line__all">See all research →</a>
+        </p>
       </div>
     </section>
 
@@ -254,35 +254,7 @@ const jsonLd = [homeSchema({ title, description, faqs })];
     </section>
 
     <!-- Pricing summary -->
-    <section class="section section--sand" aria-labelledby="pricing-summary">
-      <div class="wrap stack">
-        <div class="head">
-          <p class="eyebrow">Pricing</p>
-          <h2 class="h2" id="pricing-summary">Start with the audit. Grow from there.</h2>
-        </div>
-        <div class="grid grid--three price-summary">
-          <a class="card price-card" href="/pricing#audit">
-            <span class="tag">One time</span>
-            <h3 class="h3">Audit</h3>
-            <div class="plan__price">{usd(AUDIT.price)}</div>
-            <p class="plan__summary">{AUDIT.summary} Credited toward a Build within 30 days.</p>
-          </a>
-          <a class="card price-card" href="/pricing#build">
-            <span class="tag">Fixed price, 3 to 4 weeks</span>
-            <h3 class="h3">Build</h3>
-            <div class="plan__price"><span>from</span> {usd(Math.min(...BUILD.tiers.map((t) => t.price)))}</div>
-            <p class="plan__summary">On site AI search work, answer first content, a conversion rebuild of your product page, collection and cart, and measurement.</p>
-          </a>
-          <a class="card price-card" href="/pricing#retainers">
-            <span class="tag">3 month minimum</span>
-            <h3 class="h3">Retainers</h3>
-            <div class="plan__price"><span>from</span> {usd(lowestRetainer)}<span>/month</span></div>
-            <p class="plan__summary">Ongoing AI search and conversion work, tracked and reported every month.</p>
-          </a>
-        </div>
-        <p class="ways__more"><a href="/pricing">See full pricing →</a></p>
-      </div>
-    </section>
+    <PriceSummary id="pricing-summary" />
 
     <!-- About -->
     <section class="section">

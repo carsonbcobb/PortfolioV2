@@ -5,7 +5,7 @@ import HomeLayout from './HomeLayout.astro';
 import SiteNav from '../components/SiteNav.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { EMAIL, CHECK_PATH, HEADER_CTA_LABEL } from '../data/site';
-import { shortDate } from '../data/reports';
+import { monthYear, sameMonth } from '../data/reports';
 import '../styles/content.css';
 
 interface Props {
@@ -16,13 +16,15 @@ interface Props {
   intro?: string;
   /** Breadcrumb trail after Home; the last item is this page */
   trail: { name: string; href?: string }[];
-  /** Reports: ISO dates shown under the H1. Updated only shows when it differs from published. */
+  /** Reports: ISO dates shown under the H1 as month and year. Updated only shows when its month differs from published. */
   dates?: { published?: string; modified?: string };
   faqs?: { q: string; a: string }[];
   /** Closing call to action heading, if not the default */
   ctaTitle?: string;
   /** Hide the closing call to action (the AI Visibility Check page has its own) */
   hideCta?: boolean;
+  /** Start every FAQ answer collapsed (default: the first one is open) */
+  faqCollapsed?: boolean;
   jsonLd: object[];
 }
 
@@ -36,9 +38,11 @@ const {
   faqs = [],
   ctaTitle = 'See where you stand in AI search.',
   hideCta = false,
+  faqCollapsed = false,
   jsonLd,
 } = Astro.props;
-const updated = dates?.modified && dates.modified !== dates.published ? dates.modified : undefined;
+const updated =
+  dates?.modified && !(dates.published && sameMonth(dates.modified, dates.published)) ? dates.modified : undefined;
 ---
 
 <HomeLayout {title} {description} {jsonLd}>
@@ -59,17 +63,18 @@ const updated = dates?.modified && dates.modified !== dates.published ? dates.mo
         </nav>
         <h1 class="page-hero__h1">{h1}</h1>
         {intro && <p class="hero__sub">{intro}</p>}
+        <slot name="hero" />
         {
           (dates?.published || updated) && (
             <p class="page-hero__dates">
               {dates?.published && (
                 <span>
-                  Published <time datetime={dates.published}>{shortDate(dates.published)}</time>
+                  Published <time datetime={dates.published}>{monthYear(dates.published)}</time>
                 </span>
               )}
               {updated && (
                 <span>
-                  Updated <time datetime={updated}>{shortDate(updated)}</time>
+                  Updated <time datetime={updated}>{monthYear(updated)}</time>
                 </span>
               )}
             </p>
@@ -90,7 +95,7 @@ const updated = dates?.modified && dates.modified !== dates.published ? dates.mo
             </div>
             <div class="faq__list">
               {faqs.map((f, i) => (
-                <details open={i === 0}>
+                <details open={!faqCollapsed && i === 0}>
                   <summary>{f.q}</summary>
                   <p>{f.a}</p>
                 </details>

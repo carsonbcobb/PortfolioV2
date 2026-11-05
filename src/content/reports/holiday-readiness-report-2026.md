@@ -1,6 +1,6 @@
 ---
 title: "Shopify Holiday Readiness Report 2026: Gifts and Bundles"
-description: "How many Shopify brands have a gift collection, a gift card and bundles live before the holidays, by category. Data from 606 stores checked November 1, 2026."
+description: "How many Shopify brands have a gift collection, a gift card and bundles live before the holidays, by category. Data from 606 stores checked November 2026."
 slug: "/reports/holiday-readiness-report-2026"
 h1: "Shopify Holiday Readiness Report 2026"
 datePublished: 2026-11-01
@@ -8,18 +8,18 @@ dateModified: 2026-11-01
 reportStores: 606
 faq:
   - question: "How many Shopify stores have a gift collection before the holidays?"
-    answer: "62% of 606 Shopify stores had a published gift or holiday collection with products in it on November 1, 2026. Apparel led at 91%. Supplements trailed at 29%."
+    answer: "62% of 606 Shopify stores had a published gift or holiday collection with products in it in November 2026. Apparel led at 91%. Supplements trailed at 29%."
   - question: "How many Shopify stores sell a gift card?"
     answer: "54% had a gift card product. Apparel led at 69% and supplements trailed at 39%."
   - question: "Which Shopify brands are least ready for holiday gifting?"
-    answer: "Supplement and pet brands. 45% of supplement stores and 39% of pet stores had neither a gift collection nor a gift card on November 1."
+    answer: "Supplement and pet brands. 45% of supplement stores and 39% of pet stores had neither a gift collection nor a gift card in early November."
 ---
 
-**By Carson Cobb, Fractional Head of Ecommerce. Data checked November 1, 2026.**
+**By Carson Cobb, Fractional Head of Ecommerce. Data checked November 2026.**
 
 Holiday shoppers are buying for someone else. They don't know your product, they don't know which size to pick, and they're shopping on a deadline. The brands that win the season make that easy with three things: a gift collection, a gift card and bundles that work as gifts.
 
-I checked 606 Shopify stores for all three on November 1, eight weeks before Christmas.
+I checked 606 Shopify stores for all three in early November, eight weeks before Christmas.
 
 ## The short version
 
@@ -60,7 +60,7 @@ Once shipping cutoffs pass, a store without a gift card has far fewer ways to ca
 2. **Add a digital gift card** if you don't have one. It takes an afternoon.
 3. **Turn one bundle into a gift set.** Same products, gift ready packaging or a gift note, and a name that says gift.
 4. **Set shipping cutoff dates** in your announcement bar and cart, then switch the message to the gift card when they pass.
-5. **Check your best sellers are in stock.** 24% of stores with a best sellers collection had at least one sold out on November 1. More in the [catalog and stock report](/reports/shopify-catalog-and-stock-report-2026).
+5. **Check your best sellers are in stock.** 24% of stores with a best sellers collection had at least one sold out in early November. More in the [catalog and stock report](/reports/shopify-catalog-and-stock-report-2026).
 
 ## How this was done
 
@@ -68,6 +68,6 @@ Once shipping cutoffs pass, a store without a gift card has far fewer ways to ca
 - **Gift collection:** a published collection whose address or title contains gift, holiday, Christmas, Xmas or stocking, with at least one product in it. Gift card collections were excluded. A few gift with purchase or summer holiday collections also match, which moves the total by less than one point.
 - **Gift card:** a product whose title, type or address contains gift card or e gift.
 - **Bundle collection:** a published collection with products whose address contains, as a separate word, bundle, kit, set, gift set, pack, variety pack, sampler, stack or build your own.
-- **Data:** each store's public product and collection data, checked November 1, 2026.
+- **Data:** each store's public product and collection data, checked November 2026.
 
-No store is named in this report. Want a second pair of eyes on your holiday setup? [Book a 20 minute AI Search Review](/ai-visibility-check#book).
+No store is named in this report. Want gifting and bundles set up before the holidays? They're part of my [conversion work](/shopify-conversion-optimization).

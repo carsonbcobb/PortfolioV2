@@ -117,6 +117,16 @@
   color: var(--ink);
 }
 
+/* The closing AI Visibility Check button on reports: the standard accent button, not a prose link. */
+.prose .report-cta {
+  margin-top: 28px;
+}
+
+.prose a.btn {
+  color: var(--ink);
+  font-weight: 600;
+}
+
 .prose hr {
   margin: 48px 0;
   border: 0;
@@ -252,6 +262,24 @@
 
 .report-list {
   margin: 8px 0 56px;
+}
+
+/* The first two AI search research cards: same card, two wide columns and a larger title. */
+.report-list--featured {
+  grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr));
+  margin-bottom: 20px;
+}
+
+.report-card--featured {
+  gap: 16px;
+}
+
+.report-card--featured .h3 {
+  font-size: clamp(24px, 3vw, 30px);
+}
+
+.report-card--featured p:not(.report-card__date) {
+  font-size: 18px;
 }
 
 .report-card__date {

@@ -1,0 +1,59 @@
+---
+// The three pricing cards (audit, Build, retainers) linking to /pricing, from the same data as the pricing page.
+// Used on the homepage and as the pricing teaser on the service pages.
+import { AUDIT, BUILD, RETAINERS } from '../data/site';
+
+interface Props {
+  /** Heading id, for the section's aria-labelledby */
+  id: string;
+  heading?: string;
+  /** Light sand background (default) or white */
+  sand?: boolean;
+  /** No top padding, when it follows another section with the same background */
+  flush?: boolean;
+  /** Names and prices only, without the summaries (the service pages' teaser) */
+  compact?: boolean;
+}
+
+const { id, heading = 'Start with the audit. Grow from there.', sand = true, flush = false, compact = false } = Astro.props;
+const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
+const lowestRetainer = Math.min(...RETAINERS.filter((r) => r.price !== null).map((r) => r.price as number));
+---
+
+<section class:list={['section', sand && 'section--sand', flush && 'section--flush']} aria-labelledby={id}>
+  <div class="wrap stack">
+    <div class="head">
+      <p class="eyebrow">Pricing</p>
+      <h2 class="h2" id={id}>{heading}</h2>
+    </div>
+    <div class="grid grid--three price-summary">
+      <a class="card price-card" href="/pricing#audit">
+        <span class="tag">One time</span>
+        <h3 class="h3">Audit</h3>
+        <div class="plan__price">{usd(AUDIT.price)}</div>
+        {!compact && <p class="plan__summary">{AUDIT.summary} Credited toward a Build within 30 days.</p>}
+        {compact && <p class="plan__summary">Credited toward a Build within 30 days.</p>}
+      </a>
+      <a class="card price-card" href="/pricing#build">
+        <span class="tag">Fixed price, 3 to 4 weeks</span>
+        <h3 class="h3">Build</h3>
+        <div class="plan__price"><span>from</span> {usd(Math.min(...BUILD.tiers.map((t) => t.price)))}</div>
+        {
+          !compact && (
+            <p class="plan__summary">
+              On site AI search work, answer first content, a conversion rebuild of your product page, collection and
+              cart, and measurement.
+            </p>
+          )
+        }
+      </a>
+      <a class="card price-card" href="/pricing#retainers">
+        <span class="tag">3 month minimum</span>
+        <h3 class="h3">Retainers</h3>
+        <div class="plan__price"><span>from</span> {usd(lowestRetainer)}<span>/month</span></div>
+        {!compact && <p class="plan__summary">Ongoing AI search and conversion work, tracked and reported every month.</p>}
+      </a>
+    </div>
+    <p class="ways__more"><a href="/pricing">See full pricing →</a></p>
+  </div>
+</section>

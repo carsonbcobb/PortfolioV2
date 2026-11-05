@@ -1,73 +1,23 @@
 ---
-import ContentPage from '../../layouts/ContentPage.astro';
-import { toolSchema } from '../../data/schema';
-import { toolBySlug } from '../../data/pages';
-import '../../styles/tools.css';
-
-const tool = toolBySlug('store-check');
-const intro =
-  "This runs the same first checks I do in every store audit. Enter any Shopify store and see where it may be leaking revenue.";
-const jsonLd = [toolSchema(tool)];
+// The Store Check is retired. The real 301 to /ai-visibility-check is an Amplify "Rewrites and redirects" rule
+// (source /tools/store-check, target /ai-visibility-check, type 301). This page only catches old links if that
+// rule is missing: it forwards at once, is kept out of search, and is not in the sitemap, footer or llms.txt.
+import { SITE_URL, CHECK_PATH } from '../../data/site';
+const target = `${SITE_URL}${CHECK_PATH}`;
 ---
 
-<ContentPage
-  title={tool.title}
-  description={tool.description}
-  h1="Shopify store check"
-  {intro}
-  trail={[{ name: 'Tools', href: '/tools' }, { name: tool.name }]}
-  {jsonLd}
->
-  <div class="section tool-body">
-    <div class="wrap">
-      <section class="cc-tool" id="store-check">
-        <h2>Check any Shopify store in 20 seconds</h2>
-        <p class="cc-lead">Enter a store address. I'll look at its public product data for the same leaks I check in every audit: subscriptions missing on reorderable products, sold out best sellers, gift options and bundles.</p>
-        <form class="cc-row" onsubmit="event.preventDefault();ccCheck()">
-          <input id="sc-url" type="text" aria-label="Store address" placeholder="yourstore.com" autocomplete="off" required>
-          <button type="submit" id="sc-btn">Check store</button>
-        </form>
-        <div id="sc-out" aria-live="polite"></div>
-        <p class="cc-note">Uses only data every Shopify store makes public. It cannot see your theme, your cart, your analytics or your app settings, so treat it as a quick first look, not an audit.</p>
-      </section>
-      <script is:inline>
-      async function ccCheck(){
-        const esc=s=>String(s).replace(/[&<>"']/g,c=>'&#'+c.charCodeAt(0)+';');
-        const out=document.getElementById('sc-out'),btn=document.getElementById('sc-btn');
-        let d=document.getElementById('sc-url').value.trim().replace(/^https?:\/\//,'').replace(/\/.*$/,'');
-        if(!d)return;
-        btn.disabled=true;out.innerHTML='<p>Checking '+esc(d)+'…</p>';
-        const g=async p=>{try{const r=await fetch('https://'+d+p);return r.ok?await r.json():null}catch(e){return null}};
-        const all=await g('/products.json?limit=250');
-        if(!all||!all.products){out.innerHTML='<p>I could not read product data for <b>'+esc(d)+'</b>. It may not be a Shopify store, or it may block public data. Try the main domain, like yourstore.com.</p>';btn.disabled=false;return;}
-        const ps=all.products;
-        const isGC=p=>/gift ?card/i.test(p.product_type+' '+p.handle);
-        const avail=p=>p.variants.some(v=>v.available);
-        let best=null,bestName='';
-        for(const h of ['best-sellers','bestsellers','best-seller','bestseller','top-sellers','shop-best-sellers','best-selling']){const r=await g('/collections/'+h+'/products.json?limit=24');if(r&&r.products&&r.products.length){best=r.products;bestName=h;break;}}
-        const sample=(best||ps.filter(p=>!isGC(p))).slice(0,8);
-        let withPlans=0;const noPlan=[];
-        for(const p of sample){const j=await g('/products/'+p.handle+'.js');if(j&&j.selling_plan_groups&&j.selling_plan_groups.length)withPlans++;else noPlan.push(esc(p.title));}
-        const soldOut=ps.filter(p=>!isGC(p)&&!avail(p));
-        const bestSold=best?best.filter(p=>!avail(p)):[];
-        let giftCol=0;for(const h of ['gifts','gift-sets','gift-guide','holiday','holiday-gifts','gift-ideas']){const r=await g('/collections/'+h+'/products.json?limit=50');if(r&&r.products&&r.products.length){giftCol=r.products.length;break;}}
-        const giftCard=ps.some(isGC);
-        const bundles=ps.filter(p=>/bundle|kit|set|stack|pack/i.test(p.title)).length;
-        const prices=ps.filter(p=>!isGC(p)).map(p=>parseFloat(p.variants[0].price)).filter(x=>x>0).sort((a,b)=>a-b);
-        const med=prices.length?prices[Math.floor(prices.length/2)]:0;
-        const f=[];
-        if(withPlans===0)f.push(['Subscriptions','None of the '+sample.length+' products I sampled offer subscribe and save. If customers reorder these, a subscription offer could be your fastest revenue win.']);
-        else if(withPlans<sample.length)f.push(['Subscriptions',withPlans+' of '+sample.length+' sampled products offer subscribe and save. Missing on: '+noPlan.slice(0,3).join(', ')+'.']);
-        else f.push(['Subscriptions','All '+sample.length+' sampled products offer subscribe and save. Next step is making sure the subscribe option is the default and shows clearly on mobile.']);
-        if(best&&bestSold.length)f.push(['Best sellers',bestSold.length+' of '+best.length+' products in your best sellers collection are sold out. A back in stock signup keeps those shoppers.']);
-        f.push(['Stock',soldOut.length+' of '+ps.filter(p=>!isGC(p)).length+' products are fully sold out'+(ps.length>=250?' (first 250 checked)':'')+'.']);
-        f.push(['Gifting',(giftCol?'Gift collection found with '+giftCol+' products. ':'No gift collection found. ')+(giftCard?'Gift card available.':'No gift card product found.')]);
-        f.push(['Bundles',bundles?bundles+' products look like bundles, kits or packs.':'No bundles or kits found. Bundles are one of the easiest ways to raise order value.']);
-        f.push(['Pricing','Typical product price is about $'+med.toFixed(2)+'. Set your free shipping line just above what a normal cart reaches.']);
-        out.innerHTML='<div class="cc-results-list">'+f.map(x=>'<div class="cc-item"><b>'+x[0]+'</b><span>'+x[1]+'</span></div>').join('')+'</div><a class="cc-cta" href="/ai-visibility-check#book">Want the full audit? Book a 20 minute AI Search Review</a>';
-        btn.disabled=false;
-      }
-      </script>
-    </div>
-  </div>
-</ContentPage>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="refresh" content={`0; url=${CHECK_PATH}`} />
+    <link rel="canonical" href={target} />
+    <title>Moved to the AI Visibility Check</title>
+  </head>
+  <body>
+    <h1>The Store Check has moved</h1>
+    <p>It is now part of the <a href={CHECK_PATH}>AI Visibility Check</a>.</p>
+  </body>
+</html>

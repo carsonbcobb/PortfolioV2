@@ -13,16 +13,16 @@ faq:
   - question: "How common are sold out best sellers on Shopify?"
     answer: "Of the stores with a best sellers collection, 24% had at least one product in that collection fully sold out. The typical case was 2 sold out in a collection of about 16."
   - question: "How was this data collected?"
-    answer: "From the public product data every Shopify store publishes, checked on November 1, 2026. For each store I read up to 1,000 products and all published collections, and checked up to 20 products (best sellers first) for active selling plans."
+    answer: "From the public product data every Shopify store publishes, checked in November 2026. For each store I read up to 1,000 products and all published collections, and checked up to 20 products (best sellers first) for active selling plans."
 ---
 
-**By Carson Cobb, Fractional Head of Ecommerce. First published October 31, 2026. Updated November 1, 2026 with a larger check.**
+**By Carson Cobb, Fractional Head of Ecommerce. First published October 2026. Updated November 2026 with a larger check.**
 
 I checked 606 Shopify stores across six categories, 121,519 products in total, for the same things I look at first in every store audit: whether reorderable products offer subscribe and save, whether best sellers are in stock, whether gifting is set up before the holidays, and whether bundles exist.
 
 This page is the overview. Each topic has its own in depth report in [Reports](/reports).
 
-> **Update, November 1:** the first version checked 8 products per store and looked for gift collections at a few common addresses. This version checks up to 20 products per store and reads every published collection, so the numbers below are more complete. The biggest change is gifting: far more stores have gift collections than the first check could see.
+> **Update, November 2026:** the first version checked 8 products per store and looked for gift collections at a few common addresses. This version checks up to 20 products per store and reads every published collection, so the numbers below are more complete. The biggest change is gifting: far more stores have gift collections than the first check could see.
 
 ## The short version
 
@@ -49,7 +49,7 @@ Supplements lead because the model is proven there. Food, beauty and pet are whe
 
 Not every gap is a mistake. Some products are seasonal, limited or sold as one time gifts, and some brands choose not to discount repeat orders. But when the hero product someone reorders every month has no subscribe option, those reorders can easily drift to a competitor or to Amazon.
 
-The discounts, frequencies and apps behind these offers are in the [subscription benchmarks report](/reports/shopify-subscription-benchmarks-2026).
+The discounts, frequencies and apps behind these offers are in the [subscription benchmarks report](/reports/shopify-subscription-benchmarks-2026), and the [subscription calculator](/tools/subscription-calculator) shows what a better offer is worth at your volume.
 
 ## Partial subscriptions are the most common setup
 
@@ -101,10 +101,10 @@ Supplements and pet are the least ready for gift shoppers. A gift card alone cov
 ## How this was done
 
 - **Stores:** 606 US Shopify stores priced in US dollars in supplements (120), beauty and skincare (124), food and beverage (149), pet (41), home (77) and apparel (95). Mostly small and mid size direct to consumer brands. Stores with fewer than 3 products were excluded.
-- **Data:** each store's public product data (up to 1,000 products) and every published collection, checked November 1, 2026. Gift card products were excluded from stock and price counts.
+- **Data:** each store's public product data (up to 1,000 products) and every published collection, checked November 2026. Gift card products were excluded from stock and price counts.
 - **Subscriptions:** up to 20 products per store were checked for active selling plans, taken from the best sellers collection first, then the catalog. Pre order and try before you buy plans were excluded. A store offering subscriptions only through a separate page or a quiz would show as none.
 - **Best sellers:** the store's own collection with best seller, top seller, most popular or fan favorite in its address or title.
 - **Gifting:** published collections with gift, holiday, Christmas, Xmas or stocking in the address or title and at least one product, plus gift card products.
 - **Bundles:** published collections with products whose address contains bundle, kit, set, pack, sampler, stack or build your own.
 
-No store is named here. If you want to see how your store compares, [book a 20 minute AI Search Review](/ai-visibility-check#book) and I'll walk through it with you.
+No store is named here. To see what a better offer could add, try the [subscription calculator](/tools/subscription-calculator), or see how I [set up and fix Shopify subscriptions](/shopify-subscriptions).

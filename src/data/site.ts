@@ -293,7 +293,7 @@ export const STEPS = [
 // The 20 minute call, wherever it is described.
 export const CALL_NAME = 'AI Search Review';
 export const CALL_TEXT =
-  "Before the call I run your top buyer questions through ChatGPT. On the call I'll show you where you're recommended, who shows up instead, and what's driving it.";
+  "We'll go over your goals and your check results, and figure out whether an audit or ongoing work is the right next step. If it isn't a fit, I'll tell you.";
 export const CTA_LABEL = 'See if ChatGPT recommends you';
 export const HEADER_CTA_LABEL = 'Check your AI visibility';
 
@@ -360,7 +360,7 @@ export const PRICING_FAQS = [
 export const CHECK_FAQS = [
   {
     q: 'Does ChatGPT recommend my brand?',
-    a: 'This check shows whether it does for 5 realistic buyer questions in your category, using the model ChatGPT uses by default with web search on. Answers vary by wording, person and day, so treat the result as a snapshot.',
+    a: 'This check shows whether it does for 3 realistic buyer questions in your category, using the model ChatGPT uses by default with web search on. Answers vary by wording, person and day, so treat the result as a snapshot.',
   },
   {
     q: 'How does the AI Visibility Check work?',
@@ -376,7 +376,7 @@ export const CHECK_FAQS = [
   },
   {
     q: 'What do you do with my email?',
-    a: 'I email you your report, and I receive a copy so I can walk you through it if you book a review.',
+    a: 'The check emails your report to you and sends me a copy.',
   },
   {
     q: 'Does it work for stores that are not on Shopify?',

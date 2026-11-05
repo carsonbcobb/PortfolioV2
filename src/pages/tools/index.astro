@@ -2,13 +2,24 @@
 import ContentPage from '../../layouts/ContentPage.astro';
 import { toolsIndexSchema } from '../../data/schema';
 import { TOOLS } from '../../data/pages';
+import { CHECK_PATH } from '../../data/site';
 
 const title = 'Shopify Tools for Growing Brands | Carson Cobb';
 const description =
-  'Calculators and a store check for Shopify brands: subscription revenue, free shipping threshold, and a quick look at where a store leaks revenue.';
+  'Free tools for Shopify brands: the AI Visibility Check, a subscription revenue calculator and a free shipping threshold calculator.';
 const intro =
   'Quick tools built from the checks I run in every store audit. Everything runs in your browser and nothing is saved.';
-const jsonLd = [toolsIndexSchema({ title, description }, TOOLS)];
+// The AI Visibility Check leads, then the calculators.
+const cards = [
+  {
+    href: CHECK_PATH,
+    name: 'AI Visibility Check',
+    summary: 'See whether ChatGPT recommends your brand, who it names instead, and whether AI can read your store.',
+    go: 'Run the check →',
+  },
+  ...TOOLS.map((t) => ({ href: `/tools/${t.slug}`, name: t.name.charAt(0).toUpperCase() + t.name.slice(1), summary: t.summary, go: 'Open the calculator →' })),
+];
+const jsonLd = [toolsIndexSchema({ title, description }, cards)];
 ---
 
 <ContentPage {title} {description} h1="Tools for Shopify brands" {intro} trail={[{ name: 'Tools' }]} {jsonLd}>
@@ -16,11 +27,11 @@ const jsonLd = [toolsIndexSchema({ title, description }, TOOLS)];
     <div class="wrap">
       <div class="tool-list">
         {
-          TOOLS.map((t) => (
-            <a class="card tool-card" href={`/tools/${t.slug}`}>
+          cards.map((t) => (
+            <a class="card tool-card" href={t.href}>
               <h2 class="h3">{t.name}</h2>
               <p>{t.summary}</p>
-              <span class="tool-card__go">Open the tool →</span>
+              <span class="tool-card__go">{t.go}</span>
             </a>
           ))
         }

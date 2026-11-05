@@ -102,6 +102,6 @@ Here's what that looks like in practice. In the first 90 days, I fix tracking, s
 
 ## Book a 20 minute AI Search Review
 
-If you're weighing an agency against a fractional lead, I'm happy to tell you which one I think fits, even if it isn't me. Before the call I run your top buyer questions through ChatGPT. On the call I'll show you where you're recommended, who shows up instead, and what's driving it. Tell me who's working on the store today, and I'll give you a straight answer.
+If you're weighing an agency against a fractional lead, let's talk. We'll go over your goals and who's working on the store today, and figure out which setup fits, even if it isn't me.
 
 [Book a 20 minute AI Search Review](/ai-visibility-check#book)

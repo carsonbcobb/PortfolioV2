@@ -1,0 +1,273 @@
+---
+// /ai-search as a designed sales page. Title, description and FAQ come from src/content/pages/ai-search.md,
+// whose sections are the collapsed "Read more" disclosures. Same URL and structured data as before.
+import ContentPage from '../layouts/ContentPage.astro';
+import PriceSummary from '../components/PriceSummary.astro';
+import { contentSchema } from '../data/schema';
+import { pageBySlug } from '../data/pages';
+import { designedPage } from '../data/reports';
+import { AI_CASES, AI_CASES_NOTE, CHECK_PATH, HEADER_CTA_LABEL, HERO_PROOF } from '../data/site';
+import '../styles/sales.css';
+
+const slug = 'ai-search';
+const { fm, section } = await designedPage(slug);
+const info = pageBySlug(slug);
+const faqs = (fm.faq ?? []).map((f) => ({ q: f.question, a: f.answer }));
+const jsonLd = [
+  contentSchema({ slug, title: fm.title, description: fm.description, label: info.label, faqs, service: info.service }),
+];
+
+// The mock answer. Placeholder brands only, and no real ChatGPT branding.
+const picks = [
+  { name: 'Brand A', text: 'Fragrance free, with a short ingredient list.', source: 'Review site' },
+  { name: 'Brand B', text: 'Dermatologist tested and widely reviewed.', source: 'Magazine' },
+  { name: 'Your brand?', text: 'This slot goes to whoever AI can read and trust.', source: 'Your store', you: true },
+  { name: 'Brand D', text: 'Rich and calming for dry, reactive skin.', source: 'Forum thread' },
+];
+
+const stats = [
+  {
+    value: '70/100',
+    text: "The typical Shopify store's AI readiness score.",
+    href: '/reports/shopify-ai-readiness-index-2026',
+  },
+  {
+    value: '29%',
+    text: 'Of stores publish duplicate product data, usually from a review app.',
+    href: '/reports/duplicate-product-schema-ai-visibility',
+  },
+  {
+    value: 'Reviews and magazines',
+    text: 'Review sites and magazines are the sources ChatGPT shows most.',
+    href: '/reports/sources-chatgpt-cites-2026',
+    words: true,
+  },
+];
+
+const signals = [
+  {
+    title: 'Your site',
+    items: [
+      'Complete product data and attributes',
+      'Structured data AI reads without guessing',
+      'Answers to real buyer questions',
+      'Crawlers that can reach every page',
+    ],
+  },
+  {
+    title: 'Everywhere else',
+    items: ['Review and testing sites', 'Best of lists and magazines', 'Reddit and forum threads', 'Amazon and retail listings'],
+  },
+];
+
+const steps = [
+  { title: 'Measure what AI says today', text: 'I run real buyer questions in ChatGPT and record who gets named, and why.' },
+  { title: 'Fix what AI reads on your site', text: 'Product data, structured data, answer first content and crawler access, fixed at the source.' },
+  { title: 'Earn the sources AI cites', text: 'I get you into the reviews, lists and articles AI already trusts in your category.' },
+  { title: 'Convert the traffic it sends', text: 'Product pages and checkout that confirm what AI told the shopper.' },
+];
+
+const promises = [
+  'No one controls AI answers. Anyone promising a ChatGPT ranking is guessing.',
+  'I make your store the easiest one in your category for AI to read and trust.',
+  'I report honestly on every question, and focus the work where you can win.',
+];
+
+const readMore = (headings: { heading: string; label?: string }[]) =>
+  headings.map(({ heading, label }) => ({ title: label ?? heading, html: section(heading) }));
+const whyMore = readMore([{ heading: 'What is AI search?' }, { heading: "Why isn't schema enough?" }]);
+const workMore = readMore([
+  { heading: 'What do I do on your site?', label: 'Everything I do on your site' },
+  { heading: 'What do I do off site?', label: 'Everything I do off site' },
+  { heading: 'How is AI search measured?' },
+]);
+---
+
+<ContentPage
+  title={fm.title}
+  description={fm.description}
+  h1={fm.h1}
+  intro="Get recommended when shoppers ask ChatGPT what to buy, and make sure the store converts them."
+  trail={[{ name: info.label }]}
+  {faqs}
+  faqCollapsed
+  {jsonLd}
+>
+  <Fragment slot="hero">
+    <div class="sales-hero__actions">
+      <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent">{HEADER_CTA_LABEL}</a>
+      <a href="/pricing" class="sales-hero__link">See pricing →</a>
+    </div>
+    <p class="sales-hero__proof">{HERO_PROOF.join(' · ')}</p>
+  </Fragment>
+
+  <!-- What the shopper sees -->
+  <section class="section" aria-labelledby="shelf">
+    <div class="wrap split">
+      <div class="head">
+        <p class="eyebrow">What the shopper sees</p>
+        <h2 class="h2" id="shelf">A short list, not ten blue links.</h2>
+        <p class="lede">Shoppers describe their problem to ChatGPT and get a few brands back. There is no page two.</p>
+        <p class="shelf-note">
+          <span>
+            This is the shelf now. <a href="/reports/who-chatgpt-recommends-2026">About 4 brands per answer.</a>
+          </span>
+        </p>
+      </div>
+      <figure class="chat" aria-label="Example of an AI shopping answer with placeholder brands">
+        <div class="chat__bar" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="chat__body">
+          <p class="chat__bubble chat__bubble--user">
+            I have sensitive skin and fragrance makes it worse. What's a good natural moisturizer?
+          </p>
+          <div class="chat__bubble chat__bubble--ai">
+            <p>Here are four good options for sensitive skin:</p>
+            <ol class="chat__picks">
+              {
+                picks.map((p, i) => (
+                  <li class:list={['chat__pick', p.you && 'chat__pick--you']}>
+                    <span class="chat__num">{i + 1}.</span>
+                    <p>
+                      <strong>{p.name}</strong> {p.text}
+                    </p>
+                    <span class="chat__src">Source: {p.source}</span>
+                  </li>
+                ))
+              }
+            </ol>
+          </div>
+        </div>
+        <figcaption class="chat__caption">Example answer. Brand names are placeholders.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Research stats -->
+  <section class="section section--sand section--tight" aria-labelledby="research">
+    <div class="wrap stack">
+      <div class="head">
+        <p class="eyebrow">From my research</p>
+        <h2 class="h2" id="research">What AI finds on Shopify stores today.</h2>
+      </div>
+      <div class="grid grid--three">
+        {
+          stats.map((s) => (
+            <a class="card stat-card" href={s.href}>
+              <span class:list={['stat-card__value', s.words && 'stat-card__value--words']}>{s.value}</span>
+              <p class="stat-card__text">{s.text}</p>
+              <span class="stat-card__go">Read the report →</span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- What decides -->
+  <section class="section" aria-labelledby="decides">
+    <div class="wrap stack">
+      <div class="head">
+        <p class="eyebrow">How AI chooses</p>
+        <h2 class="h2" id="decides">What decides whether AI recommends you.</h2>
+        <p class="lede">AI names the brands it can read and trust. That comes from two places.</p>
+      </div>
+      <div class="grid signals">
+        {
+          signals.map((s) => (
+            <div class="card signal">
+              <h3 class="h3">{s.title}</h3>
+              <ul>
+                {s.items.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+      <div class="readmore">
+        {
+          whyMore.map((m) => (
+            <details>
+              <summary>{m.title}</summary>
+              <div class="prose" set:html={m.html} />
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- What I do -->
+  <section class="section section--sand" aria-labelledby="what-i-do">
+    <div class="wrap stack">
+      <div class="head">
+        <p class="eyebrow">What I do</p>
+        <h2 class="h2" id="what-i-do">From measured to recommended to sold.</h2>
+      </div>
+      <ol class="process">
+        {
+          steps.map((s) => (
+            <li>
+              <h3 class="step__title">{s.title}</h3>
+              <p class="step__text">{s.text}</p>
+            </li>
+          ))
+        }
+      </ol>
+      <div class="readmore">
+        {
+          workMore.map((m) => (
+            <details>
+              <summary>{m.title}</summary>
+              <div class="prose" set:html={m.html} />
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="section" aria-labelledby="ai-results">
+    <div class="wrap stack">
+      <div class="head">
+        <p class="eyebrow">Results</p>
+        <h2 class="h2" id="ai-results">What AI search work has produced.</h2>
+      </div>
+      <div class="grid grid--330">
+        {
+          AI_CASES.map((r) => (
+            <article class="card result">
+              <div class="result__top">
+                <span class="tag tag--dim">{r.tag}</span>
+                <div class="result__stat">{r.stat}</div>
+                <div class="result__stat-label">{r.statLabel}</div>
+              </div>
+              <div class="result__body">
+                <h3 class="result__title">{r.title}</h3>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+      <p class="fineprint">{AI_CASES_NOTE}</p>
+      <p class="ways__more"><a href="/results#seo-aeo-and-ai-search">The full before and after for each →</a></p>
+    </div>
+  </section>
+
+  <!-- What I won't promise -->
+  <section class="section section--sand section--tight" aria-labelledby="promise">
+    <div class="wrap">
+      <div class="promise">
+        <p class="eyebrow">Straight talk</p>
+        <h2 class="h3" id="promise">What I won't promise.</h2>
+        <ul>
+          {promises.map((p) => <li>{p}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <PriceSummary id="ai-pricing" sand={false} compact />
+</ContentPage>

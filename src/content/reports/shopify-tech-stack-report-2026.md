@@ -17,7 +17,7 @@ faq:
     answer: "Dawn, Shopify's free theme, was the most common base theme at 14% of stores. Most other stores used a paid theme or a custom build."
 ---
 
-**By Carson Cobb, Fractional Head of Ecommerce. Data checked November 1, 2026.**
+**By Carson Cobb, Fractional Head of Ecommerce. Data checked November 2026.**
 
 App vendors publish case studies. Agencies publish their favorite stacks. Neither tells you what growing brands actually run. For this report I loaded the homepages of 153 Shopify stores in a real browser and recorded every outside service each page called: email, reviews, support, testing, analytics, ads and more.
 
@@ -107,9 +107,9 @@ $50 was the most common threshold (22% of stores showing one), then $75 and $100
 ## How this was done
 
 - **Stores:** 153 US Shopify stores from the 606 store dataset, sampled across supplements (26), beauty and skincare (25), food and beverage (28), pet (26), home (23) and apparel (25).
-- **Method:** each homepage was loaded in a real Chrome based browser on November 1, 2026. After the page settled, I recorded the address of every script, stylesheet, frame and network request, and every Shopify app embed, then matched the domains against known vendors.
+- **Method:** each homepage was loaded in a real Chrome based browser in November 2026. After the page settled, I recorded the address of every script, stylesheet, frame and network request, and every Shopify app embed, then matched the domains against known vendors.
 - **Limits:** this is the homepage only. Some tools load only on product, cart or account pages, or only after a click, so every share here is a lower bound. Ad pixels that run inside Shopify's sandboxed pixel system may not show up. Subscription apps are covered more accurately in the [subscription benchmarks](/reports/shopify-subscription-benchmarks-2026), which reads plans directly.
 - **Outside companies:** distinct domains called from the homepage, excluding the store's own domain and Shopify.
 - **Free shipping:** dollar amounts in homepage text that mention free shipping, such as an announcement bar or "you're $50 away" cart message, excluding international offers.
 
-No store is named in this report. Want to know what's slowing your store down? [Book a 20 minute AI Search Review](/ai-visibility-check#book).
+No store is named in this report. Want the scripts that slow your store cut back? Mobile speed is part of my [conversion work](/shopify-conversion-optimization).

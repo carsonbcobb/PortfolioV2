@@ -6,7 +6,7 @@ import '../../styles/tools.css';
 
 const tool = toolBySlug('free-shipping-calculator');
 const intro =
-  "Your free shipping line should get people to add one more item, not scare them off. Put in your numbers and I'll suggest where to set it.";
+  "Your free shipping line should get people to add one more item, not scare them off. Put in your numbers and see where to set it.";
 const jsonLd = [toolSchema(tool)];
 ---
 
@@ -34,15 +34,22 @@ const jsonLd = [toolSchema(tool)];
         <div class="cc-results" aria-live="polite">
           <div><span class="cc-num" id="f-rec">$0</span><span class="cc-lbl">suggested threshold</span></div>
           <div><span class="cc-num" id="f-gap">$0</span><span class="cc-lbl">gap from a typical cart today</span></div>
-          <div><span class="cc-num" id="f-ok">-</span><span class="cc-lbl">does free shipping pay for itself?</span></div>
+          <div><span class="cc-num" id="f-ok">Likely yes</span><span class="cc-lbl">does free shipping pay for itself?</span></div>
         </div>
         <ul class="cc-list" id="f-notes"></ul>
-        <a class="cc-cta" href="/ai-visibility-check#book">Want me to look at your numbers? Book a 20 minute AI Search Review</a>
+        <div class="cc-next">
+          <p>Want this built for your store? Free shipping and cart setup is part of my conversion work.</p>
+          <div class="cc-next__links">
+            <a class="cc-cta" href="/shopify-conversion-optimization">See my conversion work</a>
+            <a href="/pricing">See pricing</a>
+          </div>
+        </div>
       </section>
       <script is:inline>
       function ccShip(){
-        const v=id=>parseFloat(document.getElementById(id).value)||0;
-        const aov=v('f-aov'),hero=v('f-hero'),addon=v('f-addon'),now=v('f-now'),cost=v('f-cost'),margin=v('f-margin')/100;
+        // Empty, negative or non numeric inputs count as 0, and margin stops at 100, so no result is NaN, Infinity or negative.
+        const v=(id,max)=>{const n=parseFloat(document.getElementById(id).value);return Number.isFinite(n)&&n>0?Math.min(n,max??1e9):0;};
+        const aov=v('f-aov'),hero=v('f-hero'),addon=v('f-addon'),now=v('f-now'),cost=v('f-cost'),margin=v('f-margin',100)/100;
         // aim roughly 15 to 30 percent above AOV, rounded to a clean number, and reachable with hero plus one add on
         let target=aov*1.2;
         const reach=hero+addon;
@@ -53,6 +60,13 @@ const jsonLd = [toolSchema(tool)];
         const extraMargin=gap*margin;
         const pays=extraMargin>=cost*0.5;
         const f=n=>'$'+(Math.round(n*100)/100).toLocaleString();
+        if(aov<=0){
+          document.getElementById('f-rec').textContent='$0';
+          document.getElementById('f-gap').textContent='$0';
+          document.getElementById('f-ok').textContent='Add your numbers';
+          document.getElementById('f-notes').innerHTML='<li>Add your average order value to get a suggested threshold.</li>';
+          return;
+        }
         document.getElementById('f-rec').textContent=f(rec);
         document.getElementById('f-gap').textContent=f(gap);
         document.getElementById('f-ok').textContent=pays?'Likely yes':'Check margins';

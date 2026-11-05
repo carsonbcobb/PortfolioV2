@@ -204,7 +204,7 @@
     bad_request: 'Please check the store URL and try again.',
     invalid_url: "That doesn't look like a public store URL. Try something like yourstore.com.",
     turnstile: 'The spam check failed. Please refresh the page and try again.',
-    rate_limited: "You've run 3 checks today. Come back tomorrow, or book a review and I'll walk you through it.",
+    rate_limited: "You've run 3 checks today. Come back tomorrow, or book a review to talk about next steps.",
     paused: 'Checks are paused for today. Book a review instead.',
     expired: 'This report has expired. Please run the check again.',
   };
@@ -348,7 +348,7 @@
       await postJson('/email', { ticket: S.ticket, email: S.email });
       line.textContent = `Your full report is on its way to ${S.email}.`;
     } catch {
-      line.textContent = "We couldn't email your report this time. Book a review and I'll send it with the walkthrough.";
+      line.textContent = "We couldn't email your report this time. Your full results are on this page.";
     }
   };
 

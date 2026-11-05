@@ -105,6 +105,6 @@ Across all my work, rebuilt pages average a 2.1x conversion lift, and I've suppo
 
 ## Book a 20 minute AI Search Review
 
-If you think your subscription program should be doing more, it probably should. Book a 20 minute AI Search Review. Before the call I run your top buyer questions through ChatGPT. On the call I'll show you where you're recommended, who shows up instead, and what's driving it. Tell me about your store, your app and your hero products. I'll tell you honestly where I'd look first and which plan makes sense.
+If you think your subscription program should be doing more, it probably should. Book a 20 minute AI Search Review. We'll go over your goals and your check results, and figure out whether an audit or ongoing work is the right next step. If it isn't a fit, I'll tell you.
 
 [Book a 20 minute AI Search Review](/ai-visibility-check#book)

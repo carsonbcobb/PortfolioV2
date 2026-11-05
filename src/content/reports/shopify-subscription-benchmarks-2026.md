@@ -17,7 +17,7 @@ faq:
     answer: "Rarely. Only 13% of reorderable brands offered subscribe and save on every product checked. Among brands with subscriptions, the typical store covered 70% of checked products, and 52% left at least one best seller without it."
 ---
 
-**By Carson Cobb, Fractional Head of Ecommerce. Data checked November 1, 2026.**
+**By Carson Cobb, Fractional Head of Ecommerce. Data checked November 2026.**
 
 Everyone has an opinion on what a subscription offer should look like. This report shows what growing brands actually run. I read the live selling plans on up to 20 products per store (best sellers first) across 606 Shopify stores, including 434 brands that sell things people reorder: supplements, beauty and skincare, food and beverage, and pet.
 
@@ -65,7 +65,7 @@ Most common recurring discount per store, among reorderable brands with subscrip
 
 Supplements are the deepest discounters: 22% offer 10%, 20% offer 15%, 18% offer 20% and 14% offer 25% or more. The typical supplement discount is 15%. Every other reorderable category centers on 10%.
 
-12% of brands run subscriptions with no discount at all. Those brands are selling convenience, free shipping or a perk instead of a price cut, which can work well when the product has strong loyalty.
+12% of brands run subscriptions with no discount at all. Those brands are selling convenience, free shipping or a perk instead of a price cut, which can work well when the product has strong loyalty. The [subscription calculator](/tools/subscription-calculator) shows what a given discount is worth at your order volume.
 
 **Other offer details:**
 
@@ -130,4 +130,4 @@ If you're weighing a switch, I compare the three most common options in [Recharg
 - **Apps:** taken from the app ID each selling plan group publishes. Recharge was confirmed by matching its ID with Recharge scripts on store homepages. Apps that publish only a numeric ID I could not confirm are grouped as other or unidentified.
 - **Subscription page:** a published page whose address contains subscribe, subscription or autoship.
 
-No store is named in this report. Want to know how your offer compares? [Book a 20 minute AI Search Review](/ai-visibility-check#book).
+No store is named in this report. Want a stronger subscription offer built? See how I [set up and fix Shopify subscriptions](/shopify-subscriptions).

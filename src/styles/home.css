@@ -147,6 +147,24 @@ img {
   color: var(--body);
 }
 
+/* One line under the Beyond schema cards linking the research reports. */
+.research-line {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--body);
+}
+
+.research-line a {
+  color: var(--accent-text);
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
+
+.research-line__all {
+  white-space: nowrap;
+}
+
 .card {
   background: #fff;
   border: 1px solid var(--line);

@@ -38,12 +38,20 @@ const jsonLd = [toolSchema(tool)];
           <div><span class="cc-num" id="s-yearly">$0</span><span class="cc-lbl">extra revenue in year one</span></div>
         </div>
         <p class="cc-note">How it works: each new subscriber is worth their discounted order times the months they stay, minus the reorders they would have placed anyway. Subscribers are added every month, so revenue stacks up over the year. Most stores I audit land between 10% and 30% subscribe rate on reorderable products once the offer is set up well.</p>
-        <a class="cc-cta" href="/ai-visibility-check#book">Want help setting it up? Book a 20 minute AI Search Review</a>
+        <p class="cc-proof">The best subscription rebuild I've done went from 7% to 32% opt in. <a href="/results">See the results</a>.</p>
+        <div class="cc-next">
+          <p>Want this built for your store? Subscription setup is part of my conversion work.</p>
+          <div class="cc-next__links">
+            <a class="cc-cta" href="/shopify-conversion-optimization">See my conversion work</a>
+            <a href="/pricing">See pricing</a>
+          </div>
+        </div>
       </section>
       <script is:inline>
       function ccSub(){
-        const v=id=>parseFloat(document.getElementById(id).value)||0;
-        const orders=v('s-orders'),aov=v('s-aov'),elig=v('s-eligible')/100,rate=v('s-rate')/100,disc=v('s-disc')/100,months=v('s-months'),oneoff=v('s-oneoff');
+        // Empty, negative or non numeric inputs count as 0, and percentages stop at 100, so no result is NaN, Infinity or negative.
+        const v=(id,max)=>{const n=parseFloat(document.getElementById(id).value);return Number.isFinite(n)&&n>0?Math.min(n,max??1e9):0;};
+        const orders=v('s-orders'),aov=v('s-aov'),elig=v('s-eligible',100)/100,rate=v('s-rate',100)/100,disc=v('s-disc',100)/100,months=v('s-months',120),oneoff=v('s-oneoff',100);
         const subs=orders*elig*rate;
         const perSubLift=aov*(1-disc)*months - aov*(1+oneoff);
         const perSubMonthly=months>0?perSubLift/months:0;
