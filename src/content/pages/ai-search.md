@@ -19,8 +19,8 @@ faq:
   - question: "How do I see where I stand today?"
     answer: "Run the free AI Visibility Check. It asks ChatGPT 3 buyer questions for your category, checks what it says about your brand, and scans your crawler access and schema. The full audit runs 50 questions built from your own customers' language."
 ---
-
-AI search optimization gets your brand recommended when shoppers ask ChatGPT, Perplexity, Gemini or Google's AI answers what to buy. I make your Shopify store readable to AI, get you into the sources AI trusts, and measure how often you're recommended.
+<!-- The page layout lives in src/pages/ai-search.astro. Only these sections render from here,
+as collapsed "Read more" disclosures, found by their headings. -->
 
 ## What is AI search?
 
@@ -29,25 +29,6 @@ Shoppers no longer type three words into a search bar and click through ten resu
 That short list is the new shelf. If you're on it, you get a shopper who has already compared options and been told why you fit. If you're not, a competitor gets that shopper, and you never see the lost sale in your analytics.
 
 AI shoppers convert far better than other traffic because the research is already done. By the time they reach your store, they arrive ready to buy. That's why AI search and [conversion work](/shopify-conversion-optimization) belong together: one gets you recommended, the other makes sure the store closes the sale.
-
-## How does AI decide what to recommend?
-
-AI assistants pick from what they can read and what they trust. That comes from two places.
-
-### On site signals
-
-* **Product data.** Clear titles, full descriptions, and the attributes shoppers ask about: ingredients, materials, sizes, certifications, who it's for and who it isn't for.
-* **Structured data.** Schema.org markup that states facts about your products in a form machines read without guessing: price, availability, ratings, identifiers, shipping and returns.
-* **Answer first content.** Product pages and FAQs that answer the real question in the first sentence, not after three paragraphs of brand story.
-* **Crawler access.** Whether GPTBot, PerplexityBot, ClaudeBot and Google's crawlers can actually reach your pages. Bot protection often blocks them without anyone noticing.
-
-### Off site signals
-
-* **Reviews**, on your site and on the platforms AI reads.
-* **Best of lists and affiliate articles** in your category, which AI cites constantly.
-* **Press and publisher coverage.**
-* **Reddit and forums**, where shoppers ask each other for recommendations.
-* **Amazon and retail listings**, which AI often treats as a source of truth about a product.
 
 ## What do I do on your site?
 
@@ -83,21 +64,3 @@ Schema is the part of AI search a developer can add in an afternoon, and you sho
 * **Off site sources**: the reviews, lists, press and forums that back you up.
 
 Then the store has to turn that shopper into an order. Knowing which buyer questions matter in your category, which sources AI trusts there, and how to convert the traffic is the work. I do all of it, measure it against real buyer questions, and focus where you can win.
-
-## What won't I promise?
-
-No one controls AI answers. Anyone who promises you a ranking in ChatGPT is guessing. What I can do is make your store the easiest one in your category for AI to read and trust, get you into the sources it cites, and measure what changes. I report honestly on every question, and I focus the work on the questions where you can win.
-
-## What has AI search work produced?
-
-I've written 50+ AEO audits and roadmaps for brands in vitamins, skincare, cosmetics, food, pet and wellness, and optimized 30+ sites for AI search. That work has restructured 4,000+ products with machine readable attributes, alongside 48% average organic traffic growth.
-
-Three recent cases show what it looks like. A wellness startup that AI had never heard of went from a 0% to a 58% ChatGPT mention rate across 50 buyer questions within 90 days. A billion dollar consumer health brand went from 31% to 74% on product level buyer questions, with AI referral traffic up 3.4x. A growing skincare brand grew revenue from AI referred visitors by 212% in 4 months, with those visitors converting at 2.6x the site average. The details are on my [results page](/results#seo-aeo-and-ai-search). Names are withheld under NDA, and these are examples, not guarantees.
-
-## What does it cost?
-
-Most brands start with the **AI Search and Conversion Audit** for $1,500: a 50 buyer question test in ChatGPT, competitor and citation analysis, a conversion leak review and a prioritized plan. The full $1,500 is credited toward a **Build** started within 30 days. Builds are fixed price, 3 to 4 weeks, from $5,000. Ongoing work runs on the **Growth** retainer at $4,500/month. Every option is on the [pricing page](/pricing).
-
-## Where do you stand today?
-
-[Run the free AI Visibility Check](/ai-visibility-check). In about a minute you'll see whether ChatGPT recommends you for 3 buyer questions in your category, what it says about your brand, and whether AI crawlers can read your store.

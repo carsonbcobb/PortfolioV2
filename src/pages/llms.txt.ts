@@ -16,7 +16,7 @@ import {
   AGENCY_PARTNER_INTRO,
 } from '../data/site';
 import { CONTENT_PAGES, TOOLS } from '../data/pages';
-import { REPORT_HUB, REPORTS, slugOf } from '../data/reports';
+import { REPORT_HUB, REPORTS, AI_RESEARCH, slugOf, shortVersion } from '../data/reports';
 
 // Plain markdown summary of the site at /llms.txt. Built from the same data as the pages,
 // so plans and prices here always match the pricing cards.
@@ -82,10 +82,16 @@ export const GET: APIRoute = () => {
     '',
     ...pages('industry'),
     '',
+    '## AI search research',
+    '',
+    ...AI_RESEARCH.map((r) => `- [${r.frontmatter.h1}](${url(`/${slugOf(r)}`)}): ${shortVersion(r)}`),
+    '',
     '## Reports',
     '',
     `- [All reports](${url('/reports')}): ${REPORT_HUB.frontmatter.description}`,
-    ...REPORTS.map((r) => `- [${r.frontmatter.h1}](${url(`/${slugOf(r)}`)}): ${r.frontmatter.description}`),
+    ...REPORTS.filter((r) => !AI_RESEARCH.includes(r)).map(
+      (r) => `- [${r.frontmatter.h1}](${url(`/${slugOf(r)}`)}): ${r.frontmatter.description}`,
+    ),
     '',
     '## Guides',
     '',
@@ -93,7 +99,7 @@ export const GET: APIRoute = () => {
     '',
     '## Tools',
     '',
-    `- [All tools](${url('/tools')}): Calculators and a store check for Shopify brands.`,
+    `- [All tools](${url('/tools')}): The AI Visibility Check plus subscription and free shipping calculators for Shopify brands.`,
     ...TOOLS.map((t) => `- [${t.name}](${url(`/tools/${t.slug}`)}): ${t.summary}`),
     '',
   ].join('\n');

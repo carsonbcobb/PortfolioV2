@@ -1,27 +1,40 @@
 ---
-// The /reports hub, from src/content/reports/index.md. The markdown renders as written, except the
-// list under "Reports", which becomes one card per report with its checked date.
+// The /reports hub, from src/content/reports/index.md. The markdown renders as written, except each
+// section whose items are report links (### [Title](/reports/...)), which becomes one card per report
+// with its checked month. An item without a summary paragraph uses the first sentence of the report's
+// first "The short version" bullet. The first two AI search research cards are featured.
 import ContentPage from '../../layouts/ContentPage.astro';
 import { reportsIndexSchema } from '../../data/schema';
-import { REPORT_HUB, REPORTS, slugOf, isoDate, shortDate, checkedDate } from '../../data/reports';
+import { REPORT_HUB, REPORTS, slugOf, isoDate, monthYear, checkedDate, shortVersion, firstSentence } from '../../data/reports';
 
 const fm = REPORT_HUB.frontmatter;
 const faqs = (fm.faq ?? []).map((f) => ({ q: f.question, a: f.answer }));
 const modified = fm.dateModified ? isoDate(fm.dateModified) : undefined;
+const FEATURED_SECTION = 'ai-search-research';
+const FEATURED_COUNT = 2;
 
-// Split the rendered markdown around the Reports section and read its title, link and summary pairs.
+const escape = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const CARD = /<h3[^>]*><a href="([^"]+)">([\s\S]*?)<\/a><\/h3>(?:\s*<p>([\s\S]*?)<\/p>)?/g;
+
+// Split the rendered markdown at each h2. A section with report links becomes a heading plus cards.
 const html = await REPORT_HUB.compiledContent();
-const section = html.match(/(<h2 id="reports">[\s\S]*?<\/h2>)([\s\S]*?)(?=<h2)/);
-if (!section) throw new Error('reports/index.md needs a "## Reports" section followed by another h2');
-const before = html.slice(0, section.index! + section[1].length);
-const after = html.slice(section.index! + section[0].length);
-const cards = [...section[2].matchAll(/<h3[^>]*><a href="([^"]+)">([\s\S]*?)<\/a><\/h3>\s*<p>([\s\S]*?)<\/p>/g)].map(
-  ([, href, title, summary]) => {
+const blocks = html.split(/(?=<h2[ >])/).map((part) => {
+  const head = part.match(/^<h2 id="([^"]+)">[\s\S]*?<\/h2>/);
+  const items = head ? [...part.matchAll(CARD)] : [];
+  if (!head || items.length === 0) return { html: part };
+  const cards = items.map(([, href, title, summary], i) => {
     const report = REPORTS.find((r) => `/${slugOf(r)}` === href);
-    if (!report) throw new Error(`The Reports list links to ${href}, which is not a report`);
-    return { href, title, summary, checked: checkedDate(report) };
-  },
-);
+    if (!report) throw new Error(`The reports hub links to ${href}, which is not a report`);
+    return {
+      href,
+      title,
+      summary: summary ?? escape(firstSentence(shortVersion(report))),
+      checked: checkedDate(report),
+      featured: head[1] === FEATURED_SECTION && i < FEATURED_COUNT,
+    };
+  });
+  return { html: head[0], cards };
+});
 
 const jsonLd = [
   reportsIndexSchema(
@@ -43,22 +56,33 @@ const jsonLd = [
 >
   <section class="section page-body">
     <div class="wrap">
-      <article class="prose" set:html={before} />
-      <div class="tool-list report-list">
-        {
-          cards.map((c) => (
-            <a class="card tool-card" href={c.href}>
-              <p class="report-card__date">
-                Checked <time datetime={c.checked}>{shortDate(c.checked)}</time>
-              </p>
-              <h3 class="h3" set:html={c.title} />
-              <p set:html={c.summary} />
-              <span class="tool-card__go">Read the report →</span>
-            </a>
-          ))
-        }
-      </div>
-      <article class="prose" set:html={after} />
+      {
+        blocks.map((b) =>
+          b.cards ? (
+            <>
+              <article class="prose" set:html={b.html} />
+              {[b.cards.filter((c) => c.featured), b.cards.filter((c) => !c.featured)]
+                .filter((group) => group.length)
+                .map((group) => (
+                  <div class:list={['tool-list report-list', group[0].featured && 'report-list--featured']}>
+                    {group.map((c) => (
+                      <a class:list={['card tool-card', c.featured && 'report-card--featured']} href={c.href}>
+                        <p class="report-card__date">
+                          Checked <time datetime={c.checked}>{monthYear(c.checked)}</time>
+                        </p>
+                        <h3 class="h3" set:html={c.title} />
+                        <p set:html={c.summary} />
+                        <span class="tool-card__go">Read the report →</span>
+                      </a>
+                    ))}
+                  </div>
+                ))}
+            </>
+          ) : (
+            <article class="prose" set:html={b.html} />
+          ),
+        )
+      }
     </div>
   </section>
 </ContentPage>

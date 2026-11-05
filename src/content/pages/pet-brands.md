@@ -94,6 +94,6 @@ Every plan is listed on the [pricing page](/pricing).
 
 ## Book a 20 minute AI Search Review
 
-If pet owners love your product but the store makes them work to reorder, let's fix that. Book a 20 minute AI Search Review. Before the call I run your top buyer questions through ChatGPT. On the call I'll show you where you're recommended, who shows up instead, and what's driving it. Tell me what you sell and how autoship is set up today, and I'll tell you where I'd look first.
+If pet owners love your product but the store makes them work to reorder, let's fix that. Book a 20 minute AI Search Review. We'll go over your goals and your check results, and figure out whether an audit or ongoing work is the right next step. If it isn't a fit, I'll tell you.
 
 [Book a 20 minute AI Search Review](/ai-visibility-check#book)

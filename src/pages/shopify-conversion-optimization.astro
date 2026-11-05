@@ -1,0 +1,218 @@
+---
+// /shopify-conversion-optimization as a designed sales page. Title, description and FAQ come from
+// src/content/pages/shopify-conversion-optimization.md, whose sections are the collapsed "Read more" disclosures.
+import ContentPage from '../layouts/ContentPage.astro';
+import PriceSummary from '../components/PriceSummary.astro';
+import { contentSchema } from '../data/schema';
+import { pageBySlug, toolBySlug } from '../data/pages';
+import { designedPage } from '../data/reports';
+import { CHECK_PATH, HEADER_CTA_LABEL, RESULTS } from '../data/site';
+import '../styles/sales.css';
+
+const slug = 'shopify-conversion-optimization';
+const { fm, section } = await designedPage(slug);
+const info = pageBySlug(slug);
+const faqs = (fm.faq ?? []).map((f) => ({ q: f.question, a: f.answer }));
+const jsonLd = [
+  contentSchema({ slug, title: fm.title, description: fm.description, label: info.label, faqs, service: info.service }),
+];
+
+const proof = ['2.1x average conversion lift on rebuilt pages', '500+ A/B tests', '50+ Shopify stores'];
+
+// Numbered problem areas on the product page wireframe, top to bottom.
+const leaks = [
+  { title: 'Above the fold', text: 'the first phone screen hides the price, the reason to buy or the button.' },
+  { title: 'Trust and reviews', text: 'reviews sit far below the spot where doubt shows up.' },
+  { title: 'The offer', text: 'subscribe and save is hidden, or the bundle math is unclear.' },
+  { title: 'Add to cart', text: 'shipping and returns are buried far from the button.' },
+  { title: 'Speed', text: 'app scripts and oversized images slow the page before anyone sees it.' },
+];
+
+const featured = RESULTS.find((r) => r.stat === '+71%')!;
+
+const fixes = [
+  { title: 'Product pages', text: 'The first screen, benefits in customer language, and reviews where doubt shows up.' },
+  { title: 'Cart and checkout', text: 'Progress to free shipping, one relevant add on, and no surprises at the last step.' },
+  { title: 'Mobile speed', text: 'Cut the app scripts and image weight that lose shoppers before the page loads.' },
+  { title: 'Subscriptions and offers', text: 'Subscribe and save that is easy to choose, and offers that lift order value.' },
+  { title: 'Testing', text: 'A roadmap of focused tests once the obvious problems are fixed.' },
+  { title: 'Tracking', text: 'Orders, add to carts and revenue recorded correctly, so every decision rests on real numbers.' },
+];
+
+const steps = [
+  { title: 'Audit', text: 'Find where the store loses buyers, ranked by what each fix is worth.' },
+  { title: 'Fix in priority order', text: 'Ship the biggest leaks first: product pages, cart, speed and tracking.' },
+  { title: 'Test and measure', text: 'Test what is worth testing, keep the winners and track the lift.' },
+];
+
+const tools = ['subscription-calculator', 'free-shipping-calculator'].map(toolBySlug);
+
+const readMore = [
+  'What do I fix on product pages?',
+  'What about cart and checkout?',
+  'How much does mobile speed matter?',
+  'How do testing and measurement work?',
+].map((heading) => ({ title: heading, html: section(heading) }));
+---
+
+<ContentPage
+  title={fm.title}
+  description={fm.description}
+  h1={fm.h1}
+  intro="Turn the traffic you already have, from ads, search and AI, into more orders."
+  trail={[{ name: info.label }]}
+  {faqs}
+  faqCollapsed
+  ctaTitle="See where you stand, then fix what costs you sales."
+  {jsonLd}
+>
+  <Fragment slot="hero">
+    <div class="sales-hero__actions">
+      <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent">{HEADER_CTA_LABEL}</a>
+      <a href="/pricing" class="sales-hero__link">See pricing →</a>
+    </div>
+    <p class="sales-hero__proof">{proof.join(' · ')}</p>
+  </Fragment>
+
+  <!-- Bridge to AI search -->
+  <section class="section--sand section--tight" aria-labelledby="bridge">
+    <div class="wrap bridge">
+      <div class="bridge__text">
+        <p class="bridge__title" id="bridge">Why does AI traffic need a store that converts?</p>
+        <p>
+          A shopper from ChatGPT arrives ready to buy. If the page doesn't confirm what AI told them, you lose your best
+          visitor of the day.
+        </p>
+      </div>
+      <a class="bridge__link" href="/ai-search">How AI search works →</a>
+    </div>
+  </section>
+
+  <!-- Where stores leak -->
+  <section class="section" aria-labelledby="leaks">
+    <div class="wrap split">
+      <div class="head">
+        <p class="eyebrow">Where stores leak</p>
+        <h2 class="h2" id="leaks">The same five leaks, store after store.</h2>
+        <ol class="leak__list">
+          {
+            leaks.map((l, i) => (
+              <li>
+                <span class="marker" aria-hidden="true">{i + 1}</span>
+                <span>
+                  <strong>{l.title}:</strong> {l.text}
+                </span>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+      <figure class="phone" aria-label="Wireframe of a mobile product page with the five problem areas numbered">
+        <div class="phone__screen" aria-hidden="true">
+          <div class="wf wf--image"><span class="marker" style="top: 40px">1</span></div>
+          <div class="wf wf--line"></div>
+          <div class="wf wf--line wf--short"></div>
+          <div class="wf wf--price"></div>
+          <div class="wf wf--stars"><span class="marker" style="top: -8px">2</span></div>
+          <div class="wf wf--offer"><span class="marker" style="top: 9px">3</span></div>
+          <div class="wf wf--button"><span class="marker" style="top: 7px">4</span></div>
+          <div class="wf wf--line"></div>
+          <div class="wf wf--line wf--short"></div>
+          <div class="wf wf--speed"><span class="marker" style="top: -11px">5</span></div>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Featured proof -->
+  <section class="section section--sand section--tight" aria-labelledby="case">
+    <div class="wrap">
+      <article class="card case">
+        <div>
+          <span class="tag">{featured.tag}</span>
+          <div class="case__stat">{featured.stat}</div>
+          <p class="case__label">{featured.statLabel}</p>
+        </div>
+        <div class="case__body">
+          <h2 class="h3" id="case">{featured.title}</h2>
+          <div class="result__row"><strong>Before:</strong> {featured.before}</div>
+          <div class="result__row"><strong>After:</strong> {featured.after}</div>
+          <p class="ways__more"><a href="/results">See all results →</a></p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- What I fix -->
+  <section class="section" aria-labelledby="fixes">
+    <div class="wrap stack">
+      <div class="head">
+        <p class="eyebrow">What I fix</p>
+        <h2 class="h2" id="fixes">Six places the sale is won or lost.</h2>
+      </div>
+      <div class="grid fixes">
+        {
+          fixes.map((f) => (
+            <div class="card fix">
+              <h3 class="h3">{f.title}</h3>
+              <p>{f.text}</p>
+            </div>
+          ))
+        }
+      </div>
+      <div class="readmore">
+        {
+          readMore.map((m) => (
+            <details>
+              <summary>{m.title}</summary>
+              <div class="prose" set:html={m.html} />
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section section--sand" aria-labelledby="how">
+    <div class="wrap stack">
+      <div class="head">
+        <p class="eyebrow">How it works</p>
+        <h2 class="h2" id="how">Audit, fix, then test.</h2>
+      </div>
+      <ol class="process" style="--steps: 3">
+        {
+          steps.map((s) => (
+            <li>
+              <h3 class="step__title">{s.title}</h3>
+              <p class="step__text">{s.text}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <!-- Free tools -->
+  <section class="section" aria-labelledby="tools">
+    <div class="wrap stack">
+      <div class="head">
+        <p class="eyebrow">Free tools</p>
+        <h2 class="h2" id="tools">Run the numbers on your own store.</h2>
+      </div>
+      <div class="tool-list">
+        {
+          tools.map((t) => (
+            <a class="card tool-card" href={`/tools/${t.slug}`}>
+              <h3 class="h3">{t.name.charAt(0).toUpperCase() + t.name.slice(1)}</h3>
+              <p>{t.summary}</p>
+              <span class="tool-card__go">Open the calculator →</span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <PriceSummary id="cro-pricing" sand={false} flush compact />
+</ContentPage>

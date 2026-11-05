@@ -198,3 +198,43 @@
     font-size: 26px;
   }
 }
+
+/* Next step under a calculator: a conversion work link and pricing */
+.cc-proof {
+  margin: 20px 0 0;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 600;
+  color: var(--ink, #111);
+}
+
+.cc-next {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line, #e7e5e1);
+}
+
+.cc-next p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.cc-next__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+}
+
+.cc-next__links .cc-cta {
+  margin-top: 0;
+}
+
+.cc-next__links a:not(.cc-cta) {
+  font-weight: 600;
+  text-underline-offset: 4px;
+}

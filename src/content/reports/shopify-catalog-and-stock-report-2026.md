@@ -9,14 +9,14 @@ reportStores: 606
 reportProducts: 121519
 faq:
   - question: "What share of a Shopify catalog is typically sold out?"
-    answer: "The typical Shopify store had 5% of its products fully sold out on November 1, 2026. 34% of stores had 10% or more sold out, and 15% had a quarter or more."
+    answer: "The typical Shopify store had 5% of its products fully sold out in November 2026. 34% of stores had 10% or more sold out, and 15% had a quarter or more."
   - question: "How often are Shopify best sellers sold out?"
     answer: "24% of stores with a best sellers collection had at least one product in it fully sold out. The typical case was 2 sold out in a collection of about 16."
   - question: "How many products does a growing Shopify brand sell?"
     answer: "The typical store in this study had 78 products. Food brands had the smallest catalogs at 43 and apparel the largest at 425."
 ---
 
-**By Carson Cobb, Fractional Head of Ecommerce. Data checked November 1, 2026.**
+**By Carson Cobb, Fractional Head of Ecommerce. Data checked November 2026.**
 
 A sold out product costs more than the one sale. The shopper who clicked from an ad or an email lands on a dead end, and most don't come back. I checked 606 Shopify stores and 121,519 products to see how often that happens, where it happens most, and how quickly growing brands add new products.
 
@@ -75,7 +75,6 @@ The best sellers collection is often in the main menu and on the homepage. When 
 2. **Clean up your best sellers collection** before Black Friday traffic arrives.
 3. **Add back in stock alerts** to anything that will be restocked.
 4. **Build a launch checklist.** Every new product should get its subscription plan, bundle placement, upsell rule and review request on day one.
-5. **Run a quick check of your store** with the [store check](/tools/store-check).
 
 ## How this was done
 
@@ -83,6 +82,6 @@ The best sellers collection is often in the main menu and on the homepage. When 
 - **Sold out:** a product counts as sold out when none of its variants are available. Gift cards were excluded.
 - **Best sellers:** the store's own published collection with best seller, top seller, most popular or fan favorite in its address or title, up to 30 products.
 - **Launch pace:** based on each product's creation date. A store migration or product import can reset creation dates, so this measures how fresh the catalog is, not a perfect launch count.
-- **Data:** each store's public product and collection data, checked November 1, 2026.
+- **Data:** each store's public product and collection data, checked November 2026.
 
-No store is named in this report. Want help tightening your catalog before the holidays? [Book a 20 minute AI Search Review](/ai-visibility-check#book).
+No store is named in this report. Want your catalog tightened up before the holidays? It's part of my [conversion work](/shopify-conversion-optimization).

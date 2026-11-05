@@ -160,14 +160,6 @@ export interface ToolInfo {
 
 export const TOOLS: ToolInfo[] = [
   {
-    slug: 'store-check',
-    name: 'Shopify store check',
-    title: 'Shopify Store Check: Find Revenue Leaks | Carson Cobb',
-    description:
-      'Check any Shopify store for missing subscriptions, sold out best sellers, gifting and bundles using its public product data. Takes about 20 seconds.',
-    summary: 'Enter any Shopify store and see where it may be leaking revenue.',
-  },
-  {
     slug: 'subscription-calculator',
     name: 'Subscription revenue calculator',
     title: 'Subscription Revenue Calculator for Shopify | Carson Cobb',

@@ -103,6 +103,6 @@ Every plan is listed on the [pricing page](/pricing).
 
 ## Book a 20 minute AI Search Review
 
-If your supplement brand is growing but the store feels like it's leaking, let's talk. Book a 20 minute AI Search Review. Before the call I run your top buyer questions through ChatGPT. On the call I'll show you where you're recommended, who shows up instead, and what's driving it. Tell me what you sell and what's frustrating you, and I'll tell you where I'd look first.
+If your supplement brand is growing but the store feels like it's leaking, let's talk. Book a 20 minute AI Search Review. We'll go over your goals and your check results, and figure out whether an audit or ongoing work is the right next step. If it isn't a fit, I'll tell you.
 
 [Book a 20 minute AI Search Review](/ai-visibility-check#book)

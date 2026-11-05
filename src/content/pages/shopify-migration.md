@@ -90,7 +90,7 @@ See all options on the [pricing page](/pricing).
 
 ## Book a 20 minute AI Search Review
 
-If you're planning a migration or a rebuild, talk to me before you pick a launch date. Book a 20 minute AI Search Review. Before the call I run your top buyer questions through ChatGPT. On the call I'll show you where you're recommended, who shows up instead, and what's driving it. Tell me where you're moving from and what you're worried about, and I'll tell you what I'd plan for first.
+If you're planning a migration or a rebuild, talk to me before you pick a launch date. Book a 20 minute AI Search Review. We'll go over your goals, your timing and where you're moving from, and figure out whether an audit or a Build is the right next step. If it isn't a fit, I'll tell you.
 
 [Book a 20 minute AI Search Review](/ai-visibility-check#book)
 

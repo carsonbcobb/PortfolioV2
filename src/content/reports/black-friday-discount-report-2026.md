@@ -9,18 +9,18 @@ reportStores: 606
 reportProducts: 121519
 faq:
   - question: "How many Shopify stores are already discounting before Black Friday?"
-    answer: "On November 1, 2026, 73% of 606 Shopify stores showed a crossed out compare at price on at least one product. The typical store had 11% of its catalog marked down."
+    answer: "In November 2026, 73% of 606 Shopify stores showed a crossed out compare at price on at least one product. The typical store had 11% of its catalog marked down."
   - question: "How deep are Shopify markdowns before Black Friday?"
     answer: "Among stores with markdowns, the typical store's median markdown was 20%. Apparel ran deepest at about 32%, while food and pet brands ran 15% to 18%."
   - question: "How many brands have a Black Friday page ready?"
-    answer: "23% of stores had a published collection with Black Friday, BFCM or Cyber in its name on November 1, though some are left over from earlier years. Apparel led at 41% and food trailed at 11%."
+    answer: "23% of stores had a published collection with Black Friday, BFCM or Cyber in its name in early November, though some are left over from earlier years. Apparel led at 41% and food trailed at 11%."
   - question: "Do sales undercut subscriptions?"
     answer: "Often. Of the reorderable brands that offer subscriptions and also mark products down, 68% have a typical markdown deeper than their subscribe and save discount, which can give subscribers a reason to cancel and buy on sale."
 ---
 
-**By Carson Cobb, Fractional Head of Ecommerce. Data checked November 1, 2026. I will check the same stores again during Black Friday week.**
+**By Carson Cobb, Fractional Head of Ecommerce. Data checked November 2026. I will check the same stores again during Black Friday week.**
 
-This is the before picture. On November 1, I checked 606 Shopify stores and 121,519 products to see how many brands are already showing sale prices, how deep those markdowns go, and who has a Black Friday page built. I'll check the same stores again during Black Friday week and publish the change, so you can see what growing brands actually do, not what they say they'll do.
+This is the before picture. In early November, I checked 606 Shopify stores and 121,519 products to see how many brands are already showing sale prices, how deep those markdowns go, and who has a Black Friday page built. I'll check the same stores again during Black Friday week and publish the change, so you can see what growing brands actually do, not what they say they'll do.
 
 ## The short version
 
@@ -78,14 +78,14 @@ Black Friday makes this worse, because markdowns get deeper and every subscriber
 2. **Check your compare at prices.** A crossed out price that never changes stops working. If 50% of your catalog has been "on sale" all year, the Black Friday price has to be dramatically lower to register.
 3. **Protect your subscription price.** See the section above.
 4. **Set your free shipping line for the sale.** Bigger carts during Black Friday mean you can raise it or use it as the offer. The [free shipping calculator](/tools/free-shipping-calculator) works it out from your own order value.
-5. **Restock or hide sold out best sellers.** 24% of stores with a best sellers collection had at least one product in it sold out on November 1.
+5. **Restock or hide sold out best sellers.** 24% of stores with a best sellers collection had at least one product in it sold out in early November.
 
 ## How this was done
 
 - **Stores:** 606 US Shopify stores priced in US dollars: supplements (120), beauty and skincare (124), food and beverage (149), pet (41), home (77) and apparel (95). Mostly small and mid size direct to consumer brands. Stores with fewer than 3 products were excluded.
-- **Data:** each store's public product data, up to 1,000 products per store, plus its published collections. Checked November 1, 2026. Gift cards were excluded.
+- **Data:** each store's public product data, up to 1,000 products per store, plus its published collections. Checked November 2026. Gift cards were excluded.
 - **Marked down:** a product counts as marked down when any variant shows a compare at price higher than its selling price. Discount is (compare at price minus price) divided by compare at price, using the deepest variant on each product. Some brands keep a permanent compare at price, so this measures what shoppers see, not a change from last month.
 - **Black Friday collection:** a published collection whose address or title contains Black Friday, BFCM or Cyber. About one in seven of these carry an earlier year in the address, so this counts published pages, not pages built for 2026. Sale collection: an address with sale, clearance, outlet, deals or last chance as a separate word (so wholesale doesn't count).
 - **Subscriptions versus markdowns:** compares each store's median markdown with its most common recurring subscription discount (checked on up to 20 products per store, best sellers first). Plans with no price change count as 0%. Leaving those out, the share is 63%.
 
-No store is named in this report. Want to see how your store compares before the sale? [Book a 20 minute AI Search Review](/ai-visibility-check#book).
+No store is named in this report. Getting ready for the sale? Offers, product pages and the cart are part of my [conversion work](/shopify-conversion-optimization).

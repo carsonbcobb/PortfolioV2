@@ -101,7 +101,7 @@ What that means in practice is still unclear. If you're choosing Skio specifical
 
 If you want a second set of eyes before you commit, or you want someone to lead your subscription program after you pick, that's what I do. The AI Search and Conversion Audit ($1,500, credited toward a Build started within 30 days) is a good start, and the Full retainer ($7,500/month) is where I run subscriptions as part of the whole store, at your direction. See all options on the [pricing page](/pricing). If you're a supplement or wellness brand, my [supplement brands page](/supplement-brands) covers the extra things I'd check.
 
-Book a 20 minute AI Search Review. Before the call I run your top buyer questions through ChatGPT. On the call I'll show you where you're recommended, who shows up instead, and what's driving it. Tell me which apps you're weighing. I'll tell you what I'd pick for your store and why.
+Book a 20 minute AI Search Review. We'll go over your goals and the apps you're weighing, and figure out whether an audit or ongoing work is the right next step. If it isn't a fit, I'll tell you.
 
 [Book a 20 minute AI Search Review](/ai-visibility-check#book)
 

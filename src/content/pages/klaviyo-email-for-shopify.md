@@ -93,6 +93,6 @@ Across my work, I've supported more than $40M in client revenue for growing bran
 
 ## Book a 20 minute AI Search Review
 
-If your Klaviyo account hasn't been touched in a while, it's probably leaving orders on the table. Book a 20 minute AI Search Review. Before the call I run your top buyer questions through ChatGPT. On the call I'll show you where you're recommended, who shows up instead, and what's driving it. Tell me what flows you have running, and I'll tell you where I'd start.
+If your Klaviyo account hasn't been touched in a while, it's probably leaving orders on the table. Book a 20 minute AI Search Review. We'll go over your goals and your check results, and figure out whether an audit or ongoing work is the right next step. If it isn't a fit, I'll tell you.
 
 [Book a 20 minute AI Search Review](/ai-visibility-check#book)

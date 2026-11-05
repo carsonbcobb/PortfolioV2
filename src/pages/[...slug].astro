@@ -4,10 +4,14 @@
 import ContentPage from '../layouts/ContentPage.astro';
 import { contentSchema, reportSchema } from '../data/schema';
 import { pageBySlug } from '../data/pages';
-import { MARKDOWN_PAGES, slugOf, isReportPage, isoDate, checkedDate, tableHeaders, type MarkdownPage } from '../data/reports';
+import { MARKDOWN_PAGES, DESIGNED_PAGES, AI_RESEARCH, slugOf, isReportPage, isoDate, checkedDate, tableHeaders, type MarkdownPage } from '../data/reports';
 
 export function getStaticPaths() {
-  return MARKDOWN_PAGES.map((page) => ({ params: { slug: slugOf(page) }, props: { page } }));
+  // Designed pages have their own route file and only borrow their markdown's frontmatter and sections.
+  return MARKDOWN_PAGES.filter((page) => !DESIGNED_PAGES.includes(slugOf(page))).map((page) => ({
+    params: { slug: slugOf(page) },
+    props: { page },
+  }));
 }
 
 const { page } = Astro.props as { page: MarkdownPage };
@@ -24,6 +28,9 @@ if (report) {
   const published = isoDate(fm.datePublished ?? fm.dateModified!);
   const modified = isoDate(fm.dateModified ?? published);
   dates = { published, modified };
+  // AI search research: its own keywords, and a method line for reports built from ChatGPT chats.
+  const ai = AI_RESEARCH.includes(page);
+  const fromChats = ai && /temporary (ChatGPT )?chat/i.test(page.rawContent());
   trail = [{ name: 'Reports', href: '/reports' }, { name: fm.h1 }];
   jsonLd = [
     reportSchema({
@@ -38,6 +45,8 @@ if (report) {
       variables: tableHeaders(page),
       stores: fm.reportStores,
       products: fm.reportProducts,
+      ...(ai ? { keywords: ['Shopify', 'ecommerce', 'AI search', 'ChatGPT', 'structured data'] } : {}),
+      ...(fromChats ? { technique: 'Asking ChatGPT questions in temporary chats and recording every answer and source' } : {}),
     }),
   ];
 } else {

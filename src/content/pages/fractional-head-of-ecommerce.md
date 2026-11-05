@@ -100,6 +100,6 @@ It's probably not a fit if you want someone to only run ads, or if you need a te
 
 ## Book a 20 minute AI Search Review
 
-If you're tired of being the person who holds the whole store together, let's talk. Before the call I run your top buyer questions through ChatGPT. On the call I'll show you where you're recommended, who shows up instead, and what's driving it. I'll also tell you honestly which plan makes sense, or whether you need a full time hire instead.
+If you're tired of being the person who holds the whole store together, let's talk. We'll go over your goals and your check results, and figure out whether an audit, ongoing work or a full time hire is the right next step. If it isn't a fit, I'll tell you.
 
 [Book a 20 minute AI Search Review](/ai-visibility-check#book)

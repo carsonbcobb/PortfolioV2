@@ -21,6 +21,7 @@ import {
 import { checkSchema } from '../data/schema';
 import '../styles/content.css';
 import '../styles/check.css';
+import '../styles/sales.css';
 
 const title = 'Does ChatGPT Recommend Your Brand? Free Check | Carson Cobb';
 const description =
@@ -62,6 +63,18 @@ const SCORES = [
   },
 ];
 
+// "Why does this matter?" strip. Each figure links to the report it comes from.
+const MATTERS = [
+  { value: 'About 4', text: 'brands per ChatGPT answer.', href: '/reports/who-chatgpt-recommends-2026', go: 'Read the report →' },
+  {
+    value: 'About 50%',
+    text: 'better conversion from AI referred shoppers than search shoppers (Shopify, 2026).',
+    href: '/reports/ai-search-ecommerce-whats-real',
+    go: 'See the source →',
+  },
+  { value: '29%', text: 'of Shopify stores publish duplicate product data.', href: '/reports/duplicate-product-schema-ai-visibility', go: 'Read the report →' },
+];
+
 const jsonLd = [checkSchema({ title, description, faqs: CHECK_FAQS })];
 ---
 
@@ -78,8 +91,8 @@ const jsonLd = [checkSchema({ title, description, faqs: CHECK_FAQS })];
           <p class="eyebrow">Free AI Visibility Check</p>
           <h1 class="flow__h1" tabindex="-1">Does ChatGPT recommend your brand?</h1>
           <p class="flow__sub">
-            I'll ask ChatGPT 5 real buyer questions in your category, check what it says about you, and test whether AI
-            can read your store.
+            Enter your store. In about a minute you'll see whether ChatGPT names you for 3 real buyer questions in your
+            category, who it names instead, and whether AI can read your product pages.
           </p>
           {
             ready ? (
@@ -112,12 +125,16 @@ const jsonLd = [checkSchema({ title, description, faqs: CHECK_FAQS })];
               </Fragment>
             ) : (
               <p class="flow__notice">
-                The check is being set up. In the meantime,{' '}
-                <a href={CAL_LINK} data-track="book_call" {...ext(CAL_LINK)}>book a 20 minute AI Search Review</a> and I'll run it
-                for you.
+                The check is being set up. In the meantime, you can{' '}
+                <a href={CAL_LINK} data-track="book_call" {...ext(CAL_LINK)}>book a 20 minute AI Search Review</a> to talk
+                about your goals and next steps.
               </p>
             )
           }
+          <p class="flow__fine flow__research">
+            Want the bigger picture? See how 94 Shopify stores score in the
+            <a href="/reports/shopify-ai-readiness-index-2026">AI Readiness Index</a>.
+          </p>
         </div>
       </div>
 
@@ -132,7 +149,7 @@ const jsonLd = [checkSchema({ title, description, faqs: CHECK_FAQS })];
             <button type="button" class="btn btn--outline-dark" data-action="restart" id="run-retry" hidden>Try again</button>
           </div>
           <form id="email-form" class="card card--dark flow__email" novalidate>
-            <label for="email" class="flow__email-q">Where should I send your full report?</label>
+            <label for="email" class="flow__email-q">Where should we send your full report?</label>
             <div class="flow__email-row">
               <input id="email" name="email" type="email" autocomplete="email" placeholder="you@yourbrand.com" required />
               <button type="submit" class="btn btn--accent">Send it</button>
@@ -159,7 +176,7 @@ const jsonLd = [checkSchema({ title, description, faqs: CHECK_FAQS })];
             <ol class="findings" id="findings"></ol>
             <div class="flow__actions">
               <button type="button" class="btn btn--accent" data-action="next">See the breakdown</button>
-              <button type="button" class="flow__link" data-action="close">Walk through it with me</button>
+              <button type="button" class="flow__link" data-action="close">Talk about next steps</button>
             </div>
           </div>
         </div>
@@ -186,8 +203,9 @@ const jsonLd = [checkSchema({ title, description, faqs: CHECK_FAQS })];
               <p>Of the four areas above, schema touches one. Getting recommended takes all four, plus a store that converts the traffic.</p>
             </div>
             <div class="close__book">
-              <p class="close__book-title" id="book-title">Walk through your results with me</p>
-              <button type="button" class="btn btn--accent" data-action="open-calendar" id="open-calendar">Walk through your results with me</button>
+              <p class="close__book-title" id="book-title">Prefer to talk it through?</p>
+              <p class="flow__body">{CALL_TEXT}</p>
+              <button type="button" class="btn btn--accent" data-action="open-calendar" id="open-calendar">Book a 20 minute {CALL_NAME}</button>
             </div>
             <p class="flow__fine">Reviews are for brands doing $20K+ a month. Under that, the full audit is the best place to start.</p>
             <p class="close__audit">
@@ -218,8 +236,85 @@ const jsonLd = [checkSchema({ title, description, faqs: CHECK_FAQS })];
       </dialog>
     </section>
 
+    <!-- Free check vs the audit -->
+    <section class="section section--sand section--tight" aria-labelledby="compare-title">
+      <div class="wrap stack">
+        <h2 class="h2 h2--36" id="compare-title">How is this different from the full audit?</h2>
+        <div class="grid compare">
+          <div class="card compare__col">
+            <p class="tag">Free</p>
+            <h3 class="h3">This check</h3>
+            <ul>
+              <li>3 questions written for your category</li>
+              <li>One run</li>
+              <li>A snapshot of where you stand today</li>
+            </ul>
+          </div>
+          <div class="card compare__col compare__col--paid">
+            <p class="tag tag--accent">{usd(AUDIT.price)} one time</p>
+            <h3 class="h3">{AUDIT.name}</h3>
+            <ul>
+              <li>50 questions from your own customers' language</li>
+              <li>Repeated across runs</li>
+              <li>The competitors and sources AI uses instead of you</li>
+              <li>A conversion review</li>
+              <li>A prioritized plan</li>
+            </ul>
+            <a class="compare__link" href="/pricing#audit">See the audit on the pricing page →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why it matters -->
+    <section class="section section--tight" aria-labelledby="matters-title">
+      <div class="wrap stack">
+        <h2 class="h2 h2--36" id="matters-title">Why does this matter?</h2>
+        <div class="grid grid--three">
+          {
+            MATTERS.map((m) => (
+              <a class="card stat-card" href={m.href}>
+                <span class="stat-card__value">{m.value}</span>
+                <p class="stat-card__text">{m.text}</p>
+                <span class="stat-card__go">{m.go}</span>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- What each score means -->
+    <section class="section section--sand section--tight" aria-labelledby="scores-title">
+      <div class="wrap stack">
+        <div class="head">
+          <h2 class="h2 h2--36" id="scores-title">What does each score mean?</h2>
+          <p class="lede">
+            Your overall score runs from 0 to 100. It weights the four checks by how much they affect whether AI recommends
+            you: AI visibility 40%, site readiness 25%, brand accuracy 20% and crawler access 15%.
+          </p>
+        </div>
+        <div class="score-cards">
+          {
+            SCORES.map((sc) => (
+              <details class="card score-card">
+                <summary>
+                  <span>{sc.name}</span>
+                  <span class="score-card__weight">{sc.weight}%</span>
+                </summary>
+                <p>{sc.text}</p>
+                <p>
+                  <strong>What affects it:</strong> {sc.affects}
+                </p>
+              </details>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
     <!-- Booking, for links from other pages (/ai-visibility-check#book) -->
-    <section id="book" class="section section--sand" aria-labelledby="book-direct">
+    <section id="book" class="section" aria-labelledby="book-direct">
       <div class="wrap stack">
         <div class="head">
           <p class="eyebrow">Prefer to talk it through?</p>
@@ -230,44 +325,6 @@ const jsonLd = [checkSchema({ title, description, faqs: CHECK_FAQS })];
           <a href={CAL_LINK} data-track="book_call" class="btn btn--accent" {...ext(CAL_LINK)}>Book a call</a>
         </div>
         <p class="fineprint">Reviews are for brands doing $20K+ a month. Under that, the full audit is the best place to start.</p>
-      </div>
-    </section>
-
-    <section class="section page-body" aria-labelledby="scores-title">
-      <div class="wrap">
-        <article class="prose">
-          <h2 id="scores-title">What does each score mean?</h2>
-          <p>
-            Your overall score runs from 0 to 100. It weights the four checks by how much they affect whether AI recommends
-            you: AI visibility 40%, site readiness 25%, brand accuracy 20% and crawler access 15%.
-          </p>
-          {
-            SCORES.map((s) => (
-              <Fragment>
-                <h3>
-                  {s.name} ({s.weight}%)
-                </h3>
-                <p>{s.text}</p>
-                <p>
-                  <strong>What affects it:</strong> {s.affects}
-                </p>
-              </Fragment>
-            ))
-          }
-          <h2>Why does this matter?</h2>
-          <p>
-            Shoppers increasingly ask ChatGPT what to buy, and it answers with a short list of brands. Those shoppers arrive
-            ready to buy. If AI can't read your store or doesn't trust it, you're not on the list, and you never see the
-            lost sale in your analytics. Read more about <a href="/ai-search">how AI search works</a> and
-            <a href="/shopify-conversion-optimization">how to convert that traffic</a>.
-          </p>
-          <h2>How is this check different from the full audit?</h2>
-          <p>
-            This check asks 3 questions written for your category. The <a href="/pricing#audit">AI Search and Conversion
-            Audit</a> runs 50 questions built from your own customers' language, repeats them, maps the competitors and
-            sources AI cites instead of you, and adds a full conversion review and a prioritized plan.
-          </p>
-        </article>
       </div>
     </section>
 

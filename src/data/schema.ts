@@ -528,7 +528,7 @@ export function toolSchema(t: { slug: string; name: string; title: string; descr
 
 export function toolsIndexSchema(
   meta: { title: string; description: string },
-  tools: { slug: string; name: string }[],
+  tools: { href: string; name: string }[],
 ) {
   const url = `${SITE_URL}/tools`;
   const pageId = `${url}#webpage`;
@@ -551,7 +551,7 @@ export function toolsIndexSchema(
             '@type': 'ListItem',
             position: i + 1,
             name: t.name,
-            url: `${url}/${t.slug}`,
+            url: `${SITE_URL}${t.href}`,
           })),
         },
         inLanguage: 'en-US',
@@ -578,6 +578,9 @@ interface ReportSchemaInput {
   variables: string[];
   stores?: number;
   products?: number;
+  /** How the data was collected, if not read from storefronts */
+  technique?: string;
+  keywords?: string[];
 }
 
 // A data report: the Article, the Dataset behind it, the FAQ, and Home > Reports > report.
@@ -639,9 +642,9 @@ export function reportSchema(p: ReportSchemaInput) {
         spatialCoverage: US,
         isAccessibleForFree: true,
         ...(size.length ? { size: size.join(', ') } : {}),
-        measurementTechnique: "Reading each store's public Shopify storefront data",
+        measurementTechnique: p.technique ?? "Reading each store's public Shopify storefront data",
         variableMeasured: p.variables,
-        keywords: ['Shopify', 'ecommerce', 'benchmarks', 'DTC'],
+        keywords: p.keywords ?? ['Shopify', 'ecommerce', 'benchmarks', 'DTC'],
         inLanguage: 'en-US',
       },
       faqPage(`${url}#faq`, pageId, p.faqs),
