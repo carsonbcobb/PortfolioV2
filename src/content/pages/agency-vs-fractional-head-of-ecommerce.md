@@ -100,8 +100,8 @@ Here's what that looks like in practice. In the first 90 days, I fix tracking, s
 | Speed on small fixes | Fast once onboarded | Slow across handoffs | Fast |
 | Best for | Large channel with a team | Big scoped projects | Growing brands that need a senior lead |
 
-## Book a 20 minute AI Search Review
+## Book a 20 minute intro call
 
-If you're weighing an agency against a fractional lead, let's talk. We'll go over your goals and who's working on the store today, and figure out which setup fits, even if it isn't me.
+If you're weighing an agency against a fractional lead, let's talk. We'll go over your goals and who's working on the store today and figure out which setup fits, and if it isn't me, I'll say so.
 
-[Book a 20 minute AI Search Review](/ai-visibility-check#book)
+[Book a 20 minute intro call](/ai-visibility-check#book)

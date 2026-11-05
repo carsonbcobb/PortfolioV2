@@ -91,8 +91,8 @@ All options are on the [pricing page](/pricing). In the first 90 days of a retai
 
 Across my work, I've supported more than $40M in client revenue for growing brands. If you sell something people reorder, like [supplements](/supplement-brands) or [pet food](/pet-brands), email timing matters even more.
 
-## Book a 20 minute AI Search Review
+## Book a 20 minute intro call
 
-If your Klaviyo account hasn't been touched in a while, it's probably leaving orders on the table. Book a 20 minute AI Search Review. We'll go over your goals and your check results, and figure out whether an audit or ongoing work is the right next step. If it isn't a fit, I'll tell you.
+If your Klaviyo account hasn't been touched in a while, let's talk about your email. We'll go over your goals and figure out the right next step, and if it isn't a fit, I'll say so.
 
-[Book a 20 minute AI Search Review](/ai-visibility-check#book)
+[Book a 20 minute intro call](/ai-visibility-check#book)

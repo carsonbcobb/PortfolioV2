@@ -130,4 +130,4 @@ Direct clients and agency work combined. Brand types are described, not named, b
 
 Results come from each client's own analytics, comparing the same period or the same traffic before and after the work. Numbers are shared without names and are examples, not guarantees.
 
-Want to see what's possible for your store? [Book a 20 minute AI Search Review](/ai-visibility-check#book).
+Want to talk through your goals? [Book a 20 minute intro call](/ai-visibility-check#book).
