@@ -9,6 +9,7 @@ import {
   RETAINER_ROWS,
   RETAINER_NOTE,
   PRICING_FAQS,
+  TERMS_LIST,
   CHECK_PATH,
   CAL_LINK,
 } from '../data/site';
@@ -30,7 +31,8 @@ const h1 = 'Pricing';
 const intro =
   'Start with the $1,500 AI Search and Conversion Audit. Then implement the plan in a fixed price Build from $5,000, or on a retainer from $4,500 a month.';
 
-const jsonLd = [pricingSchema({ title, description, faqs: PRICING_FAQS })];
+// The Fit and terms items are visible Q&A too, so they join the page's FAQPage.
+const jsonLd = [pricingSchema({ title, description, faqs: [...PRICING_FAQS, ...TERMS_LIST] })];
 ---
 
 <ContentPage {title} {description} {h1} {intro} trail={[{ name: 'Pricing' }]} faqs={PRICING_FAQS} {jsonLd}>
@@ -177,6 +179,25 @@ const jsonLd = [pricingSchema({ title, description, faqs: PRICING_FAQS })];
           </span>
           <p><strong>Lock in 2026 pricing.</strong> Start before January 1 and keep today's rate for 12 months.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="terms" aria-labelledby="terms-title">
+    <div class="wrap faq">
+      <div class="faq__head">
+        <p class="eyebrow">Before you book</p>
+        <h2 class="h2 h2--36" id="terms-title">Fit and terms</h2>
+      </div>
+      <div class="faq__list">
+        {
+          TERMS_LIST.map((t) => (
+            <details>
+              <summary>{t.q}</summary>
+              <p>{t.a}</p>
+            </details>
+          ))
+        }
       </div>
     </div>
   </section>

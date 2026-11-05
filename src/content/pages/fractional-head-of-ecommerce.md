@@ -15,7 +15,9 @@ faq:
   - question: "Is there a long contract?"
     answer: "Retainers have a 3 month minimum. Most brands start with the $1,500 AI Search and Conversion Audit so they can see how I work before committing."
   - question: "What do you need from us to start?"
-    answer: "Collaborator access to Shopify, access to your subscription app, Klaviyo and analytics, your margins by product, and an hour with you to walk through goals. I handle the rest."
+    answer: "Shopify collaborator access, analytics access, Google Search Console, and access to your review, subscription and email apps where they apply. Plus your margins by product, and an hour with you to walk through goals. I handle the rest."
+  - question: "Will I work with you directly?"
+    answer: "Yes. I do the work myself, with no handoff to a junior team or an offshore team. If something needs more than 60 hours in a month, or a specialist skill like photography, I tell you up front and either quote it or recommend someone you hire directly."
 ---
 
 At some point every growing brand hits the same wall. The founder is still the one deciding what goes on the homepage, chasing the developer, approving email, and wondering why conversion dropped last Tuesday. Nobody leads the store. Everybody touches it.
@@ -87,6 +89,8 @@ This work runs on one of three retainers, each with a 3 month minimum except Ded
 | Dedicated | Let's talk | Full time capacity | Built around your team |
 
 **Full** is the fractional head of ecommerce role. I act as your ecommerce lead, working at your direction: the plan, launches and promotions for your sign off, Klaviyo day to day, subscriptions, merchandising, apps and vendors, plus the AI search and conversion work. You get a weekly report and QA on everything that ships.
+
+I do the work myself. If something needs more than 60 hours, or a specialist skill like photography, I tell you up front and either quote it or recommend someone you hire directly. Email and Klaviyo are part of Full; they aren't sold on their own. The first 90 days follow the plan above: tracking, speed and key pages in month 1, then email and order value in month 2.
 
 **Growth** covers the AI search and conversion work without the full ecommerce lead role. **Dedicated** is full time capacity for brands that need it. Most brands start with the **$1,500 AI Search and Conversion Audit**.
 

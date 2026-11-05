@@ -1,6 +1,6 @@
 ---
 title: "AI Crawler Access on Shopify 2026: Who Blocks ChatGPT?"
-description: "Do Shopify stores block ChatGPT or Perplexity? I checked robots.txt and JavaScript only product data across 94 stores. Blocking is rare. Invisible data is not."
+description: "Do Shopify stores block ChatGPT or Perplexity? I checked robots.txt and JavaScript only product data on 94 stores. Blocking is rare. Invisible data isn't."
 slug: "/reports/ai-crawler-access-shopify"
 h1: "AI crawler access on Shopify"
 datePublished: 2026-11-04

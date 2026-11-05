@@ -1,6 +1,6 @@
 ---
 title: "Shopify AI Readiness Index 2026: 94 Stores Scored"
-description: "How ready are Shopify stores for AI search? I scored 94 stores on 11 checks AI relies on. The typical store scores 70 out of 100, and the gaps are fixable."
+description: "How ready are Shopify stores for AI search? I scored 94 stores on 11 checks AI relies on. The typical store scores 70 of 100, and the gaps are fixable."
 slug: "/reports/shopify-ai-readiness-index-2026"
 h1: "Shopify AI Readiness Index 2026"
 datePublished: 2026-11-04

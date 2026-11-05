@@ -1,6 +1,6 @@
 ---
 title: "Does llms.txt Do Anything for Shopify Stores? 2026 Evidence"
-description: "95% of Shopify stores publish an llms.txt file, mostly one Shopify wrote for them. What Google, OpenAI and crawler logs say it does, and what to do instead."
+description: "95% of Shopify stores publish an llms.txt file, mostly one Shopify wrote. What Google, OpenAI and crawler logs say it does, and what to do instead."
 slug: "/reports/does-llms-txt-do-anything"
 h1: "Does llms.txt do anything?"
 datePublished: 2026-11-04

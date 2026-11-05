@@ -11,6 +11,8 @@ frontend:
         - npm run build
         - npm run check:terms
         - npm run check:placeholders
+        # Sends changed URLs to IndexNow on production deploys only. Never fails the build.
+        - node scripts/indexnow.mjs
   artifacts:
     baseDirectory: dist
     files:

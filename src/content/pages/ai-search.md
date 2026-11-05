@@ -10,6 +10,8 @@ faq:
     answer: "It builds on SEO. Search engines rank pages. AI assistants read what your store says about each product and what other sites say about it, then name a short list of products and brands. Good SEO helps, but it doesn't cover complete product data, product pages that answer buyer questions, or the sources AI relies on."
   - question: "How long does AI search take to show results?"
     answer: "On site fixes can be picked up within weeks as AI crawlers revisit your pages. Off site work and a higher mention rate usually take 60 to 90 days. I measure the same buyer questions before and after, so you can see what moved."
+  - question: "How do you make sure before and after tests are comparable?"
+    answer: "I run the same questions in repeated runs, in fresh sessions with no chat history, and record each run by date, so before and after compare like with like."
   - question: "Can you guarantee ChatGPT will recommend us?"
     answer: "No. No one controls AI answers, and anyone who promises a spot is guessing. I measure your mention rate, position and accuracy across real buyer questions, and focus on the questions where you can win."
   - question: "Can apps on my store confuse AI?"

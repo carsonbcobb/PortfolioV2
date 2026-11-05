@@ -1,6 +1,6 @@
 ---
 title: "Does Duplicate Product Schema Hurt AI Visibility?"
-description: "29% of Shopify stores publish two or three Product blocks, usually from a review app. Which apps cause it, how to turn it off, and what it does to AI answers."
+description: "29% of Shopify stores publish two or three Product blocks, usually from a review app. Which apps cause it, how to stop it, and what it does to AI answers."
 slug: "/reports/duplicate-product-schema-ai-visibility"
 h1: "Does duplicate Product schema hurt AI visibility?"
 datePublished: 2026-11-04

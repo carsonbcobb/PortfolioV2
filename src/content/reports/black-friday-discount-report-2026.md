@@ -1,6 +1,6 @@
 ---
 title: "Shopify Black Friday Discount Report 2026: 606 Stores"
-description: "How many Shopify brands already show sale prices before Black Friday, how deep the markdowns go, and who has a Black Friday page ready. Data from 606 stores."
+description: "How many Shopify brands show sale prices before Black Friday, how deep the markdowns go, and who has a Black Friday page ready. Data from 606 stores."
 slug: "/reports/black-friday-discount-report-2026"
 h1: "Shopify Black Friday Discount Report 2026"
 datePublished: 2026-11-01

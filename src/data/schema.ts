@@ -12,6 +12,9 @@ import {
   AUDIT,
   BUILD,
   RETAINERS,
+  RETAINER_ROWS,
+  TERMS,
+  AI_CASES,
   CHECK_PATH,
   AGENCY_PARTNER_PLANS,
   AGENCY_PARTNER_INTRO,
@@ -39,7 +42,9 @@ const ID = {
   agencyFaq: `${AGENCIES}#faq`,
 };
 
+// Research data (Dataset spatialCoverage) is US stores; the services are offered anywhere.
 const US = { '@type': 'Country', name: 'United States' };
+const WORLD = 'Worldwide';
 // Omits sameAs entirely when none of the profile URLs are set.
 const sameAs = (...urls: (string | null)[]) => {
   const list = urls.filter(Boolean);
@@ -59,20 +64,27 @@ const person = {
     "AI search and CRO specialist for Shopify brands. I get products recommended in ChatGPT and Google's AI answers, then make sure the store turns that traffic into sales. 50+ AI search audits, 30+ sites optimized for AI search and 50+ Shopify stores, from startups to billion dollar brands.",
   email: EMAIL,
   ...sameAs(LINKEDIN_URL, LINKEDIN_COMPANY_URL),
+  knowsLanguage: 'en',
+  hasOccupation: {
+    '@type': 'Occupation',
+    name: 'AI search and conversion optimization specialist for Shopify brands',
+  },
   knowsAbout: [
-    'AI search',
-    'Answer engine optimization (AEO)',
-    'Generative engine optimization (GEO)',
-    'Structured data',
-    'Schema.org',
-    'Conversion rate optimization',
-    'A/B testing',
+    'AI search optimization',
+    'Generative engine optimization',
+    'Answer engine optimization',
     'Shopify',
     'Shopify Plus',
+    'Conversion rate optimization',
+    'A/B testing',
+    'Structured data',
+    'Schema.org',
     'Product data',
     'Ecommerce analytics',
     'Klaviyo',
-    'Subscriptions',
+    'Shopify subscriptions',
+    'Recharge',
+    'Skio',
   ],
   worksFor: ref(ID.business),
   contactPoint: ref(ID.contact),
@@ -97,7 +109,7 @@ const business = {
   ],
   founder: ref(ID.carson),
   ...sameAs(LINKEDIN_COMPANY_URL),
-  areaServed: US,
+  areaServed: WORLD,
   contactPoint: ref(ID.contact),
 };
 
@@ -108,6 +120,11 @@ const contact = {
   email: EMAIL,
   url: CAL_LINK,
   availableLanguage: 'English',
+  hoursAvailable: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'].map((d) => `https://schema.org/${d}`),
+    description: 'US Pacific business hours',
+  },
 };
 
 const website = {
@@ -161,27 +178,159 @@ const faqPage = (id: string, page: string, faqs: { q: string; a: string }[]) => 
 
 const PRICING_URL = `${SITE_URL}/pricing`;
 
-// Every brand offer with its price, as shown on /pricing.
-const brandOffers = (service: string) => {
-  const o = (slug: string, name: string, description: string, price: number, unit: Unit, from = false) =>
-    offer({ id: `${PRICING_URL}#offer-${slug}`, name, description, url: PRICING_URL, service, price, unit, from });
-  return [
-    o('audit', AUDIT.name, `${AUDIT.summary} ${AUDIT.note}`, AUDIT.price, 'once'),
-    ...BUILD.tiers.map((t) =>
-      o(
-        `build-${t.price}`,
-        `${BUILD.name}, ${t.label.toLowerCase()}`,
-        `Fixed price, 3 to 4 weeks${t.from ? ', price depends on catalog size' : ''}. ${BUILD.includes.join(', ')}.`,
-        t.price,
-        'once',
-        t.from,
-      ),
-    ),
-    ...RETAINERS.filter((r) => r.price !== null).map((r) =>
-      o(`retainer-${r.name.toLowerCase()}`, `${r.name} retainer`, `${r.summary} 3 month minimum.`, r.price as number, 'month'),
-    ),
-  ];
+// One Service per offer on /pricing, with stable ids. Every description is built from the same lines the
+// pricing cards and the Fit and terms section render, so the schema never says more than the page.
+const PLAN = {
+  audit: `${SITE_URL}/#service-audit`,
+  build: `${SITE_URL}/#service-build`,
+  growth: `${SITE_URL}/#service-growth`,
+  full: `${SITE_URL}/#service-full`,
 };
+export type PlanKey = keyof typeof PLAN;
+
+const english = { '@type': 'Language', name: 'English', alternateName: 'en' };
+const channel = (processingTime?: string) => ({
+  '@type': 'ServiceChannel',
+  name: 'Email and video calls',
+  serviceUrl: CAL_LINK,
+  availableLanguage: english,
+  ...(processingTime ? { processingTime } : {}),
+});
+const audience = (description: string) => ({ '@type': 'BusinessAudience', audienceType: 'Shopify brands', description });
+const output = (name: string, description: string) => ({ '@type': 'Thing', name, description });
+const sentenceList = (xs: string[]) => xs.map((x) => (/[.!?]$/.test(x) ? x : `${x}.`)).join(' ');
+const FIT_LINE = TERMS.bestFit.split('. Signs')[0] + '.';
+
+const retainer = (name: string) => {
+  const i = RETAINERS.findIndex((r) => r.name === name);
+  return { r: RETAINERS[i], capacity: RETAINER_ROWS.find((row) => row.label === 'Capacity')!.values[i] };
+};
+
+const monthly = (o: { id: string; name: string; service: string; price: number; description: string }) => ({
+  '@type': 'Offer',
+  '@id': o.id,
+  name: o.name,
+  description: o.description,
+  url: PRICING_URL,
+  itemOffered: ref(o.service),
+  seller: ref(ID.business),
+  price: o.price,
+  priceCurrency: 'USD',
+  priceSpecification: {
+    '@type': 'UnitPriceSpecification',
+    price: o.price,
+    priceCurrency: 'USD',
+    unitText: 'MONTH',
+    billingDuration: 'P3M',
+  },
+  eligibleCustomerType: 'http://purl.org/goodrelations/v1#Business',
+  availability: 'https://schema.org/InStock',
+});
+
+const planServices: Record<PlanKey, () => object> = {
+  audit: () => ({
+    '@type': 'Service',
+    '@id': PLAN.audit,
+    name: AUDIT.name,
+    serviceType: 'AI search and conversion audit',
+    // Same words as the "Where should I start?" answer on /pricing.
+    description: `${AUDIT.summary} Start with it before any implementation, or whenever you want an outside view of where you stand. The audit is the diagnosis and the plan; implementation is the Build or a retainer.`,
+    url: `${PRICING_URL}#audit`,
+    provider: ref(ID.carson),
+    areaServed: WORLD,
+    audience: audience(FIT_LINE),
+    availableChannel: channel('P5D'),
+    serviceOutput: output('Written report and prioritized plan', sentenceList(AUDIT.includes)),
+    offers: offer({
+      id: `${PRICING_URL}#offer-audit`,
+      name: AUDIT.name,
+      description: `${AUDIT.note} ${TERMS.ownership} The audit needs view access only.`,
+      url: PRICING_URL,
+      service: PLAN.audit,
+      price: AUDIT.price,
+      unit: 'once',
+    }),
+  }),
+  build: () => ({
+    '@type': 'Service',
+    '@id': PLAN.build,
+    name: BUILD.name,
+    serviceType: 'AI search and conversion implementation',
+    description: `A fixed price implementation of the audit plan, ${BUILD.tag.toLowerCase().replace('fixed price, ', '')}. ${TERMS.buildScope}`,
+    url: `${PRICING_URL}#build`,
+    provider: ref(ID.carson),
+    areaServed: WORLD,
+    audience: audience(FIT_LINE),
+    availableChannel: channel('P4W'),
+    serviceOutput: output('On site AI search and conversion work', sentenceList(BUILD.includes)),
+    offers: BUILD.tiers.map((t) => ({
+      ...offer({
+        id: `${PRICING_URL}#offer-build-${t.min}`,
+        name: `${BUILD.name}, ${t.label}`,
+        description: `${t.label}. ${BUILD.counts} Fixed price, 3 to 4 weeks. ${TERMS.timing} ${TERMS.approvals} ${TERMS.support} ${TERMS.ownership} ${TERMS.costs}`,
+        url: PRICING_URL,
+        service: PLAN.build,
+        price: t.price,
+        unit: 'once',
+        from: t.from,
+      }),
+      eligibleQuantity: {
+        '@type': 'QuantitativeValue',
+        minValue: t.min,
+        ...(t.max !== null ? { maxValue: t.max } : {}),
+        unitText: 'active products',
+      },
+    })),
+  }),
+  growth: () => {
+    const { r, capacity } = retainer('Growth');
+    return {
+      '@type': 'Service',
+      '@id': PLAN.growth,
+      name: `${r.name} retainer`,
+      serviceType: 'Ongoing AI search and conversion optimization',
+      description: `${r.summary} ${capacity}. ${r.note}`,
+      url: `${PRICING_URL}#retainers`,
+      provider: ref(ID.carson),
+      areaServed: WORLD,
+      audience: audience('Brands with a store that works and an internal team.'),
+      availableChannel: channel(),
+      serviceOutput: output('Monthly report, tests and off site outreach', sentenceList(r.includes)),
+      offers: monthly({
+        id: `${PRICING_URL}#offer-retainer-growth`,
+        name: `${r.name} retainer`,
+        service: PLAN.growth,
+        price: r.price as number,
+        description: `${capacity}, 3 month minimum. ${TERMS.hours} ${TERMS.cancel} ${TERMS.ownership} ${TERMS.costs}`,
+      }),
+    };
+  },
+  full: () => {
+    const { r, capacity } = retainer('Full');
+    return {
+      '@type': 'Service',
+      '@id': PLAN.full,
+      name: `${r.name} retainer`,
+      serviceType: 'Fractional ecommerce management',
+      description: `${r.summary} ${capacity}. ${TERMS.who.split('. ').slice(2).join('. ')}`,
+      url: `${PRICING_URL}#retainers`,
+      provider: ref(ID.carson),
+      areaServed: WORLD,
+      audience: audience('Brands that need someone running the channel day to day: launches, email, subscriptions, apps and vendors.'),
+      availableChannel: channel(),
+      serviceOutput: output('The ecommerce channel run day to day', sentenceList(r.includes)),
+      offers: monthly({
+        id: `${PRICING_URL}#offer-retainer-full`,
+        name: `${r.name} retainer`,
+        service: PLAN.full,
+        price: r.price as number,
+        description: `${capacity}, 3 month minimum. ${TERMS.hours} ${TERMS.cancel} ${TERMS.ownership} ${TERMS.costs}`,
+      }),
+    };
+  },
+};
+
+export const planNodes = (keys: PlanKey[] = ['audit', 'build', 'growth', 'full']) => keys.map((k) => planServices[k]());
 
 // The three starting prices shown on the homepage and service pages: audit, Build from, retainers from.
 const summaryOffers = (base: string, service: string) => {
@@ -202,11 +351,15 @@ const summaryOffers = (base: string, service: string) => {
   ];
 };
 
-const BRAND_AUDIENCE = {
-  '@type': 'BusinessAudience',
-  audienceType: 'Shopify brands',
-  description: 'Shopify brands, especially in wellness, supplements and beauty, from startups to billion dollar companies.',
-};
+const BRAND_AUDIENCE = audience(FIT_LINE);
+
+const CHECK_CHANNEL = { '@type': 'ServiceChannel', serviceUrl: `${SITE_URL}${CHECK_PATH}`, name: 'AI Visibility Check', availableLanguage: english };
+
+// The AI search and CRO services: what the work produces, in the page's own words.
+const BRAND_OUTPUT = output(
+  'Audit, plan and implementation',
+  'An AI search and conversion audit with a prioritized plan, then a fixed price Build or a retainer that implements it, measured on the same buyer questions before and after.',
+);
 
 export function homeSchema(meta: { title: string; description: string; faqs: { q: string; a: string }[] }) {
   return {
@@ -235,11 +388,14 @@ export function homeSchema(meta: { title: string; description: string; faqs: { q
         description:
           "I get Shopify brands recommended in ChatGPT and Google's AI answers, then make sure the store turns that traffic into sales. Start with an audit, then a fixed price Build or a retainer. Founders stay in control: I propose, you decide.",
         provider: ref(ID.carson),
-        areaServed: US,
+        areaServed: WORLD,
         audience: BRAND_AUDIENCE,
-        availableChannel: { '@type': 'ServiceChannel', serviceUrl: `${SITE_URL}${CHECK_PATH}`, name: 'AI Visibility Check' },
+        availableChannel: [CHECK_CHANNEL, channel()],
+        serviceOutput: BRAND_OUTPUT,
         offers: summaryOffers(HOME, ID.brandService),
+        isRelatedTo: Object.values(PLAN).map(ref),
       },
+      ...planNodes(),
       faqPage(ID.homeFaq, ID.homePage, meta.faqs),
     ],
   };
@@ -275,16 +431,19 @@ export function pricingSchema(meta: { title: string; description: string; faqs: 
           'Start with the AI Search and Conversion Audit, then implement the plan in a fixed price Build or on a monthly retainer.',
         url: PRICING_URL,
         provider: ref(ID.carson),
-        areaServed: US,
+        areaServed: WORLD,
         audience: BRAND_AUDIENCE,
+        availableChannel: channel(),
+        serviceOutput: BRAND_OUTPUT,
         hasOfferCatalog: ref(ID.pricingCatalog),
       },
       {
         '@type': 'OfferCatalog',
         '@id': ID.pricingCatalog,
         name: 'AI search and CRO plans for Shopify brands',
-        itemListElement: brandOffers(ID.pricingService),
+        itemListElement: Object.values(PLAN).map(ref),
       },
+      ...planNodes(),
       faqPage(`${PRICING_URL}#faq`, pageId, meta.faqs),
     ],
   };
@@ -393,7 +552,7 @@ export function agenciesSchema(meta: { title: string; description: string }) {
         serviceType: 'White label AI search optimization and conversion rate optimization',
         description: AGENCY_DESCRIPTION,
         provider: ref(ID.carson),
-        areaServed: US,
+        areaServed: WORLD,
         audience: {
           '@type': 'BusinessAudience',
           audienceType: 'Marketing and ecommerce agencies',
@@ -437,7 +596,7 @@ interface ContentSchemaInput {
   description: string;
   label: string;
   faqs: { q: string; a: string }[];
-  service?: { name: string; serviceType: string; audience: string; offers?: boolean };
+  service?: { name: string; serviceType: string; audience: string; offers?: boolean; plans?: PlanKey[] };
 }
 
 export function contentSchema(p: ContentSchemaInput) {
@@ -473,11 +632,14 @@ export function contentSchema(p: ContentSchemaInput) {
       description: p.description,
       url,
       provider: ref(ID.carson),
-      areaServed: US,
-      audience: { '@type': 'BusinessAudience', audienceType: p.service.audience },
-      availableChannel: { '@type': 'ServiceChannel', serviceUrl: `${SITE_URL}${CHECK_PATH}`, name: 'AI Visibility Check' },
-      ...(p.service.offers ? { offers: summaryOffers(url, serviceId) } : {}),
+      areaServed: WORLD,
+      audience: { '@type': 'BusinessAudience', audienceType: p.service.audience, ...(p.service.offers ? { description: FIT_LINE } : {}) },
+      availableChannel: [CHECK_CHANNEL, channel()],
+      // The AI search and CRO pages sell the audit, Build and retainers directly.
+      ...(p.service.offers ? { serviceOutput: BRAND_OUTPUT, offers: summaryOffers(url, serviceId) } : {}),
+      ...(p.service.plans ? { isRelatedTo: p.service.plans.map((k) => ref(PLAN[k])) } : {}),
     });
+    if (p.service.plans) graph.push(...planNodes(p.service.plans));
   }
 
   graph.push(faqPage(faqId, pageId, p.faqs));
@@ -711,9 +873,29 @@ export function resultsSchema(meta: { title: string; description: string }) {
         breadcrumb: ref(crumbId),
         author: ref(ID.carson),
         about: ref(ID.carson),
+        mainEntity: ref(`${url}#case-studies`),
         inLanguage: 'en-US',
       },
       breadcrumb(crumbId, [{ name: 'Results', url }]),
+      // The published case study cards, word for word. No client names.
+      {
+        '@type': 'ItemList',
+        '@id': `${url}#case-studies`,
+        name: 'AI search case studies',
+        numberOfItems: AI_CASES.length,
+        itemListElement: AI_CASES.map((c, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          item: {
+            '@type': 'CreativeWork',
+            name: c.title,
+            description: `Before: ${c.before} After: ${c.after}`,
+            about: { '@type': 'Thing', name: `${c.stat} ${c.statLabel}` },
+            genre: c.tag,
+            author: ref(ID.carson),
+          },
+        })),
+      },
     ],
   };
 }

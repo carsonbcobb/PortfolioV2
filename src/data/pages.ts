@@ -1,6 +1,8 @@
 // Content pages (src/content/pages/*.md) and tools: what each one is, for the JSON-LD,
 // breadcrumbs, footer, sitemap and llms.txt. The page copy itself lives in the markdown.
 
+import type { PlanKey } from './schema';
+
 export type PageKind = 'service' | 'industry' | 'guide' | 'report';
 
 export interface ContentPageInfo {
@@ -11,7 +13,7 @@ export interface ContentPageInfo {
   /** One line summary for llms.txt */
   summary: string;
   /** Service and industry pages: the Service entry in the JSON-LD */
-  service?: { name: string; serviceType: string; audience: string; offers?: boolean };
+  service?: { name: string; serviceType: string; audience: string; offers?: boolean; plans?: PlanKey[] };
 }
 
 export const CONTENT_PAGES: ContentPageInfo[] = [
@@ -37,6 +39,7 @@ export const CONTENT_PAGES: ContentPageInfo[] = [
       name: 'Fractional Head of Ecommerce for Shopify brands',
       serviceType: 'Fractional ecommerce management',
       audience: 'Growing Shopify brands',
+      plans: ['full'],
     },
   },
   {
@@ -72,6 +75,7 @@ export const CONTENT_PAGES: ContentPageInfo[] = [
       name: 'Klaviyo email for Shopify brands',
       serviceType: 'Email marketing',
       audience: 'Shopify brands using Klaviyo',
+      plans: ['full'],
     },
   },
   {

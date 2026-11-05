@@ -1,6 +1,6 @@
 ---
 title: "Shopify Product Schema Completeness 2026: What AI Can Read"
-description: "Which structured data fields Shopify stores publish, from price and stock to ratings, identifiers, shipping and returns. Field by field data from 94 stores."
+description: "Which structured data fields Shopify stores publish, from price and stock to ratings, identifiers, shipping and returns. Field by field, from 94 stores."
 slug: "/reports/shopify-product-schema-completeness-2026"
 h1: "Product and merchant schema completeness"
 datePublished: 2026-11-04
