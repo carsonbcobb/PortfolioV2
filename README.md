@@ -27,4 +27,4 @@ The old SPA fallback (`/<*>` → `/index.html`, 200) must be removed, or every p
 | --- | --- | --- |
 | `/<*>` | `/404.html` | 404 (Rewrite) |
 
-The og:image sources are `scripts/og-image.html` (home) and `scripts/og-image-agencies.html` (/agencies), rendered at 1200×630.
+Share images live in `public/og/` at 1200x627. `OG_DEFAULT` in `src/data/site.ts` (og-home.png) applies to every page; `OG_BY_PATH` overrides it for /ai-visibility-check, /results and /reports/who-chatgpt-recommends-2026. New pages and reports get the default automatically.

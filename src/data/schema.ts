@@ -3,6 +3,7 @@
 // site.ts updates the cards and the schema together.
 import {
   SITE_URL,
+  ogImageFor,
   EMAIL,
   CAL_LINK,
   LINKEDIN_URL,
@@ -621,7 +622,7 @@ export function reportSchema(p: ReportSchemaInput) {
         description: p.description,
         url,
         mainEntityOfPage: ref(pageId),
-        image: `${SITE_URL}/og-image.png`,
+        image: `${SITE_URL}${ogImageFor(`/${p.slug}`).path}`,
         datePublished: p.datePublished,
         dateModified: p.dateModified,
         author: ref(ID.carson),
