@@ -99,7 +99,7 @@ What that means in practice is still unclear. If you're choosing Skio specifical
 
 ## Want help choosing or fixing your setup?
 
-If you want a second set of eyes before you commit, or you want someone to lead your subscription program after you pick, that's what I do. The AI Search and Conversion Audit ($1,500, credited toward a Build started within 30 days) is a good start, and the Full retainer ($7,500/month) is where I run subscriptions as part of the whole store, at your direction. See all options on the [pricing page](/pricing). If you're a supplement or wellness brand, my [supplement brands page](/supplement-brands) covers the extra things I'd check.
+If you want a second set of eyes before you commit, or you want someone to lead your subscription program after you pick, that's what I do. The AI Search and Conversion Audit ($1,500, credited toward a Build or your first retainer month if you start within 30 days) is a good start, and the Full retainer ($7,500/month) is where I run subscriptions as part of the whole store, at your direction. See all options on the [pricing page](/pricing). If you're a supplement or wellness brand, my [supplement brands page](/supplement-brands) covers the extra things I'd check.
 
 Book a 20 minute intro call. We'll go over your goals and the subscription apps you're weighing and figure out the right next step, and if it isn't a fit, I'll say so.
 

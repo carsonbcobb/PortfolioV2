@@ -15,7 +15,7 @@ faq:
   - question: "Can you write health claims for pet supplements?"
     answer: "I build product pages with clear places for approved claims, ingredients and feeding directions. The claims themselves should be approved by your team. I make the store easy to keep accurate."
   - question: "How do we get started?"
-    answer: "Most pet brands start with the $1,500 AI Search and Conversion Audit. If you start a Build within 30 days, the full $1,500 is credited toward it."
+    answer: "Most pet brands start with the $1,500 AI Search and Conversion Audit. The full $1,500 is credited toward a Build or your first retainer month, if you start within 30 days."
 ---
 
 Pet owners are some of the most loyal customers there are. Once a dog does well on a food, or a cat finally likes a treat, the owner doesn't want to switch. They want the same thing, on time, every time.
@@ -86,7 +86,7 @@ I keep client names private, but the numbers are real. Across my work, rebuilt p
 
 ## How to work with me
 
-Most pet brands start with the **AI Search and Conversion Audit** for $1,500. I test your products against the questions your buyers ask in ChatGPT, look at which competing products and sources AI uses instead of you, review where the store leaks conversions, and give you a prioritized plan. If you start a Build within 30 days, the full $1,500 is credited toward it.
+Most pet brands start with the **AI Search and Conversion Audit** for $1,500. I test your products against the questions your buyers ask in ChatGPT, look at which competing products and sources AI uses instead of you, review where the store leaks conversions, and give you a prioritized plan. The full $1,500 is credited toward a Build or your first retainer month, if you start within 30 days.
 
 The **Build** is a fixed price project that takes 3 to 4 weeks and starts at $5,000, based on catalog size. After that, the **Growth** retainer at $4,500/month keeps the AI search and conversion work going. For brands that want one person leading the whole channel at their direction, there's **Full** at $7,500/month, which I explain on my [fractional head of ecommerce page](/fractional-head-of-ecommerce).
 

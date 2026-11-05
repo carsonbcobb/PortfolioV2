@@ -15,7 +15,7 @@ faq:
   - question: "When should we start planning for the holidays?"
     answer: "Earlier than feels necessary. I plan gift sets, pages, cart offers and emails weeks ahead so everything is tested before traffic peaks, not built during it."
   - question: "How do we get started?"
-    answer: "Most food and beverage brands start with the $1,500 AI Search and Conversion Audit. If you start a Build within 30 days, the full $1,500 is credited toward it."
+    answer: "Most food and beverage brands start with the $1,500 AI Search and Conversion Audit. The full $1,500 is credited toward a Build or your first retainer month, if you start within 30 days."
 ---
 
 Food and drink brands have a gift most categories would love. People finish the product and want more. A bag of coffee lasts a couple of weeks. A jar of hot sauce gets emptied. A case of drinks disappears.
@@ -83,7 +83,7 @@ I keep client names private, but the numbers are real. Across my work, rebuilt p
 
 ## How to work with me
 
-Most food and beverage brands start with the **AI Search and Conversion Audit** for $1,500. I test your products against the questions your buyers ask in ChatGPT, look at which competing products and sources AI uses instead of you, review where the store leaks conversions, and give you a prioritized plan. If you start a Build within 30 days, the full $1,500 is credited toward it.
+Most food and beverage brands start with the **AI Search and Conversion Audit** for $1,500. I test your products against the questions your buyers ask in ChatGPT, look at which competing products and sources AI uses instead of you, review where the store leaks conversions, and give you a prioritized plan. The full $1,500 is credited toward a Build or your first retainer month, if you start within 30 days.
 
 The **Build** is a fixed price project that takes 3 to 4 weeks and starts at $5,000, based on catalog size. After that, the **Growth** retainer at $4,500/month keeps the AI search and conversion work going. For brands that want one person leading the whole channel at their direction, there's **Full** at $7,500/month, which I explain on my [fractional head of ecommerce page](/fractional-head-of-ecommerce).
 

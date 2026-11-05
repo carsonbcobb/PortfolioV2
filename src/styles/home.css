@@ -673,6 +673,18 @@ img {
   text-align: center;
 }
 
+/* "Have your own developers?" note under the retainer cards. */
+.plans__devs {
+  margin: 0;
+  padding: 18px 22px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--body);
+}
+
 .plan {
   display: flex;
   flex-direction: column;

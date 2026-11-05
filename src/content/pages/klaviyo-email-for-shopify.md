@@ -21,7 +21,7 @@ faq:
   - question: "What do you report on?"
     answer: "Flow and campaign revenue, email's share of store revenue, list growth and subscriber churn, in the monthly report."
   - question: "How do we get started?"
-    answer: "Most brands start with the $1,500 AI Search and Conversion Audit, where I review the store, the Klaviyo account and how ChatGPT recommends you, then give you a prioritized plan. If you start a Build within 30 days, the full $1,500 is credited toward it."
+    answer: "Most brands start with the $1,500 AI Search and Conversion Audit, where I review the store, the Klaviyo account and how ChatGPT recommends you, then give you a prioritized plan. The full $1,500 is credited toward a Build or your first retainer month, if you start within 30 days."
 ---
 
 Most Shopify brands I work with already pay for Klaviyo. A welcome series runs. A cart email goes out. And then nobody touches it for two years.
@@ -89,7 +89,7 @@ That's also why I fix tracking first. If the store isn't sending clean order and
 
 ## How the work is packaged
 
-**AI Search and Conversion Audit, $1,500.** I review your Klaviyo account along with the rest of the store, test your products against the questions your buyers ask in ChatGPT, and give you a prioritized plan. If you start a Build within 30 days, the full $1,500 is credited toward it.
+**AI Search and Conversion Audit, $1,500.** I review your Klaviyo account along with the rest of the store, test your products against the questions your buyers ask in ChatGPT, and give you a prioritized plan. The full $1,500 is credited toward a Build or your first retainer month, if you start within 30 days.
 
 **Full, $7,500/month.** Your ecommerce lead, working at your direction. Klaviyo flows, segments and campaigns are handled day to day as part of the store, with launches and promotions brought to you for sign off. Email is part of Full and isn't sold on its own. I do the work myself; if something needs more than 60 hours, or a specialist skill like photography, I tell you up front and either quote it or recommend someone you hire directly. 3 month minimum.
 

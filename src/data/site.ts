@@ -235,16 +235,25 @@ export const AUDIT = {
   name: 'AI Search and Conversion Audit',
   price: 1500,
   unit: ' one time',
-  includes: [
-    'Delivered within 5 business days of receiving access',
-    "Questions built from your customers' own language (reviews, support questions, search terms), focused on the products that matter most to your revenue. You see the list.",
-    "Tested in ChatGPT and other major AI assistants, including Google's AI answers",
-    'A written report: how often AI recommends your products for the questions your buyers ask, which competing products it names instead and why, the sources it relies on, what AI gets wrong about your products, crawler access, and your top conversion leaks',
-    'A recorded video walkthrough, or a short call if you prefer',
-    'A prioritized plan: each fix ranked by estimated revenue impact, based on your own traffic, conversion rate and order value, against the effort it takes. The plan is yours to keep and use with any team.',
+  // The nine things the audit covers, in order. The pricing card adds timing and the walkthrough.
+  covers: [
+    "Mention rate for each product on ChatGPT, Gemini and Google AI Mode: how often AI recommends you, how often you're in its top 3, and your average position, next to each competitor.",
+    "The questions your buyers ask AI, built from your customers' own language and written the way people really ask AI: long, specific and conversational.",
+    "Why competitors win: the sources that cite them, how complete their product information is, their reviews, and what they claim that you don't.",
+    'Sources that recommend competitors but not you, ranked by how much they matter.',
+    'What AI gets wrong about your products, and where it comes from.',
+    'A consistency check of how your brand describes itself on your site, Amazon, retailers, social profiles and review sites, because mismatches confuse AI.',
+    'Product feed and technical findings for Google and ChatGPT.',
+    'Your top conversion leaks.',
+    'A plan ranked by revenue impact.',
   ],
-  summary: 'Your products tested against the questions your buyers ask, the competing products and sources AI uses instead of you, your top conversion leaks and a prioritized plan, within 5 business days of receiving access.',
-  note: 'The full $1,500 is credited toward a Build started within 30 days.',
+  timing: 'Delivered within 5 business days of receiving access.',
+  walkthrough: 'A recorded video walkthrough, or a short call if you prefer.',
+  summary: 'Where AI recommends your products, who it recommends instead, and why.',
+  note: 'The full $1,500 is credited toward a Build or your first retainer month, if you start within 30 days.',
+  get includes(): string[] {
+    return [...this.covers, this.timing, this.walkthrough];
+  },
 };
 
 export const BUILD = {
@@ -268,20 +277,43 @@ export const BUILD = {
   note: 'I take 3 Builds a month.',
 };
 
+// The monthly report, described the same way wherever retainers are.
+export const MONTHLY_REPORT =
+  "Every month: your mention rate for each product on ChatGPT, Gemini and Google AI Mode, the competitors AI names instead, the sources it relies on, what it gets wrong, and what we shipped and what's next.";
+
+// Core and Growth alongside a brand's own developers. Shown under the retainer cards and in the /ai-search FAQ.
+export const DEVELOPERS_NOTE =
+  'Have your own developers? Core and Growth work alongside them. I measure, find what\'s holding you back and plan the work, then your team ships the on site changes from clear specs. On Growth, I also handle off site work and conversion testing.';
+
 // price null shows "Let's talk".
 export const RETAINERS = [
   {
-    name: 'Growth',
-    price: 4500 as number | null,
+    name: 'Core',
+    price: 2500 as number | null,
     unit: '/month',
-    summary: 'I grow your traffic from AI search and your conversion rate.',
+    summary: 'Monthly AI search measurement and on site work, done by me or shipped by your developers.',
     includes: [
-      "A monthly report: how often AI recommends your products and where, whether it describes them accurately, AI referred traffic and sales, conversion rate, post purchase survey answers, what shipped and what's next",
-      'Tests and page improvements planned each month within your hours, in order of expected impact',
-      "Off site work I do myself: I find the reviews, comparisons and publications that matter for your products, pitch them and follow up. I don't just hand you a list.",
+      'Monthly AI search report: mention rate for each product on ChatGPT, Gemini and Google AI Mode, competitors, the sources AI relies on, accuracy and the consistency check',
+      'Up to 15 hours a month of on site AI search and conversion work, or clear specs your developers can ship',
+      'One call a month',
+      'Response within 2 business days',
+    ],
+    note: 'Best for brands doing around $30K a month and up, and brands with their own developers.' as string | null,
+    featured: false,
+  },
+  {
+    name: 'Growth',
+    price: 4500,
+    unit: '/month',
+    summary: 'I grow your traffic from AI search and your conversion rate. Growth adds off site outreach and an ongoing testing program to Core.',
+    includes: [
+      'The same monthly AI search report as Core: mention rate for each product on ChatGPT, Gemini and Google AI Mode, competitors, the sources AI relies on, accuracy and the consistency check',
+      "Also in your report: AI referred traffic and sales, conversion rate, post purchase survey answers, what shipped and what's next",
+      'An ongoing testing program: tests and page improvements planned each month within your hours, in order of expected impact',
+      "Off site outreach I do myself: I find the reviews, comparisons and publications that matter for your products, pitch them and follow up. I don't just hand you a list.",
       'Affiliate and publisher outreach, review strategy and Amazon listing improvements',
     ],
-    note: 'Best for brands with a store that works and an internal team. Move up to Full when you need someone running the channel day to day: launches, email, subscriptions, apps and vendors.' as string | null,
+    note: 'Best for brands doing around $80K a month and up. Move up to Full when you need someone running the channel day to day: launches, email, subscriptions, apps and vendors.',
     featured: false,
   },
   {
@@ -299,7 +331,7 @@ export const RETAINERS = [
       "A weekly report on what changed and what's next",
       'I handle QA so issues get caught before customers see them',
     ],
-    note: 'You choose how hands on you want to be.',
+    note: 'Best for brands doing around $150K a month and up who want their ecommerce run day to day. You choose how hands on you want to be.',
     featured: true,
   },
   {
@@ -315,11 +347,13 @@ export const RETAINERS = [
 
 // Retainer comparison table: one row per term, one value per retainer in RETAINERS order.
 export const RETAINER_ROWS = [
-  { label: 'Price', values: ['$4,500/month', '$7,500/month', "Let's talk"] },
-  { label: 'Capacity', values: ['Up to 30 hours a month', 'Up to 60 hours a month', 'Full time capacity'] },
-  { label: 'Calls', values: ['Check in every 2 weeks', 'Weekly call, plus 1 extra call a week when needed', 'Built around your team'] },
-  { label: 'Response time', values: ['Within 1 business day', 'Same business day', 'Same business day'] },
-  { label: 'Minimum', values: ['3 months', '3 months', 'Custom'] },
+  { label: 'Price', values: ['$2,500/month', '$4,500/month', '$7,500/month', "Let's talk"] },
+  { label: 'Capacity', values: ['Up to 15 hours a month', 'Up to 30 hours a month', 'Up to 60 hours a month', 'Full time capacity'] },
+  { label: 'Calls', values: ['One call a month', 'Check in every 2 weeks', 'Weekly call, plus 1 extra call a week when needed', 'Built around your team'] },
+  { label: 'Response time', values: ['Within 2 business days', 'Within 1 business day', 'Same business day', 'Same business day'] },
+  { label: 'Off site outreach', values: ['No', 'Yes', 'Yes', 'Custom'] },
+  { label: 'Ongoing testing program', values: ['No', 'Yes', 'Yes', 'Custom'] },
+  { label: 'Minimum', values: ['3 months', '3 months', '3 months', 'Custom'] },
 ];
 
 export const RETAINER_NOTE =
@@ -328,7 +362,7 @@ export const RETAINER_NOTE =
 // Fit and terms, shown under the pricing cards. The Offer descriptions in schema.ts reuse these lines.
 export const TERMS = {
   bestFit:
-    "Shopify brands doing $20K or more a month online, especially with products people reorder or compare before buying. Signs it fits: AI assistants recommend competitors for your products or describe them wrong, traffic is steady but conversion or repeat orders aren't growing, product pages are thin, inconsistent or slow, or subscriptions and email underperform. Under $20K a month, the audit is the best place to start.",
+    "The audit and Build fit Shopify brands doing $20K a month and up. Retainers start at around $30K a month. Signs it fits: AI assistants recommend competitors for your products or describe them wrong, traffic is steady but conversion or repeat orders aren't growing, product pages are thin, inconsistent or slow, or subscriptions and email underperform.",
   notFit:
     'You need paid ads management, one off development tasks, a brand new store with no traffic yet, or someone who guarantees a ChatGPT ranking. Stores not on Shopify get partial service.',
   start:
@@ -367,7 +401,7 @@ export const STEPS = [
   {
     when: 'Step 1',
     title: 'AI Search and Conversion Audit',
-    text: "I test the questions real buyers ask about your products in ChatGPT and other AI tools, and see who gets recommended instead. Then I map where your store is losing sales. You get a prioritized plan.",
+    text: 'Where AI recommends your products on ChatGPT, Gemini and Google AI Mode, who it recommends instead, and why, plus your top conversion leaks. You get a plan ranked by revenue impact.',
   },
   {
     when: 'Step 2',
@@ -416,7 +450,7 @@ export const FAQS: { q: string; a: string; link?: { href: string; text: string }
   },
   {
     q: "Who do you work with, and who isn't a fit?",
-    a: "The best fit is a Shopify brand doing $20K or more a month online, especially with products people reorder or compare before buying. Under that, the audit is the best place to start. It isn't a fit if you need paid ads management, one off development tasks, a brand new store with no traffic yet, or someone who guarantees a ChatGPT ranking. Stores not on Shopify get partial service.",
+    a: "The audit and Build fit Shopify brands doing $20K a month and up. Retainers start at around $30K a month. It isn't a fit if you need paid ads management, one off development tasks, a brand new store with no traffic yet, or someone who guarantees a ChatGPT ranking. Stores not on Shopify get partial service.",
   },
   {
     q: 'Will I work with you directly?',
@@ -432,11 +466,19 @@ export const FAQS: { q: string; a: string; link?: { href: string; text: string }
 export const PRICING_FAQS = [
   {
     q: 'Where should I start?',
-    a: 'With the AI Search and Conversion Audit, $1,500, before any implementation, or whenever you want an outside view of where you stand. The audit is the diagnosis and the plan; implementation is the Build or a retainer. The full $1,500 is credited toward a Build started within 30 days.',
+    a: 'With the AI Search and Conversion Audit, $1,500, before any implementation, or whenever you want an outside view of where you stand. The audit is the diagnosis and the plan; implementation is the Build or a retainer. The full $1,500 is credited toward a Build or your first retainer month, if you start within 30 days.',
   },
   {
     q: 'How is the Build priced?',
     a: "A fixed price by catalog size: $5,000 for 1 to 50 products, $7,500 for 51 to 500, and from $10,000 for 501 or more. Active products count; variants and archived products don't, and bundles count as products. It takes 3 to 4 weeks, and I take 3 Builds a month.",
+  },
+  {
+    q: 'Which retainer fits my brand?',
+    a: 'Core, $2,500 a month: brands doing around $30K a month and up, and brands with their own developers. Growth, $4,500 a month: brands doing around $80K a month and up. Full, $7,500 a month: brands doing around $150K a month and up who want their ecommerce run day to day.',
+  },
+  {
+    q: "What's the difference between Core and Growth?",
+    a: 'Core is the monthly AI search report plus up to 15 hours a month of on site AI search and conversion work, or clear specs your developers can ship. Growth adds off site outreach and an ongoing testing program, with up to 30 hours a month.',
   },
   {
     q: 'Why is there a 3 month minimum on retainers?',
@@ -534,7 +576,7 @@ export const AGENCY_SCOPE = [
   {
     icon: '<circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/>',
     title: 'AI visibility audits',
-    text: "Buyer questions run in ChatGPT, competitors and cited sources mapped, and a ranked plan, delivered as your agency's report.",
+    text: "Mention rate across ChatGPT, Gemini and Google AI Mode, why competitors win, and a plan ranked by revenue impact, delivered as your agency's report.",
   },
   {
     icon: '<path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/>',
@@ -563,20 +605,20 @@ export const AGENCY_SCOPE = [
   },
 ];
 
-// Partner pricing: the three main offers, white label. Rates are shared on the intro call.
+// Agency pricing: the three main offers, white label. Pricing is shared on the intro call.
 export const AGENCY_PARTNER_INTRO =
-  'Agency partners get partner rates on every offer, delivered under your name. You set the client price and keep the margin. Rates are shared on the intro call.';
+  'Every offer, delivered under your name. Agency pricing is shared on the intro call. You set the client price and keep the margin.';
 
 export const AGENCY_PARTNER_PLANS = [
   {
     tag: 'Start here',
     name: 'AI Search and Conversion Audit, white label',
-    summary: "How often AI recommends your client's products, which competing products it names instead, the sources it relies on, and their top conversion leaks.",
+    summary: "Where AI recommends your client's products, who it recommends instead, and why, in your agency's branding.",
     includes: [
-      'Delivered in 5 business days',
-      "A written report in your agency's branding",
-      'A prioritized plan with what each fix is worth',
-      'A recorded video walkthrough, or a short call if you prefer',
+      'Mention rate across ChatGPT, Gemini and Google AI Mode',
+      'Why competitors win',
+      'What AI gets wrong, and the consistency check',
+      'A plan ranked by revenue impact',
     ],
     featured: true,
   },
@@ -598,7 +640,7 @@ export const AGENCY_PARTNER_PLANS = [
     name: 'Ongoing AI search and CRO, white label',
     summary: 'AI search and conversion work every month, reported in your branding.',
     includes: [
-      'Monthly AI visibility retest and report',
+      'Monthly AI search report in your branding',
       'Ongoing on site AI and conversion testing',
       'Off site work: lists, reviews and outreach',
       'Client calls as part of your team when you need it',
@@ -616,7 +658,7 @@ export const AGENCY_STEPS = [
   {
     when: 'Step 2',
     title: 'Pick the offer',
-    text: 'Start a client with the white label audit, then a Build or ongoing work. Partner rates, paid upfront.',
+    text: 'Start a client with the white label audit, then a Build or ongoing work. Agency pricing, paid upfront.',
   },
   {
     when: 'Step 3',
@@ -639,8 +681,8 @@ export const AGENCY_FAQS = [
     a: 'Yes. Audits, retests of the same buyer questions and monthly reports go out as your agency\'s work, with no mention of me.',
   },
   {
-    q: 'How does partner pricing work?',
-    a: 'Every offer, the audit, the Build and ongoing work, is available white label at a partner rate. You set the client price and keep the margin. Rates are shared on the intro call.',
+    q: 'How does agency pricing work?',
+    a: 'Every offer, the audit, the Build and ongoing work, is available white label. Agency pricing is shared on the intro call. You set the client price and keep the margin.',
   },
   {
     q: 'How fast can you start?',

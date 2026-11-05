@@ -14,6 +14,7 @@ import {
   RETAINERS,
   RETAINER_ROWS,
   TERMS,
+  DEVELOPERS_NOTE,
   AI_CASES,
   CHECK_PATH,
   AGENCY_PARTNER_PLANS,
@@ -183,6 +184,7 @@ const PRICING_URL = `${SITE_URL}/pricing`;
 const PLAN = {
   audit: `${SITE_URL}/#service-audit`,
   build: `${SITE_URL}/#service-build`,
+  core: `${SITE_URL}/#service-core`,
   growth: `${SITE_URL}/#service-growth`,
   full: `${SITE_URL}/#service-full`,
 };
@@ -203,7 +205,14 @@ const FIT_LINE = TERMS.bestFit.split('. Signs')[0] + '.';
 
 const retainer = (name: string) => {
   const i = RETAINERS.findIndex((r) => r.name === name);
-  return { r: RETAINERS[i], capacity: RETAINER_ROWS.find((row) => row.label === 'Capacity')!.values[i] };
+  const r = RETAINERS[i];
+  // The card's "Best for ..." line, as the audience description.
+  const best = (r.note ?? '').match(/^Best for (.+?\.)( |$)/)?.[1] ?? '';
+  return {
+    r,
+    capacity: RETAINER_ROWS.find((row) => row.label === 'Capacity')!.values[i],
+    bestFor: best.charAt(0).toUpperCase() + best.slice(1),
+  };
 };
 
 const monthly = (o: { id: string; name: string; service: string; price: number; description: string }) => ({
@@ -282,8 +291,31 @@ const planServices: Record<PlanKey, () => object> = {
       },
     })),
   }),
+  core: () => {
+    const { r, capacity, bestFor } = retainer('Core');
+    return {
+      '@type': 'Service',
+      '@id': PLAN.core,
+      name: `${r.name} retainer`,
+      serviceType: 'Ongoing AI search measurement and optimization',
+      description: `${r.summary} ${capacity}. ${DEVELOPERS_NOTE}`,
+      url: `${PRICING_URL}#retainers`,
+      provider: ref(ID.carson),
+      areaServed: WORLD,
+      audience: audience(bestFor),
+      availableChannel: channel(),
+      serviceOutput: output('Monthly AI search report and on site work', sentenceList(r.includes)),
+      offers: monthly({
+        id: `${PRICING_URL}#offer-retainer-core`,
+        name: `${r.name} retainer`,
+        service: PLAN.core,
+        price: r.price as number,
+        description: `${capacity}, 3 month minimum. ${TERMS.hours} ${TERMS.cancel} ${TERMS.ownership} ${TERMS.costs}`,
+      }),
+    };
+  },
   growth: () => {
-    const { r, capacity } = retainer('Growth');
+    const { r, capacity, bestFor } = retainer('Growth');
     return {
       '@type': 'Service',
       '@id': PLAN.growth,
@@ -293,7 +325,7 @@ const planServices: Record<PlanKey, () => object> = {
       url: `${PRICING_URL}#retainers`,
       provider: ref(ID.carson),
       areaServed: WORLD,
-      audience: audience('Brands with a store that works and an internal team.'),
+      audience: audience(bestFor),
       availableChannel: channel(),
       serviceOutput: output('Monthly report, tests and off site outreach', sentenceList(r.includes)),
       offers: monthly({
@@ -306,7 +338,7 @@ const planServices: Record<PlanKey, () => object> = {
     };
   },
   full: () => {
-    const { r, capacity } = retainer('Full');
+    const { r, capacity, bestFor } = retainer('Full');
     return {
       '@type': 'Service',
       '@id': PLAN.full,
@@ -316,7 +348,7 @@ const planServices: Record<PlanKey, () => object> = {
       url: `${PRICING_URL}#retainers`,
       provider: ref(ID.carson),
       areaServed: WORLD,
-      audience: audience('Brands that need someone running the channel day to day: launches, email, subscriptions, apps and vendors.'),
+      audience: audience(bestFor),
       availableChannel: channel(),
       serviceOutput: output('The ecommerce channel run day to day', sentenceList(r.includes)),
       offers: monthly({
@@ -330,7 +362,7 @@ const planServices: Record<PlanKey, () => object> = {
   },
 };
 
-export const planNodes = (keys: PlanKey[] = ['audit', 'build', 'growth', 'full']) => keys.map((k) => planServices[k]());
+export const planNodes = (keys: PlanKey[] = ['audit', 'build', 'core', 'growth', 'full']) => keys.map((k) => planServices[k]());
 
 // The three starting prices shown on the homepage and service pages: audit, Build from, retainers from.
 const summaryOffers = (base: string, service: string) => {
@@ -503,13 +535,13 @@ export const AGENCY_DESCRIPTION =
 
 export function agenciesSchema(meta: { title: string; description: string }) {
   const url = `${AGENCIES}#pricing`;
-  // Partner rates are shared on the intro call, so these offers carry no public price.
+  // Agency pricing is shared on the intro call, so these offers carry no public price.
   const slug = (name: string) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   const agencyOffer = (p: { name: string; summary: string }) => ({
     '@type': 'Offer',
     '@id': `${AGENCIES}#offer-${slug(p.name)}`,
     name: p.name,
-    description: `${p.summary} Delivered under your agency's name at a partner rate.`,
+    description: `${p.summary} Delivered under your agency's name. Agency pricing is shared on the intro call.`,
     url,
     itemOffered: ref(ID.agencyService),
     seller: ref(ID.business),

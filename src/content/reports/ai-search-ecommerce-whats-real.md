@@ -91,7 +91,7 @@ Shopify notes that clicks from Google's AI Overviews are counted as organic sear
 1. **Ignore anyone leading with llms.txt or content chunking.** They're selling the least important work.
 2. **Check the one robots.txt line that matters,** OAI-SearchBot, and leave the rest to a business decision.
 3. **Make your product pages machine readable and consistent.** One product entity, real ratings, the right brand name, and facts in text.
-4. **Earn outside mentions in the sources AI reads in your category.** That's what gets you named.
+4. **Earn outside mentions in the sources AI reads for products like yours.** That's what gets you named.
 5. **Measure with a survey question,** not just referral traffic.
 
 ## How this was done

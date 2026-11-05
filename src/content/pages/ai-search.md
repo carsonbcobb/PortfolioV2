@@ -14,6 +14,8 @@ faq:
     answer: "I run the same questions in repeated runs, in fresh sessions with no chat history, and record each run by date, so before and after compare like with like."
   - question: "Can you guarantee ChatGPT will recommend us?"
     answer: "No. No one controls AI answers, and anyone who promises a spot is guessing. I measure your mention rate, position and accuracy across real buyer questions, and focus on the questions where you can win."
+  - question: "We have our own developers. Can you work with them?"
+    answer: "Have your own developers? Core and Growth work alongside them. I measure, find what's holding you back and plan the work, then your team ships the on site changes from clear specs. On Growth, I also handle off site work and conversion testing."
   - question: "Can apps on my store confuse AI?"
     answer: "Often. Review, bundle and subscription apps can each describe the same product in their own way, so AI sees conflicting prices, ratings or names for one product. When the facts conflict, AI is less sure what you sell and less likely to recommend it. Cleaning that up is part of the store work."
   - question: "How do I see where I stand today?"
@@ -47,4 +49,5 @@ AI shoppers convert far better than other traffic because the research is alread
 ## How is AI search measured?
 
 * **Recommendations for each product.** I test the questions your buyers ask about each product that matters, repeatedly, and track how often AI recommends you, where it places you, and whether what it says is accurate.
+* **A monthly report.** Every month: your mention rate for each product on ChatGPT, Gemini and Google AI Mode, the competitors AI names instead, the sources it relies on, what it gets wrong, and what we shipped and what's next.
 * **Signals from your store data and from customers.** Analytics tools undercount AI, so referral numbers are one input, not the whole picture.
