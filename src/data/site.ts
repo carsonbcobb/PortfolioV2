@@ -2,6 +2,46 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 export const SITE_URL = 'https://www.carsoncobb.com';
+
+// Social share images (public/og/, all 1200x627). Every page uses OG_DEFAULT unless its path is listed in
+// OG_BY_PATH, so new pages and reports need nothing of their own.
+export interface OgImage {
+  path: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+export const OG_DEFAULT: OgImage = {
+  path: '/og/og-home.png',
+  alt: 'AI search and CRO for Shopify. More customers from AI. More sales from every visit. Carson Cobb.',
+  width: 1200,
+  height: 627,
+};
+export const OG_BY_PATH: Record<string, OgImage> = {
+  '/ai-visibility-check': {
+    path: '/og/og-check.png',
+    alt: 'Free AI Visibility Check. Does ChatGPT recommend your brand? Results in about a minute.',
+    width: 1200,
+    height: 627,
+  },
+  '/results': {
+    path: '/og/og-results.png',
+    alt: 'Results across 50+ Shopify stores: ChatGPT mention rate 0% to 58%, conversion rate up 71%, subscription opt in 7% to 32%.',
+    width: 1200,
+    height: 627,
+  },
+  '/reports/who-chatgpt-recommends-2026': {
+    path: '/og/og-who-chatgpt-recommends.png',
+    alt: 'Who ChatGPT recommends in 2026. 48 buyer questions tested. 4 brands named in a typical answer.',
+    width: 1200,
+    height: 627,
+  },
+};
+/** The share image for a page path, with or without a trailing slash or .html. */
+export function ogImageFor(pathname: string): OgImage {
+  const key = pathname.replace(/(\.html|\/)$/, '') || '/';
+  return OG_BY_PATH[key] ?? OG_DEFAULT;
+}
 export const EMAIL = 'carson@carsoncobb.com';
 export const EMAIL_URL = `mailto:${EMAIL}?subject=Shopify%20store%20inquiry`;
 export const AGENCY_EMAIL_URL = `mailto:${EMAIL}?subject=Agency%20partnership`;
