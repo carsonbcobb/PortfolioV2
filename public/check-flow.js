@@ -69,7 +69,6 @@
     url: '',
     domain: '',
     brand: '',
-    category: '',
     report: null,
     ticket: null,
     email: '',
@@ -245,12 +244,11 @@
         S.url = normUrl(url);
         S.domain = d.domain;
         confirmForm.brand.value = d.brand || '';
-        confirmForm.category.value = d.category || '';
         storeForm.hidden = true;
         storeFine.hidden = true;
         confirmForm.hidden = false;
         sizeChips();
-        (d.category ? $('button[type="submit"]', confirmForm) : confirmForm.category).focus();
+        (d.brand ? $('button[type="submit"]', confirmForm) : confirmForm.brand).focus();
         track('visibility_check_detect', { cached: !!d.cached });
       } catch (err) {
         fail1(err.message);
@@ -267,11 +265,8 @@
       e.preventDefault();
       storeError.hidden = true;
       const brand = confirmForm.brand.value.trim();
-      const category = confirmForm.category.value.trim();
       if (!brand) return fail1('Please add your brand name.') || confirmForm.brand.focus();
-      if (!category) return fail1('Please add your main product category, like natural skincare.') || confirmForm.category.focus();
       S.brand = brand;
-      S.category = category;
       startCheck();
     });
 
@@ -392,7 +387,7 @@
       const res = await fetch(`${API}/check`, {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ url: S.url, category: S.category, brand: S.brand, token }),
+        body: JSON.stringify({ url: S.url, brand: S.brand, token }),
       });
       spendToken();
       if (!res.ok) {
@@ -419,12 +414,19 @@
           }
           if (msg.type === 'progress') addLine(msg);
           else if (msg.type === 'tick') lines.filter((l) => l.id === msg.id).forEach(finishLine);
+          else if (msg.type === 'section' && msg.pending) addLine({ step: 'accuracy-wait', message: msg.message });
           else if (msg.type === 'section') lines.filter((l) => l.step === msg.key).forEach(finishLine);
+          else if (msg.type === 'update') {
+            // Brand accuracy finished after the report was shown: swap in the final report.
+            S.report = msg.report;
+            lines.forEach(finishLine);
+            if (S.step >= FIRST_RESULT) renderReport();
+          }
           else if (msg.type === 'error') throw new Error(msg.message || 'Something went wrong. Please try again.');
           else if (msg.type === 'done') {
             finished = true;
             if (msg.cached && !lines.length) addLine({ step: 'setup', message: 'Found your saved report from the last 7 days' });
-            lines.forEach(finishLine);
+            lines.filter((l) => !(msg.pending && (l.step === 'accuracy' || l.step === 'accuracy-wait'))).forEach(finishLine);
             S.report = msg.report;
             S.ticket = msg.ticket || null;
             S.brand = msg.report.brand || S.brand;
@@ -477,8 +479,8 @@
           w: 100,
           bad: true,
           text: rivals.length
-            ? `When shoppers ask ChatGPT for ${r.category}, it recommends ${listNames(rivals)}, not you.`
-            : `When shoppers ask ChatGPT for ${r.category}, it doesn't recommend you.`,
+            ? `When shoppers ask ChatGPT about products like yours, it recommends ${listNames(rivals)}, not you.`
+            : `When shoppers ask ChatGPT about products like yours, it doesn't recommend you.`,
           cost: 'Those shoppers are ready to buy, and they buy from whoever AI names.',
         });
       else if (v.mentioned < v.total)
@@ -513,22 +515,19 @@
       else out.push({ w: 15, bad: false, text: `ChatGPT describes ${brand} accurately.`, cost: 'Being described right is the floor. Being named is the win.' });
     }
     const rd = r.sections.readiness;
-    if (!isErr(rd)) {
-      const p = rd.products || {};
-      const product = (rd.pages || []).find((pg) => pg.type === 'Product' && pg.found);
-      if (product && product.cells.Product === 'missing')
-        out.push({ w: 85, bad: true, text: "Your product pages don't give AI your price, reviews or availability in a form it reads reliably.", cost: "AI is less likely to recommend what it can't verify." });
-      if (p.total > 0 && p.incomplete > 0) {
-        const share = p.incomplete / p.total;
+    if (!isErr(rd) && Array.isArray(rd.rows)) {
+      const full = rd.rows.filter((x) => x.status === 'good').length;
+      const missing = rd.rows.filter((x) => x.status === 'missing').length;
+      if (full < rd.rows.length)
         out.push({
-          w: share >= 0.5 ? 80 : share >= 0.2 ? 60 : 30,
+          w: missing >= 3 ? 80 : 60,
           bad: true,
-          text: `${p.incomplete} of ${p.total} products are missing details AI uses.`,
-          cost: "Those products are hard for AI to recommend, however good they are.",
+          text: `${full} of ${rd.rows.length} product details are on every product page we checked.`,
+          cost: "Products AI can't describe with confidence are products it won't recommend.",
         });
-      }
-      if (rd.duplicates && rd.duplicates.length)
-        out.push({ w: 65, bad: true, text: 'Your product pages send AI conflicting product data.', cost: 'Conflicting data makes AI less sure what you sell and what it costs.' });
+      const single = rd.rows.find((x) => x.key === 'single');
+      if (single && single.on < single.of)
+        out.push({ w: 65, bad: true, text: 'Some of your product pages send AI conflicting product data.', cost: 'Conflicting data makes AI less sure what you sell and what it costs.' });
     }
     return out.sort((x, y) => y.w - x.w).slice(0, 3);
   };
@@ -565,7 +564,13 @@
             'button',
             { type: 'button', class: `q ${q.mentioned ? 'is-pass' : 'is-fail'}`, onclick: () => openQ(i) },
             el('span', { class: 'q__mark', 'aria-hidden': 'true' }, q.mentioned ? '✓' : '✕'),
-            el('span', { class: 'q__body' }, el('span', { class: 'q__text' }, q.question), el('span', { class: 'q__sub' }, el('span', { class: 'visually-hidden' }, q.mentioned ? 'Pass. ' : 'Fail. '), sub)),
+            el(
+              'span',
+              { class: 'q__body' },
+              q.product ? el('span', { class: 'q__product' }, q.product) : null,
+              el('span', { class: 'q__text' }, q.question),
+              el('span', { class: 'q__sub' }, el('span', { class: 'visually-hidden' }, q.mentioned ? 'Pass. ' : 'Fail. '), sub),
+            ),
             el('span', { class: 'q__more', 'aria-hidden': 'true' }, '›'),
           ),
         ),
@@ -578,6 +583,7 @@
       const sources = (q.sources || []).slice(0, 5);
       detail.replaceChildren(
         el('button', { type: 'button', class: 'flow__link qdetail__back', onclick: closeQ }, '← All questions'),
+        q.product ? el('p', { class: 'eyebrow eyebrow--dim' }, `Built from: ${q.product}`) : null,
         el('p', { class: 'qdetail__q' }, `“${q.question}”`),
         el('p', { class: `qdetail__verdict ${q.mentioned ? 'is-pass' : 'is-fail'}` }, q.mentioned ? `You're recommended${q.position ? `, position ${q.position}` : ''}.` : 'You are not recommended.', q.cited ? ' Your site was cited as a source.' : ''),
         others.length ? el('p', { class: 'qdetail__row' }, el('strong', {}, q.mentioned ? 'Also named: ' : 'Recommended instead: '), others.slice(0, 6).join(', ')) : null,
@@ -641,7 +647,12 @@
   const renderAccuracy = (r) => {
     const box = $('#sect-accuracy');
     const a = r.sections.accuracy;
-    if (isErr(a)) return box.replaceChildren(...sectError('Brand accuracy', a && a.error));
+    if (a && a.pending)
+      return box.replaceChildren(
+        sectHead('Brand accuracy', 'Still checking.'),
+        el('p', { class: 'flow__body sect__wait', role: 'status' }, el('span', { class: 'run__mark', 'aria-hidden': 'true' }), a.error),
+      );
+    if (isErr(a)) return box.replaceChildren(sectHead('Brand accuracy', 'No clear answer this run.'), el('p', { class: 'flow__body' }, a.error));
     const issues = [...(a.wrong || []).map((t) => ({ t, k: 'Wrong' })), ...(a.missing || []).map((t) => ({ t, k: 'Missing' }))].slice(0, 3);
     box.replaceChildren(
       sectHead('Brand accuracy', `${GRADE[a.grade] || a.grade}.`, a.score),
@@ -706,101 +717,88 @@
     );
   };
 
-  const COLS = { Organization: 'Org', WebSite: 'Site', Product: 'Prod', BreadcrumbList: 'Crumb', ItemList: 'List', FAQPage: 'FAQ', Article: 'Post' };
-  const CELL = { present: 'Present', incomplete: 'Incomplete', missing: 'Missing' };
+  const STATUS = { good: 'Good', partial: 'Partial', missing: 'Missing' };
   const renderReadiness = (r) => {
     const box = $('#sect-readiness');
     const d = r.sections.readiness;
     if (isErr(d)) return box.replaceChildren(...sectError('Site readiness', d && d.error));
-    const p = d.products || {};
-    const big = p.total ? `${p.incomplete} of ${p.total} products are missing details AI uses.` : 'Your schema, page by page.';
+    if (!Array.isArray(d.rows)) return box.replaceChildren(...sectError('Site readiness', 'Run the check again to see this part.'));
+    const full = d.rows.filter((x) => x.status === 'good').length;
+    const big = `${full} of ${d.rows.length} details are on every product page we checked.`;
     const table = el(
       'table',
-      { class: 'grid7' },
-      el('caption', { class: 'visually-hidden' }, 'Schema found on each page type'),
-      el('thead', {}, el('tr', {}, el('th', { scope: 'col' }, el('span', { class: 'visually-hidden' }, 'Page type')), d.columns.map((c) => el('th', { scope: 'col' }, el('abbr', { title: c }, COLS[c] || c))))),
+      { class: 'ready' },
+      el('caption', { class: 'visually-hidden' }, `Product details AI can read, across ${d.checked} product pages`),
+      el('thead', {}, el('tr', {}, el('th', { scope: 'col' }, 'Detail'), el('th', { scope: 'col' }, 'Product pages'), el('th', { scope: 'col' }, 'Status'))),
       el(
         'tbody',
         {},
-        d.pages.map((pg) =>
+        d.rows.map((x) =>
           el(
             'tr',
             {},
-            el('th', { scope: 'row' }, pg.type, pg.found ? '' : el('span', { class: 'grid7__nf' }, ' not found')),
-            d.columns.map((c) => {
-              const v = pg.found ? pg.cells[c] : null;
-              return el('td', {}, el('span', { class: `cell cell--${v || 'na'}`, 'aria-hidden': 'true' }), el('span', { class: 'visually-hidden' }, v ? CELL[v] : 'Not checked'));
-            }),
+            el('th', { scope: 'row' }, x.label),
+            el('td', { class: 'ready__count' }, `on ${x.on} of ${x.of}`),
+            el('td', {}, el('span', { class: `ready__status ready__status--${x.status}` }, STATUS[x.status] || x.status)),
           ),
         ),
       ),
     );
+    const byProduct =
+      d.products && d.products.length
+        ? el(
+            'details',
+            { class: 'ready__more' },
+            el('summary', {}, 'See by product'),
+            el(
+              'ul',
+              { class: 'ready__products' },
+              d.products.map((p) => {
+                const gaps = d.rows.filter((x) => !p.has[x.key]).map((x) => x.label.toLowerCase());
+                return el(
+                  'li',
+                  {},
+                  el('strong', {}, p.title),
+                  el('span', {}, gaps.length ? `Missing: ${gaps.join(', ')}.` : 'Gives AI every detail.'),
+                );
+              }),
+            ),
+          )
+        : null;
     const cmp = r.competitor && r.competitor.theirs ? r.competitor : null;
-    const grid = el('div', {});
-    const compare = el('div', { class: 'cmp', hidden: true });
-    if (cmp) {
-      const keys = Object.keys(cmp.labels);
-      const yours = cmp.yours ? cmp.yours.fields : null;
-      const mark = (on) => el('span', { class: `cmp__mark ${on ? 'is-pass' : 'is-fail'}` }, el('span', { 'aria-hidden': 'true' }, on ? '✓' : '✕'), el('span', { class: 'visually-hidden' }, on ? 'Given' : 'Not given'));
-      compare.append(
-        el('button', { type: 'button', class: 'flow__link qdetail__back', onclick: () => toggle(false) }, '← Page by page'),
-        el(
-          'p',
-          { class: 'cmp__sum' },
-          yours
-            ? `Your product page gives AI ${cmp.yours.count} of ${keys.length} product details. ${cmp.name}'s gives ${cmp.theirs.count}.`
-            : `${cmp.name}'s product page gives AI ${cmp.theirs.count} of ${keys.length} product details. We couldn't read yours.`,
-        ),
-        el(
-          'table',
-          { class: 'cmp__table' },
-          el('caption', { class: 'visually-hidden' }, `Product details in schema: you and ${cmp.name}`),
-          el('thead', {}, el('tr', {}, el('th', { scope: 'col' }, el('span', { class: 'visually-hidden' }, 'Detail')), el('th', { scope: 'col' }, 'You'), el('th', { scope: 'col' }, cmp.name))),
+    const compare = cmp
+      ? el(
+          'details',
+          { class: 'ready__more' },
+          el('summary', {}, cmp.yours ? `You give AI ${cmp.yours.count} product details. ${cmp.name} gives ${cmp.theirs.count}.` : `See what ${cmp.name} gives AI.`),
           el(
-            'tbody',
-            {},
-            keys.map((k) => el('tr', {}, el('th', { scope: 'row' }, cmp.labels[k]), el('td', {}, yours ? mark(yours[k]) : '?'), el('td', {}, mark(cmp.theirs.fields[k])))),
+            'table',
+            { class: 'cmp__table' },
+            el('caption', { class: 'visually-hidden' }, `Product details AI can read: you and ${cmp.name}`),
+            el('thead', {}, el('tr', {}, el('th', { scope: 'col' }, el('span', { class: 'visually-hidden' }, 'Detail')), el('th', { scope: 'col' }, 'You'), el('th', { scope: 'col' }, cmp.name))),
+            el(
+              'tbody',
+              {},
+              Object.keys(cmp.labels).map((k) => {
+                const mark = (on) => el('span', { class: `cmp__mark ${on ? 'is-pass' : 'is-fail'}` }, el('span', { 'aria-hidden': 'true' }, on ? '✓' : '✕'), el('span', { class: 'visually-hidden' }, on ? 'Given' : 'Not given'));
+                return el('tr', {}, el('th', { scope: 'row' }, cmp.labels[k]), el('td', {}, cmp.yours ? mark(cmp.yours.fields[k]) : '?'), el('td', {}, mark(cmp.theirs.fields[k])));
+              }),
+            ),
           ),
-        ),
-        el('p', { class: 'flow__fine' }, `${cmp.name} came up in ${cmp.mentions} of ${(r.sections.visibility && r.sections.visibility.total) || 3} buyer questions. Read from one product page on ${cmp.domain}.`),
-      );
-    }
-    const toggle = (on) => {
-      grid.hidden = on;
-      compare.hidden = !on;
-      const b = on ? $('.qdetail__back', compare) : $('.cmp__open', grid);
-      if (b) b.focus();
-    };
+          el('p', { class: 'flow__fine' }, `${cmp.name} came up in ${cmp.mentions} of ${(r.sections.visibility && r.sections.visibility.total) || 3} buyer questions. Read from one product page on ${cmp.domain}, and your top product page.`),
+        )
+      : null;
     box.replaceChildren(
       sectHead('Site readiness', big, d.score),
       el(
         'div',
         { class: 'sect__body' },
-        grid,
+        el('p', { class: 'flow__body ready__lead' }, `We checked ${d.checked} of your top product ${d.checked === 1 ? 'page' : 'pages'}. Each product page should include all of these.`),
+        table,
+        byProduct,
         compare,
       ),
-      costLine("Pages and products AI can't read fully are ones it won't confidently recommend."),
-    );
-    grid.append(
-      ...[
-        cmp
-          ? el(
-              'button',
-              { type: 'button', class: 'cmp__open', onclick: () => toggle(true) },
-              el('span', {}, cmp.yours ? `You give AI ${cmp.yours.count} product details. ${cmp.name} gives ${cmp.theirs.count}.` : `See what ${cmp.name} gives AI.`),
-              el('span', { class: 'q__more', 'aria-hidden': 'true' }, '›'),
-            )
-          : null,
-        table,
-        el(
-          'p',
-          { class: 'legend', 'aria-hidden': 'true' },
-          el('span', {}, el('span', { class: 'cell cell--present' }), 'Present'),
-          el('span', {}, el('span', { class: 'cell cell--incomplete' }), 'Incomplete'),
-          el('span', {}, el('span', { class: 'cell cell--missing' }), 'Missing'),
-        ),
-        d.duplicates && d.duplicates.length ? el('p', { class: 'flow__fine' }, `Your product page carries ${d.duplicates.length > 1 ? 'several' : 'more than one'} Product schema block, so AI can read conflicting prices or ratings.`) : null,
-      ].filter(Boolean),
+      costLine("Products AI can't describe with confidence are products it won't recommend."),
     );
   };
 
@@ -896,7 +894,6 @@
           S.domain = d.report.domain;
           S.url = d.report.url;
           S.brand = d.report.brand;
-          S.category = d.report.category;
           S.email = remembered;
           S.emailSent = true;
           renderReport();

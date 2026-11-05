@@ -83,7 +83,7 @@ That's also why I fix tracking first. If the store isn't sending clean order and
 
 ## How the work is packaged
 
-**AI Search and Conversion Audit, $1,500.** I review your Klaviyo account along with the rest of the store, run 50 buyer questions through ChatGPT, and give you a prioritized plan. If you start a Build within 30 days, the full $1,500 is credited toward it.
+**AI Search and Conversion Audit, $1,500.** I review your Klaviyo account along with the rest of the store, test your products against the questions your buyers ask in ChatGPT, and give you a prioritized plan. If you start a Build within 30 days, the full $1,500 is credited toward it.
 
 **Full, $7,500/month.** Your ecommerce lead, working at your direction. Klaviyo flows, segments and campaigns are handled day to day as part of the store, with launches and promotions brought to you for sign off. 3 month minimum.
 

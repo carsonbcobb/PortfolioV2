@@ -148,29 +148,28 @@ export function buildFindings(brand: string, sections: Sections): string[] {
   const r = sections.readiness;
   if (!isError(r)) {
     const rs = r as ReadinessSection;
-    const p = rs.products;
-    if (p.total > 0 && p.incomplete > 0) {
-      const share = p.incomplete / p.total;
+    const missing = rs.rows.filter((x) => x.status === "missing");
+    const partial = rs.rows.filter((x) => x.status === "partial");
+    if (missing.length || partial.length) {
       c.push({
-        weight: share >= 0.5 ? 80 : share >= 0.2 ? 60 : 30,
-        text: `${p.incomplete} of ${p.total} products are missing details AI uses to recommend them.`,
+        weight: missing.length >= 3 ? 80 : 60,
+        text: `${rs.rows.length - missing.length - partial.length} of ${rs.rows.length} product details are on every product page we checked.`,
       });
     }
-    if (rs.duplicates.length) {
-      c.push({ weight: 70, text: "Your product page has duplicate Product schema, which can give AI conflicting data." });
+    if (missing.length) {
+      const names = listNames(missing.slice(0, 2).map((x) => x.label.toLowerCase()));
+      c.push({
+        weight: 65,
+        text: `${names.charAt(0).toUpperCase() + names.slice(1)} ${missing.length === 1 ? "is" : "are"} on none of the product pages we checked.`,
+      });
     }
-    const productPage = rs.pages.find((pg) => pg.type === "Product" && pg.found);
-    if (productPage?.cells.Product === "missing") {
-      c.push({ weight: 85, text: "Your product pages have no Product schema, so AI cannot read price or reviews reliably." });
-    } else if (productPage?.cells.Product === "incomplete") {
-      c.push({ weight: 58, text: "Your Product schema is missing fields like reviews, brand or SKU that AI looks for." });
+    if (!missing.length && !partial.length) {
+      c.push({ weight: 12, text: `Every product page we checked includes all ${rs.rows.length} product details.` });
     }
-    const home = rs.pages.find((pg) => pg.type === "Homepage" && pg.found);
-    if (home?.cells.Organization === "missing") {
-      c.push({ weight: 50, text: "Your homepage has no Organization schema telling AI who you are." });
+    const single = rs.rows.find((x) => x.key === "single");
+    if (single && single.on < single.of) {
+      c.push({ weight: 70, text: "Some of your product pages give AI conflicting product data." });
     }
-    const faq = rs.pages.find((pg) => pg.type === "FAQ");
-    if (faq && !faq.found) c.push({ weight: 25, text: "We found no FAQ page, a common source AI quotes when answering buyers." });
   }
 
   // The visibility result is the headline of this tool, so it always leads when it ran.
@@ -187,11 +186,11 @@ const FIX_WORDS =
 /** A compact, factual digest of the results for the findings write up. */
 export function digest(
   brand: string,
-  category: string,
+  products: string[],
   sections: Sections,
   competitor: CompetitorCompare | null | undefined,
 ): Record<string, unknown> {
-  const d: Record<string, unknown> = { brand, category };
+  const d: Record<string, unknown> = { brand, top_products: products };
   const v = sections.visibility;
   if (!isError(v)) {
     const vs = v as VisibilitySection;
@@ -224,18 +223,11 @@ export function digest(
   const r = sections.readiness;
   if (!isError(r)) {
     const rs = r as ReadinessSection;
-    d.catalog = {
-      products_in_feed: rs.products.total,
-      products_with_thin_or_missing_details: rs.products.incomplete,
+    d.product_pages = {
+      note: "Each row is one product detail and how many of the checked product pages give it to AI.",
+      pages_checked: rs.checked,
+      details: rs.rows.map((x) => ({ detail: x.label, on_pages: x.on, of_pages: x.of })),
     };
-    d.one_product_page = rs.productDetails
-      ? {
-          note: "Count of product detail types (price, reviews, stock and so on) one product page gives AI, not a count of products.",
-          detail_types_given: rs.productDetails.count,
-          detail_types_possible: Object.keys(rs.productDetails.fields).length,
-          conflicting_product_data: rs.duplicates.length > 0,
-        }
-      : null;
   }
   if (competitor?.theirs) {
     d.top_competitor = {
@@ -288,6 +280,7 @@ export async function writeTopFindings(ai: OpenAI, data: Record<string, unknown>
         "not products. Keep each sentence short and name at most two specifics. If the store did well on something, you " +
         "may say so, but lead with the problems.",
       user: input,
+      maxOutputTokens: 700,
     });
     const out = (res.findings ?? []).slice(0, 3).map((f) => ({ text: String(f.text ?? "").trim(), cost: String(f.cost ?? "").trim() }));
     if (out.length < 3) return null;

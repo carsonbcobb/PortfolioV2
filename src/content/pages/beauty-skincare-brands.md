@@ -85,7 +85,7 @@ Across my work, rebuilt pages average a 2.1x conversion lift, and I've supported
 
 ## How to work with me
 
-Most beauty brands start with the **AI Search and Conversion Audit** for $1,500. I run 50 buyer questions through ChatGPT, look at which competitors and sources get cited instead of you, review where the store leaks conversions, and give you a prioritized plan. If you start a Build within 30 days, the full $1,500 is credited toward it.
+Most beauty brands start with the **AI Search and Conversion Audit** for $1,500. I test your products against the questions your buyers ask in ChatGPT, look at which competing products and sources AI uses instead of you, review where the store leaks conversions, and give you a prioritized plan. If you start a Build within 30 days, the full $1,500 is credited toward it.
 
 The **Build** is a fixed price project that takes 3 to 4 weeks and starts at $5,000, based on catalog size. After that, the **Growth** retainer at $4,500/month keeps the AI search and conversion work going. For brands that want one person leading the whole channel at their direction, there's **Full** at $7,500/month, which I explain on my [fractional head of ecommerce page](/fractional-head-of-ecommerce).
 

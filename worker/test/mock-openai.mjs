@@ -105,13 +105,18 @@ function searchAnswer(question) {
   return { output: [call, message(text, annotations)], searches: 1 };
 }
 
+// One entry per "ANSWER n:" block, in order, the way the worker asks for all answers in one call.
 function parseBrands(userText) {
   const m = userText.match(/Target brand: (.+?) \(website ([^)]+)\)/);
   const target = m ? m[1] : state.brand;
-  const answer = userText.split("Answer:\n")[1] || "";
-  const brands = [...answer.matchAll(/\*\*(.+?)\*\*/g)].map((x) => x[1]);
-  const idx = brands.findIndex((b) => b.toLowerCase() === target.toLowerCase());
-  return { brands, mentioned: idx >= 0, position: idx >= 0 ? idx + 1 : null };
+  const blocks = userText.split(/ANSWER \d+:\n/).slice(1);
+  return {
+    answers: blocks.map((answer) => {
+      const brands = [...answer.matchAll(/\*\*(.+?)\*\*/g)].map((x) => x[1]);
+      const idx = brands.findIndex((b) => b.toLowerCase() === target.toLowerCase());
+      return { brands, mentioned: idx >= 0, position: idx >= 0 ? idx + 1 : null };
+    }),
+  };
 }
 
 const server = http.createServer(async (req, res) => {
@@ -161,12 +166,11 @@ const server = http.createServer(async (req, res) => {
     case "buyer_questions": {
       const m = userText.match(/Do not mention "(.+?)" or (\S+?)\.\n/);
       if (m) Object.assign(state, { brand: m[1], domain: m[2], searchCount: 0 });
-      const cat = (userText.match(/Product category: (.+)/) || [, "this category"])[1];
       result = {
         questions: [
-          `I'm on my feet all day and my current ${cat} wear out fast, what should I buy that actually lasts?`,
-          `What's a good ${cat} brand that uses sustainable materials and isn't crazy expensive?`,
-          `I have wide feet and most ${cat} feel tight, any recommendations?`,
+          { product: 1, question: "I'm on my feet all day and my current pair wears out fast, what should I buy that actually lasts?" },
+          { product: 2, question: "What's a good brand that uses sustainable materials and isn't crazy expensive?" },
+          { product: 3, question: "I have wide feet and most shoes feel tight, any recommendations?" },
         ],
       };
       break;
@@ -180,9 +184,6 @@ const server = http.createServer(async (req, res) => {
         missing: ["It does not mention the main product lines shown on the homepage.", "It does not mention the free shipping offer."],
         wrong: [],
       };
-      break;
-    case "category_detect":
-      result = { category: (userText.match(/Product types: ([^;\n]+)/) || [, "home goods"])[1].toLowerCase() || "home goods" };
       break;
     case "top_findings": {
       let d = {};

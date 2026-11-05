@@ -31,7 +31,7 @@ I research how AI assistants read, describe and recommend Shopify brands, and ho
 
 ### [Product and merchant schema completeness](/reports/shopify-product-schema-completeness-2026)
 
-### [Product data depth and answer first content](/reports/product-data-depth-answer-first-content)
+### [How deep Shopify product data really is](/reports/shopify-product-data-depth-2026)
 
 ### [AI crawler access on Shopify](/reports/ai-crawler-access-shopify)
 

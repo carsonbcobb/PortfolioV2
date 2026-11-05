@@ -37,7 +37,8 @@ export const TIMEOUTS = {
   overallMs: 88_000,
   sections: {
     visibility: 85_000,
-    accuracy: 75_000,
+    // Brand accuracy is never cut off with the rest: it retries, then finishes after the report is shown.
+    accuracy: 150_000,
     crawlers: 30_000,
     readiness: 45_000,
   } as Record<SectionKey, number>,

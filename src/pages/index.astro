@@ -9,7 +9,7 @@ import {
   HOME_STATS,
   VERTICALS,
   HERO_PROOF,
-  SCHEMA_ALONE,
+  RECOMMENDED,
   SHIFT,
   ENGINES,
   ENGINES_NOTE,
@@ -165,17 +165,17 @@ const jsonLd = [homeSchema({ title, description, faqs })];
       </div>
     </section>
 
-    <!-- Why schema alone won't get you recommended -->
-    <section class="section section--sand" aria-labelledby="schema-alone">
+    <!-- What gets a product recommended -->
+    <section class="section section--sand" aria-labelledby="recommended">
       <div class="wrap stack">
         <div class="head">
-          <p class="eyebrow">Beyond schema</p>
-          <h2 class="h2" id="schema-alone">{SCHEMA_ALONE.heading}</h2>
-          <p class="lede">{SCHEMA_ALONE.text}</p>
+          <p class="eyebrow">{RECOMMENDED.eyebrow}</p>
+          <h2 class="h2" id="recommended">{RECOMMENDED.heading}</h2>
+          <p class="lede">{RECOMMENDED.text}</p>
         </div>
         <div class="levers">
           {
-            SCHEMA_ALONE.cards.map((c, i) => (
+            RECOMMENDED.cards.map((c, i) => (
               <div class="card lever">
                 <span class="tag tag--accent">{String(i + 1).padStart(2, '0')}</span>
                 <h3 class="lever__title">{c.title}</h3>
@@ -185,8 +185,8 @@ const jsonLd = [homeSchema({ title, description, faqs })];
           }
           <div class="card lever lever--wide">
             <span class="tag tag--accent">Then</span>
-            <h3 class="lever__title">{SCHEMA_ALONE.wide.title}</h3>
-            <p class="lever__text">{SCHEMA_ALONE.wide.text}</p>
+            <h3 class="lever__title">{RECOMMENDED.wide.title}</h3>
+            <p class="lever__text">{RECOMMENDED.wide.text}</p>
           </div>
         </div>
         <p class="research-line">

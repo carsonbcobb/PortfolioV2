@@ -6,12 +6,12 @@ export const SECTION_LABELS: Record<SectionKey, string> = {
   visibility: "ChatGPT recommendations",
   accuracy: "What ChatGPT says about you",
   crawlers: "AI crawler access",
-  readiness: "Schema and product data",
+  readiness: "Product pages AI can read",
 };
 
 const ORDER: SectionKey[] = ["visibility", "accuracy", "crawlers", "readiness"];
 const FULL_AUDIT_LINE =
-  "This check runs 3 questions. The full audit runs 50, built from your own customers' language, plus a full conversion review.";
+  "This check is a snapshot from one run. The full audit tests your products against the questions your own customers ask, across repeated runs, plus a conversion review.";
 
 function sectionScore(r: Report, k: SectionKey): number | null {
   const s = r.sections[k];
@@ -63,7 +63,7 @@ export function visitorEmail(r: Report, bookingUrl: string): Email {
 <tr><td style="padding:32px 32px 8px 32px;${font}">
 <p style="margin:0 0 4px 0;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#6b7280;">AI Visibility Check</p>
 <h1 style="margin:0;font-size:22px;line-height:28px;color:#111827;">${escapeHtml(r.brand)}</h1>
-<p style="margin:4px 0 0 0;font-size:14px;color:#6b7280;">${escapeHtml(r.domain)} &middot; ${escapeHtml(r.category)}</p>
+<p style="margin:4px 0 0 0;font-size:14px;color:#6b7280;">${escapeHtml(r.domain)}</p>
 </td></tr>
 <tr><td align="center" style="padding:24px 32px 8px 32px;${font}">
 <div style="font-size:64px;line-height:68px;font-weight:bold;color:${color};">${r.overall.score}</div>
@@ -127,7 +127,7 @@ export function ownerEmail(r: Report, visitor: string, cached: boolean): Email {
 <table role="presentation" cellpadding="4" cellspacing="0" border="0">
 <tr><td><b>URL</b></td><td><a href="${escapeHtml(r.url)}">${escapeHtml(r.url)}</a></td></tr>
 <tr><td><b>Brand</b></td><td>${escapeHtml(r.brand)}</td></tr>
-<tr><td><b>Category</b></td><td>${escapeHtml(r.category)}</td></tr>
+<tr><td><b>Top products</b></td><td>${escapeHtml((r.products ?? []).join("; "))}</td></tr>
 <tr><td><b>Visitor email</b></td><td>${escapeHtml(visitor)}</td></tr>
 <tr><td><b>Overall</b></td><td>${r.overall.score} &middot; ${escapeHtml(r.overall.verdict)}</td></tr>
 <tr><td><b>Cached</b></td><td>${cached ? "yes (served from cache, no new cost)" : "no"}</td></tr>
@@ -145,7 +145,7 @@ export function ownerEmail(r: Report, visitor: string, cached: boolean): Email {
     "",
     `URL: ${r.url}`,
     `Brand: ${r.brand}`,
-    `Category: ${r.category}`,
+    `Top products: ${(r.products ?? []).join("; ")}`,
     `Visitor email: ${visitor}`,
     `Overall: ${r.overall.score} (${r.overall.verdict})`,
     `Cached: ${cached ? "yes" : "no"}`,

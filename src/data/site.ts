@@ -49,7 +49,7 @@ export const NAV_LINKS = [
 // Homepage
 
 export const HOME_STATS = [
-  { value: '50+', label: 'AEO audits and roadmaps' },
+  { value: '50+', label: 'AI search audits' },
   { value: '30+', label: 'sites optimized for AI search' },
   { value: '50+', label: 'Shopify stores' },
   { value: '2.1x', label: 'average conversion lift on rebuilt pages' },
@@ -58,31 +58,38 @@ export const HOME_STATS = [
 export const VERTICALS = ['Wellness', 'Supplements', 'Beauty', 'Skincare', 'Food and beverage'];
 
 // One proof line under the hero buttons.
-export const HERO_PROOF = ['50+ AEO audits', '30+ sites optimized for AI search', '50+ Shopify stores'];
+export const HERO_PROOF = ['50+ AI search audits', '30+ sites optimized for AI search', '50+ Shopify stores'];
 
-// "Why schema alone won't get you recommended": the objection every key page answers.
-export const SCHEMA_ALONE = {
-  heading: "Why schema alone won't get you recommended.",
-  text: "A developer can add structured data in an afternoon. It's one of the four things AI weighs, and on its own it rarely changes which brands get named. AI recommends the brands it can read, trust and verify: complete product data, answers to the questions shoppers actually ask, crawlers that can reach your pages, and reviews, lists and press that back you up. Then the store has to close the sale. I work on all of it, measure it against real buyer questions, and focus where you can win.",
+// "What gets a product recommended": the four things AI weighs, then the sale.
+export const RECOMMENDED = {
+  eyebrow: 'How AI decides',
+  heading: 'What gets a product recommended.',
+  text: "AI recommends the brands it can read, trust and verify. That comes down to four things, and then the store has to close the sale. I work on all of it, product by product, and measure whether AI's answers change.",
   cards: [
-    { title: 'Product data and schema', text: 'Complete attributes and structured data on every product, so AI can read what you sell without guessing.' },
-    { title: 'Answer first content', text: 'Product pages and FAQs that answer the questions shoppers ask AI, in their own words.' },
-    { title: 'Crawler access', text: 'AI crawlers that can actually reach your pages, past robots rules and bot protection.' },
-    { title: 'Off site sources', text: 'The reviews, best of lists, press and forums AI trusts in your category, saying good things about you.' },
+    { title: 'Complete product data', text: 'Every product described fully and consistently, so AI can say what you sell without guessing.' },
+    {
+      title: 'Product pages that answer buyer questions',
+      text: "The facts shoppers ask about, like what it's made of, who it's for and how it compares, written so AI can quote them accurately.",
+    },
+    { title: 'Crawler access', text: 'AI crawlers that can actually reach your pages.' },
+    {
+      title: 'Coverage in the sources AI relies on',
+      text: "When shoppers ask about products like yours, AI leans on in depth reviews, comparisons and expert write ups. Real, detailed coverage carries weight. Empty praise doesn't.",
+    },
   ],
   wide: { title: 'Conversion: turning AI shoppers into orders', text: 'AI sends shoppers who are ready to buy. Product pages, offers and checkout decide whether they do.' },
 };
 
-export const SCHEMA_FAQ = {
-  q: "Can't my developer just add schema?",
-  a: "They can add markup, and you should have it. But schema is one input. What gets a brand recommended is complete product data, answers to real buyer questions, crawler access and the sources AI trusts in your category, measured against the questions your buyers ask. That's the work, and it's where most stores fall short.",
+export const APPROACH_FAQ = {
+  q: 'What makes your approach different?',
+  a: "Most AI search work stops at the category level: a list of generic questions and a markup checklist. I work product by product. For each product that matters, I find the questions its buyers actually ask, which competing products AI recommends instead and why, and what AI gets wrong about it. Then I fix the store side myself, from product data built for each product to the pages that close the sale, and measure whether AI's answers change. The store work and the conversion work are done by the same person, so the traffic AI sends actually turns into orders.",
 };
 
 export const SHIFT = [
   { title: 'Shoppers ask AI instead of searching.', text: 'AI gives a short list, not ten blue links.' },
   {
     title: 'AI picks from what it can read and trust.',
-    text: 'Your product data, your structured data, and what reviews, lists, press and Reddit say about you.',
+    text: 'Your product data, and what reviews, comparisons, press and social platforms say about your products.',
   },
   {
     title: 'AI shoppers arrive ready to buy.',
@@ -94,7 +101,7 @@ export const ENGINES = [
   {
     tag: 'AI Search',
     title: 'Get recommended.',
-    text: 'I make your store fully readable to AI, find the sources AI trusts in your category, and get you into them. Then I track how often AI recommends you across real buyer questions.',
+    text: 'I make your store fully readable to AI. I find the sources AI relies on when shoppers ask about products like yours, and help you earn real coverage in them. Then I track how often AI recommends your products for the questions buyers ask.',
     link: { href: '/ai-search', text: 'How AI search works' },
   },
   {
@@ -124,10 +131,10 @@ export const AI_CASES = [
   {
     tag: 'Startup brand · Wellness',
     stat: '0% → 58%',
-    statLabel: 'ChatGPT mention rate across 50 buyer questions',
+    statLabel: 'ChatGPT mention rate for its core product against its competitive set',
     title: 'From invisible to recommended for its product.',
-    before: 'A young brand with a strong product that AI had never heard of. No structured data, thin product pages, and no presence in the sources AI cites.',
-    after: 'Recommended for its core product in 58% of buyer questions within 90 days, with AI describing the product accurately.',
+    before: 'A young brand with a strong product that AI had never heard of. Thin product pages, and no presence in the sources AI relies on.',
+    after: 'Recommended for its core product in 58% of the questions its buyers ask within 90 days, with AI describing the product accurately.',
   },
   {
     tag: 'Billion dollar brand · Consumer health',
@@ -173,7 +180,7 @@ export const RESULTS = [
 
 export const ABOUT = {
   heading: 'Why me.',
-  text: "I'm Carson. I've led AI search work for national brands in vitamins, skincare, cosmetics, food, pet and wellness, from the audit and roadmap to the implementation. Before that I spent years running conversion and testing programs, affiliate programs and full rebuilds for Shopify brands from seed stage startups to billion dollar companies. That combination is the point: I know what makes AI recommend a brand, and I know what makes the visitor buy.",
+  text: "I'm Carson. I've led AI search work for national brands in vitamins, skincare, cosmetics, food, pet and wellness, from the audit and plan to the implementation. Before that I spent years running conversion and testing programs, affiliate programs and full rebuilds for Shopify brands from seed stage startups to billion dollar companies. That combination is the point: I know what makes AI recommend a brand, and I know what makes the visitor buy.",
   where: 'Based in California. Working with brands across the US.',
 };
 
@@ -190,11 +197,11 @@ export const AUDIT = {
   unit: ' one time',
   includes: [
     'Delivered in 5 business days',
-    'A written report: your mention rate across 50 buyer questions, who AI recommends instead and why, the sources AI cites in your category, your schema and product data gaps, crawler access, and your top conversion leaks',
+    'A written report: how often AI recommends your products for the questions your buyers ask, which competing products it names instead and why, the sources it relies on, what AI gets wrong about your products, crawler access, and your top conversion leaks',
     'A recorded video walkthrough, or a short call if you prefer',
     'A prioritized plan with what each fix is worth',
   ],
-  summary: 'A 50 buyer question test, who AI recommends instead, the sources it cites, your top conversion leaks and a prioritized plan, in 5 business days.',
+  summary: 'Your products tested against the questions your buyers ask, the competing products and sources AI uses instead of you, your top conversion leaks and a prioritized plan, in 5 business days.',
   note: 'The full $1,500 is credited toward a Build started within 30 days.',
 };
 
@@ -208,7 +215,7 @@ export const BUILD = {
   ],
   includes: [
     'On site AI search work across every template',
-    'Answer first product content and FAQs for your top products',
+    'Product pages that answer buyer questions, for your top products',
     'AI crawler access fixed',
     'Conversion rebuild of your product page template, collection template and cart',
     'Measurement setup: post purchase survey, AI traffic tracking and a baseline',
@@ -239,7 +246,7 @@ export const RETAINERS = [
     summary: 'Your ecommerce lead, working at your direction.',
     includes: [
       'Everything in Growth',
-      'I propose the roadmap and you decide',
+      'I propose the plan and you decide',
       'I plan and build launches, promotions and holidays for your sign off',
       'I run Klaviyo day to day in your brand voice',
       'I manage subscriptions, merchandising, apps and vendors so you have one point of contact',
@@ -276,7 +283,7 @@ export const STEPS = [
   {
     when: 'Step 1',
     title: 'AI Search and Conversion Audit',
-    text: "I test 50 real buyer questions in ChatGPT, built from your own customers' language, and show where you're recommended, who shows up instead and why. Then I map where your store is losing sales. You get a prioritized plan.",
+    text: "I test the questions real buyers ask about your products in ChatGPT and other AI tools, and see who gets recommended instead. Then I map where your store is losing sales. You get a prioritized plan.",
   },
   {
     when: 'Step 2',
@@ -302,14 +309,14 @@ export const FAQS: { q: string; a: string; link?: { href: string; text: string }
     q: 'What is AI search?',
     a: "Shoppers asking ChatGPT, Google's AI answers and similar tools what to buy, and getting a short list of recommended brands.",
   },
-  SCHEMA_FAQ,
+  APPROACH_FAQ,
   {
     q: 'Can you guarantee ChatGPT will recommend us?',
-    a: 'No one honestly can. I measure your mention rate across 50 real buyer questions before and after the work, and track AI driven traffic and sales, so you see exactly what moved. On site work is one part; reviews, press, lists and retail listings matter too, and the audit shows which ones apply to you.',
+    a: 'No one honestly can. I measure how often AI recommends your products for their buyer questions before and after the work, and track AI driven traffic and sales, so you see exactly what moved. On site work is one part; in depth reviews, comparisons, press and retail listings matter too, and the audit shows which ones apply to you.',
   },
   {
     q: 'How do you measure AI traffic when most of it shows up as direct?',
-    a: 'AI referral traffic, a post purchase survey, branded and direct traffic growth, and the high converting visitor segment that AI research produces.',
+    a: "Analytics tools undercount AI. Clicks from Google's AI answers are counted as regular search, and many shoppers read an AI answer, then type your name or URL. So I don't rely on referral numbers alone. I track how often AI recommends your products for their buyer questions month over month, and pair that with signals from your store data and from customers themselves. You see the trend in your monthly report.",
   },
   {
     q: 'Why is there a 3 month minimum on retainers?',
@@ -360,11 +367,11 @@ export const PRICING_FAQS = [
 export const CHECK_FAQS = [
   {
     q: 'Does ChatGPT recommend my brand?',
-    a: 'This check shows whether it does for 3 realistic buyer questions in your category, using the model ChatGPT uses by default with web search on. Answers vary by wording, person and day, so treat the result as a snapshot.',
+    a: 'This check shows whether it does when shoppers ask about products like your best sellers, using the model ChatGPT uses by default with web search on. Answers vary by wording, person and day, so treat the result as a snapshot.',
   },
   {
     q: 'How does the AI Visibility Check work?',
-    a: 'It reads your homepage and top products, writes 3 buyer questions for your category, and asks ChatGPT each one. It also asks ChatGPT what your brand sells, tests whether AI crawlers can reach your store, and scans your structured data and product data.',
+    a: 'It reads your store and your top products, writes the questions a shopper would ask about products like them, and asks ChatGPT each one. It also asks ChatGPT what your brand sells, tests whether AI crawlers can reach your store, and reads your top product pages to see what they tell AI.',
   },
   {
     q: 'Is the check free?',
@@ -372,7 +379,7 @@ export const CHECK_FAQS = [
   },
   {
     q: 'Why are my results different from what I see in ChatGPT?',
-    a: 'AI answers change with the exact wording, location, chat history and day. The full audit runs 50 questions built from your own customers\' language, repeatedly, to get a reliable picture.',
+    a: 'AI answers change with the exact wording, location, chat history and day. The full audit tests your products against the questions your own customers ask, across repeated runs, to get a reliable picture.',
   },
   {
     q: 'What do you do with my email?',
@@ -384,7 +391,7 @@ export const CHECK_FAQS = [
   },
   {
     q: 'How do I improve my score?',
-    a: "The three findings at the top of your report show where you're losing the most. Some gaps close quickly once they're found. Visibility takes longer, because it depends on your product data, your content, crawler access and the sources AI cites in your category, not schema alone. The full audit maps all of it.",
+    a: "The three findings at the top of your report show where you're losing the most. Some gaps close quickly once they're found. Visibility takes longer, because it depends on what your store tells AI about each product and on the sources AI relies on for products like yours. The full audit maps all of it.",
   },
 ];
 
@@ -399,14 +406,14 @@ export const AGENCY_TICKET_STATS = [
 // status: live, review, or building (sets the pill color).
 export const AGENCY_TICKETS = [
   { client: 'Skincare client', title: 'Structured data rollout across the catalog', status: 'live', label: 'Live' },
-  { client: 'Supplement client', title: 'AI visibility retest, 50 buyer questions', status: 'live', label: 'Live' },
+  { client: 'Supplement client', title: 'AI visibility retest on top products', status: 'live', label: 'Live' },
   { client: 'Wellness client', title: 'Product page conversion test', status: 'building', label: 'Building' },
-  { client: 'Food client', title: 'Duplicate review app schema removed', status: 'review', label: 'In review' },
-  { client: 'Pet client', title: 'Answer first FAQs on top products', status: 'building', label: 'Building' },
+  { client: 'Food client', title: 'Conflicting product data cleaned up', status: 'review', label: 'In review' },
+  { client: 'Pet client', title: 'Buyer question answers on top product pages', status: 'building', label: 'Building' },
 ];
 
 export const AGENCY_STATS = [
-  { value: '50+', label: 'AEO audits and roadmaps' },
+  { value: '50+', label: 'AI search audits' },
   { value: '4,000+', label: 'products made readable to AI' },
   { value: '50+', label: 'Shopify stores' },
   { value: '100%', label: 'white label, NDA signed upfront' },
@@ -439,18 +446,18 @@ export const AGENCY_SCOPE = [
   },
   {
     icon: '<path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/>',
-    title: 'Structured data rollout',
-    text: 'Complete schema on every template, duplicate app schema removed, and the product attributes AI asks about.',
+    title: 'Product data rollout',
+    text: 'Complete, consistent product data across every product, so AI describes each one correctly.',
   },
   {
     icon: '<path d="M4 6h16M4 12h10M4 18h7"/>',
-    title: 'Answer first content',
-    text: 'Product content and FAQs written to answer the questions shoppers actually ask AI.',
+    title: 'Product pages that answer buyer questions',
+    text: 'Product content written around the questions shoppers actually ask AI about each product.',
   },
   {
     icon: '<path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1"/>',
     title: 'Off site AI search work',
-    text: 'Getting clients into the lists, reviews, articles and retail listings AI cites in their category.',
+    text: 'Earning clients real coverage in the in depth reviews, comparisons and retail listings AI relies on for their products.',
   },
   {
     icon: '<path d="M3 17l6-6 4 4 8-8M15 7h6v6"/>',
@@ -472,7 +479,7 @@ export const AGENCY_PARTNER_PLANS = [
   {
     tag: 'Start here',
     name: 'AI Search and Conversion Audit, white label',
-    summary: "Your client's mention rate across 50 buyer questions, who AI recommends instead, the sources it cites, and their top conversion leaks.",
+    summary: "How often AI recommends your client's products, which competing products it names instead, the sources it relies on, and their top conversion leaks.",
     includes: [
       'Delivered in 5 business days',
       "A written report in your agency's branding",
@@ -487,7 +494,7 @@ export const AGENCY_PARTNER_PLANS = [
     summary: "The audit plan implemented on your client's store, under your name.",
     includes: [
       'On site AI search work across every template',
-      'Answer first product content and FAQs',
+      'Product pages that answer buyer questions',
       'AI crawler access fixed',
       'Conversion rebuild of the product page template, collection template and cart',
       'A retest of the same questions after 30 days',
@@ -535,10 +542,6 @@ export const AGENCY_PROMISE = [
 ];
 
 export const AGENCY_FAQS = [
-  {
-    q: 'How is this different from hiring a Shopify developer?',
-    a: 'A developer builds what is in the spec, and can add schema. But schema is one input. I know which buyer questions matter, which sources AI trusts in a category and what makes a visitor buy, so I decide what to build, build it, and can explain it to your client.',
-  },
   {
     q: 'Can you deliver AI search reporting in our branding?',
     a: 'Yes. Audits, retests of the same buyer questions and monthly reports go out as your agency\'s work, with no mention of me.',

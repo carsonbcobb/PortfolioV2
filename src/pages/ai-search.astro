@@ -44,38 +44,38 @@ const stats = [
   },
 ];
 
-const signals = [
+// Why some products get named and others don't. Outcome first, no steps.
+const reasons = [
   {
-    title: 'Your site',
-    items: [
-      'Complete product data and attributes',
-      'Structured data AI reads without guessing',
-      'Answers to real buyer questions',
-      'Crawlers that can reach every page',
-    ],
+    title: 'AI recommends products it can describe with confidence.',
+    text: 'When the facts about a product are thin or conflicting, AI names someone else, or describes you wrong.',
   },
   {
-    title: 'Everywhere else',
-    items: ['Review and testing sites', 'Best of lists and magazines', 'Reddit and forum threads', 'Amazon and retail listings'],
+    title: 'AI checks what others say.',
+    text: 'In depth reviews and comparisons of your products carry more weight than anything on your own site.',
+  },
+  {
+    title: 'A recommendation only pays if the page converts.',
+    text: 'AI sends shoppers straight to product pages, already told what to expect.',
   },
 ];
 
 const steps = [
-  { title: 'Measure what AI says today', text: 'I run real buyer questions in ChatGPT and record who gets named, and why.' },
-  { title: 'Fix what AI reads on your site', text: 'Product data, structured data, answer first content and crawler access, fixed at the source.' },
-  { title: 'Earn the sources AI cites', text: 'I get you into the reviews, lists and articles AI already trusts in your category.' },
+  { title: 'Measure what AI says today', text: 'I test the questions buyers ask about your products in ChatGPT and record who gets named, and why.' },
+  { title: 'Fix what AI reads on your site', text: 'Product data built for each product, and product pages that answer buyer questions.' },
+  { title: 'Earn the sources AI relies on', text: 'Real, in depth coverage in the reviews and comparisons AI leans on for products like yours.' },
   { title: 'Convert the traffic it sends', text: 'Product pages and checkout that confirm what AI told the shopper.' },
 ];
 
 const promises = [
   'No one controls AI answers. Anyone promising a ChatGPT ranking is guessing.',
-  'I make your store the easiest one in your category for AI to read and trust.',
+  'I make sure your store and your products are the easiest in your competitive set for AI to read, trust and recommend.',
   'I report honestly on every question, and focus the work where you can win.',
 ];
 
 const readMore = (headings: { heading: string; label?: string }[]) =>
   headings.map(({ heading, label }) => ({ title: label ?? heading, html: section(heading) }));
-const whyMore = readMore([{ heading: 'What is AI search?' }, { heading: "Why isn't schema enough?" }]);
+const whyMore = readMore([{ heading: 'What is AI search?' }]);
 const workMore = readMore([
   { heading: 'What do I do on your site?', label: 'Everything I do on your site' },
   { heading: 'What do I do off site?', label: 'Everything I do off site' },
@@ -107,7 +107,7 @@ const workMore = readMore([
       <div class="head">
         <p class="eyebrow">What the shopper sees</p>
         <h2 class="h2" id="shelf">A short list, not ten blue links.</h2>
-        <p class="lede">Shoppers describe their problem to ChatGPT and get a few brands back. There is no page two.</p>
+        <p class="lede">Shoppers describe their problem to ChatGPT and get a few products back. There is no page two.</p>
         <p class="shelf-note">
           <span>
             This is the shelf now. <a href="/reports/who-chatgpt-recommends-2026">About 4 brands per answer.</a>
@@ -168,23 +168,20 @@ const workMore = readMore([
     <div class="wrap stack">
       <div class="head">
         <p class="eyebrow">How AI chooses</p>
-        <h2 class="h2" id="decides">What decides whether AI recommends you.</h2>
-        <p class="lede">AI names the brands it can read and trust. That comes from two places.</p>
+        <h2 class="h2" id="decides">Why some products get named and others don't.</h2>
       </div>
-      <div class="grid signals">
+      <div class="grid grid--three">
         {
-          signals.map((s) => (
-            <div class="card signal">
-              <h3 class="h3">{s.title}</h3>
-              <ul>
-                {s.items.map((item) => (
-                  <li>{item}</li>
-                ))}
-              </ul>
+          reasons.map((r, i) => (
+            <div class="card reason">
+              <span class="tag tag--accent">{String(i + 1).padStart(2, '0')}</span>
+              <h3 class="h3">{r.title}</h3>
+              <p>{r.text}</p>
             </div>
           ))
         }
       </div>
+      <p class="lede">I work through all three for the products that matter most to your revenue, and measure the change.</p>
       <div class="readmore">
         {
           whyMore.map((m) => (

@@ -1,6 +1,6 @@
 ---
 title: "AI Search and CRO Results for Shopify | Carson Cobb"
-description: "AI search and CRO results for Shopify brands: 50+ AEO audits, 4,000+ products made readable to AI, and conversion, testing and subscription wins."
+description: "AI search and CRO results for Shopify brands: 50+ AI search audits, 4,000+ products made readable to AI, and conversion, testing and subscription wins."
 slug: "/results"
 h1: "Results"
 ---
@@ -11,7 +11,7 @@ Almost every client is under NDA, so no names here. The work and the numbers are
 
 ## AI search
 
-- **50+** AEO audits and roadmaps
+- **50+** AI search audits
 - **30+** sites optimized for AI search
 - **4,000+** products restructured with machine readable attributes
 - **48%** average organic traffic growth
@@ -28,9 +28,9 @@ Almost every client is under NDA, so no names here. The work and the numbers are
 ## What it takes, and what it's produced
 
 ### SEO, AEO and AI search
-Shoppers now ask ChatGPT, Perplexity, Gemini and Google's AI results what to buy, and those tools recommend the brands whose data they can read and trust. I audit stores for AI search readiness, write the roadmap, and then do the work, for national brands in vitamins, skincare, cosmetics, food, pet and wellness. That means complete product structured data built from each store's real attributes (ingredients, certifications, nutrition, identifiers, country of origin), fixing duplicate and conflicting schema from review apps, structuring shade and variant data, answer first product content and FAQs, clean crawler access, and the SEO fundamentals underneath it all.
+Shoppers now ask ChatGPT, Perplexity, Gemini and Google's AI results what to buy, and those tools recommend the brands whose data they can read and trust. I audit stores for AI search, write the plan, and then do the work, for national brands in vitamins, skincare, cosmetics, food, pet and wellness. That means product data built from each store's real products, one consistent story for every product where apps had told conflicting ones, product pages that answer the questions buyers ask, pages AI can reach, and the SEO fundamentals underneath it all.
 
-- **50+** AEO audits and roadmaps
+- **50+** AI search audits
 - **30+** Sites optimized for AI search
 - **4,000+** Products restructured with machine readable attributes
 - **6** AI platforms optimized for: ChatGPT, Perplexity, Gemini, Claude, Copilot and Google AI Overviews
