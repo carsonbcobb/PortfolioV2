@@ -1,7 +1,7 @@
 ---
 // The three pricing cards (audit, Build, retainers) linking to /pricing, from the same data as the pricing page.
 // Used on the homepage and as the pricing teaser on the service pages.
-import { AUDIT, BUILD, RETAINERS } from '../data/site';
+import { AUDIT, BUILD, RETAINERS, MONTHLY_REPORT } from '../data/site';
 
 interface Props {
   /** Heading id, for the section's aria-labelledby */
@@ -31,8 +31,8 @@ const lowestRetainer = Math.min(...RETAINERS.filter((r) => r.price !== null).map
         <span class="tag">One time</span>
         <h3 class="h3">Audit</h3>
         <div class="plan__price">{usd(AUDIT.price)}</div>
-        {!compact && <p class="plan__summary">{AUDIT.summary} Credited toward a Build within 30 days.</p>}
-        {compact && <p class="plan__summary">Credited toward a Build within 30 days.</p>}
+        {!compact && <p class="plan__summary">{AUDIT.summary} {AUDIT.note}</p>}
+        {compact && <p class="plan__summary">{AUDIT.note}</p>}
       </a>
       <a class="card price-card" href="/pricing#build">
         <span class="tag">Fixed price, 3 to 4 weeks</span>
@@ -51,7 +51,7 @@ const lowestRetainer = Math.min(...RETAINERS.filter((r) => r.price !== null).map
         <span class="tag">3 month minimum</span>
         <h3 class="h3">Retainers</h3>
         <div class="plan__price"><span>from</span> {usd(lowestRetainer)}<span>/month</span></div>
-        {!compact && <p class="plan__summary">Ongoing AI search and conversion work, tracked and reported every month.</p>}
+        {!compact && <p class="plan__summary">Ongoing AI search and conversion work. {MONTHLY_REPORT}</p>}
       </a>
     </div>
     <p class="ways__more"><a href="/pricing">See full pricing →</a></p>

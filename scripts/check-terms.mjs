@@ -12,7 +12,7 @@ const BANNED = [
   /Essentials/,
   /Full Ownership/,
   /\$1,500\/mo/,
-  /\$2,500/,
+  // $2,500 is allowed again: it is the Core retainer's price (final offer structure).
   /hours per month/i,
   /whole team/i,
   /Store Operator/i,

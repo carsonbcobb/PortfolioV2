@@ -15,7 +15,7 @@ faq:
   - question: "Do you run our ads or influencer program?"
     answer: "No. I focus on the Shopify store, subscriptions and email, which is where your ad and influencer traffic lands. Making that landing convert is the job."
   - question: "How do we get started?"
-    answer: "Most beauty brands start with the $1,500 AI Search and Conversion Audit. If you start a Build within 30 days, the full $1,500 is credited toward it."
+    answer: "Most beauty brands start with the $1,500 AI Search and Conversion Audit. The full $1,500 is credited toward a Build or your first retainer month, if you start within 30 days."
 ---
 
 Beauty is crowded. Your customer has seen a dozen brands this week, most of them on a phone, most of them from an ad or a creator. When they land on your store, you get a few seconds to look better than all of them.
@@ -85,7 +85,7 @@ Across my work, rebuilt pages average a 2.1x conversion lift, and I've supported
 
 ## How to work with me
 
-Most beauty brands start with the **AI Search and Conversion Audit** for $1,500. I test your products against the questions your buyers ask in ChatGPT, look at which competing products and sources AI uses instead of you, review where the store leaks conversions, and give you a prioritized plan. If you start a Build within 30 days, the full $1,500 is credited toward it.
+Most beauty brands start with the **AI Search and Conversion Audit** for $1,500. I test your products against the questions your buyers ask in ChatGPT, look at which competing products and sources AI uses instead of you, review where the store leaks conversions, and give you a prioritized plan. The full $1,500 is credited toward a Build or your first retainer month, if you start within 30 days.
 
 The **Build** is a fixed price project that takes 3 to 4 weeks and starts at $5,000, based on catalog size. After that, the **Growth** retainer at $4,500/month keeps the AI search and conversion work going. For brands that want one person leading the whole channel at their direction, there's **Full** at $7,500/month, which I explain on my [fractional head of ecommerce page](/fractional-head-of-ecommerce).
 

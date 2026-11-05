@@ -80,19 +80,22 @@ Not every month looks like that. Some months are mostly groundwork. But the poin
 
 ## Plans
 
-This work runs on one of three retainers, each with a 3 month minimum except Dedicated, which is custom.
+This work runs on one of four retainers, each with a 3 month minimum except Dedicated, which is custom.
 
 | Retainer | Price | Capacity | Calls |
 | --- | --- | --- | --- |
+| Core | $2,500/month | Up to 15 hours a month | One call a month |
 | Growth | $4,500/month | Up to 30 hours a month | Check in every 2 weeks |
 | Full | $7,500/month | Up to 60 hours a month | Weekly call, plus 1 extra call a week when needed |
 | Dedicated | Let's talk | Full time capacity | Built around your team |
+
+Every month: your mention rate for each product on ChatGPT, Gemini and Google AI Mode, the competitors AI names instead, the sources it relies on, what it gets wrong, and what we shipped and what's next.
 
 **Full** is the fractional head of ecommerce role. I act as your ecommerce lead, working at your direction: the plan, launches and promotions for your sign off, Klaviyo day to day, subscriptions, merchandising, apps and vendors, plus the AI search and conversion work. You get a weekly report and QA on everything that ships.
 
 I do the work myself. If something needs more than 60 hours, or a specialist skill like photography, I tell you up front and either quote it or recommend someone you hire directly. Email and Klaviyo are part of Full; they aren't sold on their own. The first 90 days follow the plan above: tracking, speed and key pages in month 1, then email and order value in month 2.
 
-**Growth** covers the AI search and conversion work without the full ecommerce lead role. **Dedicated** is full time capacity for brands that need it. Most brands start with the **$1,500 AI Search and Conversion Audit**.
+**Core** is the monthly AI search report plus on site work, or clear specs your developers can ship. **Growth** adds off site outreach and an ongoing testing program, without the full ecommerce lead role. **Dedicated** is full time capacity for brands that need it. Most brands start with the **$1,500 AI Search and Conversion Audit**.
 
 Every option is listed on the [pricing page](/pricing).
 

@@ -243,12 +243,9 @@ const jsonLd = [checkSchema({ title, description, faqs: CHECK_FAQS })];
           <div class="card compare__col compare__col--paid">
             <p class="tag tag--accent">{usd(AUDIT.price)} one time</p>
             <h3 class="h3">{AUDIT.name}</h3>
+            <p class="compare__line">{AUDIT.summary}</p>
             <ul>
-              <li>Your products tested against the questions your own customers ask</li>
-              <li>Repeated across runs</li>
-              <li>The competing products and sources AI uses instead of you</li>
-              <li>A conversion review</li>
-              <li>A prioritized plan</li>
+              {AUDIT.covers.map((c) => <li>{c}</li>)}
             </ul>
             <a class="compare__link" href="/pricing#audit">See the audit on the pricing page →</a>
           </div>

@@ -9,6 +9,8 @@ import {
   RETAINER_ROWS,
   RETAINER_NOTE,
   PRICING_FAQS,
+  MONTHLY_REPORT,
+  DEVELOPERS_NOTE,
   TERMS_LIST,
   CHECK_PATH,
   CAL_LINK,
@@ -26,10 +28,10 @@ const book = {
 
 const title = 'Pricing for AI Search and CRO | Carson Cobb';
 const description =
-  'Start with a $1,500 AI search and conversion audit, then a fixed price Build from $5,000 or a retainer from $4,500 a month.';
+  'Start with a $1,500 AI search and conversion audit, then a fixed price Build from $5,000 or a retainer from $2,500 a month.';
 const h1 = 'Pricing';
 const intro =
-  'Start with the $1,500 AI Search and Conversion Audit. Then implement the plan in a fixed price Build from $5,000, or on a retainer from $4,500 a month.';
+  'Start with the $1,500 AI Search and Conversion Audit. Then implement the plan in a fixed price Build from $5,000, or on a retainer from $2,500 a month.';
 
 // The Fit and terms items are visible Q&A too, so they join the page's FAQPage.
 const jsonLd = [pricingSchema({ title, description, faqs: [...PRICING_FAQS, ...TERMS_LIST] })];
@@ -109,9 +111,9 @@ const jsonLd = [pricingSchema({ title, description, faqs: [...PRICING_FAQS, ...T
     <div class="wrap stack">
       <div class="head">
         <h2 class="h2" id="retainers-title">Retainers</h2>
-        <p class="lede">Ongoing AI search and conversion work, with a 3 month minimum.</p>
+        <p class="lede">Ongoing AI search and conversion work, with a 3 month minimum. {MONTHLY_REPORT}</p>
       </div>
-      <div class="grid grid--three plans plans--retainers">
+      <div class="grid grid--four plans plans--retainers">
         {
           RETAINERS.map((r) => (
             <div class:list={['card', 'plan', { 'plan--featured': r.featured }]}>
@@ -144,6 +146,8 @@ const jsonLd = [pricingSchema({ title, description, faqs: [...PRICING_FAQS, ...T
           ))
         }
       </div>
+
+      <p class="plans__devs">{DEVELOPERS_NOTE}</p>
 
       <div class="prose retainers">
         <div class="table-scroll" tabindex="0" role="region" aria-label="Retainer comparison">

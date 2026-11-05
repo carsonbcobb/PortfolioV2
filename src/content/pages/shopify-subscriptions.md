@@ -87,7 +87,7 @@ I build subscriber specific flows in Klaviyo: welcome, upcoming charge reminder,
 
 You don't need a giant project to fix this. There are two ways I usually start.
 
-**AI Search and Conversion Audit, $1,500.** I review your subscription setup along with the rest of the store, look for conversion leaks, and test how ChatGPT recommends you. You get a prioritized plan. If you start a Build within 30 days, the full $1,500 is credited toward it. This is the right fit if you want to see how I work before committing.
+**AI Search and Conversion Audit, $1,500.** I review your subscription setup along with the rest of the store, look for conversion leaks, and test how ChatGPT recommends you. You get a prioritized plan. The full $1,500 is credited toward a Build or your first retainer month, if you start within 30 days. This is the right fit if you want to see how I work before committing.
 
 **Full, $7,500/month.** I lead subscriptions as part of the store, working at your direction: offer tests, widget changes, flows, cancellation insights, and everything else on the site that affects revenue. You get one person who knows your store deeply instead of a rotating cast. 3 month minimum.
 
