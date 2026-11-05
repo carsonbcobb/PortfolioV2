@@ -88,11 +88,11 @@ Launch day should be uneventful. I aim for that with a simple routine:
 
 See all options on the [pricing page](/pricing).
 
-## Book a 20 minute AI Search Review
+## Book a 20 minute intro call
 
-If you're planning a migration or a rebuild, talk to me before you pick a launch date. Book a 20 minute AI Search Review. We'll go over your goals, your timing and where you're moving from, and figure out whether an audit or a Build is the right next step. If it isn't a fit, I'll tell you.
+If you're planning a migration or a rebuild, talk to me before you pick a launch date. We'll go over your goals, your timing and where you're moving from, and figure out whether an audit or a build is the right next step. If it isn't a fit, I'll say so.
 
-[Book a 20 minute AI Search Review](/ai-visibility-check#book)
+[Book a 20 minute intro call](/ai-visibility-check#book)
 
 ## Sources
 

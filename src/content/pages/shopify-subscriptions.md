@@ -103,8 +103,8 @@ That's the kind of change that compounds. Every one of those subscribers is reve
 
 Across all my work, rebuilt pages average a 2.1x conversion lift, and I've supported more than $40M in client revenue. If you sell supplements or wellness products specifically, my page for [supplement brands](/supplement-brands) covers the extra challenges that come with that category.
 
-## Book a 20 minute AI Search Review
+## Book a 20 minute intro call
 
-If you think your subscription program should be doing more, it probably should. Book a 20 minute AI Search Review. We'll go over your goals and your check results, and figure out whether an audit or ongoing work is the right next step. If it isn't a fit, I'll tell you.
+If you think your subscription program should be doing more, let's talk. We'll go over your goals and figure out the right next step, and if it isn't a fit, I'll say so.
 
-[Book a 20 minute AI Search Review](/ai-visibility-check#book)
+[Book a 20 minute intro call](/ai-visibility-check#book)

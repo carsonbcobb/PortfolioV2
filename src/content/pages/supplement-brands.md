@@ -101,8 +101,8 @@ The **Build** is a fixed price project that takes 3 to 4 weeks and starts at $5,
 
 Every plan is listed on the [pricing page](/pricing).
 
-## Book a 20 minute AI Search Review
+## Book a 20 minute intro call
 
-If your supplement brand is growing but the store feels like it's leaking, let's talk. Book a 20 minute AI Search Review. We'll go over your goals and your check results, and figure out whether an audit or ongoing work is the right next step. If it isn't a fit, I'll tell you.
+If your supplement brand is growing but the store feels like it's leaking, let's talk. We'll go over your goals and figure out the right next step, and if it isn't a fit, I'll say so.
 
-[Book a 20 minute AI Search Review](/ai-visibility-check#book)
+[Book a 20 minute intro call](/ai-visibility-check#book)

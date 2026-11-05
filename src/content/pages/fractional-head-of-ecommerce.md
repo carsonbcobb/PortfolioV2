@@ -98,8 +98,8 @@ This works best for founders of growing brands who sell on Shopify and feel the 
 
 It's probably not a fit if you want someone to only run ads, or if you need a team of five on day one.
 
-## Book a 20 minute AI Search Review
+## Book a 20 minute intro call
 
-If you're tired of being the person who holds the whole store together, let's talk. We'll go over your goals and your check results, and figure out whether an audit, ongoing work or a full time hire is the right next step. If it isn't a fit, I'll tell you.
+If you're tired of being the person who holds the whole store together, let's talk. We'll go over your goals and figure out the right next step, and if it isn't a fit, I'll say so.
 
-[Book a 20 minute AI Search Review](/ai-visibility-check#book)
+[Book a 20 minute intro call](/ai-visibility-check#book)

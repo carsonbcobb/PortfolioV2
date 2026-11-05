@@ -82,7 +82,7 @@ export const RECOMMENDED = {
 
 export const APPROACH_FAQ = {
   q: 'What makes your approach different?',
-  a: "Most AI search work stops at the category level: a list of generic questions and a markup checklist. I work product by product. For each product that matters, I find the questions its buyers actually ask, which competing products AI recommends instead and why, and what AI gets wrong about it. Then I fix the store side myself, from product data built for each product to the pages that close the sale, and measure whether AI's answers change. The store work and the conversion work are done by the same person, so the traffic AI sends actually turns into orders.",
+  a: "I work product by product. For each product that matters, I find the questions its buyers actually ask, which competing products AI recommends instead and why, and what AI gets wrong about it. Then I fix the store side myself, from product data built for each product to the pages that close the sale, and measure whether AI's answers change. The store work and the conversion work are done by the same person, so the traffic AI sends actually turns into orders.",
 };
 
 export const SHIFT = [
@@ -367,7 +367,7 @@ export const PRICING_FAQS = [
 export const CHECK_FAQS = [
   {
     q: 'Does ChatGPT recommend my brand?',
-    a: 'This check shows whether it does when shoppers ask about products like your best sellers, using the model ChatGPT uses by default with web search on. Answers vary by wording, person and day, so treat the result as a snapshot.',
+    a: "This check asks questions built from your best sellers through OpenAI, using a smaller, faster OpenAI model with web search on. That shows how AI answers with live search, but it isn't the exact model a shopper gets in the ChatGPT app. Answers also vary by wording, person and day, so treat the result as a snapshot. The full audit tests your products in ChatGPT itself, across repeated runs.",
   },
   {
     q: 'How does the AI Visibility Check work?',

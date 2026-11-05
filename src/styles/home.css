@@ -1276,14 +1276,6 @@ img {
   }
 }
 
-/* Hero proof line */
-.hero__proof {
-  margin: -8px 0 0;
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--dim);
-}
-
 /* Why schema alone won't get you recommended: four levers and a wide conversion card. */
 .levers {
   display: grid;
