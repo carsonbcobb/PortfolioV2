@@ -5,6 +5,8 @@ frontend:
       commands:
         - nvm install 22
         - nvm use 22
+        # Full git history, so sitemap lastmod is each page's real last commit, not the clone's oldest.
+        - git fetch --unshallow --quiet || true
         - npm ci
     build:
       commands:
