@@ -18,7 +18,7 @@ interface Props {
   trail: { name: string; href?: string }[];
   /** Reports: ISO dates shown under the H1 as month and year. Updated only shows when its month differs from published. */
   dates?: { published?: string; modified?: string };
-  faqs?: { q: string; a: string }[];
+  faqs?: { q: string; a: string; link?: { text: string; href: string } }[];
   /** Closing call to action heading, if not the default */
   ctaTitle?: string;
   /** Hide the closing call to action (the AI Visibility Check page has its own) */
@@ -97,7 +97,10 @@ const updated =
               {faqs.map((f, i) => (
                 <details open={!faqCollapsed && i === 0}>
                   <summary>{f.q}</summary>
-                  <p>{f.a}</p>
+                  <p>
+                    {f.a}
+                    {f.link && <a href={f.link.href}>{f.link.text}</a>}
+                  </p>
                 </details>
               ))}
             </div>
