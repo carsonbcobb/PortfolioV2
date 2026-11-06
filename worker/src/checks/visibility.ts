@@ -2,7 +2,7 @@ import type { OpenAI } from "../openai";
 import { hostOf } from "../openai";
 import { QUESTION_COUNT } from "../config";
 import { noDashes } from "../scoring";
-import { htmlToText, metaContent, titleOf } from "../html";
+import { htmlToText } from "../html";
 import type { Emit, Source, StoreContext, VisibilityQuestion, VisibilitySection } from "../types";
 import { checkSources } from "./sources";
 
@@ -49,28 +49,40 @@ const PARSE_SCHEMA = {
           },
           mentioned: { type: "boolean", description: "True if the target brand is recommended or named." },
           position: { type: ["integer", "null"], description: "1 based position of the target brand in brands, or null if absent." },
+          clarifying: {
+            type: "boolean",
+            description: "True if the answer asks the shopper for more details instead of recommending specific products or brands.",
+          },
         },
-        required: ["brands", "mentioned", "position"],
+        required: ["brands", "mentioned", "position", "clarifying"],
       },
     },
   },
   required: ["answers"],
 };
 
+const REWRITE_SCHEMA = {
+  type: "object",
+  additionalProperties: false,
+  properties: { question: { type: "string" } },
+  required: ["question"],
+};
+
+type Parsed = { brands: string[]; mentioned: boolean; position: number | null; clarifying: boolean };
+
+/** Questions are shown on the page: no dashes, and hyphenated words ("plant-based") become two words. */
+const plainQuestion = (q: string) => noDashes(q).replace(/([A-Za-z0-9])-(?=[A-Za-z0-9])/g, "$1 ");
+
 const clip = (s: string | null | undefined, n: number) => (s ?? "").replace(/\s+/g, " ").trim().slice(0, n);
 
-/** Short, plain facts about each top product for the question writer. No AI needed to gather them. */
-function productBrief(ctx: StoreContext, n: number): { title: string; line: string }[] {
-  // A store that hides its product feed still describes what it sells on its homepage.
-  if (!ctx.top.length) {
-    const html = ctx.homepageHtml ?? "";
-    const desc = clip(metaContent(html, "description") ?? metaContent(html, "og:description") ?? "", 240);
-    const title = clip(titleOf(html) ?? "", 120);
-    return desc || title ? [{ title: "Your store", line: [title, desc].filter(Boolean).join(" | ") }] : [];
-  }
+/**
+ * Plain facts about each top product for the question writer, from the store's own product data.
+ * `descLen` is longer for a rewrite. Questions are never written without products.
+ */
+function productBrief(ctx: StoreContext, n: number, descLen = 240): { title: string; line: string }[] {
   return ctx.top.slice(0, n).map((p) => {
     const price = p.variants?.find((v) => v?.price)?.price;
-    const desc = clip(htmlToText(p.body_html ?? ""), 240);
+    const desc = clip(htmlToText(p.body_html ?? ""), descLen);
     return {
       title: clip(p.title, 120),
       line: [clip(p.title, 120), p.product_type ? `type: ${clip(p.product_type, 60)}` : "", price ? `price: ${price}` : "", desc]
@@ -78,6 +90,40 @@ function productBrief(ctx: StoreContext, n: number): { title: string; line: stri
         .join(" | "),
     };
   });
+}
+
+/** One SMALL_MODEL call that lists the brands each answer recommends. Null when the call failed. */
+async function parseAnswers(ai: OpenAI, ctx: StoreContext, answers: (string | null)[]): Promise<Parsed[] | null> {
+  try {
+    const res = await ai.structured<{ answers: Parsed[] }>({
+      name: "brand_parse",
+      schema: PARSE_SCHEMA,
+      maxOutputTokens: 800,
+      system:
+        "You extract product recommendations from ChatGPT answers. For each answer, list the brands or stores it " +
+        "recommends, in order of first appearance, without duplicates. Use the brand name only, not product names. " +
+        "Then say whether the target brand appears and its 1 based position in that list, and whether the answer " +
+        "asks the shopper for more details instead of recommending anything. Return one entry per answer, in order.",
+      user:
+        `Target brand: ${ctx.brand} (website ${ctx.domain})\n\n` +
+        answers.map((a, i) => `ANSWER ${i + 1}:\n${a ? a.slice(0, 4000) : "(no answer)"}`).join("\n\n"),
+    });
+    return res.answers ?? [];
+  } catch (e) {
+    console.error("brand parse failed, using text match only", e instanceof Error ? e.message : String(e));
+    return null;
+  }
+}
+
+/**
+ * A usable answer recommends something: it names at least one brand (or the store) and isn't a
+ * clarifying question. When the parse call failed, any answer counts, as before.
+ */
+function usable(answer: string | null, p: Parsed | undefined, parseFailed: boolean, ctx: StoreContext): boolean {
+  if (!answer) return false;
+  if (parseFailed) return true;
+  if (!p || p.clarifying) return false;
+  return (p.brands ?? []).some((b) => String(b).trim()) || !!p.mentioned || textMentions(answer, ctx.brand, ctx.domain);
 }
 
 export async function runVisibility(
@@ -89,6 +135,7 @@ export async function runVisibility(
   emit({ type: "progress", step: "visibility", message: "Writing buyer questions from your top products" });
   const brief = productBrief(ctx, N);
   if (!brief.length) throw new Error("we couldn't read your products to build questions from. The store may be limiting automated visits.");
+  const detail = productBrief(ctx, N, 700);
   const { questions: raw } = await ai.structured<{ questions: { product: number; question: string }[] }>({
     name: "buyer_questions",
     schema: QUESTIONS_SCHEMA,
@@ -107,7 +154,10 @@ export async function runVisibility(
   });
   // Questions are shown on the page, so dashes become commas to match the site's copy rules.
   const qs = (raw ?? [])
-    .map((q) => ({ question: noDashes(String(q?.question ?? "")), product: brief[(Number(q?.product) || 1) - 1]?.title ?? brief[0].title }))
+    .map((q) => {
+      const idx = Math.min(Math.max((Number(q?.product) || 1) - 1, 0), brief.length - 1);
+      return { question: plainQuestion(String(q?.question ?? "")), product: brief[idx].title, idx };
+    })
     .filter((q) => q.question)
     .slice(0, N);
   if (qs.length < N) throw new Error(`question writing returned fewer than ${N} questions`);
@@ -121,29 +171,57 @@ export async function runVisibility(
 
   // One call reads every answer and lists the brands each one recommends.
   const answers = searched.map((r) => (r.status === "fulfilled" ? r.value : null));
-  let parsed: { brands: string[]; mentioned: boolean; position: number | null }[] = [];
-  try {
-    const res = await ai.structured<{ answers: { brands: string[]; mentioned: boolean; position: number | null }[] }>({
-      name: "brand_parse",
-      schema: PARSE_SCHEMA,
-      maxOutputTokens: 700,
-      system:
-        "You extract product recommendations from ChatGPT answers. For each answer, list the brands or stores it " +
-        "recommends, in order of first appearance, without duplicates. Use the brand name only, not product names. " +
-        "Then say whether the target brand appears and its 1 based position in that list. Return one entry per answer, in order.",
-      user:
-        `Target brand: ${ctx.brand} (website ${ctx.domain})\n\n` +
-        answers.map((a, i) => `ANSWER ${i + 1}:\n${a ? a.answer.slice(0, 4000) : "(no answer)"}`).join("\n\n"),
-    });
-    parsed = res.answers ?? [];
-  } catch (e) {
-    console.error("brand parse failed, using text match only", e instanceof Error ? e.message : String(e));
-  }
+  const first = await parseAnswers(ai, ctx, answers.map((a) => a?.answer ?? null));
+  const parsed: (Parsed | undefined)[] = qs.map((_, i) => first?.[i]);
 
-  const asked: Asked[] = qs.map((q, i) => {
+  // A clarifying question or an answer with no brands says nothing about who ChatGPT recommends.
+  // Each gets one rewrite with more product detail; if that still fails, it is left out of the score.
+  const retry = qs.map((_, i) => i).filter((i) => !usable(answers[i]?.answer ?? null, parsed[i], first === null, ctx));
+  const retried = new Set<number>();
+  if (retry.length && !signal?.aborted) {
+    retry.forEach((i) => emit({ type: "progress", step: "visibility", id: `r${i}`, message: "Asking again with more product detail" }));
+    const rewrites = await Promise.allSettled(
+      retry.map(async (i) => {
+        const { question } = await ai.structured<{ question: string }>({
+          name: "rewrite_question",
+          schema: REWRITE_SCHEMA,
+          maxOutputTokens: 200,
+          system:
+            "A shopper asked ChatGPT this question, but the answer asked for more details or named no products. Rewrite " +
+            "it as one question that includes the details ChatGPT needs to recommend specific products: what the product " +
+            "is, who it's for, key features and a price range. Keep it casual, the way a person types. It must ask what to " +
+            "buy. Never name any brand, store or product name. Do not use dashes.",
+          user:
+            `Original question: ${qs[i].question}\n` +
+            `Product it is about: ${detail[qs[i].idx]?.line ?? brief[qs[i].idx].line}\n` +
+            `Do not mention "${ctx.brand}" or ${ctx.domain}.`,
+        });
+        const q = plainQuestion(String(question ?? ""));
+        if (!q) throw new Error("empty rewrite");
+        return { i, q, a: await ai.search(q, "buyer") };
+      }),
+    );
+    const done = rewrites.flatMap((r) => (r.status === "fulfilled" ? [r.value] : []));
+    retry.forEach((i) => emit({ type: "tick", id: `r${i}` }));
+    if (done.length) {
+      const again = await parseAnswers(ai, ctx, done.map((d) => d.a.answer));
+      done.forEach((d, j) => {
+        qs[d.i].question = d.q;
+        answers[d.i] = d.a;
+        parsed[d.i] = again?.[j];
+        retried.add(d.i);
+        // A rewrite whose parse failed can't be checked, so it stays out of the score.
+        if (again === null) parsed[d.i] = { brands: [], mentioned: false, position: null, clarifying: true };
+      });
+    }
+  }
+  const excluded = new Set(retry.filter((i) => !retried.has(i) || !usable(answers[i]?.answer ?? null, parsed[i], false, ctx)));
+
+  const asked: Asked[] = qs.map(({ idx: _idx, ...q }, i) => {
     const a = answers[i];
-    if (!a) return { ...q, mentioned: false, position: null, cited: false, brands: [], answer: "", sources: [] };
-    return { ...q, ...resolve(a.answer, a.sources, parsed[i], ctx) };
+    const flags = { ...(retried.has(i) ? { retried: true } : {}), ...(excluded.has(i) ? { excluded: true } : {}) };
+    if (!a) return { ...q, mentioned: false, position: null, cited: false, brands: [], answer: "", sources: [], ...flags };
+    return { ...q, ...resolve(a.answer, a.sources, parsed[i], ctx), ...flags };
   });
 
   emit({ type: "progress", step: "visibility", id: "src", message: "Checking whether you appear in the sources AI cited" });
@@ -153,21 +231,23 @@ export async function runVisibility(
     signal,
   ).finally(() => emit({ type: "tick", id: "src" }));
   const out: VisibilityQuestion[] = asked.map((q, i) => ({ ...q, sources: checked.perQuestion[i] }));
-  const per = out.map((q) => {
+  const scored = out.filter((q) => !q.excluded);
+  const per = scored.map((q) => {
     if (!q.mentioned) return 0;
     let s = q.position === 1 ? 1 : q.position !== null && q.position <= 3 ? 0.8 : 0.6;
     if (q.cited) s = Math.min(1, s + 0.1);
     return s;
   });
-  const score = Math.round((per.reduce((a, b) => a + b, 0) / out.length) * 100);
-  return { score, mentioned: out.filter((q) => q.mentioned).length, total: N, questions: out, sources: checked.summary };
+  // With nothing scored, total is 0 and the overall score leaves this section out.
+  const score = scored.length ? Math.round((per.reduce((a, b) => a + b, 0) / scored.length) * 100) : 0;
+  return { score, mentioned: scored.filter((q) => q.mentioned).length, total: scored.length, asked: out.length, questions: out, sources: checked.summary };
 }
 
 /** Combines the model's brand list with a text match backstop. */
 function resolve(
   answer: string,
   sources: Source[],
-  parsed: { brands: string[]; mentioned: boolean; position: number | null } | undefined,
+  parsed: Parsed | undefined,
   ctx: StoreContext,
 ): Omit<Asked, "question" | "product"> {
   const cited = sources.some((s) => {

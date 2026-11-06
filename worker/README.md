@@ -8,12 +8,14 @@ This folder is self contained. It is not part of the Astro build or the Amplify 
 
 | Section | Weight | Uses AI | What it does |
 | --- | --- | --- | --- |
-| visibility | 40 | yes | `SMALL_MODEL` writes 3 buyer questions for the category. Each is asked to `SEARCH_MODEL` with web search (one search per question). `SMALL_MODEL` parses the recommended brands and where the store appears. Every cited source is then fetched (no AI) and marked `yours`, `listed` (names the brand or links to the store), `absent` or `unread`, with a summary of how many the store is on. |
+| visibility | 40 | yes | `SMALL_MODEL` writes 3 buyer questions from the store's top products. Each is asked to `SEARCH_MODEL` with web search forced on (`tool_choice: "required"`; an answer that didn't search is retried). An answer that asks a clarifying question or names no brands gets one rewrite with more product detail; if it still fails, it is left out of the score (`excluded`), `total` is the number scored and `asked` the number asked. With none scored, the section is left out of the overall score. `SMALL_MODEL` parses the recommended brands and where the store appears. Every cited source is then fetched (no AI) and marked `yours`, `listed` (names the brand or links to the store), `absent` or `unread`, with a summary of how many the store is on. |
 | accuracy | 20 | yes | Asks `SEARCH_MODEL` "What is {brand} and what do they sell?" and grades the answer against the homepage and product titles. |
 | crawlers | 15 | no | Parses robots.txt for 7 AI bots, fetches the homepage with each bot's real user agent, checks for blocks and bot challenges, and checks for llms.txt. |
 | readiness | 25 | no | Finds the homepage, a collection, a product, FAQ, blog, article and About page, reads JSON-LD and microdata, flags duplicate Product schema, and audits `/products.json?limit=250`. |
 
-If a section fails, the overall score is reweighted over the sections that worked.
+If a section fails, the overall score is reweighted over the sections that worked, and `overall.note` says which checks couldn't run (`overall.unscored` lists them).
+
+Before any AI call, the setup step confirms the site sells physical products. When the product feed can't be read, it looks again: the feed with a smaller limit, the collection pages, then the product sitemap (with the titles it lists), reading each product's own JSON or Product schema, in small batches with one retry on a 429. With no products, the stream ends with `{"type":"stopped","reason":"not_store"|"no_products"|"unreadable","message"}`: no score, no OpenAI spend, and it doesn't count toward the limits.
 
 Two extras, not scored:
 
@@ -24,7 +26,7 @@ Two extras, not scored:
 
 `GET /status` returns `{"paused": boolean, "limit": number}`.
 
-`POST /check` with `{"url","category","token"}` plus optional `"brand"` (the name the visitor confirmed) and optional `"email"` (token is the Turnstile response). Errors are JSON `{"error","message"}`: 400 `bad_request`, 400 `invalid_url`, 403 `turnstile`, 429 `rate_limited`, 503 `paused`. Success is a 200 `application/x-ndjson` stream of `progress` lines (visibility questions carry an `id`), `tick` lines (`{"type":"tick","id"}` when one question's answer is back), `section` lines and a final `done` line with a one time `ticket`. Cached reports stream a single `{"type":"done","report":...,"cached":true,"ticket":...}` line. When `email` is sent with the check, the report email goes out as before.
+`POST /check` with `{"url","token"}` plus optional `"brand"` (the name the visitor confirmed), optional `"email"` and optional `"source"` (`referrer`, `landing`, `utm_source`, `utm_medium`, `utm_campaign`, saved by the site on the first visit; only used in the owner email and kept off the cached report) (token is the Turnstile response). Errors are JSON `{"error","message"}`: 400 `bad_request`, 400 `invalid_url`, 403 `turnstile`, 429 `rate_limited`, 503 `paused`. Success is a 200 `application/x-ndjson` stream of `progress` lines (visibility questions carry an `id`), `tick` lines (`{"type":"tick","id"}` when one question's answer is back), `section` lines and a final `done` line with a one time `ticket`. Cached reports stream a single `{"type":"done","report":...,"cached":true,"ticket":...}` line. When `email` is sent with the check, the report email goes out as before.
 
 The step flow on the site uses three more routes:
 
@@ -58,7 +60,7 @@ Secrets (set with `npx wrangler secret put NAME`, never in a file that is commit
 | `TURNSTILE_SECRET_KEY` | Required. Without it every check is rejected with 403. |
 | `RESEND_API_KEY` | Optional. When unset, emails are skipped silently. |
 
-KV binding `CHECKS` stores `report:{domain}` (7 days), `ip:{ip}:{yyyy-mm-dd}` and `day:{yyyy-mm-dd}` (2 days each). Per IP limit is 3 fresh checks per UTC day (from `CF-Connecting-IP`). Prices and limits live in `src/config.ts`.
+KV binding `CHECKS` stores `report:v2:{domain}` (7 days; v2 skips reports saved before the store check), `ip:{ip}:{yyyy-mm-dd}` and `day:{yyyy-mm-dd}` (2 days each). Per IP limit is 3 fresh checks per UTC day (from `CF-Connecting-IP`). Prices and limits live in `src/config.ts`.
 
 ## Setup and deploy
 

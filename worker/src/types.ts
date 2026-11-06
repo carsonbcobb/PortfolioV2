@@ -62,12 +62,19 @@ export interface VisibilityQuestion {
   brands: string[];
   answer: string;
   sources: CitedSource[];
+  /** True when the question was rewritten with more product detail after a first answer named no brands. */
+  retried?: boolean;
+  /** True when ChatGPT still asked a clarifying question or named no brands. Left out of the score. */
+  excluded?: boolean;
 }
 
 export interface VisibilitySection {
   score: number;
   mentioned: number;
+  /** Questions scored: the ones where ChatGPT named brands. 0 means this section is left out of the overall score. */
   total: number;
+  /** Questions asked, including any left out of the score. */
+  asked?: number;
   questions: VisibilityQuestion[];
   sources: SourcesSummary;
 }
@@ -163,6 +170,10 @@ export interface Report {
     findings: string[];
     /** Written by SMALL_MODEL from all results. Absent when that call failed; the page then builds its own. */
     top?: TopFinding[];
+    /** Set when some checks couldn't run, so the score covers only the ones that did. */
+    note?: string;
+    /** The sections left out of the score. */
+    unscored?: SectionKey[];
   };
   sections: {
     visibility: VisibilitySection | SectionError;
@@ -196,6 +207,8 @@ export interface StoreContext {
   products: ShopifyProduct[];
   /** The store's featured or best selling products, best first (up to 8). */
   top: ShopifyProduct[];
+  /** True when the homepage looks like an online store (Shopify, cart, Product schema). */
+  storeSignals?: boolean;
 }
 
 export interface ShopifyProduct {
@@ -206,7 +219,19 @@ export interface ShopifyProduct {
   product_type?: string;
   vendor?: string;
   images?: unknown[];
-  variants?: { sku?: string | null; price?: string | null; available?: boolean }[];
+  variants?: { sku?: string | null; price?: string | null; available?: boolean; requires_shipping?: boolean }[];
 }
+
+/** Where the visitor first came from, saved by the site on their first visit. Only sent in the owner email. */
+export interface VisitSource {
+  referrer: string;
+  landing: string;
+  utm_source: string;
+  utm_medium: string;
+  utm_campaign: string;
+}
+
+/** Why a check stopped before any AI calls. */
+export type StopReason = "not_store" | "no_products" | "unreadable";
 
 export type Emit = (obj: Record<string, unknown>) => void;

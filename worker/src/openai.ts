@@ -207,6 +207,8 @@ export class OpenAI {
         model: (purpose === "buyer" && this.env.BUYER_MODEL) || this.env.SEARCH_MODEL,
         input: question,
         tools: [{ type: "web_search" }],
+        // Buyer questions always search, so answers reflect live recommendations, not training data alone.
+        ...(purpose === "buyer" ? { tool_choice: "required" } : {}),
         include: ["web_search_call.action.sources"],
         // One search per question keeps the fee at $0.01 a question; low reasoning keeps answers quick.
         max_tool_calls: 1,
@@ -218,7 +220,9 @@ export class OpenAI {
       (data) => {
         const answer = outputText(data);
         if (!answer) throw new OpenAIError("empty answer");
-        return { answer, ...citations(data) };
+        const cites = citations(data);
+        if (purpose === "buyer" && cites.searchCalls === 0) throw new OpenAIError("answered without searching");
+        return { answer, ...cites };
       },
     );
   }

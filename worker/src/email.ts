@@ -1,6 +1,6 @@
 import { escapeHtml } from "./html";
 import { isError } from "./scoring";
-import type { Env, Report, SectionKey } from "./types";
+import type { Env, Report, SectionKey, VisitSource } from "./types";
 
 export const SECTION_LABELS: Record<SectionKey, string> = {
   visibility: "ChatGPT recommendations",
@@ -15,7 +15,18 @@ const FULL_AUDIT_LINE =
 
 function sectionScore(r: Report, k: SectionKey): number | null {
   const s = r.sections[k];
-  return isError(s) ? null : (s as { score: number }).score;
+  if (isError(s) || r.overall.unscored?.includes(k)) return null;
+  return (s as { score: number }).score;
+}
+
+/** The three source lines for the owner email. */
+function sourceLines(src: VisitSource | null | undefined): [string, string][] {
+  const utms = src ? [["source", src.utm_source], ["medium", src.utm_medium], ["campaign", src.utm_campaign]].filter(([, v]) => v) : [];
+  return [
+    ["Source", src ? src.referrer || "Direct (no referrer)" : "Unknown"],
+    ["Landing page", src?.landing || "Unknown"],
+    ["UTMs", utms.length ? utms.map(([k, v]) => `${k}=${v}`).join(", ") : "None"],
+  ];
 }
 
 function scoreColor(score: number): string {
@@ -46,7 +57,7 @@ export function visitorEmail(r: Report, bookingUrl: string): Email {
 
   const rows = ORDER.map((k) => {
     const s = sectionScore(r, k);
-    const val = s === null ? "Not available" : `${s} / 100`;
+    const val = s === null ? "Couldn't check" : `${s} / 100`;
     const c = s === null ? "#6b7280" : scoreColor(s);
     return (
       `<tr><td style="padding:10px 0;border-bottom:1px solid #e5e7eb;${font}font-size:15px;color:#374151;">${escapeHtml(SECTION_LABELS[k])}</td>` +
@@ -69,6 +80,7 @@ export function visitorEmail(r: Report, bookingUrl: string): Email {
 <div style="font-size:64px;line-height:68px;font-weight:bold;color:${color};">${r.overall.score}</div>
 <div style="font-size:14px;color:#6b7280;">out of 100</div>
 <p style="margin:16px 0 0 0;font-size:17px;line-height:24px;color:#111827;font-weight:600;">${escapeHtml(r.overall.verdict)}</p>
+${r.overall.note ? `<p style="margin:8px 0 0 0;font-size:14px;line-height:20px;color:#6b7280;">${escapeHtml(r.overall.note)}</p>` : ""}
 </td></tr>
 <tr><td style="padding:24px 32px 4px 32px;${font}">
 <h2 style="margin:0 0 12px 0;font-size:16px;color:#111827;">What we found</h2>
@@ -95,6 +107,7 @@ export function visitorEmail(r: Report, bookingUrl: string): Email {
     "",
     `Overall score: ${r.overall.score} out of 100`,
     r.overall.verdict,
+    ...(r.overall.note ? [r.overall.note] : []),
     "",
     "What we found:",
     ...r.overall.findings.map((f) => `* ${f}`),
@@ -102,7 +115,7 @@ export function visitorEmail(r: Report, bookingUrl: string): Email {
     "Your scores:",
     ...ORDER.map((k) => {
       const s = sectionScore(r, k);
-      return `${SECTION_LABELS[k]}: ${s === null ? "Not available" : `${s} / 100`}`;
+      return `${SECTION_LABELS[k]}: ${s === null ? "Couldn't check" : `${s} / 100`}`;
     }),
     "",
     `Book your 20 minute AI Search Review: ${bookingUrl}`,
@@ -113,12 +126,13 @@ export function visitorEmail(r: Report, bookingUrl: string): Email {
   return { subject, html, text };
 }
 
-export function ownerEmail(r: Report, visitor: string, cached: boolean): Email {
+export function ownerEmail(r: Report, visitor: string, cached: boolean, source?: VisitSource | null): Email {
+  const src = sourceLines(source);
   const subject = `AI visibility check: ${r.domain} (${r.overall.score})${cached ? " [cached]" : ""}`;
   const scores = ORDER.map((k) => {
     const s = sectionScore(r, k);
     const sec = r.sections[k];
-    return `${SECTION_LABELS[k]}: ${s === null ? `failed (${isError(sec) ? sec.error : ""})` : s}`;
+    return `${SECTION_LABELS[k]}: ${s === null ? `couldn't check (${isError(sec) ? sec.error : "no usable answers"})` : s}`;
   });
   const json = JSON.stringify(r, null, 2);
   const font = "font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;";
@@ -129,6 +143,7 @@ export function ownerEmail(r: Report, visitor: string, cached: boolean): Email {
 <tr><td><b>Brand</b></td><td>${escapeHtml(r.brand)}</td></tr>
 <tr><td><b>Top products</b></td><td>${escapeHtml((r.products ?? []).join("; "))}</td></tr>
 <tr><td><b>Visitor email</b></td><td>${escapeHtml(visitor)}</td></tr>
+${src.map(([k, v]) => `<tr><td><b>${k}</b></td><td>${escapeHtml(v)}</td></tr>`).join("\n")}
 <tr><td><b>Overall</b></td><td>${r.overall.score} &middot; ${escapeHtml(r.overall.verdict)}</td></tr>
 <tr><td><b>Cached</b></td><td>${cached ? "yes (served from cache, no new cost)" : "no"}</td></tr>
 <tr><td><b>Cost</b></td><td>$${r.cost.usd.toFixed(4)} over ${r.cost.calls} OpenAI calls, ${(r.ms / 1000).toFixed(1)}s</td></tr>
@@ -147,6 +162,7 @@ export function ownerEmail(r: Report, visitor: string, cached: boolean): Email {
     `Brand: ${r.brand}`,
     `Top products: ${(r.products ?? []).join("; ")}`,
     `Visitor email: ${visitor}`,
+    ...src.map(([k, v]) => `${k}: ${v}`),
     `Overall: ${r.overall.score} (${r.overall.verdict})`,
     `Cached: ${cached ? "yes" : "no"}`,
     `Cost: $${r.cost.usd.toFixed(4)} over ${r.cost.calls} calls, ${(r.ms / 1000).toFixed(1)}s`,
@@ -178,10 +194,16 @@ async function send(env: Env, to: string, email: Email, replyTo?: string): Promi
 }
 
 /** Sends both emails. Skips silently when RESEND_API_KEY is not set. Never throws. */
-export async function sendReportEmails(env: Env, report: Report, visitor: string, cached: boolean): Promise<void> {
+export async function sendReportEmails(
+  env: Env,
+  report: Report,
+  visitor: string,
+  cached: boolean,
+  source: VisitSource | null = null,
+): Promise<void> {
   if (!env.RESEND_API_KEY) return;
   const jobs: Promise<void>[] = [send(env, visitor, visitorEmail(report, env.BOOKING_URL), env.NOTIFY_EMAIL)];
-  if (env.NOTIFY_EMAIL) jobs.push(send(env, env.NOTIFY_EMAIL, ownerEmail(report, visitor, cached), visitor));
+  if (env.NOTIFY_EMAIL) jobs.push(send(env, env.NOTIFY_EMAIL, ownerEmail(report, visitor, cached, source), visitor));
   const results = await Promise.allSettled(jobs);
   for (const r of results) if (r.status === "rejected") console.error("email failed", String(r.reason));
 }

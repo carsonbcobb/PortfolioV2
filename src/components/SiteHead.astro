@@ -83,3 +83,21 @@ const ogImage = new URL(og.path, SITE_URL).href;
     });
   });
 </script>
+<script is:inline>
+  // First visit source for the AI Visibility Check: referrer, landing page and UTMs, saved once.
+  try {
+    if (!localStorage.getItem('cc_src')) {
+      var q = new URLSearchParams(location.search);
+      localStorage.setItem(
+        'cc_src',
+        JSON.stringify({
+          referrer: document.referrer || '',
+          landing: location.pathname + location.search,
+          utm_source: q.get('utm_source') || '',
+          utm_medium: q.get('utm_medium') || '',
+          utm_campaign: q.get('utm_campaign') || '',
+        }),
+      );
+    }
+  } catch (e) {}
+</script>
