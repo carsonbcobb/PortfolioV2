@@ -17,7 +17,7 @@ faq:
     answer: "Rarely. Only 13% of reorderable brands offered subscribe and save on every product checked. Among brands with subscriptions, the typical store covered 70% of checked products, and 52% left at least one best seller without it."
 ---
 
-**By Carson Cobb, Fractional Head of Ecommerce. Data checked November 2026.**
+**By Carson Cobb, AI Search and CRO for Shopify Brands. Data checked November 2026.**
 
 Everyone has an opinion on what a subscription offer should look like. This report shows what growing brands actually run. I read the live selling plans on up to 20 products per store (best sellers first) across 606 Shopify stores, including 434 brands that sell things people reorder: supplements, beauty and skincare, food and beverage, and pet.
 

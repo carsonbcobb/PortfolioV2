@@ -17,7 +17,7 @@ faq:
     answer: "Dawn, Shopify's free theme, was the most common base theme at 14% of stores. Most other stores used a paid theme or a custom build."
 ---
 
-**By Carson Cobb, Fractional Head of Ecommerce. Data checked November 2026.**
+**By Carson Cobb, AI Search and CRO for Shopify Brands. Data checked November 2026.**
 
 App vendors publish case studies. Agencies publish their favorite stacks. Neither tells you what growing brands actually run. For this report I loaded the homepages of 153 Shopify stores in a real browser and recorded every outside service each page called: email, reviews, support, testing, analytics, ads and more.
 

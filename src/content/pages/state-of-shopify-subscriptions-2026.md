@@ -16,7 +16,7 @@ faq:
     answer: "From the public product data every Shopify store publishes, checked in November 2026. For each store I read up to 1,000 products and all published collections, and checked up to 20 products (best sellers first) for active selling plans."
 ---
 
-**By Carson Cobb, Fractional Head of Ecommerce. First published October 2026. Updated November 2026 with a larger check.**
+**By Carson Cobb, AI Search and CRO for Shopify Brands. First published October 2026. Updated November 2026 with a larger check.**
 
 I checked 606 Shopify stores across six categories, 121,519 products in total, for the same things I look at first in every store audit: whether reorderable products offer subscribe and save, whether best sellers are in stock, whether gifting is set up before the holidays, and whether bundles exist.
 

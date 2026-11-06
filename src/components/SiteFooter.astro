@@ -1,7 +1,7 @@
 ---
 // Footer for every page: link columns, then the contact and trademark line.
 import { EMAIL, LINKEDIN_URL, REFERRAL, CHECK_PATH } from '../data/site';
-import { CONTENT_PAGES, TOOLS } from '../data/pages';
+import { CONTENT_PAGES } from '../data/pages';
 
 const year = new Date().getFullYear();
 const link = (slug: string) => ({ href: `/${slug}`, label: CONTENT_PAGES.find((p) => p.slug === slug)!.label });
@@ -12,10 +12,8 @@ const columns = [
     links: [
       { href: '/ai-search', label: 'AI search optimization' },
       { href: '/shopify-conversion-optimization', label: 'Conversion optimization' },
+      { href: '/fractional-head-of-ecommerce', label: 'Full store management' },
       { href: '/pricing', label: 'Pricing' },
-      ...CONTENT_PAGES.filter((p) => p.kind === 'service' && !['ai-search', 'shopify-conversion-optimization'].includes(p.slug)).map((p) =>
-        link(p.slug),
-      ),
     ],
   },
   {
@@ -27,10 +25,9 @@ const columns = [
     links: [
       { href: CHECK_PATH, label: 'AI Visibility Check' },
       { href: '/reports', label: 'Reports' },
-      link('state-of-shopify-subscriptions-2026'),
-      ...TOOLS.map((t) => ({ href: `/tools/${t.slug}`, label: t.name })),
-      link('recharge-vs-skio-vs-loop'),
-      link('agency-vs-fractional-head-of-ecommerce'),
+      { href: '/reports/chatgpt-gemini-ai-mode-brand-overlap-2026', label: 'ChatGPT vs Gemini vs AI Mode' },
+      { href: '/reports/ai-search-statistics-2026', label: 'AI search statistics 2026' },
+      { href: '/reports/what-ai-gets-wrong-about-products-2026', label: 'What AI gets wrong about products' },
     ],
   },
   {
@@ -38,7 +35,6 @@ const columns = [
     links: [
       { href: '/', label: 'Home' },
       { href: '/results', label: 'Results' },
-      { href: '/pricing', label: 'Pricing' },
       { href: '/agencies', label: 'Agencies' },
       { href: '/tools', label: 'All tools' },
     ],

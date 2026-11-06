@@ -18,7 +18,7 @@ faq:
     answer: "Often. Of the reorderable brands that offer subscriptions and also mark products down, 68% have a typical markdown deeper than their subscribe and save discount, which can give subscribers a reason to cancel and buy on sale."
 ---
 
-**By Carson Cobb, Fractional Head of Ecommerce. Data checked November 2026. I will check the same stores again during Black Friday week.**
+**By Carson Cobb, AI Search and CRO for Shopify Brands. Data checked November 2026. I will check the same stores again during Black Friday week.**
 
 This is the before picture. In early November, I checked 606 Shopify stores and 121,519 products to see how many brands are already showing sale prices, how deep those markdowns go, and who has a Black Friday page built. I'll check the same stores again during Black Friday week and publish the change, so you can see what growing brands actually do, not what they say they'll do.
 

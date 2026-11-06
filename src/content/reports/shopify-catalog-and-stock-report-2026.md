@@ -16,7 +16,7 @@ faq:
     answer: "The typical store in this study had 78 products. Food brands had the smallest catalogs at 43 and apparel the largest at 425."
 ---
 
-**By Carson Cobb, Fractional Head of Ecommerce. Data checked November 2026.**
+**By Carson Cobb, AI Search and CRO for Shopify Brands. Data checked November 2026.**
 
 A sold out product costs more than the one sale. The shopper who clicked from an ad or an email lands on a dead end, and most don't come back. I checked 606 Shopify stores and 121,519 products to see how often that happens, where it happens most, and how quickly growing brands add new products.
 

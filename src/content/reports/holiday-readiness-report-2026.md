@@ -15,7 +15,7 @@ faq:
     answer: "Supplement and pet brands. 45% of supplement stores and 39% of pet stores had neither a gift collection nor a gift card in early November."
 ---
 
-**By Carson Cobb, Fractional Head of Ecommerce. Data checked November 2026.**
+**By Carson Cobb, AI Search and CRO for Shopify Brands. Data checked November 2026.**
 
 Holiday shoppers are buying for someone else. They don't know your product, they don't know which size to pick, and they're shopping on a deadline. The brands that win the season make that easy with three things: a gift collection, a gift card and bundles that work as gifts.
 
