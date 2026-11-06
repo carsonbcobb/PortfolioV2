@@ -16,6 +16,11 @@ faq:
     answer: "Retainers have a 3 month minimum. Most brands start with the $1,500 AI Search and Conversion Audit so they can see how I work before committing."
   - question: "What do you need from us to start?"
     answer: "Shopify collaborator access, analytics access, Google Search Console, and access to your review, subscription and email apps where they apply. Plus your margins by product, and an hour with you to walk through goals. I handle the rest."
+  - question: "Moving to Shopify or rebuilding your theme?"
+    answer: "That's quoted as a separate project, outside the retainer. I plan every move to protect your rankings and AI visibility: every old URL redirected, the content that ranks kept, and the redirects checked after launch."
+    link:
+      text: "See how I handle migrations."
+      href: "/shopify-migration"
   - question: "Will I work with you directly?"
     answer: "Yes. I do the work myself, with no handoff to a junior team or an offshore team. If something needs more than 60 hours in a month, or a specialist skill like photography, I tell you up front and either quote it or recommend someone you hire directly."
 ---

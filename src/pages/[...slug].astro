@@ -17,7 +17,7 @@ export function getStaticPaths() {
 const { page } = Astro.props as { page: MarkdownPage };
 const fm = page.frontmatter;
 const slug = slugOf(page);
-const faqs = (fm.faq ?? []).map((f) => ({ q: f.question, a: f.answer }));
+const faqs = (fm.faq ?? []).map((f) => ({ q: f.question, a: f.answer, link: f.link }));
 const report = isReportPage(page);
 
 let trail: { name: string; href?: string }[];

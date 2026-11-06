@@ -15,7 +15,7 @@ faq:
   - question: "How long does a migration take?"
     answer: "It depends on catalog size, subscriptions and how much custom work the old store has. I scope it after an audit and give you a timeline based on your store, not a template."
   - question: "How is migration work priced?"
-    answer: "I start with the $1,500 AI Search and Conversion Audit to review the current store and give you a prioritized plan. The migration or rebuild itself runs as part of the Full retainer at $7,500/month."
+    answer: "I start with the $1,500 AI Search and Conversion Audit to review the current store and give you a prioritized plan. The migration or rebuild itself is quoted as a separate project, based on your catalog, subscriptions and how much custom work the old store has."
 ---
 
 A migration is the riskiest project most growing brands ever take on. You're moving the thing that makes all your money while it's still making money.
@@ -84,7 +84,7 @@ Launch day should be uneventful. I aim for that with a simple routine:
 
 **AI Search and Conversion Audit, $1,500.** I review the current store, test how ChatGPT recommends you today, find where it leaks conversions, and give you a prioritized plan. That gives us a baseline before anything moves.
 
-**Full, $7,500/month.** The migration or rebuild runs as part of the retainer, with every launch step brought to you for sign off, and I keep supporting the store after launch so nothing gets dropped in a handoff. 3 month minimum. More on my [fractional head of ecommerce page](/fractional-head-of-ecommerce).
+**The migration or rebuild, quoted as its own project.** I scope it after the audit and quote it based on your catalog, subscriptions and how much custom work the old store has. Every launch step comes to you for sign off. After launch, a retainer can keep supporting the store so nothing gets dropped in a handoff. More on my [full store management page](/fractional-head-of-ecommerce).
 
 See all options on the [pricing page](/pricing).
 
