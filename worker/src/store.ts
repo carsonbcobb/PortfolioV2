@@ -25,7 +25,7 @@ export async function loadStore(url: URL, domain: string, signal?: AbortSignal, 
           maxBytes: 10 * 1024 * 1024,
           timeoutMs: 15_000,
         }),
-    light ? null : safeFetch(origin + "/collections/all?sort_by=best-selling", { signal }).catch(() => null),
+    light ? null : politeFetch(origin + "/collections/all?sort_by=best-selling", { signal }),
   ]);
   const html = home && home.status >= 200 && home.status < 300 ? home.body : null;
   // Follow the store's own canonical host (e.g. apex to www) so later fetches skip a redirect hop.
@@ -235,8 +235,42 @@ export function productHandles(html: string, base: string): string[] {
   return out;
 }
 
-/** Up to 8 top products: best sellers first, then homepage features, then the feed's own order. */
+// Products that aren't what a store is known for: accessories, samples, add ons, protection plans.
+const MINOR =
+  /\b(accessor(y|ies)|samples?|sampler|trial size|travel size|swatch(es)?|add[\s_-]?ons?|addons?|gift (wrap|box|bag)|shipping protection|package protection|route protection|insurance|warranty|protection plan|stickers?|keychains?|patch(es)?|collar stays?|collar bones?|replacement (parts?|laces|insoles?)|spare parts?|shoelaces?|laces|hangers?|garment bags?|dust bags?|care kit|cleaning kit)\b/i;
+
+function minPrice(p: ShopifyProduct): number | null {
+  const prices = (p.variants ?? []).map((v) => Number(v?.price)).filter((n) => Number.isFinite(n) && n > 0);
+  return prices.length ? Math.min(...prices) : null;
+}
+
+/**
+ * Drops products a shopper wouldn't ask AI about: gift cards, accessories, samples, add ons, and
+ * anything under 30% of the store's median price. Falls back to the full list if that leaves nothing.
+ */
+export function mainProducts(feed: ShopifyProduct[]): ShopifyProduct[] {
+  const priced = feed.map(minPrice).filter((n): n is number => n !== null).sort((a, b) => a - b);
+  const median = priced.length ? priced[Math.floor((priced.length - 1) / 2)] : null;
+  const keep = feed.filter((p) => {
+    if (isGiftCard(p)) return false;
+    const tags = Array.isArray(p.tags) ? p.tags.join(" ") : (p.tags ?? "");
+    if (MINOR.test(`${p.title ?? ""} ${p.product_type ?? ""} ${p.handle ?? ""} ${tags}`)) return false;
+    const price = minPrice(p);
+    return !(median !== null && price !== null && price < median * 0.3);
+  });
+  return keep.length ? keep : feed.filter((p) => !isGiftCard(p));
+}
+
+/**
+ * Up to 8 top products. Best sellers (`handleLists[0]`, from /collections/all?sort_by=best-selling)
+ * come first as the store ranks them. Without them, homepage features and then the feed are used,
+ * minus minor products (see mainProducts), with the feed ordered by most variants.
+ */
 export function topProducts(feed: ShopifyProduct[], handleLists: string[][]): ShopifyProduct[] {
+  const [best = [], ...featured] = handleLists;
+  const main = new Set(mainProducts(feed));
+  // Feed fallback: products with more variants (sizes, colors) are usually the core line.
+  const ranked = [...main].map((p, i) => ({ p, i, n: (p.variants ?? []).length })).sort((a, b) => b.n - a.n || a.i - b.i).map((x) => x.p);
   const byHandle = new Map(feed.filter((p) => p.handle).map((p) => [p.handle!.toLowerCase(), p]));
   const out: ShopifyProduct[] = [];
   // Products with the same title (sizes or packs listed separately) count once.
@@ -246,8 +280,16 @@ export function topProducts(feed: ShopifyProduct[], handleLists: string[][]): Sh
   const add = (p: ShopifyProduct | undefined) => {
     if (p && !isGiftCard(p) && !out.some((x) => x === p || key(x) === key(p)) && out.length < 8) out.push(p);
   };
-  for (const list of handleLists) for (const h of list) add(byHandle.get(h) ?? (feed.length ? undefined : { handle: h, title: h.replace(/-/g, " ") }));
-  for (const p of feed) add(p);
+  const fromHandle = (h: string) => byHandle.get(h) ?? (feed.length ? undefined : { handle: h, title: h.replace(/-/g, " ") });
+  for (const h of best) add(fromHandle(h));
+  // Only when the best sellers page gave too few: curated homepage products, then the ranked feed.
+  if (out.length < 3) {
+    for (const list of featured) for (const h of list) {
+      const p = fromHandle(h);
+      if (p && (!feed.length || main.has(p))) add(p);
+    }
+    for (const p of ranked) add(p);
+  }
   return out;
 }
 

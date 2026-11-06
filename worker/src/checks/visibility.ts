@@ -5,6 +5,7 @@ import { noDashes } from "../scoring";
 import { htmlToText } from "../html";
 import type { Emit, Source, StoreContext, VisibilityQuestion, VisibilitySection } from "../types";
 import { checkSources } from "./sources";
+import { isNonBrand } from "../nonbrands";
 
 const N = QUESTION_COUNT;
 
@@ -44,11 +45,26 @@ const PARSE_SCHEMA = {
         properties: {
           brands: {
             type: "array",
-            items: { type: "string" },
-            description: "Brand or store names the answer recommends, in the order they appear.",
+            description: "Every brand, store or site the answer names as a place or product to buy, in the order they appear.",
+            items: {
+              type: "object",
+              additionalProperties: false,
+              properties: {
+                name: { type: "string" },
+                kind: {
+                  type: "string",
+                  enum: ["brand", "retailer", "publisher"],
+                  description:
+                    "brand: a company that makes and sells its own products. retailer: a store or marketplace that sells " +
+                    "other brands' products (Amazon, Target, Etsy, Sephora). publisher: media, a magazine or a review site " +
+                    "(Wirecutter, Good Housekeeping, Consumer Reports).",
+                },
+              },
+              required: ["name", "kind"],
+            },
           },
           mentioned: { type: "boolean", description: "True if the target brand is recommended or named." },
-          position: { type: ["integer", "null"], description: "1 based position of the target brand in brands, or null if absent." },
+          position: { type: ["integer", "null"], description: "1 based position of the target brand among the brands of kind brand, or null if absent." },
           clarifying: {
             type: "boolean",
             description: "True if the answer asks the shopper for more details instead of recommending specific products or brands.",
@@ -68,7 +84,26 @@ const REWRITE_SCHEMA = {
   required: ["question"],
 };
 
-type Parsed = { brands: string[]; mentioned: boolean; position: number | null; clarifying: boolean };
+type Named = string | { name?: string; kind?: string };
+type Parsed = { brands: Named[]; mentioned: boolean; position: number | null; clarifying: boolean };
+
+/**
+ * Only real competing product brands: the parser's kind must be brand (a plain string counts as one),
+ * and the name must not be a retailer, marketplace, publisher or review site on the deny list.
+ * The store's own brand always stays.
+ */
+export function productBrands(list: Named[] | undefined, ctx: StoreContext): string[] {
+  const out: string[] = [];
+  for (const b of list ?? []) {
+    const name = String(typeof b === "string" ? b : (b?.name ?? "")).trim();
+    const kind = typeof b === "string" ? "brand" : (b?.kind ?? "brand");
+    if (!name) continue;
+    const own = sameBrand(name, ctx.brand, ctx.domain);
+    if (!own && (kind !== "brand" || isNonBrand(name))) continue;
+    if (!out.some((x) => norm(x) === norm(name))) out.push(name);
+  }
+  return out;
+}
 
 /** Questions are shown on the page: no dashes, and hyphenated words ("plant-based") become two words. */
 const plainQuestion = (q: string) => noDashes(q).replace(/([A-Za-z0-9])-(?=[A-Za-z0-9])/g, "$1 ");
@@ -93,17 +128,19 @@ function productBrief(ctx: StoreContext, n: number, descLen = 240): { title: str
 }
 
 /** One SMALL_MODEL call that lists the brands each answer recommends. Null when the call failed. */
-async function parseAnswers(ai: OpenAI, ctx: StoreContext, answers: (string | null)[]): Promise<Parsed[] | null> {
+export async function parseAnswers(ai: OpenAI, ctx: StoreContext, answers: (string | null)[]): Promise<Parsed[] | null> {
   try {
     const res = await ai.structured<{ answers: Parsed[] }>({
       name: "brand_parse",
       schema: PARSE_SCHEMA,
       maxOutputTokens: 800,
       system:
-        "You extract product recommendations from ChatGPT answers. For each answer, list the brands or stores it " +
-        "recommends, in order of first appearance, without duplicates. Use the brand name only, not product names. " +
-        "Then say whether the target brand appears and its 1 based position in that list, and whether the answer " +
-        "asks the shopper for more details instead of recommending anything. Return one entry per answer, in order.",
+        "You extract product recommendations from ChatGPT answers. For each answer, list every brand, store or site it " +
+        "names as a product or place to buy, in order of first appearance, without duplicates, and label each one: " +
+        "brand (makes its own products), retailer (a store or marketplace selling other brands) or publisher (media or " +
+        "a review site). Use the brand name only, not product names. Then say whether the target brand appears and its " +
+        "1 based position among the brands, and whether the answer asks the shopper for more details instead of " +
+        "recommending anything. Return one entry per answer, in order.",
       user:
         `Target brand: ${ctx.brand} (website ${ctx.domain})\n\n` +
         answers.map((a, i) => `ANSWER ${i + 1}:\n${a ? a.slice(0, 4000) : "(no answer)"}`).join("\n\n"),
@@ -123,7 +160,8 @@ function usable(answer: string | null, p: Parsed | undefined, parseFailed: boole
   if (!answer) return false;
   if (parseFailed) return true;
   if (!p || p.clarifying) return false;
-  return (p.brands ?? []).some((b) => String(b).trim()) || !!p.mentioned || textMentions(answer, ctx.brand, ctx.domain);
+  // An answer that only names retailers or review sites doesn't say which brand to buy.
+  return productBrands(p.brands, ctx).length > 0 || !!p.mentioned || textMentions(answer, ctx.brand, ctx.domain);
 }
 
 export async function runVisibility(
@@ -254,7 +292,7 @@ function resolve(
     const h = hostOf(s.url).toLowerCase();
     return h === ctx.domain || h.endsWith("." + ctx.domain);
   });
-  let brands = (parsed?.brands ?? []).map((b) => String(b).trim()).filter(Boolean).slice(0, 15);
+  let brands = productBrands(parsed?.brands, ctx).slice(0, 15);
   let mentioned = !!parsed?.mentioned;
   let position = parsed && Number.isInteger(parsed.position) && parsed.position! > 0 ? parsed.position : null;
 

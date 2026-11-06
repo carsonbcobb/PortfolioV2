@@ -218,6 +218,7 @@ export interface ShopifyProduct {
   body_html?: string | null;
   product_type?: string;
   vendor?: string;
+  tags?: string[] | string;
   images?: unknown[];
   variants?: { sku?: string | null; price?: string | null; available?: boolean; requires_shipping?: boolean }[];
 }

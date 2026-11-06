@@ -23,6 +23,7 @@ const STORES = [
 const FAIL_STORE = { url: "https://www.deathwishcoffee.com" };
 const IP_A = "198.51.100.10";
 const IP_B = "198.51.100.20";
+const IP_C = "198.51.100.30";
 const ORIGIN = "http://localhost:4321";
 
 const results = [];
@@ -235,6 +236,12 @@ async function main() {
         vis.questions.every((q) => q.sources.every((x) => !/utm_/.test(x.url))),
       vis ? `sources ${vis.sources.total}, on ${vis.sources.on}, unread ${vis.sources.unread}` : "no visibility",
     );
+    const named = (vis?.questions ?? []).flatMap((q) => q.brands);
+    record(
+      `Retailers and publishers never named as brands ${domain}`,
+      !!vis && named.length > 0 && !named.some((b) => ["amazon", "wirecutter", "etsy"].includes(b.toLowerCase())) && !/Amazon|Wirecutter|Etsy/.test(rep.overall.verdict),
+      JSON.stringify([...new Set(named)]),
+    );
     record(
       `Top findings written ${domain}`,
       Array.isArray(rep?.overall.top) && rep.overall.top.length === 3 && rep.overall.top.every((f) => f.text && f.cost),
@@ -255,6 +262,19 @@ async function main() {
     );
   }
 
+  // A site with no products stops before any AI call, with no score, and doesn't use a check.
+  {
+    await mock("/__reset", {});
+    const r = await check(form("https://example.com"), IP_C);
+    const stopped = r.lines.find((l) => l.type === "stopped");
+    const stats = await mock("/__stats");
+    record(
+      "Site with no products stops before any AI call",
+      r.status === 200 && stopped?.reason === "not_store" && !r.lines.some((l) => l.type === "done") && stats.calls === 0,
+      `${stopped?.reason}: ${stopped?.message} (mock calls ${stats.calls})`,
+    );
+  }
+
   // One section failing (search calls return 500). IP A: check 3.
   {
     await mock("/__mode", { failSearch: true });
@@ -270,7 +290,7 @@ async function main() {
     record(
       "Failing search calls: other sections and done report still arrive",
       r.status === 200 && errs.includes("visibility") && errs.includes("accuracy") && oks.includes("crawlers") && oks.includes("readiness") && validReport(rep),
-      `${(r.ms / 1000).toFixed(1)}s, errors: ${errs.join(",")}, ok: ${oks.join(",")}, message: "${rep?.sections.visibility.error}"`,
+      `${(r.ms / 1000).toFixed(1)}s, errors: ${errs.join(",")}, ok: ${oks.join(",")}, message: "${rep?.sections.visibility.error ?? r.lines.find((l) => l.type === "stopped")?.message}"`,
     );
     record("Overall reweights over successful sections", rep && rep.overall.score === expectedScore, `overall ${rep?.overall.score}, expected ${expectedScore}`);
     const again = await check(form(FAIL_STORE.url), IP_B);

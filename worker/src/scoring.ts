@@ -1,4 +1,5 @@
 import { WEIGHTS } from "./config";
+import { isNonBrand } from "./nonbrands";
 import type { OpenAI } from "./openai";
 import type {
   AccuracySection,
@@ -66,7 +67,7 @@ export function rivalsOf(v: VisibilitySection, brand: string, domain = "", misse
     if (q.excluded || (missedOnly && q.mentioned)) continue;
     for (const b of q.brands) {
       const k = b.toLowerCase();
-      if (own.includes(norm(b))) continue;
+      if (own.includes(norm(b)) || isNonBrand(b)) continue;
       const cur = counts.get(k) ?? { name: b, n: 0 };
       cur.n++;
       counts.set(k, cur);
