@@ -13,9 +13,12 @@ interface Props {
   flush?: boolean;
   /** Names and prices only, without the summaries (the service pages' teaser) */
   compact?: boolean;
+  /** One short line per card (the industry pages) */
+  brief?: boolean;
+  eyebrow?: string;
 }
 
-const { id, heading = 'Start with the audit. Grow from there.', sand = true, flush = false, compact = false } = Astro.props;
+const { id, heading = 'Start with the audit. Grow from there.', sand = true, flush = false, compact = false, brief = false, eyebrow = 'Pricing' } = Astro.props;
 const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
 const lowestRetainer = Math.min(...RETAINERS.filter((r) => r.price !== null).map((r) => r.price as number));
 ---
@@ -23,7 +26,7 @@ const lowestRetainer = Math.min(...RETAINERS.filter((r) => r.price !== null).map
 <section class:list={['section', sand && 'section--sand', flush && 'section--flush']} aria-labelledby={id}>
   <div class="wrap stack">
     <div class="head">
-      <p class="eyebrow">Pricing</p>
+      <p class="eyebrow">{eyebrow}</p>
       <h2 class="h2" id={id}>{heading}</h2>
     </div>
     <div class="grid grid--three price-summary">
@@ -31,15 +34,17 @@ const lowestRetainer = Math.min(...RETAINERS.filter((r) => r.price !== null).map
         <span class="tag">One time</span>
         <h3 class="h3">Audit</h3>
         <div class="plan__price">{usd(AUDIT.price)}</div>
-        {!compact && <p class="plan__summary">{AUDIT.summary} {AUDIT.note}</p>}
+        {brief && <p class="plan__summary">{AUDIT.summary}</p>}
+        {!compact && !brief && <p class="plan__summary">{AUDIT.summary} {AUDIT.note}</p>}
         {compact && <p class="plan__summary">{AUDIT.note}</p>}
       </a>
       <a class="card price-card" href="/pricing#build">
         <span class="tag">Fixed price, 3 to 4 weeks</span>
         <h3 class="h3">Build</h3>
         <div class="plan__price"><span>from</span> {usd(Math.min(...BUILD.tiers.map((t) => t.price)))}</div>
+        {brief && <p class="plan__summary">The audit plan implemented on your store, priced by catalog size.</p>}
         {
-          !compact && (
+          !compact && !brief && (
             <p class="plan__summary">
               On site AI search work, product pages that answer buyer questions, a conversion rebuild of your product
               page, collection and cart, and measurement.
@@ -51,7 +56,8 @@ const lowestRetainer = Math.min(...RETAINERS.filter((r) => r.price !== null).map
         <span class="tag">3 month minimum</span>
         <h3 class="h3">Retainers</h3>
         <div class="plan__price"><span>from</span> {usd(lowestRetainer)}<span>/month</span></div>
-        {!compact && <p class="plan__summary">Ongoing AI search and conversion work. {MONTHLY_REPORT}</p>}
+        {brief && <p class="plan__summary">Ongoing AI search and conversion work, measured every month.</p>}
+        {!compact && !brief && <p class="plan__summary">Ongoing AI search and conversion work. {MONTHLY_REPORT}</p>}
       </a>
     </div>
     <p class="ways__more"><a href="/pricing">See full pricing →</a></p>

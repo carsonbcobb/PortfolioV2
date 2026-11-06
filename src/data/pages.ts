@@ -13,7 +13,7 @@ export interface ContentPageInfo {
   /** One line summary for llms.txt */
   summary: string;
   /** Service and industry pages: the Service entry in the JSON-LD */
-  service?: { name: string; serviceType: string; audience: string; offers?: boolean; plans?: PlanKey[] };
+  service?: { name: string; serviceType: string; audience: string; offers?: boolean | 'only'; plans?: PlanKey[] };
 }
 
 export const CONTENT_PAGES: ContentPageInfo[] = [
@@ -93,44 +93,48 @@ export const CONTENT_PAGES: ContentPageInfo[] = [
     slug: 'supplement-brands',
     kind: 'industry',
     label: 'Supplement brands',
-    summary: 'Running Shopify stores for supplement and wellness brands: reorder timing, subscriptions, bundles and stock.',
+    summary: 'Getting supplements recommended by ChatGPT, Gemini and Google AI Mode, then turning that traffic into orders.',
     service: {
-      name: 'Shopify store management for supplement brands',
-      serviceType: 'Fractional ecommerce management',
-      audience: 'Supplement and wellness brands on Shopify',
+      name: 'AI search and CRO for supplement brands',
+      serviceType: 'AI search and conversion optimization',
+      audience: 'Supplement brands on Shopify',
+      offers: 'only',
     },
   },
   {
     slug: 'food-beverage-brands',
     kind: 'industry',
     label: 'Food and beverage brands',
-    summary: 'Running Shopify stores for coffee, tea, snack, sauce and drink brands: subscriptions, bundles and gifting.',
+    summary: 'Getting food and drinks recommended by ChatGPT, Gemini and Google AI Mode, then turning that traffic into orders.',
     service: {
-      name: 'Shopify store management for food and beverage brands',
-      serviceType: 'Fractional ecommerce management',
+      name: 'AI search and CRO for food and beverage brands',
+      serviceType: 'AI search and conversion optimization',
       audience: 'Food and beverage brands on Shopify',
+      offers: 'only',
     },
   },
   {
     slug: 'pet-brands',
     kind: 'industry',
     label: 'Pet brands',
-    summary: 'Running Shopify stores for pet food, treat and supplement brands: autoship, trial packs and bundles.',
+    summary: 'Getting pet products recommended by ChatGPT, Gemini and Google AI Mode, then turning that traffic into orders.',
     service: {
-      name: 'Shopify store management for pet brands',
-      serviceType: 'Fractional ecommerce management',
-      audience: 'Pet food, treat and supplement brands on Shopify',
+      name: 'AI search and CRO for pet brands',
+      serviceType: 'AI search and conversion optimization',
+      audience: 'Pet brands on Shopify',
+      offers: 'only',
     },
   },
   {
     slug: 'beauty-skincare-brands',
     kind: 'industry',
     label: 'Beauty and skincare brands',
-    summary: 'Running Shopify stores for beauty and skincare brands: variants, routines, bundles, replenishment and reviews.',
+    summary: 'Getting beauty and skincare products recommended by ChatGPT, Gemini and Google AI Mode, then turning that traffic into orders.',
     service: {
-      name: 'Shopify store management for beauty and skincare brands',
-      serviceType: 'Fractional ecommerce management',
+      name: 'AI search and CRO for beauty and skincare brands',
+      serviceType: 'AI search and conversion optimization',
       audience: 'Beauty and skincare brands on Shopify',
+      offers: 'only',
     },
   },
   {

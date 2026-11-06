@@ -1,108 +1,69 @@
 ---
-title: "Shopify Expert for Supplement Brands | Carson Cobb"
-description: "I run Shopify stores for growing supplement and wellness brands: reorder timing, subscriptions, fast mobile pages, bundles and stock that never goes dark."
+title: "AI Search and CRO for Supplement Brands | Carson Cobb"
+description: "Google AI Mode sends 28% of supplement links to health and expert sources and 17% to brand sites. I get supplements recommended by AI, then sold."
 slug: "/supplement-brands"
-h1: "Shopify for supplement and wellness brands"
+h1: "Get your supplements recommended by AI, then sold on your site"
 faq:
-  - question: "Have you worked with supplement brands before?"
-    answer: "Yes. Supplements and wellness are among the categories I've worked in most, alongside beauty, CPG and apparel. I've seen the same reorder, subscription and speed problems across many stores, which is why I can usually find them fast."
-  - question: "Can you write compliant product claims for us?"
-    answer: "I build product pages that make compliance easier, with clear places for approved claims, disclaimers and ingredient details. The claims themselves should be approved by your regulatory or legal team. I'm not a lawyer and I don't pretend to be."
-  - question: "Which subscription app do you recommend for supplements?"
-    answer: "It depends on your size, your team and how much you want to customize. I work in Recharge, Skio and native Shopify selling plans. My Recharge vs Skio vs Loop comparison lays out how I'd choose."
-  - question: "Our site is slow on mobile. Can you fix it without a full redesign?"
-    answer: "Usually, yes. Most slow supplement stores are slowed down by app scripts, oversized images and leftover code, not by the theme itself. I clean those up first and only recommend a rebuild when it's truly needed."
-  - question: "Do you handle Amazon or wholesale too?"
-    answer: "My focus is your Shopify store and the apps and email that connect to it. That's where I go deep."
-  - question: "How do we get started?"
-    answer: "Most supplement brands start with the $1,500 AI Search and Conversion Audit. The full $1,500 is credited toward a Build or your first retainer month, if you start within 30 days."
+  - question: "How do I get my supplement brand recommended by ChatGPT?"
+    answer: "ChatGPT recommends supplements it can match to the shopper's situation and trust from more than one source. That comes from product pages that say who the product is for, how to use it and how it's tested, and from the sites AI already reads for supplements. It works product by product, so the first step is seeing which of your products AI names today and who it names instead."
+    link:
+      text: "Run the free AI Visibility Check."
+      href: "/ai-visibility-check"
+  - question: "Which sources does AI use for supplements?"
+    answer: "Google AI Mode leans on health and expert sources for supplements more than for any other product type. In my November 2026 check, 28% of its links in supplement answers went to health and expert sources, and only 17% went to brand websites. Editorial sites and community sources like Reddit and YouTube got links too."
+    link:
+      text: "See where AI sends shoppers."
+      href: "/reports/where-ai-sends-shoppers-2026"
+  - question: "Do I need to be on Amazon to be recommended by AI?"
+    answer: "No. AI recommends a supplement based on what it can read about it: your product pages, the health, expert and editorial sites that cover it, and reviews. Amazon is one place reviews live, not a requirement. In my November 2026 check, only 17% of Google AI Mode's links in supplement answers went to brand websites, so most of the links it showed went to other sites."
+    link:
+      text: "See where AI sends shoppers."
+      href: "/reports/where-ai-sends-shoppers-2026"
+  - question: "Why does AI give advice instead of naming a supplement brand?"
+    answer: "For questions about perimenopause and a drink for focus, ChatGPT, Gemini and Google AI Mode all gave general advice and named no brand in my November 2026 check. When a question touches a health concern, AI may answer with advice instead of products. Those are questions no brand owns yet."
+    link:
+      text: "See how often the three AIs agree."
+      href: "/reports/chatgpt-gemini-ai-mode-brand-overlap-2026"
+  - question: "Is my supplement product data ready for AI shopping?"
+    answer: "Often not. 40% of the supplement products I checked in November 2026 had no barcode on any variant. A barcode is how Google recognizes that your product is the same one a retailer or review site is talking about, so a missing one makes that match harder."
+    link:
+      text: "See the product data report."
+      href: "/reports/shopify-catalog-data-ai-shopping-2026"
 ---
 
-Supplement brands live and die on the second order. The first order is expensive. You paid for it with ads, influencers, sampling and discounts. The second, third and fourth orders are where the business actually makes money.
+Supplement shoppers don't type "best creatine" anymore. They describe themselves to ChatGPT, Gemini or Google AI Mode: "I'm starting creatine for strength training and want one that's third party tested and doesn't upset my stomach. Which brand should I buy?"
 
-That's why I treat supplement stores differently. I'm Carson Cobb, and I help Shopify brands get recommended in ChatGPT and Google's AI answers, then make the store convert that traffic. Over 6+ years I've worked on 50+ Shopify stores, many of them in supplements and wellness, and the same problems show up again and again.
+The AI answers with a few brands and a reason for each. If your product isn't one of them, that shopper never sees your site. If it is, they arrive already half convinced, and your product page has to confirm what the AI told them.
 
-The good news is that most of them are fixable without a new platform, a new theme or a new agency.
+I'm Carson Cobb, a Shopify expert who works on [AI search](/ai-search) and conversion. I look at how AI answers the questions your buyers ask, product by product, then make the store turn those visitors into orders. You can see where you stand today with the free [AI Visibility Check](/ai-visibility-check).
 
-[See what 314 brands actually offer.](/reports/shopify-subscription-benchmarks-2026)
+## What I found when I tested products like yours
 
-## The problems I see in supplement stores
+In November 2026 I asked ChatGPT, Gemini and Google AI Mode the questions supplement shoppers ask, and checked the product pages and product data behind the answers.
 
-### Reorder timing is off
+- **AI sends supplement shoppers to health sources more than to brands.** On Google AI Mode, [28% of links in supplement answers went to health and expert sources](/reports/where-ai-sends-shoppers-2026), the most of any product type, and only 17% went to brand websites.
+- **The three AIs agree more on supplements than anything else.** [33% of the supplement brands named came from all three](/reports/chatgpt-gemini-ai-mode-brand-overlap-2026), the highest of any product type. When all three agree, a brand that's left out is left out everywhere.
+- **Some questions get no brand at all.** For questions about perimenopause and a drink for focus, [none of the three AIs named a single brand](/reports/chatgpt-gemini-ai-mode-brand-overlap-2026). They gave general advice instead.
+- **Pages prove quality but skip the basics.** [80% of supplement product pages I checked mention testing or certification](/reports/do-product-pages-answer-ai-shopper-questions), the highest of any product type, but only 33% explain how to use the product and 47% say who it's for.
+- **Many products are hard to match.** [40% of supplement products I checked had no barcode on any variant](/reports/shopify-catalog-data-ai-shopping-2026), which makes it harder for Google to connect your product to the same product on retailer and review sites.
 
-A 30 count bottle taken once a day runs out in 30 days. A 60 serving tub of protein might last six weeks. A sleep supplement taken a few nights a week can last three months.
+## What AI looks for on your product pages
 
-Yet most stores send the same reorder email at the same time to everyone, or don't send one at all. Customers run out, forget, and drift to whatever is on the shelf at the store. I set reorder reminders and subscription frequencies based on actual serving counts and real order gaps in your data.
+When a shopper tells AI they want creatine that's third party tested and easy on the stomach, the AI looks for a page that says exactly that. These are the gaps I find most often on supplement pages.
 
-### Subscriptions are missing on the daily products
+- **Who it's for.** Pages describe the formula but not the person. "Strength training", "first marathon" and "sensitive stomach" are the words shoppers use, and most pages never say them.
+- **How to use it.** Dose, timing and what to take it with. Shoppers ask, and AI can't answer from a page that doesn't say.
+- **Ingredients in plain words.** A supplement facts panel shown only as an image gives AI less to read than the same facts written on the page.
+- **Testing that's specific.** "Third party tested" without saying what was tested, or by whom, leaves AI and shoppers guessing.
+- **An honest comparison.** Shoppers ask AI how one product compares to another. Few pages help it answer.
+- **Reviews and ratings AI gets right.** ChatGPT, Gemini and Google AI Mode got a product's rating and review count right on all three for [only 7 of 22 products](/reports/what-ai-gets-wrong-about-products-2026).
 
-This is the most common leak I find. Subscribe and save is set up on a few products from launch, but the daily hero, the product people take every morning, has no plan attached. Or the plan exists in Shopify but the widget never rendered on the product page after a theme change.
+Every gap is a question your page leaves AI to answer from someone else's site. Health sources, editorial roundups and forums fill the space, and they decide how your product is described.
 
-For a product someone uses every single day, a subscription should be the obvious choice. I make sure it's offered, visible and set as the default where it makes sense. More on how I approach this on my [Shopify subscriptions page](/shopify-subscriptions).
+## Then the sale
 
-### Product pages that are hard to keep compliant
+AI referred shoppers arrive ready to buy. [Shopify reported in May 2026](/reports/ai-search-statistics-2026) that AI referred visitors who land on a product page convert about 49% more often than organic search visitors. They arrive with a specific promise in mind, though, and the page has to confirm it in seconds: the dose, the testing, the person it's for. That's where my [conversion optimization](/shopify-conversion-optimization) work starts. The page also has to load fast on a phone. One rebuild I did [cut mobile load time from 7.9s to 2.1s and lifted conversion 24%](/results).
 
-Supplement product pages have to do a lot. They need to sell, explain ingredients, show the supplement facts panel, carry the right disclaimers and stay inside the claims your team has approved.
+Then comes the second order, where supplement brands make their money. I set subscription frequencies from real serving counts, make subscribe and save visible on the products people take every day, and time reorder reminders to when a bottle runs out. On one subscription brand, [subscribe and save opt in went from 7% to 32%](/results). More on my [Shopify subscriptions page](/shopify-subscriptions).
 
-What usually happens is that claims get pasted into random text blocks, disclaimers get dropped when someone edits a page, and nobody can tell which version is current. I build product templates where claims, disclaimers, ingredient details and the facts panel are built into the site, so every page stays consistent and accurate as your catalog changes.
-
-To be clear, I don't write or approve health claims. That belongs with your regulatory team. I make the store easy to keep right.
-
-### Slow mobile pages
-
-Most supplement traffic comes from phones, usually from a social ad. That shopper gives you a few seconds. If the page is still loading, they're gone, and you paid for the click anyway.
-
-Supplement stores tend to collect apps: reviews, quizzes, subscriptions, upsells, loyalty, popups, tracking. Each one adds weight. I audit every script, cut what isn't earning its place, compress images, and clean up leftover code from apps you uninstalled years ago.
-
-### Bundles and stacks that don't work
-
-Stacks are one of the best ways to raise order value in this category. A morning stack, a sleep bundle, a 90 day supply. But bundles are often bolted on with an app that doesn't play well with subscriptions, inventory or discounts.
-
-I set up bundles that can be subscribed to, track inventory for each component correctly, and show the savings clearly. I also make sure the bundle shows up where it makes sense, like on the product page of each item inside it.
-
-### Best sellers sold out with no way to wait
-
-When your top product sells out, every visitor to that page is a lost sale. Too often there's no back in stock signup, so they just leave. Some never come back.
-
-I add back in stock signups that feed into Klaviyo, set up a follow up flow when stock returns, and where it makes sense, offer a related product or a preorder so the sale isn't lost.
-
-### Free shipping thresholds set in the wrong spot
-
-Here's one that's easy to miss. Many stores set a free shipping threshold that a typical cart lands just under. One bottle is $38, the threshold is $40, and most people buy one bottle and pay shipping, annoyed. I look at your real cart values and set the threshold where it actually nudges people to add a second item.
-
-## What I do for supplement brands
-
-When I work with a supplement brand, I usually focus on these areas in roughly this order:
-
-1. **Subscriptions.** Plans on every daily product, the right frequencies, a clear default, and a cancel flow that offers skip, pause and swap before goodbye.
-2. **Reorder flows.** Klaviyo reminders timed to serving counts, plus subscriber flows for upcoming charges and failed payments.
-3. **Product page templates.** Claims, disclaimers and ingredients built into every page, and a layout built for mobile shoppers coming from ads.
-4. **Speed.** App and script audit, image cleanup, and theme fixes until mobile pages load fast.
-5. **Bundles and stacks.** Subscribable bundles with clean inventory and clear savings.
-6. **Stock and merchandising.** Back in stock signups, sold out handling and a free shipping threshold that matches real carts.
-
-I work in Shopify, Recharge, Skio, Rebuy and Klaviyo every day. If you're picking a subscription app right now, read my [Recharge vs Skio vs Loop comparison](/recharge-vs-skio-vs-loop) first.
-
-## Proof: mobile load from 7.9s to 2.1s
-
-One supplement brand came to me with strong ad performance and a weak conversion rate. Their product pages took 7.9 seconds to load on mobile. Most of their traffic was mobile.
-
-I went through the page the way I go through every slow supplement store: every app script, every image, every leftover snippet of code, and everything that loads before the shopper can see the product. Then I cut, compressed and deferred until the page showed up fast. Mobile load time dropped from 7.9s to 2.1s, and conversion rose 24%.
-
-Same ads, same products, same prices. Just a page that showed up before the shopper gave up.
-
-Across my work, rebuilt pages average a 2.1x conversion lift, and I've supported more than $40M in client revenue for growing brands.
-
-## How to work with me
-
-Most supplement brands start with the **AI Search and Conversion Audit** for $1,500. I test your products against the questions your buyers ask in ChatGPT, look at which competing products and sources AI uses instead of you, review where the store leaks conversions, and give you a prioritized plan. The full $1,500 is credited toward a Build or your first retainer month, if you start within 30 days.
-
-The **Build** is a fixed price project that takes 3 to 4 weeks and starts at $3,500, based on catalog size. After that, the **Growth** retainer at $4,500/month keeps the AI search and conversion work going. For brands that want one person leading the whole channel at their direction, there's **Full** at $7,500/month, which I explain on my [fractional head of ecommerce page](/fractional-head-of-ecommerce).
-
-Every plan is listed on the [pricing page](/pricing).
-
-## Book a 20 minute intro call
-
-If your supplement brand is growing but the store feels like it's leaking, let's talk. We'll go over your goals and figure out the right next step, and if it isn't a fit, I'll say so.
-
-[Book a 20 minute intro call](/ai-visibility-check#book)
+If you want me running reorders, email and the rest of the store with you each month, that's the Full retainer on my [full store management page](/fractional-head-of-ecommerce).

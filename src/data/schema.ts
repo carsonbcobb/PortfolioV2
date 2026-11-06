@@ -366,12 +366,13 @@ const planServices: Record<PlanKey, () => object> = {
 export const planNodes = (keys: PlanKey[] = ['audit', 'build', 'core', 'growth', 'full']) => keys.map((k) => planServices[k]());
 
 // The three starting prices shown on the homepage and service pages: audit, Build from, retainers from.
-const summaryOffers = (base: string, service: string) => {
+// brief: the industry pages' cards, which show the audit summary without the credit note.
+const summaryOffers = (base: string, service: string, brief = false) => {
   const lowest = (xs: number[]) => Math.min(...xs);
   const o = (slug: string, name: string, description: string, price: number, unit: Unit, from: boolean) =>
     offer({ id: `${base}#offer-${slug}`, name, description, url: PRICING_URL, service, price, unit, from });
   return [
-    o('audit', AUDIT.name, `${AUDIT.summary} ${AUDIT.note}`, AUDIT.price, 'once', false),
+    o('audit', AUDIT.name, brief ? AUDIT.summary : `${AUDIT.summary} ${AUDIT.note}`, AUDIT.price, 'once', false),
     o('build', BUILD.name, 'Fixed price, 3 to 4 weeks, priced by catalog size.', lowest(BUILD.tiers.map((t) => t.price)), 'once', true),
     o(
       'retainers',
@@ -629,7 +630,9 @@ interface ContentSchemaInput {
   description: string;
   label: string;
   faqs: { q: string; a: string }[];
-  service?: { name: string; serviceType: string; audience: string; offers?: boolean; plans?: PlanKey[] };
+  // offers 'only': the audit, Build and retainer offers, without the fit line, output or booking channel
+  // (the industry pages show the pricing cards but not those).
+  service?: { name: string; serviceType: string; audience: string; offers?: boolean | 'only'; plans?: PlanKey[] };
 }
 
 export function contentSchema(p: ContentSchemaInput) {
@@ -666,10 +669,11 @@ export function contentSchema(p: ContentSchemaInput) {
       url,
       provider: ref(ID.carson),
       areaServed: WORLD,
-      audience: { '@type': 'BusinessAudience', audienceType: p.service.audience, ...(p.service.offers ? { description: FIT_LINE } : {}) },
-      availableChannel: [CHECK_CHANNEL, channel()],
+      audience: { '@type': 'BusinessAudience', audienceType: p.service.audience, ...(p.service.offers === true ? { description: FIT_LINE } : {}) },
+      availableChannel: p.service.offers === 'only' ? [CHECK_CHANNEL] : [CHECK_CHANNEL, channel()],
       // The AI search and CRO pages sell the audit, Build and retainers directly.
-      ...(p.service.offers ? { serviceOutput: BRAND_OUTPUT, offers: summaryOffers(url, serviceId) } : {}),
+      ...(p.service.offers === true ? { serviceOutput: BRAND_OUTPUT } : {}),
+      ...(p.service.offers ? { offers: summaryOffers(url, serviceId, p.service.offers === 'only') } : {}),
       ...(p.service.plans ? { isRelatedTo: p.service.plans.map((k) => ref(PLAN[k])) } : {}),
     });
     if (p.service.plans) graph.push(...planNodes(p.service.plans));
