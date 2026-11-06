@@ -23,6 +23,8 @@ interface Props {
   ctaTitle?: string;
   /** Hide the closing call to action (the AI Visibility Check page has its own) */
   hideCta?: boolean;
+  /** Closing call to action: the free check, then the audit (instead of the email button) */
+  ctaAudit?: boolean;
   /** Start every FAQ answer collapsed (default: the first one is open) */
   faqCollapsed?: boolean;
   jsonLd: object[];
@@ -38,6 +40,7 @@ const {
   faqs = [],
   ctaTitle = 'See where you stand in AI search.',
   hideCta = false,
+  ctaAudit = false,
   faqCollapsed = false,
   jsonLd,
 } = Astro.props;
@@ -117,14 +120,21 @@ const updated =
             <p class="cta__sub">
               Run the free AI Visibility Check. In about a minute you'll see whether ChatGPT recommends you, who it
               recommends instead, and what's holding you back.
+              {ctaAudit && ' When you want the full picture for every product, start with the audit.'}
             </p>
             <div class="btn-row btn-row--center">
               <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent">
                 {HEADER_CTA_LABEL}
               </a>
-              <a href={`mailto:${EMAIL}`} class="btn btn--ghost-dark">
-                Email me
-              </a>
+              {ctaAudit ? (
+                <a href="/pricing#audit" class="btn btn--ghost-dark">
+                  See the audit
+                </a>
+              ) : (
+                <a href={`mailto:${EMAIL}`} class="btn btn--ghost-dark">
+                  Email me
+                </a>
+              )}
             </div>
           </div>
         </section>

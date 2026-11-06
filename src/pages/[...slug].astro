@@ -2,6 +2,7 @@
 // One route per markdown page (src/content/pages and src/content/reports), at the slug in its frontmatter.
 // Reports get their dates near the top, a Reports breadcrumb, and Article and Dataset JSON-LD.
 import ContentPage from '../layouts/ContentPage.astro';
+import PriceSummary from '../components/PriceSummary.astro';
 import { contentSchema, reportSchema } from '../data/schema';
 import { pageBySlug, CONTENT_PAGES } from '../data/pages';
 import { MARKDOWN_PAGES, DESIGNED_PAGES, AI_RESEARCH, ROUNDUPS, slugOf, isReportPage, isoDate, checkedDate, coverage, tableHeaders, type MarkdownPage } from '../data/reports';
@@ -26,6 +27,8 @@ let trail: { name: string; href?: string }[];
 let related: { href: string; label: string } | undefined;
 let jsonLd: object[];
 let dates: { published?: string; modified?: string } | undefined;
+// Industry pages: the pricing cards after the body, and a closing call to action that ends on the audit.
+const industry = !report && pageBySlug(slug).kind === 'industry';
 
 if (report) {
   const published = isoDate(fm.datePublished ?? fm.dateModified!);
@@ -80,7 +83,7 @@ if (report) {
 }
 ---
 
-<ContentPage title={fm.title} description={fm.description} h1={fm.h1} {trail} {dates} {faqs} {jsonLd}>
+<ContentPage title={fm.title} description={fm.description} h1={fm.h1} {trail} {dates} {faqs} {jsonLd} ctaAudit={industry}>
   <section class="section page-body">
     <div class="wrap">
       <article class="prose">
@@ -95,4 +98,5 @@ if (report) {
       </article>
     </div>
   </section>
+  {industry && <PriceSummary id="work-together" eyebrow="Working together" heading="How we work together" brief />}
 </ContentPage>

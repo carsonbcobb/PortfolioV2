@@ -4,7 +4,7 @@
 import ContentPage from '../layouts/ContentPage.astro';
 import PriceSummary from '../components/PriceSummary.astro';
 import { contentSchema } from '../data/schema';
-import { pageBySlug } from '../data/pages';
+import { pageBySlug, CONTENT_PAGES } from '../data/pages';
 import { designedPage, REPORTS, slugOf, shortVersion } from '../data/reports';
 import { AI_CASES, AI_CASES_NOTE, CHECK_PATH, HEADER_CTA_LABEL, HERO_PROOF } from '../data/site';
 import '../styles/sales.css';
@@ -93,6 +93,8 @@ const workMore = readMore([
   { heading: 'What do I do off site?', label: 'Everything I do off site' },
   { heading: 'How is AI search measured?' },
 ]);
+// The four product type pages, linked under the research card.
+const industries = CONTENT_PAGES.filter((p) => p.kind === 'industry');
 ---
 
 <ContentPage
@@ -240,6 +242,12 @@ const workMore = readMore([
             ))
           }
         </ul>
+        <p class="research-behind__types">
+          By product type:{' '}
+          {industries.map((p, i) => (
+            <><a href={`/${p.slug}`}>{p.label}</a>{i < industries.length - 2 ? ', ' : i === industries.length - 2 ? ' and ' : '.'}</>
+          ))}
+        </p>
       </div>
       <div class="readmore">
         {
