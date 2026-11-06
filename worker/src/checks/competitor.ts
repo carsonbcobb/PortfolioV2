@@ -4,11 +4,8 @@ import { safeFetch, safeFetchJson } from "../safefetch";
 import { PRODUCT_DETAIL_LABELS, countFields, extractSchema, productDetailFields, typesOf } from "../schema";
 import type { CompetitorCompare, ProductDetails, ReadinessSection, ShopifyProduct, StoreContext, VisibilitySection } from "../types";
 import { norm, sameBrand } from "./visibility";
+import { isNonBrand } from "../nonbrands";
 
-// Retailers and marketplaces are not a brand's direct competitor, so they are skipped.
-const RETAILERS = new Set(
-  ["amazon", "walmart", "target", "costco", "ebay", "etsy", "sephora", "ulta", "bestbuy", "homedepot", "lowes", "chewy", "iherb", "cvs", "walgreens", "kohls", "macys", "nordstrom", "wayfair", "rei", "zappos", "dtc", "thrive market", "thrivemarket", "whole foods", "wholefoods"].map(norm),
-);
 
 /** Brands recommended in the buyer questions, most mentioned first, without the visitor's brand. */
 export function rankCompetitors(v: VisibilitySection, ctx: StoreContext): { name: string; mentions: number }[] {
@@ -17,7 +14,7 @@ export function rankCompetitors(v: VisibilitySection, ctx: StoreContext): { name
     const seen = new Set<string>();
     for (const b of q.brands) {
       const k = norm(b);
-      if (!k || seen.has(k) || sameBrand(b, ctx.brand, ctx.domain) || RETAILERS.has(k)) continue;
+      if (!k || seen.has(k) || sameBrand(b, ctx.brand, ctx.domain) || isNonBrand(b)) continue;
       seen.add(k);
       const cur = counts.get(k) ?? { name: b, mentions: 0 };
       cur.mentions++;

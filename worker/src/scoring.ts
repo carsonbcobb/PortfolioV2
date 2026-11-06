@@ -1,4 +1,5 @@
 import { WEIGHTS } from "./config";
+import { isNonBrand } from "./nonbrands";
 import type { OpenAI } from "./openai";
 import type {
   AccuracySection,
@@ -18,23 +19,90 @@ export function isError(s: unknown): s is SectionError {
   return !!s && typeof s === "object" && "error" in s;
 }
 
+/** A section that ran but has nothing to score: visibility where no question got a usable answer. */
+function emptySection(key: SectionKey, s: unknown): boolean {
+  return key === "visibility" && !isError(s) && (s as VisibilitySection).total === 0;
+}
+
 export function overallScore(sections: Sections): number {
   let sum = 0;
   let weight = 0;
   for (const key of Object.keys(WEIGHTS) as SectionKey[]) {
     const s = sections[key];
-    if (isError(s)) continue;
+    if (isError(s) || emptySection(key, s)) continue;
     sum += (s as { score: number }).score * WEIGHTS[key];
     weight += WEIGHTS[key];
   }
   return weight ? Math.round(sum / weight) : 0;
 }
 
-export function verdictFor(score: number): string {
-  if (score >= 80) return "AI can find, read and recommend your store. Keep it that way as answers shift.";
-  if (score >= 60) return "AI knows your store, but gaps are costing you recommendations.";
-  if (score >= 40) return "AI only sees part of your store, and competitors are showing up in your place.";
-  return "AI barely sees your store right now, so buyers who ask ChatGPT are sent elsewhere.";
+const LABELS: Record<SectionKey, string> = {
+  visibility: "ChatGPT recommendations",
+  accuracy: "brand accuracy",
+  crawlers: "AI crawler access",
+  readiness: "product pages",
+};
+
+/** Sections left out of the overall score because they couldn't run (a pending section is not counted). */
+export function unscoredSections(sections: Sections): SectionKey[] {
+  return (Object.keys(WEIGHTS) as SectionKey[]).filter((k) => {
+    const s = sections[k];
+    return (isError(s) && !s.pending) || emptySection(k, s);
+  });
+}
+
+export function scoreNote(keys: SectionKey[]): string {
+  const names = listNames(keys.map((k) => LABELS[k]));
+  return `We couldn't check ${names} this time, so your score is based on the checks that ran.`;
+}
+
+/**
+ * Brands named in the scored answers, most often first, without the store's own brand or domain.
+ * `missedOnly` counts only the questions where the store wasn't recommended.
+ */
+export function rivalsOf(v: VisibilitySection, brand: string, domain = "", missedOnly = false): string[] {
+  const own = [norm(brand), norm(domain), norm(domain.split(".")[0])].filter(Boolean);
+  const counts = new Map<string, { name: string; n: number }>();
+  for (const q of v.questions) {
+    if (q.excluded || (missedOnly && q.mentioned)) continue;
+    for (const b of q.brands) {
+      const k = b.toLowerCase();
+      if (own.includes(norm(b)) || isNonBrand(b)) continue;
+      const cur = counts.get(k) ?? { name: b, n: 0 };
+      cur.n++;
+      counts.set(k, cur);
+    }
+  }
+  return [...counts.values()].sort((a, b) => b.n - a.n).map((x) => x.name);
+}
+
+const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "");
+
+/**
+ * The headline under the score. It says only what the data shows: who ChatGPT named, whether that
+ * included the store, or that no brands came up. The score band sets the second half.
+ */
+export function verdictFor(score: number, brand: string, visibility: Sections["visibility"], domain = ""): string {
+  const tail =
+    score >= 80 ? "Keep it that way as answers shift." : score >= 60 ? "Gaps elsewhere are still costing you sales." : "The gaps below are costing you sales.";
+  if (isError(visibility)) {
+    if (score >= 80) return "AI can reach and read your store. Keep it that way as answers shift.";
+    if (score >= 60) return "AI can read most of your store, but gaps are costing you sales.";
+    return "AI has trouble reading your store, and that costs you recommendations.";
+  }
+  const v = visibility as VisibilitySection;
+  if (v.total === 0) return `ChatGPT didn't name any brands for the buyer questions we asked, so this run can't show who it recommends. ${tail}`;
+  // Only brands from the questions the store missed: they are the ones named "in the rest" or "instead".
+  const rivals = rivalsOf(v, brand, domain, true).slice(0, 2);
+  if (v.mentioned === v.total) return `ChatGPT recommended ${brand} in every buyer question we scored. ${tail}`;
+  // The verdict is the headline, so the data sentence stands alone when it names competitors.
+  if (v.mentioned > 0)
+    return rivals.length
+      ? `ChatGPT recommended ${brand} in ${v.mentioned} of ${v.total} buyer questions, and named ${listNames(rivals)} in the rest.`
+      : `ChatGPT recommended ${brand} in ${v.mentioned} of ${v.total} buyer questions. ${tail}`;
+  return rivals.length
+    ? `ChatGPT didn't recommend ${brand} in any buyer question we scored. It named ${listNames(rivals)} instead.`
+    : `ChatGPT didn't recommend ${brand} or name any other brand in the buyer questions we scored. ${tail}`;
 }
 
 function listNames(names: string[]): string {
@@ -73,19 +141,9 @@ export function buildFindings(brand: string, sections: Sections): string[] {
   const c: Candidate[] = [];
 
   const v = sections.visibility;
-  if (!isError(v)) {
+  if (!isError(v) && (v as VisibilitySection).total > 0) {
     const vs = v as VisibilitySection;
-    const counts = new Map<string, { name: string; n: number }>();
-    for (const q of vs.questions) {
-      for (const b of q.brands) {
-        const k = b.toLowerCase();
-        if (k === brand.toLowerCase()) continue;
-        const cur = counts.get(k) ?? { name: b, n: 0 };
-        cur.n++;
-        counts.set(k, cur);
-      }
-    }
-    const top = [...counts.values()].sort((a, b) => b.n - a.n).slice(0, 2).map((x) => x.name);
+    const top = rivalsOf(vs, brand).slice(0, 2);
     const others = top.length ? ` ${listNames(top)} came up most.` : "";
     if (vs.mentioned === 0) {
       c.push({ lead: true, weight: 100, text: `ChatGPT did not recommend you in any of ${vs.total} buyer questions.${others}` });
@@ -196,8 +254,9 @@ export function digest(
     const vs = v as VisibilitySection;
     d.visibility = {
       recommended_in: vs.mentioned,
-      of_questions: vs.total,
-      questions: vs.questions.map((q) => ({
+      of_questions_scored: vs.total,
+      questions_asked: vs.asked ?? vs.total,
+      questions: vs.questions.filter((q) => !q.excluded).map((q) => ({
         question: q.question,
         recommended: q.mentioned,
         position: q.position,

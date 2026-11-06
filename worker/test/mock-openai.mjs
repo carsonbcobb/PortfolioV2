@@ -84,6 +84,8 @@ function searchAnswer(question) {
     if (n === 2) brands.splice(2, 0, state.brand);
     if (n === 4) brands.push(state.brand);
     const lines = brands.map((b, i) => `${i + 1}. **${b}**: a solid pick with good reviews for this need.`);
+    // Retailers and publishers the parser must never count as competing brands.
+    lines.push("You can find most of these on **Amazon**, and **Wirecutter** has a longer roundup. Some sellers on **Etsy** make similar ones.");
     text = `Here are some good options based on what you described:\n\n${lines.join("\n")}\n\nPick based on your budget and how you plan to use it.`;
     sources.push({ url: "https://www.example-reviews.com/best-picks", title: "The best picks this year" });
     sources.push({ url: "https://www.reddit.com/r/BuyItForLife/comments/abc", title: "Reddit thread" });
@@ -112,9 +114,13 @@ function parseBrands(userText) {
   const blocks = userText.split(/ANSWER \d+:\n/).slice(1);
   return {
     answers: blocks.map((answer) => {
-      const brands = [...answer.matchAll(/\*\*(.+?)\*\*/g)].map((x) => x[1]);
-      const idx = brands.findIndex((b) => b.toLowerCase() === target.toLowerCase());
-      return { brands, mentioned: idx >= 0, position: idx >= 0 ? idx + 1 : null };
+      const names = [...answer.matchAll(/\*\*(.+?)\*\*/g)].map((x) => x[1]);
+      // Like the real parser: each name gets a kind. Etsy is mislabeled as a brand on purpose, so the deny list is tested too.
+      const KIND = { Amazon: "retailer", Wirecutter: "publisher" };
+      const brands = names.map((name) => ({ name, kind: KIND[name] ?? "brand" }));
+      const real = names.filter((n) => !KIND[n] && n !== "Etsy");
+      const idx = real.findIndex((b) => b.toLowerCase() === target.toLowerCase());
+      return { brands, mentioned: idx >= 0, position: idx >= 0 ? idx + 1 : null, clarifying: false };
     }),
   };
 }
@@ -190,10 +196,10 @@ const server = http.createServer(async (req, res) => {
       try {
         d = JSON.parse(userText.split("\n").pop());
       } catch {}
-      const v = d.visibility || { recommended_in: 0, of_questions: 3, cited_sources: 0, sources_brand_is_on: 0 };
+      const v = d.visibility || { recommended_in: 0, of_questions_scored: 3, cited_sources: 0, sources_brand_is_on: 0 };
       result = {
         findings: [
-          { text: `ChatGPT recommended you in ${v.recommended_in} of ${v.of_questions} buyer questions.`, cost: "Every question you miss sends a ready buyer to a competitor." },
+          { text: `ChatGPT recommended you in ${v.recommended_in} of ${v.of_questions_scored} buyer questions.`, cost: "Every question you miss sends a ready buyer to a competitor." },
           { text: `AI cited ${v.cited_sources} sources for those answers, and you are on ${v.sources_brand_is_on} of them.`, cost: "The sources AI trusts decide who it names." },
           { text: "ChatGPT's description of your brand leaves out key details.", cost: "Those details are often why a shopper would choose you." },
         ],

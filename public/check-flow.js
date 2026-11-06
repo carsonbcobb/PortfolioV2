@@ -51,6 +51,15 @@
       } catch {}
     },
   };
+  // Saved on the first visit by SiteHead: referrer, landing page and UTMs.
+  const firstSource = () => {
+    try {
+      const v = JSON.parse(localStorage.getItem('cc_src') || 'null');
+      return v && typeof v === 'object' ? v : undefined;
+    } catch {
+      return undefined;
+    }
+  };
   const listNames = (a) => (a.length <= 1 ? a.join('') : a.length === 2 ? `${a[0]} and ${a[1]}` : `${a.slice(0, -1).join(', ')} and ${a[a.length - 1]}`);
   const plural = (n, one, many) => (n === 1 ? one : many);
   const isErr = (s) => !s || typeof s.error === 'string';
@@ -357,6 +366,9 @@
     runList.replaceChildren();
     runError.hidden = true;
     runRetry.hidden = true;
+    runRetry.textContent = 'Try again';
+    emailForm.hidden = false;
+    emailNote.hidden = false;
     $('#run-title').textContent = `Checking ${S.brand}`;
     const remembered = store.get(`aivc:email:${S.domain}`);
     if (remembered && !S.email) emailForm.email.value = remembered;
@@ -387,7 +399,7 @@
       const res = await fetch(`${API}/check`, {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ url: S.url, brand: S.brand, token }),
+        body: JSON.stringify({ url: S.url, brand: S.brand, token, source: firstSource() }),
       });
       spendToken();
       if (!res.ok) {
@@ -423,6 +435,19 @@
             if (S.step >= FIRST_RESULT) renderReport();
           }
           else if (msg.type === 'error') throw new Error(msg.message || 'Something went wrong. Please try again.');
+          else if (msg.type === 'stopped') {
+            // Not a store, or no products we could read: no score and no email.
+            finished = true;
+            lines.forEach(finishLine);
+            $('#run-title').textContent = "We can't check this site";
+            emailForm.hidden = true;
+            emailNote.hidden = true;
+            runError.textContent = msg.message;
+            runError.hidden = false;
+            runRetry.textContent = 'Check another store';
+            runRetry.hidden = false;
+            track('visibility_check_stopped', { reason: msg.reason });
+          }
           else if (msg.type === 'done') {
             finished = true;
             if (msg.cached && !lines.length) addLine({ step: 'setup', message: 'Found your saved report from the last 7 days' });
@@ -458,7 +483,7 @@
   const competitors = (v, brand) => {
     const counts = new Map();
     for (const q of v.questions) {
-      if (q.mentioned) continue;
+      if (q.mentioned || q.excluded) continue;
       for (const b of q.brands || []) {
         if (b.toLowerCase() === brand.toLowerCase()) continue;
         counts.set(b, (counts.get(b) || 0) + 1);
@@ -472,7 +497,7 @@
     const out = [];
     const brand = r.brand || r.domain;
     const v = r.sections.visibility;
-    if (!isErr(v)) {
+    if (!isErr(v) && v.total > 0) {
       const rivals = competitors(v, brand).slice(0, 2);
       if (v.mentioned === 0)
         out.push({
@@ -540,36 +565,48 @@
       el('div', {}, el('p', { class: 'eyebrow' }, eyebrow), el('h2', { class: 'flow__h2 sect__big', tabindex: '-1' }, big)),
       typeof score === 'number' ? el('span', { class: `pill pill--${band(score)}`, title: 'Section score' }, `${score}/100`) : null,
     );
-  const sectError = (eyebrow, msg) => [sectHead(eyebrow, "This part couldn't finish this time."), el('p', { class: 'flow__body' }, msg || 'Run the check again later to see it.')];
+  const sectError = (eyebrow, msg) => [
+    sectHead(eyebrow, "Couldn't check."),
+    el('p', { class: 'flow__body' }, msg || 'Run the check again later to see it.'),
+    el('p', { class: 'flow__fine' }, 'This part is left out of your overall score.'),
+  ];
 
   const renderVisibility = (r) => {
     const box = $('#sect-visibility');
     const v = r.sections.visibility;
     if (isErr(v)) return box.replaceChildren(...sectError('AI visibility', v && v.error));
+    if (!v.total)
+      return box.replaceChildren(
+        ...sectError('AI visibility', `ChatGPT asked for more details or named no brands for all ${v.asked || v.questions.length} buyer questions, even after we asked again with more product detail.`),
+      );
     const brand = r.brand || r.domain;
+    const asked = v.asked || v.questions.length;
     const list = el('ol', { class: 'qs' });
     const detail = el('div', { class: 'qdetail', hidden: true });
     v.questions.forEach((q, i) => {
       const others = (q.brands || []).filter((b) => b.toLowerCase() !== brand.toLowerCase());
-      const sub = q.mentioned
-        ? `Recommended${q.position ? `, position ${q.position}` : ''}`
-        : others.length
-          ? `Instead: ${others.slice(0, 3).join(', ')}`
-          : 'Not recommended';
+      const sub = q.excluded
+        ? 'Not scored: no brands named'
+        : q.mentioned
+          ? `Recommended${q.position ? `, position ${q.position}` : ''}`
+          : others.length
+            ? `Instead: ${others.slice(0, 3).join(', ')}`
+            : 'Not recommended';
+      const state = q.excluded ? 'is-skip' : q.mentioned ? 'is-pass' : 'is-fail';
       list.append(
         el(
           'li',
           {},
           el(
             'button',
-            { type: 'button', class: `q ${q.mentioned ? 'is-pass' : 'is-fail'}`, onclick: () => openQ(i) },
-            el('span', { class: 'q__mark', 'aria-hidden': 'true' }, q.mentioned ? '✓' : '✕'),
+            { type: 'button', class: `q ${state}`, onclick: () => openQ(i) },
+            el('span', { class: 'q__mark', 'aria-hidden': 'true' }, q.excluded ? '•' : q.mentioned ? '✓' : '✕'),
             el(
               'span',
               { class: 'q__body' },
               q.product ? el('span', { class: 'q__product' }, q.product) : null,
               el('span', { class: 'q__text' }, q.question),
-              el('span', { class: 'q__sub' }, el('span', { class: 'visually-hidden' }, q.mentioned ? 'Pass. ' : 'Fail. '), sub),
+              el('span', { class: 'q__sub' }, el('span', { class: 'visually-hidden' }, q.excluded ? 'Not scored. ' : q.mentioned ? 'Pass. ' : 'Fail. '), sub),
             ),
             el('span', { class: 'q__more', 'aria-hidden': 'true' }, '›'),
           ),
@@ -585,7 +622,9 @@
         el('button', { type: 'button', class: 'flow__link qdetail__back', onclick: closeQ }, '← All questions'),
         q.product ? el('p', { class: 'eyebrow eyebrow--dim' }, `Built from: ${q.product}`) : null,
         el('p', { class: 'qdetail__q' }, `“${q.question}”`),
-        el('p', { class: `qdetail__verdict ${q.mentioned ? 'is-pass' : 'is-fail'}` }, q.mentioned ? `You're recommended${q.position ? `, position ${q.position}` : ''}.` : 'You are not recommended.', q.cited ? ' Your site was cited as a source.' : ''),
+        q.excluded
+          ? el('p', { class: 'qdetail__verdict' }, "ChatGPT asked for more details or named no brands, even when we asked again, so this question isn't scored.")
+          : el('p', { class: `qdetail__verdict ${q.mentioned ? 'is-pass' : 'is-fail'}` }, q.mentioned ? `You're recommended${q.position ? `, position ${q.position}` : ''}.` : 'You are not recommended.', q.cited ? ' Your site was cited as a source.' : ''),
         others.length ? el('p', { class: 'qdetail__row' }, el('strong', {}, q.mentioned ? 'Also named: ' : 'Recommended instead: '), others.slice(0, 6).join(', ')) : null,
         sources.length
           ? el(
@@ -626,12 +665,16 @@
         ? el(
             'p',
             { class: 'flow__fine src__sum' },
-            `AI ${v.mentioned < v.total ? 'recommended your competitors' : 'built these answers'} based on ${plural(src.total, 'this source', `these ${src.total} sources`)}, and you're on ${src.on} of them.`,
+            `AI ${v.mentioned < v.total && competitors(v, brand).length ? 'recommended your competitors' : 'built these answers'} based on ${plural(src.total, 'this source', `these ${src.total} sources`)}, and you're on ${src.on} of them.`,
           )
+        : null;
+    const scoredLine =
+      v.total < asked
+        ? el('p', { class: 'flow__fine' }, `${v.total} of ${asked} questions were scored. ChatGPT named no brands for the other ${plural(asked - v.total, 'one', asked - v.total)}, even after we asked again with more product detail.`)
         : null;
     box.replaceChildren(
       sectHead('AI visibility', `Recommended in ${v.mentioned} of ${v.total} questions.`, v.score),
-      el('div', { class: 'sect__body' }, list, srcLine, detail),
+      el('div', { class: 'sect__body' }, list, scoredLine, srcLine, detail),
       costLine(v.mentioned < v.total ? 'Every question you miss is a shopper ready to buy, sent to a competitor.' : `You show up for these ${v.total}. Your buyers ask hundreds more.`),
     );
   };
@@ -812,6 +855,13 @@
     $('.dial__fill', scoreStep).style.strokeDasharray = `${score} 100`;
     $('#score-eyebrow').textContent = `${r.brand || r.domain} · AI visibility score`;
     $('#score-verdict').textContent = r.overall.verdict;
+    let note = $('#score-note');
+    if (!note) {
+      note = el('p', { class: 'flow__fine', id: 'score-note' });
+      $('#score-verdict').after(note);
+    }
+    note.textContent = r.overall.note || '';
+    note.hidden = !r.overall.note;
     const written = Array.isArray(r.overall.top) && r.overall.top.length ? r.overall.top.map((x) => ({ bad: true, text: x.text, cost: x.cost })) : null;
     const f = written || buildFindings(r);
     const fallback = (r.overall.findings || []).map((t) => ({ bad: true, text: t, cost: '' }));

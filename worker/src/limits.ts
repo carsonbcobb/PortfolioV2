@@ -18,7 +18,8 @@ async function readCount(env: Env, key: string): Promise<number> {
 
 export const dayKey = (day = utcDay()) => `day:${day}`;
 export const ipKey = (ip: string, day = utcDay()) => `ip:${ip}:${day}`;
-export const reportKey = (domain: string) => `report:${domain}`;
+// v2: reports from before the store type check and answer validation are not served again.
+export const reportKey = (domain: string) => `report:v2:${domain}`;
 
 export async function todayCount(env: Env): Promise<number> {
   return readCount(env, dayKey());

@@ -14,8 +14,8 @@ import {
   todayCount,
 } from "./limits";
 import { CostTracker, OpenAI } from "./openai";
-import { buildFindings, digest, isError, overallScore, verdictFor, writeTopFindings } from "./scoring";
-import { loadStore } from "./store";
+import { buildFindings, digest, isError, overallScore, scoreNote, unscoredSections, verdictFor, writeTopFindings } from "./scoring";
+import { loadStore, STOP_MESSAGES, stopReason } from "./store";
 import { utcDay } from "./limits";
 import type {
   CompetitorCompare,
@@ -25,9 +25,11 @@ import type {
   Report,
   SectionError,
   SectionKey,
+  StopReason,
   StoreContext,
   TopFinding,
   VisibilitySection,
+  VisitSource,
 } from "./types";
 import { dnsProblem, domainOf, isValidEmail, parseStoreUrl } from "./validate";
 
@@ -170,6 +172,7 @@ const ACCURACY_PENDING = "Still checking what AI says about your brand. This usu
 const NEVER = new AbortController().signal;
 
 type Run = { report: Report; complete: boolean };
+type Stopped = { stopped: StopReason };
 
 /**
  * Runs every section. Brand accuracy is not bound by the overall deadline: when the other sections are
@@ -179,7 +182,9 @@ async function runCheck(
   env: Env,
   input: { url: URL; domain: string; brand?: string },
   emit: Emit,
-): Promise<Run & { rest?: Promise<Run> }> {
+  /** Called once the site is confirmed as a store with products, before the first AI call. */
+  onStart: () => Promise<void>,
+): Promise<(Run & { rest?: Promise<Run> }) | Stopped> {
   const started = Date.now();
   const overallCtl = new AbortController();
   const overallTimer = setTimeout(() => overallCtl.abort(), TIMEOUTS.overallMs);
@@ -190,6 +195,10 @@ async function runCheck(
     const store: StoreContext = await loadStore(input.url, input.domain, overallCtl.signal);
     // The visitor confirmed or edited the detected brand name on the page.
     if (input.brand) store.brand = input.brand;
+    // Only stores with products we can read get questions, a score and AI spend.
+    const stop = stopReason(store);
+    if (stop) return { stopped: stop };
+    await onStart();
     const sig = overallCtl.signal;
 
     const visibilityP = runSection("visibility", sig, emit, (s) => runVisibility(store, new OpenAI(env, cost, s), emit, s));
@@ -222,6 +231,7 @@ async function runCheck(
       const sections = { visibility, accuracy, crawlers, readiness } as Report["sections"];
       emit({ type: "progress", step: "setup", message: "Scoring your report" });
       const score = overallScore(sections);
+      const unscored = unscoredSections(sections);
       const findings = buildFindings(store.brand, sections);
       let top: TopFinding[] | null = null;
       if (!findingsSignal.aborted && env.OPENAI_API_KEY) {
@@ -234,7 +244,13 @@ async function runCheck(
         brand: store.brand,
         products: topTitles(store),
         checkedAt: new Date().toISOString(),
-        overall: { score, verdict: verdictFor(score), findings: top ? top.map((f) => `${f.text} ${f.cost}`) : findings, ...(top ? { top } : {}) },
+        overall: {
+          score,
+          verdict: verdictFor(score, store.brand, sections.visibility, store.domain),
+          findings: top ? top.map((f) => `${f.text} ${f.cost}`) : findings,
+          ...(top ? { top } : {}),
+          ...(unscored.length ? { unscored, note: scoreNote(unscored) } : {}),
+        },
         sections,
         competitor,
         weights: { ...WEIGHTS },
@@ -286,6 +302,7 @@ async function handleCheck(req: Request, env: Env, ctx: ExecutionContext): Promi
   // 1. Validate fields
   // Questions are built from the store's own products, so no category is asked for (one sent by an older page is ignored).
   const { url, email, token, brand } = body;
+  const source = cleanSource(body.source);
   if (typeof url !== "string" || !url.trim()) return fail(req, env, 400, "bad_request", "Please enter your store URL.");
   // Email is optional here: the step flow asks for it while the check runs and posts it to /email.
   if (email !== undefined && email !== "" && (typeof email !== "string" || !isValidEmail(email.trim())))
@@ -311,10 +328,10 @@ async function handleCheck(req: Request, env: Env, ctx: ExecutionContext): Promi
   const cached = await getCachedReport(env, domain);
   if (cached) {
     const { response, emit, close } = ndjsonStream(req, env);
-    const ticket = await saveTicket(env, cached, true);
+    const ticket = await saveTicket(env, cached, true, false, source);
     emit({ type: "done", report: cached, cached: true, ticket });
     ctx.waitUntil(close());
-    if (visitorEmail) ctx.waitUntil(sendReportEmails(env, cached, visitorEmail, true));
+    if (visitorEmail) ctx.waitUntil(sendReportEmails(env, cached, visitorEmail, true, source));
     return response;
   }
 
@@ -336,10 +353,17 @@ async function handleCheck(req: Request, env: Env, ctx: ExecutionContext): Promi
   const { response, emit, close } = ndjsonStream(req, env);
   const work = (async () => {
     try {
-      await incrementCounters(env, ip).catch((e) => console.error("kv error", String(e)));
-      const run = await runCheck(env, { url: storeUrl, domain, brand: cleanBrand || undefined }, emit);
+      const counted = () => incrementCounters(env, ip).catch((e) => console.error("kv error", String(e)));
+      const out = await runCheck(env, { url: storeUrl, domain, brand: cleanBrand || undefined }, emit, counted);
+      if ("stopped" in out) {
+        // Not a store, or no products we could read: no questions, no score, no AI spend, no check used.
+        emit({ type: "stopped", reason: out.stopped, message: STOP_MESSAGES[out.stopped] });
+        await close();
+        return;
+      }
+      const run = out;
       let { report, complete } = run;
-      const ticket = await saveTicket(env, report, false, !!run.rest);
+      const ticket = await saveTicket(env, report, false, !!run.rest, source);
       emit({ type: "done", report, ticket, pending: !!run.rest });
       if (run.rest) {
         // The page stays open and shows the rest of the report; brand accuracy finishes here.
@@ -350,7 +374,7 @@ async function handleCheck(req: Request, env: Env, ctx: ExecutionContext): Promi
       await close();
       // Only cache reports where every section worked, so a temporary failure is not stuck for 7 days.
       if (complete) await cacheReport(env, report).catch((e) => console.error("kv error", String(e)));
-      if (visitorEmail) ctx.waitUntil(sendReportEmails(env, report, visitorEmail, false));
+      if (visitorEmail) ctx.waitUntil(sendReportEmails(env, report, visitorEmail, false, source));
     } catch (e) {
       console.error("check failed", e instanceof Error ? e.stack : String(e));
       emit({ type: "error", error: "server_error", message: "Something went wrong running your check. Please try again." });
@@ -377,12 +401,28 @@ interface Ticket {
   pending?: boolean;
   /** Set once an email was requested, so a ticket sends one email. */
   emailed?: boolean;
+  /** Where the visitor came from, for the owner email only. Kept off the report, which is cached and public by domain. */
+  source?: VisitSource | null;
 }
 
-async function saveTicket(env: Env, report: Report, cached: boolean, pending = false): Promise<string | null> {
+/** Keeps only the expected source fields, as short strings. */
+function cleanSource(raw: unknown): VisitSource | null {
+  if (!raw || typeof raw !== "object" || Array.isArray(raw)) return null;
+  const r = raw as Record<string, unknown>;
+  const str = (k: string, n: number) => (typeof r[k] === "string" ? (r[k] as string).replace(/[\r\n]+/g, " ").trim().slice(0, n) : "");
+  return {
+    referrer: str("referrer", 300),
+    landing: str("landing", 300),
+    utm_source: str("utm_source", 100),
+    utm_medium: str("utm_medium", 100),
+    utm_campaign: str("utm_campaign", 100),
+  };
+}
+
+async function saveTicket(env: Env, report: Report, cached: boolean, pending = false, source: VisitSource | null = null): Promise<string | null> {
   const id = crypto.randomUUID();
   try {
-    await env.CHECKS.put(`ticket:${id}`, JSON.stringify({ report, cached, pending } satisfies Ticket), { expirationTtl: TICKET_TTL });
+    await env.CHECKS.put(`ticket:${id}`, JSON.stringify({ report, cached, pending, source } satisfies Ticket), { expirationTtl: TICKET_TTL });
     return id;
   } catch (e) {
     console.error("kv error", String(e));
@@ -394,7 +434,7 @@ async function saveTicket(env: Env, report: Report, cached: boolean, pending = f
 async function updateTicket(env: Env, id: string, report: Report): Promise<void> {
   try {
     const prev = await env.CHECKS.get<Ticket>(`ticket:${id}`, "json");
-    await env.CHECKS.put(`ticket:${id}`, JSON.stringify({ report, cached: false, pending: false, emailed: prev?.emailed } satisfies Ticket), {
+    await env.CHECKS.put(`ticket:${id}`, JSON.stringify({ report, cached: false, pending: false, emailed: prev?.emailed, source: prev?.source } satisfies Ticket), {
       expirationTtl: TICKET_TTL,
     });
   } catch (e) {
@@ -433,7 +473,7 @@ async function handleEmail(req: Request, env: Env, ctx: ExecutionContext): Promi
     (async () => {
       // A report still finishing brand accuracy is emailed once it is final.
       const t = saved.pending ? ((await finalTicket(env, ticket)) ?? saved) : saved;
-      await sendReportEmails(env, t.report, to, t.cached);
+      await sendReportEmails(env, t.report, to, t.cached, t.source ?? saved.source ?? null);
       await env.CHECKS.delete(key).catch(() => {});
     })(),
   );
