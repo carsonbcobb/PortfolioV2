@@ -1,7 +1,7 @@
 ---
 import ContentPage from '../../layouts/ContentPage.astro';
 import { toolsIndexSchema } from '../../data/schema';
-import { TOOLS } from '../../data/pages';
+import { TOOLS, CONTENT_PAGES } from '../../data/pages';
 import { CHECK_PATH } from '../../data/site';
 
 const title = 'Shopify Tools for Growing Brands | Carson Cobb';
@@ -19,6 +19,8 @@ const cards = [
   },
   ...TOOLS.map((t) => ({ href: `/tools/${t.slug}`, name: t.name.charAt(0).toUpperCase() + t.name.slice(1), summary: t.summary, go: 'Open the calculator →' })),
 ];
+// Comparison guides live here too, since the footer no longer links them.
+const guides = CONTENT_PAGES.filter((p) => p.kind === 'guide');
 const jsonLd = [toolsIndexSchema({ title, description }, cards)];
 ---
 
@@ -32,6 +34,18 @@ const jsonLd = [toolsIndexSchema({ title, description }, cards)];
               <h2 class="h3">{t.name}</h2>
               <p>{t.summary}</p>
               <span class="tool-card__go">{t.go}</span>
+            </a>
+          ))
+        }
+      </div>
+      <h2 class="h2 tool-guides__title">Guides</h2>
+      <div class="tool-list">
+        {
+          guides.map((g) => (
+            <a class="card tool-card" href={`/${g.slug}`}>
+              <h3 class="h3">{g.label}</h3>
+              <p>{g.summary}</p>
+              <span class="tool-card__go">Read the guide →</span>
             </a>
           ))
         }

@@ -206,6 +206,10 @@
   color: var(--body);
 }
 
+.tool-guides__title {
+  margin: 56px 0 20px;
+}
+
 .tool-card .tool-card__go {
   margin-top: auto;
   font-weight: 600;
