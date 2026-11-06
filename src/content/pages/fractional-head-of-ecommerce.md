@@ -84,8 +84,8 @@ This work runs on one of four retainers, each with a 3 month minimum except Dedi
 
 | Retainer | Price | Capacity | Calls |
 | --- | --- | --- | --- |
-| Core | $2,500/month | Up to 15 hours a month | One call a month |
-| Growth | $4,500/month | Up to 30 hours a month | Check in every 2 weeks |
+| Core | $2,500/month | Up to 15 hours a month | Every 2 weeks |
+| Growth | $4,500/month | Up to 30 hours a month | Weekly |
 | Full | $7,500/month | Up to 60 hours a month | Weekly call, plus 1 extra call a week when needed |
 | Dedicated | Let's talk | Full time capacity | Built around your team |
 
@@ -95,7 +95,7 @@ Every month: your mention rate for each product on ChatGPT, Gemini and Google AI
 
 I do the work myself. If something needs more than 60 hours, or a specialist skill like photography, I tell you up front and either quote it or recommend someone you hire directly. Email and Klaviyo are part of Full; they aren't sold on their own. The first 90 days follow the plan above: tracking, speed and key pages in month 1, then email and order value in month 2.
 
-**Core** is the monthly AI search report plus on site work, or clear specs your developers can ship. **Growth** adds off site outreach and an ongoing testing program, without the full ecommerce lead role. **Dedicated** is full time capacity for brands that need it. Most brands start with the **$1,500 AI Search and Conversion Audit**.
+**Core** is everything you control, fixed and measured every month: the monthly AI search report, the on site work, and your brand's own listings made to match. **Growth** adds coverage from the outside sources AI relies on, and an ongoing conversion testing program, to everything in Core, without the full ecommerce lead role. **Dedicated** is full time capacity for brands that need it. Most brands start with the **$1,500 AI Search and Conversion Audit**.
 
 Every option is listed on the [pricing page](/pricing).
 

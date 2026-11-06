@@ -15,6 +15,7 @@ import {
   RETAINER_ROWS,
   TERMS,
   DEVELOPERS_NOTE,
+  RETAINER_AUDIT_NOTE,
   AI_CASES,
   CHECK_PATH,
   AGENCY_PARTNER_PLANS,
@@ -304,13 +305,13 @@ const planServices: Record<PlanKey, () => object> = {
       areaServed: WORLD,
       audience: audience(bestFor),
       availableChannel: channel(),
-      serviceOutput: output('Monthly AI search report and on site work', sentenceList(r.includes)),
+      serviceOutput: output('Monthly AI search report, on site work and consistent listings', sentenceList(r.includes)),
       offers: monthly({
         id: `${PRICING_URL}#offer-retainer-core`,
         name: `${r.name} retainer`,
         service: PLAN.core,
         price: r.price as number,
-        description: `${capacity}, 3 month minimum. ${TERMS.hours} ${TERMS.cancel} ${TERMS.ownership} ${TERMS.costs}`,
+        description: `${capacity}, 3 month minimum. ${RETAINER_AUDIT_NOTE} ${TERMS.hours} ${TERMS.cancel} ${TERMS.ownership} ${TERMS.costs}`,
       }),
     };
   },
@@ -327,13 +328,13 @@ const planServices: Record<PlanKey, () => object> = {
       areaServed: WORLD,
       audience: audience(bestFor),
       availableChannel: channel(),
-      serviceOutput: output('Monthly report, tests and off site outreach', sentenceList(r.includes)),
+      serviceOutput: output('Monthly report, outside coverage and conversion testing', sentenceList(r.includes)),
       offers: monthly({
         id: `${PRICING_URL}#offer-retainer-growth`,
         name: `${r.name} retainer`,
         service: PLAN.growth,
         price: r.price as number,
-        description: `${capacity}, 3 month minimum. ${TERMS.hours} ${TERMS.cancel} ${TERMS.ownership} ${TERMS.costs}`,
+        description: `${capacity}, 3 month minimum. ${RETAINER_AUDIT_NOTE} ${TERMS.hours} ${TERMS.cancel} ${TERMS.ownership} ${TERMS.costs}`,
       }),
     };
   },
@@ -356,7 +357,7 @@ const planServices: Record<PlanKey, () => object> = {
         name: `${r.name} retainer`,
         service: PLAN.full,
         price: r.price as number,
-        description: `${capacity}, 3 month minimum. ${TERMS.hours} ${TERMS.cancel} ${TERMS.ownership} ${TERMS.costs}`,
+        description: `${capacity}, 3 month minimum. ${RETAINER_AUDIT_NOTE} ${TERMS.hours} ${TERMS.cancel} ${TERMS.ownership} ${TERMS.costs}`,
       }),
     };
   },

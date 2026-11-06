@@ -45,7 +45,7 @@ With a full time hire, you pay a salary whether there's a full month of senior w
 With a fractional head of ecommerce, you pay one retainer, and the management is part of the job. My options:
 
 * **AI Search and Conversion Audit, $1,500.** Your products tested against the questions your buyers ask in ChatGPT, the competing products and sources AI uses instead of you, a conversion leak review and a prioritized plan. Credited toward a Build started within 30 days.
-* **Build, fixed price, 3 to 4 weeks.** From $5,000, based on catalog size. AI search work across every template, a conversion rebuild of key pages and measurement setup.
+* **Build, fixed price, 3 to 4 weeks.** From $3,500, based on catalog size. AI search work across every template, a conversion rebuild of key pages and measurement setup.
 * **Core, $2,500/month.** The monthly AI search report and up to 15 hours a month of on site AI search and conversion work, or clear specs your developers can ship.
 * **Growth, $4,500/month.** Ongoing AI search tracking, on site and off site AI search work, and conversion testing.
 * **Full, $7,500/month.** Your ecommerce lead, working at your direction. Everything in Growth plus the plan, launches, Klaviyo, apps and vendors.
