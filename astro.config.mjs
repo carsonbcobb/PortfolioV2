@@ -19,6 +19,20 @@ function rehypeTableScroll() {
   return wrap;
 }
 
+// Links to other sites in markdown open in the same tab with rel="noopener", and are followed (no nofollow).
+function rehypeExternalLinks() {
+  const walk = (node) => {
+    if (node.type === 'element' && node.tagName === 'a') {
+      const href = String(node.properties?.href ?? '');
+      if (/^https?:\/\//.test(href) && !/^https?:\/\/(www\.)?carsoncobb\.com(\/|$)/.test(href)) {
+        node.properties.rel = ['noopener'];
+      }
+    }
+    (node.children ?? []).forEach(walk);
+  };
+  return walk;
+}
+
 // Reports end with a line linking the AI Visibility Check. That link becomes the standard accent
 // button on its own line, and the sentence above keeps its words as plain text.
 const CHECK_HREF = '/ai-visibility-check';
@@ -71,6 +85,6 @@ export default defineConfig({
     inlineStylesheets: 'always',
   },
   markdown: {
-    rehypePlugins: [rehypeTableScroll, rehypeReportCta],
+    rehypePlugins: [rehypeTableScroll, rehypeReportCta, rehypeExternalLinks],
   },
 });

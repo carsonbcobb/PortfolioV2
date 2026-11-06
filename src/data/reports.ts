@@ -60,6 +60,16 @@ export function checkedDate(page: MarkdownPage) {
   return isoDate(fm.dateModified ?? fm.datePublished ?? new Date());
 }
 
+/** Dataset temporalCoverage: the full checked date when the copy gives one, else its month */
+export function coverage(page: MarkdownPage) {
+  const full = /Data checked [A-Z][a-z]+ \d{1,2}, \d{4}/.test(page.rawContent());
+  const d = checkedDate(page);
+  return full ? d : d.slice(0, 7);
+}
+
+/** Roundups of other people's figures: an Article with no Dataset of its own */
+export const ROUNDUPS = ['reports/ai-search-statistics-2026'];
+
 /** Unique column headers across the page's markdown tables */
 export function tableHeaders(page: MarkdownPage) {
   const lines = page.rawContent().split('\n');
@@ -82,6 +92,9 @@ export function shortVersion(page: MarkdownPage) {
   if (!bullet) throw new Error(`${slugOf(page)} needs a bullet under "## The short version"`);
   return bullet.replace(/\*\*|__/g, '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').trim();
 }
+
+/** True when the report has a "## The short version" list */
+export const hasShortVersion = (page: MarkdownPage) => /^## The short version\s*$/m.test(page.rawContent());
 
 /** The first sentence of a piece of plain text */
 export const firstSentence = (text: string) => text.match(/^.+?[.!?](?=\s|$)/)?.[0] ?? text;

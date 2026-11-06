@@ -5,7 +5,7 @@ import ContentPage from '../layouts/ContentPage.astro';
 import PriceSummary from '../components/PriceSummary.astro';
 import { contentSchema } from '../data/schema';
 import { pageBySlug } from '../data/pages';
-import { designedPage } from '../data/reports';
+import { designedPage, REPORTS, slugOf, shortVersion } from '../data/reports';
 import { AI_CASES, AI_CASES_NOTE, CHECK_PATH, HEADER_CTA_LABEL, HERO_PROOF } from '../data/site';
 import '../styles/sales.css';
 
@@ -72,6 +72,18 @@ const promises = [
   'I make sure your store and your products are the easiest in your competitive set for AI to read, trust and recommend.',
   'I report honestly on every question, and focus the work where you can win.',
 ];
+
+// "The research behind this", under what the audit measures. Each finding is the report's first
+// "The short version" bullet, word for word.
+const research = [
+  'reports/chatgpt-gemini-ai-mode-brand-overlap-2026',
+  'reports/how-question-wording-changes-ai-recommendations',
+  'reports/what-ai-gets-wrong-about-products-2026',
+].map((slug) => {
+  const report = REPORTS.find((r) => slugOf(r) === slug);
+  if (!report) throw new Error(`/ai-search research links to /${slug}, which is not a report`);
+  return { href: `/${slug}`, title: report.frontmatter.h1, finding: shortVersion(report) };
+});
 
 const readMore = (headings: { heading: string; label?: string }[]) =>
   headings.map(({ heading, label }) => ({ title: label ?? heading, html: section(heading) }));
@@ -217,6 +229,18 @@ const workMore = readMore([
           ))
         }
       </ol>
+      <div class="card research-behind">
+        <h3 class="h3">The research behind this</h3>
+        <ul>
+          {
+            research.map((r) => (
+              <li>
+                <a href={r.href}>{r.title}</a>: {r.finding}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
       <div class="readmore">
         {
           workMore.map((m) => (

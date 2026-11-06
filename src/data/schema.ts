@@ -776,6 +776,10 @@ interface ReportSchemaInput {
   products?: number;
   /** How the data was collected, if not read from storefronts */
   technique?: string;
+  /** Dataset temporalCoverage: a date or a month */
+  coverage: string;
+  /** False for a roundup of other sources: Article, FAQ and breadcrumbs only */
+  dataset?: boolean;
   keywords?: string[];
 }
 
@@ -822,10 +826,10 @@ export function reportSchema(p: ReportSchemaInput) {
         dateModified: p.dateModified,
         author: ref(ID.carson),
         publisher: ref(ID.business),
-        about: ref(datasetId),
+        ...(p.dataset === false ? {} : { about: ref(datasetId) }),
         inLanguage: 'en-US',
       },
-      {
+      ...(p.dataset === false ? [] : [{
         '@type': 'Dataset',
         '@id': datasetId,
         name: `${p.h1} data`,
@@ -834,7 +838,7 @@ export function reportSchema(p: ReportSchemaInput) {
         creator: ref(ID.carson),
         datePublished: p.datePublished,
         dateModified: p.dateModified,
-        temporalCoverage: p.checked,
+        temporalCoverage: p.coverage,
         spatialCoverage: US,
         isAccessibleForFree: true,
         ...(size.length ? { size: size.join(', ') } : {}),
@@ -842,7 +846,7 @@ export function reportSchema(p: ReportSchemaInput) {
         variableMeasured: p.variables,
         keywords: p.keywords ?? ['Shopify', 'ecommerce', 'benchmarks', 'DTC'],
         inLanguage: 'en-US',
-      },
+      }]),
       faqPage(`${url}#faq`, pageId, p.faqs),
     ],
   };
