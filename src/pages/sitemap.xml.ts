@@ -4,24 +4,27 @@ import { SITE_URL } from '../data/site';
 import { CONTENT_PAGES, TOOLS } from '../data/pages';
 import { REPORTS, DESIGNED_PAGES, slugOf } from '../data/reports';
 
-// Each page with the files its content comes from. lastmod is the last commit touching any of them.
+// Each page with the files its own content lives in. lastmod is the last commit touching any of them.
+// Shared code (site.ts, schema.ts, reports.ts, pages.ts) is left out on purpose: a change to it
+// is not a change to every page's content. Amplify fetches full history first (see amplify.yml),
+// because a shallow clone would date every file to the oldest commit it has.
 const pages: [string, string[]][] = [
-  ['/', ['src/pages/index.astro', 'src/data/site.ts', 'src/data/schema.ts']],
-  ['/agencies', ['src/pages/agencies.astro', 'src/data/site.ts', 'src/data/schema.ts']],
-  ['/pricing', ['src/pages/pricing.astro', 'src/data/site.ts', 'src/data/schema.ts']],
-  ['/ai-visibility-check', ['src/pages/ai-visibility-check.astro', 'src/data/site.ts', 'src/data/schema.ts']],
+  ['/', ['src/pages/index.astro']],
+  ['/agencies', ['src/pages/agencies.astro']],
+  ['/pricing', ['src/pages/pricing.astro']],
+  ['/ai-visibility-check', ['src/pages/ai-visibility-check.astro']],
   ['/results', ['src/content/results.md', 'src/pages/results.astro', 'src/data/results.ts']],
   // Designed pages (ai-search, shopify-conversion-optimization) also render from their own route file.
   ...CONTENT_PAGES.map((p): [string, string[]] => [
     `/${p.slug}`,
-    [`src/content/pages/${p.slug}.md`, 'src/data/pages.ts', ...(DESIGNED_PAGES.includes(p.slug) ? [`src/pages/${p.slug}.astro`] : [])],
+    [`src/content/pages/${p.slug}.md`, ...(DESIGNED_PAGES.includes(p.slug) ? [`src/pages/${p.slug}.astro`] : [])],
   ]),
-  ['/reports', ['src/content/reports/index.md', 'src/pages/reports/index.astro', 'src/data/reports.ts']],
+  ['/reports', ['src/content/reports/index.md', 'src/pages/reports/index.astro']],
   ...REPORTS.map(slugOf)
     .filter((s) => s.startsWith('reports/'))
-    .map((s): [string, string[]] => [`/${s}`, [`src/content/${s}.md`, 'src/data/reports.ts']]),
-  ['/tools', ['src/pages/tools/index.astro', 'src/data/pages.ts']],
-  ...TOOLS.map((t): [string, string[]] => [`/tools/${t.slug}`, [`src/pages/tools/${t.slug}.astro`, 'src/data/pages.ts']]),
+    .map((s): [string, string[]] => [`/${s}`, [`src/content/${s}.md`]]),
+  ['/tools', ['src/pages/tools/index.astro']],
+  ...TOOLS.map((t): [string, string[]] => [`/tools/${t.slug}`, [`src/pages/tools/${t.slug}.astro`]]),
 ];
 
 const today = new Date().toISOString().slice(0, 10);
@@ -36,12 +39,11 @@ const lastCommit = (files: string[]) => {
   }
 };
 
+export const lastmods = pages.map(([p, files]) => [p, lastCommit(files)] as const);
+
 export const GET: APIRoute = () => {
-  const urls = pages
-    .map(
-      ([p, files]) =>
-        `  <url>\n    <loc>${new URL(p, SITE_URL).href}</loc>\n    <lastmod>${lastCommit(files)}</lastmod>\n  </url>`,
-    )
+  const urls = lastmods
+    .map(([p, d]) => `  <url>\n    <loc>${new URL(p, SITE_URL).href}</loc>\n    <lastmod>${d}</lastmod>\n  </url>`)
     .join('\n');
   return new Response(
     `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`,
