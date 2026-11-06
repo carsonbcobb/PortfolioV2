@@ -11,6 +11,7 @@ import {
   PRICING_FAQS,
   MONTHLY_REPORT,
   DEVELOPERS_NOTE,
+  RETAINER_AUDIT_NOTE,
   TERMS_LIST,
   CHECK_PATH,
   CAL_LINK,
@@ -28,10 +29,10 @@ const book = {
 
 const title = 'Pricing for AI Search and CRO | Carson Cobb';
 const description =
-  'Start with a $1,500 AI search and conversion audit, then a fixed price Build from $5,000 or a retainer from $2,500 a month.';
+  'Start with a $1,500 AI search and conversion audit, then a fixed price Build from $3,500 or a retainer from $2,500 a month.';
 const h1 = 'Pricing';
 const intro =
-  'Start with the $1,500 AI Search and Conversion Audit. Then implement the plan in a fixed price Build from $5,000, or on a retainer from $2,500 a month.';
+  'Start with the $1,500 AI Search and Conversion Audit. Then implement the plan in a fixed price Build from $3,500, or on a retainer from $2,500 a month.';
 
 // The Fit and terms items are visible Q&A too, so they join the page's FAQPage.
 const jsonLd = [pricingSchema({ title, description, faqs: [...PRICING_FAQS, ...TERMS_LIST] })];
@@ -147,7 +148,7 @@ const jsonLd = [pricingSchema({ title, description, faqs: [...PRICING_FAQS, ...T
         }
       </div>
 
-      <p class="plans__devs">{DEVELOPERS_NOTE}</p>
+      <p class="plans__devs"><strong>{RETAINER_AUDIT_NOTE}</strong> {DEVELOPERS_NOTE}</p>
 
       <div class="prose retainers">
         <div class="table-scroll" tabindex="0" role="region" aria-label="Retainer comparison">

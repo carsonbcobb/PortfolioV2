@@ -239,10 +239,10 @@ export const AUDIT = {
   covers: [
     "Mention rate for each product on ChatGPT, Gemini and Google AI Mode: how often AI recommends you, how often you're in its top 3, and your average position, next to each competitor.",
     "The questions your buyers ask AI, built from your customers' own language and written the way people really ask AI: long, specific and conversational.",
-    "Why competitors win: the sources that cite them, how complete their product information is, their reviews, and what they claim that you don't.",
+    "Why competitors win: the sources that cite them, how complete their product information is, their reviews and ratings, including Amazon's, and what they claim that you don't.",
     'Sources that recommend competitors but not you, ranked by how much they matter.',
     'What AI gets wrong about your products, and where it comes from.',
-    'A consistency check of how your brand describes itself on your site, Amazon, retailers, social profiles and review sites, because mismatches confuse AI.',
+    'A consistency check of how your brand describes itself on your site, retailers, social profiles and review sites, because mismatches confuse AI.',
     'Product feed and technical findings for Google and ChatGPT.',
     'Your top conversion leaks.',
     'A plan ranked by revenue impact.',
@@ -261,7 +261,8 @@ export const BUILD = {
   name: 'Build',
   // min and max are active products. Variants and archived products don't count; bundles do.
   tiers: [
-    { label: '1 to 50 products', price: 5000, from: false, min: 1, max: 50 as number | null },
+    { label: '1 to 10 products', price: 3500, from: false, min: 1, max: 10 as number | null },
+    { label: '11 to 50 products', price: 5000, from: false, min: 11, max: 50 },
     { label: '51 to 500 products', price: 7500, from: false, min: 51, max: 500 },
     { label: '501+ products', price: 10000, from: true, min: 501, max: null },
   ],
@@ -285,18 +286,23 @@ export const MONTHLY_REPORT =
 export const DEVELOPERS_NOTE =
   'Have your own developers? Core and Growth work alongside them. I measure, find what\'s holding you back and plan the work, then your team ships the on site changes from clear specs. On Growth, I also handle off site work and conversion testing.';
 
+// Under the retainer cards and in the pricing FAQ.
+export const RETAINER_AUDIT_NOTE = 'Starting on a retainer? Your audit is done in the first month.';
+
 // price null shows "Let's talk".
 export const RETAINERS = [
   {
     name: 'Core',
     price: 2500 as number | null,
     unit: '/month',
-    summary: 'Monthly AI search measurement and on site work, done by me or shipped by your developers.',
+    summary: 'Everything you control, fixed and measured every month.',
     includes: [
       'Monthly AI search report: mention rate for each product on ChatGPT, Gemini and Google AI Mode, competitors, the sources AI relies on, accuracy and the consistency check',
-      'Up to 15 hours a month of on site AI search and conversion work, or clear specs your developers can ship',
-      'One call a month',
-      'Response within 2 business days',
+      'I do the on site work: product data, product pages that answer buyer questions, product feeds and fixes',
+      "I make your brand's own listings match: retailer pages, social profiles, review site profiles and your Google business listing",
+      'Prefer your developers ship it? I hand over clear specs instead',
+      'A call every 2 weeks',
+      'Response within 1 business day',
     ],
     note: 'Best for brands doing around $30K a month and up, and brands with their own developers.' as string | null,
     featured: false,
@@ -305,13 +311,14 @@ export const RETAINERS = [
     name: 'Growth',
     price: 4500,
     unit: '/month',
-    summary: 'I grow your traffic from AI search and your conversion rate. Growth adds off site outreach and an ongoing testing program to Core.',
+    summary: 'Growth adds coverage from the outside sources AI relies on, and an ongoing conversion testing program, to everything in Core.',
     includes: [
       'The same monthly AI search report as Core: mention rate for each product on ChatGPT, Gemini and Google AI Mode, competitors, the sources AI relies on, accuracy and the consistency check',
       "Also in your report: AI referred traffic and sales, conversion rate, post purchase survey answers, what shipped and what's next",
-      'An ongoing testing program: tests and page improvements planned each month within your hours, in order of expected impact',
+      'An ongoing conversion testing program: tests and page improvements planned each month within your hours, in order of expected impact',
       "Off site outreach I do myself: I find the reviews, comparisons and publications that matter for your products, pitch them and follow up. I don't just hand you a list.",
-      'Affiliate and publisher outreach, review strategy and Amazon listing improvements',
+      'Affiliate and publisher outreach',
+      'Review strategy, so the ratings and reviews AI reads reflect your products',
     ],
     note: 'Best for brands doing around $80K a month and up. Move up to Full when you need someone running the channel day to day: launches, email, subscriptions, apps and vendors.',
     featured: false,
@@ -349,10 +356,11 @@ export const RETAINERS = [
 export const RETAINER_ROWS = [
   { label: 'Price', values: ['$2,500/month', '$4,500/month', '$7,500/month', "Let's talk"] },
   { label: 'Capacity', values: ['Up to 15 hours a month', 'Up to 30 hours a month', 'Up to 60 hours a month', 'Full time capacity'] },
-  { label: 'Calls', values: ['One call a month', 'Check in every 2 weeks', 'Weekly call, plus 1 extra call a week when needed', 'Built around your team'] },
-  { label: 'Response time', values: ['Within 2 business days', 'Within 1 business day', 'Same business day', 'Same business day'] },
+  { label: 'Calls', values: ['Every 2 weeks', 'Weekly', 'Weekly, plus 1 extra call a week when needed', 'Built around your team'] },
+  { label: 'Response time', values: ['Within 1 business day', 'Same business day', 'Same business day', 'Same business day'] },
   { label: 'Off site outreach', values: ['No', 'Yes', 'Yes', 'Custom'] },
-  { label: 'Ongoing testing program', values: ['No', 'Yes', 'Yes', 'Custom'] },
+  { label: 'Testing program', values: ['No', 'Yes', 'Yes', 'Custom'] },
+  { label: 'Your own listings made consistent', values: ['Yes', 'Yes', 'Yes', 'Yes'] },
   { label: 'Minimum', values: ['3 months', '3 months', '3 months', 'Custom'] },
 ];
 
@@ -470,7 +478,7 @@ export const PRICING_FAQS = [
   },
   {
     q: 'How is the Build priced?',
-    a: "A fixed price by catalog size: $5,000 for 1 to 50 products, $7,500 for 51 to 500, and from $10,000 for 501 or more. Active products count; variants and archived products don't, and bundles count as products. It takes 3 to 4 weeks, and I take 3 Builds a month.",
+    a: "A fixed price by catalog size: $3,500 for 1 to 10 products, $5,000 for 11 to 50, $7,500 for 51 to 500, and from $10,000 for 501 or more. Active products count; variants and archived products don't, and bundles count as products. It takes 3 to 4 weeks, and I take 3 Builds a month.",
   },
   {
     q: 'Which retainer fits my brand?',
@@ -478,7 +486,11 @@ export const PRICING_FAQS = [
   },
   {
     q: "What's the difference between Core and Growth?",
-    a: 'Core is the monthly AI search report plus up to 15 hours a month of on site AI search and conversion work, or clear specs your developers can ship. Growth adds off site outreach and an ongoing testing program, with up to 30 hours a month.',
+    a: "Core is everything you control, fixed and measured every month: the monthly AI search report, the on site work, and your brand's own listings made to match, with up to 15 hours a month. Prefer your developers ship it? I hand over clear specs instead. Growth adds coverage from the outside sources AI relies on, and an ongoing conversion testing program, to everything in Core, with up to 30 hours a month.",
+  },
+  {
+    q: 'What if I start on a retainer instead of the audit?',
+    a: 'Starting on a retainer? Your audit is done in the first month.',
   },
   {
     q: 'Why is there a 3 month minimum on retainers?',
