@@ -87,7 +87,7 @@ I asked ChatGPT the price, rating and review count for 8 products with duplicate
 - **One rating fragment failed.** The rating sat in a separate block with no price. ChatGPT said the product had one review and no displayed rating. It had six reviews and five stars.
 - **One script added rating was stale.** The review count was 5% low, likely from an older copy of the page.
 
-So in this test, duplicates that agree didn't hurt. Splitting the rating away from the product did. That matches what review apps' own documentation warns about: separate Product entries that aren't linked to the theme's product.
+So in this test, duplicates that agree didn't hurt. Splitting the rating away from the product did. That matches what review apps' own documentation warns about: separate Product entries that aren't linked to the theme's product. For how ChatGPT, Gemini and Google AI Mode handle prices and ratings across more products, see [what AI gets wrong about your products](/reports/what-ai-gets-wrong-about-products-2026).
 
 ## What to do with this
 

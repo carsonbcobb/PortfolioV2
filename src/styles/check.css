@@ -120,6 +120,9 @@
 .flow__research {
   margin-top: 24px;
 }
+.flow__research + .flow__research {
+  margin-top: 8px;
+}
 .flow__error {
   margin: 0;
   font-size: 15px;

@@ -19,7 +19,7 @@ faq:
 
 **By Carson Cobb. Updated November 2026.**
 
-AI search attracts more confident claims than evidence. Some are true, some are reasonable guesses, and some are sold as facts with nothing behind them. This is my running scorecard of the claims I hear most from Shopify brands and the agencies pitching them, graded by what can actually be shown.
+AI search attracts more confident claims than evidence. Some are true, some are reasonable guesses, and some are sold as facts with nothing behind them. This is my running scorecard of the claims I hear most from Shopify brands and the agencies pitching them, graded by what can actually be shown. The published numbers behind many of these claims are collected in [AI search statistics for ecommerce, 2026](/reports/ai-search-statistics-2026).
 
 **Grades:** **Proven** means a primary source or a measurement shows it. **Likely** means good evidence points that way, but nothing settles it. **Unproven** means there's no real evidence either way yet. **False** means a primary source or a measurement contradicts it.
 

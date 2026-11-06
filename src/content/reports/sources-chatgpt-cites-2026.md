@@ -54,7 +54,7 @@ ChatGPT showed 56 different named sources across the 48 answers. Most appeared o
 
 ## Brand stores: where AI shoppers land
 
-In 14 of 48 answers, ChatGPT linked each recommended brand's own store directly. For fresh dog food it labeled five brands' sites as "Official website." For kids vitamins it cited a brand website as a source.
+In 14 of 48 answers, ChatGPT linked each recommended brand's own store directly. For fresh dog food it labeled five brands' sites as "Official website." For kids vitamins it cited a brand website as a source. Google AI Mode leans on brand websites even harder: they got more of its links than any other kind of site, as [where AI sends shoppers](/reports/where-ai-sends-shoppers-2026) shows.
 
 That fits Shopify's own data: about 55% of AI referred sessions start on a product page. When ChatGPT sends a shopper to your store, your product page has to confirm what the answer said. If the price, the rating or the claim doesn't match, the visit doesn't convert.
 

@@ -14,7 +14,7 @@ import {
   AGENCY_PARTNER_INTRO,
 } from '../data/site';
 import { CONTENT_PAGES, TOOLS } from '../data/pages';
-import { REPORT_HUB, REPORTS, AI_RESEARCH, slugOf, shortVersion } from '../data/reports';
+import { REPORT_HUB, REPORTS, AI_RESEARCH, slugOf } from '../data/reports';
 
 // Plain markdown summary of the site at /llms.txt. Built from the same data as the pages,
 // so plans and prices here always match the pricing cards.
@@ -82,7 +82,7 @@ export const GET: APIRoute = () => {
     '',
     '## AI search research',
     '',
-    ...AI_RESEARCH.map((r) => `- [${r.frontmatter.h1}](${url(`/${slugOf(r)}`)}): ${shortVersion(r)}`),
+    ...AI_RESEARCH.map((r) => `- [${r.frontmatter.h1}](${url(`/${slugOf(r)}`)}): ${r.frontmatter.description}`),
     '',
     '## Reports',
     '',

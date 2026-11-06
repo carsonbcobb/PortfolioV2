@@ -83,6 +83,8 @@ Pet brands score well because their product pages tend to be detailed and most r
 4. **Duplicate or missing product data (39%).** Either two or three Product blocks that compete, or none at all. See the [duplicate schema report](/reports/duplicate-product-schema-ai-visibility).
 5. **No rating in the data (45%).** Often the store has reviews, but the stars only exist for shoppers. See the [schema completeness report](/reports/shopify-product-schema-completeness-2026).
 
+The catalog behind the structured data matters too. Barcodes, product types, images and descriptions are covered in [Is your Shopify product data ready for AI shopping?](/reports/shopify-catalog-data-ai-shopping-2026)
+
 ## What to do with this
 
 1. **Score your own store against the 11 checks.** Most can be checked in a few minutes with Google's Rich Results Test and your robots.txt.

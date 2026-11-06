@@ -4,7 +4,7 @@
 import ContentPage from '../layouts/ContentPage.astro';
 import { contentSchema, reportSchema } from '../data/schema';
 import { pageBySlug, CONTENT_PAGES } from '../data/pages';
-import { MARKDOWN_PAGES, DESIGNED_PAGES, AI_RESEARCH, slugOf, isReportPage, isoDate, checkedDate, tableHeaders, type MarkdownPage } from '../data/reports';
+import { MARKDOWN_PAGES, DESIGNED_PAGES, AI_RESEARCH, ROUNDUPS, slugOf, isReportPage, isoDate, checkedDate, coverage, tableHeaders, type MarkdownPage } from '../data/reports';
 
 export function getStaticPaths() {
   // Designed pages have their own route file and only borrow their markdown's frontmatter and sections.
@@ -31,9 +31,20 @@ if (report) {
   const published = isoDate(fm.datePublished ?? fm.dateModified!);
   const modified = isoDate(fm.dateModified ?? published);
   dates = { published, modified };
-  // AI search research: its own keywords, and a method line for reports built from ChatGPT chats.
+  // AI search research: its own keywords, and a method line for reports built from AI chats.
   const ai = AI_RESEARCH.includes(page);
-  const fromChats = ai && /temporary (ChatGPT )?chat/i.test(page.rawContent());
+  const raw = page.rawContent();
+  const fromChats = ai && /temporary (ChatGPT )?chat|new thread/i.test(raw);
+  // The AI tools named in the method section, so the Dataset says which ones were asked.
+  const method = raw.split(/^## How this was done\s*$/m)[1]?.split(/^## /m)[0] ?? raw;
+  const tools = [['ChatGPT', /ChatGPT/], ['Gemini', /Gemini/], ['Google AI Mode', /AI Mode/]]
+    .filter(([, re]) => (re as RegExp).test(method))
+    .map(([name]) => name as string);
+  const toolList = tools.length > 1 ? `${tools.slice(0, -1).join(', ')} and ${tools.at(-1)}` : (tools[0] ?? 'ChatGPT');
+  const technique =
+    tools.length > 1 || !tools.includes('ChatGPT')
+      ? `Asking ${toolList} buyer questions in new chats and recording every answer and source`
+      : 'Asking ChatGPT questions in temporary chats and recording every answer and source';
   trail = [{ name: 'Reports', href: '/reports' }, { name: fm.h1 }];
   const services = CONTENT_PAGES.filter((p) => p.kind === 'service');
   const linksService = services.some((p) => page.rawContent().includes(`](/${p.slug})`));
@@ -51,11 +62,13 @@ if (report) {
       datePublished: published,
       dateModified: modified,
       checked: checkedDate(page),
+      coverage: coverage(page),
+      dataset: !ROUNDUPS.includes(slug),
       variables: tableHeaders(page),
       stores: fm.reportStores,
       products: fm.reportProducts,
       ...(ai ? { keywords: ['Shopify', 'ecommerce', 'AI search', 'ChatGPT', 'structured data'] } : {}),
-      ...(fromChats ? { technique: 'Asking ChatGPT questions in temporary chats and recording every answer and source' } : {}),
+      ...(fromChats ? { technique } : {}),
     }),
   ];
 } else {

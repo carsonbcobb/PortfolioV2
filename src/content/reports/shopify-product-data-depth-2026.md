@@ -54,7 +54,7 @@ A long description full of brand voice can still fail every question a shopper a
 | Mentions a certification or standard (organic, vegan, third party tested and similar) | 20% |
 | Says how to use it | 7% |
 
-Some of these facts live elsewhere on the page, in tabs, images or accordions loaded by an app. That's fine for a shopper. It's a problem if the text is inside an image, or only appears after a script runs, because many AI crawlers won't see it.
+Some of these facts live elsewhere on the page, in tabs, images or accordions loaded by an app. That's fine for a shopper. It's a problem if the text is inside an image, or only appears after a script runs, because many AI crawlers won't see it. For a page by page look at whether product pages answer the questions shoppers ask AI, see [Do your product pages answer what shoppers ask AI?](/reports/do-product-pages-answer-ai-shopper-questions)
 
 ## FAQ content: written, but not labeled
 

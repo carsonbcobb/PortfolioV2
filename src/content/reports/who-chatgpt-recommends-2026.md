@@ -19,7 +19,7 @@ faq:
 
 **By Carson Cobb. Data checked November 2026.**
 
-Most brands ask the same question first: "Does ChatGPT recommend us?" The more useful question is what it recommends for products like yours, how many brands it names, and how fixed those picks are. So I asked ChatGPT 48 buyer questions across six categories, the way shoppers actually ask them, and recorded every brand it named.
+Most brands ask the same question first: "Does ChatGPT recommend us?" The more useful question is what it recommends for products like yours, how many brands it names, and how fixed those picks are. So I asked ChatGPT 48 buyer questions across six categories, the way shoppers actually ask them, and recorded every brand it named. Later I asked Gemini and Google AI Mode the same questions, and [the three AIs mostly don't recommend the same brands](/reports/chatgpt-gemini-ai-mode-brand-overlap-2026).
 
 ## The short version
 
@@ -66,7 +66,7 @@ I asked 11 of the questions a second time in a fresh temporary chat.
 - **About 87% of the brands from the first answer appeared again** in the second.
 - **The changes happened in the middle and bottom of the list.** In one category a growing brand from my dataset dropped out of the second answer, and in another a different one appeared.
 
-If your brand sits in positions 3 to 6, you're in the zone that changes from one conversation to the next. That's normal, and it's why one screenshot proves very little either way.
+If your brand sits in positions 3 to 6, you're in the zone that changes from one conversation to the next. That's normal, and it's why one screenshot proves very little either way. For a bigger test of the same questions asked again and again, see [how often AI recommendations change](/reports/how-often-ai-recommendations-change).
 
 ## Does an AI ready store get recommended more?
 

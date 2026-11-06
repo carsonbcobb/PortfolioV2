@@ -3,10 +3,10 @@ title: "AI Search and Ecommerce Research | Carson Cobb"
 description: "How AI assistants read, describe and recommend Shopify brands, and how Shopify stores convert. Built from data I collect from live stores and AI answers."
 slug: "/reports"
 h1: "AI search and ecommerce research"
-dateModified: 2026-11-04
+dateModified: 2026-11-06
 faq:
   - question: "Where does this data come from?"
-    answer: "From the public storefront data every Shopify store publishes: products, collections, pages, store settings and subscription plans, and from live answers from ChatGPT, collected in temporary chats. I check each store directly, so the numbers reflect what shoppers actually see on the date of the check."
+    answer: "From the public storefront data every Shopify store publishes: products, collections, pages, store settings and subscription plans, and from live answers from ChatGPT, Gemini and Google AI Mode, collected in fresh chats. I check each store directly, so the numbers reflect what shoppers actually see on the date of the check."
   - question: "How often are the reports updated?"
     answer: "Each report shows the date it was checked. The Black Friday report gets a second check during Black Friday week, and the others are rerun every quarter."
   - question: "Are any brands named?"
@@ -17,7 +17,19 @@ I research how AI assistants read, describe and recommend Shopify brands, and ho
 
 ## AI search research
 
-### [Shopify AI Readiness Index 2026](/reports/shopify-ai-readiness-index-2026)
+### [ChatGPT vs Gemini vs Google AI Mode](/reports/chatgpt-gemini-ai-mode-brand-overlap-2026)
+
+### [AI search statistics 2026](/reports/ai-search-statistics-2026)
+
+### [How often AI recommendations change](/reports/how-often-ai-recommendations-change)
+
+### [How question wording changes AI recommendations](/reports/how-question-wording-changes-ai-recommendations)
+
+### [Where AI sends shoppers](/reports/where-ai-sends-shoppers-2026)
+
+### [What AI gets wrong about your products](/reports/what-ai-gets-wrong-about-products-2026)
+
+### [Do star ratings decide who AI recommends?](/reports/star-ratings-reviews-ai-answers)
 
 ### [Who ChatGPT recommends](/reports/who-chatgpt-recommends-2026)
 
@@ -29,13 +41,19 @@ I research how AI assistants read, describe and recommend Shopify brands, and ho
 
 ### [AI search for ecommerce: what's real and what's not](/reports/ai-search-ecommerce-whats-real)
 
-### [Product and merchant schema completeness](/reports/shopify-product-schema-completeness-2026)
-
-### [How deep Shopify product data really is](/reports/shopify-product-data-depth-2026)
-
 ### [AI crawler access on Shopify](/reports/ai-crawler-access-shopify)
 
 ### [Does llms.txt do anything?](/reports/does-llms-txt-do-anything)
+
+### [Shopify AI Readiness Index 2026](/reports/shopify-ai-readiness-index-2026)
+
+### [Product and merchant schema completeness](/reports/shopify-product-schema-completeness-2026)
+
+### [Is your Shopify product data ready for AI shopping?](/reports/shopify-catalog-data-ai-shopping-2026)
+
+### [How deep Shopify product data really is](/reports/shopify-product-data-depth-2026)
+
+### [Do your product pages answer what shoppers ask AI?](/reports/do-product-pages-answer-ai-shopper-questions)
 
 ## Conversion and ecommerce benchmarks
 
@@ -62,4 +80,4 @@ The overview that started this series.
 
 ## How the data is collected
 
-Every Shopify store publishes its products, collections, pages, basic settings and subscription plans so the storefront can work. I read that public data directly from each store, and for the tech stack report I load each homepage and record which outside services it calls. The AI search reports also use live answers from ChatGPT, collected in temporary chats. Nothing behind a login, no private data and no estimates. Each report explains its definitions and limits in a "How this was done" section.
+Every Shopify store publishes its products, collections, pages, basic settings and subscription plans so the storefront can work. I read that public data directly from each store, and for the tech stack report I load each homepage and record which outside services it calls. The AI search reports also use live answers from ChatGPT, Gemini and Google AI Mode, collected in fresh chats. Nothing behind a login, no private data and no estimates. Each report explains its definitions and limits in a "How this was done" section.

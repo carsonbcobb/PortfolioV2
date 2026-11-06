@@ -48,7 +48,7 @@ Among the 84 stores with Product structured data on their best selling product p
 | Shipping details | Cost and delivery time | 11% |
 | Return policy | Return window and method | 11% |
 
-The pattern is clear. Shopify themes output the basics well. Anything that comes from outside the theme, like ratings from a review app, identifiers from the catalog, or policies from the shipping setup, is where the data thins out.
+The pattern is clear. Shopify themes output the basics well. Anything that comes from outside the theme, like ratings from a review app, identifiers from the catalog, or policies from the shipping setup, is where the data thins out. The catalog side, from barcodes to product types and images, is covered in [Is your Shopify product data ready for AI shopping?](/reports/shopify-catalog-data-ai-shopping-2026)
 
 ## Ratings: the stars shoppers see aren't always in the data
 

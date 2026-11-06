@@ -2,10 +2,10 @@
 // The /reports hub, from src/content/reports/index.md. The markdown renders as written, except each
 // section whose items are report links (### [Title](/reports/...)), which becomes one card per report
 // with its checked month. An item without a summary paragraph uses the first sentence of the report's
-// first "The short version" bullet. The first two AI search research cards are featured.
+// first "The short version" bullet, or its description if it has none. The first two AI search research cards are featured.
 import ContentPage from '../../layouts/ContentPage.astro';
 import { reportsIndexSchema } from '../../data/schema';
-import { REPORT_HUB, REPORTS, slugOf, isoDate, monthYear, checkedDate, shortVersion, firstSentence } from '../../data/reports';
+import { REPORT_HUB, REPORTS, slugOf, isoDate, monthYear, checkedDate, shortVersion, hasShortVersion, firstSentence } from '../../data/reports';
 
 const fm = REPORT_HUB.frontmatter;
 const faqs = (fm.faq ?? []).map((f) => ({ q: f.question, a: f.answer }));
@@ -28,7 +28,9 @@ const blocks = html.split(/(?=<h2[ >])/).map((part) => {
     return {
       href,
       title,
-      summary: summary ?? escape(firstSentence(shortVersion(report))),
+      summary:
+        summary ??
+        escape(hasShortVersion(report) ? firstSentence(shortVersion(report)) : report.frontmatter.description),
       checked: checkedDate(report),
       featured: head[1] === FEATURED_SECTION && i < FEATURED_COUNT,
     };

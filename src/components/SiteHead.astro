@@ -55,7 +55,9 @@ const ogImage = new URL(og.path, SITE_URL).href;
 
 {jsonLd.map((data) => <script type="application/ld+json" set:html={JSON.stringify(data)} />)}
 
-<!-- Google tag (gtag.js). Commands queue in dataLayer; the library loads once the page is idle. -->
+<!-- Google tag (gtag.js). Commands queue in dataLayer. The library (about 180KB) loads on the visitor's
+     first scroll, tap or key press, or 5 seconds after the page loads, so it never slows the first paint
+     or blocks the main thread while the page is starting up. -->
 <script is:inline define:vars={{ GA_ID }}>
   window.dataLayer = window.dataLayer || [];
   function gtag() {
@@ -64,14 +66,27 @@ const ogImage = new URL(og.path, SITE_URL).href;
   window.gtag = gtag;
   gtag('js', new Date());
   gtag('config', GA_ID);
-  window.addEventListener('load', function () {
-    (window.requestIdleCallback || setTimeout)(function () {
+  (function () {
+    var loaded = false;
+    var events = ['scroll', 'pointerdown', 'keydown', 'touchstart'];
+    function loadTag() {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) {
+        window.removeEventListener(e, loadTag, true);
+      });
       var s = document.createElement('script');
       s.async = true;
       s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
       document.head.appendChild(s);
+    }
+    events.forEach(function (e) {
+      window.addEventListener(e, loadTag, { capture: true, passive: true, once: true });
     });
-  });
+    window.addEventListener('load', function () {
+      setTimeout(loadTag, 5000);
+    });
+  })();
   // Fire GA4 events for tracked links (book_call, visibility_check, ...) and email clicks.
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[data-track], a[href^="mailto:"]');
