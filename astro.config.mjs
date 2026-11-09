@@ -39,7 +39,7 @@ const CHECK_HREF = '/ai-visibility-check';
 function rehypeReportCta() {
   const text = (n) => (n.type === 'text' ? n.value : (n.children ?? []).map(text).join(''));
   return (tree, file) => {
-    if (!/[\\/]content[\\/]reports[\\/]/.test(file.path ?? '')) return;
+    if (!/[\\/]content[\\/](reports|guides)[\\/]/.test(file.path ?? '')) return;
     const blocks = tree.children.filter((n) => n.type === 'element');
     const last = blocks[blocks.length - 1];
     if (!last || last.tagName !== 'p') return;
@@ -48,14 +48,6 @@ function rehypeReportCta() {
     const link = last.children[i];
     const label = text(link).trim();
     const next = last.children[i + 1];
-    if (i === last.children.length - 1 || (next?.type === 'text' && /^\s*[.!]?\s*$/.test(next.value) && i + 2 === last.children.length)) {
-      // The link was the whole closing sentence: drop it, the button says it.
-      last.children.splice(i, 2);
-      const prev = last.children[i - 1];
-      if (prev?.type === 'text') prev.value = prev.value.trimEnd();
-    } else {
-      last.children.splice(i, 1, { type: 'text', value: label });
-    }
     const button = {
       type: 'element',
       tagName: 'p',
@@ -69,6 +61,19 @@ function rehypeReportCta() {
         },
       ],
     };
+    // Guides keep their closing paragraph word for word, with the button after it.
+    if (/[\\/]content[\\/]guides[\\/]/.test(file.path ?? '')) {
+      tree.children.splice(tree.children.indexOf(last) + 1, 0, { type: 'text', value: '\n' }, button);
+      return;
+    }
+    if (i === last.children.length - 1 || (next?.type === 'text' && /^\s*[.!]?\s*$/.test(next.value) && i + 2 === last.children.length)) {
+      // The link was the whole closing sentence: drop it, the button says it.
+      last.children.splice(i, 2);
+      const prev = last.children[i - 1];
+      if (prev?.type === 'text') prev.value = prev.value.trimEnd();
+    } else {
+      last.children.splice(i, 1, { type: 'text', value: label });
+    }
     if (!text(last).trim()) tree.children.splice(tree.children.indexOf(last), 1, button);
     else tree.children.splice(tree.children.indexOf(last) + 1, 0, { type: 'text', value: '\n' }, button);
   };

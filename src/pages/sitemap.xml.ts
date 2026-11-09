@@ -3,6 +3,7 @@ import type { APIRoute } from 'astro';
 import { SITE_URL } from '../data/site';
 import { CONTENT_PAGES, TOOLS } from '../data/pages';
 import { REPORTS, DESIGNED_PAGES, slugOf } from '../data/reports';
+import { GUIDES } from '../data/guides';
 
 // Each page with the files its own content lives in. lastmod is the last commit touching any of them.
 // Shared code (site.ts, schema.ts, reports.ts, pages.ts) is left out on purpose: a change to it
@@ -23,6 +24,9 @@ const pages: [string, string[]][] = [
   ...REPORTS.map(slugOf)
     .filter((s) => s.startsWith('reports/'))
     .map((s): [string, string[]] => [`/${s}`, [`src/content/${s}.md`]]),
+  // The hub shows each guide's heading and description, so it changes when they do.
+  ['/guides', ['src/pages/guides/index.astro', 'src/content/guides']],
+  ...GUIDES.map(slugOf).map((s): [string, string[]] => [`/${s}`, [`src/content/${s}.md`]]),
   ['/tools', ['src/pages/tools/index.astro']],
   ...TOOLS.map((t): [string, string[]] => [`/tools/${t.slug}`, [`src/pages/tools/${t.slug}.astro`]]),
 ];

@@ -15,6 +15,7 @@ import {
 } from '../data/site';
 import { CONTENT_PAGES, TOOLS } from '../data/pages';
 import { REPORT_HUB, REPORTS, AI_RESEARCH, slugOf } from '../data/reports';
+import { GUIDES } from '../data/guides';
 
 // Plain markdown summary of the site at /llms.txt. Built from the same data as the pages,
 // so plans and prices here always match the pricing cards.
@@ -93,6 +94,8 @@ export const GET: APIRoute = () => {
     '',
     '## Guides',
     '',
+    `- [All guides](${url('/guides')}): Plain answers to the questions founders ask about ChatGPT, Google AI and their Shopify store.`,
+    ...GUIDES.map((g) => `- [${g.frontmatter.h1}](${url(`/${slugOf(g)}`)}): ${g.frontmatter.description}`),
     ...pages('guide'),
     '',
     '## Tools',

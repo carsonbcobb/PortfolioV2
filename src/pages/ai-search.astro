@@ -6,6 +6,7 @@ import PriceSummary from '../components/PriceSummary.astro';
 import { contentSchema } from '../data/schema';
 import { pageBySlug, CONTENT_PAGES } from '../data/pages';
 import { designedPage, REPORTS, slugOf, shortVersion } from '../data/reports';
+import { guideNamed } from '../data/guides';
 import { AI_CASES, AI_CASES_NOTE, CHECK_PATH, HEADER_CTA_LABEL, HERO_PROOF } from '../data/site';
 import '../styles/sales.css';
 
@@ -93,6 +94,8 @@ const workMore = readMore([
   { heading: 'What do I do off site?', label: 'Everything I do off site' },
   { heading: 'How is AI search measured?' },
 ]);
+// The guides linked from the Common questions block.
+const commonQuestions = ['why-chatgpt-recommends-my-competitor', 'shopify-products-in-chatgpt-shopping', 'ai-search-optimization-cost-shopify'].map(guideNamed);
 // The four product type pages, linked under the research card.
 const industries = CONTENT_PAGES.filter((p) => p.kind === 'industry');
 ---
@@ -303,5 +306,17 @@ const industries = CONTENT_PAGES.filter((p) => p.kind === 'industry');
     </div>
   </section>
 
-  <PriceSummary id="ai-pricing" sand={false} compact />
+  <!-- Common questions -->
+  <section class="section section--tight" aria-labelledby="common-questions">
+    <div class="wrap">
+      <div class="card research-behind">
+        <h2 class="h3" id="common-questions">Common questions</h2>
+        <ul>
+          {commonQuestions.map((g) => <li><a href={`/${slugOf(g)}`}>{g.frontmatter.h1}</a></li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <PriceSummary id="ai-pricing" sand={false} flush compact />
 </ContentPage>

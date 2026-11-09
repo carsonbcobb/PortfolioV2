@@ -83,6 +83,7 @@ export const NAV_LINKS = [
   { href: '/results', label: 'Results' },
   { href: '/pricing', label: 'Pricing' },
   { href: '/reports', label: 'Reports' },
+  { href: '/guides', label: 'Guides' },
   { href: '/agencies', label: 'Agencies' },
 ];
 
