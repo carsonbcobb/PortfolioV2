@@ -1,0 +1,51 @@
+---
+// One route per guide in src/content/guides, on the report layout: dates, body, closing button, related links, FAQ.
+import ContentPage from '../../layouts/ContentPage.astro';
+import { guideSchema } from '../../data/schema';
+import { GUIDES, relatedTo } from '../../data/guides';
+import { slugOf, isoDate, type MarkdownPage } from '../../data/reports';
+
+export function getStaticPaths() {
+  return GUIDES.map((page) => ({ params: { slug: slugOf(page).replace('guides/', '') }, props: { page } }));
+}
+
+const { page } = Astro.props as { page: MarkdownPage };
+const fm = page.frontmatter;
+const faqs = (fm.faq ?? []).map((f) => ({ q: f.question, a: f.answer }));
+const published = isoDate(fm.datePublished!);
+const modified = isoDate(fm.dateModified!);
+const related = relatedTo(page);
+const jsonLd = [
+  guideSchema({
+    slug: slugOf(page),
+    title: fm.title,
+    description: fm.description,
+    h1: fm.h1,
+    faqs,
+    datePublished: published,
+    dateModified: modified,
+  }),
+];
+---
+
+<ContentPage
+  title={fm.title}
+  description={fm.description}
+  h1={fm.h1}
+  trail={[{ name: 'Guides', href: '/guides' }, { name: fm.h1 }]}
+  dates={{ published, modified }}
+  {faqs}
+  {jsonLd}
+>
+  <section class="section page-body">
+    <div class="wrap">
+      <article class="prose">
+        <page.Content />
+        <h2>More guides</h2>
+        <ul>{related.guides.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+        <h2>The data behind this</h2>
+        <ul>{related.reports.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+      </article>
+    </div>
+  </section>
+</ContentPage>

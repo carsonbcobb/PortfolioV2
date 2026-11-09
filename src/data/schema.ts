@@ -762,6 +762,7 @@ export function toolsIndexSchema(
 }
 
 const REPORTS_URL = `${SITE_URL}/reports`;
+const GUIDES_URL = `${SITE_URL}/guides`;
 
 interface ReportSchemaInput {
   /** Path without the leading slash */
@@ -782,6 +783,8 @@ interface ReportSchemaInput {
   technique?: string;
   /** Dataset temporalCoverage: a date or a month */
   coverage: string;
+  /** The breadcrumb section above the page (default: Reports) */
+  section?: { name: string; url: string };
   /** False for a roundup of other sources: Article, FAQ and breadcrumbs only */
   dataset?: boolean;
   keywords?: string[];
@@ -815,7 +818,7 @@ export function reportSchema(p: ReportSchemaInput) {
         inLanguage: 'en-US',
       },
       breadcrumb(crumbId, [
-        { name: 'Reports', url: REPORTS_URL },
+        p.section ?? { name: 'Reports', url: REPORTS_URL },
         { name: p.h1, url },
       ]),
       {
@@ -856,14 +859,28 @@ export function reportSchema(p: ReportSchemaInput) {
   };
 }
 
-// The /reports hub: a CollectionPage listing every report, plus its FAQ.
-export function reportsIndexSchema(
+// A guide: Article, FAQ and breadcrumbs, the same graph as a report without a Dataset.
+export function guideSchema(p: Pick<ReportSchemaInput, 'slug' | 'title' | 'description' | 'h1' | 'faqs' | 'datePublished' | 'dateModified'>) {
+  return reportSchema({
+    ...p,
+    checked: p.dateModified,
+    coverage: p.dateModified,
+    variables: [],
+    dataset: false,
+    section: { name: 'Guides', url: GUIDES_URL },
+  });
+}
+
+// A hub page: a CollectionPage listing its items, plus its FAQ when it has one.
+function collectionSchema(
+  url: string,
+  section: string,
   meta: { title: string; description: string; dateModified?: string },
-  reports: { slug: string; name: string }[],
-  faqs: { q: string; a: string }[],
+  items: { slug: string; name: string }[],
+  faqs: { q: string; a: string }[] = [],
 ) {
-  const pageId = `${REPORTS_URL}#webpage`;
-  const crumbId = `${REPORTS_URL}#breadcrumb`;
+  const pageId = `${url}#webpage`;
+  const crumbId = `${url}#breadcrumb`;
   return {
     '@context': 'https://schema.org',
     '@graph': [
@@ -871,7 +888,7 @@ export function reportsIndexSchema(
       {
         '@type': 'CollectionPage',
         '@id': pageId,
-        url: REPORTS_URL,
+        url,
         name: meta.title,
         description: meta.description,
         isPartOf: ref(ID.website),
@@ -880,7 +897,7 @@ export function reportsIndexSchema(
         author: ref(ID.carson),
         mainEntity: {
           '@type': 'ItemList',
-          itemListElement: reports.map((r, i) => ({
+          itemListElement: items.map((r, i) => ({
             '@type': 'ListItem',
             position: i + 1,
             name: r.name,
@@ -889,11 +906,20 @@ export function reportsIndexSchema(
         },
         inLanguage: 'en-US',
       },
-      breadcrumb(crumbId, [{ name: 'Reports', url: REPORTS_URL }]),
-      faqPage(`${REPORTS_URL}#faq`, pageId, faqs),
+      breadcrumb(crumbId, [{ name: section, url }]),
+      ...(faqs.length ? [faqPage(`${url}#faq`, pageId, faqs)] : []),
     ],
   };
 }
+
+export const reportsIndexSchema = (
+  meta: { title: string; description: string; dateModified?: string },
+  reports: { slug: string; name: string }[],
+  faqs: { q: string; a: string }[],
+) => collectionSchema(REPORTS_URL, 'Reports', meta, reports, faqs);
+
+export const guidesIndexSchema = (meta: { title: string; description: string }, guides: { slug: string; name: string }[]) =>
+  collectionSchema(GUIDES_URL, 'Guides', meta, guides);
 
 // /results: a WebPage about Carson Cobb's work, and Home > Results. No reviews, ratings or client names.
 export function resultsSchema(meta: { title: string; description: string }) {
