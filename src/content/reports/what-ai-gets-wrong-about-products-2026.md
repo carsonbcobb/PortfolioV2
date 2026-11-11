@@ -106,4 +106,6 @@ What AI says about your products, and where those claims come from, is part of m
 - **Scoring:** a price counted as right if it matched the product's price on the site, including a correct range for variants. A rating counted as right if the stars matched within 0.1 and the review count within about 5%, or if the AI correctly said the page shows no rating. Where the right rating couldn't be confirmed from the page, that product was left out of the rating count.
 - **Limits:** 24 products is a small sample. Review counts change daily, so small count differences were allowed. Answers were collected one day apart from the truth for Gemini and AI Mode.
 
+Related: [How to name products for Google and AI](/reports/naming-products-for-google-and-ai), [Shopify product data for AI shopping](/reports/shopify-catalog-data-ai-shopping-2026), [Shopify product schema completeness](/reports/shopify-product-schema-completeness-2026).
+
 No store or brand is named in this report.

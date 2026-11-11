@@ -108,4 +108,6 @@ Product data and feed findings for Google and ChatGPT are part of my [AI Search 
 - **Date:** checked November 5, 2026.
 - **Limits:** one product per store for the product level checks. Barcodes only apply to products that have one, so some products without a barcode, like custom or handmade goods, may be correct.
 
+Related: [How to name products for Google and AI](/reports/naming-products-for-google-and-ai), [What AI gets wrong about products](/reports/what-ai-gets-wrong-about-products-2026), [Shopify product schema completeness](/reports/shopify-product-schema-completeness-2026).
+
 No store or brand is named in this report.

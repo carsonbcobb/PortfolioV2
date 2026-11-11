@@ -29,6 +29,8 @@ I research how AI assistants read, describe and recommend Shopify brands, and ho
 
 ### [What AI gets wrong about your products](/reports/what-ai-gets-wrong-about-products-2026)
 
+### [How to name products for Google and AI](/reports/naming-products-for-google-and-ai)
+
 ### [Do star ratings decide who AI recommends?](/reports/star-ratings-reviews-ai-answers)
 
 ### [Who ChatGPT recommends](/reports/who-chatgpt-recommends-2026)

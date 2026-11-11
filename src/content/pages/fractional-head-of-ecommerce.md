@@ -1,6 +1,6 @@
 ---
-title: "Fractional Head of Ecommerce for Shopify | Carson Cobb"
-description: "A fractional head of ecommerce for Shopify brands. I lead the plan, store, AI search and vendors on a monthly retainer, not a full time salary."
+title: "Fractional Head of Ecommerce for Shopify Brands | Carson Cobb"
+description: "A senior ecommerce lead for your Shopify store without a full time hire: conversion, AI search, retention and the work done, not just advice."
 slug: "/fractional-head-of-ecommerce"
 h1: "A fractional head of ecommerce for your Shopify store"
 faq:

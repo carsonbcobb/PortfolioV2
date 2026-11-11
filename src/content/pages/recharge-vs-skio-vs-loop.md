@@ -1,6 +1,6 @@
 ---
-title: "Recharge vs Skio vs Loop: Honest Comparison (2026)"
-description: "Pricing, fees, features and migration support for Recharge, Skio and Loop, plus which Shopify subscription app I'd pick for different brands."
+title: "Recharge vs Skio vs Loop (2026): After Recharge Bought Skio"
+description: "Fees, migration support and what changes now that Recharge owns Skio, plus which subscription app I'd pick at your order volume."
 slug: "/recharge-vs-skio-vs-loop"
 h1: "Recharge vs Skio vs Loop: which subscription app should you pick?"
 faq:
@@ -18,7 +18,7 @@ faq:
     answer: "They come from each vendor's own pricing page and Shopify App Store listing as checked in October 2026. Pricing changes, so confirm on the vendor site before you sign."
 ---
 
-If you sell something people reorder on Shopify, you'll end up choosing between a short list of subscription apps. Recharge, Skio and Loop are the three I get asked about most.
+If you sell something people reorder on Shopify, you'll end up choosing between a short list of subscription apps. Recharge, Skio and Loop are the three I get asked about most. Recharge announced on April 27, 2026 that Skio is joining Recharge.
 
 I'm Carson Cobb. I help Shopify brands get recommended in ChatGPT and Google's AI answers, then make the store convert that traffic, and I set up and fix subscription programs as part of my work. I've spent the most time inside Recharge and Skio. I don't get paid by any of these vendors, and I'll tell you where each one fits and where it doesn't.
 
