@@ -45,7 +45,7 @@ export function ogImageFor(pathname: string): OgImage {
 export const EMAIL = 'carson@carsoncobb.com';
 export const EMAIL_URL = `mailto:${EMAIL}?subject=Shopify%20store%20inquiry`;
 export const AGENCY_EMAIL_URL = `mailto:${EMAIL}?subject=Agency%20partnership`;
-export const LINKEDIN_URL = 'https://www.linkedin.com/in/carsoncobb';
+export const LINKEDIN_URL = 'https://www.linkedin.com/in/carsoncobb/';
 // LinkedIn company page, listed in the JSON-LD sameAs.
 export const LINKEDIN_COMPANY_URL: string | null = 'https://www.linkedin.com/company/carsoncobb';
 export const GA_ID = 'G-PEDB1QHBG3';

@@ -95,4 +95,6 @@ The homepage Organization block is how a brand tells machines "this site, these 
 - **Review apps:** detected from the scripts and resources each product page loaded.
 - **Brand mismatch:** the brand field compared with the store's own name, by hand. Retailers that sell other brands were not counted as mismatches.
 
+Related: [How to name products for Google and AI](/reports/naming-products-for-google-and-ai), [Shopify product data for AI shopping](/reports/shopify-catalog-data-ai-shopping-2026), [What AI gets wrong about products](/reports/what-ai-gets-wrong-about-products-2026).
+
 No store is named in this report. [Run the free AI Visibility Check](/ai-visibility-check) to see what AI reads from your product pages.

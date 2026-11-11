@@ -1,11 +1,11 @@
 ---
-title: "Agency vs Fractional Head of Ecommerce: Honest Take"
-description: "An honest comparison for Shopify founders: costs, accountability, speed, and when an agency is the better pick over a fractional head of ecommerce."
+title: "Fractional vs Full Service Agency for Ecommerce: Cost and Fit"
+description: "What a fractional ecommerce lead costs compared to an agency, who owns results, and when an agency is the better pick for a Shopify brand."
 slug: "/agency-vs-fractional-head-of-ecommerce"
 h1: "Agency vs fractional head of ecommerce: which one does your brand need?"
 faq:
   - question: "Is a fractional head of ecommerce cheaper than an agency?"
-    answer: "Often, but not always. My retainers start at $2,500/month, with a 3 month minimum. What usually makes a fractional lead cheaper in practice is replacing several vendor invoices with one, and cutting the time you spend managing them."
+    answer: "Often, but not always. My retainers start at $2,500/month (Core, up to 15 hours a month), with a 3 month minimum. What usually makes a fractional lead cheaper in practice is replacing several vendor invoices with one, and cutting the time you spend managing them."
   - question: "When is an agency the better choice?"
     answer: "When you have a large, clearly scoped project like a full rebrand and redesign, need a team of specialists working at once, and have someone in house who can manage the agency. In that case, an agency can be the right call."
   - question: "Can I use both?"
