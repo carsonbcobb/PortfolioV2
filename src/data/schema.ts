@@ -44,8 +44,9 @@ const ID = {
   agencyFaq: `${AGENCIES}#faq`,
 };
 
-// Research data (Dataset spatialCoverage) is US stores; the services are offered anywhere.
-const US = { '@type': 'Country', name: 'United States' };
+// Dataset spatialCoverage for reports whose copy says the stores are US stores. Google's Dataset
+// rich results accept Place here, not Country. The services are offered anywhere.
+const US = { '@type': 'Place', name: 'United States' };
 const WORLD = 'Worldwide';
 // Omits sameAs entirely when none of the profile URLs are set.
 const sameAs = (...urls: (string | null)[]) => {
@@ -787,6 +788,8 @@ interface ReportSchemaInput {
   section?: { name: string; url: string };
   /** False for a roundup of other sources: Article, FAQ and breadcrumbs only */
   dataset?: boolean;
+  /** True when the report says its stores or brands are in the US: adds spatialCoverage */
+  us?: boolean;
   keywords?: string[];
 }
 
@@ -846,7 +849,7 @@ export function reportSchema(p: ReportSchemaInput) {
         datePublished: p.datePublished,
         dateModified: p.dateModified,
         temporalCoverage: p.coverage,
-        spatialCoverage: US,
+        ...(p.us ? { spatialCoverage: US } : {}),
         isAccessibleForFree: true,
         ...(size.length ? { size: size.join(', ') } : {}),
         measurementTechnique: p.technique ?? "Reading each store's public Shopify storefront data",
