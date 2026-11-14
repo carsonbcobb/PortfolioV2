@@ -48,6 +48,9 @@ const ID = {
 // Dataset spatialCoverage for reports whose copy says the stores are US stores. Google's Dataset
 // rich results accept Place here, not Country. The services are offered anywhere.
 const US = { '@type': 'Place', name: 'United States' };
+
+// Google flags date only values as invalid datetimes, so add a UTC time.
+const dt = (d: string) => (/^\d{4}-\d{2}-\d{2}$/.test(d) ? `${d}T00:00:00Z` : d);
 const WORLD = 'Worldwide';
 // Omits sameAs entirely when none of the profile URLs are set.
 const sameAs = (...urls: (string | null)[]) => {
@@ -693,8 +696,8 @@ export function contentSchema(p: ContentSchemaInput) {
       url,
       mainEntityOfPage: ref(pageId),
       image: `${SITE_URL}${ogImageFor(`/${p.slug}`).path}`,
-      datePublished: p.article.datePublished,
-      dateModified: p.article.dateModified,
+      datePublished: dt(p.article.datePublished),
+      dateModified: dt(p.article.dateModified),
       author: ref(ID.carson),
       publisher: ref(ID.business),
       inLanguage: 'en-US',
@@ -854,8 +857,8 @@ export function reportSchema(p: ReportSchemaInput) {
         url,
         mainEntityOfPage: ref(pageId),
         image: `${SITE_URL}${ogImageFor(`/${p.slug}`).path}`,
-        datePublished: p.datePublished,
-        dateModified: p.dateModified,
+        datePublished: dt(p.datePublished),
+        dateModified: dt(p.dateModified),
         author: ref(ID.carson),
         publisher: ref(ID.business),
         ...(p.dataset === false ? {} : { about: ref(datasetId) }),
@@ -868,8 +871,8 @@ export function reportSchema(p: ReportSchemaInput) {
         description: p.description,
         url,
         creator: ref(ID.carson),
-        datePublished: p.datePublished,
-        dateModified: p.dateModified,
+        datePublished: dt(p.datePublished),
+        dateModified: dt(p.dateModified),
         temporalCoverage: p.coverage,
         ...(p.us ? { spatialCoverage: US } : {}),
         isAccessibleForFree: true,
@@ -918,7 +921,7 @@ function collectionSchema(
         description: meta.description,
         isPartOf: ref(ID.website),
         breadcrumb: ref(crumbId),
-        ...(meta.dateModified ? { dateModified: meta.dateModified } : {}),
+        ...(meta.dateModified ? { dateModified: dt(meta.dateModified) } : {}),
         author: ref(ID.carson),
         mainEntity: {
           '@type': 'ItemList',
@@ -1011,7 +1014,7 @@ export function aboutSchema(meta: { title: string; description: string; dateModi
         breadcrumb: ref(crumbId),
         about: ref(ID.carson),
         mainEntity: ref(ID.carson),
-        dateModified: meta.dateModified,
+        dateModified: dt(meta.dateModified),
         inLanguage: 'en-US',
       },
       breadcrumb(crumbId, [{ name: 'About', url }]),
