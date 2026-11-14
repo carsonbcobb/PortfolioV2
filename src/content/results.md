@@ -9,6 +9,8 @@ I get Shopify brands recommended by AI and turn that traffic into sales. I've do
 
 Almost every client is under NDA, so no names here. The work and the numbers are real.
 
+Want this work on your store every month? That's my [fractional head of ecommerce](/fractional-head-of-ecommerce) role.
+
 ## AI search
 
 - **50+** AI search audits

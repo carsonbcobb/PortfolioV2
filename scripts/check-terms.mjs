@@ -23,6 +23,9 @@ const BANNED = [
   /per hour/i,
   /\/hr\b/,
 ];
+// Pages where one banned term is allowed on purpose. /about names Carson's in house roles, Gem among them,
+// as he asked on November 14, 2026. Everywhere else it stays banned.
+const ALLOWED = new Map([[/\bGEM\b/i.source, ['about.html']]]);
 const TEXT_EXT = new Set(['.html', '.xml', '.txt', '.json', '.js', '.css', '.svg', '.webmanifest']);
 
 const files = (dir) =>
@@ -36,6 +39,7 @@ for (const file of files(DIST)) {
   if (!TEXT_EXT.has(path.extname(file))) continue;
   const text = fs.readFileSync(file, 'utf8');
   for (const re of BANNED) {
+    if (ALLOWED.get(re.source)?.includes(path.relative(DIST, file))) continue;
     const m = text.match(new RegExp(re.source, re.flags + 'g'));
     if (m) {
       hits += m.length;

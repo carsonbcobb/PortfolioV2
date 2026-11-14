@@ -7,6 +7,7 @@ import {
   EMAIL,
   CAL_LINK,
   LINKEDIN_URL,
+  GHOST_REVENUE_URL,
   LINKEDIN_COMPANY_URL,
   HEADSHOT,
   AUDIT,
@@ -66,7 +67,7 @@ const person = {
   description:
     "AI search and CRO specialist for Shopify brands. I get products recommended in ChatGPT and Google's AI answers, then make sure the store turns that traffic into sales. 50+ AI search audits, 30+ sites optimized for AI search and 50+ Shopify stores, from startups to billion dollar brands.",
   email: EMAIL,
-  ...sameAs(LINKEDIN_URL, LINKEDIN_COMPANY_URL),
+  ...sameAs(LINKEDIN_URL, GHOST_REVENUE_URL, LINKEDIN_COMPANY_URL),
   knowsLanguage: 'en',
   hasOccupation: {
     '@type': 'Occupation',
@@ -634,6 +635,8 @@ interface ContentSchemaInput {
   // offers 'only': the audit, Build and retainer offers, without the fit line, output or booking channel
   // (the industry pages show the pricing cards but not those).
   service?: { name: string; serviceType: string; audience: string; offers?: boolean | 'only'; plans?: PlanKey[] };
+  /** Comparison guides: an Article by Carson with its dates */
+  article?: { headline: string; datePublished: string; dateModified: string };
 }
 
 export function contentSchema(p: ContentSchemaInput) {
@@ -642,7 +645,8 @@ export function contentSchema(p: ContentSchemaInput) {
   const crumbId = `${url}#breadcrumb`;
   const serviceId = `${url}#service`;
   const faqId = `${url}#faq`;
-  const main = p.service ? serviceId : undefined;
+  const articleId = `${url}#article`;
+  const main = p.service ? serviceId : p.article ? articleId : undefined;
 
   const graph: object[] = [
     ...shared(),
@@ -680,11 +684,28 @@ export function contentSchema(p: ContentSchemaInput) {
     if (p.service.plans) graph.push(...planNodes(p.service.plans));
   }
 
-  graph.push(faqPage(faqId, pageId, p.faqs));
+  if (p.article) {
+    graph.push({
+      '@type': 'Article',
+      '@id': articleId,
+      headline: p.article.headline,
+      description: p.description,
+      url,
+      mainEntityOfPage: ref(pageId),
+      image: `${SITE_URL}${ogImageFor(`/${p.slug}`).path}`,
+      datePublished: p.article.datePublished,
+      dateModified: p.article.dateModified,
+      author: ref(ID.carson),
+      publisher: ref(ID.business),
+      inLanguage: 'en-US',
+    });
+  }
+
+  if (p.faqs.length) graph.push(faqPage(faqId, pageId, p.faqs));
   return { '@context': 'https://schema.org', '@graph': graph };
 }
 
-export function toolSchema(t: { slug: string; name: string; title: string; description: string }) {
+export function toolSchema(t: { slug: string; name: string; title: string; description: string }, faqs: { q: string; a: string }[] = []) {
   const url = `${SITE_URL}/tools/${t.slug}`;
   const pageId = `${url}#webpage`;
   const crumbId = `${url}#breadcrumb`;
@@ -723,6 +744,7 @@ export function toolSchema(t: { slug: string; name: string; title: string; descr
         provider: ref(ID.carson),
         inLanguage: 'en-US',
       },
+      ...(faqs.length ? [faqPage(`${url}#faq`, pageId, faqs)] : []),
     ],
   };
 }
@@ -966,6 +988,33 @@ export function resultsSchema(meta: { title: string; description: string }) {
           },
         })),
       },
+    ],
+  };
+}
+
+// /about: a ProfilePage whose main entity is Carson, with Home > About.
+export function aboutSchema(meta: { title: string; description: string; dateModified: string }) {
+  const url = `${SITE_URL}/about`;
+  const pageId = `${url}#webpage`;
+  const crumbId = `${url}#breadcrumb`;
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      ...shared(),
+      {
+        '@type': 'ProfilePage',
+        '@id': pageId,
+        url,
+        name: meta.title,
+        description: meta.description,
+        isPartOf: ref(ID.website),
+        breadcrumb: ref(crumbId),
+        about: ref(ID.carson),
+        mainEntity: ref(ID.carson),
+        dateModified: meta.dateModified,
+        inLanguage: 'en-US',
+      },
+      breadcrumb(crumbId, [{ name: 'About', url }]),
     ],
   };
 }
