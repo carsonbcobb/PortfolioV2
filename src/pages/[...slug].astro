@@ -67,6 +67,7 @@ if (report) {
       checked: checkedDate(page),
       coverage: coverage(page),
       dataset: !ROUNDUPS.includes(slug),
+      us: /\bUS (Shopify stores|brands)\b/.test(raw),
       variables: tableHeaders(page),
       stores: fm.reportStores,
       products: fm.reportProducts,
