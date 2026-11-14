@@ -43,6 +43,8 @@ if (report) {
   const tools = [['ChatGPT', /ChatGPT/], ['Gemini', /Gemini/], ['Google AI Mode', /AI Mode/]]
     .filter(([, re]) => (re as RegExp).test(method))
     .map(([name]) => name as string);
+  // Reports that compare Google's results with AI Mode, rather than asking AI tools in chats.
+  const vsGoogle = ai && /in Google search and in Google AI Mode/.test(method);
   const toolList = tools.length > 1 ? `${tools.slice(0, -1).join(', ')} and ${tools.at(-1)}` : (tools[0] ?? 'ChatGPT');
   const technique =
     tools.length > 1 || !tools.includes('ChatGPT')
@@ -75,8 +77,15 @@ if (report) {
       variables: tableHeaders(page),
       stores: fm.reportStores,
       products: fm.reportProducts,
-      ...(ai ? { keywords: ['Shopify', 'ecommerce', 'AI search', 'ChatGPT', 'structured data'] } : {}),
-      ...(fromChats ? { technique } : {}),
+      ...(vsGoogle
+        ? {
+            keywords: ['Shopify', 'ecommerce', 'AI search', 'Google AI Mode', 'Google Search'],
+            technique: 'Running buyer questions in Google Search and Google AI Mode and comparing the sites each one showed',
+          }
+        : {
+            ...(ai ? { keywords: ['Shopify', 'ecommerce', 'AI search', 'ChatGPT', 'structured data'] } : {}),
+            ...(fromChats ? { technique } : {}),
+          }),
     }),
   ];
 } else {

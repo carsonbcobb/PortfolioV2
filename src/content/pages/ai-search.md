@@ -8,6 +8,9 @@ faq:
     answer: "Making your brand easy for ChatGPT, Perplexity, Gemini and Google's AI answers to read, trust and recommend, so you show up when shoppers ask what to buy. It's also called answer engine optimization (AEO) or generative engine optimization (GEO)."
   - question: "Is AI search optimization different from SEO?"
     answer: "It builds on SEO. Search engines rank pages. AI assistants read what your store says about each product and what other sites say about it, then name a short list of products and brands. Good SEO helps, but it doesn't cover complete product data, product pages that answer buyer questions, or the sources AI relies on."
+    link:
+      text: "I tested this directly: only 40% of the sites Google AI Mode cited ranked on Google's first page."
+      href: "/reports/google-rankings-vs-ai-mode-2026"
   - question: "How long does AI search take to show results?"
     answer: "On site fixes can be picked up within weeks as AI crawlers revisit your pages. Off site work and a higher mention rate usually take 60 to 90 days. I measure the same buyer questions before and after, so you can see what moved."
   - question: "How do you make sure before and after tests are comparable?"

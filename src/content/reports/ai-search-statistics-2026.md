@@ -107,3 +107,5 @@ For a Shopify brand, that means three jobs: get into the short list on each AI, 
 ## About these numbers
 
 Figures from other organizations are quoted as published, with the source and date linked. Some are reported by news outlets summarizing company announcements and earnings calls, and the original wording may differ slightly. My own figures come from the reports linked beside them, each with its full method.
+
+Related: [Google rankings vs AI Mode](/reports/google-rankings-vs-ai-mode-2026).

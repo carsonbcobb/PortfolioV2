@@ -107,3 +107,5 @@ Reviews, ratings and what AI says about your products are part of my [AI Search 
 - **Limits:** product cards appeared in fewer than half the answers, so card figures come from 23 answers. Card order may reflect Google Shopping signals that aren't visible.
 
 No store or brand is named in this report.
+
+Related: [Google rankings vs AI Mode](/reports/google-rankings-vs-ai-mode-2026).

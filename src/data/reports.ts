@@ -55,7 +55,7 @@ export const sameMonth = (a: string, b: string) => a.slice(0, 7) === b.slice(0, 
 
 /** The date the data was checked: a full "Data checked" date in the copy, else the last update */
 export function checkedDate(page: MarkdownPage) {
-  const m = page.rawContent().match(/Data checked ([A-Z][a-z]+ \d{1,2}, \d{4})/);
+  const m = page.rawContent().match(/Data (?:checked|collected) ([A-Z][a-z]+ \d{1,2}, \d{4})/);
   const fm = page.frontmatter;
   if (m) return isoDate(new Date(`${m[1]} UTC`));
   return isoDate(fm.dateModified ?? fm.datePublished ?? new Date());
@@ -63,7 +63,7 @@ export function checkedDate(page: MarkdownPage) {
 
 /** Dataset temporalCoverage: the full checked date when the copy gives one, else its month */
 export function coverage(page: MarkdownPage) {
-  const full = /Data checked [A-Z][a-z]+ \d{1,2}, \d{4}/.test(page.rawContent());
+  const full = /Data (?:checked|collected) [A-Z][a-z]+ \d{1,2}, \d{4}/.test(page.rawContent());
   const d = checkedDate(page);
   return full ? d : d.slice(0, 7);
 }

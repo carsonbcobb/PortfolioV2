@@ -13,7 +13,7 @@ import '../styles/sales.css';
 const slug = 'ai-search';
 const { fm, section } = await designedPage(slug);
 const info = pageBySlug(slug);
-const faqs = (fm.faq ?? []).map((f) => ({ q: f.question, a: f.answer }));
+const faqs = (fm.faq ?? []).map((f) => ({ q: f.question, a: f.answer, link: f.link }));
 const jsonLd = [
   contentSchema({ slug, title: fm.title, description: fm.description, label: info.label, faqs, service: info.service }),
 ];
