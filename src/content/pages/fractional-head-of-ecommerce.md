@@ -21,6 +21,10 @@ faq:
     link:
       text: "See how I handle migrations."
       href: "/shopify-migration"
+  - question: "How much does a fractional head of ecommerce cost?"
+    answer: "My retainers are Core at $2,500/month for up to 15 hours, Growth at $4,500/month for up to 30 hours, and Full at $7,500/month for up to 60 hours, each with a 3 month minimum. Full is the fractional head of ecommerce role."
+  - question: "Is this the same as a fractional CMO for Shopify?"
+    answer: "Close, but narrower. A fractional CMO usually leads marketing across every channel. I lead the Shopify store itself: conversion, AI search, retention, the apps and the vendors, and I do much of the work myself."
   - question: "Will I work with you directly?"
     answer: "Yes. I do the work myself, with no handoff to a junior team or an offshore team. If something needs more than 60 hours in a month, or a specialist skill like photography, I tell you up front and either quote it or recommend someone you hire directly."
 ---
@@ -61,6 +65,12 @@ There's no single right answer. Here's how I'd think about it.
 
 Many brands end up with a mix. I've written a longer, honest version of this in my [agency vs fractional head of ecommerce comparison](/agency-vs-fractional-head-of-ecommerce), including when I think an agency is the better pick.
 
+## Fractional CMO for Shopify, or fractional VP of ecommerce?
+
+Founders search for this role under a few names. A **fractional CMO for Shopify** usually means someone who leads marketing across every channel: brand, paid media, email and the agencies behind them. A **fractional VP of ecommerce** usually means someone who owns the online store and its numbers.
+
+What I do sits closest to the second. I lead the Shopify store: conversion, AI search, retention, the apps and the vendors who touch it. If you need someone to run paid media or brand strategy across every channel, a fractional CMO is the better fit, and I'm happy to work alongside one.
+
 ## What the first 90 days look like
 
 I work the same way on almost every store, because the order matters.
@@ -82,6 +92,26 @@ A month like that starts with a short review of the numbers and a ranked list of
 By the end of that month, conversion had gone from 2.1% to 3.2% and average order value from $58 to $64.
 
 Not every month looks like that. Some months are mostly groundwork. But the point is that one person was looking at the whole store and choosing the work that mattered most.
+
+## How working together runs week to week
+
+There are two ways to run this, and you pick.
+
+**I run with it.** You set the goals and the budget, I propose the plan, and once you approve it I ship the work and tell you what moved. This suits founders who want the store off their plate.
+
+**I work through your approval process.** If you have a team, a brand review or a legal check, everything goes through it. I write the brief, your team signs off, then I build and ship. This suits brands where several people need to see changes before they go live.
+
+Either way, each week looks the same: a call on Core every 2 weeks, or weekly on Growth and Full, a short update on what moved and what's next, and QA on everything before it ships.
+
+## Results
+
+These come from my [results page](/results), where each one is explained in context:
+
+* **2.4% → 6.7%** conversion rate for a health and wellness brand, nearly 3x the revenue from the same traffic
+* **3.8% → 5.3%** conversion rate for a subscription brand, with no extra ad spend
+* **7% → 32%** subscription opt in, more than 4x the customers choosing subscribe and save
+* **7.9s → 2.1s** mobile load time after a rebuild that lifted conversion 24% and paid for itself in 6 weeks
+* **50+** Shopify stores built, rebuilt or run
 
 ## Plans
 

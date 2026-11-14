@@ -24,7 +24,7 @@ const report = isReportPage(page);
 let trail: { name: string; href?: string }[];
 // Every report links to the service page its findings support: AI search research to /ai-search,
 // store research to /shopify-conversion-optimization, unless the report already links a service page.
-let related: { href: string; label: string } | undefined;
+let related: { href: string; label: string; lead: string } | undefined;
 let jsonLd: object[];
 let dates: { published?: string; modified?: string } | undefined;
 // Industry pages: the pricing cards after the body, and a closing call to action that ends on the audit.
@@ -53,7 +53,11 @@ if (report) {
   const linksService = services.some((p) => page.rawContent().includes(`](/${p.slug})`));
   if (!linksService) {
     const target = services.find((p) => p.slug === (ai ? 'ai-search' : 'shopify-conversion-optimization'))!;
-    related = { href: `/${target.slug}`, label: target.service!.name };
+    // A sentence, not a label, so every report links its service page in the body copy.
+    const lead = ai
+      ? 'To get your own products recommended by AI, see my'
+      : 'To turn findings like these into sales on your own store, see my';
+    related = { href: `/${target.slug}`, label: ai ? 'AI search optimization' : 'conversion optimization', lead };
   }
   jsonLd = [
     reportSchema({
@@ -79,7 +83,24 @@ if (report) {
   const info = pageBySlug(slug);
   trail = [{ name: info.label }];
   jsonLd = [
-    contentSchema({ slug, title: fm.title, description: fm.description, label: info.label, faqs, service: info.service }),
+    contentSchema({
+      slug,
+      title: fm.title,
+      description: fm.description,
+      label: info.label,
+      faqs,
+      service: info.service,
+      // Comparison guides with dates in their frontmatter are Articles by Carson.
+      ...(info.kind === 'guide' && fm.dateModified
+        ? {
+            article: {
+              headline: fm.h1,
+              datePublished: isoDate(fm.datePublished ?? fm.dateModified),
+              dateModified: isoDate(fm.dateModified),
+            },
+          }
+        : {}),
+    }),
   ];
 }
 ---
@@ -92,7 +113,7 @@ if (report) {
         {
           related && (
             <p class="report-related">
-              Related service: <a href={related.href}>{related.label}</a>
+              {related.lead} <a href={related.href}>{related.label}</a> work.
             </p>
           )
         }

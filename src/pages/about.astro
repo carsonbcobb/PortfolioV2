@@ -1,0 +1,64 @@
+---
+// /about: who Carson is, his background, and where to see the results. ProfilePage JSON-LD with Carson as the main entity.
+import ContentPage from '../layouts/ContentPage.astro';
+import { aboutSchema } from '../data/schema';
+import { HEADSHOT, GHOST_REVENUE_URL, LINKEDIN_URL } from '../data/site';
+
+const title = 'About Carson Cobb | AI Search and CRO for Shopify Brands';
+const description =
+  'Carson Cobb is an AI search and CRO specialist for Shopify brands, with 6+ years in Shopify conversion and ecommerce, in house and at an agency.';
+const jsonLd = [aboutSchema({ title, description, dateModified: '2026-11-14' })];
+---
+
+<ContentPage {title} {description} h1="About Carson Cobb" trail={[{ name: 'About' }]} {jsonLd}>
+  <section class="section page-body">
+    <div class="wrap">
+      <article class="prose">
+        <p><strong>By Carson Cobb. Last updated November 2026.</strong></p>
+        {
+          HEADSHOT && (
+            <img class="about-photo" src={HEADSHOT} alt="Carson Cobb" width="160" height="160" loading="eager" />
+          )
+        }
+        <p>
+          I'm Carson Cobb, an AI search and CRO specialist for Shopify brands. I get products recommended in ChatGPT and
+          Google's AI answers, then make sure the store turns that traffic into sales.
+        </p>
+
+        <h2>Background</h2>
+        <p>
+          I've spent 6+ years in Shopify CRO and ecommerce. I worked in house at BiOptimizers, Organifi and Gem, and on
+          conversion optimization at Single Grain.
+        </p>
+        <p>
+          Today I do AI search work for large DTC and CPG brands, and I founded
+          <a href={GHOST_REVENUE_URL} rel="noopener">Ghost Revenue</a>.
+        </p>
+
+        <h2>How I work</h2>
+        <p>
+          I do the work myself, with no handoff to a junior team. Client work is under NDA, so client names stay off this
+          site. The numbers are on my <a href="/results">results page</a>, including 50+ AI search audits, 50+ Shopify
+          stores built, rebuilt or run, and $40M+ in client revenue supported.
+        </p>
+        <p>
+          Most brands start with the free <a href="/ai-visibility-check">AI Visibility Check</a>. If you want me leading
+          the store with you each month, that's my <a href="/fractional-head-of-ecommerce">fractional head of ecommerce</a>
+          work, and every option is on the <a href="/pricing">pricing page</a>.
+        </p>
+        <p>You can also find me on <a href={LINKEDIN_URL} rel="noopener">LinkedIn</a>.</p>
+      </article>
+    </div>
+  </section>
+</ContentPage>
+
+<style>
+  .about-photo {
+    display: block;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 0 24px;
+  }
+</style>

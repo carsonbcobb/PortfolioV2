@@ -14,6 +14,7 @@ const pages: [string, string[]][] = [
   ['/agencies', ['src/pages/agencies.astro']],
   ['/pricing', ['src/pages/pricing.astro']],
   ['/ai-visibility-check', ['src/pages/ai-visibility-check.astro']],
+  ['/about', ['src/pages/about.astro']],
   ['/results', ['src/content/results.md', 'src/pages/results.astro', 'src/data/results.ts']],
   // Designed pages (ai-search, shopify-conversion-optimization) also render from their own route file.
   ...CONTENT_PAGES.map((p): [string, string[]] => [

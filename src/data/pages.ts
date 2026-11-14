@@ -150,6 +150,30 @@ export const CONTENT_PAGES: ContentPageInfo[] = [
     summary: 'Pricing, fees, features and migration support for the three main Shopify subscription apps.',
   },
   {
+    slug: 'recharge-vs-skio',
+    kind: 'guide',
+    label: 'Recharge vs Skio',
+    summary: 'Recharge and Skio side by side: pricing, fees, migration, retention features and what the merger changes.',
+  },
+  {
+    slug: 'recharge-vs-loop',
+    kind: 'guide',
+    label: 'Recharge vs Loop',
+    summary: 'Recharge and Loop side by side: pricing, fees, migration, retention features and which fits your store.',
+  },
+  {
+    slug: 'skio-vs-loop',
+    kind: 'guide',
+    label: 'Skio vs Loop',
+    summary: 'Skio and Loop side by side: pricing, fees, migration, retention features and which fits your store.',
+  },
+  {
+    slug: 'recharge-skio-acquisition',
+    kind: 'guide',
+    label: 'Recharge bought Skio',
+    summary: 'What Recharge and Skio have said about the merger, what changes for merchants on each, and whether to switch.',
+  },
+  {
     slug: 'state-of-shopify-subscriptions-2026',
     kind: 'report',
     label: 'State of Shopify Subscriptions 2026',
@@ -167,6 +191,14 @@ export interface ToolInfo {
 }
 
 export const TOOLS: ToolInfo[] = [
+  {
+    slug: 'shopify-revenue-checker',
+    name: 'Shopify revenue checker',
+    title: "Shopify Revenue Checker: Estimate Any Store's Monthly Sales",
+    description:
+      "Estimate a Shopify store's monthly and yearly sales from traffic, conversion rate and order value, and learn how to check your own real numbers.",
+    summary: "Estimate a Shopify store's monthly and yearly sales from visitors, conversion rate and order value.",
+  },
   {
     slug: 'subscription-calculator',
     name: 'Subscription revenue calculator',

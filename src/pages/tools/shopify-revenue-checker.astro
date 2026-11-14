@@ -1,0 +1,107 @@
+---
+// /tools/shopify-revenue-checker: a visitors × conversion rate × order value estimate, a guide to the public
+// signals behind any outside revenue estimate, and how to read your own numbers in Shopify. WebApplication + FAQPage.
+import ContentPage from '../../layouts/ContentPage.astro';
+import { toolSchema } from '../../data/schema';
+import { toolBySlug } from '../../data/pages';
+import '../../styles/tools.css';
+
+const tool = toolBySlug('shopify-revenue-checker');
+const intro =
+  "Put in a store's monthly visitors, conversion rate and average order value to estimate what it sells each month and each year.";
+const faqs = [
+  {
+    q: 'Can you see exactly how much a Shopify store makes?',
+    a: "No. Shopify doesn't publish a store's sales, so any outside number is an estimate. Only the store's own Shopify analytics shows its real revenue.",
+  },
+  {
+    q: "How do you estimate a Shopify store's revenue?",
+    a: 'Multiply monthly visitors by conversion rate by average order value. Visitors can come from a traffic estimate, and conversion rate and order value from what you know about the store and its prices. Public signals like product count, review growth and ad activity help you judge whether the result is in the right range.',
+  },
+  {
+    q: 'How accurate is a Shopify revenue checker?',
+    a: "It's only as accurate as the three numbers you put in. Traffic estimates for smaller stores can be far off, and conversion rate varies a lot by store, product and traffic source, so treat the result as a rough range, not a figure.",
+  },
+  {
+    q: 'Where do I find my own store revenue in Shopify?',
+    a: 'In your Shopify admin, go to Analytics. Total sales, sessions, conversion rate and average order value are all there, and the reports let you compare any two date ranges.',
+  },
+];
+const jsonLd = [toolSchema(tool, faqs)];
+---
+
+<ContentPage
+  title={tool.title}
+  description={tool.description}
+  h1="Shopify revenue checker"
+  {intro}
+  trail={[{ name: 'Tools', href: '/tools' }, { name: tool.name }]}
+  {faqs}
+  {jsonLd}
+>
+  <div class="section tool-body">
+    <div class="wrap">
+      <section class="cc-tool" id="shopify-revenue-checker">
+        <h2>Estimate a Shopify store's revenue</h2>
+        <p class="cc-lead">The values below are examples. Change them to the store you're looking at. Everything runs in your browser and nothing is saved.</p>
+        <form class="cc-grid" oninput="ccRev()">
+          <label>Monthly visitors<input type="number" id="r-visitors" value="20000" min="0"></label>
+          <label>Conversion rate (%)<input type="number" id="r-rate" value="2" min="0" max="100" step="0.1"></label>
+          <label>Average order value ($)<input type="number" id="r-aov" value="60" min="0" step="0.01"></label>
+        </form>
+        <div class="cc-results" aria-live="polite">
+          <div><span class="cc-num" id="r-orders">0</span><span class="cc-lbl">estimated orders a month</span></div>
+          <div><span class="cc-num" id="r-monthly">$0</span><span class="cc-lbl">estimated revenue a month</span></div>
+          <div><span class="cc-num" id="r-yearly">$0</span><span class="cc-lbl">estimated revenue a year</span></div>
+        </div>
+        <p class="cc-note">The formula: monthly visitors × conversion rate × average order value = monthly revenue. Yearly revenue is the monthly figure times 12, so it doesn't account for seasonal peaks like Black Friday.</p>
+        <div class="cc-next">
+          <p>Checking your own store? See whether ChatGPT recommends it, and what the work has done for other brands.</p>
+          <div class="cc-next__links">
+            <a class="cc-cta" href="/ai-visibility-check" data-track="visibility_check">Run the free AI Visibility Check</a>
+            <a href="/results">See the results</a>
+          </div>
+        </div>
+      </section>
+      <script is:inline>
+      function ccRev(){
+        // Empty, negative or non numeric inputs count as 0, and the conversion rate stops at 100%.
+        const v=(id,max)=>{const n=parseFloat(document.getElementById(id).value);return Number.isFinite(n)&&n>0?Math.min(n,max??1e12):0;};
+        const visitors=v('r-visitors'),rate=v('r-rate',100)/100,aov=v('r-aov');
+        const orders=visitors*rate,monthly=orders*aov;
+        const f=n=>'$'+Math.round(n).toLocaleString();
+        document.getElementById('r-orders').textContent=Math.round(orders).toLocaleString();
+        document.getElementById('r-monthly').textContent=f(monthly);
+        document.getElementById('r-yearly').textContent=f(monthly*12);
+      }
+      ccRev();
+      </script>
+
+      <article class="prose tool-guide">
+        <p><strong>By Carson Cobb. Last updated November 2026.</strong></p>
+
+        <h2>Public signals that help you estimate a store's revenue</h2>
+        <p>Shopify doesn't publish what a store sells, so every outside estimate starts with the formula above. These public signals help you pick sensible inputs and check whether the answer is in the right range.</p>
+        <ul>
+          <li><strong>Product count.</strong> How many products a store sells, and at what prices, tells you a lot about its average order value and how big the business is.</li>
+          <li><strong>Review volume and growth.</strong> Only some buyers leave a review, so reviews undercount orders. How fast the count grows over a few months is more useful than the total.</li>
+          <li><strong>Traffic estimates.</strong> Third party traffic tools estimate monthly visits. They're a starting point for the visitors input, and they're least reliable for smaller stores.</li>
+          <li><strong>Ad activity.</strong> Public ad libraries, like Meta's Ad Library and Google's Ads Transparency Center, show whether a store is running ads and how many. A brand running lots of ads for months is usually selling enough to pay for them.</li>
+        </ul>
+
+        <h2>Why any outside estimate is rough</h2>
+        <p>Each input is a guess. Traffic tools can be off by a wide margin, and conversion rate changes with the product, the price, the season and where the traffic comes from. A small error in each number multiplies in the result, so use the estimate as a range and compare it with the signals above.</p>
+
+        <h2>How to check your own real numbers in Shopify</h2>
+        <p>For your own store, skip the estimate. In your Shopify admin, open Analytics. You'll see total sales, sessions, conversion rate and average order value, and you can compare any period with the one before it.</p>
+        <p>If your conversion rate is lower than you'd like, that's the work I do. My <a href="/shopify-conversion-optimization">conversion optimization page</a> covers how, and the <a href="/results">results page</a> shows what it has done for other brands.</p>
+      </article>
+    </div>
+  </div>
+</ContentPage>
+
+<style>
+  .tool-guide {
+    margin-top: 48px;
+  }
+</style>

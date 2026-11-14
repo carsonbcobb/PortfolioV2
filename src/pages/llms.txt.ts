@@ -68,6 +68,7 @@ export const GET: APIRoute = () => {
     `- [Conversion rate optimization](${url('/shopify-conversion-optimization')}): CRO built for high intent AI traffic and everyone else.`,
     `- [Pricing](${url('/pricing')}): The audit, fixed price Build tiers, retainers and the comparison table.`,
     `- [AI Visibility Check](${url(CHECK_PATH)}): Free check of whether ChatGPT recommends your brand.`,
+    `- [About Carson Cobb](${url('/about')}): Carson's background in Shopify CRO and ecommerce, how he works, and links to his results.`,
     `- [Results](${url('/results')}): AI search results first, then conversion, testing, subscriptions, email and more.`,
     `- [For agencies](${url('/agencies')}): White label AI search and CRO implementation for agencies with Shopify clients.`,
     '',
@@ -100,7 +101,7 @@ export const GET: APIRoute = () => {
     '',
     '## Tools',
     '',
-    `- [All tools](${url('/tools')}): The AI Visibility Check plus subscription and free shipping calculators for Shopify brands.`,
+    `- [All tools](${url('/tools')}): The AI Visibility Check plus subscription, free shipping and revenue calculators for Shopify brands.`,
     ...TOOLS.map((t) => `- [${t.name}](${url(`/tools/${t.slug}`)}): ${t.summary}`),
     '',
   ].join('\n');

@@ -48,6 +48,8 @@ export const AGENCY_EMAIL_URL = `mailto:${EMAIL}?subject=Agency%20partnership`;
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/carsoncobb/';
 // LinkedIn company page, listed in the JSON-LD sameAs.
 export const LINKEDIN_COMPANY_URL: string | null = 'https://www.linkedin.com/company/carsoncobb';
+// Ghost Revenue, the company Carson founded. Listed in the Person sameAs.
+export const GHOST_REVENUE_URL = 'https://ghostrevenue.co';
 export const GA_ID = 'G-PEDB1QHBG3';
 
 // Cal.com booking link comes from the CAL_LINK env variable at build time.
