@@ -15,7 +15,7 @@ faq:
     answer: "Yes. 29% of answers linked shoppers directly to the recommended brands' own stores, and in pet food and kids vitamins ChatGPT labeled them as official websites. Your own product page is often where an AI referred shopper lands."
 ---
 
-**By Carson Cobb. Data checked November 2026.**
+**By Carson Cobb. Data checked November 2026. Last updated November 2026.**
 
 When ChatGPT recommends a product, it usually shows where the information came from: small source labels next to the claims, and links out to stores. Those sources are the closest thing to a map of what decides who gets recommended. If a review site, a magazine or a veterinary resource is behind most answers about products like yours, that's where your brand needs to be.
 
@@ -70,6 +70,8 @@ There's an important limit here. ChatGPT often shows only the first source for a
 2. **Get onto those sources.** Send product to the review and testing sites, pitch the publishers' gift guides and roundups, and make sure experts in health categories know your product.
 3. **Earn a certification if products like yours carry one.** In supplements and pet dental care, ChatGPT pointed to certification bodies by name.
 4. **Treat your product page as the landing page for AI.** It's where the shopper goes next. See the [AI Readiness Index](/reports/shopify-ai-readiness-index-2026).
+
+When these sources name your competitors and not you, that's usually why ChatGPT recommends them instead. My guide on [why ChatGPT recommends your competitors and not you](/guides/why-chatgpt-doesnt-recommend-my-shopify-store) covers that and the other five reasons.
 
 ## How this was done
 

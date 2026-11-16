@@ -17,7 +17,7 @@ faq:
     answer: "Only slightly in my data. The 18 sampled stores that ChatGPT named had a median AI readiness score of 72.5, against 70 for the stores it didn't name. Readiness helps AI describe you correctly, but outside sources have more to do with whether you're named."
 ---
 
-**By Carson Cobb. Data checked November 2026.**
+**By Carson Cobb. Data checked November 2026. Last updated November 2026.**
 
 Most brands ask the same question first: "Does ChatGPT recommend us?" The more useful question is what it recommends for products like yours, how many brands it names, and how fixed those picks are. So I asked ChatGPT 48 buyer questions across six categories, the way shoppers actually ask them, and recorded every brand it named. Later I asked Gemini and Google AI Mode the same questions, and [the three AIs mostly don't recommend the same brands](/reports/chatgpt-gemini-ai-mode-brand-overlap-2026).
 
@@ -87,6 +87,8 @@ What it does suggest: your own site's readiness is not what gets you into the an
 2. **Ask twice.** If you're named once and not the second time, you're in the moving middle of the list.
 3. **Find the sources behind the answers.** The lists, reviews and experts ChatGPT cites for products like yours are where to earn a mention.
 4. **Then make sure AI describes you correctly.** Clean product data and clear product pages decide what it says once you're in the answer.
+
+If ChatGPT keeps naming a competitor instead of you, my guide on [why ChatGPT recommends your competitors and not you](/guides/why-chatgpt-doesnt-recommend-my-shopify-store) shows how to find the exact reason.
 
 ## How this was done
 

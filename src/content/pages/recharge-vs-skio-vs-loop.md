@@ -1,10 +1,10 @@
 ---
-title: "Recharge vs Skio vs Loop (2026): After Recharge Bought Skio"
-description: "Fees, migration support and what changes now that Recharge owns Skio, plus which subscription app I'd pick at your order volume."
+title: "Recharge vs Skio vs Loop (2026): Real Fees and Which to Pick"
+description: "Now that Recharge owns Skio: what each costs at your order volume, what migration takes, and which one I'd pick for your store."
 slug: "/recharge-vs-skio-vs-loop"
-h1: "Recharge vs Skio vs Loop: which subscription app should you pick?"
+h1: "Recharge vs Skio vs Loop: real fees and which to pick"
 datePublished: 2026-10-31
-dateModified: 2026-11-14
+dateModified: 2026-11-16
 faq:
   - question: "Which is cheapest: Recharge, Skio or Loop?"
     answer: "At small volume, Loop. It has a Free Forever plan for up to 50 active subscriptions, and its Starter plan is $99/month plus a 1.0% transaction fee and 15¢ per loyalty order. Recharge Starter is $149/month plus 1.50% + 20¢ per transaction. Skio's Scale plan is $499/month billed annually or $599/month billed monthly, plus 1.25% + 20¢ per subscription order. At high volume all three offer custom pricing, so the real answer depends on your order count."
@@ -22,14 +22,14 @@ faq:
 
 **By Carson Cobb. Last updated November 2026.**
 
-**The short answer.** Loop is the best fit for a newer brand that wants the lowest entry price and managed migration on every paid plan. Recharge is the best fit for a brand that wants the most established platform and the most add ons, as long as it budgets for the Scale plan. Skio is the best fit for a brand where the subscriber portal and cancel flow are the core of the business, now as part of Recharge.
+**The short answer.** Loop fits a newer brand that wants the lowest entry price and managed migration on every paid plan. Recharge fits a brand that wants the most established platform and the most add ons, if it budgets for the Scale plan. Skio fits a brand where the subscriber portal and cancel flow are the core of the business, now as part of Recharge.
 
 | | Recharge | Skio | Loop |
 | --- | --- | --- | --- |
-| Pricing basis | Starter $149/month + 1.50% + 20¢ per transaction. Scale $499/month + 1.25% + 20¢ | Scale $499/month billed annually or $599/month billed monthly, + 1.25% + 20¢ per subscription order | Free up to 50 active subscriptions. Starter $99/month + 1.0%. Pro $399/month + 0.75%. Both add a fee per loyalty order |
-| Migration support | End to end migration support on Scale, not on Starter | Comprehensive migration on Scale | White glove migration on every paid plan, no migration fee |
-| Best for | Brands that want the deepest set of add ons | Brands where the portal and cancel flow matter most | Newer brands and brands watching fees |
-| Who owns it now | Recharge | Recharge, announced April 27, 2026 | Loop, independent |
+| Price | $149/mo + 1.50% + 20¢ | $499/mo yearly + 1.25% + 20¢ | Free to 50 subs, then $99/mo + 1.0% |
+| Best for | Most add ons | Portal and cancel flow | Newer brands |
+| Migration | On Scale only | Included on Scale | Every paid plan |
+| Owner | Recharge | Recharge | Independent |
 
 If you sell something people reorder on Shopify, you'll end up choosing between a short list of subscription apps. Recharge, Skio and Loop are the three I get asked about most. Recharge announced on April 27, 2026 that Skio is joining Recharge.
 
