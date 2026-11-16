@@ -17,6 +17,8 @@ I research how AI assistants read, describe and recommend Shopify brands, and ho
 
 ## AI search research
 
+### [Google rankings vs AI Mode](/reports/google-rankings-vs-ai-mode-2026)
+
 ### [ChatGPT vs Gemini vs Google AI Mode](/reports/chatgpt-gemini-ai-mode-brand-overlap-2026)
 
 ### [AI search statistics 2026](/reports/ai-search-statistics-2026)

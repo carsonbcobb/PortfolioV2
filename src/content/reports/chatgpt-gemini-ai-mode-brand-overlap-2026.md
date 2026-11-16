@@ -144,3 +144,5 @@ If you want to see where your products stand on all three, that's what my [AI Se
 - **Limits:** one run per AI per question, from one location and one set of accounts. AI answers change between runs, which is covered in [how often AI recommendations change](/reports/how-often-ai-recommendations-change).
 
 No store or brand is named in this report.
+
+Related: [Google rankings vs AI Mode](/reports/google-rankings-vs-ai-mode-2026).
