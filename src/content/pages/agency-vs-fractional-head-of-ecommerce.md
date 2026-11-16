@@ -1,8 +1,10 @@
 ---
-title: "Fractional vs Full Service Agency for Ecommerce: Cost and Fit"
-description: "What a fractional ecommerce lead costs compared to an agency, who owns results, and when an agency is the better pick for a Shopify brand."
+title: "Fractional vs Full Service Agency for Ecommerce: SEO, AI Search and CRO"
+description: "When a fractional specialist beats a full service agency for your Shopify store's SEO, AI search and conversion work, and what each really costs."
 slug: "/agency-vs-fractional-head-of-ecommerce"
-h1: "Agency vs fractional head of ecommerce: which one does your brand need?"
+h1: "Fractional vs full service agency for ecommerce: which one does your brand need?"
+datePublished: 2026-10-31
+dateModified: 2026-11-16
 faq:
   - question: "Is a fractional head of ecommerce cheaper than an agency?"
     answer: "Often, but not always. My retainers start at $2,500/month (Core, up to 15 hours a month), with a 3 month minimum. What usually makes a fractional lead cheaper in practice is replacing several vendor invoices with one, and cutting the time you spend managing them."
@@ -17,6 +19,8 @@ faq:
   - question: "How do I try this without a big commitment?"
     answer: "Start with the AI Search and Conversion Audit for $1,500. The full $1,500 is credited toward a Build or your first retainer month, if you start within 30 days."
 ---
+
+**By Carson Cobb. Last updated November 2026.**
 
 If you're a founder running a growing Shopify brand, you've probably reached the point where you can't run the store yourself anymore. The question is who should.
 
@@ -33,6 +37,16 @@ I'm Carson Cobb. I help Shopify brands get recommended in ChatGPT and Google's A
 **A fractional head of ecommerce** is one senior person who leads the store, the plan and the vendors on a monthly retainer, while you stay in control. With me, retainers start at $2,500/month.
 
 Agencies sit somewhere in the middle. Some are excellent. The question is less whether they're good and more whether their model fits what you need right now.
+
+## Fractional SEO vs a full service agency for ecommerce
+
+A fractional specialist gives your Shopify brand one senior person on your SEO, AI search and conversion work for a set number of hours a month, usually for less than a full service agency. An agency gives you a team across many channels at once, with more people but less senior attention on your store.
+
+**A fractional specialist makes sense** when your store already has traffic and the gap is how well it shows up in Google and AI answers and how well it converts, when you want one person accountable for the numbers, and when you'd rather pay for senior hours than account management. My retainers start at $2,500/month (Core, up to 15 hours a month).
+
+**A full service agency makes sense** when you need many channels run at once, like paid ads, email, design and content, or a large, clearly scoped project such as a full rebrand and redesign, and you have someone in house to manage it.
+
+Many brands use both: a fractional lead sets the plan and the numbers, and briefs the agency on the work it does best.
 
 ## Costs: what you're actually paying for
 

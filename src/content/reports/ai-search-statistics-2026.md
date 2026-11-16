@@ -1,10 +1,10 @@
 ---
-title: "AI Search Statistics 2026 for Ecommerce | Carson Cobb"
-description: "AI search and AI shopping numbers for 2026 from Adobe, Shopify, Google and OpenAI, plus my own tests of ChatGPT, Gemini and AI Mode."
+title: "AI Search Statistics 2026: How Shoppers Use ChatGPT and Google AI"
+description: "The numbers behind AI shopping in 2026: how often AI recommends brands, where it sends shoppers and how those visitors convert, with sources."
 slug: "/reports/ai-search-statistics-2026"
 h1: "AI search statistics for ecommerce, 2026"
 datePublished: 2026-11-06
-dateModified: 2026-11-06
+dateModified: 2026-11-16
 reportStores: 94
 faq:
   - question: "How much retail traffic comes from AI in 2026?"
@@ -19,7 +19,7 @@ faq:
     answer: "Few. In my November 2026 tests of 48 buyer questions, the median answer named 4 brands on ChatGPT, 5 on Google AI Mode and 6 on Gemini. Only 23% of the brands named came from all three."
 ---
 
-**By Carson Cobb. Updated November 2026.**
+**By Carson Cobb. Last updated November 2026.**
 
 A lot of what gets written about AI search is opinion. This page collects the numbers: what the big platforms and analytics companies have published about AI search and AI shopping in 2026, and what my own tests of ChatGPT, Gemini and Google AI Mode found. Every figure has a date and a source. I'll keep it updated.
 
@@ -102,7 +102,13 @@ From 94 US Shopify stores checked in November 2026:
 
 AI is a small share of traffic and the fastest growing one, and the shoppers it sends arrive closer to buying. They land on product pages more than any other page, and they've already been told what to expect by an AI that names only a handful of brands, differs from tool to tool, and often gets ratings wrong.
 
-For a Shopify brand, that means three jobs: get into the short list on each AI, make sure AI describes your products correctly, and make the product page confirm what the shopper was told. That's the work behind my [AI Search and Conversion Audit](/ai-search). For a quick first look, run the free [AI Visibility Check](/ai-visibility-check).
+For a Shopify brand, that means three jobs: get into the short list on each AI, make sure AI describes your products correctly, and make the product page confirm what the shopper was told.
+
+## What this means for your store
+
+If a competitor keeps showing up in these answers and you don't, the cause is usually the sources AI cites and how well your product pages answer the exact question. My guide on [why ChatGPT recommends your competitors and not you](/guides/why-chatgpt-doesnt-recommend-my-shopify-store) walks through the six usual reasons and what to fix first.
+
+To see where your own store stands, run the free [AI Visibility Check](/ai-visibility-check). When you want those three jobs handled, that's the work behind my [AI Search and Conversion Audit](/ai-search).
 
 ## About these numbers
 
