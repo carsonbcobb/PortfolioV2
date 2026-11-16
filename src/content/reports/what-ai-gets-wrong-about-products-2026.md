@@ -17,7 +17,7 @@ faq:
     answer: "In this test, ChatGPT was the most accurate on ratings and tied with Gemini on prices. Google AI Mode made the most errors, often by picking a different version of the product or reporting a rating that isn't on the product page."
 ---
 
-**By Carson Cobb. Data collected November 2026.**
+**By Carson Cobb. Data collected November 2026. Last updated November 2026.**
 
 Getting recommended is half the job. The other half is AI describing your product correctly when a shopper asks about it directly. A wrong price or a weak rating in an AI answer costs the sale before the shopper ever reaches your site.
 
@@ -76,6 +76,8 @@ These are the mistakes I saw more than once, across all three AIs.
 **A store wide rating instead of the product's own.** Asked about one product, an AI answered with the average rating and total review count for the whole store. It reads as authoritative and it's wrong.
 
 **The wrong size, pack or edition.** One AI said a product was only sold in a different pack size. Another quoted the price of a limited collaboration edition instead of the standard product. A third gave a price range that mixed in other recipes and box sizes. When a product has many variants, bundles or editions, AI picks one, and not always the one the shopper means.
+
+For how often prices appear in AI answers at all, see [prices in AI shopping answers](/reports/prices-in-ai-shopping-answers-2026).
 
 **A rating that isn't on the page.** For one product whose page shows no rating, AI Mode reported a star rating and several hundred reviews. Those numbers likely come from Google's own shopping data. The shopper sees a rating your page never showed and you never chose to display.
 

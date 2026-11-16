@@ -15,7 +15,7 @@ faq:
     answer: "Supplement and pet brands. 45% of supplement stores and 39% of pet stores had neither a gift collection nor a gift card in early November."
 ---
 
-**By Carson Cobb, AI Search and CRO for Shopify Brands. Data checked November 2026.**
+**By Carson Cobb, AI Search and CRO for Shopify Brands. Data checked November 2026. Last updated November 2026.**
 
 Holiday shoppers are buying for someone else. They don't know your product, they don't know which size to pick, and they're shopping on a deadline. The brands that win the season make that easy with three things: a gift collection, a gift card and bundles that work as gifts.
 
@@ -59,7 +59,7 @@ Once shipping cutoffs pass, a store without a gift card has far fewer ways to ca
 1. **Publish a gift collection** and link it from your main menu and homepage by mid November. Keep it short and sorted by price.
 2. **Add a digital gift card** if you don't have one. It takes an afternoon.
 3. **Turn one bundle into a gift set.** Same products, gift ready packaging or a gift note, and a name that says gift.
-4. **Set shipping cutoff dates** in your announcement bar and cart, then switch the message to the gift card when they pass.
+4. **Set shipping cutoff dates** in your announcement bar and cart, then switch the message to the gift card when they pass. See what other brands put in theirs in [Shopify announcement bar benchmarks](/reports/shopify-announcement-bar-benchmarks-2026) and [Shopify shipping policy benchmarks](/reports/shopify-shipping-policy-benchmarks-2026).
 5. **Check your best sellers are in stock.** 24% of stores with a best sellers collection had at least one sold out in early November. More in the [catalog and stock report](/reports/shopify-catalog-and-stock-report-2026).
 
 ## How this was done

@@ -3,7 +3,7 @@ title: "AI Search and Ecommerce Research | Carson Cobb"
 description: "How AI assistants read, describe and recommend Shopify brands, and how Shopify stores convert. Built from data I collect from live stores and AI answers."
 slug: "/reports"
 h1: "AI search and ecommerce research"
-dateModified: 2026-11-06
+dateModified: 2026-11-16
 faq:
   - question: "Where does this data come from?"
     answer: "From the public storefront data every Shopify store publishes: products, collections, pages, store settings and subscription plans, and from live answers from ChatGPT, Gemini and Google AI Mode, collected in fresh chats. I check each store directly, so the numbers reflect what shoppers actually see on the date of the check."
@@ -17,7 +17,19 @@ I research how AI assistants read, describe and recommend Shopify brands, and ho
 
 ## AI search research
 
+### [Every Shopify store now has an agents.md file](/reports/shopify-agents-md-ai-agents-2026)
+
 ### [Google rankings vs AI Mode](/reports/google-rankings-vs-ai-mode-2026)
+
+### [The follow up questions ChatGPT asks shoppers](/reports/chatgpt-follow-up-questions-shoppers-2026)
+
+### [How AI labels the products it recommends](/reports/how-ai-labels-products-best-for-2026)
+
+### [Why AI recommends a product](/reports/why-ai-recommends-products-reasons-2026)
+
+### [Does ChatGPT recommend your brand or your product?](/reports/does-ai-recommend-products-or-brands-2026)
+
+### [Do AI shopping answers show your price?](/reports/prices-in-ai-shopping-answers-2026)
 
 ### [ChatGPT vs Gemini vs Google AI Mode](/reports/chatgpt-gemini-ai-mode-brand-overlap-2026)
 
@@ -53,6 +65,24 @@ I research how AI assistants read, describe and recommend Shopify brands, and ho
 
 ### [Product and merchant schema completeness](/reports/shopify-product-schema-completeness-2026)
 
+### [Missing, doubled or broken structured data](/reports/shopify-structured-data-gaps-2026)
+
+### [Is your brand name the same everywhere AI looks?](/reports/shopify-brand-name-consistency-2026)
+
+### [Shopify product meta descriptions](/reports/shopify-product-meta-descriptions-2026)
+
+### [Shopify product image alt text](/reports/shopify-image-alt-text-2026)
+
+### [Shopify FAQ pages](/reports/shopify-faq-pages-ai-search-2026)
+
+### [Do Shopify brands answer comparison questions?](/reports/shopify-comparison-pages-2026)
+
+### [What Shopify brands publish on their blogs](/reports/shopify-blog-content-ai-search-2026)
+
+### [Social and press signals on Shopify stores](/reports/shopify-off-site-signals-2026)
+
+### [Do Shopify About pages say who's behind the brand?](/reports/shopify-about-pages-founder-2026)
+
 ### [Is your Shopify product data ready for AI shopping?](/reports/shopify-catalog-data-ai-shopping-2026)
 
 ### [How deep Shopify product data really is](/reports/shopify-product-data-depth-2026)
@@ -60,6 +90,16 @@ I research how AI assistants read, describe and recommend Shopify brands, and ho
 ### [Do your product pages answer what shoppers ask AI?](/reports/do-product-pages-answer-ai-shopper-questions)
 
 ## Conversion and ecommerce benchmarks
+
+### [Shopify return policy benchmarks](/reports/shopify-return-policy-benchmarks-2026)
+
+### [Shopify shipping policy benchmarks](/reports/shopify-shipping-policy-benchmarks-2026)
+
+### [Shopify announcement bar benchmarks](/reports/shopify-announcement-bar-benchmarks-2026)
+
+### [Back in stock alerts on Shopify](/reports/shopify-back-in-stock-benchmarks-2026)
+
+### [Shopify contact options](/reports/shopify-contact-options-benchmarks-2026)
 
 ### [Black Friday Discount Report 2026](/reports/black-friday-discount-report-2026)
 73% of stores already show a crossed out price before Black Friday, and 68% of reorderable brands with subscriptions mark products down deeper than their subscription discount. Before and after numbers coming Black Friday week.

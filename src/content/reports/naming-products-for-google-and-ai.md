@@ -19,7 +19,7 @@ faq:
     answer: "Across 382 product pages from 128 Shopify stores, checked in November 2026, 55% used the same name in the SEO title as on the product, 15% added extra keywords after the name, and 29% changed the name itself. Structured data almost always matched the product name, and only about 1% of product names started with a size or pack count."
 ---
 
-**By Carson Cobb. Data collected November 2026.**
+**By Carson Cobb. Data collected November 2026. Last updated November 2026.**
 
 A question I keep hearing from large brands: Google rewards product titles written around what people search for, like "Men's Size 11 Wide Trail Runner." AI search seems to reward the opposite: one product name, used the same way everywhere, so the AI knows every mention is the same product. So which do you optimize for?
 
@@ -39,6 +39,8 @@ You don't have to pick. The two goals live in different fields. To show how stor
 **Google search and Google Shopping** match a product to a search. Titles that contain the words people type, like the size, the type of product and who it's for, get matched to more searches. Google's own Merchant Center guidance says to put the most important details in the first 70 characters, because that's often all a shopper sees.
 
 **AI search** works differently. Before ChatGPT, Gemini or Google AI Mode can recommend a product, it has to recognize that the product on your site, the one in a review and the one in a retailer listing are the same thing. A product that goes by three different names across those places is harder to connect into one picture.
+
+About 6 in 10 of ChatGPT's ranked shopping picks named a specific product, not just a brand ([products or brands](/reports/does-ai-recommend-products-or-brands-2026)).
 
 The conflict is real only if you try to use one field for both jobs.
 

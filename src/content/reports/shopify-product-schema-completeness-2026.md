@@ -15,7 +15,7 @@ faq:
     answer: "11%. Shipping and return policy fields were the least common fields in the study, even though they answer questions shoppers ask AI before buying."
 ---
 
-**By Carson Cobb. Data checked November 2026.**
+**By Carson Cobb. Data checked November 2026. Last updated November 2026.**
 
 Structured data is the part of a product page written for machines: the name, price, stock status, rating and policies in a format a crawler can read without guessing. Google has used it for years. Microsoft has said it helps its AI models understand pages. When an AI assistant answers "how much is it" or "is it any good," clean structured data is the most direct source it can use.
 
@@ -61,6 +61,8 @@ There are two common causes. Some review apps load ratings with a script after t
 10 of 84 stores (12%) published a brand name in their structured data that isn't the name shoppers know. Examples of what I found, with names removed: the company's legal entity name ending in LLC, the store's domain name, a supplier name, an abbreviation, and one store where the brand field contained a product color. These usually come from Shopify's vendor field, which teams fill in for internal reasons and never look at again.
 
 When the brand field is wrong, a machine has to choose between what the page says and what the data says. It's an easy fix that almost nobody checks.
+
+For more on this, see [whether your brand name is the same everywhere AI looks](/reports/shopify-brand-name-consistency-2026), and for what's missing, doubled or broken in Shopify structured data, see [structured data gaps](/reports/shopify-structured-data-gaps-2026).
 
 ## Beyond the product page
 

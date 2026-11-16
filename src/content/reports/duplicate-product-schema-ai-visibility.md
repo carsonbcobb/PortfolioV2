@@ -17,7 +17,7 @@ faq:
     answer: "Okendo and Loox have a settings toggle. Judge.me has a documented code flag and a way to merge its block with the theme's using a shared ID. Yotpo asks you to contact support to turn off its automatic markup. Then make sure the rating is added to the theme's single Product block."
 ---
 
-**By Carson Cobb. Data checked November 2026.**
+**By Carson Cobb. Data checked November 2026. Last updated November 2026.**
 
 A common audit finding goes like this: the product page has two Product data blocks. The theme writes one. The review app writes another, to carry the stars. Sometimes a third comes from an SEO app. Nobody notices, because the page looks fine to shoppers.
 
@@ -44,6 +44,8 @@ I wanted to know how common this is, which apps cause it, whether the blocks dis
 | **All** | **94** | **29%** |
 
 3 stores had three Product blocks on the same page. 22% of stores had duplicates in the HTML their server sends, and a few more only after scripts ran.
+
+In a second sample of 104 Shopify product pages, 22% had two or more Product blocks ([structured data on 107 Shopify stores](/reports/shopify-structured-data-gaps-2026)).
 
 ## Where duplicates come from
 

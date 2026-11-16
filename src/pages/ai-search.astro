@@ -80,6 +80,9 @@ const research = [
   'reports/chatgpt-gemini-ai-mode-brand-overlap-2026',
   'reports/how-question-wording-changes-ai-recommendations',
   'reports/what-ai-gets-wrong-about-products-2026',
+  'reports/shopify-agents-md-ai-agents-2026',
+  'reports/chatgpt-follow-up-questions-shoppers-2026',
+  'reports/shopify-structured-data-gaps-2026',
 ].map((slug) => {
   const report = REPORTS.find((r) => slugOf(r) === slug);
   if (!report) throw new Error(`/ai-search research links to /${slug}, which is not a report`);

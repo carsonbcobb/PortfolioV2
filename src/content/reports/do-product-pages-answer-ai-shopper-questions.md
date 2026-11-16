@@ -17,7 +17,7 @@ faq:
     answer: "23% of the 94 product pages I checked in November 2026 mentioned how to use, directions or care instructions anywhere on the page. For food and beverage it was none of 16."
 ---
 
-**By Carson Cobb. Data checked November 2026.**
+**By Carson Cobb. Data checked November 2026. Last updated November 2026.**
 
 People don't ask AI the way they search Google. They describe their situation. "My skin gets red and stings with most moisturizers." "My small dog coughs on a collar." "I sleep hot." Then they ask what to buy.
 
@@ -67,6 +67,8 @@ The long questions I wrote, modeled on how customers describe themselves in revi
 - **Comparisons:** whether an eco friendly product cleans as well as the big name brand.
 
 Those map directly to the content that is rarest on product pages: who it's for (40%), testing (38%), how to use (23%), fit guides (16%) and comparisons (16%). When AI can't find that answer on your page, it relies on reviews, Reddit threads and other sites to decide whether your product fits the shopper, or picks a competitor whose page says it plainly.
+
+I covered the questions ChatGPT asks shoppers about their situation in [a separate report](/reports/chatgpt-follow-up-questions-shoppers-2026), and how often stores answer buyer questions on a FAQ page in [Shopify FAQ pages](/reports/shopify-faq-pages-ai-search-2026).
 
 ## By product type
 

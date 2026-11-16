@@ -58,6 +58,8 @@ I wrote 20 broad questions ("best creatine brands") and 28 specific ones ("best 
 
 Broad questions produced longer lists, which gave more room to smaller brands. Specific questions produced shorter lists and more product level answers, and they were the ones most likely to return advice instead of brands. The common belief that smaller brands win mostly on niche questions didn't hold in this sample. They won where their category's review sources already featured them.
 
+In the same 48 answers, I also looked at [the follow up questions ChatGPT asks shoppers](/reports/chatgpt-follow-up-questions-shoppers-2026) and at [the "best for" labels AI attaches to each pick](/reports/how-ai-labels-products-best-for-2026).
+
 ## How stable are the picks?
 
 I asked 11 of the questions a second time in a fresh temporary chat.

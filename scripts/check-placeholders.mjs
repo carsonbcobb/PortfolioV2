@@ -10,8 +10,13 @@ const files = (dir) =>
     return d.isDirectory() ? files(p) : [p];
   });
 
-// Brackets that are meant to be there: question templates quoted word for word in a report's method.
-const ALLOWED = [/\[product\] from \[brand\] cost on \[brand\]/g];
+// Brackets that are meant to be there: question templates quoted word for word in a report's method
+// or in its steps for readers to try.
+const ALLOWED = [
+  /\[product\] from \[brand\] cost on \[brand\]/g,
+  /how much does \[your product\] cost/g,
+  /\[your product\] vs(?=[”"])/g,
+];
 
 let hits = 0;
 for (const file of files(DIST)) {
@@ -21,7 +26,7 @@ for (const file of files(DIST)) {
     .readFileSync(file, 'utf8')
     .replace(/<script[\s\S]*?<\/script>/g, '')
     .replace(/<style[\s\S]*?<\/style>/g, '')
-    .replace(ALLOWED[0], '');
+    .replace(new RegExp(ALLOWED.map((r) => r.source).join('|'), 'g'), '');
   for (const m of text.match(/\[[^<\n]{0,60}/g) ?? []) {
     hits++;
     console.error(`${path.relative(DIST, file)}: ${m}`);

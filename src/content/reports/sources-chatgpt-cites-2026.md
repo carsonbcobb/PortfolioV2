@@ -71,6 +71,8 @@ There's an important limit here. ChatGPT often shows only the first source for a
 3. **Earn a certification if products like yours carry one.** In supplements and pet dental care, ChatGPT pointed to certification bodies by name.
 4. **Treat your product page as the landing page for AI.** It's where the shopper goes next. See the [AI Readiness Index](/reports/shopify-ai-readiness-index-2026).
 
+The reasons AI gives for each pick are in [why AI recommends a product](/reports/why-ai-recommends-products-reasons-2026), and the social and press signals stores show on their own sites are in [which off site signals Shopify brands show](/reports/shopify-off-site-signals-2026).
+
 When these sources name your competitors and not you, that's usually why ChatGPT recommends them instead. My guide on [why ChatGPT recommends your competitors and not you](/guides/why-chatgpt-doesnt-recommend-my-shopify-store) covers that and the other five reasons.
 
 ## How this was done

@@ -15,7 +15,7 @@ faq:
     answer: "There is no reason to delete it. If your theme lets you edit it, make sure the store description is accurate. Then spend your time on the things AI systems do read: your product pages, your structured data and the sources that mention you."
 ---
 
-**By Carson Cobb. Data checked November 2026.**
+**By Carson Cobb. Data checked November 2026. Last updated November 2026.**
 
 llms.txt is a plain text file at the root of a website that summarizes the site for AI systems. A year ago it was a niche idea. Now almost every Shopify store has one, because Shopify started generating it automatically. So the useful question is no longer "should I add one." It's "does it change anything, and is there anything worth doing with it."
 
@@ -37,6 +37,8 @@ The 4 custom files in the sample were written by the brands themselves. They des
 | Shopify's default llms.txt | 89 | 95% |
 | A custom llms.txt the brand wrote | 4 | 4% |
 | No llms.txt | 1 | 1% |
+
+Shopify now publishes a second file for AI agents. 105 of 107 Shopify stores now serve an agents.md file for AI agents, and 104 use Shopify's default ([agents.md on Shopify](/reports/shopify-agents-md-ai-agents-2026)).
 
 ## What the companies behind AI search have said
 
