@@ -37,9 +37,10 @@ if (report) {
   // AI search research: its own keywords, and a method line for reports built from AI chats.
   const ai = AI_RESEARCH.includes(page);
   const raw = page.rawContent();
-  const fromChats = ai && /temporary (ChatGPT )?chat|new thread/i.test(raw);
+  const fromChats = ai && /temporary (ChatGPT )?chat|new thread|fresh session/i.test(raw);
   // The AI tools named in the method section, so the Dataset says which ones were asked.
-  const method = raw.split(/^## How this was done\s*$/m)[1]?.split(/^## /m)[0] ?? raw;
+  // The Limits line can name tools that weren't asked ("Gemini ... weren't included"), so it's left out.
+  const method = (raw.split(/^## How this was done\s*$/m)[1]?.split(/^## /m)[0] ?? raw).replace(/^- \*\*Limits:\*\*.*$/m, '');
   const tools = [['ChatGPT', /ChatGPT/], ['Gemini', /Gemini/], ['Google AI Mode', /AI Mode/]]
     .filter(([, re]) => (re as RegExp).test(method))
     .map(([name]) => name as string);
@@ -49,7 +50,9 @@ if (report) {
   const technique =
     tools.length > 1 || !tools.includes('ChatGPT')
       ? `Asking ${toolList} buyer questions in new chats and recording every answer and source`
-      : 'Asking ChatGPT questions in temporary chats and recording every answer and source';
+      : /temporary (ChatGPT )?chat/i.test(raw)
+        ? 'Asking ChatGPT questions in temporary chats and recording every answer and source'
+        : 'Asking ChatGPT buyer questions in new chats and recording every answer and source';
   trail = [{ name: 'Reports', href: '/reports' }, { name: fm.h1 }];
   const services = CONTENT_PAGES.filter((p) => p.kind === 'service');
   const linksService = services.some((p) => page.rawContent().includes(`](/${p.slug})`));

@@ -18,7 +18,7 @@ faq:
     answer: "The typical product description was about 380 characters, roughly 60 words. 25% of stores had at least a quarter of their products under 150 characters."
 ---
 
-**By Carson Cobb, AI Search and CRO for Shopify Brands. Data checked November 2026.**
+**By Carson Cobb, AI Search and CRO for Shopify Brands. Data checked November 2026. Last updated November 2026.**
 
 The product page is where the sale happens or doesn't. Most advice about product pages is opinion. This report is what 606 growing Shopify brands actually publish: how many photos, how much copy, how often video, and how they price. What AI reads from these pages is covered in the [product data depth report](/reports/shopify-product-data-depth-2026).
 
@@ -70,6 +70,8 @@ Typical price also sets where your free shipping line should sit. In the [tech s
 | A wholesale or retailer page | 42% | Food, 62% |
 | A quiz page | 35% | Supplements, 56% |
 | Ships to 20 or more countries | 37% | Apparel, 58% |
+
+For what product pages show when something sells out, see [back in stock alerts on Shopify](/reports/shopify-back-in-stock-benchmarks-2026), and for what return policies promise, see [Shopify return policy benchmarks](/reports/shopify-return-policy-benchmarks-2026).
 
 ## What to check on your own product pages
 

@@ -53,19 +53,46 @@ export const monthYear = (d: Date | string) =>
 /** True when two ISO dates fall in the same month */
 export const sameMonth = (a: string, b: string) => a.slice(0, 7) === b.slice(0, 7);
 
-/** The date the data was checked: a full "Data checked" date in the copy, else the last update */
+/** "Data checked November 4, 2026" or "Data collected November 4 and 5, 2026": month, last day, year */
+const CHECKED = /Data (?:checked|collected) ([A-Z][a-z]+) (?:\d{1,2} and )?(\d{1,2}), (\d{4})/;
+
+/** The date the data was checked: the last full day named in the copy, else the last update */
 export function checkedDate(page: MarkdownPage) {
-  const m = page.rawContent().match(/Data (?:checked|collected) ([A-Z][a-z]+ \d{1,2}, \d{4})/);
+  const m = page.rawContent().match(CHECKED);
   const fm = page.frontmatter;
-  if (m) return isoDate(new Date(`${m[1]} UTC`));
+  if (m) return isoDate(new Date(`${m[1]} ${m[2]}, ${m[3]} UTC`));
   return isoDate(fm.dateModified ?? fm.datePublished ?? new Date());
 }
 
-/** Dataset temporalCoverage: the full checked date when the copy gives one, else its month */
+/** Reports whose Dataset covers the month they were collected in, not a single day */
+const MONTH_COVERAGE = new Set([
+  'reports/shopify-agents-md-ai-agents-2026',
+  'reports/how-ai-labels-products-best-for-2026',
+  'reports/prices-in-ai-shopping-answers-2026',
+  'reports/why-ai-recommends-products-reasons-2026',
+  'reports/does-ai-recommend-products-or-brands-2026',
+  'reports/chatgpt-follow-up-questions-shoppers-2026',
+  'reports/shopify-image-alt-text-2026',
+  'reports/shopify-blog-content-ai-search-2026',
+  'reports/shopify-comparison-pages-2026',
+  'reports/shopify-product-meta-descriptions-2026',
+  'reports/shopify-structured-data-gaps-2026',
+  'reports/shopify-brand-name-consistency-2026',
+  'reports/shopify-off-site-signals-2026',
+  'reports/shopify-faq-pages-ai-search-2026',
+  'reports/shopify-about-pages-founder-2026',
+  'reports/shopify-return-policy-benchmarks-2026',
+  'reports/shopify-shipping-policy-benchmarks-2026',
+  'reports/shopify-announcement-bar-benchmarks-2026',
+  'reports/shopify-contact-options-benchmarks-2026',
+  'reports/shopify-back-in-stock-benchmarks-2026',
+]);
+
+/** Dataset temporalCoverage: the full checked date when the copy gives a single day, else its month */
 export function coverage(page: MarkdownPage) {
   const full = /Data (?:checked|collected) [A-Z][a-z]+ \d{1,2}, \d{4}/.test(page.rawContent());
   const d = checkedDate(page);
-  return full ? d : d.slice(0, 7);
+  return full && !MONTH_COVERAGE.has(slugOf(page)) ? d : d.slice(0, 7);
 }
 
 /** Roundups of other people's figures: an Article with no Dataset of its own */

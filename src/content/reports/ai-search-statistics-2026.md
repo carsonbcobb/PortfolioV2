@@ -71,6 +71,12 @@ From Adobe's 2026 holiday forecast ([Digital Commerce 360, September 29, 2026](h
 - **AI attributed traffic grew 2.6x and AI attributed orders 3.3x** year over year in Q3 2026. ([AI Weekly, November 3, 2026](https://aiweekly.co/alerts/shopify-q3-revenue-rises-32-to-374b-as-ai-agent-traffic-jumps-26x-and-meta-muse))
 - **Shopify's Agentic Storefronts publish merchant catalogs to ChatGPT, Perplexity and Microsoft Copilot** through Shopify Catalog, announced in December 2025. ([PYMNTS](https://www.pymnts.com/?p=3304089))
 
+## New in November
+
+- **105 of 107 stores serve an agents.md file.** 104 use Shopify's default. One store wrote its own. ([Every Shopify store now has an agents.md file](/reports/shopify-agents-md-ai-agents-2026))
+- **ChatGPT asked in 38% of answers.** 18 of 48 asked a follow up question or offered to narrow the pick. ([The follow up questions ChatGPT asks shoppers](/reports/chatgpt-follow-up-questions-shoppers-2026))
+- **ChatGPT labels almost everything.** 44 of 48 answers had at least one "best for" style label, 149 labels in total. ([How AI labels the products it recommends](/reports/how-ai-labels-products-best-for-2026))
+
 ## What AI recommends: my research
 
 From my tests of ChatGPT, Gemini and Google AI Mode in November 2026, using 48 buyer questions across apparel, beauty and skincare, food and beverage, home, pet and supplements:

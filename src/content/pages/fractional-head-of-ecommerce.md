@@ -113,6 +113,16 @@ These come from my [results page](/results), where each one is explained in cont
 * **7.9s → 2.1s** mobile load time after a rebuild that lifted conversion 24% and paid for itself in 6 weeks
 * **50+** Shopify stores built, rebuilt or run
 
+## Conversion benchmarks
+
+What I measure your store against, from my own research on Shopify brand stores:
+
+* [Return policies](/reports/shopify-return-policy-benchmarks-2026): **30 days is the default.** Of 77 policies that stated a window in days, 50 (65%) used exactly 30.
+* [Shipping policies](/reports/shopify-shipping-policy-benchmarks-2026): **12 of 107 stores had no readable shipping policy.** That's 11%.
+* [Announcement bars](/reports/shopify-announcement-bar-benchmarks-2026): **Free shipping dominates.** 35 of 63 bars (56%) promoted free shipping, almost always with a threshold.
+* [Back in stock alerts](/reports/shopify-back-in-stock-benchmarks-2026): **Most stores have something sold out.** 77 of 105 catalogs (73%) had at least one fully sold out product.
+* [Contact options](/reports/shopify-contact-options-benchmarks-2026): **60% load a chat or help desk widget.** 64 of 107.
+
 ## Plans
 
 This work runs on one of four retainers, each with a 3 month minimum except Dedicated, which is custom.

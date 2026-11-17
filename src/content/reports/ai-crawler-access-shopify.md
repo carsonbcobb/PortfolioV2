@@ -15,7 +15,7 @@ faq:
     answer: "Product data that only exists after JavaScript runs. AI crawlers from OpenAI, Anthropic and Perplexity don't run JavaScript, so data added by scripts can be invisible to them. 11% of stores had at least one product data block that only appeared after scripts ran."
 ---
 
-**By Carson Cobb. Data checked November 2026.**
+**By Carson Cobb. Data checked November 2026. Last updated November 2026.**
 
 "Is my store blocking AI?" is one of the first questions brands ask, usually after reading that some publishers block ChatGPT. For Shopify brands the answer is almost always no. The more common problem is quieter: part of the product information exists only after JavaScript runs in a browser, and the crawlers behind most AI answers don't run JavaScript.
 
@@ -52,6 +52,8 @@ If you only remember one line: blocking GPTBot keeps your content out of trainin
 | Rules that block every crawler | 0 | 0% |
 
 Two of the files listed AI crawlers with an empty disallow line, which allows everything. They read like a block at a glance, but they don't block anything. One file listed several AI crawlers in a group with dozens of allow lines copied from Shopify's defaults. It works, but it's the kind of file that breaks quietly when someone edits it later.
+
+Robots.txt isn't the only file Shopify writes for AI crawlers and agents. 105 of 107 Shopify stores now serve an agents.md file for AI agents, and 104 use Shopify's default ([agents.md on Shopify](/reports/shopify-agents-md-ai-agents-2026)).
 
 ## The bigger problem: data that only exists after JavaScript
 

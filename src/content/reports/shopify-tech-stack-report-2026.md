@@ -17,7 +17,7 @@ faq:
     answer: "Dawn, Shopify's free theme, was the most common base theme at 14% of stores. Most other stores used a paid theme or a custom build."
 ---
 
-**By Carson Cobb, AI Search and CRO for Shopify Brands. Data checked November 2026.**
+**By Carson Cobb, AI Search and CRO for Shopify Brands. Data checked November 2026. Last updated November 2026.**
 
 App vendors publish case studies. Agencies publish their favorite stacks. Neither tells you what growing brands actually run. For this report I loaded the homepages of 153 Shopify stores in a real browser and recorded every outside service each page called: email, reviews, support, testing, analytics, ads and more.
 
@@ -94,7 +94,7 @@ Dawn, Shopify's free theme, was the most common base theme at 14% of stores, fol
 | Pet | $50 | 2.3 times |
 | Food | $50 | 3.5 times |
 
-$50 was the most common threshold (22% of stores showing one), then $75 and $100. Food brands set the line highest relative to what they sell, at 3.5 times the typical product price. That means a shopper needs three or four items to get free shipping, which works if the bundle is obvious and fails if it isn't. The [free shipping calculator](/tools/free-shipping-calculator) works out where yours should sit.
+$50 was the most common threshold (22% of stores showing one), then $75 and $100. Food brands set the line highest relative to what they sell, at 3.5 times the typical product price. That means a shopper needs three or four items to get free shipping, which works if the bundle is obvious and fails if it isn't. For the thresholds brands state in their shipping policies, see [Shopify shipping policy benchmarks](/reports/shopify-shipping-policy-benchmarks-2026), and for what announcement bars promote, see [Shopify announcement bar benchmarks](/reports/shopify-announcement-bar-benchmarks-2026). The [free shipping calculator](/tools/free-shipping-calculator) works out where yours should sit.
 
 ## What to do with this
 
