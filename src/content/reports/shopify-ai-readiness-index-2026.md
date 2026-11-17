@@ -62,6 +62,8 @@ Weights reflect how directly each check affects what an AI system can say about 
 
 The bottom group is where the biggest wins are. Most of those stores sell good products with real reviews, but their product pages give a machine nothing structured to read. Some rely on microdata from an older theme, some lost their structured data in a theme customization, and some load everything with scripts.
 
+In November 2026 I repeated the scan on 617 Shopify brand stores. The results are in the [Shopify AI search benchmarks](/reports/ai-search-benchmarks-shopify-2026) and the [AI search checklist for Shopify](/reports/ai-search-checklist-shopify-2026).
+
 ## By category
 
 | Category | Stores | Median score | Lowest | Highest |

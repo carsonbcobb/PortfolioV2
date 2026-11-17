@@ -45,6 +45,8 @@ Supplements and food are where product pages are thinnest. Both have the most pr
 
 Video is still rare. Only 12% of checked products had one, so a short clip of the product in use is one of the easiest ways to stand out in most categories.
 
+For how long descriptions run and how they're formatted, see [how long Shopify product descriptions are](/reports/shopify-product-description-length-format-2026).
+
 ## How brands price
 
 | Category | Typical product price | Stores pricing at least half their products at .99 or .95 | Stores pricing at least half in whole dollars |
@@ -72,6 +74,8 @@ Typical price also sets where your free shipping line should sit. In the [tech s
 | Ships to 20 or more countries | 37% | Apparel, 58% |
 
 For what product pages show when something sells out, see [back in stock alerts on Shopify](/reports/shopify-back-in-stock-benchmarks-2026), and for what return policies promise, see [Shopify return policy benchmarks](/reports/shopify-return-policy-benchmarks-2026).
+
+For what sits next to the add to cart button, see [the Shopify buy box](/reports/shopify-product-page-buy-box-2026), and for how stores show sizes and colors, see [variant pickers: buttons or dropdowns](/reports/shopify-variant-picker-buttons-vs-dropdowns-2026).
 
 ## What to check on your own product pages
 

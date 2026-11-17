@@ -4,7 +4,7 @@ description: "95% of Shopify stores publish an llms.txt file, mostly one Shopify
 slug: "/reports/does-llms-txt-do-anything"
 h1: "Does llms.txt do anything?"
 datePublished: 2026-11-04
-dateModified: 2026-11-04
+dateModified: 2026-11-17
 reportStores: 94
 faq:
   - question: "Does my Shopify store have an llms.txt file?"
@@ -65,11 +65,21 @@ These are small, early studies, and I'll add my own server log data when I have 
 3. **Don't pay anyone to "optimize" it.** If an audit leads with llms.txt, it's leading with the least important item.
 4. **Put the time where AI actually looks.** Your product pages, your structured data and the outside sources that mention your brand. The [AI Readiness Index](/reports/shopify-ai-readiness-index-2026) shows where most stores fall short.
 
+## November 2026 update: 617 stores
+
+- **98% of stores now serve llms.txt.** 604 of 617, almost all from Shopify's default.
+- **91% use Shopify's default template**, which mirrors the store's agents.md.
+- **7% of the files that respond start differently**, which usually means the store replaced the template.
+- **The median file is about 5,800 characters.**
+
+Shopify switched this on for stores, so having the file no longer sets a store apart. What it says still can. More in [agentic commerce readiness](/reports/shopify-agentic-commerce-readiness-2026).
+
 ## How this was done
 
 - **Stores:** 94 US Shopify stores across apparel, beauty and skincare, food and beverage, home, pet and supplements, 15 or 16 per category, drawn from the same dataset as my other reports.
 - **Check:** I requested /llms.txt from each store in November 2026 and recorded whether it returned a real text file, its length and its opening line. Files starting with Shopify's "Agent Instructions" header were counted as the default.
 - **Shopify rollout timing:** from developer coverage at the time (Weaverse and others, May 2026), which describes a quiet rollout without a formal announcement.
 - **Statements:** taken from Google's Search Central guidance and Search Engine Land and Search Engine Journal coverage of Google staff comments, Chrome Lighthouse documentation, OpenAI's crawler documentation, and the OtterlyAI and SE Ranking studies as reported publicly.
+- **November 17, 2026 update:** 617 Shopify brand stores, my full dataset of 620 minus client stores and one store that blocked automated reads, scanned November 16 and 17, 2026.
 
 No store is named in this report. Want to know what AI actually says about your brand? [Run the free AI Visibility Check](/ai-visibility-check).

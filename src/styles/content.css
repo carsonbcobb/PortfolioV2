@@ -280,7 +280,7 @@
 
 /* The first two AI search research cards: same card, two wide columns and a larger title. */
 .report-list--featured {
-  grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   margin-bottom: 20px;
 }
 

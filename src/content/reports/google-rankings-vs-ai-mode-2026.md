@@ -70,6 +70,8 @@ Google says its AI shopping experiences rely on product data in Merchant Center 
 
 The listings weren't only big brands either. Among them were a tallow cream with 59 reviews, a fresh dog food bundle with 23 reviews and a pair of leggings with 20 reviews, all sold from the brand's own store.
 
+More on what AI Mode picks in [how Google AI Mode chooses products](/reports/how-google-ai-mode-chooses-products-2026), and on where AI search and SEO differ in [GEO vs SEO for ecommerce](/reports/geo-vs-seo-ecommerce-2026).
+
 ## By product type
 
 | Product type | Questions | Answers built from product listings | Google's top result cited in AI Mode |

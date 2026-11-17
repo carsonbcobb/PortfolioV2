@@ -47,6 +47,8 @@ I checked 107 Shopify brand stores in six product areas to see how many have the
 
 The default agents.md files ran about 5,700 characters. The two stores without one returned a not found page.
 
+Shopify gave almost every store the agent files: 100% respond on UCP and 97% have agents.md ([agentic commerce readiness](/reports/shopify-agentic-commerce-readiness-2026)).
+
 ## What the default file tells an AI
 
 Shopify's documentation says the managed file covers four things: the store's UCP discovery and MCP endpoints, read only browsing URLs for product, collection and search data, the store's published policies, and guidance for personal shopping agents such as Shopify's Shop skill ([Shopify](https://shopify.dev/docs/storefronts/themes/architecture/templates/agents-md-liquid)). It deliberately leaves out contact details.

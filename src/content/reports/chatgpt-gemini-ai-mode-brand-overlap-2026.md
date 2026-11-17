@@ -86,6 +86,8 @@ ChatGPT gave the shortest lists and the most mainstream ones. Gemini went wider,
 
 For a brand, this means each AI has a different shape of opportunity. ChatGPT has fewer seats, and they go mostly to brands the editorial lists already agree on. Gemini and AI Mode have more seats and more room for a brand that isn't the obvious pick.
 
+ChatGPT names a median of 4 brands per answer. Gemini and Google AI Mode name a median of 5. More in [how many brands AI recommends](/reports/how-many-brands-ai-recommends-2026) and [how Gemini recommends products](/reports/how-gemini-chooses-products-2026).
+
 ## Which product types agree the most
 
 The share of brands named by all three AIs ranged from 16% to 33% depending on the product type.

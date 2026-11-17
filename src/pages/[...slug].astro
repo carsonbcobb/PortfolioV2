@@ -37,13 +37,18 @@ if (report) {
   // AI search research: its own keywords, and a method line for reports built from AI chats.
   const ai = AI_RESEARCH.includes(page);
   const raw = page.rawContent();
-  const fromChats = ai && /temporary (ChatGPT )?chat|new thread|fresh session/i.test(raw);
   // The AI tools named in the method section, so the Dataset says which ones were asked.
   // The Limits line can name tools that weren't asked ("Gemini ... weren't included"), so it's left out.
   const method = (raw.split(/^## How this was done\s*$/m)[1]?.split(/^## /m)[0] ?? raw).replace(/^- \*\*Limits:\*\*.*$/m, '');
   const tools = [['ChatGPT', /ChatGPT/], ['Gemini', /Gemini/], ['Google AI Mode', /AI Mode/]]
     .filter(([, re]) => (re as RegExp).test(method))
     .map(([name]) => name as string);
+  // Built from AI chats: the copy says how the chats were run, or the method asks shopping questions in an AI.
+  const chatsNamed = /temporary (ChatGPT )?chat|new thread|fresh session/i.test(raw);
+  const asksQuestions = /(shopping|buyer) questions/i.test(method) && tools.length > 0;
+  const fromChats = ai && (chatsNamed || asksQuestions);
+  // Store scans that also compare against AI answers: both methods.
+  const alsoStores = fromChats && !chatsNamed && !!fm.reportStores;
   // Reports that compare Google's results with AI Mode, rather than asking AI tools in chats.
   const vsGoogle = ai && /in Google search and in Google AI Mode/.test(method);
   const toolList = tools.length > 1 ? `${tools.slice(0, -1).join(', ')} and ${tools.at(-1)}` : (tools[0] ?? 'ChatGPT');
@@ -87,7 +92,13 @@ if (report) {
           }
         : {
             ...(ai ? { keywords: ['Shopify', 'ecommerce', 'AI search', 'ChatGPT', 'structured data'] } : {}),
-            ...(fromChats ? { technique } : {}),
+            ...(fromChats
+              ? {
+                  technique: alsoStores
+                    ? `Reading each store's public Shopify storefront data, and ${technique[0].toLowerCase()}${technique.slice(1)}`
+                    : technique,
+                }
+              : {}),
           }),
     }),
   ];

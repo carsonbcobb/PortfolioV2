@@ -66,6 +66,8 @@ AI builds its picture of a brand by connecting mentions across sources. Your sit
 
 The internal code case is the clearest problem: the product data is telling search engines and AI that the brand is a word the shopper will never search for.
 
+For the catalog fields that carry your brand name to AI shopping tools, see [product type, tags and vendor data](/reports/shopify-product-type-tags-vendor-data-2026).
+
 ## What to do with this
 
 1. **Choose one exact brand name.** The form you want shoppers and AI to use.

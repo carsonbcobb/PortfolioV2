@@ -75,8 +75,16 @@ const promises = [
 ];
 
 // "The research behind this", under what the audit measures. Each finding is the report's first
-// "The short version" bullet, word for word.
+// "The short version" bullet, word for word, or for a report without one, the sentence below from its text.
+const FINDINGS: Record<string, string> = {
+  'reports/ai-search-benchmarks-shopify-2026':
+    "The access layer is solved for almost everyone, thanks to Shopify's defaults. The differences are in product data and content.",
+  'reports/how-chatgpt-chooses-products-2026': 'ChatGPT showed a source or store link in 45 of 48 answers.',
+};
 const research = [
+  'reports/ai-search-benchmarks-shopify-2026',
+  'reports/what-ai-named-shopify-brands-have-in-common-2026',
+  'reports/how-chatgpt-chooses-products-2026',
   'reports/chatgpt-gemini-ai-mode-brand-overlap-2026',
   'reports/how-question-wording-changes-ai-recommendations',
   'reports/what-ai-gets-wrong-about-products-2026',
@@ -86,7 +94,7 @@ const research = [
 ].map((slug) => {
   const report = REPORTS.find((r) => slugOf(r) === slug);
   if (!report) throw new Error(`/ai-search research links to /${slug}, which is not a report`);
-  return { href: `/${slug}`, title: report.frontmatter.h1, finding: shortVersion(report) };
+  return { href: `/${slug}`, title: report.frontmatter.h1, finding: FINDINGS[slug] ?? shortVersion(report) };
 });
 
 const readMore = (headings: { heading: string; label?: string }[]) =>
