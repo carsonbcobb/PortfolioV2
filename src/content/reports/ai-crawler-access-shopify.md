@@ -4,7 +4,7 @@ description: "Do Shopify stores block ChatGPT or Perplexity? I checked robots.tx
 slug: "/reports/ai-crawler-access-shopify"
 h1: "AI crawler access on Shopify"
 datePublished: 2026-11-04
-dateModified: 2026-11-04
+dateModified: 2026-11-17
 reportStores: 94
 faq:
   - question: "Does Shopify block ChatGPT by default?"
@@ -73,6 +73,26 @@ This matters most for ratings. If your stars come from a review app that injects
 3. **Ask your CDN or firewall team what they block.** Bot protection can challenge AI crawlers even when robots.txt allows them. I couldn't test that from a browser, so it's not counted here, and it's the check most worth running on your own store.
 4. **Make sure product data is in the page the server sends.** Price, availability and rating should not depend on a script. The [schema completeness report](/reports/shopify-product-schema-completeness-2026) covers which fields matter.
 
+## November 2026 update: 617 stores
+
+I repeated this check on 617 Shopify brand stores on November 16 and 17, 2026.
+
+- **1% fully block any major AI crawler.** 8 of 617.
+- **No store fully blocked ChatGPT's search or user agents** (OAI-SearchBot, ChatGPT-User) or PerplexityBot.
+- **The most blocked were training crawlers:** GPTBot and CCBot (5 stores each), then Google-Extended, ClaudeBot, Bytespider, Amazonbot and Diffbot (4 each).
+- **9% mention any AI crawler by name** in robots.txt. 56 of 617.
+- **77% carry Shopify's agent instructions banner** in robots.txt.
+- **No store disallowed its whole site** for all crawlers.
+
+| Product area | Stores | Any major AI crawler fully blocked |
+| --- | --- | --- |
+| Supplements | 123 | 2% |
+| Beauty | 127 | 1% |
+| Food and drink | 154 | 0% |
+| Pet | 41 | 2% |
+| Home | 76 | 0% |
+| Apparel | 96 | 4% |
+
 ## How this was done
 
 - **Stores:** 94 US Shopify stores across apparel, beauty and skincare, food and beverage, home, pet and supplements, 15 or 16 per category.
@@ -80,5 +100,6 @@ This matters most for ratings. If your stars come from a review app that injects
 - **JavaScript only data:** on one best selling product page per store, I counted Product structured data blocks in the HTML the server returned, then counted them again after the page finished loading in a browser. Blocks present only after loading were counted as JavaScript only.
 - **Not measured:** firewall or bot protection challenges for specific crawlers, which can't be tested reliably from a browser.
 - **Crawler roles:** from OpenAI's crawler documentation and Vercel's "The rise of the AI crawler" (December 2024).
+- **November 17, 2026 update:** 617 Shopify brand stores, my full dataset of 620 minus client stores and one store that blocked automated reads, scanned November 16 and 17, 2026.
 
 No store is named in this report. [Run the free AI Visibility Check](/ai-visibility-check) to see whether AI can read your product pages.

@@ -3,7 +3,7 @@ title: "AI Search and Ecommerce Research | Carson Cobb"
 description: "How AI assistants read, describe and recommend Shopify brands, and how Shopify stores convert. Built from data I collect from live stores and AI answers."
 slug: "/reports"
 h1: "AI search and ecommerce research"
-dateModified: 2026-11-16
+dateModified: 2026-11-17
 faq:
   - question: "Where does this data come from?"
     answer: "From the public storefront data every Shopify store publishes: products, collections, pages, store settings and subscription plans, and from live answers from ChatGPT, Gemini and Google AI Mode, collected in fresh chats. I check each store directly, so the numbers reflect what shoppers actually see on the date of the check."
@@ -14,6 +14,30 @@ faq:
 ---
 
 I research how AI assistants read, describe and recommend Shopify brands, and how Shopify stores convert. Every report is built from data I collect myself, from live stores and live AI answers.
+
+## Start here
+
+### [Shopify AI search benchmarks 2026](/reports/ai-search-benchmarks-shopify-2026)
+
+### [What the Shopify brands AI recommends have in common](/reports/what-ai-named-shopify-brands-have-in-common-2026)
+
+### [The Shopify CRO checklist](/reports/shopify-cro-checklist-2026)
+
+## How AI picks products
+
+### [How ChatGPT chooses products](/reports/how-chatgpt-chooses-products-2026)
+
+### [How Google AI Mode chooses products](/reports/how-google-ai-mode-chooses-products-2026)
+
+### [How Gemini recommends products](/reports/how-gemini-chooses-products-2026)
+
+### [ChatGPT vs Google AI Mode for shopping](/reports/chatgpt-vs-google-ai-mode-shopping-2026)
+
+### [How many brands AI recommends](/reports/how-many-brands-ai-recommends-2026)
+
+### [How to get your products recommended by ChatGPT](/reports/how-to-get-shopify-products-recommended-by-chatgpt)
+
+### [GEO vs SEO for ecommerce](/reports/geo-vs-seo-ecommerce-2026)
 
 ## AI search research
 
@@ -32,8 +56,6 @@ I research how AI assistants read, describe and recommend Shopify brands, and ho
 ### [Do AI shopping answers show your price?](/reports/prices-in-ai-shopping-answers-2026)
 
 ### [ChatGPT vs Gemini vs Google AI Mode](/reports/chatgpt-gemini-ai-mode-brand-overlap-2026)
-
-### [AI search statistics 2026](/reports/ai-search-statistics-2026)
 
 ### [How often AI recommendations change](/reports/how-often-ai-recommendations-change)
 
@@ -63,7 +85,19 @@ I research how AI assistants read, describe and recommend Shopify brands, and ho
 
 ### [Shopify AI Readiness Index 2026](/reports/shopify-ai-readiness-index-2026)
 
+### [Are Shopify stores ready for AI agents that shop?](/reports/shopify-agentic-commerce-readiness-2026)
+
+### [Can Shopify brands see their AI traffic?](/reports/shopify-analytics-attribution-ai-traffic-2026)
+
 ### [Product and merchant schema completeness](/reports/shopify-product-schema-completeness-2026)
+
+### [Organization schema on Shopify](/reports/shopify-organization-schema-2026)
+
+### [GTINs on Shopify](/reports/shopify-gtin-product-identifiers-2026)
+
+### [Shipping and return policy schema](/reports/shopify-shipping-return-policy-schema-2026)
+
+### [Variant schema on Shopify](/reports/shopify-productgroup-variant-schema-2026)
 
 ### [Missing, doubled or broken structured data](/reports/shopify-structured-data-gaps-2026)
 
@@ -83,11 +117,69 @@ I research how AI assistants read, describe and recommend Shopify brands, and ho
 
 ### [Do Shopify About pages say who's behind the brand?](/reports/shopify-about-pages-founder-2026)
 
+### [Shopify review apps in 2026](/reports/shopify-review-apps-2026)
+
+### [How long Shopify product descriptions are](/reports/shopify-product-description-length-format-2026)
+
+### [Product type, tags and vendor data](/reports/shopify-product-type-tags-vendor-data-2026)
+
+### [Shopify homepage SEO basics](/reports/shopify-homepage-seo-basics-2026)
+
 ### [Is your Shopify product data ready for AI shopping?](/reports/shopify-catalog-data-ai-shopping-2026)
 
 ### [How deep Shopify product data really is](/reports/shopify-product-data-depth-2026)
 
 ### [Do your product pages answer what shoppers ask AI?](/reports/do-product-pages-answer-ai-shopper-questions)
+
+## Statistics
+
+### [AI search statistics 2026](/reports/ai-search-statistics-2026)
+
+### [ChatGPT shopping statistics 2026](/reports/chatgpt-shopping-statistics-2026)
+
+### [Google AI Mode statistics 2026](/reports/google-ai-mode-statistics-2026)
+
+### [Agentic commerce statistics 2026](/reports/agentic-commerce-statistics-2026)
+
+### [AI referral traffic statistics 2026](/reports/ai-referral-traffic-statistics-2026)
+
+### [Cart abandonment statistics 2026](/reports/cart-abandonment-statistics-2026)
+
+## AI search by product area
+
+### [AI search for supplement brands](/reports/ai-search-supplement-brands-2026)
+
+### [AI search for beauty brands](/reports/ai-search-beauty-brands-2026)
+
+### [AI search for food and drink brands](/reports/ai-search-food-beverage-brands-2026)
+
+### [AI search for pet brands](/reports/ai-search-pet-brands-2026)
+
+### [AI search for home brands](/reports/ai-search-home-brands-2026)
+
+### [AI search for apparel brands](/reports/ai-search-apparel-brands-2026)
+
+### [The AI search checklist for Shopify](/reports/ai-search-checklist-shopify-2026)
+
+## Conversion benchmarks
+
+### [The Shopify CRO checklist](/reports/shopify-cro-checklist-2026)
+
+### [The Shopify buy box](/reports/shopify-product-page-buy-box-2026)
+
+### [Variant pickers: buttons or dropdowns](/reports/shopify-variant-picker-buttons-vs-dropdowns-2026)
+
+### [Collection filters and sorting](/reports/shopify-collection-filters-sorting-2026)
+
+### [Shopify site search and typos](/reports/shopify-site-search-typos-2026)
+
+### [Shopify image loading](/reports/shopify-image-loading-speed-2026)
+
+### [Which pages Shopify brands publish](/reports/shopify-store-pages-benchmarks-2026)
+
+### [A/B testing on Shopify](/reports/shopify-ab-testing-tools-2026)
+
+### [Buy now pay later and loyalty on Shopify](/reports/shopify-bnpl-loyalty-apps-2026)
 
 ## Conversion and ecommerce benchmarks
 
@@ -118,6 +210,16 @@ Sold out rates, sold out best sellers and launch pace. 34% of stores have a tent
 
 ### [Shopify Tech Stack Report 2026](/reports/shopify-tech-stack-report-2026)
 The email, reviews, upsell, analytics and testing tools growing brands load on their homepage, plus themes and free shipping thresholds.
+
+### [The most popular Shopify themes in 2026](/reports/most-popular-shopify-themes-2026)
+
+### [Shopify accessibility statistics 2026](/reports/shopify-accessibility-statistics-2026)
+
+### [How heavy a Shopify homepage is](/reports/shopify-homepage-page-weight-scripts-2026)
+
+### [Accessibility overlays on Shopify](/reports/shopify-accessibility-overlays-2026)
+
+### [International targeting on Shopify](/reports/shopify-international-hreflang-2026)
 
 ### [The State of Shopify Subscriptions 2026](/state-of-shopify-subscriptions-2026)
 The overview that started this series.

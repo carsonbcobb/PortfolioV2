@@ -117,6 +117,8 @@ These come from my [results page](/results), where each one is explained in cont
 
 What I measure your store against, from my own research on Shopify brand stores:
 
+* [CRO checklist](/reports/shopify-cro-checklist-2026): Only 11% show a delivery estimate, 18% pass basic accessibility checks and 33% load an A/B testing tool.
+* [Buy box](/reports/shopify-product-page-buy-box-2026): **63% have a quantity selector.**
 * [Return policies](/reports/shopify-return-policy-benchmarks-2026): **30 days is the default.** Of 77 policies that stated a window in days, 50 (65%) used exactly 30.
 * [Shipping policies](/reports/shopify-shipping-policy-benchmarks-2026): **12 of 107 stores had no readable shipping policy.** That's 11%.
 * [Announcement bars](/reports/shopify-announcement-bar-benchmarks-2026): **Free shipping dominates.** 35 of 63 bars (56%) promoted free shipping, almost always with a threshold.

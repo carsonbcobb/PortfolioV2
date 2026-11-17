@@ -77,6 +77,13 @@ From Adobe's 2026 holiday forecast ([Digital Commerce 360, September 29, 2026](h
 - **ChatGPT asked in 38% of answers.** 18 of 48 asked a follow up question or offered to narrow the pick. ([The follow up questions ChatGPT asks shoppers](/reports/chatgpt-follow-up-questions-shoppers-2026))
 - **ChatGPT labels almost everything.** 44 of 48 answers had at least one "best for" style label, 149 labels in total. ([How AI labels the products it recommends](/reports/how-ai-labels-products-best-for-2026))
 
+## More statistics
+
+- [ChatGPT shopping statistics for 2026, with sources](/reports/chatgpt-shopping-statistics-2026)
+- [Google AI Mode statistics for 2026, with sources](/reports/google-ai-mode-statistics-2026)
+- [Agentic commerce statistics for 2026, with sources](/reports/agentic-commerce-statistics-2026)
+- [AI referral traffic statistics for 2026, with sources](/reports/ai-referral-traffic-statistics-2026)
+
 ## What AI recommends: my research
 
 From my tests of ChatGPT, Gemini and Google AI Mode in November 2026, using 48 buyer questions across apparel, beauty and skincare, food and beverage, home, pet and supplements:

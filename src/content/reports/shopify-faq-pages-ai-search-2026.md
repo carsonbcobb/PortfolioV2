@@ -43,6 +43,8 @@ I found the FAQ page of 83 Shopify brand stores and checked how many questions i
 | Safety (allergies, sensitivities, pregnancy, side effects) | 54 | 65% |
 | International orders | 45 | 54% |
 
+For every page type brands publish, see [which pages Shopify brands publish](/reports/shopify-store-pages-benchmarks-2026).
+
 ## The gap is the product, not the store
 
 FAQ pages are strong on store logistics: shipping, returns, subscriptions. They're weaker on the product itself: is it safe for me, what's in it, how do I use it, which one should I pick.

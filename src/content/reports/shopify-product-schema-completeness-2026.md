@@ -50,6 +50,8 @@ Among the 84 stores with Product structured data on their best selling product p
 
 The pattern is clear. Shopify themes output the basics well. Anything that comes from outside the theme, like ratings from a review app, identifiers from the catalog, or policies from the shipping setup, is where the data thins out. The catalog side, from barcodes to product types and images, is covered in [Is your Shopify product data ready for AI shopping?](/reports/shopify-catalog-data-ai-shopping-2026)
 
+For deeper checks on product identifiers, shipping and return policy data and variants, see [GTINs on Shopify](/reports/shopify-gtin-product-identifiers-2026), [shipping and return policy schema](/reports/shopify-shipping-return-policy-schema-2026) and [variant schema on Shopify](/reports/shopify-productgroup-variant-schema-2026).
+
 ## Ratings: the stars shoppers see aren't always in the data
 
 74 of 94 stores (79%) were running a review app I could detect. But among the stores with both a review app and Product structured data, **28% had no rating in that structured data.** The reviews were on the page for shoppers. They weren't in the data for machines.

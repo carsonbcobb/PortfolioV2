@@ -4,7 +4,7 @@ description: "85% of Shopify brands have a blog, but only 52% updated an article
 slug: "/reports/shopify-blog-content-ai-search-2026"
 h1: "What 107 Shopify brands publish on their blogs, and what they don't"
 datePublished: 2026-11-16
-dateModified: 2026-11-16
+dateModified: 2026-11-17
 reportStores: 107
 faq:
   - question: "Do Shopify brands still have blogs?"
@@ -72,11 +72,28 @@ AI and Google both favor information that looks current, and an article last tou
 
 Content that answers shopper questions is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
+## November 2026 update: 617 stores
+
+- **85% of stores have published at least one blog article.** 523 of 617.
+- **Among those, the median store has 101 articles.**
+- **61% of stores with a blog posted in the last 90 days.**
+- **Brands named by ChatGPT, Gemini or Google AI Mode in my tests had a median of 142 articles, against 66 for brands that weren't named,** and 65% had posted in the last 90 days against 50%. That's correlation, not proof that blogging gets you named. More in [what AI named Shopify brands have in common](/reports/what-ai-named-shopify-brands-have-in-common-2026).
+
+| Product area | Stores | Has a blog | Median articles (all stores) | Posted in last 90 days (stores with a blog) |
+| --- | --- | --- | --- | --- |
+| Supplements | 123 | 88% | 132 | 67% |
+| Beauty | 127 | 84% | 48 | 61% |
+| Food and drink | 154 | 86% | 53 | 56% |
+| Pet | 41 | 93% | 142 | 68% |
+| Home | 76 | 80% | 100 | 66% |
+| Apparel | 96 | 80% | 31 | 52% |
+
 ## How this was done
 
 - **Stores:** 107 Shopify brand stores, 17 to 18 in each of six product areas (supplements, beauty, food and drink, pet, home, apparel), drawn at random from my dataset of 620 Shopify brand stores. Client stores were excluded.
 - **Articles:** every article URL in each store's article sitemaps (`sitemap_articles`), read November 16, 2026, with the sitemap's last modified date.
 - **Types:** classified by the article's URL with keyword rules: "how to", "what is", "why", "guide" and similar for questions; "best" and "top" for lists; "vs", "versus", "compare" and "alternative" for comparisons.
 - **Limits:** the last modified date shows when an article was last changed, not when it was first published. Classifying by URL misses articles whose URL doesn't describe them, so the question and comparison counts are likely a little low.
+- **November 17, 2026 update:** 617 Shopify brand stores, my full dataset of 620 minus client stores and one store that blocked automated reads, scanned November 16 and 17, 2026.
 
 No store or brand is named in this report.

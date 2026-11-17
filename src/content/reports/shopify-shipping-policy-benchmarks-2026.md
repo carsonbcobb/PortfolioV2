@@ -44,6 +44,8 @@ I read the published shipping policy of 107 Shopify brand stores across six prod
 
 The gap that matters most is the cutoff. A shopper buying a gift on a Tuesday wants to know whether ordering by 2pm means it ships today. 93% of policies don't say, so the shopper either guesses or leaves to check a competitor who does.
 
+The average documented cart abandonment rate is 70.22% across 50 studies ([cart abandonment statistics](/reports/cart-abandonment-statistics-2026)).
+
 ## The ranges stores give
 
 Of the 49 policies with a time range, the upper end of the first range stated was 5 days or less in 30 of them. Some of those ranges describe processing time, not delivery, and many policies never make clear which is which. "Ships in 1 to 3 business days" and "arrives in 1 to 3 business days" are very different promises.

@@ -4,7 +4,7 @@ description: "The email, reviews, testing and analytics tools growing Shopify br
 slug: "/reports/shopify-tech-stack-report-2026"
 h1: "Shopify Tech Stack Report 2026"
 datePublished: 2026-11-01
-dateModified: 2026-11-01
+dateModified: 2026-11-17
 reportStores: 153
 faq:
   - question: "What email platform do Shopify brands use most?"
@@ -49,6 +49,8 @@ Share of stores whose homepage loaded each type of tool.
 
 Supplement brands run some of the most complete stacks, with the most SMS and loyalty programs of any category, and apparel leads on testing and attribution. Food brands run the leanest, with the fewest tools of any category.
 
+Two groups of these tools have their own reports: [A/B testing on Shopify](/reports/shopify-ab-testing-tools-2026) and [buy now pay later and loyalty on Shopify](/reports/shopify-bnpl-loyalty-apps-2026).
+
 ## Reviews apps
 
 | App | Share of stores |
@@ -77,9 +79,13 @@ Every outside service is another script competing for the shopper's phone while 
 
 Most of that weight builds up over time: an app installed for a test, a pixel for a channel you stopped running, a widget that was replaced but never removed. A yearly app audit is one of the cheapest speed wins there is.
 
+For a newer count across 609 brands, see [how heavy a Shopify homepage is](/reports/shopify-homepage-page-weight-scripts-2026).
+
 ## Themes
 
 Dawn, Shopify's free theme, was the most common base theme at 14% of stores, followed by Impulse, Expanse, Palo Alto and Horizon at 3% each. The rest were spread across dozens of paid themes and custom builds. There is no single "right" theme among growing brands; what matters is how much has been bolted on top.
+
+Dawn runs 13% of 599 Shopify brand stores, then Impulse, Horizon, Broadcast and Prestige ([the most popular Shopify themes](/reports/most-popular-shopify-themes-2026)).
 
 ## Free shipping thresholds
 
@@ -104,6 +110,41 @@ $50 was the most common threshold (22% of stores showing one), then $75 and $100
 4. **Don't rely on an accessibility overlay.** Fix the theme instead.
 5. **Check your free shipping line against your typical cart,** especially if you sell lower priced products.
 
+## November 2026 update: 609 homepages
+
+I checked homepage code on 609 Shopify brand stores on November 16 and 17, 2026. Code on a page doesn't prove the app is in active use, and apps loaded through Shopify's pixel system or app embeds after load can be missed.
+
+| Tool | Share of 609 homepages |
+| --- | --- |
+| Klaviyo | 87% |
+| Google Tag Manager | 37% |
+| Gorgias | 35% |
+| Rebuy | 34% |
+| Microsoft Clarity | 31% |
+| Attentive | 24% |
+| Triple Whale | 23% |
+| Recharge | 20% |
+| Afterpay | 20% |
+| Elevar | 19% |
+| Hotjar | 19% |
+| Intelligems | 19% |
+| accessiBe | 18% |
+| Postscript | 18% |
+| Klarna | 15% |
+| Northbeam | 10% |
+| Shoplift | 9% |
+| OneTrust | 8% |
+| Pandectes | 8% |
+| Nosto | 7% |
+| LoyaltyLion | 7% |
+| Skio | 7% |
+| Mailchimp | 7% |
+| Omnisend | 6% |
+| Zendesk | 5% |
+| Privy | 5% |
+
+For review apps see [Shopify review apps](/reports/shopify-review-apps-2026). For testing tools see [A/B testing on Shopify](/reports/shopify-ab-testing-tools-2026).
+
 ## How this was done
 
 - **Stores:** 153 US Shopify stores from the 606 store dataset, sampled across supplements (26), beauty and skincare (25), food and beverage (28), pet (26), home (23) and apparel (25).
@@ -111,5 +152,6 @@ $50 was the most common threshold (22% of stores showing one), then $75 and $100
 - **Limits:** this is the homepage only. Some tools load only on product, cart or account pages, or only after a click, so every share here is a lower bound. Ad pixels that run inside Shopify's sandboxed pixel system may not show up. Subscription apps are covered more accurately in the [subscription benchmarks](/reports/shopify-subscription-benchmarks-2026), which reads plans directly.
 - **Outside companies:** distinct domains called from the homepage, excluding the store's own domain and Shopify.
 - **Free shipping:** dollar amounts in homepage text that mention free shipping, such as an announcement bar or "you're $50 away" cart message, excluding international offers.
+- **November 17, 2026 update:** 617 Shopify brand stores, my full dataset of 620 minus client stores and one store that blocked automated reads, scanned November 16 and 17, 2026.
 
 No store is named in this report. Want the scripts that slow your store cut back? Mobile speed is part of my [conversion work](/shopify-conversion-optimization).

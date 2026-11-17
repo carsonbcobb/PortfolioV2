@@ -51,6 +51,8 @@ It takes a few seconds per image, which is why most stores skip it. I checked th
 
 **AI.** AI shopping tools read your product pages and your product data. Alt text is part of that data. It won't decide a recommendation on its own, but it's one more place your product facts are stated in words. See [product data for AI shopping](/reports/shopify-catalog-data-ai-shopping-2026).
 
+Alt text is part of accessibility too. See [accessibility overlays on Shopify](/reports/shopify-accessibility-overlays-2026) for the overlay tools brands load.
+
 ## What good alt text looks like
 
 Describe what the image shows, briefly:

@@ -61,6 +61,8 @@ That's the opportunity. When 65% of stores say the same thing, 30 days stops bei
 
 Two things stand out. First, 44 stores use guarantee language, but only 11 make returns free. A guarantee the shopper pays to use is a weaker promise than it sounds. Second, the opened product rule is where most support tickets start. In supplements and beauty, "unopened only" means most unhappy customers can't return anything, and the policy should say so before they buy, not after.
 
+The average documented cart abandonment rate is 70.22% across 50 studies ([cart abandonment statistics](/reports/cart-abandonment-statistics-2026)).
+
 ## Why this matters for AI search too
 
 AI shopping agents now read store policies directly. When Search Engine Journal tested 122 Shopify stores with an AI agent in 2026, return windows were the one store question agents answered well, while shipping costs and cancellations mostly failed ([source](https://searchenginejournal.com/your-store-is-agent-ready-by-default-we-tested-122-shopify-stores/591767)). Shopify's own agent file, `agents.md`, points agents to your published policies ([Shopify](https://shopify.dev/docs/storefronts/themes/architecture/templates/agents-md-liquid)).

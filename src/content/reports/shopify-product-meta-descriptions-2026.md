@@ -61,6 +61,8 @@ Google rewrites many meta descriptions anyway, but it starts from what you give 
 
 It's also a consistency problem. When the meta description, the product description, the structured data and your product feed each say something slightly different, the AI reading them has to pick. See [what AI gets wrong about your products](/reports/what-ai-gets-wrong-about-products-2026).
 
+For the same basics on homepages, see [Shopify homepage SEO basics](/reports/shopify-homepage-seo-basics-2026).
+
 ## A simple formula
 
 What it is + who it's for + one proof point, in about 150 characters.

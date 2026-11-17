@@ -60,6 +60,8 @@ The same goes for the rest: size or weight ranges for pet products, age ranges f
 
 They're also the questions your best salespeople already ask in store or in chat. AI is doing the same job, with whatever information it can find.
 
+For how stores let shoppers narrow by need on their own collection pages, see [collection filters and sorting on Shopify](/reports/shopify-collection-filters-sorting-2026).
+
 ## What to do with this
 
 1. **Ask ChatGPT about your own products and note the follow ups.** Those are the deciding details for your product type.

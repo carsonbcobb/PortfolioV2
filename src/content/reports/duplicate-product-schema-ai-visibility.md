@@ -59,6 +59,8 @@ I traced each duplicate to the block that added it, from its ID, its container o
 | Theme or custom code | 4 |
 | Other review or SEO apps (one each: Klaviyo Reviews, AIR Reviews, an SEO schema app, a JSON-LD app) | 4 |
 
+45% of homepages had code from two or more review tools ([Shopify review apps](/reports/shopify-review-apps-2026)).
+
 ## Review apps compared
 
 | App | Stores using it | Had duplicate Product data | Rating in structured data | Can you turn off its schema? |

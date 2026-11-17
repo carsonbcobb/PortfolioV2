@@ -83,6 +83,8 @@ The named stores scored a little higher on average, but the overlap is large. Na
 
 What it does suggest: your own site's readiness is not what gets you into the answer. What gets you in is being featured by the sources ChatGPT reads for products like yours. Your site's readiness decides whether AI describes you correctly once you're there. See [the sources ChatGPT cites](/reports/sources-chatgpt-cites-2026).
 
+Only 65 of 617 Shopify brands were named by ChatGPT, Gemini or Google AI Mode across 144 shopping answers ([what AI named Shopify brands have in common](/reports/what-ai-named-shopify-brands-have-in-common-2026)). For what decides the pick, see [how ChatGPT chooses products](/reports/how-chatgpt-chooses-products-2026).
+
 ## What to do with this
 
 1. **Ask ChatGPT your customers' real questions.** Use five to ten, broad and specific, and note who gets named and which sources it shows.

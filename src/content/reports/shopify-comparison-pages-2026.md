@@ -45,6 +45,8 @@ I checked the pages and blog articles of 105 Shopify brand stores for any conten
 
 The median store had 43 pages.
 
+For every page type brands publish, see [which pages Shopify brands publish](/reports/shopify-store-pages-benchmarks-2026).
+
 ## Why comparisons are the gap that matters
 
 Every store has an About page. Very few answer the question a shopper asks right before choosing. That's the moment the sale is decided, and most brands leave it to someone else.

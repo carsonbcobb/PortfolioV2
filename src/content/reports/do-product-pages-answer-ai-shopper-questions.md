@@ -4,7 +4,7 @@ description: "94 Shopify product pages checked for what shoppers ask AI: 23% exp
 slug: "/reports/do-product-pages-answer-ai-shopper-questions"
 h1: "Do your product pages answer what shoppers ask AI?"
 datePublished: 2026-11-06
-dateModified: 2026-11-06
+dateModified: 2026-11-17
 reportStores: 94
 faq:
   - question: "What questions do shoppers ask AI about products?"
@@ -97,11 +97,31 @@ I covered the questions ChatGPT asks shoppers about their situation in [a separa
 
 Building the buyer questions for each product, and finding where the page falls short, is the core of my [AI Search and Conversion Audit](/ai-search). For a quick read on one page, run the free [AI Visibility Check](/ai-visibility-check).
 
+## November 2026 update: 598 product pages
+
+I ran the same kind of check on the product page of the first product in each of 617 stores' public product feeds (598 loaded), reading the page source before JavaScript runs.
+
+| The product page mentions | Share of 598 |
+| --- | --- |
+| Shipping | 93% |
+| FAQ content | 83% |
+| Ingredients or materials | 75% |
+| Returns | 67% |
+| Who it's for | 38% |
+| A guarantee | 33% |
+| How to use it | 31% |
+| Testing or certification | 30% |
+| A comparison with other options | 25% |
+| A size or fit guide | 13% (67% in apparel) |
+
+The biggest gaps by product area: food and drink pages rarely explain how to use the product (7%) or mention returns (40%); beauty pages say who a product is for on only 34%; supplements pages lead on testing claims (58%).
+
 ## How this was done
 
 - **Pages:** one product page from each of the 94 US Shopify stores in my [AI Readiness Index](/reports/shopify-ai-readiness-index-2026), across apparel, beauty and skincare, food and beverage, home, pet and supplements.
 - **Method:** each page was loaded in a browser on November 5, 2026, and its visible text was checked for words and phrases tied to each content type, such as "how to use", "directions", "size guide", "made for", "third party", "certified", "compare" and "returns".
 - **Limits:** the check counts a mention anywhere on the page, including menus, footers and pop ups, so these figures are upper bounds. It can't judge whether the content is good, only whether it's there. One product page per store.
 - **Long questions:** the 24 long questions are described in [how question wording changes AI recommendations](/reports/how-question-wording-changes-ai-recommendations).
+- **November 17, 2026 update:** 617 Shopify brand stores, my full dataset of 620 minus client stores and one store that blocked automated reads, scanned November 16 and 17, 2026.
 
 No store or brand is named in this report.

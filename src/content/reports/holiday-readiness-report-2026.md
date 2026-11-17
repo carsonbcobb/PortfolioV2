@@ -62,6 +62,8 @@ Once shipping cutoffs pass, a store without a gift card has far fewer ways to ca
 4. **Set shipping cutoff dates** in your announcement bar and cart, then switch the message to the gift card when they pass. See what other brands put in theirs in [Shopify announcement bar benchmarks](/reports/shopify-announcement-bar-benchmarks-2026) and [Shopify shipping policy benchmarks](/reports/shopify-shipping-policy-benchmarks-2026).
 5. **Check your best sellers are in stock.** 24% of stores with a best sellers collection had at least one sold out in early November. More in the [catalog and stock report](/reports/shopify-catalog-and-stock-report-2026).
 
+If you ship abroad for the holidays, see [international targeting on Shopify](/reports/shopify-international-hreflang-2026).
+
 ## How this was done
 
 - **Stores:** 606 US Shopify stores priced in US dollars: supplements (120), beauty and skincare (124), food and beverage (149), pet (41), home (77) and apparel (95).

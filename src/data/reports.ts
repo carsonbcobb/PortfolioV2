@@ -53,8 +53,8 @@ export const monthYear = (d: Date | string) =>
 /** True when two ISO dates fall in the same month */
 export const sameMonth = (a: string, b: string) => a.slice(0, 7) === b.slice(0, 7);
 
-/** "Data checked November 4, 2026" or "Data collected November 4 and 5, 2026": month, last day, year */
-const CHECKED = /Data (?:checked|collected) ([A-Z][a-z]+) (?:\d{1,2} and )?(\d{1,2}), (\d{4})/;
+/** "Data checked November 4, 2026", "Data collected November 4 and 5, 2026" or "November 4 to 17, 2026": month, last day, year */
+const CHECKED = /Data (?:checked|collected) ([A-Z][a-z]+) (?:\d{1,2} (?:and|to) )?(\d{1,2}), (\d{4})/;
 
 /** The date the data was checked: the last full day named in the copy, else the last update */
 export function checkedDate(page: MarkdownPage) {
@@ -64,39 +64,24 @@ export function checkedDate(page: MarkdownPage) {
   return isoDate(fm.dateModified ?? fm.datePublished ?? new Date());
 }
 
-/** Reports whose Dataset covers the month they were collected in, not a single day */
-const MONTH_COVERAGE = new Set([
-  'reports/shopify-agents-md-ai-agents-2026',
-  'reports/how-ai-labels-products-best-for-2026',
-  'reports/prices-in-ai-shopping-answers-2026',
-  'reports/why-ai-recommends-products-reasons-2026',
-  'reports/does-ai-recommend-products-or-brands-2026',
-  'reports/chatgpt-follow-up-questions-shoppers-2026',
-  'reports/shopify-image-alt-text-2026',
-  'reports/shopify-blog-content-ai-search-2026',
-  'reports/shopify-comparison-pages-2026',
-  'reports/shopify-product-meta-descriptions-2026',
-  'reports/shopify-structured-data-gaps-2026',
-  'reports/shopify-brand-name-consistency-2026',
-  'reports/shopify-off-site-signals-2026',
-  'reports/shopify-faq-pages-ai-search-2026',
-  'reports/shopify-about-pages-founder-2026',
-  'reports/shopify-return-policy-benchmarks-2026',
-  'reports/shopify-shipping-policy-benchmarks-2026',
-  'reports/shopify-announcement-bar-benchmarks-2026',
-  'reports/shopify-contact-options-benchmarks-2026',
-  'reports/shopify-back-in-stock-benchmarks-2026',
-]);
+/** Reports whose Dataset covers a single day. Every other Dataset covers the month it was collected in. */
+const DAY_COVERAGE = new Set(['reports/google-rankings-vs-ai-mode-2026']);
 
-/** Dataset temporalCoverage: the full checked date when the copy gives a single day, else its month */
+/** Dataset temporalCoverage: the checked day for the reports above, else its month */
 export function coverage(page: MarkdownPage) {
-  const full = /Data (?:checked|collected) [A-Z][a-z]+ \d{1,2}, \d{4}/.test(page.rawContent());
   const d = checkedDate(page);
-  return full && !MONTH_COVERAGE.has(slugOf(page)) ? d : d.slice(0, 7);
+  return DAY_COVERAGE.has(slugOf(page)) ? d : d.slice(0, 7);
 }
 
 /** Roundups of other people's figures: an Article with no Dataset of its own */
-export const ROUNDUPS = ['reports/ai-search-statistics-2026'];
+export const ROUNDUPS = [
+  'reports/ai-search-statistics-2026',
+  'reports/chatgpt-shopping-statistics-2026',
+  'reports/google-ai-mode-statistics-2026',
+  'reports/agentic-commerce-statistics-2026',
+  'reports/ai-referral-traffic-statistics-2026',
+  'reports/cart-abandonment-statistics-2026',
+];
 
 /** Unique column headers across the page's markdown tables */
 export function tableHeaders(page: MarkdownPage) {
@@ -127,13 +112,32 @@ export const hasShortVersion = (page: MarkdownPage) => /^## The short version\s*
 /** The first sentence of a piece of plain text */
 export const firstSentence = (text: string) => text.match(/^.+?[.!?](?=\s|$)/)?.[0] ?? text;
 
-/** The reports listed under "## AI search research" on the hub, in hub order */
+// Hub sections whose reports count as AI search research. "Start here" reports count too, unless they
+// also sit in another section (the CRO checklist sits under Conversion benchmarks).
+const AI_SECTIONS = ['AI search research', 'How AI picks products', 'Statistics', 'AI search by product area'];
+const START_HERE = 'Start here';
+/** Statistics reports about conversion, not AI search */
+const NOT_AI = ['reports/cart-abandonment-statistics-2026'];
+
+/** The reports listed in the hub's AI sections, in hub order */
 export const AI_RESEARCH = (() => {
-  const section = REPORT_HUB.rawContent().split(/^## AI search research\s*$/m)[1]?.split(/^## /m)[0] ?? '';
-  return [...section.matchAll(/\]\((\/[^)#]+)\)/g)].map((m) => {
-    const report = REPORTS.find((r) => slugOf(r) === m[1].slice(1));
-    if (!report) throw new Error(`AI search research links to ${m[1]}, which is not a report`);
-    return report;
+  const sections = REPORT_HUB.rawContent()
+    .split(/^## /m)
+    .slice(1)
+    .map((part) => ({
+      heading: part.split('\n')[0].trim(),
+      slugs: [...part.matchAll(/\]\((\/[^)#]+)\)/g)].map((m) => m[1].slice(1)),
+    }));
+  for (const slug of sections.flatMap((s) => s.slugs)) {
+    if (!REPORTS.some((r) => slugOf(r) === slug)) throw new Error(`The reports hub links to /${slug}, which is not a report`);
+  }
+  const inSection = (slug: string, test: (h: string) => boolean) =>
+    sections.some((s) => test(s.heading) && s.slugs.includes(slug));
+  return REPORTS.filter((r) => {
+    const slug = slugOf(r);
+    if (NOT_AI.includes(slug)) return false;
+    if (inSection(slug, (h) => AI_SECTIONS.includes(h))) return true;
+    return inSection(slug, (h) => h === START_HERE) && !inSection(slug, (h) => h !== START_HERE);
   });
 })();
 

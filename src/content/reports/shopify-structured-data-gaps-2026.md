@@ -50,6 +50,8 @@ It's easy to assume it's handled. I checked the homepage and one product page of
 | No Organization or store name stated | 27 | 25% |
 | Structured data that fails to parse | 1 | 1% |
 
+For what homepage Organization data says about a brand, see [Organization schema on Shopify](/reports/shopify-organization-schema-2026).
+
 ## Why missing data matters
 
 Product structured data is where price, availability and brand are stated in one clean place. In my earlier test, ChatGPT gave the right price for every product that had it, and couldn't find a price for half of those that didn't. See [does schema change what ChatGPT says](/reports/does-schema-change-what-chatgpt-says).
