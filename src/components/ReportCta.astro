@@ -1,0 +1,72 @@
+---
+// The call to action on research reports and the /reports hub. Two variants, picked per report with the
+// `cta` frontmatter field: "ai" (the default) leads with the AI Visibility Check, "cro" with the audit.
+// The compact size sits after "The short version": one line and the primary button. The full size ends the report.
+// Every link carries ?from=report-{slug}, and clicks fire the GA4 event report_cta_click (see SiteHead).
+export type CtaVariant = 'ai' | 'cro';
+
+interface Props {
+  variant?: CtaVariant;
+  size?: 'full' | 'compact';
+  /** The report's slug without "reports/", or "hub" on /reports */
+  slug: string;
+  position: 'short_version' | 'end' | 'hub';
+}
+
+const { variant = 'ai', size = 'full', slug, position } = Astro.props;
+
+const COPY = {
+  ai: {
+    eyebrow: 'AI Visibility Check',
+    headline: 'Is your store showing up when shoppers ask AI?',
+    body: "Check whether ChatGPT, Gemini and Google AI Mode can find, read and recommend your products, and see what's holding them back.",
+    primary: { label: 'Run the AI Visibility Check', href: '/ai-visibility-check' },
+    secondary: { label: 'Or get the full AI Search and Conversion Audit', href: '/ai-search' },
+  },
+  cro: {
+    eyebrow: 'Conversion audit',
+    headline: 'Find the leaks costing your store sales',
+    body: 'I review your product pages, cart and checkout flow on mobile and desktop, and show you what to fix first, ranked by impact.',
+    primary: { label: 'Get the AI Search and Conversion Audit', href: '/ai-search' },
+    secondary: { label: 'Or start with the AI Visibility Check', href: '/ai-visibility-check' },
+  },
+}[variant];
+
+const from = `?from=report-${slug}`;
+const track = (link: 'primary' | 'secondary') => ({
+  'data-track': 'report_cta',
+  'data-report-slug': slug,
+  'data-variant': variant,
+  'data-position': position,
+  'data-link': link,
+});
+---
+
+<aside class:list={['report-cta-box', `report-cta-box--${size}`, position === 'hub' && 'report-cta-box--hub']} aria-label={COPY.eyebrow}>
+  {
+    size === 'full' ? (
+      <>
+        <p class="eyebrow report-cta-box__eyebrow">{COPY.eyebrow}</p>
+        <p class="h3 report-cta-box__headline">{COPY.headline}</p>
+        <p class="report-cta-box__body">{COPY.body}</p>
+        <div class="report-cta-box__actions">
+          <a class="btn btn--accent report-cta-box__button" href={COPY.primary.href + from} {...track('primary')}>
+            {COPY.primary.label}
+            <span aria-hidden="true">→</span>
+          </a>
+          <a class="report-cta-box__link" href={COPY.secondary.href + from} {...track('secondary')}>
+            {COPY.secondary.label}
+          </a>
+        </div>
+      </>
+    ) : (
+      <>
+        <p class="report-cta-box__line">{COPY.headline}</p>
+        <a class="btn btn--accent report-cta-box__button" href={COPY.primary.href + from} {...track('primary')}>
+          {COPY.primary.label}
+          <span aria-hidden="true">→</span>
+        </a>
+      </>
+    )
+  }
+</aside>

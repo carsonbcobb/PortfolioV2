@@ -5,6 +5,7 @@ slug: "/reports/shopify-homepage-page-weight-scripts-2026"
 h1: "How heavy is a Shopify homepage? HTML size, scripts and outside tools across 609 brands"
 datePublished: 2026-11-17
 dateModified: 2026-11-17
+cta: cro
 reportStores: 617
 faq:
   - question: "How big is a typical Shopify homepage?"

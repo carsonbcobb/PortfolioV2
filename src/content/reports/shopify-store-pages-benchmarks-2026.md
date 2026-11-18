@@ -5,6 +5,7 @@ slug: "/reports/shopify-store-pages-benchmarks-2026"
 h1: "Which pages Shopify brands publish, and which ones most skip"
 datePublished: 2026-11-17
 dateModified: 2026-11-17
+cta: cro
 reportStores: 599
 faq:
   - question: "What pages should a Shopify store have?"

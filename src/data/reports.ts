@@ -13,6 +13,8 @@ export interface PageFrontmatter {
   /** Reports: how many stores and products the data covers */
   reportStores?: number;
   reportProducts?: number;
+  /** Reports: which ReportCta variant to show. Missing means "ai". */
+  cta?: 'ai' | 'cro';
   // link: an optional page link shown after the answer. It stays out of the FAQPage schema text.
   faq?: { question: string; answer: string; link?: { text: string; href: string } }[];
 }

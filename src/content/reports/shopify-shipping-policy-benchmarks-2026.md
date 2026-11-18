@@ -5,6 +5,7 @@ slug: "/reports/shopify-shipping-policy-benchmarks-2026"
 h1: "Shopify shipping policies: what 107 brand stores actually promise"
 datePublished: 2026-11-16
 dateModified: 2026-11-16
+cta: cro
 reportStores: 107
 faq:
   - question: "How many Shopify stores state a delivery time in their shipping policy?"

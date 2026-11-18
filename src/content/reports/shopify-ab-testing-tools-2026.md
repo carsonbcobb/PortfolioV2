@@ -5,6 +5,7 @@ slug: "/reports/shopify-ab-testing-tools-2026"
 h1: "A/B testing on Shopify: which brands test, and with which tools"
 datePublished: 2026-11-17
 dateModified: 2026-11-17
+cta: cro
 reportStores: 617
 faq:
   - question: "What percentage of Shopify stores run A/B tests?"

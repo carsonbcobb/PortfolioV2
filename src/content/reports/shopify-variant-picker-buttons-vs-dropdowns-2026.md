@@ -5,6 +5,7 @@ slug: "/reports/shopify-variant-picker-buttons-vs-dropdowns-2026"
 h1: "Variant pickers on Shopify: buttons or dropdowns, and why it matters"
 datePublished: 2026-11-17
 dateModified: 2026-11-17
+cta: cro
 reportStores: 599
 faq:
   - question: "Should Shopify variants be buttons or dropdowns?"

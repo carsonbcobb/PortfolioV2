@@ -5,6 +5,7 @@ slug: "/reports/shopify-site-search-typos-2026"
 h1: "Shopify site search: what happens when shoppers make a typo"
 datePublished: 2026-11-17
 dateModified: 2026-11-17
+cta: cro
 reportStores: 599
 faq:
   - question: "Does Shopify search handle typos?"

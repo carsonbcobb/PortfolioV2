@@ -5,6 +5,7 @@ slug: "/reports/shopify-bnpl-loyalty-apps-2026"
 h1: "Buy now pay later and loyalty on Shopify: what 609 brands actually offer"
 datePublished: 2026-11-17
 dateModified: 2026-11-17
+cta: cro
 reportStores: 617
 faq:
   - question: "How many Shopify stores offer buy now pay later?"
