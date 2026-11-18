@@ -5,6 +5,7 @@ slug: "/reports/shopify-collection-filters-sorting-2026"
 h1: "Collection filters and sorting on Shopify: what 599 brands give shoppers"
 datePublished: 2026-11-17
 dateModified: 2026-11-17
+cta: cro
 reportStores: 599
 faq:
   - question: "How many Shopify stores use collection filters?"

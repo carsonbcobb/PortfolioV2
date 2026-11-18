@@ -91,11 +91,19 @@ const ogImage = new URL(og.path, SITE_URL).href;
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[data-track], a[href^="mailto:"]');
     if (!a) return;
-    gtag('event', a.dataset.track ? a.dataset.track + '_click' : 'email_click', {
+    var params = {
       link_url: a.href,
       link_text: a.textContent.trim(),
       page_path: location.pathname,
-    });
+    };
+    // Report CTA cards (ReportCta.astro): which report, variant, position and link.
+    if (a.dataset.track === 'report_cta') {
+      params.report_slug = a.dataset.reportSlug;
+      params.variant = a.dataset.variant;
+      params.position = a.dataset.position;
+      params.link = a.dataset.link;
+    }
+    gtag('event', a.dataset.track ? a.dataset.track + '_click' : 'email_click', params);
   });
 </script>
 <script is:inline>

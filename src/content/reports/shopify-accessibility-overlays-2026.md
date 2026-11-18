@@ -5,6 +5,7 @@ slug: "/reports/shopify-accessibility-overlays-2026"
 h1: "Accessibility overlays on Shopify: one in four brands still load one"
 datePublished: 2026-11-17
 dateModified: 2026-11-17
+cta: cro
 reportStores: 617
 faq:
   - question: "How many Shopify stores use an accessibility overlay?"

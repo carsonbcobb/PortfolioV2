@@ -5,6 +5,7 @@ slug: "/reports/shopify-product-page-buy-box-2026"
 h1: "The Shopify buy box: what 596 brands put next to the add to cart button"
 datePublished: 2026-11-17
 dateModified: 2026-11-17
+cta: cro
 reportStores: 599
 faq:
   - question: "Should Shopify product pages show the Buy it now button?"

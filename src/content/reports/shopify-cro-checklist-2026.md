@@ -5,6 +5,7 @@ slug: "/reports/shopify-cro-checklist-2026"
 h1: "The Shopify CRO checklist, with pass rates from 599 brand stores"
 datePublished: 2026-11-17
 dateModified: 2026-11-17
+cta: cro
 reportStores: 617
 faq:
   - question: "What should be on a Shopify CRO checklist?"

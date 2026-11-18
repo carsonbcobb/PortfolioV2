@@ -5,6 +5,7 @@ slug: "/reports/shopify-accessibility-statistics-2026"
 h1: "Shopify accessibility statistics 2026: how 598 brand homepages do on five basic checks"
 datePublished: 2026-11-17
 dateModified: 2026-11-17
+cta: cro
 reportStores: 599
 faq:
   - question: "How accessible are Shopify stores?"

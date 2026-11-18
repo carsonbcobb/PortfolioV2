@@ -5,6 +5,7 @@ slug: "/reports/cart-abandonment-statistics-2026"
 h1: "Cart abandonment statistics 2026, and what Shopify stores do about them"
 datePublished: 2026-11-17
 dateModified: 2026-11-17
+cta: cro
 reportStores: 599
 faq:
   - question: "What is the average cart abandonment rate in 2026?"

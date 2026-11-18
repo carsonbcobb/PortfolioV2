@@ -5,6 +5,7 @@ slug: "/reports/shopify-product-page-benchmarks-2026"
 h1: "Shopify Product Page Benchmarks 2026"
 datePublished: 2026-11-01
 dateModified: 2026-11-01
+cta: cro
 reportStores: 606
 reportProducts: 121519
 faq:

@@ -3,6 +3,7 @@
 // Reports get their dates near the top, a Reports breadcrumb, and Article and Dataset JSON-LD.
 import ContentPage from '../layouts/ContentPage.astro';
 import PriceSummary from '../components/PriceSummary.astro';
+import ReportCta from '../components/ReportCta.astro';
 import { contentSchema, reportSchema } from '../data/schema';
 import { pageBySlug, CONTENT_PAGES } from '../data/pages';
 import { MARKDOWN_PAGES, DESIGNED_PAGES, AI_RESEARCH, ROUNDUPS, slugOf, isReportPage, isoDate, checkedDate, coverage, tableHeaders, type MarkdownPage } from '../data/reports';
@@ -29,6 +30,19 @@ let jsonLd: object[];
 let dates: { published?: string; modified?: string } | undefined;
 // Industry pages: the pricing cards after the body, and a closing call to action that ends on the audit.
 const industry = !report && pageBySlug(slug).kind === 'industry';
+
+// Reports: the markdown with the two ReportCta cards in the slots rehypeReportCtaSlots marked.
+const SLOTS = /<div data-cta-slot="(short_version|end)"><\/div>/;
+let reportParts: string[] | undefined;
+if (report) {
+  const parts = (await page.compiledContent()).split(SLOTS);
+  // [before, "short_version" | "end", middle, "short_version" | "end", after]
+  if (parts.length !== 5 || parts[1] !== 'short_version' || parts[3] !== 'end')
+    throw new Error(`/${slug} needs one short_version slot before one end slot for its CTA`);
+  reportParts = [parts[0], parts[2], parts[4]];
+}
+const ctaSlug = slug.replace(/^reports\//, '');
+const ctaVariant = fm.cta === 'cro' ? 'cro' : 'ai';
 
 if (report) {
   const published = isoDate(fm.datePublished ?? fm.dateModified!);
@@ -132,7 +146,19 @@ if (report) {
   <section class="section page-body">
     <div class="wrap">
       <article class="prose">
-        <page.Content />
+        {
+          reportParts ? (
+            <>
+              <Fragment set:html={reportParts[0]} />
+              <ReportCta variant={ctaVariant} size="compact" slug={ctaSlug} position="short_version" />
+              <Fragment set:html={reportParts[1]} />
+              <ReportCta variant={ctaVariant} size="full" slug={ctaSlug} position="end" />
+              <Fragment set:html={reportParts[2]} />
+            </>
+          ) : (
+            <page.Content />
+          )
+        }
         {
           related && (
             <p class="report-related">

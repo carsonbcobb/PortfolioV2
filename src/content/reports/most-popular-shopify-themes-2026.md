@@ -5,6 +5,7 @@ slug: "/reports/most-popular-shopify-themes-2026"
 h1: "The most popular Shopify themes in 2026, from 599 brand stores"
 datePublished: 2026-11-17
 dateModified: 2026-11-17
+cta: cro
 reportStores: 599
 faq:
   - question: "What is the most popular Shopify theme in 2026?"

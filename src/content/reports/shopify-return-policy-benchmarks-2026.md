@@ -5,6 +5,7 @@ slug: "/reports/shopify-return-policy-benchmarks-2026"
 h1: "Shopify return policy benchmarks: what 101 brand stores actually promise"
 datePublished: 2026-11-16
 dateModified: 2026-11-16
+cta: cro
 reportStores: 107
 faq:
   - question: "What is the most common return window for Shopify stores?"

@@ -5,6 +5,7 @@ slug: "/reports/shopify-image-loading-speed-2026"
 h1: "Shopify image loading: a third of brand stores slow down the first image shoppers see"
 datePublished: 2026-11-17
 dateModified: 2026-11-17
+cta: cro
 reportStores: 599
 faq:
   - question: "Should the first product image be lazy loaded on Shopify?"
