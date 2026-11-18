@@ -15,6 +15,8 @@ export interface PageFrontmatter {
   reportProducts?: number;
   /** Reports: which ReportCta variant to show. Missing means "ai". */
   cta?: 'ai' | 'cro';
+  /** Pages and guides: a ReportCta card where the markdown has <div data-cta-slot="page"></div> */
+  pageCta?: { variant?: 'ai' | 'cro'; headline?: string; body?: string };
   // link: an optional page link shown after the answer. It stays out of the FAQPage schema text.
   faq?: { question: string; answer: string; link?: { text: string; href: string } }[];
 }

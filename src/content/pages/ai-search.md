@@ -2,8 +2,14 @@
 title: "AI Search Optimization for Shopify Brands | Carson Cobb"
 description: "I get Shopify brands' products recommended in ChatGPT, Perplexity and Google AI answers through product data, product pages and off site coverage."
 slug: "/ai-search"
-h1: "AI search optimization for Shopify brands"
+h1: "I get Shopify brands' products recommended by ChatGPT, Gemini and Google AI Mode, and turn that traffic into sales"
 faq:
+  - question: "How much does AI search optimization cost?"
+    answer: "The AI Search and Conversion Audit is $1,500, and the full $1,500 is credited toward a Build or your first retainer month if you start within 30 days. A Build is a fixed price by catalog size, from $3,500 for 1 to 10 products. Retainers are $2,500, $4,500 or $7,500 a month, with a 3 month minimum."
+  - question: "What do you need from my brand?"
+    answer: "Shopify collaborator access, analytics access, Google Search Console, and access to your review, subscription and email apps where they apply. The audit needs view access only. You approve the plan and every change before it goes live."
+  - question: "How are results measured?"
+    answer: "I test the same buyer questions for each product that matters, in repeated runs on ChatGPT, Gemini and Google AI Mode, and track how often AI names you, where it places you and whether it describes you accurately. You get that in a monthly report, with AI referral traffic and sales from your store data as a second signal, since analytics tools undercount AI."
   - question: "What is AI search optimization?"
     answer: "Making your brand easy for ChatGPT, Perplexity, Gemini and Google's AI answers to read, trust and recommend, so you show up when shoppers ask what to buy. It's also called answer engine optimization (AEO) or generative engine optimization (GEO)."
   - question: "Is AI search optimization different from SEO?"
@@ -22,7 +28,7 @@ faq:
   - question: "Can apps on my store confuse AI?"
     answer: "Often. Review, bundle and subscription apps can each describe the same product in their own way, so AI sees conflicting prices, ratings or names for one product. When the facts conflict, AI is less sure what you sell and less likely to recommend it. Cleaning that up is part of the store work."
   - question: "How do I see where I stand today?"
-    answer: "Run the free AI Visibility Check. It asks ChatGPT the questions shoppers ask about products like yours, checks what it says about your brand, and reads your top product pages. The full audit tests your products against the questions your own customers ask, across repeated runs."
+    answer: "Run the AI Visibility Check. It asks ChatGPT the questions shoppers ask about products like yours, checks what it says about your brand, and reads your top product pages. The full audit tests your products against the questions your own customers ask, across repeated runs."
 ---
 <!-- The page layout lives in src/pages/ai-search.astro. Only these sections render from here,
 as collapsed "Read more" disclosures, found by their headings. -->

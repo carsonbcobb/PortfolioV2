@@ -80,6 +80,8 @@ The brand named first most often held first place in 52 of 55 answers. In both q
 4. **Moving up beats getting in.** Going from fifth to second matters more than going from absent to fifth, because fifth comes and goes.
 5. **Compare like with like over time.** Same questions, same number of runs, fresh sessions each time. That's the only way a month to month change means anything.
 
+If a competitor holds positions 1 and 2 while you come and go lower down, my guide on [why ChatGPT recommends your competitor](/guides/why-chatgpt-doesnt-recommend-my-shopify-store) explains what decides the order. Moving a product up that list is the core of my [AI search optimization work for Shopify brands](/ai-search).
+
 This is how I track products for clients: the same buyer questions, repeated runs, positions recorded, on ChatGPT, Gemini and Google AI Mode. See the [AI Search and Conversion Audit](/ai-search), or start with the free [AI Visibility Check](/ai-visibility-check).
 
 ## How this was done

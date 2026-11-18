@@ -7,7 +7,7 @@ import { contentSchema } from '../data/schema';
 import { pageBySlug, CONTENT_PAGES } from '../data/pages';
 import { designedPage, REPORTS, slugOf, shortVersion } from '../data/reports';
 import { guideNamed } from '../data/guides';
-import { AI_CASES, AI_CASES_NOTE, CHECK_PATH, HEADER_CTA_LABEL, HERO_PROOF } from '../data/site';
+import { AI_CASES, AI_CASES_NOTE, CAL_LINK, CHECK_PATH, HEADER_CTA_LABEL, HERO_PROOF } from '../data/site';
 import '../styles/sales.css';
 
 const slug = 'ai-search';
@@ -68,6 +68,16 @@ const steps = [
   { title: 'Convert the traffic it sends', text: 'Product pages and checkout that confirm what AI told the shopper.' },
 ];
 
+// "What you get", under the shopper's view.
+const deliverables = [
+  'Your products tested against the questions your buyers ask in ChatGPT, Gemini and Google AI Mode.',
+  'The competing products AI names instead of you, and the sources it relies on.',
+  'Product data and product pages fixed so AI can read, trust and quote them.',
+  'Work on the reviews, comparisons and articles AI leans on for products like yours.',
+  'Conversion work on the pages AI sends shoppers to, so the visits turn into sales.',
+  'A monthly report: your mention rate for each product, the competitors named, what AI gets wrong, and what shipped.',
+];
+
 const promises = [
   'No one controls AI answers. Anyone promising a ChatGPT ranking is guessing.',
   'I make sure your store and your products are the easiest in your competitive set for AI to read, trust and recommend.',
@@ -115,7 +125,7 @@ const industries = CONTENT_PAGES.filter((p) => p.kind === 'industry');
   title={fm.title}
   description={fm.description}
   h1={fm.h1}
-  intro="Get recommended when shoppers ask ChatGPT what to buy, and make sure the store converts them."
+  intro="I fix what AI reads about your products on your store and across the web, then make sure your product pages close the sale."
   trail={[{ name: info.label }]}
   {faqs}
   faqCollapsed
@@ -124,6 +134,7 @@ const industries = CONTENT_PAGES.filter((p) => p.kind === 'industry');
   <Fragment slot="hero">
     <div class="sales-hero__actions">
       <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent">{HEADER_CTA_LABEL}</a>
+      <a href={CAL_LINK} data-track="book_call" class="sales-hero__link">Book a 20 minute call →</a>
       <a href="/pricing" class="sales-hero__link">See pricing →</a>
     </div>
     <p class="sales-hero__proof">{HERO_PROOF.join(' · ')}</p>
@@ -167,6 +178,18 @@ const industries = CONTENT_PAGES.filter((p) => p.kind === 'industry');
         </div>
         <figcaption class="chat__caption">Example answer. Brand names are placeholders.</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <!-- What you get -->
+  <section class="section section--tight" aria-labelledby="what-you-get">
+    <div class="wrap">
+      <div class="card research-behind">
+        <h2 class="h3" id="what-you-get">What you get</h2>
+        <ul>
+          {deliverables.map((d) => <li>{d}</li>)}
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -330,4 +353,16 @@ const industries = CONTENT_PAGES.filter((p) => p.kind === 'industry');
   </section>
 
   <PriceSummary id="ai-pricing" sand={false} flush compact />
+
+  <!-- Booking, again at the end -->
+  <section class="section section--sand section--tight" aria-labelledby="book-call">
+    <div class="wrap">
+      <div class="promise">
+        <p class="eyebrow">Next step</p>
+        <h2 class="h3" id="book-call">Book a 20 minute call.</h2>
+        <p>We'll go over your products, who AI recommends instead of you, and whether an audit or ongoing work is the right next step. If it isn't a fit, I'll tell you.</p>
+        <p><a href={CAL_LINK} data-track="book_call" class="btn btn--accent">Book a 20 minute call</a></p>
+      </div>
+    </div>
+  </section>
 </ContentPage>

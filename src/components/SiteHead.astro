@@ -19,6 +19,8 @@ const {
 } = Astro.props;
 
 // Pages build as name.html (see astro.config.mjs), but are served and linked without the extension.
+// The 404 page is noindex and has no canonical of its own.
+const notFound = Astro.url.pathname.startsWith('/404');
 const canonical = new URL(Astro.url.pathname.replace(/(\.html|\/)$/, '') || '/', SITE_URL).href;
 // Share image comes from the page path (see OG_BY_PATH in data/site.ts), so no page sets its own.
 const og = ogImageFor(Astro.url.pathname);
@@ -31,9 +33,9 @@ const ogImage = new URL(og.path, SITE_URL).href;
 <meta name="description" content={description} />
 <meta name="keywords" content={keywords} />
 <meta name="author" content="Carson Cobb" />
-<meta name="robots" content={Astro.url.pathname.startsWith('/404') ? 'noindex' : 'index, follow'} />
+<meta name="robots" content={notFound ? 'noindex' : 'index, follow'} />
 <meta name="theme-color" content={themeColor} />
-<link rel="canonical" href={canonical} />
+{!notFound && <link rel="canonical" href={canonical} />}
 <link rel="icon" type="image/png" href="/favicon.png" />
 <link rel="apple-touch-icon" href="/icon.png" />
 <link rel="sitemap" href="/sitemap.xml" />

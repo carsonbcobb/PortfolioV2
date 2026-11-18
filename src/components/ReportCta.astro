@@ -10,12 +10,17 @@ interface Props {
   size?: 'full' | 'compact';
   /** The report's slug without "reports/", or "hub" on /reports */
   slug: string;
-  position: 'short_version' | 'end' | 'hub';
+  position: 'short_version' | 'end' | 'hub' | 'page';
+  /** Page specific copy in place of the variant's headline and body */
+  headline?: string;
+  body?: string;
+  /** The ?from= value, when it isn't report-{slug} (pages that aren't reports) */
+  from?: string;
 }
 
-const { variant = 'ai', size = 'full', slug, position } = Astro.props;
+const { variant = 'ai', size = 'full', slug, position, headline, body, from: fromValue } = Astro.props;
 
-const COPY = {
+const COPY = structuredClone({
   ai: {
     eyebrow: 'AI Visibility Check',
     headline: 'Is your store showing up when shoppers ask AI?',
@@ -30,9 +35,11 @@ const COPY = {
     primary: { label: 'Get the AI Search and Conversion Audit', href: '/ai-search' },
     secondary: { label: 'Or start with the AI Visibility Check', href: '/ai-visibility-check' },
   },
-}[variant];
+}[variant]);
+if (headline) COPY.headline = headline;
+if (body) COPY.body = body;
 
-const from = `?from=report-${slug}`;
+const from = `?from=${fromValue ?? `report-${slug}`}`;
 const track = (link: 'primary' | 'secondary') => ({
   'data-track': 'report_cta',
   'data-report-slug': slug,

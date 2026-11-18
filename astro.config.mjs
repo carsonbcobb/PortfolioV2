@@ -86,6 +86,7 @@ function rehypeReportCta() {
 // replaces them, with a question that only leads into one. Any other sentence in the same paragraph
 // ("No store is named in this report.") stays.
 const SERVICE_LINK = /^\/(ai-search|ai-visibility-check)(?:[?#]|$)/;
+const CTA_ANCHOR = /^(AI Search and Conversion Audit|AI Visibility Check|Run the free AI Visibility Check)$/;
 const METHOD_HEADING = /^(How this was (done|compiled)|About these numbers|Method)$/;
 const isReportFile = (path = '') =>
   (/[\\/]content[\\/]reports[\\/]/.test(path) && !/[\\/]index\.md$/.test(path)) ||
@@ -93,8 +94,12 @@ const isReportFile = (path = '') =>
 function rehypeReportCtaSlots() {
   const text = (n) => (n.type === 'text' ? n.value : (n.children ?? []).map(text).join(''));
   const isEl = (n, tag) => n?.type === 'element' && (!tag || n.tagName === tag);
+  // Only the old plain CTA links count: a service link with its button label as the anchor. A contextual link
+  // with descriptive anchor text ("AI search optimization for Shopify brands") stays in the copy.
   const linksService = (n) =>
-    isEl(n) && ((n.tagName === 'a' && SERVICE_LINK.test(String(n.properties?.href ?? ''))) || (n.children ?? []).some(linksService));
+    isEl(n) &&
+    ((n.tagName === 'a' && SERVICE_LINK.test(String(n.properties?.href ?? '')) && CTA_ANCHOR.test(text(n).trim())) ||
+      (n.children ?? []).some(linksService));
   const slot = (name) => ({ type: 'element', tagName: 'div', properties: { dataCtaSlot: name }, children: [] });
 
   // Split a paragraph into sentences: a sentence ends where a text node has ".", "!" or "?" then space or its end.
