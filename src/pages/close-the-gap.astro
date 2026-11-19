@@ -1,0 +1,191 @@
+---
+// /close-the-gap: the main offer. Every line comes from PROGRAM and PROGRAM_SIZES in site.ts, the same data
+// the pricing page, the homepage and the structured data use.
+import ContentPage from '../layouts/ContentPage.astro';
+import { PROGRAM, PROGRAM_SIZES, PROGRAM_FAQS, CAL_LINK, CHECK_PATH } from '../data/site';
+import { closeTheGapSchema } from '../data/schema';
+
+const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
+
+// Booking buttons go to CAL_LINK and are tracked as book_call events.
+const book = {
+  href: CAL_LINK,
+  'data-track': 'book_call',
+  ...(CAL_LINK.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {}),
+};
+
+const title = 'Close the Gap: Beat Your Competitors in AI Search | Carson Cobb';
+const description =
+  'AI is picking the winners in every product market. I show Shopify brands where competitors beat them in ChatGPT, Gemini and Google AI Mode, product by product, then close the gap. From $2,500 a month.';
+const h1 = 'Close the Gap';
+const intro =
+  "AI is picking the winners in every product market, and right now it's picking your competitor. I show you exactly where your competitors beat you in ChatGPT, Gemini and Google AI Mode, product by product, and what that's costing you. Then I close the gap.";
+
+const jsonLd = [closeTheGapSchema({ title, description, faqs: PROGRAM_FAQS })];
+---
+
+<ContentPage {title} {description} {h1} {intro} trail={[{ name: 'Pricing', href: '/pricing' }, { name: PROGRAM.name }]} faqs={PROGRAM_FAQS} {jsonLd}>
+  <div slot="hero" class="stack">
+    <div class="btn-row">
+      <a {...book} class="btn btn--accent">Book an intro call</a>
+      <a href="#sizes" class="btn btn--ghost-dark">See the two sizes</a>
+    </div>
+    <p class="hero__sub">{PROGRAM.startLine}</p>
+  </div>
+
+  <!-- The promise -->
+  <section class="section">
+    <div class="wrap stack">
+      <div class="head">
+        <p class="eyebrow">The promise</p>
+        <h2 class="h2">What I can and can't do.</h2>
+        <p class="lede">{PROGRAM.promise}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The program -->
+  <section class="section section--sand" aria-labelledby="program">
+    <div class="wrap stack">
+      <div class="head">
+        <p class="eyebrow">The program</p>
+        <h2 class="h2" id="program">90 days to close the gap.</h2>
+      </div>
+      <div class="grid grid--three plans">
+        {
+          PROGRAM.months.map((m) => (
+            <div class="card plan">
+              <div class="plan__head">
+                <span class="tag">{m.when}</span>
+                <h3 class="h3">{m.title}</h3>
+              </div>
+              <ul class="plan__list">
+                {m.items.map((i) => (
+                  <li>
+                    <span aria-hidden="true">✓</span>
+                    {i}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+      <div class="card plan">
+        <div class="plan__head">
+          <span class="tag">The whole time</span>
+          <h3 class="h3">{PROGRAM.always.title}</h3>
+        </div>
+        <ul class="plan__list">
+          {
+            PROGRAM.always.items.map((i) => (
+              <li>
+                <span aria-hidden="true">✓</span>
+                {i}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <p class="lede">{PROGRAM.after}</p>
+    </div>
+  </section>
+
+  <!-- Two sizes -->
+  <section class="section" id="sizes" aria-labelledby="sizes-title">
+    <div class="wrap stack">
+      <div class="head">
+        <p class="eyebrow">Pricing</p>
+        <h2 class="h2" id="sizes-title">Two sizes.</h2>
+      </div>
+      <div class="grid grid--320 plans">
+        {
+          PROGRAM_SIZES.map((z) => (
+            <div class:list={['card', 'plan', { 'plan--featured': z.featured }]}>
+              <div class="plan__head">
+                <span class:list={['tag', { 'tag--dim': z.featured }]}>{z.fit}</span>
+                <h3 class="h3">{z.name}</h3>
+                <div class="plan__price">
+                  {usd(z.monthly)}
+                  <span>/month</span>
+                </div>
+                <ul class="plan__tiers">
+                  <li>
+                    <span>With a 3 month commitment</span>
+                    <strong>{usd(z.monthly)}/month</strong>
+                  </li>
+                  <li>
+                    <span>Paid upfront for 3 months</span>
+                    <strong>{usd(z.upfront)}</strong>
+                  </li>
+                  <li>
+                    <span>No commitment</span>
+                    <strong>{usd(z.flexible)}/month</strong>
+                  </li>
+                </ul>
+              </div>
+              <ul class="plan__list">
+                {z.items.map((i) => (
+                  <li>
+                    <span aria-hidden="true">✓</span>
+                    {i}
+                  </li>
+                ))}
+                <li>
+                  <span aria-hidden="true">✓</span>
+                  Everything in the 90 day program above
+                </li>
+              </ul>
+              <div class="plan__foot">
+                <a {...book} class:list={['btn', z.featured ? 'btn--accent' : 'btn--outline']}>
+                  Book an intro call
+                </a>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="lock">
+        <div class="lock__pill">
+          <span class="lock__icon">
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111214" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"></path><path d="M9 12l2 2 4-4"></path></svg>
+          </span>
+          <p><strong>Month 1 delivery guarantee.</strong> {PROGRAM.guarantee} {PROGRAM.guaranteeNote}</p>
+        </div>
+      </div>
+      <p class="lock__terms plans__note">{PROGRAM.continues}</p>
+      <p class="lock__terms plans__note">{PROGRAM.scope}</p>
+    </div>
+  </section>
+
+  <!-- Who it's for -->
+  <section class="section section--sand" aria-labelledby="fit">
+    <div class="wrap stack">
+      <div class="head">
+        <p class="eyebrow">Who it's for</p>
+        <h2 class="h2" id="fit">Brands that want to beat a specific competitor.</h2>
+        <p class="lede">{PROGRAM.fit}</p>
+        <p class="lede">{PROGRAM.fitNote}</p>
+        <p class="lede">
+          Brands under $50K a month should start with the <a href={CHECK_PATH} data-track="visibility_check">AI Visibility Check</a>. It takes about a minute, no login.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to start -->
+  <section class="section" aria-labelledby="start">
+    <div class="wrap stack">
+      <div class="head">
+        <p class="eyebrow">How to start</p>
+        <h2 class="h2" id="start">Book an intro call.</h2>
+        <p class="lede">{PROGRAM.startLine}</p>
+      </div>
+      <div class="btn-row">
+        <a {...book} class="btn btn--accent">Book an intro call</a>
+      </div>
+      <p class="lede"><a href={PROGRAM.videoHref} data-track="video_request">{PROGRAM.videoLine}</a></p>
+    </div>
+  </section>
+</ContentPage>

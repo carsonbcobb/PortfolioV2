@@ -4,14 +4,14 @@ description: "What AI search work for a Shopify brand actually costs in 2026, wh
 slug: "/guides/ai-search-optimization-cost-shopify"
 h1: "How much does AI search optimization cost for a Shopify brand?"
 datePublished: 2026-11-09
-dateModified: 2026-11-09
+dateModified: 2026-11-18
 faq:
   - question: "How much does AI search optimization cost for a Shopify store?"
-    answer: "It depends on catalog size and how much outside work is included. As a reference, my prices are $1,500 for an audit, $3,500 to $10,000 or more for a one time build depending on active products, and $2,500 to $7,500 a month for ongoing work. Off site outreach, like getting into the review sites and articles AI cites, is the part that adds the most cost."
+    answer: "It depends on catalog size and how much outside work is included. As a reference, my program, Close the Gap, is $2,500 a month for up to 3 products and 3 competitors, or $5,000 a month for up to 10 products and 6 competitors, each with a 3 month commitment. Off site outreach, like getting into the review sites and articles AI cites, is the part that adds the most cost."
   - question: "What drives the price of AI search work?"
     answer: "Three things: how many active products need their pages and product data fixed, whether off site work is included, and how many buyer questions and AI tools are tracked each month."
   - question: "Is AI search optimization worth it for a small Shopify brand?"
-    answer: "It's worth it once a brand has steady sales and products people compare before buying. For a brand doing about $20,000 a month or more, one month of AI referred sales at higher conversion rates can cover an audit. For very new brands, basic product page and product data fixes are enough to start."
+    answer: "It's worth it once a brand has steady sales and products people compare before buying. I work with brands doing about $50,000 a month and up. For newer brands, basic product page and product data fixes are enough to start, and the AI Visibility Check shows where you stand."
   - question: "Can I do AI search optimization myself?"
     answer: "Some of it. Filling barcodes and product types, writing fuller product descriptions and checking your Agentic sales channel settings are all doable in house. Tracking buyer questions across several AIs, fixing product data in theme code and off site outreach are where most brands bring in help."
 ---
@@ -32,15 +32,15 @@ Most agencies hide this behind a sales call. Here's what drives the price, what 
 
 ### A one time audit
 
-Shows how often you're recommended, who's named instead, which sources the AI trusts, what it gets wrong about your products, and a ranked fix list. **Mine is $1,500**, credited toward a build or first retainer month if you start within 30 days.
+Shows how often you're recommended, who's named instead, which sources the AI trusts, what it gets wrong about your products, and a ranked fix list. I don't sell this on its own: the head to head against your competitors is month 1 of [Close the Gap](/close-the-gap). For a quick read, the [AI Visibility Check](/ai-visibility-check) takes about a minute, no login.
 
 ### A one time build
 
-Someone actually fixes your store: product data for every active product, product pages for your top sellers, crawler access, and conversion on the pages AI sends people to. **Mine is fixed price by active product count:** $3,500 for 1 to 10 products, $5,000 for 11 to 50, $7,500 for 51 to 500, and from $10,000 above that. That includes two revision rounds, 14 days of fixes after launch and a retest at 30 days.
+Someone actually fixes your store: product data, product pages for your top sellers, crawler access, and conversion on the pages AI sends people to. I don't sell this as a separate project either: I implement the on site fixes myself in month 1 of Close the Gap.
 
 ### Ongoing work
 
-Monthly tracking, new fixes as answers shift, and off site outreach. **Mine runs $2,500 to $7,500 a month** (Core, Growth and Full), with a 3 month minimum. Off site outreach starts at Growth.
+Monthly tracking, new fixes as answers shift, and off site outreach. **Mine is Close the Gap: $2,500 a month (Focus) or $5,000 a month (Full)** with a 3 month commitment, or $3,000 and $6,000 a month with no commitment. Source work starts in month 2, and every price is on the [pricing page](/pricing).
 
 ## What cheap offers usually leave out
 
@@ -51,6 +51,6 @@ Monthly tracking, new fixes as answers shift, and off site outreach. **Mine runs
 
 ## Is it worth it?
 
-Shoppers who come from AI assistants arrive already deciding, and in my experience they convert at a much higher rate than other traffic. For a brand doing $20,000 a month or more with products people compare before buying, the math usually works within a few months.
+Shoppers who come from AI assistants arrive already deciding, and in my experience they convert at a much higher rate than other traffic. For a brand doing $50,000 a month or more with products people compare before buying, the math usually works within a few months.
 
-If you're not sure yet, start with the [AI Visibility Check](/ai-visibility-check). Full details are on the [pricing page](/pricing).
+If you're not sure yet, start with the [AI Visibility Check](/ai-visibility-check). It takes about a minute, no login. Full details are on the [pricing page](/pricing).

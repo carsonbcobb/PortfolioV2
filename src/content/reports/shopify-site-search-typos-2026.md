@@ -71,7 +71,7 @@ Store search is the moment a shopper tells you exactly what they want. It's also
 4. **Make empty results useful.** Suggest best sellers and collections with a clear "no exact match" line.
 5. **Tag gift products** so "gift" always returns something in season.
 
-Search and navigation fixes are part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Search and navigation fixes are part of my [Full Store Audit](/full-store-audit). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

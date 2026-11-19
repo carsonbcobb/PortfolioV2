@@ -13,6 +13,8 @@ const pages: [string, string[]][] = [
   ['/', ['src/pages/index.astro']],
   ['/agencies', ['src/pages/agencies.astro']],
   ['/pricing', ['src/pages/pricing.astro']],
+  ['/close-the-gap', ['src/pages/close-the-gap.astro']],
+  ['/full-store-audit', ['src/pages/full-store-audit.astro']],
   ['/ai-visibility-check', ['src/pages/ai-visibility-check.astro']],
   ['/about', ['src/pages/about.astro']],
   ['/results', ['src/content/results.md', 'src/pages/results.astro', 'src/data/results.ts']],

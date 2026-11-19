@@ -87,7 +87,7 @@ It's common to assume smaller brands win on specific questions. In this test, sp
 3. **Make your product pages answer the constraint.** Who it's for, who it isn't for, sizing, ingredients, testing and how it compares. See [do your product pages answer what shoppers ask AI?](/reports/do-product-pages-answer-ai-shopper-questions)
 4. **Track the same questions over time.** Same wording, same number of runs, fresh sessions. Change the wording and you've changed the test.
 
-Building buyer questions from your customers' own language, and testing them on ChatGPT, Gemini and Google AI Mode, is how my [AI Search and Conversion Audit](/ai-search) starts. The free [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Building buyer questions from your customers' own language, and testing them on ChatGPT, Gemini and Google AI Mode, is how [Close the Gap](/close-the-gap) starts. The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

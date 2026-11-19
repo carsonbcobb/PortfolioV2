@@ -102,4 +102,4 @@ If ChatGPT keeps naming a competitor instead of you, my guide on [why ChatGPT re
 - **Stability:** 11 questions asked again in a fresh chat on the same day. A 12th repeat didn't finish in time and is left out.
 - **Readiness comparison:** stores from the 94 store [AI Readiness Index](/reports/shopify-ai-readiness-index-2026) named anywhere in the 48 answers, compared with the rest.
 
-No store or brand from the dataset is named in this report. [Run the free AI Visibility Check](/ai-visibility-check) to see whether ChatGPT names your brand.
+No store or brand from the dataset is named in this report. [Run the AI Visibility Check](/ai-visibility-check) to see whether ChatGPT names your brand.

@@ -783,6 +783,20 @@ img {
   color: var(--accent);
 }
 
+/* Price lines (the Close the Gap sizes) on the dark featured card. */
+.plan--featured .plan__tiers,
+.plan--featured .plan__tiers li {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.plan--featured .plan__tiers li {
+  color: var(--soft);
+}
+
+.plan--featured .plan__tiers strong {
+  color: #fff;
+}
+
 .lock {
   display: flex;
   flex-direction: column;

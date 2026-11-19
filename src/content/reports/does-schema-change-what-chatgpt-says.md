@@ -82,4 +82,4 @@ This is a small test, 24 products checked once each, so it shows what can go wro
 - **Truth:** the price and rating shown on the live product page the same day, read in a browser after it finished loading, compared with the structured data.
 - **Limits:** one run per product, and ChatGPT can search the web, so it may also read retailer listings and older copies of pages. That's how shoppers use it too.
 
-No store is named in this report. [Run the free AI Visibility Check](/ai-visibility-check) to see what ChatGPT says about your products.
+No store is named in this report. [Run the AI Visibility Check](/ai-visibility-check) to see what ChatGPT says about your products.

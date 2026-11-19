@@ -85,7 +85,7 @@ function rehypeReportCta() {
 // The plain closing sentences that linked /ai-search or /ai-visibility-check are dropped, because the card
 // replaces them, with a question that only leads into one. Any other sentence in the same paragraph
 // ("No store is named in this report.") stays.
-const SERVICE_LINK = /^\/(ai-search|ai-visibility-check)(?:[?#]|$)/;
+const SERVICE_LINK = /^\/(ai-search|ai-visibility-check|close-the-gap|full-store-audit)(?:[?#]|$)/;
 const METHOD_HEADING = /^(How this was (done|compiled)|About these numbers|Method)$/;
 const isReportFile = (path = '') =>
   (/[\\/]content[\\/]reports[\\/]/.test(path) && !/[\\/]index\.md$/.test(path)) ||

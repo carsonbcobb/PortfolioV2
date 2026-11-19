@@ -82,4 +82,4 @@ Shopify switched this on for stores, so having the file no longer sets a store a
 - **Statements:** taken from Google's Search Central guidance and Search Engine Land and Search Engine Journal coverage of Google staff comments, Chrome Lighthouse documentation, OpenAI's crawler documentation, and the OtterlyAI and SE Ranking studies as reported publicly.
 - **November 17, 2026 update:** 617 Shopify brand stores, my full dataset of 620 minus client stores and one store that blocked automated reads, scanned November 16 and 17, 2026.
 
-No store is named in this report. Want to know what AI actually says about your brand? [Run the free AI Visibility Check](/ai-visibility-check).
+No store is named in this report. Want to know what AI actually says about your brand? [Run the AI Visibility Check](/ai-visibility-check).

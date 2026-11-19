@@ -57,7 +57,7 @@ The gap is content and coverage. The median apparel store has 31 blog articles, 
 
 More on the pattern across all six areas in [what AI named Shopify brands have in common](/reports/what-ai-named-shopify-brands-have-in-common-2026) and [how many brands AI recommends](/reports/how-many-brands-ai-recommends-2026).
 
-Finding where AI names your brand, and why it skips you, is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Finding where AI names your brand, and why it skips you, is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

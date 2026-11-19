@@ -69,7 +69,7 @@ The other homepage data is in decent shape. 62% of homepages have a site search 
 4. **Add a founding date and a contact point.** They're small, and almost nobody has them.
 5. **Validate.** One broken bracket means none of the block is read.
 
-Fixing what AI can read about your brand is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Fixing what AI can read about your brand is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

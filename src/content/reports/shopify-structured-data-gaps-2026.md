@@ -72,7 +72,7 @@ When the theme publishes one Product block and a review app publishes another, t
 4. **Add Organization data to the homepage.** Your store name, logo and social profiles, so AI connects your brand to your site. See [product schema completeness](/reports/shopify-product-schema-completeness-2026).
 5. **Re-test after theme or app changes.** Most problems arrive with a new app or theme update.
 
-Structured data and the rest of your product data are part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Structured data and the rest of your product data are part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

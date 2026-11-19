@@ -74,7 +74,7 @@ AI agents shopping on a buyer's behalf don't use your chat. Shopify's managed `a
 4. **Show a phone number if your price justifies it.** For high consideration products, test showing it on product pages and in the cart.
 5. **Check it on mobile.** Make sure the chat bubble doesn't cover Add to Cart or the sticky checkout button.
 
-Contact options, product page content and checkout friction are part of my [AI Search and Conversion Audit](/ai-search).
+Contact options, product page content and checkout friction are part of [Close the Gap](/close-the-gap).
 
 ## How this was done
 

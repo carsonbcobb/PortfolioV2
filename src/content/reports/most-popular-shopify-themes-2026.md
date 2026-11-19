@@ -75,7 +75,7 @@ The theme matters less than what's done with it. Dawn stores range from very fas
 3. **If your theme is custom, ask who maintains it.** Someone has to apply the platform changes a Theme Store developer would ship.
 4. **Don't switch themes for looks alone.** Switch when the current one blocks speed, structured data or conversion features you need.
 
-Theme, speed and conversion work is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Theme, speed and conversion work is part of my [Full Store Audit](/full-store-audit). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

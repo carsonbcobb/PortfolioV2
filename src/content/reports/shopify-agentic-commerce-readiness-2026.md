@@ -69,7 +69,7 @@ A rewritten agents.md is the cheapest fix and the rarest. It's a plain text file
 4. **Publish return and shipping terms** in Merchant Center and in structured data.
 5. **Test it like a shopper would.** Ask an AI assistant to find and compare your product, and see what it gets wrong.
 
-Getting a store ready for AI agents is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Getting a store ready for AI agents is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

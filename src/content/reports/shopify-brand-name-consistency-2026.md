@@ -76,7 +76,7 @@ For the catalog fields that carry your brand name to AI shopping tools, see [pro
 4. **Add or check Organization data on the homepage.** Name, logo and links to your official profiles.
 5. **Match it outside your site.** Amazon, retailers, Google Business Profile and social bios. See [off site signals](/reports/shopify-off-site-signals-2026).
 
-How AI recognizes and describes your brand is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+How AI recognizes and describes your brand is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

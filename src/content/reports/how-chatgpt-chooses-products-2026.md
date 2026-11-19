@@ -53,7 +53,7 @@ Structured data didn't decide who got named. Named and unnamed brands had Produc
 | A short list | Test many question variations, not one |
 | Facts | Clean structured data, one Product block, GTINs, policies |
 
-My guide to [getting Shopify products recommended by ChatGPT](/reports/how-to-get-shopify-products-recommended-by-chatgpt) turns this into steps. Finding where ChatGPT names you and why is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+My guide to [getting Shopify products recommended by ChatGPT](/reports/how-to-get-shopify-products-recommended-by-chatgpt) turns this into steps. Finding where ChatGPT names you and why is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

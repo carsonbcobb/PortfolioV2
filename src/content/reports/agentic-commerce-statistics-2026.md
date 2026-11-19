@@ -64,7 +64,7 @@ Agents are real but early. Most AI shopping is still research, and the purchase 
 
 For a brand that means two jobs. Be the product the agent finds and understands, with clean data an agent can trust. And make the page the shopper lands on confirm what the agent said.
 
-Getting ready for AI agents is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Getting ready for AI agents is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was compiled
 

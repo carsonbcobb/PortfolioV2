@@ -76,7 +76,7 @@ It matters for AI shoppers too. A shopper who asked AI for "the 90 count" or "th
 4. **Show the per unit price** when sizes differ, so the bigger size sells itself.
 5. **Test it.** On high traffic pages it's one of the fastest tests to run.
 
-Product page tests like this are part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Product page tests like this are part of my [Full Store Audit](/full-store-audit). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

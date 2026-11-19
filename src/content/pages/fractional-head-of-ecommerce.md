@@ -5,7 +5,7 @@ slug: "/fractional-head-of-ecommerce"
 h1: "A fractional head of ecommerce for your Shopify store"
 faq:
   - question: "What does a fractional head of ecommerce do?"
-    answer: "I lead the Shopify channel the way a full time hire would: the plan, the numbers, the store, AI search and conversion, the apps, email and the vendors around it. You decide, and nothing goes live without your sign off. The difference is you pay a monthly retainer instead of a salary, and I bring patterns from 50+ Shopify stores with me."
+    answer: "I lead the Shopify channel the way a full time hire would: the plan, the numbers, the store, AI search and conversion, the apps, email and the vendors around it. You decide, and nothing goes live without your sign off. The difference is you pay a monthly fee instead of a salary, and I bring patterns from 50+ Shopify stores with me."
   - question: "How is this different from hiring an agency?"
     answer: "An agency usually delivers projects someone else on your side has to scope and manage. As your fractional head of ecommerce, I'm the one scoping and managing. I propose what matters this month, you decide, and I do much of the work myself. My agency vs fractional comparison goes deeper."
   - question: "Can you manage the freelancers and agencies we already have?"
@@ -13,20 +13,20 @@ faq:
   - question: "When should we hire full time instead?"
     answer: "When the channel is big enough that you need someone inside the business every day, managing a team of their own. Many brands use a fractional lead until they reach that point, and I'm happy to help write the job description and hand over cleanly."
   - question: "Is there a long contract?"
-    answer: "Retainers have a 3 month minimum. Most brands start with the $1,500 AI Search and Conversion Audit so they can see how I work before committing."
+    answer: "It's a custom engagement, so we agree the length together on an intro call. If you mainly want AI search covered, Close the Gap has a 3 month commitment, then runs month to month."
   - question: "What do you need from us to start?"
     answer: "Shopify collaborator access, analytics access, Google Search Console, and access to your review, subscription and email apps where they apply. Plus your margins by product, and an hour with you to walk through goals. I handle the rest."
   - question: "Moving to Shopify or rebuilding your theme?"
-    answer: "That's quoted as a separate project, outside the retainer. I plan every move to protect your rankings and AI visibility: every old URL redirected, the content that ranks kept, and the redirects checked after launch."
+    answer: "That's quoted as a separate project, outside the monthly engagement. I plan every move to protect your rankings and AI visibility: every old URL redirected, the content that ranks kept, and the redirects checked after launch."
     link:
       text: "See how I handle migrations."
       href: "/shopify-migration"
   - question: "How much does a fractional head of ecommerce cost?"
-    answer: "My retainers are Core at $2,500/month for up to 15 hours, Growth at $4,500/month for up to 30 hours, and Full at $7,500/month for up to 60 hours, each with a 3 month minimum. Full is the fractional head of ecommerce role."
+    answer: "It's a custom engagement, priced to the scope your brand needs, so let's talk it through on an intro call. For AI search on its own, Close the Gap starts at $2,500 a month."
   - question: "Is this the same as a fractional CMO for Shopify?"
     answer: "Close, but narrower. A fractional CMO usually leads marketing across every channel. I lead the Shopify store itself: conversion, AI search, retention, the apps and the vendors, and I do much of the work myself."
   - question: "Will I work with you directly?"
-    answer: "Yes. I do the work myself, with no handoff to a junior team or an offshore team. If something needs more than 60 hours in a month, or a specialist skill like photography, I tell you up front and either quote it or recommend someone you hire directly."
+    answer: "Yes. I do the work myself, with no handoff to a junior team or an offshore team. If something needs a specialist skill like photography, I tell you up front and either quote it or recommend someone you hire directly."
 ---
 
 At some point every growing brand hits the same wall. The founder is still the one deciding what goes on the homepage, chasing the developer, approving email, and wondering why conversion dropped last Tuesday. Nobody leads the store. Everybody touches it.
@@ -61,7 +61,7 @@ There's no single right answer. Here's how I'd think about it.
 
 **An agency** makes sense when you have a clearly scoped project, like a full redesign, and someone on your team who can manage it. Agencies are built to deliver projects. They're less often built to lead your numbers month after month.
 
-**A fractional head of ecommerce** makes sense when you need a senior lead for the store without a senior salary. You get someone who sets direction and does the work, on a retainer you can adjust as you grow.
+**A fractional head of ecommerce** makes sense when you need a senior lead for the store without a senior salary. You get someone who sets direction and does the work, on a monthly engagement you can adjust as you grow.
 
 Many brands end up with a mix. I've written a longer, honest version of this in my [agency vs fractional head of ecommerce comparison](/agency-vs-fractional-head-of-ecommerce), including when I think an agency is the better pick.
 
@@ -101,7 +101,7 @@ There are two ways to run this, and you pick.
 
 **I work through your approval process.** If you have a team, a brand review or a legal check, everything goes through it. I write the brief, your team signs off, then I build and ship. This suits brands where several people need to see changes before they go live.
 
-Either way, each week looks the same: a call on Core every 2 weeks, or weekly on Growth and Full, a short update on what moved and what's next, and QA on everything before it ships.
+Either way, each week looks the same: a weekly call, a short update on what moved and what's next, and QA on everything before it ships.
 
 ## Results
 
@@ -125,26 +125,13 @@ What I measure your store against, from my own research on Shopify brand stores:
 * [Back in stock alerts](/reports/shopify-back-in-stock-benchmarks-2026): **Most stores have something sold out.** 77 of 105 catalogs (73%) had at least one fully sold out product.
 * [Contact options](/reports/shopify-contact-options-benchmarks-2026): **60% load a chat or help desk widget.** 64 of 107.
 
-## Plans
+## How it's priced
 
-This work runs on one of four retainers, each with a 3 month minimum except Dedicated, which is custom.
+This is a custom engagement for brands that want their ecommerce run day to day. I act as your ecommerce lead, working at your direction: the plan, launches and promotions for your sign off, Klaviyo day to day, subscriptions, merchandising, apps and vendors, plus the AI search and conversion work. You get a weekly report and QA on everything that ships.
 
-| Retainer | Price | Capacity | Calls |
-| --- | --- | --- | --- |
-| Core | $2,500/month | Up to 15 hours a month | Every 2 weeks |
-| Growth | $4,500/month | Up to 30 hours a month | Weekly |
-| Full | $7,500/month | Up to 60 hours a month | Weekly call, plus 1 extra call a week when needed |
-| Dedicated | Let's talk | Full time capacity | Built around your team |
+I do the work myself. If something needs a specialist skill like photography, I tell you up front and either quote it or recommend someone you hire directly. The first 90 days follow the plan above: tracking, speed and key pages in month 1, then email and order value in month 2.
 
-Every month: your mention rate for each product on ChatGPT, Gemini and Google AI Mode, the competitors AI names instead, the sources it relies on, what it gets wrong, and what we shipped and what's next.
-
-**Full** is the fractional head of ecommerce role. I act as your ecommerce lead, working at your direction: the plan, launches and promotions for your sign off, Klaviyo day to day, subscriptions, merchandising, apps and vendors, plus the AI search and conversion work. You get a weekly report and QA on everything that ships.
-
-I do the work myself. If something needs more than 60 hours, or a specialist skill like photography, I tell you up front and either quote it or recommend someone you hire directly. Email and Klaviyo are part of Full; they aren't sold on their own. The first 90 days follow the plan above: tracking, speed and key pages in month 1, then email and order value in month 2.
-
-**Core** is everything you control, fixed and measured every month: the monthly AI search report, the on site work, and your brand's own listings made to match. **Growth** adds coverage from the outside sources AI relies on, and an ongoing conversion testing program, to everything in Core, without the full ecommerce lead role. **Dedicated** is full time capacity for brands that need it. Most brands start with the **$1,500 AI Search and Conversion Audit**.
-
-Every option is listed on the [pricing page](/pricing).
+The price depends on your store and what you want covered, so [let's talk](https://calendar.app.google/arLBYoErUBfsuqfN9). If what you need most is AI search, [Close the Gap](/close-the-gap) is the program for that, from $2,500 a month. Every published price is on the [pricing page](/pricing).
 
 ## Who this is a good fit for
 
@@ -152,8 +139,8 @@ This works best for founders of growing brands who sell on Shopify and feel the 
 
 It's probably not a fit if you want someone to only run ads, or if you need a team of five on day one.
 
-## Book a 20 minute intro call
+## Let's talk
 
 If you're tired of being the person who holds the whole store together, let's talk. We'll go over your goals and figure out the right next step, and if it isn't a fit, I'll say so.
 
-[Book a 20 minute intro call](/ai-visibility-check#book)
+[Book an intro call](https://calendar.app.google/arLBYoErUBfsuqfN9)

@@ -92,4 +92,4 @@ Find the exact reason first, then fix that. Run the questions your buyers ask in
 6. **Clean up product data** so price, rating and availability are readable without scripts and tied to the right product.
 7. **Go after the sources** the AI already trusts for your questions.
 
-If you'd rather see where you stand first, the free [AI Visibility Check](/ai-visibility-check) shows whether ChatGPT recommends your brand and how ready your store is. If you want it done properly across every product, the [AI search and conversion audit](/pricing) covers exactly this, and when you want it handled, that's [what I do](/ai-search).
+If you'd rather see where you stand first, the [AI Visibility Check](/ai-visibility-check) shows whether ChatGPT recommends your brand and how ready your store is. If you want it done properly across every product, [Close the Gap](/close-the-gap) covers exactly this, against your main competitors, and when you want it handled, that's [what I do](/ai-search).

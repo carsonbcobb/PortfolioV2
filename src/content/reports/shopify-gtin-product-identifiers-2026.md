@@ -56,7 +56,7 @@ Most brands with barcodes on the box have them in a spreadsheet somewhere. They 
 3. **Add MPN where there's no barcode.** Brand plus MPN is the fallback for products without one.
 4. **Match your feeds.** The same GTIN should appear in Google Merchant Center, on Amazon and in any retailer feed.
 
-Product data that AI and Google can trust is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Product data that AI and Google can trust is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

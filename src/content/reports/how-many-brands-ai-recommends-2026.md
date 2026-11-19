@@ -69,7 +69,7 @@ That's why I test many question variations, not one. I covered how much wording 
 3. **Track which questions you're in, not a single score.**
 4. **Go after the questions you're closest to.** Where you're named by one engine, find what the source behind it says, and earn the same coverage elsewhere.
 
-Testing where AI names you is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Testing where AI names you is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

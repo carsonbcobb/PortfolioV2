@@ -57,7 +57,7 @@ Google's guidance asks site owners to make it clear who is behind their content,
 5. **Connect it in structured data.** Organization data on your homepage with your name, logo, founding date and official profiles.
 6. **Link to it from product pages.** A short "Who we are" line near the product details, for the shopper deciding whether to trust you.
 
-How AI and shoppers judge your brand is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+How AI and shoppers judge your brand is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

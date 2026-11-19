@@ -59,7 +59,7 @@ Growth percentages are also from a small base, and Adobe's figures cover large U
 
 Track AI referrals as their own channel, watch branded search and direct beside them, and ask new customers where they first heard of you. I set that up step by step in [can Shopify brands see their AI traffic](/reports/shopify-analytics-attribution-ai-traffic-2026).
 
-Measuring and growing AI traffic is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Measuring and growing AI traffic is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was compiled
 

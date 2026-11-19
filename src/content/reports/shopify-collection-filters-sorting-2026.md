@@ -87,7 +87,7 @@ The standard product attributes gap is worth watching. Shopify's product taxonom
 4. **Add sorting** with best selling as the default.
 5. **Write a short collection description** that says who the collection is for.
 
-Collection page and navigation work is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Collection page and navigation work is part of my [Full Store Audit](/full-store-audit). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

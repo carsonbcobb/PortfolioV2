@@ -72,7 +72,7 @@ Avoid the same product name on every image, and avoid lists of keywords.
 4. **Make it a step in product launches.** New products get alt text before they go live.
 5. **Use bulk tools for big catalogs.** Shopify's admin works product by product; apps or CSV editing work for hundreds.
 
-Product data and product pages are part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Product data and product pages are part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

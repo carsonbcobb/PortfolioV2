@@ -7,33 +7,20 @@
 import HomeLayout from '../layouts/HomeLayout.astro';
 import SiteNav from '../components/SiteNav.astro';
 import SiteFooter from '../components/SiteFooter.astro';
-import {
-  CHECK_API_URL,
-  TURNSTILE_SITE_KEY,
-  STRIPE_AUDIT_LINK,
-  CAL_LINK,
-  CAL_EMBED,
-  AUDIT,
-  CHECK_FAQS,
-  CALL_NAME,
-  CALL_TEXT,
-} from '../data/site';
+import { CHECK_API_URL, TURNSTILE_SITE_KEY, CAL_LINK, CAL_EMBED, CHECK_FAQS, CALL_NAME, CALL_TEXT } from '../data/site';
 import { checkSchema } from '../data/schema';
 import '../styles/content.css';
 import '../styles/check.css';
 import '../styles/sales.css';
 
-const title = 'Does ChatGPT Recommend Your Brand? Free Check | Carson Cobb';
+const title = 'Does ChatGPT Recommend Your Competitor Instead of You? | Carson Cobb';
 const description =
-  'Free AI Visibility Check for Shopify brands. See if ChatGPT recommends your products, what it says about you, and if AI can read your store.';
+  'AI Visibility Check for Shopify brands. See if ChatGPT recommends your top competitor instead of you, what it says about your brand, and if AI can read your store.';
 
 const ready = Boolean(CHECK_API_URL && TURNSTILE_SITE_KEY);
-const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
-const auditHref = STRIPE_AUDIT_LINK || CAL_LINK;
-const auditTrack = STRIPE_AUDIT_LINK ? 'audit_checkout' : 'book_call';
 const ext = (href: string) => (href.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {});
 
-// What each score measures and why it matters. Never how to fix it: that is the audit.
+// What each score measures and why it matters. Never how to fix it: that is Close the Gap.
 const SCORES = [
   {
     name: 'AI visibility',
@@ -86,7 +73,7 @@ const jsonLd = [checkSchema({ title, description, faqs: CHECK_FAQS })];
       <!-- Step 1: your store -->
       <div class="flow__step is-active" data-step="1">
         <div class="wrap flow__inner flow__inner--center">
-          <p class="eyebrow">Free AI Visibility Check</p>
+          <p class="eyebrow">AI Visibility Check</p>
           <h1 class="flow__h1" tabindex="-1">Does ChatGPT recommend your brand?</h1>
           <p class="flow__sub">
             Enter your store. In about a minute you'll see whether ChatGPT recommends your products when shoppers ask
@@ -98,6 +85,16 @@ const jsonLd = [checkSchema({ title, description, faqs: CHECK_FAQS })];
                 <form id="store-form" class="flow__form" novalidate>
                   <label class="visually-hidden" for="store-url">Store URL</label>
                   <input id="store-url" name="url" type="text" inputmode="url" autocomplete="url" placeholder="yourstore.com" required />
+                  <label class="visually-hidden" for="store-rival">Your top competitor (URL or brand name), optional</label>
+                  <input
+                    id="store-rival"
+                    name="competitor"
+                    type="text"
+                    autocomplete="off"
+                    maxlength="100"
+                    placeholder="Your top competitor (optional)"
+                    title="Your top competitor (URL or brand name)"
+                  />
                   <button type="submit" class="btn btn--accent" data-label="Check my AI visibility">Check my AI visibility</button>
                 </form>
                 <form id="confirm-form" class="flow__confirm" novalidate hidden>
@@ -106,6 +103,10 @@ const jsonLd = [checkSchema({ title, description, faqs: CHECK_FAQS })];
                     <label class="chip">
                       <span>Brand</span>
                       <input name="brand" type="text" maxlength="60" required />
+                    </label>
+                    <label class="chip">
+                      <span>Top competitor</span>
+                      <input name="competitor" type="text" maxlength="100" placeholder="Optional" />
                     </label>
                   </div>
                   <div class="flow__actions">
@@ -120,7 +121,7 @@ const jsonLd = [checkSchema({ title, description, faqs: CHECK_FAQS })];
             ) : (
               <p class="flow__notice">
                 The check is being set up. In the meantime, you can{' '}
-                <a href={CAL_LINK} data-track="book_call" {...ext(CAL_LINK)}>book a 20 minute AI Search Review</a> to talk
+                <a href={CAL_LINK} data-track="book_call" {...ext(CAL_LINK)}>book a Close the Gap intro call</a> to talk
                 about your goals and next steps.
               </p>
             )
@@ -173,6 +174,7 @@ const jsonLd = [checkSchema({ title, description, faqs: CHECK_FAQS })];
             <div class="score__num"><span id="score-num">0</span><small>of 100</small></div>
           </div>
           <div class="flow__col">
+            <p class="h2h" id="h2h" hidden></p>
             <p class="eyebrow" id="score-eyebrow">Your AI visibility score</p>
             <h2 class="flow__h2" tabindex="-1" id="score-verdict"></h2>
             <ol class="findings" id="findings"></ol>
@@ -197,17 +199,18 @@ const jsonLd = [checkSchema({ title, description, faqs: CHECK_FAQS })];
             <p class="eyebrow">What this means</p>
             <h2 class="flow__h2" tabindex="-1"><span class="close__score" id="close-score"></span> This is one run. Your buyers ask far more.</h2>
             <p class="flow__body">
-              The full audit tests your products against the questions your own customers ask, across repeated runs. It
-              finds the competing products and sources AI relies on instead of you, and where your store loses the sale.
+              Close the Gap puts you head to head against your main competitors across your top products. The fixes get
+              implemented, and you get a competitor report every week or two showing where you stand.
             </p>
             <div class="close__book">
               <p class="close__book-title" id="book-title">Prefer to talk it through?</p>
               <p class="flow__body">{CALL_TEXT}</p>
-              <button type="button" class="btn btn--accent" data-action="open-calendar" id="open-calendar">Book a 20 minute {CALL_NAME}</button>
+              <button type="button" class="btn btn--accent" data-action="open-calendar" id="open-calendar">Book a {CALL_NAME}</button>
             </div>
-            <p class="flow__fine">Reviews are for brands doing $20K+ a month. Under that, the full audit is the best place to start.</p>
+            <p class="flow__fine">For brands doing $50K+ a month.</p>
             <p class="close__audit">
-              <a href={auditHref} data-track={auditTrack} {...ext(auditHref)}>Ready now? Book the audit, {usd(AUDIT.price)}</a>
+              Want the full picture across your top products and main competitors?
+              <a href="/close-the-gap?from=check" data-track="close_the_gap">See Close the Gap</a>.
             </p>
             <p class="flow__fine" id="sent-line"></p>
           </div>
@@ -226,7 +229,7 @@ const jsonLd = [checkSchema({ title, description, faqs: CHECK_FAQS })];
 
       <dialog class="cal-modal" id="cal-modal" aria-labelledby="cal-modal-title">
         <div class="cal-modal__head">
-          <p id="cal-modal-title">Book a 20 minute AI Search Review</p>
+          <p id="cal-modal-title">Book a {CALL_NAME}</p>
           <button type="button" class="flow__link" data-action="close-calendar">Close</button>
         </div>
         <div class="cal-modal__body" id="calendar-modal"></div>
@@ -234,28 +237,31 @@ const jsonLd = [checkSchema({ title, description, faqs: CHECK_FAQS })];
       </dialog>
     </section>
 
-    <!-- Free check vs the audit -->
+    <!-- The check vs Close the Gap -->
     <section class="section section--sand section--tight" aria-labelledby="compare-title">
       <div class="wrap stack">
-        <h2 class="h2 h2--36" id="compare-title">How is this different from the full audit?</h2>
+        <h2 class="h2 h2--36" id="compare-title">How is this different from Close the Gap?</h2>
         <div class="grid compare">
           <div class="card compare__col">
-            <p class="tag">Free</p>
+            <p class="tag">About a minute, no login</p>
             <h3 class="h3">This check</h3>
             <ul>
+              <li>One store</li>
               <li>Questions built from your products</li>
               <li>One run</li>
               <li>A snapshot of where you stand today</li>
             </ul>
           </div>
           <div class="card compare__col compare__col--paid">
-            <p class="tag tag--accent">{usd(AUDIT.price)} one time</p>
-            <h3 class="h3">{AUDIT.name}</h3>
-            <p class="compare__line">{AUDIT.summary}</p>
+            <p class="tag tag--accent">90 days</p>
+            <h3 class="h3">Close the Gap</h3>
+            <p class="compare__line">You, head to head against your main competitors.</p>
             <ul>
-              {AUDIT.covers.map((c) => <li>{c}</li>)}
+              <li>Your top products, against your main competitors</li>
+              <li>The fixes implemented, not just listed</li>
+              <li>A competitor report every week or two</li>
             </ul>
-            <a class="compare__link" href="/pricing#audit">See the audit on the pricing page →</a>
+            <a class="compare__link" href="/close-the-gap?from=check" data-track="close_the_gap">See how Close the Gap works →</a>
           </div>
         </div>
       </div>
@@ -303,7 +309,7 @@ const jsonLd = [checkSchema({ title, description, faqs: CHECK_FAQS })];
                 <p>
                   <strong>Why it matters:</strong> {sc.means}
                 </p>
-                <p>The full audit covers what to do about it.</p>
+                <p>Close the Gap covers what to do about it.</p>
               </details>
             ))
           }
@@ -316,13 +322,13 @@ const jsonLd = [checkSchema({ title, description, faqs: CHECK_FAQS })];
       <div class="wrap stack">
         <div class="head">
           <p class="eyebrow">Prefer to talk it through?</p>
-          <h2 class="h2" id="book-direct">Book a 20 minute {CALL_NAME}.</h2>
+          <h2 class="h2" id="book-direct">Book a {CALL_NAME}.</h2>
           <p class="lede">{CALL_TEXT}</p>
         </div>
         <div class="btn-row">
           <a href={CAL_LINK} data-track="book_call" class="btn btn--accent" {...ext(CAL_LINK)}>Book a call</a>
         </div>
-        <p class="fineprint">Reviews are for brands doing $20K+ a month. Under that, the full audit is the best place to start.</p>
+        <p class="fineprint">For brands doing $50K+ a month.</p>
       </div>
     </section>
 

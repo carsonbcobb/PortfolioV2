@@ -95,7 +95,7 @@ I covered the questions ChatGPT asks shoppers about their situation in [a separa
 4. **Show the proof.** Testing, certifications and review counts, visible on the page, with the details a skeptical shopper would look for.
 5. **Check it from the shopper's side.** Ask ChatGPT, Gemini and Google AI Mode the long version of a question your customers ask, then click through to your page and see if it confirms the answer within a few seconds.
 
-Building the buyer questions for each product, and finding where the page falls short, is the core of my [AI Search and Conversion Audit](/ai-search). For a quick read on one page, run the free [AI Visibility Check](/ai-visibility-check).
+Building the buyer questions for each product, and finding where the page falls short, is the core of [Close the Gap](/close-the-gap). For a quick read on one page, run the [AI Visibility Check](/ai-visibility-check).
 
 ## November 2026 update: 598 product pages
 

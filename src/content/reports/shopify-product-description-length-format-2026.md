@@ -64,7 +64,7 @@ A 60 word description can be enough if it states the facts a shopper filters on.
 4. **Use the words shoppers use.** If they ask for "fragrance free," write "fragrance free," not "clean scent profile."
 5. **Keep it consistent with the rest of the page.** A description that disagrees with the size chart or ingredients list creates the kind of conflict AI repeats.
 
-Product content that AI and shoppers can use is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Product content that AI and shoppers can use is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

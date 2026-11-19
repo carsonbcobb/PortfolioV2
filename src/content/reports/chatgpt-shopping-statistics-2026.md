@@ -62,7 +62,7 @@ Most ChatGPT statistics pages repeat each other's numbers without dates. This on
 
 ChatGPT has become a place where people decide what to buy, then buy wherever they're comfortable. OpenAI's own March 2026 shift toward discovery and merchant checkout fits that. For a brand, the job is to be in the short list, which is a median of four names, and to have the landing page confirm what the answer said.
 
-Finding out where ChatGPT names you is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Finding out where ChatGPT names you is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was compiled
 

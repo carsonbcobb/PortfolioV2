@@ -7,7 +7,7 @@ faq:
   - question: "How do I get my supplement brand recommended by ChatGPT?"
     answer: "ChatGPT recommends supplements it can match to the shopper's situation and trust from more than one source. That comes from product pages that say who the product is for, how to use it and how it's tested, and from the sites AI already reads for supplements. It works product by product, so the first step is seeing which of your products AI names today and who it names instead."
     link:
-      text: "Run the free AI Visibility Check."
+      text: "Run the AI Visibility Check."
       href: "/ai-visibility-check"
   - question: "Which sources does AI use for supplements?"
     answer: "Google AI Mode leans on health and expert sources for supplements more than for any other product type. In my November 2026 check, 28% of its links in supplement answers went to health and expert sources, and only 17% went to brand websites. Editorial sites and community sources like Reddit and YouTube got links too."
@@ -35,7 +35,7 @@ Supplement shoppers don't type "best creatine" anymore. They describe themselves
 
 The AI answers with a few brands and a reason for each. If your product isn't one of them, that shopper never sees your site. If it is, they arrive already half convinced, and your product page has to confirm what the AI told them.
 
-I'm Carson Cobb, a Shopify expert who works on [AI search](/ai-search) and conversion. I look at how AI answers the questions your buyers ask, product by product, then make the store turn those visitors into orders. You can see where you stand today with the free [AI Visibility Check](/ai-visibility-check).
+I'm Carson Cobb, a Shopify expert who works on [AI search](/ai-search) and conversion. I look at how AI answers the questions your buyers ask, product by product, then make the store turn those visitors into orders. You can see where you stand today with the [AI Visibility Check](/ai-visibility-check).
 
 ## What I found when I tested products like yours
 
@@ -66,4 +66,4 @@ AI referred shoppers arrive ready to buy. [Shopify reported in May 2026](/report
 
 Then comes the second order, where supplement brands make their money. I set subscription frequencies from real serving counts, make subscribe and save visible on the products people take every day, and time reorder reminders to when a bottle runs out. On one subscription brand, [subscribe and save opt in went from 7% to 32%](/results). More on my [Shopify subscriptions page](/shopify-subscriptions).
 
-If you want me running reorders, email and the rest of the store with you each month, that's the Full retainer on my [full store management page](/fractional-head-of-ecommerce).
+If you want me running reorders, email and the rest of the store with you each month, that's a custom engagement on my [full store management page](/fractional-head-of-ecommerce).

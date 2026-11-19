@@ -64,7 +64,7 @@ Loyalty is the surprise. Repeat purchase is the business model for most consumab
 3. **Decide what drives your repeat orders.** Subscription, loyalty points or reorder emails, and make one of them excellent.
 4. **Check the numbers.** Compare conversion and order value for shoppers who use installments against those who don't.
 
-Offers, payment options and repeat purchase are part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Offers, payment options and repeat purchase are part of my [Full Store Audit](/full-store-audit). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

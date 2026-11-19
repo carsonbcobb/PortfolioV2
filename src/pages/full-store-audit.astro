@@ -1,0 +1,86 @@
+---
+// /full-store-audit: the CRO offer. Scope, price, timing and walkthrough come from FULL_AUDIT in site.ts, the
+// same data the pricing card and the structured data use.
+import ContentPage from '../layouts/ContentPage.astro';
+import { FULL_AUDIT, PROGRAM, TERMS, CAL_LINK, EMAIL_URL } from '../data/site';
+import { fullStoreAuditSchema } from '../data/schema';
+
+const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
+
+// The same booking button as the rest of the site, tracked as book_call.
+const book = {
+  href: CAL_LINK,
+  'data-track': 'book_call',
+  ...(CAL_LINK.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {}),
+};
+
+const title = 'Full Store Audit for Shopify Brands | Carson Cobb';
+const description = `A ${usd(FULL_AUDIT.price)} conversion audit of your Shopify store: every page on mobile and desktop, cart and checkout, email flows, analytics and subscriptions, with every fix ranked by what it's worth.`;
+const h1 = 'Full Store Audit';
+const intro = `Every page of your Shopify store reviewed, with every fix ranked by what it's worth. ${usd(FULL_AUDIT.price)} one time, delivered within 2 business days of getting store access and walked through by recorded video.`;
+
+const faqs = [
+  {
+    q: 'What does the Full Store Audit cover?',
+    a: `${FULL_AUDIT.summary} It's a conversion audit: it finds where shoppers drop off and what to fix first.`,
+  },
+  {
+    q: 'How much is it, and how fast is it delivered?',
+    a: `${usd(FULL_AUDIT.price)} one time. ${FULL_AUDIT.timing} ${FULL_AUDIT.walkthrough}`,
+  },
+  {
+    q: 'What do you need from me to start?',
+    a: 'Store collaborator access, analytics access, and access to your email and subscription apps where they apply. The audit needs view access only.',
+  },
+  {
+    q: 'Does it cover AI search?',
+    a: `No. The Full Store Audit is about turning visitors into orders. Seeing where competitors beat you in ChatGPT, Gemini and Google AI Mode, and closing that gap, is ${PROGRAM.name}.`,
+  },
+  {
+    q: 'What happens after the audit?',
+    a: 'You can hand the ranked fixes to your own team, or ask me to quote the ones you want me to implement.',
+  },
+  { q: 'Who owns the audit?', a: `The audit is yours to keep and use with any team. ${TERMS.ownership}` },
+];
+
+const jsonLd = [fullStoreAuditSchema({ title, description, faqs })];
+---
+
+<ContentPage {title} {description} {h1} {intro} trail={[{ name: 'Pricing', href: '/pricing' }, { name: FULL_AUDIT.name }]} {faqs} {jsonLd}>
+  <div slot="hero" class="btn-row">
+    <a {...book} class="btn btn--accent">Book the audit</a>
+    <a href={EMAIL_URL} class="btn btn--ghost-dark">Email me</a>
+  </div>
+
+  <section class="section">
+    <div class="wrap stack">
+      <div class="head">
+        <h2 class="h2">What you get</h2>
+      </div>
+      <div class="grid plans" style="max-width: 720px">
+        <div class="card plan plan--featured" id="audit">
+          <div class="plan__head">
+            <span class="tag tag--dim">One time</span>
+            <h3 class="h3">{FULL_AUDIT.name}</h3>
+            <div class="plan__price">{usd(FULL_AUDIT.price)}</div>
+            <p class="plan__summary">{FULL_AUDIT.summary}</p>
+          </div>
+          <ul class="plan__list">
+            {
+              FULL_AUDIT.includes.map((i) => (
+                <li>
+                  <span aria-hidden="true">✓</span>
+                  {i}
+                </li>
+              ))
+            }
+          </ul>
+          <div class="plan__foot">
+            <a {...book} class="btn btn--accent">Book the audit</a>
+            <a href={PROGRAM.path} class="plan__alt">Want AI to recommend you over a competitor? See {PROGRAM.name}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</ContentPage>

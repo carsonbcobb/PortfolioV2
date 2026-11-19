@@ -68,7 +68,7 @@ Track AI referrals, branded search and direct together, and ask new customers wh
 
 Full list in the [AI search checklist for Shopify](/reports/ai-search-checklist-shopify-2026).
 
-This is the work I do in my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+This is the work I do in [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

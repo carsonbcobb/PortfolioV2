@@ -67,7 +67,7 @@ That last one matters most. In my experience working with brands, shoppers resea
 3. **Add one post purchase survey question.** "Where did you first hear about us?" with ChatGPT and other AI tools as options.
 4. **Watch recordings of AI referred sessions.** See whether the landing page confirms what the answer promised.
 
-Measuring and growing AI traffic is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Measuring and growing AI traffic is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

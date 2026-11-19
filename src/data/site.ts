@@ -20,7 +20,7 @@ export const OG_DEFAULT: OgImage = {
 export const OG_BY_PATH: Record<string, OgImage> = {
   '/ai-visibility-check': {
     path: '/og/og-check.png',
-    alt: 'Free AI Visibility Check. Does ChatGPT recommend your brand? Results in about a minute.',
+    alt: 'AI Visibility Check. Does ChatGPT recommend your brand? Results in about a minute.',
     width: 1200,
     height: 627,
   },
@@ -61,7 +61,7 @@ if (!calLink) {
 export const CAL_LINK = calLink || EMAIL_URL;
 
 // AI Visibility Check settings, read at build time. Each is optional: without the API URL the
-// check shows a setup notice, and without the Stripe link the "start the full audit" button is hidden.
+// check shows a setup notice. STRIPE_AUDIT_LINK is no longer used on the site.
 const env = (name: string) => ((import.meta.env as Record<string, string | undefined>)[name] ?? process.env[name] ?? '').trim();
 export const CHECK_API_URL = env('CHECK_API_URL').replace(/\/$/, '');
 export const TURNSTILE_SITE_KEY = env('TURNSTILE_SITE_KEY');
@@ -83,6 +83,7 @@ export const NAV_LINKS = [
   { href: '/ai-search', label: 'AI Search' },
   { href: '/shopify-conversion-optimization', label: 'CRO' },
   { href: '/results', label: 'Results' },
+  { href: '/close-the-gap', label: 'Close the Gap' },
   { href: '/pricing', label: 'Pricing' },
   { href: '/reports', label: 'Reports' },
   { href: '/guides', label: 'Guides' },
@@ -128,34 +129,39 @@ export const APPROACH_FAQ = {
   a: "I work product by product. For each product that matters, I find the questions its buyers actually ask, which competing products AI recommends instead and why, and what AI gets wrong about it. Then I fix the store side myself, from product data built for each product to the pages that close the sale, and measure whether AI's answers change. The store work and the conversion work are done by the same person, so the traffic AI sends actually turns into orders.",
 };
 
+// "Your competitor is getting your AI customers." Text is HTML: every number links to its source.
 export const SHIFT = [
-  { title: 'Shoppers ask AI instead of searching.', text: 'AI gives a short list, not ten blue links.' },
   {
-    title: 'AI picks from what it can read and trust.',
-    text: 'Your product data, and what reviews, comparisons, press and social platforms say about your products.',
+    title: 'AI gives a short list.',
+    text: 'About <a href="/reports/who-chatgpt-recommends-2026">4 brands per answer</a>. If you\'re not on it, a competitor is.',
   },
   {
-    title: 'AI shoppers arrive ready to buy.',
-    text: 'They convert far better than other traffic, if your store closes the sale.',
+    title: 'Once it picks, it keeps picking.',
+    text: 'Ask the same question again and the same top pick usually comes back: <a href="/reports/who-chatgpt-recommends-2026#how-stable-are-the-picks">10 of 11 repeats</a> in my research.',
+  },
+  {
+    title: 'The gap gets more expensive every month.',
+    text: 'Orders from AI search grew <a href="https://www.pymnts.com/earnings/2026/ai-drove-orders-shopify-up-13-times-q1" target="_blank" rel="noopener">nearly 13 times in a year</a> on Shopify, and AI shoppers convert at <a href="/reports/ai-search-ecommerce-whats-real">nearly 50% higher rates</a> than search shoppers.',
   },
 ];
 
+// "Close the gap, then close the sale." AI search first, CRO second.
 export const ENGINES = [
   {
-    tag: 'AI Search',
-    title: 'Get recommended.',
-    text: 'I make your store fully readable to AI. I find the sources AI relies on when shoppers ask about products like yours, and help you earn real coverage in them. Then I track how often AI recommends your products for the questions buyers ask.',
-    link: { href: '/ai-search', text: 'How AI search works' },
+    tag: 'Step one',
+    title: 'Close the gap.',
+    text: 'I find exactly why AI recommends your competitor, product by product, on ChatGPT, Gemini and Google AI Mode. Then I fix everything you control and go after the sources AI relies on.',
+    link: { href: '/close-the-gap', text: 'See the program' },
   },
   {
-    tag: 'CRO',
-    title: 'Get the sale.',
-    text: 'I rebuild the pages, offers and funnels where shoppers drop off, so the high intent traffic AI sends you, and everyone else, turns into revenue.',
+    tag: 'Step two',
+    title: 'Close the sale.',
+    text: 'A product page that confirms what AI told the shopper, so they buy. The same goes for everyone else who lands on it.',
     link: { href: '/shopify-conversion-optimization', text: 'How I approach CRO' },
   },
 ];
 export const ENGINES_NOTE =
-  'Most brands get these from two different places, if they get them at all. One without the other leaves money on the table.';
+  'Winning the recommendation is step one. Step two is a product page that confirms what AI told the shopper, so they buy.';
 
 // The mock ChatGPT answer in "What AI sees". Placeholder brands only.
 export const CHAT_MOCK = {
@@ -203,7 +209,7 @@ export const AI_CASES_NOTE =
 export const RESULTS = [
   AI_CASES[0],
   {
-    tag: 'Skincare · Ongoing retainer',
+    tag: 'Skincare · Ongoing work',
     stat: '+71%',
     statLabel: 'conversion rate, same ad spend',
     title: 'A store that leaked buyers became one that improves every month.',
@@ -232,164 +238,145 @@ export const REFERRAL = {
   text: 'Introduce us. When they sign, you get 10% of their first 3 months, paid once their third payment clears.',
 };
 
-// Pricing: start with the audit, then a fixed price Build or a retainer.
-export const AUDIT = {
-  tag: 'Start here',
-  name: 'AI Search and Conversion Audit',
-  price: 1500,
-  unit: ' one time',
-  // The nine things the audit covers, in order. The pricing card adds timing and the walkthrough.
-  covers: [
-    "Mention rate for each product on ChatGPT, Gemini and Google AI Mode: how often AI recommends you, how often you're in its top 3, and your average position, next to each competitor.",
-    "The questions your buyers ask AI, built from your customers' own language and written the way people really ask AI: long, specific and conversational.",
-    "Why competitors win: the sources that cite them, how complete their product information is, their reviews and ratings, including Amazon's, and what they claim that you don't.",
-    'Sources that recommend competitors but not you, ranked by how much they matter.',
-    'What AI gets wrong about your products, and where it comes from.',
-    'A consistency check of how your brand describes itself on your site, retailers, social profiles and review sites, because mismatches confuse AI.',
-    'Product feed and technical findings for Google and ChatGPT.',
-    'Your top conversion leaks.',
-    'A plan ranked by revenue impact.',
+// The main offer: Close the Gap, a 90 day program that continues month to month. Shown on /close-the-gap,
+// /pricing, the homepage and /ai-search, and described in the structured data from the same lines.
+export const PROGRAM = {
+  name: 'Close the Gap',
+  path: '/close-the-gap',
+  promise:
+    "I can't control what AI says. Nobody can. What I can do is find exactly why your competitor gets picked, fix everything you control, give your team a clear plan for everything you don't, and show you how it's moving every week.",
+  summary:
+    'A 90 day program: I show you where your competitors beat you in ChatGPT, Gemini and Google AI Mode, product by product, fix everything you control, go after the sources AI relies on, and report how it moves.',
+  months: [
+    {
+      when: 'Month 1',
+      title: 'Find the gap and fix what you control',
+      items: [
+        'A head to head against your main competitors across your top products: who gets recommended, how often, how each brand is described, and which sources drive each pick, on ChatGPT, Gemini and Google AI Mode.',
+        'I implement the on site fixes myself: product data and structured data, product pages that answer the questions buyers ask AI, and comparison and FAQ content.',
+        'I make sure the product pages close the sale when AI sends a shopper.',
+      ],
+    },
+    {
+      when: 'Month 2',
+      title: 'Go after the sources',
+      items: [
+        'A ranked list of the exact sites AI cites for your products, what each is worth, and what it takes to get on it.',
+        'Ready to send pitches for editorial and review sites, written by me. Your team sends them, or approves them for me to send.',
+        "Paid placements come as recommendations with the reasoning. Your team decides and pays. I advise; I don't buy placements.",
+      ],
+    },
+    {
+      when: 'Month 3',
+      title: 'Expand and lock it in',
+      items: [
+        'A full retest, then the next set of questions buyers ask about your products: by need, budget, gifting, comparisons and season.',
+        "A clear picture of what moved, what didn't, and why.",
+      ],
+    },
   ],
-  timing: 'Delivered within 5 business days of receiving access.',
-  walkthrough: 'A recorded video walkthrough, or a short call if you prefer.',
-  summary: 'Where AI recommends your products, who it recommends instead, and why.',
-  note: 'The full $1,500 is credited toward a Build or your first retainer month, if you start within 30 days.',
+  always: {
+    title: 'Every report, the whole time',
+    items: [
+      "A competitor report: how often you're recommended against each competitor, what changed, and what I'm doing about it.",
+      "Model watch: when ChatGPT, Gemini or Google AI Mode changes how it recommends products, I retest and adjust. Brands that aren't watching fall behind without knowing why.",
+    ],
+  },
+  after:
+    'After 90 days, the program continues month to month: reports, model watch, new questions and new competitors as they appear, and ongoing source work. Brands with only a few products go deeper on those products, not wider.',
+  guarantee: "If I don't deliver everything listed for month 1, you don't pay for month 2.",
+  guaranteeNote: "The guarantee covers the month 1 deliverables listed above, not what AI says. No one controls AI answers.",
+  scope: 'Anything outside this list is quoted separately.',
+  continues:
+    'After the first 3 months, both continue month to month at the committed price ($2,500 or $5,000), with 30 days written notice to cancel. Larger catalogs or more competitors are quoted.',
+  fit: 'For brands doing about $50K a month and up, competing with brands their own size or a few times bigger.',
+  fitNote:
+    'Brands whose competitors are household names on every question are slower to move, so I focus on the specific questions real shoppers ask, where a focused brand can win.',
+  under: 'Brands under $50K a month should start with the AI Visibility Check.',
+  startLine: 'A short call to learn about your brand, your competitors and where you want to be.',
+  videoLine:
+    "Prefer a video? Email me your store and your main competitor, and I'll record a short walkthrough of where you stand.",
+  videoHref: 'mailto:carson@carsoncobb.com?subject=Close%20the%20Gap%20video',
+};
+
+// The two sizes. monthly is the price with a 3 month commitment; upfront is 3 months paid in advance;
+// flexible is the price with no commitment.
+export const PROGRAM_SIZES = [
+  {
+    key: 'focus',
+    name: 'Close the Gap: Focus',
+    short: 'Focus',
+    fit: 'For brands doing about $50K to $150K a month',
+    items: ['Up to 3 products and 3 competitors', 'A competitor report every 2 weeks'],
+    monthly: 2500,
+    upfront: 7000,
+    flexible: 3000,
+    featured: false,
+  },
+  {
+    key: 'full',
+    name: 'Close the Gap: Full',
+    short: 'Full',
+    fit: 'For brands doing about $150K a month and up',
+    items: ['Up to 10 products and 6 competitors', 'A weekly competitor report and model watch'],
+    monthly: 5000,
+    upfront: 13500,
+    flexible: 6000,
+    featured: true,
+  },
+];
+
+// The price lines under each size, wherever the sizes are shown.
+const usdPlain = (n: number) => `$${n.toLocaleString('en-US')}`;
+export const sizePrices = (z: (typeof PROGRAM_SIZES)[number]) => [
+  `${usdPlain(z.monthly)} a month with a 3 month commitment`,
+  `or ${usdPlain(z.upfront)} paid upfront for 3 months`,
+  `${usdPlain(z.flexible)} a month with no commitment`,
+];
+
+// The CRO offer: one time, on /pricing and its own page at /full-store-audit.
+export const FULL_AUDIT = {
+  name: 'Full Store Audit',
+  price: 1997,
+  path: '/full-store-audit',
+  covers: [
+    'Every page of your store, reviewed on mobile and desktop.',
+    'Your cart and checkout flow, step by step.',
+    'Your email flows.',
+    'Your analytics setup.',
+    'Your subscription setup.',
+    "Every fix ranked by what it's worth.",
+  ],
+  timing: 'Delivered within 2 business days of getting store access.',
+  walkthrough: 'Walked through by recorded video.',
+  summary:
+    "Every page on mobile and desktop, cart and checkout flow, email flows, analytics and subscription setup, with every fix ranked by what it's worth.",
   get includes(): string[] {
     return [...this.covers, this.timing, this.walkthrough];
   },
 };
 
-export const BUILD = {
-  tag: 'Fixed price, 3 to 4 weeks',
-  name: 'Build',
-  // min and max are active products. Variants and archived products don't count; bundles do.
-  tiers: [
-    { label: '1 to 10 products', price: 3500, from: false, min: 1, max: 10 as number | null },
-    { label: '11 to 50 products', price: 5000, from: false, min: 11, max: 50 },
-    { label: '51 to 500 products', price: 7500, from: false, min: 51, max: 500 },
-    { label: '501+ products', price: 10000, from: true, min: 501, max: null },
-  ],
-  counts: "Active products count. Variants and archived products don't, and bundles count as products.",
-  includes: [
-    'Structured data implemented in your theme for every active product, not just recommended',
-    'Product pages that answer buyer questions, for your top products by revenue',
-    'AI crawler access fixed inside Shopify and your theme. If a CDN or an app blocks AI crawlers, I document the fix and work with that vendor.',
-    'Conversion rebuild of your product page template, collection template and cart',
-    'Measurement setup: post purchase survey, AI traffic tracking and a baseline',
-    'A retest of the same questions after 30 days',
-  ],
-  note: 'I take 3 Builds a month.',
+// The AI Visibility Check, as an offer on /pricing.
+export const CHECK_OFFER = {
+  name: 'AI Visibility Check',
+  summary: 'See where you stand against one competitor in about a minute.',
+  note: 'Takes about a minute, no login.',
 };
 
-// The monthly report, described the same way wherever retainers are.
-export const MONTHLY_REPORT =
-  "Every month: your mention rate for each product on ChatGPT, Gemini and Google AI Mode, the competitors AI names instead, the sources it relies on, what it gets wrong, and what we shipped and what's next.";
-
-// Core and Growth alongside a brand's own developers. Shown under the retainer cards and in the /ai-search FAQ.
-export const DEVELOPERS_NOTE =
-  'Have your own developers? Core and Growth work alongside them. I measure, find what\'s holding you back and plan the work, then your team ships the on site changes from clear specs. On Growth, I also handle off site work and conversion testing.';
-
-// Under the retainer cards and in the pricing FAQ.
-export const RETAINER_AUDIT_NOTE = 'Starting on a retainer? Your audit is done in the first month.';
-
-// price null shows "Let's talk".
-export const RETAINERS = [
-  {
-    name: 'Core',
-    price: 2500 as number | null,
-    unit: '/month',
-    summary: 'Everything you control, fixed and measured every month.',
-    includes: [
-      'Monthly AI search report: mention rate for each product on ChatGPT, Gemini and Google AI Mode, competitors, the sources AI relies on, accuracy and the consistency check',
-      'I do the on site work: product data, product pages that answer buyer questions, product feeds and fixes',
-      "I make your brand's own listings match: retailer pages, social profiles, review site profiles and your Google business listing",
-      'Prefer your developers ship it? I hand over clear specs instead',
-      'A call every 2 weeks',
-      'Response within 1 business day',
-    ],
-    note: 'Best for brands doing around $30K a month and up, and brands with their own developers.' as string | null,
-    featured: false,
-  },
-  {
-    name: 'Growth',
-    price: 4500,
-    unit: '/month',
-    summary: 'Growth adds coverage from the outside sources AI relies on, and an ongoing conversion testing program, to everything in Core.',
-    includes: [
-      'The same monthly AI search report as Core: mention rate for each product on ChatGPT, Gemini and Google AI Mode, competitors, the sources AI relies on, accuracy and the consistency check',
-      "Also in your report: AI referred traffic and sales, conversion rate, post purchase survey answers, what shipped and what's next",
-      'An ongoing conversion testing program: tests and page improvements planned each month within your hours, in order of expected impact',
-      "Off site outreach I do myself: I find the reviews, comparisons and publications that matter for your products, pitch them and follow up. I don't just hand you a list.",
-      'Affiliate and publisher outreach',
-      'Review strategy, so the ratings and reviews AI reads reflect your products',
-    ],
-    note: 'Best for brands doing around $80K a month and up. Move up to Full when you need someone running the channel day to day: launches, email, subscriptions, apps and vendors.',
-    featured: false,
-  },
-  {
-    name: 'Full',
-    price: 7500,
-    unit: '/month',
-    summary: 'Your ecommerce lead, working at your direction.',
-    includes: [
-      'Everything in Growth',
-      'I propose the plan and you decide',
-      'I plan and build launches, promotions and holidays for your sign off',
-      'I run Klaviyo day to day in your brand voice. Email is part of Full and isn\'t sold on its own.',
-      'First 90 days: tracking, speed and key pages in month 1, then email in month 2',
-      'I manage subscriptions, merchandising, apps and vendors so you have one point of contact',
-      "A weekly report on what changed and what's next",
-      'I handle QA so issues get caught before customers see them',
-    ],
-    note: 'Best for brands doing around $150K a month and up who want their ecommerce run day to day. You choose how hands on you want to be.',
-    featured: true,
-  },
-  {
-    name: 'Dedicated',
-    price: null,
-    unit: '',
-    summary: 'Full time capacity for brands that need it.',
-    includes: [],
-    note: null,
-    featured: false,
-  },
-];
-
-// Retainer comparison table: one row per term, one value per retainer in RETAINERS order.
-export const RETAINER_ROWS = [
-  { label: 'Price', values: ['$2,500/month', '$4,500/month', '$7,500/month', "Let's talk"] },
-  { label: 'Capacity', values: ['Up to 15 hours a month', 'Up to 30 hours a month', 'Up to 60 hours a month', 'Full time capacity'] },
-  { label: 'Calls', values: ['Every 2 weeks', 'Weekly', 'Weekly, plus 1 extra call a week when needed', 'Built around your team'] },
-  { label: 'Response time', values: ['Within 1 business day', 'Same business day', 'Same business day', 'Same business day'] },
-  { label: 'Off site outreach', values: ['No', 'Yes', 'Yes', 'Custom'] },
-  { label: 'Testing program', values: ['No', 'Yes', 'Yes', 'Custom'] },
-  { label: 'Your own listings made consistent', values: ['Yes', 'Yes', 'Yes', 'Yes'] },
-  { label: 'Minimum', values: ['3 months', '3 months', '3 months', 'Custom'] },
-];
-
-export const RETAINER_NOTE =
-  "Response times are in US Pacific business hours, Monday to Friday. Retainers are part time by design. If you need more in a month, we move you up a tier or quote the extra work as a fixed add on. Out of office days are always shared in advance. Any retainer can implement your audit plan at the retainer's pace; the Build is the fast lane.";
-
-// Fit and terms, shown under the pricing cards. The Offer descriptions in schema.ts reuse these lines.
+// Fit and terms, shown under the pricing cards. The structured data reuses these lines.
 export const TERMS = {
-  bestFit:
-    "The audit and Build fit Shopify brands doing $20K a month and up. Retainers start at around $30K a month. Signs it fits: AI assistants recommend competitors for your products or describe them wrong, traffic is steady but conversion or repeat orders aren't growing, product pages are thin, inconsistent or slow, or subscriptions and email underperform.",
+  bestFit: `${PROGRAM.fit} ${PROGRAM.fitNote} ${PROGRAM.under}`,
   notFit:
     'You need paid ads management, one off development tasks, a brand new store with no traffic yet, or someone who guarantees a ChatGPT ranking. Stores not on Shopify get partial service.',
   start:
-    'Shopify collaborator access, analytics access, Google Search Console, and access to your review, subscription and email apps where they apply. The audit needs view access only.',
-  who:
-    'You work with me directly. I do the work myself, with no handoff to a junior team or an offshore team. On the Full retainer, if something needs more than 60 hours, or a specialist skill like photography, I tell you up front and either quote it or recommend someone you hire directly.',
-  buildScope:
-    'Off site work, like outreach, reviews and lists, is not part of the Build. It is in the Growth retainer.',
-  timing: 'The Build timeline starts once access is in place, and assumes your feedback within 3 business days.',
-  approvals:
-    'You approve the plan and every change before it goes live. The Build includes two revision rounds: you sign off on the plan, and on a preview before anything goes live.',
-  support: '14 days of fixes for anything I built, at no charge.',
-  ownership: 'You own all code, content, data and tracking once the work is paid. The audit plan is yours to keep and use with any team.',
-  costs: 'App subscriptions and paid tools are billed to you directly, and nothing new is added without your approval.',
-  hours: "Unused retainer hours don't roll over to the next month.",
-  cancel: 'After the 3 month minimum, retainers continue month to month and can be cancelled with 30 days written notice.',
+    'Store collaborator access, your top products, your main competitors, and someone who can approve outside source pitches and placements.',
+  who: 'You work with me directly. I do the work myself, with no handoff to a junior team or an offshore team. If something needs a specialist skill like photography, I tell you up front and either quote it or recommend someone you hire directly.',
+  commitment: 'Close the Gap has a 3 month commitment, then continues month to month with 30 days written notice to cancel.',
+  refunds: 'No refunds once a month has started.',
+  guarantee: `${PROGRAM.guarantee} ${PROGRAM.guaranteeNote}`,
+  ownership: 'You own all on site work once it is paid.',
+  costs: 'App subscriptions, paid tools and any paid placements are paid by you directly, and nothing is added without your approval.',
+  scope: PROGRAM.scope,
 };
 
 export const TERMS_LIST = [
@@ -397,40 +384,35 @@ export const TERMS_LIST = [
   { q: "Who isn't a fit?", a: TERMS.notFit },
   { q: 'What do you need to start?', a: TERMS.start },
   { q: 'Who does the work?', a: TERMS.who },
-  {
-    q: 'How are Build tiers counted?',
-    a: `${BUILD.tiers.map((t) => `${t.label}, ${t.from ? 'from ' : ''}$${t.price.toLocaleString('en-US')}`).join('. ')}. ${BUILD.counts} ${TERMS.timing} ${TERMS.buildScope}`,
-  },
-  { q: 'How do revisions and approvals work?', a: TERMS.approvals },
-  { q: 'What support is there after launch?', a: TERMS.support },
+  { q: 'How does the commitment work?', a: `${TERMS.commitment} ${PROGRAM.continues}` },
+  { q: 'Do you offer refunds?', a: `${TERMS.refunds} ${TERMS.guarantee}` },
   { q: 'Who owns the work?', a: TERMS.ownership },
-  { q: 'Who pays for apps and tools?', a: TERMS.costs },
-  { q: 'What about unused hours and cancelling?', a: `${TERMS.hours} ${TERMS.cancel}` },
+  { q: 'Who pays for apps, tools and placements?', a: TERMS.costs },
+  { q: "What's not included?", a: TERMS.scope },
 ];
 
 export const STEPS = [
   {
     when: 'Step 1',
-    title: 'AI Search and Conversion Audit',
-    text: 'Where AI recommends your products on ChatGPT, Gemini and Google AI Mode, who it recommends instead, and why, plus your top conversion leaks. You get a plan ranked by revenue impact.',
+    title: 'See the gap',
+    text: 'Run the AI Visibility Check against your top competitor, or ask me for a video walkthrough.',
   },
   {
     when: 'Step 2',
-    title: 'Build or retainer',
-    text: 'Implement the plan in a fixed 3 to 4 week Build, or on a retainer that implements it and keeps growing from there.',
+    title: 'Close the gap',
+    text: 'The 90 day program: fix what you control, go after the sources AI relies on, and expand to the next questions.',
   },
   {
     when: 'Step 3',
-    title: 'Measure',
-    text: 'I rerun the same questions and track AI driven traffic and sales, so you can see what changed.',
+    title: 'Watch it move',
+    text: 'A competitor report every week or two, so you always know where you stand.',
   },
 ];
 
-// The 20 minute call, wherever it is described.
-export const CALL_NAME = 'AI Search Review';
-export const CALL_TEXT =
-  "We'll go over your goals and your check results, and figure out whether an audit or ongoing work is the right next step. If it isn't a fit, I'll tell you.";
-export const CTA_LABEL = 'See if ChatGPT recommends you';
+// The intro call, wherever it is described.
+export const CALL_NAME = 'Close the Gap intro call';
+export const CALL_TEXT = PROGRAM.startLine;
+export const CTA_LABEL = 'See who AI recommends instead of you';
 export const HEADER_CTA_LABEL = 'Check your AI visibility';
 
 export const FAQS: { q: string; a: string; link?: { href: string; text: string } }[] = [
@@ -441,27 +423,23 @@ export const FAQS: { q: string; a: string; link?: { href: string; text: string }
   APPROACH_FAQ,
   {
     q: 'Can you guarantee ChatGPT will recommend us?',
-    a: 'No one honestly can. I measure how often AI recommends your products for their buyer questions before and after the work, and track AI driven traffic and sales, so you see exactly what moved. On site work is one part; in depth reviews, comparisons, press and retail listings matter too, and the audit shows which ones apply to you.',
+    a: 'No one can. What I do guarantee: everything listed for month 1 of Close the Gap, or you don\'t pay for month 2, and honest numbers in every competitor report.',
+  },
+  {
+    q: 'What happens after 90 days?',
+    a: 'Close the Gap continues month to month, going deeper on your products and keeping you ahead as models and competitors change.',
   },
   {
     q: 'How do you measure AI traffic when most of it shows up as direct?',
-    a: "Analytics tools undercount AI. Clicks from Google's AI answers are counted as regular search, and many shoppers read an AI answer, then type your name or URL. So I don't rely on referral numbers alone. I track how often AI recommends your products for their buyer questions month over month, and pair that with signals from your store data and from customers themselves. You see the trend in your monthly report.",
-  },
-  {
-    q: 'Why is there a 3 month minimum on retainers?',
-    a: 'AI search and off site work take 60 to 90 days to show. The audit and Build are the low commitment ways to start.',
+    a: "Analytics tools undercount AI. Clicks from Google's AI answers are counted as regular search, and many shoppers read an AI answer, then type your name or URL. So I don't rely on referral numbers alone. I track how often AI recommends your products against each competitor, question by question, and pair that with signals from your store data and from customers themselves.",
   },
   {
     q: 'Do I stay in control?',
     a: 'Always. I propose, you decide, and nothing goes live without your sign off.',
   },
   {
-    q: 'Who do you work with?',
-    a: "Shopify brands, especially in wellness, supplements and beauty, from startups to billion dollar companies. I work fully remote with brands anywhere, in English. I'm based in California and work US Pacific business hours.",
-  },
-  {
     q: "Who do you work with, and who isn't a fit?",
-    a: "The audit and Build fit Shopify brands doing $20K a month and up. Retainers start at around $30K a month. It isn't a fit if you need paid ads management, one off development tasks, a brand new store with no traffic yet, or someone who guarantees a ChatGPT ranking. Stores not on Shopify get partial service.",
+    a: `Shopify brands doing about $50K a month and up, competing with brands their own size or a few times bigger. ${PROGRAM.under} It isn't a fit if you need paid ads management, one off development tasks, a brand new store with no traffic yet, or someone who guarantees a ChatGPT ranking.`,
   },
   {
     q: 'Will I work with you directly?',
@@ -474,61 +452,73 @@ export const FAQS: { q: string; a: string; link?: { href: string; text: string }
   },
 ];
 
+// The /close-the-gap FAQ, also in its FAQPage structured data.
+export const PROGRAM_FAQS = [
+  {
+    q: 'Can you guarantee ChatGPT will recommend us?',
+    a: "No one can. Here's what I do guarantee: the month 1 deliverables, or you don't pay for month 2, and honest numbers in every weekly or biweekly competitor report.",
+  },
+  {
+    q: 'What do you need from us?',
+    a: TERMS.start,
+  },
+  {
+    q: 'Do we have to pay for placements?',
+    a: 'Sometimes the best sources are paid. I recommend them with the reasoning, and your team decides. I advise; I never buy placements myself.',
+  },
+  {
+    q: 'What happens after 90 days?',
+    a: 'It continues month to month, going deeper on your products and keeping you ahead as models and competitors change.',
+  },
+  {
+    q: "What's the difference between Focus and Full?",
+    a: 'Focus covers up to 3 products and 3 competitors, with a competitor report every 2 weeks, for brands doing about $50K to $150K a month. Full covers up to 10 products and 6 competitors, with a weekly competitor report and model watch, for brands doing about $150K a month and up.',
+  },
+  {
+    q: 'How do you estimate what the gap is worth?',
+    a: "From your store's AI referred sales, how often each competitor gets recommended, and published data on AI shopping growth. It's always shown as an estimate, with the math.",
+  },
+];
+
 export const PRICING_FAQS = [
   {
     q: 'Where should I start?',
-    a: 'With the AI Search and Conversion Audit, $1,500, before any implementation, or whenever you want an outside view of where you stand. The audit is the diagnosis and the plan; implementation is the Build or a retainer. The full $1,500 is credited toward a Build or your first retainer month, if you start within 30 days.',
+    a: `With the AI Visibility Check, which takes about a minute, no login. When you want the full picture across your top products and main competitors, that's Close the Gap. If you want every page of your store reviewed for conversion, that's the Full Store Audit.`,
   },
   {
-    q: 'How is the Build priced?',
-    a: "A fixed price by catalog size: $3,500 for 1 to 10 products, $5,000 for 11 to 50, $7,500 for 51 to 500, and from $10,000 for 501 or more. Active products count; variants and archived products don't, and bundles count as products. It takes 3 to 4 weeks, and I take 3 Builds a month.",
+    q: "What's the difference between Focus and Full?",
+    a: 'Focus covers up to 3 products and 3 competitors, with a competitor report every 2 weeks. Full covers up to 10 products and 6 competitors, with a weekly competitor report and model watch.',
   },
   {
-    q: 'Which retainer fits my brand?',
-    a: 'Core, $2,500 a month: brands doing around $30K a month and up, and brands with their own developers. Growth, $4,500 a month: brands doing around $80K a month and up. Full, $7,500 a month: brands doing around $150K a month and up who want their ecommerce run day to day.',
-  },
-  {
-    q: "What's the difference between Core and Growth?",
-    a: "Core is everything you control, fixed and measured every month: the monthly AI search report, the on site work, and your brand's own listings made to match, with up to 15 hours a month. Prefer your developers ship it? I hand over clear specs instead. Growth adds coverage from the outside sources AI relies on, and an ongoing conversion testing program, to everything in Core, with up to 30 hours a month.",
-  },
-  {
-    q: 'What if I start on a retainer instead of the audit?',
-    a: 'Starting on a retainer? Your audit is done in the first month.',
-  },
-  {
-    q: 'Why is there a 3 month minimum on retainers?',
-    a: 'AI search and off site work take 60 to 90 days to show. The audit and Build are the low commitment ways to start.',
-  },
-  {
-    q: 'What if I need more in a month?',
-    a: 'Retainers are part time by design. We move you up a tier, or I quote the extra work as a fixed add on.',
+    q: 'What does the month 1 guarantee cover?',
+    a: TERMS.guarantee,
   },
   {
     q: 'Can you guarantee results?',
-    a: 'No one controls AI answers. I measure your mention rate across real buyer questions before and after the work, and track AI driven traffic and sales, so you can see what moved.',
+    a: "No one controls AI answers. I measure how often each brand gets recommended for the questions your buyers ask, before and during the work, so you can see what moved.",
   },
   {
     q: 'How do I lock in 2026 pricing?',
-    a: "Start before January 1 and keep today's rate for 12 months.",
+    a: 'Start Close the Gap before January 1 and keep your committed monthly price for 12 months.',
   },
 ];
 
 export const CHECK_FAQS = [
   {
     q: 'Does ChatGPT recommend my brand?',
-    a: "This check asks questions built from your best sellers through OpenAI, using a smaller, faster OpenAI model with web search on. That shows how AI answers with live search, but it isn't the exact model a shopper gets in the ChatGPT app. Answers also vary by wording, person and day, so treat the result as a snapshot. The full audit tests your products in ChatGPT itself, across repeated runs.",
+    a: "This check asks questions built from your best sellers through OpenAI, using a smaller, faster OpenAI model with web search on. That shows how AI answers with live search, but it isn't the exact model a shopper gets in the ChatGPT app. Answers also vary by wording, person and day, so treat the result as a snapshot. Close the Gap tests your top products against your main competitors, question by question.",
   },
   {
     q: 'How does the AI Visibility Check work?',
     a: 'It reads your store and your top products, writes the questions a shopper would ask about products like them, and asks ChatGPT each one. It also asks ChatGPT what your brand sells, tests whether AI crawlers can reach your store, and reads your top product pages to see what they tell AI.',
   },
   {
-    q: 'Is the check free?',
-    a: 'Yes. You can run 3 checks a day, and results for each store are saved for 7 days, so running it again shows the saved result.',
+    q: 'How long does it take, and how often can I run it?',
+    a: 'It takes about a minute, no login. You can run 3 checks a day, and results for each store are saved for 7 days, so running it again shows the saved result.',
   },
   {
     q: 'Why are my results different from what I see in ChatGPT?',
-    a: 'AI answers change with the exact wording, location, chat history and day. The full audit tests your products against the questions your own customers ask, across repeated runs, to get a reliable picture.',
+    a: 'AI answers change with the exact wording, location, chat history and day. Close the Gap tests your products against the questions your buyers ask, with retests every week or two, to get a reliable picture.',
   },
   {
     q: 'What do you do with my email?',
@@ -540,7 +530,7 @@ export const CHECK_FAQS = [
   },
   {
     q: 'How do I improve my score?',
-    a: "The three findings at the top of your report show where you're losing the most. Some gaps close quickly once they're found. Visibility takes longer, because it depends on what your store tells AI about each product and on the sources AI relies on for products like yours. The full audit maps all of it.",
+    a: "The three findings at the top of your report show where you're losing the most. Some gaps close quickly once they're found. Visibility takes longer, because it depends on what your store tells AI about each product and on the sources AI relies on for products like yours. Close the Gap works through all of it.",
   },
 ];
 
@@ -590,8 +580,8 @@ export const AGENCY_PAINS = [
 export const AGENCY_SCOPE = [
   {
     icon: '<circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/>',
-    title: 'AI visibility audits',
-    text: "Mention rate across ChatGPT, Gemini and Google AI Mode, why competitors win, and a plan ranked by revenue impact, delivered as your agency's report.",
+    title: 'Competitor head to heads',
+    text: "How often your client gets recommended against each competitor on ChatGPT, Gemini and Google AI Mode, and which sources drive each pick, delivered as your agency's report.",
   },
   {
     icon: '<path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/>',
@@ -620,45 +610,33 @@ export const AGENCY_SCOPE = [
   },
 ];
 
-// Agency pricing: the three main offers, white label. Pricing is shared on the intro call.
+// Agency offers, white label, at the same prices brands pay.
 export const AGENCY_PARTNER_INTRO =
-  'Every offer, delivered under your name. Agency pricing is shared on the intro call. You set the client price and keep the margin.';
+  'Every offer, delivered under your name. Agencies pay the same prices as brands. You set your client price and keep the margin.';
 
 export const AGENCY_PARTNER_PLANS = [
   {
-    tag: 'Start here',
-    name: 'AI Search and Conversion Audit, white label',
-    summary: "Where AI recommends your client's products, who it recommends instead, and why, in your agency's branding.",
+    tag: '90 days, then month to month',
+    name: 'Close the Gap, white label',
+    summary: 'Same program, reported in your branding.',
     includes: [
-      'Mention rate across ChatGPT, Gemini and Google AI Mode',
-      'Why competitors win',
-      'What AI gets wrong, and the consistency check',
-      'A plan ranked by revenue impact',
+      'A head to head against your client\'s main competitors across their top products',
+      'On site fixes implemented, product pages that answer buyer questions',
+      'Source work: the sites AI cites, ranked, with ready to send pitches',
+      'Competitor reports and model watch in your branding',
+      'Focus from $2,500 a month, Full from $5,000 a month',
     ],
     featured: true,
   },
   {
-    tag: 'Fixed price, 3 to 4 weeks',
-    name: 'Build, white label',
-    summary: "The audit plan implemented on your client's store, under your name.",
+    tag: 'One time',
+    name: 'Full Store Audit, white label',
+    summary: '$1,997 per store, delivered under your brand within 2 business days.',
     includes: [
-      'On site AI search work across every template',
-      'Product pages that answer buyer questions',
-      'AI crawler access fixed',
-      'Conversion rebuild of the product page template, collection template and cart',
-      'A retest of the same questions after 30 days',
-    ],
-    featured: false,
-  },
-  {
-    tag: 'Monthly',
-    name: 'Ongoing AI search and CRO, white label',
-    summary: 'AI search and conversion work every month, reported in your branding.',
-    includes: [
-      'Monthly AI search report in your branding',
-      'Ongoing on site AI and conversion testing',
-      'Off site work: lists, reviews and outreach',
-      'Client calls as part of your team when you need it',
+      'Every page on mobile and desktop',
+      'Cart and checkout flow, email flows, analytics and subscription setup',
+      "Every fix ranked by what it's worth",
+      'Walked through by recorded video, under your brand',
     ],
     featured: false,
   },
@@ -673,7 +651,7 @@ export const AGENCY_STEPS = [
   {
     when: 'Step 2',
     title: 'Pick the offer',
-    text: 'Start a client with the white label audit, then a Build or ongoing work. Agency pricing, paid upfront.',
+    text: 'Start a client on Close the Gap or the Full Store Audit, at the same prices brands pay.',
   },
   {
     when: 'Step 3',
@@ -693,11 +671,11 @@ export const AGENCY_PROMISE = [
 export const AGENCY_FAQS = [
   {
     q: 'Can you deliver AI search reporting in our branding?',
-    a: 'Yes. Audits, retests of the same buyer questions and monthly reports go out as your agency\'s work, with no mention of me.',
+    a: 'Yes. Competitor reports, retests of the same buyer questions and audits go out as your agency\'s work, with no mention of me.',
   },
   {
     q: 'How does agency pricing work?',
-    a: 'Every offer, the audit, the Build and ongoing work, is available white label. Agency pricing is shared on the intro call. You set the client price and keep the margin.',
+    a: 'Close the Gap and the Full Store Audit are both available white label. Agencies pay the same prices as brands. You set your client price and keep the margin.',
   },
   {
     q: 'How fast can you start?',
@@ -705,7 +683,7 @@ export const AGENCY_FAQS = [
   },
   {
     q: 'How fast do you turn work around?',
-    a: 'Most tickets ship in 1 to 2 business days. Larger builds are scoped upfront with a fixed delivery date, so you can promise your client a date and hit it.',
+    a: 'Most tickets ship in 1 to 2 business days. Larger projects are scoped upfront with a fixed delivery date, so you can promise your client a date and hit it.',
   },
   {
     q: 'What if the scope changes?',

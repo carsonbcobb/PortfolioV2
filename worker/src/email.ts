@@ -1,6 +1,6 @@
 import { escapeHtml } from "./html";
 import { isError } from "./scoring";
-import type { Env, Report, SectionKey, VisitSource } from "./types";
+import type { Env, HeadToHead, Report, SectionKey, VisitSource } from "./types";
 
 export const SECTION_LABELS: Record<SectionKey, string> = {
   visibility: "ChatGPT recommendations",
@@ -10,8 +10,26 @@ export const SECTION_LABELS: Record<SectionKey, string> = {
 };
 
 const ORDER: SectionKey[] = ["visibility", "accuracy", "crawlers", "readiness"];
-const FULL_AUDIT_LINE =
-  "This check is a snapshot from one run. The full audit tests your products against the questions your own customers ask, across repeated runs, plus a conversion review.";
+const CLOSE_THE_GAP_URL = "https://www.carsoncobb.com/close-the-gap?from=check-email";
+const CLOSE_LINE =
+  "This check is a snapshot of one run for one store. Close the Gap puts you head to head against your main competitors across your top products, implements the fixes, and sends you a competitor report every week or two.";
+const BOOK_LABEL = "Book a Close the Gap intro call";
+
+/** The head to head line shown first in the report, or null when there is nothing to compare. */
+export function headToHeadText(h: HeadToHead | null | undefined): string | null {
+  if (!h || !h.total) return null;
+  const counts = `${h.name} was recommended in ${h.theirs} of ${h.total} answers. You were recommended in ${h.yours}.`;
+  return h.source === "visitor" ? counts : `The brand AI recommended most instead of you: ${h.name}. ${counts}`;
+}
+
+/** The competitor line for the owner email: what the visitor typed, the name it resolved to and the counts. */
+function headToHeadLog(h: HeadToHead | null | undefined): string {
+  if (!h) return "None typed, and no other brand was named";
+  const counts = h.total ? `competitor ${h.theirs}/${h.total}, you ${h.yours}/${h.total}` : "not compared (buyer questions didn't run)";
+  return h.source === "visitor"
+    ? `Typed "${h.input}" -> ${h.name}${h.domain ? ` (${h.domain})` : ""}: ${counts}`
+    : `None typed. Most named: ${h.name}${h.domain ? ` (${h.domain})` : ""}: ${counts}`;
+}
 
 function sectionScore(r: Report, k: SectionKey): number | null {
   const s = r.sections[k];
@@ -55,6 +73,7 @@ export function visitorEmail(r: Report, bookingUrl: string): Email {
     )
     .join("");
 
+  const h2h = headToHeadText(r.headToHead);
   const rows = ORDER.map((k) => {
     const s = sectionScore(r, k);
     const val = s === null ? "Couldn't check" : `${s} / 100`;
@@ -82,6 +101,11 @@ export function visitorEmail(r: Report, bookingUrl: string): Email {
 <p style="margin:16px 0 0 0;font-size:17px;line-height:24px;color:#111827;font-weight:600;">${escapeHtml(r.overall.verdict)}</p>
 ${r.overall.note ? `<p style="margin:8px 0 0 0;font-size:14px;line-height:20px;color:#6b7280;">${escapeHtml(r.overall.note)}</p>` : ""}
 </td></tr>
+${
+    h2h
+      ? `<tr><td style="padding:24px 32px 0 32px;${font}"><p style="margin:0;padding:14px 16px;background:#f3f4f6;border-radius:6px;font-size:16px;line-height:23px;color:#111827;font-weight:600;">${escapeHtml(h2h)}</p></td></tr>`
+      : ""
+  }
 <tr><td style="padding:24px 32px 4px 32px;${font}">
 <h2 style="margin:0 0 12px 0;font-size:16px;color:#111827;">What we found</h2>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">${findings}</table>
@@ -93,10 +117,10 @@ ${r.overall.note ? `<p style="margin:8px 0 0 0;font-size:14px;line-height:20px;c
 <tr><td align="center" style="padding:28px 32px 8px 32px;">
 <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
 <td align="center" bgcolor="#111827" style="border-radius:6px;">
-<a href="${escapeHtml(bookingUrl)}" target="_blank" style="display:inline-block;padding:14px 28px;${font}font-size:16px;font-weight:bold;color:#ffffff;text-decoration:none;border-radius:6px;">Book your 20 minute AI Search Review</a>
+<a href="${escapeHtml(bookingUrl)}" target="_blank" style="display:inline-block;padding:14px 28px;${font}font-size:16px;font-weight:bold;color:#ffffff;text-decoration:none;border-radius:6px;">${BOOK_LABEL}</a>
 </td></tr></table>
 </td></tr>
-<tr><td style="padding:16px 32px 32px 32px;${font}font-size:14px;line-height:21px;color:#4b5563;" align="center">${escapeHtml(FULL_AUDIT_LINE)}</td></tr>
+<tr><td style="padding:16px 32px 32px 32px;${font}font-size:14px;line-height:21px;color:#4b5563;" align="center">${escapeHtml(CLOSE_LINE)}<br><br>Want the full picture across your top products and main competitors? <a href="${CLOSE_THE_GAP_URL}" target="_blank" style="color:#111827;font-weight:bold;">See Close the Gap</a>.</td></tr>
 </table>
 <p style="margin:16px 0 0 0;${font}font-size:12px;color:#9ca3af;">Carson Cobb &middot; carsoncobb.com</p>
 </td></tr></table>
@@ -108,6 +132,7 @@ ${r.overall.note ? `<p style="margin:8px 0 0 0;font-size:14px;line-height:20px;c
     `Overall score: ${r.overall.score} out of 100`,
     r.overall.verdict,
     ...(r.overall.note ? [r.overall.note] : []),
+    ...(h2h ? ["", h2h] : []),
     "",
     "What we found:",
     ...r.overall.findings.map((f) => `* ${f}`),
@@ -118,9 +143,11 @@ ${r.overall.note ? `<p style="margin:8px 0 0 0;font-size:14px;line-height:20px;c
       return `${SECTION_LABELS[k]}: ${s === null ? "Couldn't check" : `${s} / 100`}`;
     }),
     "",
-    `Book your 20 minute AI Search Review: ${bookingUrl}`,
+    `${BOOK_LABEL}: ${bookingUrl}`,
     "",
-    FULL_AUDIT_LINE,
+    CLOSE_LINE,
+    "",
+    `Want the full picture across your top products and main competitors? See Close the Gap: ${CLOSE_THE_GAP_URL}`,
   ].join("\n");
 
   return { subject, html, text };
@@ -128,7 +155,8 @@ ${r.overall.note ? `<p style="margin:8px 0 0 0;font-size:14px;line-height:20px;c
 
 export function ownerEmail(r: Report, visitor: string, cached: boolean, source?: VisitSource | null): Email {
   const src = sourceLines(source);
-  const subject = `AI visibility check: ${r.domain} (${r.overall.score})${cached ? " [cached]" : ""}`;
+  const vs = r.headToHead?.source === "visitor" ? ` vs ${r.headToHead.name}` : "";
+  const subject = `AI visibility check: ${r.domain} (${r.overall.score})${vs}${cached ? " [cached]" : ""}`;
   const scores = ORDER.map((k) => {
     const s = sectionScore(r, k);
     const sec = r.sections[k];
@@ -144,6 +172,7 @@ export function ownerEmail(r: Report, visitor: string, cached: boolean, source?:
 <tr><td><b>Top products</b></td><td>${escapeHtml((r.products ?? []).join("; "))}</td></tr>
 <tr><td><b>Visitor email</b></td><td>${escapeHtml(visitor)}</td></tr>
 ${src.map(([k, v]) => `<tr><td><b>${k}</b></td><td>${escapeHtml(v)}</td></tr>`).join("\n")}
+<tr><td><b>Competitor</b></td><td>${escapeHtml(headToHeadLog(r.headToHead))}</td></tr>
 <tr><td><b>Overall</b></td><td>${r.overall.score} &middot; ${escapeHtml(r.overall.verdict)}</td></tr>
 <tr><td><b>Cached</b></td><td>${cached ? "yes (served from cache, no new cost)" : "no"}</td></tr>
 <tr><td><b>Cost</b></td><td>$${r.cost.usd.toFixed(4)} over ${r.cost.calls} OpenAI calls, ${(r.ms / 1000).toFixed(1)}s</td></tr>
@@ -163,6 +192,7 @@ ${src.map(([k, v]) => `<tr><td><b>${k}</b></td><td>${escapeHtml(v)}</td></tr>`).
     `Top products: ${(r.products ?? []).join("; ")}`,
     `Visitor email: ${visitor}`,
     ...src.map(([k, v]) => `${k}: ${v}`),
+    `Competitor: ${headToHeadLog(r.headToHead)}`,
     `Overall: ${r.overall.score} (${r.overall.verdict})`,
     `Cached: ${cached ? "yes" : "no"}`,
     `Cost: $${r.cost.usd.toFixed(4)} over ${r.cost.calls} calls, ${(r.ms / 1000).toFixed(1)}s`,
