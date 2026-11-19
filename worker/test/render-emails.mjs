@@ -19,9 +19,11 @@ await build({ entryPoints: [path.join(root, "src/email.ts")], bundle: true, form
 const { visitorEmail, ownerEmail } = await import(pathToFileURL(bundle).href + "?t=" + Date.now());
 fs.unlinkSync(bundle);
 
-const booking = "https://calendar.app.google/arLBYoErUBfsuqfN9";
-const v = visitorEmail(report, booking);
-const o = ownerEmail(report, "visitor@example.com", false);
+// Usage: node test/render-emails.mjs [report.json] [under_50k|50k_150k|150k_plus]
+const lead = { email: "visitor@example.com", name: "Pat Lee", revenue: process.argv[3] || "150k_plus", source: null };
+const link = "https://www.carsoncobb.com/ai-visibility-check?result=00000000-0000-4000-8000-000000000000&step=3";
+const v = visitorEmail(report, lead, link);
+const o = ownerEmail(report, lead, { domain: report.domain, typed: report.headToHead?.input || "", cached: false, link });
 fs.writeFileSync(path.join(out, "email-visitor.html"), v.html);
 fs.writeFileSync(path.join(out, "email-visitor.txt"), `Subject: ${v.subject}\n\n${v.text}\n`);
 fs.writeFileSync(path.join(out, "email-owner.html"), o.html);

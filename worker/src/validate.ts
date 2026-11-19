@@ -1,4 +1,30 @@
 /** Input and URL validation. Every user facing message follows the copy rules (no dashes). */
+import type { RevenueRange } from "./types";
+
+export const REVENUE_LABELS: Record<RevenueRange, string> = {
+  under_50k: "Under $50K",
+  "50k_150k": "$50K to $150K",
+  "150k_plus": "$150K+",
+};
+
+/** The monthly revenue range from the form, or a message for the visitor. */
+export function parseRevenue(input: unknown): { revenue: RevenueRange } | { problem: string } {
+  if (typeof input === "string" && Object.prototype.hasOwnProperty.call(REVENUE_LABELS, input)) return { revenue: input as RevenueRange };
+  return { problem: "Please choose your monthly revenue." };
+}
+
+/** True when the brand is under the Close the Gap fit ($50K a month and up). */
+export function underFit(revenue: RevenueRange): boolean {
+  return revenue === "under_50k";
+}
+
+/** The optional name field: control characters out, spaces collapsed. Null when it is too long. */
+export function cleanName(input: unknown): string | null {
+  if (input === undefined || input === null) return "";
+  if (typeof input !== "string") return null;
+  const name = input.replace(/[\u0000-\u001f\u007f<>]/g, " ").replace(/\s+/g, " ").trim();
+  return name.length > 80 ? null : name;
+}
 
 const BLOCKED_SUFFIXES = [
   ".localhost",

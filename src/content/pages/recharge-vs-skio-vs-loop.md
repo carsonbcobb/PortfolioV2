@@ -140,9 +140,9 @@ All three cover the basics: a product page widget, a customer portal, failed pay
 
 If you want a second set of eyes before you commit, or you want someone to lead your subscription program after you pick, that's what I do. The [Full Store Audit](/full-store-audit) ($1,997) is a good start, because it covers your subscription setup, and running subscriptions as part of the whole store, at your direction, is a custom [fractional head of ecommerce](/fractional-head-of-ecommerce) engagement. See every published price on the [pricing page](/pricing). If you're a supplement or wellness brand, my [supplement brands page](/supplement-brands) covers the extra things I'd check.
 
-Book an intro call. We'll go over your goals and the subscription apps you're weighing and figure out the right next step, and if it isn't a fit, I'll say so.
+Not sure where your store stands? Get your gap report. It takes about a minute, no login, and shows how often ChatGPT recommends you against your top competitor.
 
-[See Close the Gap and book an intro call](/close-the-gap#start)
+[Get your gap report](/ai-visibility-check)
 
 ## Sources
 

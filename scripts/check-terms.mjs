@@ -33,6 +33,15 @@ const BANNED = [
   /\bhourly\b/i,
   /per hour/i,
   /\/hr\b/,
+  // No calls (close without calls, Nov 19, 2026): buyers go from the gap report to a video to paying online.
+  /intro call/i,
+  /book a call/i,
+  /book an intro/i,
+  /book the audit/i,
+  /20 minute/i,
+  /calendar\.app\.google/,
+  /calendar\.google\.com\/calendar\/appointments/,
+  /AI search audits/i,
 ];
 // Pages where one banned term is allowed on purpose. /about names Carson's in house roles, Gem among them,
 // as he asked on November 14, 2026. Everywhere else it stays banned.

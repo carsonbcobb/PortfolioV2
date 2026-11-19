@@ -52,20 +52,11 @@ export const LINKEDIN_COMPANY_URL: string | null = 'https://www.linkedin.com/com
 export const GHOST_REVENUE_URL = 'https://ghostrevenue.co';
 export const GA_ID = 'G-PEDB1QHBG3';
 
-// Cal.com booking link comes from the CAL_LINK env variable at build time.
-// Until it is set, booking buttons fall back to email so no button is ever dead.
-const calLink = (import.meta.env.CAL_LINK ?? process.env.CAL_LINK ?? '').trim();
-if (!calLink) {
-  console.warn('[carsoncobb] CAL_LINK is not set. Booking buttons will fall back to email.');
-}
-export const CAL_LINK = calLink || EMAIL_URL;
-
-// AI Visibility Check settings, read at build time. Each is optional: without the API URL the
-// check shows a setup notice. STRIPE_AUDIT_LINK is no longer used on the site.
+// Gap report settings, read at build time. Each is optional: without the API URL the
+// check shows a setup notice.
 const env = (name: string) => ((import.meta.env as Record<string, string | undefined>)[name] ?? process.env[name] ?? '').trim();
 export const CHECK_API_URL = env('CHECK_API_URL').replace(/\/$/, '');
 export const TURNSTILE_SITE_KEY = env('TURNSTILE_SITE_KEY');
-export const STRIPE_AUDIT_LINK = env('STRIPE_AUDIT_LINK');
 
 const publicFile = (p: string) => fs.existsSync(path.join(process.cwd(), 'public', p));
 
@@ -74,9 +65,6 @@ export const HEADSHOT = publicFile('carson.jpg') ? '/carson.jpg' : null;
 
 // Every visibility button on the site goes to the AI Visibility Check.
 export const CHECK_PATH = '/ai-visibility-check';
-// The calendar embed on the check page: the appointment schedule CAL_LINK redirects to.
-export const CAL_EMBED =
-  'https://calendar.google.com/calendar/appointments/schedules/AcZssZ04rf3OyygzmK23uQhSa_1Zu4l8vWM0mABFsI-ogSp0z501m7PA8hy6abNrteRnV8ADYVEOnl9N?gv=true';
 
 // Header nav on every page: real pages only, no same page anchors.
 export const NAV_LINKS = [
@@ -87,13 +75,12 @@ export const NAV_LINKS = [
   { href: '/pricing', label: 'Pricing' },
   { href: '/reports', label: 'Reports' },
   { href: '/guides', label: 'Guides' },
-  { href: '/agencies', label: 'Agencies' },
 ];
 
 // Homepage
 
 export const HOME_STATS = [
-  { value: '50+', label: 'AI search audits' },
+  { value: '50+', label: 'AI search projects' },
   { value: '30+', label: 'sites optimized for AI search' },
   { value: '50+', label: 'Shopify stores' },
   { value: '2.1x', label: 'average conversion lift on rebuilt pages' },
@@ -102,7 +89,7 @@ export const HOME_STATS = [
 export const VERTICALS = ['Wellness', 'Supplements', 'Beauty', 'Skincare', 'Food and beverage'];
 
 // One proof line under the hero buttons.
-export const HERO_PROOF = ['50+ AI search audits', '30+ sites optimized for AI search', '50+ Shopify stores'];
+export const HERO_PROOF = ['50+ AI search projects', '30+ sites optimized for AI search', '50+ Shopify stores'];
 
 // "What gets a product recommended": the four things AI weighs, then the sale.
 export const RECOMMENDED = {
@@ -110,18 +97,18 @@ export const RECOMMENDED = {
   heading: 'What gets a product recommended.',
   text: "AI recommends the brands it can read, trust and verify. That comes down to four things, and then the store has to close the sale. I work on all of it, product by product, and measure whether AI's answers change.",
   cards: [
-    { title: 'Complete product data', text: 'Every product described fully and consistently, so AI can say what you sell without guessing.' },
+    { title: 'Complete product data', text: 'Every product described fully and consistently, so AI never has to guess.' },
     {
       title: 'Product pages that answer buyer questions',
-      text: "The facts shoppers ask about, like what it's made of, who it's for and how it compares, written so AI can quote them accurately.",
+      text: "What it's made of, who it's for and how it compares, written so AI can quote it.",
     },
     { title: 'Crawler access', text: 'AI crawlers that can actually reach your pages.' },
     {
       title: 'Coverage in the sources AI relies on',
-      text: "When shoppers ask about products like yours, AI leans on in depth reviews, comparisons and expert write ups. Real, detailed coverage carries weight. Empty praise doesn't.",
+      text: 'Real, detailed coverage in the reviews and comparisons AI leans on for products like yours.',
     },
   ],
-  wide: { title: 'Conversion: turning AI shoppers into orders', text: 'AI sends shoppers who are ready to buy. Product pages, offers and checkout decide whether they do.' },
+  wide: { title: 'Conversion: turning AI shoppers into orders', text: 'AI sends shoppers ready to buy, and your product pages decide whether they do.' },
 };
 
 export const APPROACH_FAQ = {
@@ -129,21 +116,36 @@ export const APPROACH_FAQ = {
   a: "I work product by product. For each product that matters, I find the questions its buyers actually ask, which competing products AI recommends instead and why, and what AI gets wrong about it. Then I fix the store side myself, from product data built for each product to the pages that close the sale, and measure whether AI's answers change. The store work and the conversion work are done by the same person, so the traffic AI sends actually turns into orders.",
 };
 
-// "Your competitor is getting your AI customers." Text is HTML: every number links to its source.
-export const SHIFT = [
-  {
-    title: 'AI gives a short list.',
-    text: 'About <a href="/reports/who-chatgpt-recommends-2026">4 brands per answer</a>. If you\'re not on it, a competitor is.',
+// "What the gap costs you" on the homepage. A worked example, clearly labeled, then three points.
+// Text is HTML: every number links to its source.
+export const GAP_COST = {
+  eyebrow: 'What the gap costs you',
+  heading: "Your competitor is getting your AI customers. Here's roughly what that's worth.",
+  example: {
+    label: 'Example',
+    brand: 'A brand doing $200K a month',
+    lines: [
+      'About 7% of shopping searches now start on ChatGPT <a href="https://ppc.land/google-still-leads-shopping-searches-as-ai-falls-short-at-7/" target="_blank" rel="noopener">(Smarty Marketing survey)</a>',
+      "That's around $14,000 a month in purchases that begin with a ChatGPT question",
+      'If ChatGPT recommends your competitor 8 times out of 10, most of that goes to them',
+    ],
+    note: 'Example only. Your gap report estimates yours.',
   },
-  {
-    title: 'Once it picks, it keeps picking.',
-    text: 'Ask the same question again and the same top pick usually comes back: <a href="/reports/who-chatgpt-recommends-2026#how-stable-are-the-picks">10 of 11 repeats</a> in my research.',
-  },
-  {
-    title: 'The gap gets more expensive every month.',
-    text: 'Orders from AI search grew <a href="https://www.pymnts.com/earnings/2026/ai-drove-orders-shopify-up-13-times-q1" target="_blank" rel="noopener">nearly 13 times in a year</a> on Shopify, and AI shoppers convert at <a href="/reports/ai-search-ecommerce-whats-real">nearly 50% higher rates</a> than search shoppers.',
-  },
-];
+  points: [
+    {
+      title: 'AI gives a short list.',
+      text: 'About <a href="/reports/who-chatgpt-recommends-2026">4 brands per answer</a>. If you\'re not on it, a competitor is.',
+    },
+    {
+      title: 'Once it picks, it keeps picking.',
+      text: 'Ask the same question again and the same top pick usually comes back: <a href="/reports/who-chatgpt-recommends-2026#how-stable-are-the-picks">10 of 11 repeats</a> in my research.',
+    },
+    {
+      title: "And it's growing.",
+      text: 'Orders from AI search grew <a href="https://www.pymnts.com/earnings/2026/ai-drove-orders-shopify-up-13-times-q1" target="_blank" rel="noopener">nearly 13 times in a year</a> on Shopify, and Adobe expects AI traffic to retail sites to <a href="https://www.relevantaudience.com/ecommerce-marketing/adobe-2026-holiday-forecast-275-billion-ai-traffic-130-percent/" target="_blank" rel="noopener">grow 130% this holiday season</a>.',
+    },
+  ],
+};
 
 // "Close the gap, then close the sale." AI search first, CRO second.
 export const ENGINES = [
@@ -227,9 +229,23 @@ export const RESULTS = [
   },
 ];
 
+// Homepage proof cards: two AI search cases and one conversion case. Same facts as /results.
+export const HOME_RESULTS = [
+  RESULTS[0],
+  RESULTS[1],
+  {
+    tag: 'Growing brand · Skincare',
+    stat: '+212%',
+    statLabel: 'revenue from AI referred visitors in 4 months',
+    title: 'AI shoppers became the highest value customers.',
+    before: "recommended occasionally, but the product pages didn't confirm what AI told shoppers, so the visits didn't convert.",
+    after: 'more recommendations, and AI referred visitors converting at 2.6x the site average.',
+  },
+];
+
 export const ABOUT = {
   heading: 'Why me.',
-  text: "I'm Carson. I've led AI search work for national brands in vitamins, skincare, cosmetics, food, pet and wellness, from the audit and plan to the implementation. Before that I spent years running conversion and testing programs, affiliate programs and full rebuilds for Shopify brands from seed stage startups to billion dollar companies. That combination is the point: I know what makes AI recommend a brand, and I know what makes the visitor buy.",
+  text: "I'm Carson. I've led AI search work for national brands in vitamins, skincare, cosmetics, food, pet and wellness, from finding the gap to closing it. Before that I spent years running conversion and testing programs, affiliate programs and full rebuilds for Shopify brands from seed stage startups to billion dollar companies. That combination is the point: I know what makes AI recommend a brand, and I know what makes the visitor buy.",
   where: 'Based in California. Working remotely with brands anywhere, in English.',
 };
 
@@ -292,22 +308,32 @@ export const PROGRAM = {
   fit: 'For brands doing about $50K a month and up, competing with brands their own size or a few times bigger.',
   fitNote:
     'Brands whose competitors are household names on every question are slower to move, so I focus on the specific questions real shoppers ask, where a focused brand can win.',
-  under: 'Brands under $50K a month should start with the AI Visibility Check.',
-  startLine: 'A short call to learn about your brand, your competitors and where you want to be.',
-  videoLine:
-    "Prefer a video? Email me your store and your main competitor, and I'll record a short walkthrough of where you stand.",
-  videoHref: 'mailto:carson@carsoncobb.com?subject=Close%20the%20Gap%20video',
+  under: 'Brands under $50K a month should start with the Full Store Audit.',
+  startSteps: [
+    { title: 'Get your gap report', text: 'See how often AI recommends you against your top competitor.' },
+    { title: 'Watch your gap video', text: "I'll send a short video of your full gap and what it's worth, within 1 business day." },
+    { title: 'Start', text: 'Pick your size and start online. Your first report arrives within 2 weeks.' },
+  ],
 };
 
 // The two sizes. monthly is the price with a 3 month commitment; upfront is 3 months paid in advance;
-// flexible is the price with no commitment.
+// flexible is the price with no commitment. The same lists show on /close-the-gap, /pricing, /ai-search and /start.
 export const PROGRAM_SIZES = [
   {
     key: 'focus',
     name: 'Close the Gap: Focus',
     short: 'Focus',
     fit: 'For brands doing about $50K to $150K a month',
-    items: ['Up to 3 products and 3 competitors', 'A competitor report every 2 weeks'],
+    brief: 'Up to 3 products against 3 competitors, with a competitor report every 2 weeks.',
+    items: [
+      'Up to 3 products against 3 competitors',
+      'The head to head across ChatGPT, Gemini and Google AI Mode',
+      "On site fixes implemented on those products' pages",
+      'A ranked list of the sources AI relies on for your products',
+      'Up to 5 ready to send source pitches a month',
+      'A competitor report every 2 weeks',
+      'Replies within 2 business days',
+    ],
     monthly: 2500,
     upfront: 7000,
     flexible: 3000,
@@ -318,7 +344,17 @@ export const PROGRAM_SIZES = [
     name: 'Close the Gap: Full',
     short: 'Full',
     fit: 'For brands doing about $150K a month and up',
-    items: ['Up to 10 products and 6 competitors', 'A weekly competitor report and model watch'],
+    brief: 'Up to 10 products against 6 competitors, with a weekly competitor report and model watch.',
+    items: [
+      'Up to 10 products against 6 competitors',
+      'The head to head across ChatGPT, Gemini and Google AI Mode, with new buyer questions added every month',
+      'On site fixes implemented across all 10 products, plus conversion work on those product pages so the shoppers AI sends actually buy',
+      'A ranked list of the sources AI relies on, with up to 15 ready to send source pitches a month and follow ups',
+      'A weekly competitor report',
+      'Model watch: when ChatGPT, Gemini or Google AI Mode changes how it recommends products, I retest within 3 business days and adjust',
+      "A monthly recorded strategy video: what moved, what's next, and what your team should approve",
+      'Same business day replies',
+    ],
     monthly: 5000,
     upfront: 13500,
     flexible: 6000,
@@ -326,13 +362,10 @@ export const PROGRAM_SIZES = [
   },
 ];
 
-// The price lines under each size, wherever the sizes are shown.
+// The smaller price line under each size's headline price.
 const usdPlain = (n: number) => `$${n.toLocaleString('en-US')}`;
-export const sizePrices = (z: (typeof PROGRAM_SIZES)[number]) => [
-  `${usdPlain(z.monthly)} a month with a 3 month commitment`,
-  `or ${usdPlain(z.upfront)} paid upfront for 3 months`,
-  `${usdPlain(z.flexible)} a month with no commitment`,
-];
+export const sizeOtherPrices = (z: (typeof PROGRAM_SIZES)[number]) =>
+  `Or ${usdPlain(z.upfront)} paid upfront for 3 months, or ${usdPlain(z.flexible)}/month with no commitment`;
 
 // The CRO offer: one time, on /pricing and its own page at /full-store-audit.
 export const FULL_AUDIT = {
@@ -345,21 +378,49 @@ export const FULL_AUDIT = {
     'Your email flows.',
     'Your analytics setup.',
     'Your subscription setup.',
+    'How AI sees your products: whether AI can read your product pages and what they tell it.',
     "Every fix ranked by what it's worth.",
   ],
   timing: 'Delivered within 2 business days of getting store access.',
   walkthrough: 'Walked through by recorded video.',
   summary:
-    "Every page on mobile and desktop, cart and checkout flow, email flows, analytics and subscription setup, with every fix ranked by what it's worth.",
+    "Every page on mobile and desktop, cart and checkout flow, email flows, analytics, subscription setup and how AI sees your products, with every fix ranked by what it's worth.",
   get includes(): string[] {
     return [...this.covers, this.timing, this.walkthrough];
   },
 };
 
+// What happens after paying: on /start before the payment button, and on /welcome after checkout.
+export const AFTER_PAY = {
+  program: [
+    'Within 1 business day, I send a Shopify collaborator request and a short email asking for your top products, your main competitors, and who approves outside pitches and placements.',
+    'I start the head to head right away.',
+    'Your first competitor report arrives within your first 2 weeks.',
+  ],
+  audit: [
+    'Within 1 business day, I send a Shopify collaborator request and ask for access to your email platform, analytics and subscription app.',
+    'Your audit is back within 2 business days of getting access.',
+    'You get a recorded video walking through every fix.',
+  ],
+};
+export const WELCOME_STEPS = [
+  { title: 'Watch your inbox', text: "I'll email you a Shopify collaborator request within 1 business day." },
+  {
+    title: 'Tell me about your brand',
+    text: 'Reply to that email with your top products, your main competitors, and who on your team approves outside pitches and placements.',
+  },
+  { title: 'Your first report', text: "You'll get your first competitor report within your first 2 weeks." },
+];
+export const WELCOME_AUDIT_STEPS = [
+  { title: 'Watch your inbox', text: AFTER_PAY.audit[0] },
+  { title: 'Your audit', text: AFTER_PAY.audit[1] },
+  { title: 'Your walkthrough', text: AFTER_PAY.audit[2] },
+];
+
 // The AI Visibility Check, as an offer on /pricing.
 export const CHECK_OFFER = {
-  name: 'AI Visibility Check',
-  summary: 'See where you stand against one competitor in about a minute.',
+  name: 'Gap report',
+  summary: 'See how often ChatGPT recommends you and your top competitor, in about a minute.',
   note: 'Takes about a minute, no login.',
 };
 
@@ -395,7 +456,7 @@ export const STEPS = [
   {
     when: 'Step 1',
     title: 'See the gap',
-    text: 'Run the AI Visibility Check against your top competitor, or ask me for a video walkthrough.',
+    text: 'Get your gap report: your store against your top competitor, in about a minute. Then I send you a short video of your full gap.',
   },
   {
     when: 'Step 2',
@@ -409,26 +470,31 @@ export const STEPS = [
   },
 ];
 
-// The intro call, wherever it is described.
-export const CALL_NAME = 'Close the Gap intro call';
-export const CALL_TEXT = PROGRAM.startLine;
-export const CTA_LABEL = 'See who AI recommends instead of you';
-export const HEADER_CTA_LABEL = 'Check your AI visibility';
+export const CTA_LABEL = 'Get your gap report';
+export const HEADER_CTA_LABEL = 'Get your gap report';
+// Under every Start now button.
+export const GAP_FIRST_LABEL = 'Get your gap report first';
+
+// The one answer about calls, wherever it's asked.
+export const CALL_ANSWER =
+  "No. You get your gap report and a recorded video walking through it, and you can start straight from there. Everything after that happens by email and recorded video, so nothing waits on finding a time on everyone's calendar. If you'd still like to talk before starting, email me.";
+export const CALL_FAQ = { q: 'Do we need a call to get started?', a: CALL_ANSWER };
+
+const WHO_FOR = `Shopify brands doing about $50K a month and up, competing with brands their own size or a few times bigger. Under $50K a month, the best next step is the Full Store Audit. It isn't a fit if you need paid ads management, one off development tasks, a brand new store with no traffic yet, or someone who guarantees a ChatGPT ranking.`;
+const AFTER_90 =
+  'It continues month to month at your committed price, with 30 days written notice to cancel: reports, model watch, new questions and new competitors as they appear, and ongoing source work.';
+const GUARANTEE_ANSWER =
+  "No one can. What I do guarantee: everything listed for month 1, or you don't pay for month 2, and honest numbers in every competitor report.";
 
 export const FAQS: { q: string; a: string; link?: { href: string; text: string } }[] = [
   {
-    q: 'What is AI search?',
-    a: "Shoppers asking ChatGPT, Google's AI answers and similar tools what to buy, and getting a short list of recommended brands.",
+    q: 'What is Close the Gap?',
+    a: 'A 90 day program for Shopify brands. I show you where your competitors beat you in ChatGPT, Gemini and Google AI Mode, product by product, fix everything you control, go after the sources AI relies on, and send a competitor report every week or two so you can see it move.',
   },
-  APPROACH_FAQ,
-  {
-    q: 'Can you guarantee ChatGPT will recommend us?',
-    a: 'No one can. What I do guarantee: everything listed for month 1 of Close the Gap, or you don\'t pay for month 2, and honest numbers in every competitor report.',
-  },
-  {
-    q: 'What happens after 90 days?',
-    a: 'Close the Gap continues month to month, going deeper on your products and keeping you ahead as models and competitors change.',
-  },
+  { q: 'Do we need a call?', a: CALL_ANSWER },
+  { q: 'Can you guarantee ChatGPT will recommend us?', a: GUARANTEE_ANSWER },
+  { q: 'What happens after 90 days?', a: AFTER_90 },
+  { q: 'Who is it for?', a: WHO_FOR },
   {
     q: 'How do you measure AI traffic when most of it shows up as direct?',
     a: "Analytics tools undercount AI. Clicks from Google's AI answers are counted as regular search, and many shoppers read an AI answer, then type your name or URL. So I don't rely on referral numbers alone. I track how often AI recommends your products against each competitor, question by question, and pair that with signals from your store data and from customers themselves.",
@@ -438,56 +504,48 @@ export const FAQS: { q: string; a: string; link?: { href: string; text: string }
     a: 'Always. I propose, you decide, and nothing goes live without your sign off.',
   },
   {
-    q: "Who do you work with, and who isn't a fit?",
-    a: `Shopify brands doing about $50K a month and up, competing with brands their own size or a few times bigger. ${PROGRAM.under} It isn't a fit if you need paid ads management, one off development tasks, a brand new store with no traffic yet, or someone who guarantees a ChatGPT ranking.`,
-  },
-  {
     q: 'Will I work with you directly?',
-    a: 'Yes. You work with me directly, and I do the work myself, with no handoff to a junior team or an offshore team. We talk over email and video calls, plus Slack if your team uses it.',
-  },
-  {
-    q: 'Do you work with agencies?',
-    a: 'Yes. Agencies sell AI search and CRO to their Shopify clients, and I implement it under their name. See the agencies page.',
-    link: { href: '/agencies', text: 'agencies page' },
+    a: 'Yes. You work with me directly, and I do the work myself, with no handoff to a junior team or an offshore team. We work over email and recorded video, plus Slack if your team uses it.',
   },
 ];
 
 // The /close-the-gap FAQ, also in its FAQPage structured data.
 export const PROGRAM_FAQS = [
+  CALL_FAQ,
   {
-    q: 'Can you guarantee ChatGPT will recommend us?',
-    a: "No one can. Here's what I do guarantee: the month 1 deliverables, or you don't pay for month 2, and honest numbers in every weekly or biweekly competitor report.",
+    q: 'What does the gap report show?',
+    a: "How often ChatGPT recommends you against your top competitor, for questions built from your best sellers, plus what AI says about your brand and whether it can read your store. Brands doing $50K a month or more also get a short recorded video of the full gap: your top products against your competitors, roughly what it's worth each month, and which size fits.",
   },
   {
-    q: 'What do you need from us?',
-    a: TERMS.start,
+    q: 'How do you estimate what the gap is worth?',
+    a: "From your store's revenue, the share of shopping that now starts in AI, and how often each competitor gets recommended instead of you. It's always shown as an estimate, with the math.",
   },
+  {
+    q: "What's included in each size?",
+    a: 'Focus covers up to 3 products against 3 competitors, up to 5 source pitches a month and a competitor report every 2 weeks. Full covers up to 10 products against 6 competitors, conversion work on those product pages, up to 15 source pitches a month with follow ups, a weekly competitor report, model watch and a monthly recorded strategy video.',
+  },
+  { q: 'What do you need from our team?', a: TERMS.start },
+  { q: 'Can you guarantee ChatGPT will recommend us?', a: GUARANTEE_ANSWER },
   {
     q: 'Do we have to pay for placements?',
     a: 'Sometimes the best sources are paid. I recommend them with the reasoning, and your team decides. I advise; I never buy placements myself.',
   },
-  {
-    q: 'What happens after 90 days?',
-    a: 'It continues month to month, going deeper on your products and keeping you ahead as models and competitors change.',
-  },
-  {
-    q: "What's the difference between Focus and Full?",
-    a: 'Focus covers up to 3 products and 3 competitors, with a competitor report every 2 weeks, for brands doing about $50K to $150K a month. Full covers up to 10 products and 6 competitors, with a weekly competitor report and model watch, for brands doing about $150K a month and up.',
-  },
-  {
-    q: 'How do you estimate what the gap is worth?',
-    a: "From your store's AI referred sales, how often each competitor gets recommended, and published data on AI shopping growth. It's always shown as an estimate, with the math.",
-  },
+  { q: 'What happens after 90 days?', a: AFTER_90 },
 ];
 
 export const PRICING_FAQS = [
+  CALL_FAQ,
   {
     q: 'Where should I start?',
-    a: `With the AI Visibility Check, which takes about a minute, no login. When you want the full picture across your top products and main competitors, that's Close the Gap. If you want every page of your store reviewed for conversion, that's the Full Store Audit.`,
+    a: "With your gap report. It takes about a minute, no login, and shows how often ChatGPT recommends you against your top competitor. Brands doing $50K a month or more get a short video of the full gap and the size that fits. If you'd rather have every page of your store reviewed for conversion, that's the Full Store Audit.",
   },
   {
     q: "What's the difference between Focus and Full?",
-    a: 'Focus covers up to 3 products and 3 competitors, with a competitor report every 2 weeks. Full covers up to 10 products and 6 competitors, with a weekly competitor report and model watch.',
+    a: 'Focus covers up to 3 products against 3 competitors, with a competitor report every 2 weeks, for brands doing about $50K to $150K a month. Full covers up to 10 products against 6 competitors, conversion work on those product pages, a weekly competitor report, model watch and a monthly strategy video, for brands doing about $150K a month and up.',
+  },
+  {
+    q: 'How do I pay?',
+    a: 'Press Start now on the size you want. You see what happens after you pay and the terms, choose a 3 month commitment, 3 months paid upfront or no commitment, and pay online. Questions first? Email me.',
   },
   {
     q: 'What does the month 1 guarantee cover?',
@@ -495,7 +553,7 @@ export const PRICING_FAQS = [
   },
   {
     q: 'Can you guarantee results?',
-    a: "No one controls AI answers. I measure how often each brand gets recommended for the questions your buyers ask, before and during the work, so you can see what moved.",
+    a: 'No one controls AI answers. I measure how often each brand gets recommended for the questions your buyers ask, before and during the work, so you can see what moved.',
   },
   {
     q: 'How do I lock in 2026 pricing?',
@@ -505,24 +563,32 @@ export const PRICING_FAQS = [
 
 export const CHECK_FAQS = [
   {
-    q: 'Does ChatGPT recommend my brand?',
-    a: "This check asks questions built from your best sellers through OpenAI, using a smaller, faster OpenAI model with web search on. That shows how AI answers with live search, but it isn't the exact model a shopper gets in the ChatGPT app. Answers also vary by wording, person and day, so treat the result as a snapshot. Close the Gap tests your top products against your main competitors, question by question.",
+    q: 'What happens after I submit?',
+    a: "The gap report reads your store, asks ChatGPT the questions a shopper would ask about products like yours, and counts how often it recommends you and your competitor. Your results open on the page in about a minute, and a copy goes to your email. If your store does $50K a month or more, I follow up within 1 business day with a short video of your full gap and what it's worth.",
   },
   {
-    q: 'How does the AI Visibility Check work?',
-    a: 'It reads your store and your top products, writes the questions a shopper would ask about products like them, and asks ChatGPT each one. It also asks ChatGPT what your brand sells, tests whether AI crawlers can reach your store, and reads your top product pages to see what they tell AI.',
+    q: 'Do I need a call?',
+    a: 'No. You get the video by email and can start straight from it.',
+  },
+  {
+    q: 'What do you do with my email?',
+    a: 'Send your report and video. No newsletter unless you ask.',
+  },
+  {
+    q: 'Does ChatGPT recommend my brand?',
+    a: "The gap report asks questions built from your best sellers through OpenAI, using a smaller, faster OpenAI model with web search on. That shows how AI answers with live search, but it isn't the exact model a shopper gets in the ChatGPT app. Answers also vary by wording, person and day, so treat the result as a snapshot. Close the Gap tests your top products against your main competitors, question by question.",
+  },
+  {
+    q: 'How does the gap report work?',
+    a: 'It reads your store and your top products, writes the questions a shopper would ask about products like them, and asks ChatGPT each one. It counts how often those answers recommend you and how often they recommend the competitor you entered. It also asks ChatGPT what your brand sells, tests whether AI crawlers can reach your store, and reads your top product pages to see what they tell AI.',
   },
   {
     q: 'How long does it take, and how often can I run it?',
-    a: 'It takes about a minute, no login. You can run 3 checks a day, and results for each store are saved for 7 days, so running it again shows the saved result.',
+    a: 'It takes about a minute, no login. You can run 3 gap reports a day. Results for each store are saved for 7 days, so running it again shows the saved answers, counted against the competitor you enter.',
   },
   {
     q: 'Why are my results different from what I see in ChatGPT?',
     a: 'AI answers change with the exact wording, location, chat history and day. Close the Gap tests your products against the questions your buyers ask, with retests every week or two, to get a reliable picture.',
-  },
-  {
-    q: 'What do you do with my email?',
-    a: 'The check emails your report to you and sends me a copy.',
   },
   {
     q: 'Does it work for stores that are not on Shopify?',
@@ -552,7 +618,7 @@ export const AGENCY_TICKETS = [
 ];
 
 export const AGENCY_STATS = [
-  { value: '50+', label: 'AI search audits' },
+  { value: '50+', label: 'AI search projects' },
   { value: '4,000+', label: 'products made readable to AI' },
   { value: '50+', label: 'Shopify stores' },
   { value: '100%', label: 'white label, NDA signed upfront' },
@@ -580,8 +646,8 @@ export const AGENCY_PAINS = [
 export const AGENCY_SCOPE = [
   {
     icon: '<circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/>',
-    title: 'Competitor head to heads',
-    text: "How often your client gets recommended against each competitor on ChatGPT, Gemini and Google AI Mode, and which sources drive each pick, delivered as your agency's report.",
+    title: 'Competitor gap reports',
+    text: "How often AI recommends your client against each competitor, across ChatGPT, Gemini and Google AI Mode, why the competitors win, and what to fix first, in your agency's branding.",
   },
   {
     icon: '<path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/>',
@@ -618,20 +684,27 @@ export const AGENCY_PARTNER_PLANS = [
   {
     tag: '90 days, then month to month',
     name: 'Close the Gap, white label',
+    price: '$2,500',
+    unit: '/month',
+    commit: '3 month commitment',
+    other: 'Focus. Full is $5,000/month with a 3 month commitment. Both can be paid upfront or with no commitment, at the same prices brands pay.',
     summary: 'Same program, reported in your branding.',
     includes: [
       'A head to head against your client\'s main competitors across their top products',
       'On site fixes implemented, product pages that answer buyer questions',
       'Source work: the sites AI cites, ranked, with ready to send pitches',
       'Competitor reports and model watch in your branding',
-      'Focus from $2,500 a month, Full from $5,000 a month',
     ],
     featured: true,
   },
   {
     tag: 'One time',
     name: 'Full Store Audit, white label',
-    summary: '$1,997 per store, delivered under your brand within 2 business days.',
+    price: '$1,997',
+    unit: '',
+    commit: 'One time, per store',
+    other: 'Delivered under your brand within 2 business days of getting store access.',
+    summary: 'Every page of the store reviewed for conversion, in your branding.',
     includes: [
       'Every page on mobile and desktop',
       'Cart and checkout flow, email flows, analytics and subscription setup',
@@ -645,8 +718,8 @@ export const AGENCY_PARTNER_PLANS = [
 export const AGENCY_STEPS = [
   {
     when: 'Step 1',
-    title: 'Intro call',
-    text: "20 minutes on your clients, what they're asking for in AI search and CRO, and how your team likes to work. I sign your NDA and non solicit.",
+    title: 'Email me about the client',
+    text: "Tell me about the client, what they're asking for in AI search or CRO, and how your team likes to work. I sign your NDA and non solicit.",
   },
   {
     when: 'Step 2',
@@ -671,7 +744,7 @@ export const AGENCY_PROMISE = [
 export const AGENCY_FAQS = [
   {
     q: 'Can you deliver AI search reporting in our branding?',
-    a: 'Yes. Competitor reports, retests of the same buyer questions and audits go out as your agency\'s work, with no mention of me.',
+    a: 'Yes. Competitor reports, retests of the same buyer questions and Full Store Audits go out as your agency\'s work, with no mention of me.',
   },
   {
     q: 'How does agency pricing work?',
@@ -679,7 +752,7 @@ export const AGENCY_FAQS = [
   },
   {
     q: 'How fast can you start?',
-    a: "Usually within a week of our call. Send your first client the day we agree terms, and you'll have a scope and date back within one business day.",
+    a: "Usually within a week. Email me your first client, and you'll have a scope and date back within one business day.",
   },
   {
     q: 'How fast do you turn work around?',

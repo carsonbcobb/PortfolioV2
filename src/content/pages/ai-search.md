@@ -24,7 +24,9 @@ faq:
   - question: "Can apps on my store confuse AI?"
     answer: "Often. Review, bundle and subscription apps can each describe the same product in their own way, so AI sees conflicting prices, ratings or names for one product. When the facts conflict, AI is less sure what you sell and less likely to recommend it. Cleaning that up is part of the store work."
   - question: "How do I see where I stand today?"
-    answer: "Run the AI Visibility Check. It asks ChatGPT the questions shoppers ask about products like yours, checks what it says about your brand, and reads your top product pages. It takes about a minute, no login. Close the Gap tests your top products against your main competitors, question by question, with a report every week or two."
+    answer: "Get your gap report. Enter your store and your top competitor, and in about a minute you'll see how often ChatGPT recommends each of you. Brands doing $50K a month or more also get a short recorded video of the full gap and roughly what it's worth each month."
+  - question: "Do we need a call to get started?"
+    answer: "No. You get your gap report and a recorded video walking through it, and you can start straight from there. Everything after that happens by email and recorded video, so nothing waits on finding a time on everyone's calendar. If you'd still like to talk before starting, email me."
 ---
 <!-- The page layout lives in src/pages/ai-search.astro. Only these sections render from here,
 as collapsed "Read more" disclosures, found by their headings. -->

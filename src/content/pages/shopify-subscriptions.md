@@ -89,9 +89,9 @@ You don't need a giant project to fix this. There are two ways I usually start.
 
 **[Full Store Audit](/full-store-audit), $1,997.** I review your subscription setup along with every page of the store, cart and checkout, email flows and analytics, and rank every fix by what it's worth, walked through by recorded video. This is the right fit if you want to see how I work before committing.
 
-**Fractional head of ecommerce, custom.** I lead subscriptions as part of the store, working at your direction: offer tests, widget changes, flows, cancellation insights, and everything else on the site that affects revenue. You get one person who knows your store deeply instead of a rotating cast. [Let's talk](https://calendar.app.google/arLBYoErUBfsuqfN9).
+**Fractional head of ecommerce, custom.** I lead subscriptions as part of the store, working at your direction: offer tests, widget changes, flows, cancellation insights, and everything else on the site that affects revenue. You get one person who knows your store deeply instead of a rotating cast. [Email me what you need](mailto:carson@carsoncobb.com?subject=Fractional%20head%20of%20ecommerce) and I'll send back a scope and a price.
 
-For AI search, there's [Close the Gap](/close-the-gap), from $2,500 a month. You can see every published price on the [pricing page](/pricing).
+For AI search, there's [Close the Gap](/close-the-gap), at $2,500 a month with a 3 month commitment. You can see every published price on the [pricing page](/pricing).
 
 ## Proof: subscribe opt in from 7% to 32%
 
@@ -103,8 +103,8 @@ That's the kind of change that compounds. Every one of those subscribers is reve
 
 Across all my work, rebuilt pages average a 2.1x conversion lift, and I've supported more than $40M in client revenue. If you sell supplements or wellness products specifically, my page for [supplement brands](/supplement-brands) covers the extra challenges that come with that category.
 
-## Book an intro call
+## Start with your gap report
 
-If you think your subscription program should be doing more, let's talk. We'll go over your goals and figure out the right next step, and if it isn't a fit, I'll say so.
+If you think your subscription program should be doing more, the [Full Store Audit](/full-store-audit) covers your subscription setup along with the rest of the store. To see how often ChatGPT recommends you against your top competitor, get your gap report. It takes about a minute, no login.
 
-[See Close the Gap and book an intro call](/close-the-gap#start)
+[Get your gap report](/ai-visibility-check)

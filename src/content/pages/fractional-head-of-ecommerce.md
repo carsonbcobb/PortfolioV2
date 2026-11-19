@@ -13,16 +13,16 @@ faq:
   - question: "When should we hire full time instead?"
     answer: "When the channel is big enough that you need someone inside the business every day, managing a team of their own. Many brands use a fractional lead until they reach that point, and I'm happy to help write the job description and hand over cleanly."
   - question: "Is there a long contract?"
-    answer: "It's a custom engagement, so we agree the length together on an intro call. If you mainly want AI search covered, Close the Gap has a 3 month commitment, then runs month to month."
+    answer: "It's a custom engagement. Email me what you need and I'll send back a scope, a length and a price. If you mainly want AI search covered, Close the Gap has a 3 month commitment, then runs month to month."
   - question: "What do you need from us to start?"
-    answer: "Shopify collaborator access, analytics access, Google Search Console, and access to your review, subscription and email apps where they apply. Plus your margins by product, and an hour with you to walk through goals. I handle the rest."
+    answer: "Shopify collaborator access, analytics access, Google Search Console, and access to your review, subscription and email apps where they apply. Plus your margins by product, and a short written brief on your goals. I handle the rest."
   - question: "Moving to Shopify or rebuilding your theme?"
     answer: "That's quoted as a separate project, outside the monthly engagement. I plan every move to protect your rankings and AI visibility: every old URL redirected, the content that ranks kept, and the redirects checked after launch."
     link:
       text: "See how I handle migrations."
       href: "/shopify-migration"
   - question: "How much does a fractional head of ecommerce cost?"
-    answer: "It's a custom engagement, priced to the scope your brand needs, so let's talk it through on an intro call. For AI search on its own, Close the Gap starts at $2,500 a month."
+    answer: "It's a custom engagement, priced to the scope your brand needs. Email me what you need and I'll send back a scope and a price. For AI search on its own, Close the Gap is $2,500 a month with a 3 month commitment."
   - question: "Is this the same as a fractional CMO for Shopify?"
     answer: "Close, but narrower. A fractional CMO usually leads marketing across every channel. I lead the Shopify store itself: conversion, AI search, retention, the apps and the vendors, and I do much of the work myself."
   - question: "Will I work with you directly?"
@@ -131,7 +131,7 @@ This is a custom engagement for brands that want their ecommerce run day to day.
 
 I do the work myself. If something needs a specialist skill like photography, I tell you up front and either quote it or recommend someone you hire directly. The first 90 days follow the plan above: tracking, speed and key pages in month 1, then email and order value in month 2.
 
-The price depends on your store and what you want covered, so [let's talk](https://calendar.app.google/arLBYoErUBfsuqfN9). If what you need most is AI search, [Close the Gap](/close-the-gap) is the program for that, from $2,500 a month. Every published price is on the [pricing page](/pricing).
+The price depends on your store and what you want covered, so [email me what you need](mailto:carson@carsoncobb.com?subject=Fractional%20head%20of%20ecommerce) and I'll send back a scope and a price. If what you need most is AI search, [Close the Gap](/close-the-gap) is the program for that, at $2,500 a month with a 3 month commitment. Every published price is on the [pricing page](/pricing).
 
 ## Who this is a good fit for
 
@@ -139,8 +139,8 @@ This works best for founders of growing brands who sell on Shopify and feel the 
 
 It's probably not a fit if you want someone to only run ads, or if you need a team of five on day one.
 
-## Let's talk
+## Email me what you need
 
-If you're tired of being the person who holds the whole store together, let's talk. We'll go over your goals and figure out the right next step, and if it isn't a fit, I'll say so.
+If you're tired of being the person who holds the whole store together, email me what you need and I'll send back a scope and a price. If it isn't a fit, I'll say so. Want to see where you stand in AI search first? Get your gap report.
 
-[Book an intro call](https://calendar.app.google/arLBYoErUBfsuqfN9)
+[Get your gap report](/ai-visibility-check)

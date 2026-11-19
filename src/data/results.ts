@@ -110,12 +110,12 @@ export const BRANDS = {
   note: paragraphs(brands.body).map(inline),
 };
 
-// The last paragraph with the intro call link becomes the closing call to action.
+// The last paragraph with the gap report link becomes the closing call to action.
 const measured = section('How I measure');
 const measuredParas = paragraphs(measured.body);
-const closing = measuredParas.find((p) => /\]\(\/ai-visibility-check#book\)/.test(p));
+const closing = measuredParas.find((p) => /\]\(\/ai-visibility-check(#\w+)?\)/.test(p));
 export const MEASURED = {
   title: measured.title,
   text: measuredParas.filter((p) => p !== closing).map(inline),
 };
-export const CLOSING = closing ? closing.replace(/\s*\[[^\]]+\]\(\/ai-visibility-check#book\)\.?$/, '').trim() : undefined;
+export const CLOSING = closing ? closing.replace(/\s*\[[^\]]+\]\(\/ai-visibility-check(#\w+)?\)\.?$/, '').trim() : undefined;

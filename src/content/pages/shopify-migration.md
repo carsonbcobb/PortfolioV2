@@ -88,11 +88,11 @@ Launch day should be uneventful. I aim for that with a simple routine:
 
 See all options on the [pricing page](/pricing).
 
-## Book an intro call
+## Before you pick a launch date
 
-If you're planning a migration or a rebuild, talk to me before you pick a launch date. We'll go over your goals, your timing and where you're moving from, and figure out whether the Full Store Audit or a quoted migration is the right next step. If it isn't a fit, I'll say so.
+If you're planning a migration or a rebuild, [email me](mailto:carson@carsoncobb.com?subject=Shopify%20migration) your timing and where you're moving from, and I'll tell you whether the [Full Store Audit](/full-store-audit) or a quoted migration is the right next step. If it isn't a fit, I'll say so. To see how AI recommends you today, get your gap report.
 
-[See Close the Gap and book an intro call](/close-the-gap#start)
+[Get your gap report](/ai-visibility-check)
 
 ## Sources
 

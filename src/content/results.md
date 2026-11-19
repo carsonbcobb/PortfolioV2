@@ -1,6 +1,6 @@
 ---
 title: "AI Search and CRO Results for Shopify | Carson Cobb"
-description: "AI search and CRO results for Shopify brands: 50+ AI search audits, 4,000+ products made readable to AI, and conversion, testing and subscription wins."
+description: "AI search and CRO results for Shopify brands: 50+ AI search projects, 4,000+ products made readable to AI, and conversion, testing and subscription wins."
 slug: "/results"
 h1: "Results"
 ---
@@ -13,7 +13,7 @@ Want this work on your store every month? That's my [fractional head of ecommerc
 
 ## AI search
 
-- **50+** AI search audits
+- **50+** AI search projects
 - **30+** sites optimized for AI search
 - **4,000+** products restructured with machine readable attributes
 - **48%** average organic traffic growth
@@ -32,7 +32,7 @@ Want this work on your store every month? That's my [fractional head of ecommerc
 ### SEO, AEO and AI search
 Shoppers now ask ChatGPT, Perplexity, Gemini and Google's AI results what to buy, and those tools recommend the brands whose data they can read and trust. I audit stores for AI search, write the plan, and then do the work, for national brands in vitamins, skincare, cosmetics, food, pet and wellness. That means product data built from each store's real products, one consistent story for every product where apps had told conflicting ones, product pages that answer the questions buyers ask, pages AI can reach, and the SEO fundamentals underneath it all.
 
-- **50+** AI search audits
+- **50+** AI search projects
 - **30+** Sites optimized for AI search
 - **4,000+** Products restructured with machine readable attributes
 - **6** AI platforms optimized for: ChatGPT, Perplexity, Gemini, Claude, Copilot and Google AI Overviews
@@ -134,4 +134,4 @@ AI visibility is measured on the same buyer questions before and after the work,
 
 Results come from each client's own analytics, comparing the same period or the same traffic before and after the work. Numbers are shared without names and are examples, not guarantees.
 
-Want to talk through your goals? [Book a 20 minute intro call](/ai-visibility-check#book).
+See who AI recommends instead of you. [Get your gap report](/ai-visibility-check).

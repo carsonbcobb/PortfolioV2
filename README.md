@@ -16,7 +16,6 @@ All copy and pricing live in `src/data/site.ts`. The home page follows the appro
 
 | Item | Where | Until supplied |
 | --- | --- | --- |
-| Cal.com link | `CAL_LINK` env var (Amplify > Environment variables) | "Book a call" falls back to email |
 | Headshot | `public/carson.jpg` (shown at 220×260 with rounded corners) | Neutral gray box |
 
 ## Amplify rewrites

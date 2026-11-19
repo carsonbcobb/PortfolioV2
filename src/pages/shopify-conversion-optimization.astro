@@ -5,7 +5,7 @@ import ContentPage from '../layouts/ContentPage.astro';
 import { contentSchema } from '../data/schema';
 import { pageBySlug, toolBySlug } from '../data/pages';
 import { designedPage } from '../data/reports';
-import { CHECK_PATH, HEADER_CTA_LABEL, RESULTS, FULL_AUDIT, PROGRAM, CAL_LINK } from '../data/site';
+import { CHECK_PATH, HEADER_CTA_LABEL, RESULTS, FULL_AUDIT, PROGRAM, GAP_FIRST_LABEL } from '../data/site';
 import '../styles/sales.css';
 
 const slug = 'shopify-conversion-optimization';
@@ -47,12 +47,6 @@ const steps = [
 const tools = ['subscription-calculator', 'free-shipping-calculator'].map(toolBySlug);
 
 const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
-// Booking buttons go to CAL_LINK and are tracked as book_call events.
-const book = {
-  href: CAL_LINK,
-  'data-track': 'book_call',
-  ...(CAL_LINK.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {}),
-};
 
 const readMore = [
   'What do I fix on product pages?',
@@ -76,7 +70,7 @@ const readMore = [
   <Fragment slot="hero">
     <div class="sales-hero__actions">
       <a href={FULL_AUDIT.path} class="btn btn--accent">Get the Full Store Audit</a>
-      <a href={CHECK_PATH} data-track="visibility_check" class="sales-hero__link">{HEADER_CTA_LABEL} →</a>
+      <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--ghost-dark">{HEADER_CTA_LABEL}</a>
     </div>
     <p class="sales-hero__proof">{proof.join(' · ')}</p>
   </Fragment>
@@ -252,8 +246,8 @@ const readMore = [
             }
           </ul>
           <div class="plan__foot">
-            <a href={FULL_AUDIT.path} class="btn btn--accent">Get the Full Store Audit</a>
-            <a {...book} class="plan__alt">Or book an intro call</a>
+            <a href="/start?offer=full-store-audit" data-track="start_now" class="btn btn--accent">Start now</a>
+            <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--ghost-dark btn--small">{GAP_FIRST_LABEL}</a>
           </div>
         </div>
       </div>

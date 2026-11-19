@@ -123,8 +123,8 @@ const industries = CONTENT_PAGES.filter((p) => p.kind === 'industry');
 >
   <Fragment slot="hero">
     <div class="sales-hero__actions">
-      <a href="/close-the-gap" class="btn btn--accent">See the Close the Gap program</a>
-      <a href={CHECK_PATH} data-track="visibility_check" class="sales-hero__link">{HEADER_CTA_LABEL} →</a>
+      <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent">{HEADER_CTA_LABEL}</a>
+      <a href="/close-the-gap" class="btn btn--ghost-dark">See the Close the Gap program</a>
     </div>
     <p class="sales-hero__proof">{HERO_PROOF.join(' · ')}</p>
   </Fragment>

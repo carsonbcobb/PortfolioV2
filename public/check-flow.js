@@ -1,12 +1,12 @@
-/* AI Visibility Check: the step flow on /ai-visibility-check.
- * Step 1 store, 2 running plus email, 3 score, 4 to 7 one section each, 8 the close.
- * Talks to the Worker in worker/: POST /detect, POST /check (NDJSON stream), POST /email, GET /report.
+/* Gap report: the step flow on /ai-visibility-check.
+ * Step 1 the form (store, competitor, revenue, name, email), 2 running, 3 head to head and score,
+ * 4 to 7 one section each, 8 the next step for the visitor's revenue range.
+ * Talks to the Worker in worker/: POST /check (NDJSON stream) and GET /result.
  * All text from the Worker or the store is set as text, never as HTML. */
 (() => {
   const me = document.currentScript;
   const API = (me && me.dataset.api) || '';
   const SITEKEY = (me && me.dataset.sitekey) || '';
-  const CAL = (me && me.dataset.cal) || '';
   const flow = document.getElementById('flow');
   if (!flow) return;
 
@@ -18,7 +18,8 @@
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   const FIRST_RESULT = 3;
   const LAST = 8;
-  const TITLES = { 1: 'Your store', 2: 'Running your check', 3: 'Your score', 4: 'AI visibility', 5: 'Brand accuracy', 6: 'Crawler access', 7: 'Site readiness', 8: 'What this means' };
+  const TITLES = { 1: 'Your store', 2: 'Running your gap report', 3: 'Your gap', 4: 'AI visibility', 5: 'Brand accuracy', 6: 'Crawler access', 7: 'Site readiness', 8: 'Your next step' };
+  const REVENUES = ['under_50k', '50k_150k', '150k_plus'];
 
   // Element helper: el('p', {class: 'x'}, 'text', child). Strings always become text nodes.
   const el = (tag, attrs, ...kids) => {
@@ -77,13 +78,15 @@
     step: 1,
     url: '',
     domain: '',
-    brand: '',
-    /** The visitor's top competitor, optional: a website or a brand name. */
+    /** The visitor's top competitor, required: a website or a brand name. */
     rival: '',
-    report: null,
-    ticket: null,
+    /** under_50k, 50k_150k or 150k_plus. Empty when a saved report is opened without it. */
+    revenue: '',
+    name: '',
     email: '',
-    emailSent: false,
+    report: null,
+    /** The id of the saved result, for reloads and the link in the email. */
+    result: null,
     running: false,
     token: '',
   };
@@ -117,7 +120,6 @@
       to.classList.add('is-active');
       navBar.hidden = n < FIRST_RESULT;
       updateNav();
-      if (n === 8) layoutClose();
       if (opts.focus !== false) {
         const h = to.querySelector('[tabindex="-1"]');
         if (h) h.focus({ preventScroll: true });
@@ -134,7 +136,7 @@
 
     if (opts.history !== false) {
       const qs = new URLSearchParams();
-      if (S.domain && n > 1) qs.set('store', S.domain);
+      if (S.result && n >= FIRST_RESULT) qs.set('result', S.result);
       if (n > 1) qs.set('step', String(n));
       const url = `${location.pathname}${qs.toString() ? `?${qs}` : ''}`;
       const state = { aivc: true, step: n };
@@ -163,7 +165,7 @@
 
   window.addEventListener('popstate', (e) => {
     const n = e.state && e.state.aivc ? e.state.step : 1;
-    if (n === 2 && S.report && S.email) return show(FIRST_RESULT, { history: false });
+    if (n === 2 && S.report) return show(FIRST_RESULT, { history: false });
     show(n, { history: false });
   });
 
@@ -205,22 +207,24 @@
     if (window.turnstile && tsWidget !== null) window.turnstile.reset(tsWidget);
   };
 
-  // ---------- Step 1: store, detect, confirm ----------
+  // ---------- Step 1: the form ----------
   const storeForm = $('#store-form');
-  const confirmForm = $('#confirm-form');
   const storeError = $('#store-error');
-  const storeFine = $('#store-fine');
   const ERRORS = {
-    bad_request: 'Please check the store URL and try again.',
+    bad_request: 'Please check your details and try again.',
     invalid_url: "That doesn't look like a public store URL. Try something like yourstore.com.",
     turnstile: 'The spam check failed. Please refresh the page and try again.',
-    rate_limited: "You've run 3 checks today. Come back tomorrow, or book a Close the Gap intro call to talk about next steps.",
-    paused: 'Checks are paused for today. Book a Close the Gap intro call instead.',
-    expired: 'This report has expired. Please run the check again.',
+    rate_limited: "You've run 3 gap reports today. Come back tomorrow, or email carson@carsoncobb.com with your store and your top competitor.",
+    paused: "Gap reports are paused for today. Email carson@carsoncobb.com with your store and your top competitor, and I'll send yours.",
+    not_found: 'This report has expired. Please run a new gap report.',
   };
-  const fail1 = (msg) => {
+  const fail1 = (msg, field) => {
     storeError.textContent = msg;
     storeError.hidden = false;
+    if (field) {
+      field.setAttribute('aria-invalid', 'true');
+      field.focus();
+    }
   };
   const busy = (btn, on, label) => {
     btn.disabled = on;
@@ -235,73 +239,32 @@
     }
   };
 
-  const postJson = async (path, body) => {
-    const res = await fetch(`${API}${path}`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });
-    const data = await res.json().catch(() => ({}));
-    if (!res.ok) throw new Error(ERRORS[data.error] || data.message || 'Something went wrong. Please try again.');
-    return data;
-  };
-
   if (storeForm) {
-    const btn = $('button[type="submit"]', storeForm);
-    storeForm.addEventListener('submit', async (e) => {
+    storeForm.addEventListener('input', (e) => e.target.removeAttribute && e.target.removeAttribute('aria-invalid'));
+    storeForm.addEventListener('submit', (e) => {
       e.preventDefault();
       storeError.hidden = true;
-      const url = String(storeForm.url.value || '').trim();
-      if (!url || !domainOf(url)) return fail1('Please enter your store URL, like yourstore.com.');
-      busy(btn, true, 'Reading your store...');
-      try {
-        const d = await postJson('/detect', { url: normUrl(url) });
-        S.url = normUrl(url);
-        S.domain = d.domain;
-        confirmForm.brand.value = d.brand || '';
-        confirmForm.competitor.value = String(storeForm.competitor.value || '').trim().slice(0, 100);
-        storeForm.hidden = true;
-        storeFine.hidden = true;
-        confirmForm.hidden = false;
-        sizeChips();
-        (d.brand ? $('button[type="submit"]', confirmForm) : confirmForm.brand).focus();
-        track('visibility_check_detect', { cached: !!d.cached });
-      } catch (err) {
-        fail1(err.message);
-      } finally {
-        busy(btn, false);
-      }
-    });
-
-    // Chips grow with their text.
-    const sizeChips = () => $$('.chip input', confirmForm).forEach((i) => (i.style.width = `${Math.max(8, (i.value || i.placeholder).length + 1)}ch`));
-    confirmForm.addEventListener('input', sizeChips);
-
-    confirmForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      storeError.hidden = true;
-      const brand = confirmForm.brand.value.trim();
-      if (!brand) return fail1('Please add your brand name.') || confirmForm.brand.focus();
-      S.brand = brand;
-      S.rival = String(confirmForm.competitor.value || '').trim().slice(0, 100);
+      const f = storeForm.elements;
+      const url = String(f.url.value || '').trim();
+      const rival = String(f.competitor.value || '').trim().slice(0, 100);
+      const revenue = String(f.revenue.value || '');
+      const name = String(f.name.value || '').trim().slice(0, 80);
+      const email = String(f.email.value || '').trim();
+      if (!url || !domainOf(url) || !domainOf(url).includes('.')) return fail1('Please enter your store URL, like yourstore.com.', f.url);
+      if (!rival) return fail1("Please enter your top competitor's website or brand name.", f.competitor);
+      if (domainOf(rival) && domainOf(rival) === domainOf(url)) return fail1('Please enter a competitor, not your own store.', f.competitor);
+      if (!REVENUES.includes(revenue)) return fail1('Please choose your monthly revenue.', f.revenue);
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return fail1('Please enter a valid work email.', f.email);
+      Object.assign(S, { url: normUrl(url), domain: domainOf(url), rival, revenue, name, email });
       startCheck();
     });
-
-    $('[data-action="change-store"]').addEventListener('click', () => resetStep1(true));
   }
 
-  const resetStep1 = (focusInput) => {
-    if (!storeForm) return;
-    storeForm.hidden = false;
-    storeFine.hidden = false;
-    confirmForm.hidden = true;
-    storeError.hidden = true;
-    if (focusInput) storeForm.url.focus();
-  };
-
-  // ---------- Step 2: running, plus email ----------
+  // ---------- Step 2: running ----------
   const runList = $('#run-list');
   const runError = $('#run-error');
   const runRetry = $('#run-retry');
-  const emailForm = $('#email-form');
-  const emailNote = $('#email-note');
-  const emailError = $('#email-error');
+  const runCard = $('#run-card');
   const lines = [];
 
   const addLine = (msg) => {
@@ -323,87 +286,43 @@
     $('.run__mark', l.li).textContent = '✓';
   };
 
-  const ready = () => {
-    if (!S.report || !S.email) return;
-    sendEmail();
-    renderReport();
-    show(FIRST_RESULT, { replace: true });
-  };
-
-  emailForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    emailError.hidden = true;
-    const v = String(emailForm.email.value || '').trim();
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) {
-      emailError.textContent = 'Please enter a valid email address.';
-      emailError.hidden = false;
-      return emailForm.email.focus();
-    }
-    S.email = v;
-    store.set(`aivc:email:${S.domain}`, v);
-    emailNote.textContent = S.report ? 'Opening your results...' : `Got it. Your report will go to ${v}. Your results open when the check finishes.`;
-    $('button', emailForm).disabled = true;
-    emailForm.email.readOnly = true;
-    track('visibility_check_email');
-    ready();
-  });
-
-  const sendEmail = async () => {
-    if (S.emailSent || !S.ticket || !S.email) return;
-    S.emailSent = true;
-    const line = $('#sent-line');
-    try {
-      await postJson('/email', { ticket: S.ticket, email: S.email });
-      line.textContent = `Your full report is on its way to ${S.email}.`;
-    } catch {
-      line.textContent = "We couldn't email your report this time. Your full results are on this page.";
-    }
+  const remember = () => {
+    if (S.result) store.set(`gap:lead:${S.result}`, JSON.stringify({ revenue: S.revenue, email: S.email, rival: S.rival }));
   };
 
   const startCheck = async () => {
     if (S.running) return;
     S.running = true;
     S.report = null;
-    S.ticket = null;
-    S.emailSent = false;
+    S.result = null;
     lines.length = 0;
     runList.replaceChildren();
     runError.hidden = true;
     runRetry.hidden = true;
     runRetry.textContent = 'Try again';
-    emailForm.hidden = false;
-    emailNote.hidden = false;
-    $('#run-title').textContent = `Checking ${S.brand}`;
-    const remembered = store.get(`aivc:email:${S.domain}`);
-    if (remembered && !S.email) emailForm.email.value = remembered;
-    if (!S.email) {
-      emailForm.hidden = false;
-      $('button', emailForm).disabled = false;
-      emailForm.email.readOnly = false;
-      emailNote.textContent = "Your results open as soon as the check finishes and you've added your email.";
-    } else {
-      emailNote.textContent = `Your report will go to ${S.email}.`;
-    }
-    const startBtn = $('button[type="submit"]', confirmForm);
-    startBtn.disabled = true;
+    runCard.hidden = false;
+    $('#run-title').textContent = `Checking ${S.domain}`;
+    $('#run-vs').textContent = `${S.domain} against ${S.rival}`;
+    $('#run-note').textContent = `Your results open here as soon as the check finishes, and a copy goes to ${S.email}.`;
+    const btn = $('button[type="submit"]', storeForm);
+    busy(btn, true, 'Starting your gap report...');
 
     let token;
     try {
       token = await getToken();
     } catch (err) {
       S.running = false;
-      startBtn.disabled = false;
+      busy(btn, false);
       return fail1(err.message);
     }
     show(2);
-    if (!S.email) setTimeout(() => emailForm.email.focus({ preventScroll: true }), 300);
-    track('visibility_check_start');
+    track('visibility_check_start', { revenue: S.revenue });
 
     try {
       const res = await fetch(`${API}/check`, {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ url: S.url, brand: S.brand, competitor: S.rival || undefined, token, source: firstSource() }),
+        body: JSON.stringify({ url: S.url, competitor: S.rival, revenue: S.revenue, name: S.name || undefined, email: S.email, token, source: firstSource() }),
       });
       spendToken();
       if (!res.ok) {
@@ -437,35 +356,30 @@
             S.report = msg.report;
             lines.forEach(finishLine);
             if (S.step >= FIRST_RESULT) renderReport();
-          }
-          else if (msg.type === 'error') throw new Error(msg.message || 'Something went wrong. Please try again.');
+          } else if (msg.type === 'error') throw new Error(msg.message || 'Something went wrong. Please try again.');
           else if (msg.type === 'stopped') {
-            // Not a store, or no products we could read: no score and no email.
+            // Not a store, or no products we could read: no score.
             finished = true;
             lines.forEach(finishLine);
             $('#run-title').textContent = "We can't check this site";
-            emailForm.hidden = true;
-            emailNote.hidden = true;
+            runCard.hidden = true;
             runError.textContent = msg.message;
             runError.hidden = false;
             runRetry.textContent = 'Check another store';
             runRetry.hidden = false;
             track('visibility_check_stopped', { reason: msg.reason });
-          }
-          else if (msg.type === 'done') {
+          } else if (msg.type === 'done') {
             finished = true;
-            if (msg.cached && !lines.length) addLine({ step: 'setup', message: 'Found your saved report from the last 7 days' });
+            if (msg.cached && !lines.length) addLine({ step: 'setup', message: 'Found your saved answers from the last 7 days' });
             lines.filter((l) => !(msg.pending && (l.step === 'accuracy' || l.step === 'accuracy-wait'))).forEach(finishLine);
             S.report = msg.report;
-            S.ticket = msg.ticket || null;
-            S.brand = msg.report.brand || S.brand;
-            if (msg.report.headToHead) store.set(`aivc:h2h:${msg.report.domain}`, JSON.stringify(msg.report.headToHead));
-            track('visibility_check_complete', { score: msg.report.overall.score, cached: !!msg.cached, competitor: !!S.rival });
-            if (!S.email) {
-              emailNote.textContent = 'Your results are ready. Add your email to see them.';
-              emailForm.email.focus({ preventScroll: true });
-            }
-            ready();
+            S.result = msg.result || null;
+            S.domain = msg.report.domain || S.domain;
+            remember();
+            track('visibility_check_complete', { score: msg.report.overall.score, cached: !!msg.cached, revenue: S.revenue });
+            renderReport();
+            $('#sent-line').textContent = `Your gap report is on its way to ${S.email}.`;
+            show(FIRST_RESULT, { replace: true });
           }
         }
         if (done) break;
@@ -477,7 +391,7 @@
       runRetry.hidden = false;
     } finally {
       S.running = false;
-      startBtn.disabled = false;
+      busy(btn, false);
     }
   };
 
@@ -850,30 +764,63 @@
     );
   };
 
-  // The head to head, first in the report: the competitor the visitor typed, else the brand AI named most instead.
+  // The head to head, first in the report: the competitor the visitor typed.
   const renderH2H = (r) => {
     const box = $('#h2h');
-    const h = r.headToHead;
     if (!box) return;
+    const h = r.headToHead;
+    const brand = r.brand || r.domain;
     if (!h || !h.total || !h.name) {
-      box.hidden = true;
-      return box.replaceChildren();
+      const who = (h && h.name) || S.rival;
+      if (!who) {
+        box.hidden = true;
+        return box.replaceChildren();
+      }
+      box.replaceChildren(
+        el('p', { class: 'eyebrow' }, 'Head to head'),
+        el('p', { class: 'h2h__line' }, `We couldn't compare you with ${who} this run, because ChatGPT didn't answer the buyer questions. Run it again later.`),
+      );
+      box.hidden = false;
+      return;
     }
+    const lead = h.theirs > h.yours ? 'is-behind' : h.theirs < h.yours ? 'is-ahead' : 'is-even';
+    const bar = (label, n, you) =>
+      el(
+        'div',
+        { class: `h2h__row${you ? ' h2h__row--you' : ''}` },
+        el('span', { class: 'h2h__name' }, label),
+        el('span', { class: 'h2h__track', 'aria-hidden': 'true' }, el('span', { class: 'h2h__fill', style: `width:${Math.round((n / h.total) * 100)}%` })),
+        el('span', { class: 'h2h__count' }, `${n} of ${h.total}`),
+      );
     const counts = [
       `${h.name} was recommended in `,
       el('strong', {}, `${h.theirs} of ${h.total}`),
-      ` answers. You were recommended in `,
+      ' answers. You were recommended in ',
       el('strong', {}, String(h.yours)),
       '.',
     ];
-    box.replaceChildren(...(h.source === 'visitor' ? counts : [`The brand AI recommended most instead of you: ${h.name}. `, ...counts]));
+    box.className = `h2h ${lead}`;
+    box.replaceChildren(
+      el('p', { class: 'eyebrow' }, `Head to head · ${h.total} ChatGPT ${plural(h.total, 'answer', 'answers')}`),
+      el('p', { class: 'h2h__line' }, ...(h.source === 'visitor' ? counts : [`The brand AI recommended most instead of you: ${h.name}. `, ...counts])),
+      el('div', { class: 'h2h__bars' }, bar(h.name, h.theirs, false), bar(brand, h.yours, true)),
+    );
     box.hidden = false;
+  };
+
+  // Step 8: the next step for the visitor's revenue range.
+  const renderNext = () => {
+    const which = S.revenue === 'under_50k' ? 'under' : S.revenue ? 'fit' : 'none';
+    $$('.next', flow).forEach((b) => (b.hidden = b.dataset.next !== which));
+    const e = $('#next-email');
+    if (e) e.textContent = S.email || 'you';
   };
 
   const renderReport = () => {
     const r = S.report;
     if (!r) return;
     renderH2H(r);
+    renderNext();
     const score = Math.max(0, Math.min(100, Math.round(r.overall.score)));
     const scoreStep = $('[data-step="3"]', flow);
     scoreStep.dataset.band = band(score);
@@ -905,26 +852,15 @@
     guard(renderAccuracy);
     guard(renderCrawlers);
     guard(renderReadiness);
-    $('#close-score').textContent = `${score}/100.`;
+    $('#close-score').textContent = `${score}/100`;
     $('#close-score').dataset.band = band(score);
-    if (S.email && !S.ticket) $('#sent-line').textContent = '';
   };
 
-  // ---------- Step 8: the calendar, inline when it fits, else in a modal ----------
-  const inline = $('#calendar-inline');
-  const modal = $('#cal-modal');
-  const openBtn = $('#open-calendar');
-  const bookTitle = $('#book-title');
-  const iframe = () => el('iframe', { src: CAL, title: 'Book a Close the Gap intro call', loading: 'lazy', width: '100%', height: '100%', style: 'border:0' });
-  const layoutClose = () => {
-    const step = $('[data-step="8"]', flow);
-    const fits = window.innerWidth >= 1024 && step.clientHeight >= 640;
-    inline.hidden = !fits;
-    openBtn.hidden = fits;
-    bookTitle.hidden = !fits;
-    if (fits && !inline.firstChild) inline.append(iframe());
+  const resetStep1 = (focusInput) => {
+    if (!storeForm) return;
+    storeError.hidden = true;
+    if (focusInput) storeForm.elements.url.focus();
   };
-  window.addEventListener('resize', () => S.step === 8 && layoutClose());
 
   // ---------- Buttons ----------
   flow.addEventListener('click', (e) => {
@@ -938,51 +874,40 @@
         resetStep1(false);
         show(1);
       } else show(S.step - 1);
-    } else if (a === 'close') show(LAST);
-    else if (a === 'restart') {
+    } else if (a === 'close') {
+      show(LAST);
+      track('gap_report_next_step', { revenue: S.revenue || 'unknown' });
+    } else if (a === 'restart') {
       resetStep1(true);
       show(1);
-    } else if (a === 'open-calendar') {
-      const body = $('#calendar-modal');
-      if (!body.firstChild) body.append(iframe());
-      modal.showModal();
-      track('book_call_open');
-    } else if (a === 'close-calendar') modal.close();
-  });
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) modal.close();
+    }
   });
 
-  // ---------- Reload: reopen the report from the 7 day cache ----------
+  // ---------- Reload or a link from the email: reopen a saved result ----------
   const params = new URLSearchParams(location.search);
-  const want = Number(params.get('step')) || 1;
-  const fromUrl = params.get('store');
+  const want = Number(params.get('step')) || FIRST_RESULT;
+  const resultId = params.get('result');
   history.replaceState({ aivc: true, step: 1 }, '', location.pathname);
-  if (fromUrl && API && storeForm) {
-    storeForm.url.value = fromUrl;
-    const remembered = store.get(`aivc:email:${domainOf(fromUrl)}`);
-    if (remembered && want >= FIRST_RESULT) {
-      fetch(`${API}/report?domain=${encodeURIComponent(fromUrl)}`)
-        .then((r) => (r.ok ? r.json() : null))
-        .then((d) => {
-          if (!d || !d.report) return;
-          S.report = d.report;
-          // The saved report shows the brand named most; this visitor's own competitor comes back from the session.
-          try {
-            const mine = JSON.parse(store.get(`aivc:h2h:${d.report.domain}`) || 'null');
-            if (mine && mine.source === 'visitor') S.report = { ...d.report, headToHead: mine };
-          } catch {}
-          S.domain = d.report.domain;
-          S.url = d.report.url;
-          S.brand = d.report.brand;
-          S.email = remembered;
-          S.emailSent = true;
-          renderReport();
-          $('#sent-line').textContent = `Your full report was sent to ${remembered}.`;
-          // Pushed on top of step 1, so the browser back button still steps back inside the flow.
-          show(Math.min(LAST, want), { focus: false });
-        })
-        .catch(() => {});
-    }
+  if (resultId && /^[0-9a-f-]{36}$/.test(resultId) && API) {
+    fetch(`${API}/result?id=${encodeURIComponent(resultId)}`)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        if (!d || !d.report) return;
+        S.report = d.report;
+        S.result = resultId;
+        S.domain = d.report.domain;
+        S.url = d.report.url;
+        // The revenue range and email are never in the saved report; this browser may remember them.
+        try {
+          const mine = JSON.parse(store.get(`gap:lead:${resultId}`) || 'null');
+          if (mine) Object.assign(S, { revenue: REVENUES.includes(mine.revenue) ? mine.revenue : '', email: mine.email || '', rival: mine.rival || '' });
+        } catch {}
+        if (!S.rival && d.report.headToHead) S.rival = d.report.headToHead.name;
+        renderReport();
+        $('#sent-line').textContent = S.email ? `Your gap report was sent to ${S.email}.` : '';
+        // Pushed on top of step 1, so the browser back button still steps back inside the flow.
+        show(Math.max(FIRST_RESULT, Math.min(LAST, want)), { focus: false });
+      })
+      .catch(() => {});
   }
 })();
