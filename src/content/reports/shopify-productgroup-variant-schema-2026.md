@@ -67,7 +67,7 @@ Beauty and supplements are interesting gaps. Shade, scent, flavor and count are 
 4. **Use clear variant names in Shopify.** "Unscented, 8 oz" beats "Option 2". The structured data copies what you type.
 5. **Validate after theme updates.** 5% of pages had data that fails to parse, which means none of it is read.
 
-Variant and product data is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Variant and product data is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

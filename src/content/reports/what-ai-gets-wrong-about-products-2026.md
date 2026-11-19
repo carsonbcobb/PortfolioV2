@@ -97,7 +97,7 @@ Shoppers who come from AI tend to arrive ready to buy. In my own client work, AI
 4. **Make variants and editions obvious.** Name each size, pack and edition clearly, with its own price, so AI doesn't guess.
 5. **Check what Google holds about your products.** AI Mode can show ratings and prices from Google's shopping data. Keep your Merchant Center data in line with your site.
 
-What AI says about your products, and where those claims come from, is part of my [AI Search and Conversion Audit](/ai-search). The free [AI Visibility Check](/ai-visibility-check) is a quick place to start.
+What AI says about your products, and where those claims come from, is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick place to start.
 
 ## How this was done
 

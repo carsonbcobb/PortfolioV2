@@ -10,13 +10,10 @@ import {
   GHOST_REVENUE_URL,
   LINKEDIN_COMPANY_URL,
   HEADSHOT,
-  AUDIT,
-  BUILD,
-  RETAINERS,
-  RETAINER_ROWS,
+  PROGRAM,
+  PROGRAM_SIZES,
+  FULL_AUDIT,
   TERMS,
-  DEVELOPERS_NOTE,
-  RETAINER_AUDIT_NOTE,
   AI_CASES,
   CHECK_PATH,
   AGENCY_PARTNER_PLANS,
@@ -187,12 +184,11 @@ const PRICING_URL = `${SITE_URL}/pricing`;
 
 // One Service per offer on /pricing, with stable ids. Every description is built from the same lines the
 // pricing cards and the Fit and terms section render, so the schema never says more than the page.
+const PROGRAM_URL = `${SITE_URL}${PROGRAM.path}`;
+const FULL_AUDIT_URL = `${SITE_URL}${FULL_AUDIT.path}`;
 const PLAN = {
-  audit: `${SITE_URL}/#service-audit`,
-  build: `${SITE_URL}/#service-build`,
-  core: `${SITE_URL}/#service-core`,
-  growth: `${SITE_URL}/#service-growth`,
-  full: `${SITE_URL}/#service-full`,
+  program: `${SITE_URL}/#service-close-the-gap`,
+  fullAudit: `${SITE_URL}/#service-full-store-audit`,
 };
 export type PlanKey = keyof typeof PLAN;
 
@@ -207,33 +203,23 @@ const channel = (processingTime?: string) => ({
 const audience = (description: string) => ({ '@type': 'BusinessAudience', audienceType: 'Shopify brands', description });
 const output = (name: string, description: string) => ({ '@type': 'Thing', name, description });
 const sentenceList = (xs: string[]) => xs.map((x) => (/[.!?]$/.test(x) ? x : `${x}.`)).join(' ');
-const FIT_LINE = TERMS.bestFit.split('. Signs')[0] + '.';
+const FIT_LINE = PROGRAM.fit;
+const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
 
-const retainer = (name: string) => {
-  const i = RETAINERS.findIndex((r) => r.name === name);
-  const r = RETAINERS[i];
-  // The card's "Best for ..." line, as the audience description.
-  const best = (r.note ?? '').match(/^Best for (.+?\.)( |$)/)?.[1] ?? '';
-  return {
-    r,
-    capacity: RETAINER_ROWS.find((row) => row.label === 'Capacity')!.values[i],
-    bestFor: best.charAt(0).toUpperCase() + best.slice(1),
-  };
-};
-
-const monthly = (o: { id: string; name: string; service: string; price: number; description: string }) => ({
+// One Offer per Close the Gap size: the committed monthly price, billed for at least 3 months.
+const sizeOffer = (z: (typeof PROGRAM_SIZES)[number]) => ({
   '@type': 'Offer',
-  '@id': o.id,
-  name: o.name,
-  description: o.description,
-  url: PRICING_URL,
-  itemOffered: ref(o.service),
+  '@id': `${PROGRAM_URL}#offer-${z.key}`,
+  name: z.name,
+  description: `${z.fit}. ${sentenceList(z.items)} ${usd(z.monthly)} a month with a 3 month commitment, or ${usd(z.upfront)} paid upfront for 3 months. ${usd(z.flexible)} a month with no commitment. ${PROGRAM.guarantee} ${PROGRAM.scope}`,
+  url: PROGRAM_URL,
+  itemOffered: ref(PLAN.program),
   seller: ref(ID.business),
-  price: o.price,
+  price: z.monthly,
   priceCurrency: 'USD',
   priceSpecification: {
     '@type': 'UnitPriceSpecification',
-    price: o.price,
+    price: z.monthly,
     priceCurrency: 'USD',
     unitText: 'MONTH',
     billingDuration: 'P3M',
@@ -243,152 +229,52 @@ const monthly = (o: { id: string; name: string; service: string; price: number; 
 });
 
 const planServices: Record<PlanKey, () => object> = {
-  audit: () => ({
+  program: () => ({
     '@type': 'Service',
-    '@id': PLAN.audit,
-    name: AUDIT.name,
-    serviceType: 'AI search and conversion audit',
-    // Same words as the "Where should I start?" answer on /pricing.
-    description: `${AUDIT.summary} Start with it before any implementation, or whenever you want an outside view of where you stand. The audit is the diagnosis and the plan; implementation is the Build or a retainer.`,
-    url: `${PRICING_URL}#audit`,
+    '@id': PLAN.program,
+    name: PROGRAM.name,
+    serviceType: 'AI search optimization against competitors',
+    description: `${PROGRAM.summary} ${PROGRAM.after}`,
+    url: PROGRAM_URL,
     provider: ref(ID.carson),
     areaServed: WORLD,
     audience: audience(FIT_LINE),
-    availableChannel: channel('P5D'),
-    serviceOutput: output('Written report and prioritized plan', sentenceList(AUDIT.includes)),
+    availableChannel: channel(),
+    serviceOutput: output(
+      'Competitor head to head, on site fixes, source work and competitor reports',
+      sentenceList([...PROGRAM.months.flatMap((m) => m.items), ...PROGRAM.always.items]),
+    ),
+    offers: PROGRAM_SIZES.map(sizeOffer),
+  }),
+  fullAudit: () => ({
+    '@type': 'Service',
+    '@id': PLAN.fullAudit,
+    name: FULL_AUDIT.name,
+    serviceType: 'Shopify conversion audit',
+    description: FULL_AUDIT.summary,
+    url: FULL_AUDIT_URL,
+    provider: ref(ID.carson),
+    areaServed: WORLD,
+    audience: audience(FIT_LINE),
+    availableChannel: channel('P2D'),
+    serviceOutput: output('Written report, ranked fixes and recorded video walkthrough', sentenceList(FULL_AUDIT.includes)),
     offers: offer({
-      id: `${PRICING_URL}#offer-audit`,
-      name: AUDIT.name,
-      description: `${AUDIT.note} ${TERMS.ownership} The audit needs view access only.`,
-      url: PRICING_URL,
-      service: PLAN.audit,
-      price: AUDIT.price,
+      id: `${FULL_AUDIT_URL}#offer`,
+      name: FULL_AUDIT.name,
+      description: `${FULL_AUDIT.timing} ${FULL_AUDIT.walkthrough} ${TERMS.ownership}`,
+      url: FULL_AUDIT_URL,
+      service: PLAN.fullAudit,
+      price: FULL_AUDIT.price,
       unit: 'once',
     }),
   }),
-  build: () => ({
-    '@type': 'Service',
-    '@id': PLAN.build,
-    name: BUILD.name,
-    serviceType: 'AI search and conversion implementation',
-    description: `A fixed price implementation of the audit plan, ${BUILD.tag.toLowerCase().replace('fixed price, ', '')}. ${TERMS.buildScope}`,
-    url: `${PRICING_URL}#build`,
-    provider: ref(ID.carson),
-    areaServed: WORLD,
-    audience: audience(FIT_LINE),
-    availableChannel: channel('P4W'),
-    serviceOutput: output('On site AI search and conversion work', sentenceList(BUILD.includes)),
-    offers: BUILD.tiers.map((t) => ({
-      ...offer({
-        id: `${PRICING_URL}#offer-build-${t.min}`,
-        name: `${BUILD.name}, ${t.label}`,
-        description: `${t.label}. ${BUILD.counts} Fixed price, 3 to 4 weeks. ${TERMS.timing} ${TERMS.approvals} ${TERMS.support} ${TERMS.ownership} ${TERMS.costs}`,
-        url: PRICING_URL,
-        service: PLAN.build,
-        price: t.price,
-        unit: 'once',
-        from: t.from,
-      }),
-      eligibleQuantity: {
-        '@type': 'QuantitativeValue',
-        minValue: t.min,
-        ...(t.max !== null ? { maxValue: t.max } : {}),
-        unitText: 'active products',
-      },
-    })),
-  }),
-  core: () => {
-    const { r, capacity, bestFor } = retainer('Core');
-    return {
-      '@type': 'Service',
-      '@id': PLAN.core,
-      name: `${r.name} retainer`,
-      serviceType: 'Ongoing AI search measurement and optimization',
-      description: `${r.summary} ${capacity}. ${DEVELOPERS_NOTE}`,
-      url: `${PRICING_URL}#retainers`,
-      provider: ref(ID.carson),
-      areaServed: WORLD,
-      audience: audience(bestFor),
-      availableChannel: channel(),
-      serviceOutput: output('Monthly AI search report, on site work and consistent listings', sentenceList(r.includes)),
-      offers: monthly({
-        id: `${PRICING_URL}#offer-retainer-core`,
-        name: `${r.name} retainer`,
-        service: PLAN.core,
-        price: r.price as number,
-        description: `${capacity}, 3 month minimum. ${RETAINER_AUDIT_NOTE} ${TERMS.hours} ${TERMS.cancel} ${TERMS.ownership} ${TERMS.costs}`,
-      }),
-    };
-  },
-  growth: () => {
-    const { r, capacity, bestFor } = retainer('Growth');
-    return {
-      '@type': 'Service',
-      '@id': PLAN.growth,
-      name: `${r.name} retainer`,
-      serviceType: 'Ongoing AI search and conversion optimization',
-      description: `${r.summary} ${capacity}. ${r.note}`,
-      url: `${PRICING_URL}#retainers`,
-      provider: ref(ID.carson),
-      areaServed: WORLD,
-      audience: audience(bestFor),
-      availableChannel: channel(),
-      serviceOutput: output('Monthly report, outside coverage and conversion testing', sentenceList(r.includes)),
-      offers: monthly({
-        id: `${PRICING_URL}#offer-retainer-growth`,
-        name: `${r.name} retainer`,
-        service: PLAN.growth,
-        price: r.price as number,
-        description: `${capacity}, 3 month minimum. ${RETAINER_AUDIT_NOTE} ${TERMS.hours} ${TERMS.cancel} ${TERMS.ownership} ${TERMS.costs}`,
-      }),
-    };
-  },
-  full: () => {
-    const { r, capacity, bestFor } = retainer('Full');
-    return {
-      '@type': 'Service',
-      '@id': PLAN.full,
-      name: `${r.name} retainer`,
-      serviceType: 'Fractional ecommerce management',
-      description: `${r.summary} ${capacity}. ${TERMS.who.split('. ').slice(2).join('. ')}`,
-      url: `${PRICING_URL}#retainers`,
-      provider: ref(ID.carson),
-      areaServed: WORLD,
-      audience: audience(bestFor),
-      availableChannel: channel(),
-      serviceOutput: output('The ecommerce channel run day to day', sentenceList(r.includes)),
-      offers: monthly({
-        id: `${PRICING_URL}#offer-retainer-full`,
-        name: `${r.name} retainer`,
-        service: PLAN.full,
-        price: r.price as number,
-        description: `${capacity}, 3 month minimum. ${RETAINER_AUDIT_NOTE} ${TERMS.hours} ${TERMS.cancel} ${TERMS.ownership} ${TERMS.costs}`,
-      }),
-    };
-  },
 };
 
-export const planNodes = (keys: PlanKey[] = ['audit', 'build', 'core', 'growth', 'full']) => keys.map((k) => planServices[k]());
+export const planNodes = (keys: PlanKey[] = ['program', 'fullAudit']) => keys.map((k) => planServices[k]());
 
-// The three starting prices shown on the homepage and service pages: audit, Build from, retainers from.
-// brief: the industry pages' cards, which show the audit summary without the credit note.
-const summaryOffers = (base: string, service: string, brief = false) => {
-  const lowest = (xs: number[]) => Math.min(...xs);
-  const o = (slug: string, name: string, description: string, price: number, unit: Unit, from: boolean) =>
-    offer({ id: `${base}#offer-${slug}`, name, description, url: PRICING_URL, service, price, unit, from });
-  return [
-    o('audit', AUDIT.name, brief ? AUDIT.summary : `${AUDIT.summary} ${AUDIT.note}`, AUDIT.price, 'once', false),
-    o('build', BUILD.name, 'Fixed price, 3 to 4 weeks, priced by catalog size.', lowest(BUILD.tiers.map((t) => t.price)), 'once', true),
-    o(
-      'retainers',
-      'Retainers',
-      'Ongoing AI search and conversion work. 3 month minimum.',
-      lowest(RETAINERS.filter((r) => r.price !== null).map((r) => r.price as number)),
-      'month',
-      true,
-    ),
-  ];
-};
+// The offers shown on the homepage, /ai-search and the service pages: both Close the Gap sizes.
+const summaryOffers = (base: string, service: string) =>
+  PROGRAM_SIZES.map((z) => ({ ...sizeOffer(z), '@id': `${base}#offer-${z.key}`, itemOffered: ref(service) }));
 
 const BRAND_AUDIENCE = audience(FIT_LINE);
 
@@ -397,7 +283,7 @@ const CHECK_CHANNEL = { '@type': 'ServiceChannel', serviceUrl: `${SITE_URL}${CHE
 // The AI search and CRO services: what the work produces, in the page's own words.
 const BRAND_OUTPUT = output(
   'Audit, plan and implementation',
-  'An AI search and conversion audit with a prioritized plan, then a fixed price Build or a retainer that implements it, measured on the same buyer questions before and after.',
+  'A head to head against your main competitors on ChatGPT, Gemini and Google AI Mode, the on site fixes implemented, source work, and a competitor report every week or two.',
 );
 
 export function homeSchema(meta: { title: string; description: string; faqs: { q: string; a: string }[] }) {
@@ -425,7 +311,7 @@ export function homeSchema(meta: { title: string; description: string; faqs: { q
         name: 'AI Search and CRO for Shopify Brands',
         serviceType: 'AI search optimization and conversion rate optimization',
         description:
-          "I get Shopify brands recommended in ChatGPT and Google's AI answers, then make sure the store turns that traffic into sales. Start with an audit, then a fixed price Build or a retainer. Founders stay in control: I propose, you decide.",
+          'I show Shopify brands exactly where their competitors beat them in ChatGPT, Gemini and Google AI Mode, product by product, and what it is costing them. Then I close the gap, and make sure the shoppers AI sends actually buy. Founders stay in control: I propose, you decide.',
         provider: ref(ID.carson),
         areaServed: WORLD,
         audience: BRAND_AUDIENCE,
@@ -467,7 +353,7 @@ export function pricingSchema(meta: { title: string; description: string; faqs: 
         name: 'AI Search and CRO for Shopify Brands',
         serviceType: 'AI search optimization and conversion rate optimization',
         description:
-          'Start with the AI Search and Conversion Audit, then implement the plan in a fixed price Build or on a monthly retainer.',
+          'Close the Gap, a 90 day program in two sizes, the Full Store Audit, and the AI Visibility Check.',
         url: PRICING_URL,
         provider: ref(ID.carson),
         areaServed: WORLD,
@@ -488,7 +374,41 @@ export function pricingSchema(meta: { title: string; description: string; faqs: 
   };
 }
 
-// /ai-visibility-check: the free check as a WebApplication, plus its FAQ.
+// /close-the-gap and /full-store-audit: the page, its Service with every Offer, and the page's FAQ.
+function offerPageSchema(url: string, plan: PlanKey, label: string, meta: { title: string; description: string; faqs: { q: string; a: string }[] }) {
+  const pageId = `${url}#webpage`;
+  const crumbId = `${url}#breadcrumb`;
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      ...shared(),
+      {
+        '@type': 'WebPage',
+        '@id': pageId,
+        url,
+        name: meta.title,
+        description: meta.description,
+        isPartOf: ref(ID.website),
+        breadcrumb: ref(crumbId),
+        about: ref(PLAN[plan]),
+        mainEntity: ref(PLAN[plan]),
+        inLanguage: 'en-US',
+      },
+      breadcrumb(crumbId, [
+        { name: 'Pricing', url: PRICING_URL },
+        { name: label, url },
+      ]),
+      planServices[plan](),
+      faqPage(`${url}#faq`, pageId, meta.faqs),
+    ],
+  };
+}
+export const closeTheGapSchema = (meta: { title: string; description: string; faqs: { q: string; a: string }[] }) =>
+  offerPageSchema(PROGRAM_URL, 'program', PROGRAM.name, meta);
+export const fullStoreAuditSchema = (meta: { title: string; description: string; faqs: { q: string; a: string }[] }) =>
+  offerPageSchema(FULL_AUDIT_URL, 'fullAudit', FULL_AUDIT.name, meta);
+
+// /ai-visibility-check: the check as a WebApplication, plus its FAQ.
 export function checkSchema(meta: { title: string; description: string; faqs: { q: string; a: string }[] }) {
   const url = `${SITE_URL}${CHECK_PATH}`;
   const pageId = `${url}#webpage`;
@@ -538,7 +458,7 @@ export function checkSchema(meta: { title: string; description: string; faqs: { 
 }
 
 export const AGENCY_DESCRIPTION =
-  'Agencies sell AI search and conversion work to their Shopify clients, and I implement it under their name: AI visibility audits, product data, product pages that answer buyer questions, off site work and conversion testing. White label, NDA signed upfront.';
+  'Agencies sell AI search and conversion work to their Shopify clients, and I implement it under their name: competitor head to heads, product data, product pages that answer buyer questions, off site work and conversion testing. White label, NDA signed upfront.';
 
 export function agenciesSchema(meta: { title: string; description: string }) {
   const url = `${AGENCIES}#pricing`;
@@ -635,7 +555,7 @@ interface ContentSchemaInput {
   description: string;
   label: string;
   faqs: { q: string; a: string }[];
-  // offers 'only': the audit, Build and retainer offers, without the fit line, output or booking channel
+  // offers 'only': the Close the Gap offers, without the fit line, output or booking channel
   // (the industry pages show the pricing cards but not those).
   service?: { name: string; serviceType: string; audience: string; offers?: boolean | 'only'; plans?: PlanKey[] };
   /** Comparison guides: an Article by Carson with its dates */
@@ -679,9 +599,9 @@ export function contentSchema(p: ContentSchemaInput) {
       areaServed: WORLD,
       audience: { '@type': 'BusinessAudience', audienceType: p.service.audience, ...(p.service.offers === true ? { description: FIT_LINE } : {}) },
       availableChannel: p.service.offers === 'only' ? [CHECK_CHANNEL] : [CHECK_CHANNEL, channel()],
-      // The AI search and CRO pages sell the audit, Build and retainers directly.
+      // The AI search and CRO pages sell both Close the Gap sizes directly.
       ...(p.service.offers === true ? { serviceOutput: BRAND_OUTPUT } : {}),
-      ...(p.service.offers ? { offers: summaryOffers(url, serviceId, p.service.offers === 'only') } : {}),
+      ...(p.service.offers ? { offers: summaryOffers(url, serviceId) } : {}),
       ...(p.service.plans ? { isRelatedTo: p.service.plans.map((k) => ref(PLAN[k])) } : {}),
     });
     if (p.service.plans) graph.push(...planNodes(p.service.plans));

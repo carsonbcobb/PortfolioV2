@@ -7,7 +7,7 @@ faq:
   - question: "How do I get my food brand recommended by ChatGPT?"
     answer: "ChatGPT recommends food and drinks it can match to what the shopper described: the diet, the taste, who's eating it. That comes from product pages that say who the product is for, what's in it and how to eat or serve it, and from the sites AI already reads. It works product by product, so the first step is seeing which of your products AI names today and who it names instead."
     link:
-      text: "Run the free AI Visibility Check."
+      text: "Run the AI Visibility Check."
       href: "/ai-visibility-check"
   - question: "Which sources does AI use for food and drinks?"
     answer: "Google AI Mode links to brand websites for food and beverage more than for any other product type. In my November 2026 check, 63% of its links in food and beverage answers went to brand websites, often straight to the product or collection page. That makes your own product page the source AI is most likely to send a shopper to."
@@ -35,7 +35,7 @@ Food and drink shoppers now ask AI the way they'd ask a friend: "I'm gluten free
 
 The AI answers with a few products and a reason for each. In food and beverage, it often links straight to the brand's own product page. So the page that shopper lands on has to confirm everything they asked for, in their words, before they lose interest.
 
-I'm Carson Cobb, a Shopify expert who works on [AI search](/ai-search) and conversion. I look at how AI answers the questions your buyers ask, product by product, then make the store turn those visitors into orders. You can see where you stand today with the free [AI Visibility Check](/ai-visibility-check).
+I'm Carson Cobb, a Shopify expert who works on [AI search](/ai-search) and conversion. I look at how AI answers the questions your buyers ask, product by product, then make the store turn those visitors into orders. You can see where you stand today with the [AI Visibility Check](/ai-visibility-check).
 
 ## What I found when I tested products like yours
 
@@ -66,4 +66,4 @@ AI referred shoppers arrive ready to buy. [Shopify reported in May 2026](/report
 
 Food and drink brands also have something most products would love: people finish the product and want more. I set subscription frequencies from real reorder gaps, make it easy to skip, change cadence or swap flavors, and set up variety packs that work with subscriptions. On one subscription brand, [subscribe and save opt in went from 7% to 32%](/results). More on my [Shopify subscriptions page](/shopify-subscriptions).
 
-Reorder reminders timed to how fast people use the product, and gifting emails planned weeks ahead, run in Klaviyo. More on my [Klaviyo email page](/klaviyo-email-for-shopify). If you want me running reorders, email and the rest of the store with you each month, that's the Full retainer on my [full store management page](/fractional-head-of-ecommerce).
+Reorder reminders timed to how fast people use the product, and gifting emails planned weeks ahead, run in Klaviyo. More on my [Klaviyo email page](/klaviyo-email-for-shopify). If you want me running reorders, email and the rest of the store with you each month, that's a custom engagement on my [full store management page](/fractional-head-of-ecommerce).

@@ -68,7 +68,7 @@ AI makes this more pressing, not less. Shoppers referred by AI arrive with a spe
 3. **Run one test per page at a time**, and let it run long enough to trust.
 4. **Remove testing code you no longer use.** It still loads on every page.
 
-Testing plans and conversion work are part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Testing plans and conversion work are part of my [Full Store Audit](/full-store-audit). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

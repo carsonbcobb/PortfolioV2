@@ -208,11 +208,12 @@
 /* Step 1 */
 .flow__form {
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
-  max-width: 640px;
+  max-width: 760px;
 }
 .flow__form input {
-  flex: 1 1 auto;
+  flex: 1 1 220px;
   min-width: 0;
 }
 .flow__confirm {
@@ -406,6 +407,23 @@
   margin-top: 6px;
   font-size: 14px;
   color: var(--dim);
+}
+
+/* Step 3: the head to head line, first in the report */
+.h2h {
+  margin: 0;
+  padding: 14px 16px;
+  border: 1px solid var(--dark-line);
+  border-left: 3px solid var(--accent);
+  border-radius: 12px;
+  background: var(--dark-card);
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 600;
+  color: #fff;
+}
+.h2h strong {
+  color: var(--accent);
 }
 
 .findings {
@@ -1158,6 +1176,9 @@
   .flow__email-row {
     flex-direction: column;
   }
+  .flow__form input {
+    flex: 0 0 auto;
+  }
   .flow__inner--split {
     gap: 16px;
   }
@@ -1339,6 +1360,20 @@
   .flow__step[data-step='3'] #score-verdict {
     grid-column: 2;
     font-size: 18px;
+  }
+  .flow__step[data-step='3'] .h2h {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    font-size: 16px;
+  }
+  .flow__step[data-step='3'] .flow__inner:has(.h2h:not([hidden])) .score {
+    grid-row: 2 / span 2;
+  }
+  .flow__step[data-step='3'] .flow__inner:has(.h2h:not([hidden])) #score-eyebrow {
+    grid-row: 2;
+  }
+  .flow__step[data-step='3'] .flow__inner:has(.h2h:not([hidden])) #score-verdict {
+    grid-row: 3;
   }
   .flow__step[data-step='3'] .findings,
   .flow__step[data-step='3'] .flow__actions {

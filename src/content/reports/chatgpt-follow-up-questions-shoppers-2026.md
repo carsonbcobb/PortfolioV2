@@ -71,7 +71,7 @@ For how stores let shoppers narrow by need on their own collection pages, see [c
 5. **Use a product finder or quiz built on the same questions.** If shoppers are being asked these questions in AI, they'll answer them on your site too.
 6. **Ask reviewers for the same details.** "I have oily skin" or "my 70 lb lab" in a review backs up your claim.
 
-How AI matches your products to shoppers is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+How AI matches your products to shoppers is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

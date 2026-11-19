@@ -78,6 +78,8 @@
     url: '',
     domain: '',
     brand: '',
+    /** The visitor's top competitor, optional: a website or a brand name. */
+    rival: '',
     report: null,
     ticket: null,
     email: '',
@@ -212,8 +214,8 @@
     bad_request: 'Please check the store URL and try again.',
     invalid_url: "That doesn't look like a public store URL. Try something like yourstore.com.",
     turnstile: 'The spam check failed. Please refresh the page and try again.',
-    rate_limited: "You've run 3 checks today. Come back tomorrow, or book a review to talk about next steps.",
-    paused: 'Checks are paused for today. Book a review instead.',
+    rate_limited: "You've run 3 checks today. Come back tomorrow, or book a Close the Gap intro call to talk about next steps.",
+    paused: 'Checks are paused for today. Book a Close the Gap intro call instead.',
     expired: 'This report has expired. Please run the check again.',
   };
   const fail1 = (msg) => {
@@ -253,6 +255,7 @@
         S.url = normUrl(url);
         S.domain = d.domain;
         confirmForm.brand.value = d.brand || '';
+        confirmForm.competitor.value = String(storeForm.competitor.value || '').trim().slice(0, 100);
         storeForm.hidden = true;
         storeFine.hidden = true;
         confirmForm.hidden = false;
@@ -276,6 +279,7 @@
       const brand = confirmForm.brand.value.trim();
       if (!brand) return fail1('Please add your brand name.') || confirmForm.brand.focus();
       S.brand = brand;
+      S.rival = String(confirmForm.competitor.value || '').trim().slice(0, 100);
       startCheck();
     });
 
@@ -399,12 +403,12 @@
       const res = await fetch(`${API}/check`, {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ url: S.url, brand: S.brand, token, source: firstSource() }),
+        body: JSON.stringify({ url: S.url, brand: S.brand, competitor: S.rival || undefined, token, source: firstSource() }),
       });
       spendToken();
       if (!res.ok) {
         const body = await res.json().catch(() => ({}));
-        throw new Error(ERRORS[body.error] || body.message || 'Something went wrong. Please try again.');
+        throw new Error((body.error === 'bad_request' && body.message) || ERRORS[body.error] || body.message || 'Something went wrong. Please try again.');
       }
       const reader = res.body.getReader();
       const decoder = new TextDecoder();
@@ -455,7 +459,8 @@
             S.report = msg.report;
             S.ticket = msg.ticket || null;
             S.brand = msg.report.brand || S.brand;
-            track('visibility_check_complete', { score: msg.report.overall.score, cached: !!msg.cached });
+            if (msg.report.headToHead) store.set(`aivc:h2h:${msg.report.domain}`, JSON.stringify(msg.report.headToHead));
+            track('visibility_check_complete', { score: msg.report.overall.score, cached: !!msg.cached, competitor: !!S.rival });
             if (!S.email) {
               emailNote.textContent = 'Your results are ready. Add your email to see them.';
               emailForm.email.focus({ preventScroll: true });
@@ -845,9 +850,30 @@
     );
   };
 
+  // The head to head, first in the report: the competitor the visitor typed, else the brand AI named most instead.
+  const renderH2H = (r) => {
+    const box = $('#h2h');
+    const h = r.headToHead;
+    if (!box) return;
+    if (!h || !h.total || !h.name) {
+      box.hidden = true;
+      return box.replaceChildren();
+    }
+    const counts = [
+      `${h.name} was recommended in `,
+      el('strong', {}, `${h.theirs} of ${h.total}`),
+      ` answers. You were recommended in `,
+      el('strong', {}, String(h.yours)),
+      '.',
+    ];
+    box.replaceChildren(...(h.source === 'visitor' ? counts : [`The brand AI recommended most instead of you: ${h.name}. `, ...counts]));
+    box.hidden = false;
+  };
+
   const renderReport = () => {
     const r = S.report;
     if (!r) return;
+    renderH2H(r);
     const score = Math.max(0, Math.min(100, Math.round(r.overall.score)));
     const scoreStep = $('[data-step="3"]', flow);
     scoreStep.dataset.band = band(score);
@@ -889,7 +915,7 @@
   const modal = $('#cal-modal');
   const openBtn = $('#open-calendar');
   const bookTitle = $('#book-title');
-  const iframe = () => el('iframe', { src: CAL, title: 'Book a 20 minute AI Search Review', loading: 'lazy', width: '100%', height: '100%', style: 'border:0' });
+  const iframe = () => el('iframe', { src: CAL, title: 'Book a Close the Gap intro call', loading: 'lazy', width: '100%', height: '100%', style: 'border:0' });
   const layoutClose = () => {
     const step = $('[data-step="8"]', flow);
     const fits = window.innerWidth >= 1024 && step.clientHeight >= 640;
@@ -941,6 +967,11 @@
         .then((d) => {
           if (!d || !d.report) return;
           S.report = d.report;
+          // The saved report shows the brand named most; this visitor's own competitor comes back from the session.
+          try {
+            const mine = JSON.parse(store.get(`aivc:h2h:${d.report.domain}`) || 'null');
+            if (mine && mine.source === 'visitor') S.report = { ...d.report, headToHead: mine };
+          } catch {}
           S.domain = d.report.domain;
           S.url = d.report.url;
           S.brand = d.report.brand;

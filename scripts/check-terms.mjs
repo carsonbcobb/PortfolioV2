@@ -12,7 +12,18 @@ const BANNED = [
   /Essentials/,
   /Full Ownership/,
   /\$1,500\/mo/,
-  // $2,500 is allowed again: it is the Core retainer's price (final offer structure).
+  // $2,500 is allowed: it is the Close the Gap Focus price.
+  // Retired offers (Close the Gap repositioning, Nov 18, 2026): the audit, the Build and the retainers.
+  /\$1,500\b/,
+  /\$1,250\b/,
+  /AI Search and Conversion Audit/i,
+  /AI Search and Visibility Audit/i,
+  /\$4,500/,
+  /\$7,500\/mo/,
+  /\b(Core|Growth|Full|Dedicated) retainer/,
+  /Builds? a month/,
+  /\bfree (AI Visibility )?check\b/i,
+  /free AI Visibility Check/i,
   /hours per month/i,
   /whole team/i,
   /Store Operator/i,

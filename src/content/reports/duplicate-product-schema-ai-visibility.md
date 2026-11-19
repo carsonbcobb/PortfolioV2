@@ -109,4 +109,4 @@ So in this test, duplicates that agree didn't hurt. Splitting the rating away fr
 - **Settings:** from each app's help documentation (Judge.me, Okendo, Yotpo, Loox, Bazaarvoice developer docs), checked in November 2026. App settings change, so confirm in your own admin.
 - **ChatGPT test:** see [Does schema change what ChatGPT says?](/reports/does-schema-change-what-chatgpt-says)
 
-No store is named in this report. [Run the free AI Visibility Check](/ai-visibility-check) to see how many Product blocks your product page has and what AI says about it.
+No store is named in this report. [Run the AI Visibility Check](/ai-visibility-check) to see how many Product blocks your product page has and what AI says about it.

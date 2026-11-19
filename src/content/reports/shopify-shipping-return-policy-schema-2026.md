@@ -58,7 +58,7 @@ My earlier [return policy benchmarks](/reports/shopify-return-policy-benchmarks-
 3. **Add shippingDetails to product offers** if delivery times or costs vary by product.
 4. **Keep every source the same.** The policy page, the product page text, Merchant Center and the structured data should all say the same window and cost.
 
-Making your policies readable to AI is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Making your policies readable to AI is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

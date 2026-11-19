@@ -81,4 +81,4 @@ When these sources name your competitors and not you, that's usually why ChatGPT
 - **Sources:** every visible source label in each answer, plus links to brand stores. Labels were grouped by type by hand. Each type counts once per answer.
 - **Limits:** only the first source of each citation is visible without opening it, so these numbers show what ChatGPT displays first, not every page it read. 71 further sources were hidden behind counts. Answers can vary between conversations and by location.
 
-No store is named in this report. [Run the free AI Visibility Check](/ai-visibility-check) to see which sources ChatGPT uses when it talks about your brand.
+No store is named in this report. [Run the AI Visibility Check](/ai-visibility-check) to see which sources ChatGPT uses when it talks about your brand.

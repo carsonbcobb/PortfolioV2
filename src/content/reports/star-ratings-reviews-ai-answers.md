@@ -96,7 +96,7 @@ Of the 94 Shopify product pages I checked, 67% showed a review count on the page
 5. **Keep Google Merchant Center in line with your site.** AI Mode can show ratings and prices from Google's shopping data, not just your page.
 6. **Earn the sources that decide the order.** Reviews get you on the shortlist. Review sites, testing roundups, Reddit and video reviews decide where you land on it.
 
-Reviews, ratings and what AI says about your products are part of my [AI Search and Conversion Audit](/ai-search). The free [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Reviews, ratings and what AI says about your products are part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

@@ -59,7 +59,7 @@ What the pattern shows is the kind of brand those sources write about: one that 
 3. **Earn third party coverage.** Review sites, testing publications and gift guides are what AI reads most.
 4. **Then fix the data.** Structured data, GTINs and policies make sure AI repeats the right facts.
 
-Finding out where AI names you and why is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Finding out where AI names you and why is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

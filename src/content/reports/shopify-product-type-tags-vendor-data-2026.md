@@ -64,7 +64,7 @@ Vendor is the quiet one. Many themes output it as the brand in structured data. 
 3. **Use tags for real attributes.** Scent, skin type, diet, material, size range. Delete tags nobody filters by.
 4. **Put the type in the title when the name doesn't say it.** "Morning" tells nobody anything. "Morning Greens Powder" does.
 
-Catalog data is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Catalog data is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

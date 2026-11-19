@@ -18,6 +18,7 @@ import {
   FAQS,
   ABOUT,
   CHECK_PATH,
+  PROGRAM,
   CTA_LABEL,
   HEADER_CTA_LABEL,
 } from '../data/site';
@@ -26,9 +27,9 @@ import '../styles/content.css';
 
 const title = 'Carson Cobb | AI Search and CRO for Shopify Brands';
 const description =
-  'I get Shopify brands recommended in ChatGPT and Google AI answers, then turn that traffic into sales. AI search and CRO, from audit to ongoing growth.';
+  'AI is picking the winners in your market. I show Shopify brands where competitors beat them in ChatGPT, Gemini and Google AI Mode, product by product, then close the gap.';
 
-// The homepage FAQ covers AI search and pricing only.
+// The homepage FAQ covers AI search and Close the Gap only.
 const faqs = FAQS.filter((f) => !f.q.startsWith('Do you work with agencies'));
 
 const jsonLd = [homeSchema({ title, description, faqs })];
@@ -42,17 +43,18 @@ const jsonLd = [homeSchema({ title, description, faqs })];
     <section class="dark" aria-label="Introduction">
       <div class="wrap hero hero--solo">
         <div class="hero__text">
-          <h1 class="hero__h1">More customers from AI. <span class="accent">More sales from every visit.</span></h1>
+          <h1 class="hero__h1">AI is picking the winners in your market. <span class="accent">Make sure it picks you.</span></h1>
           <p class="hero__sub">
-            I'm Carson Cobb, an AI search and CRO specialist for Shopify brands. I get your products recommended in ChatGPT
-            and Google's AI answers, then make sure your store turns that traffic into sales.
+            When shoppers ask ChatGPT, Gemini and Google AI Mode what to buy, they get a short list. I show you exactly where
+            your competitors beat you, product by product, and what it's costing you. Then I close the gap, and make sure the
+            shoppers AI sends actually buy.
           </p>
           <div class="btn-row">
             <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent"
               >{CTA_LABEL}
               <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
             </a>
-            <a href="/results" class="btn btn--ghost-dark">See results</a>
+            <a href={PROGRAM.path} class="btn btn--ghost-dark">See the program</a>
           </div>
         </div>
       </div>
@@ -80,12 +82,10 @@ const jsonLd = [homeSchema({ title, description, faqs })];
       <div class="wrap stack">
         <div class="head">
           <p class="eyebrow">The shift</p>
-          <h2 class="h2">Your customers are asking AI what to buy.</h2>
+          <h2 class="h2">Your competitor is getting your AI customers.</h2>
           <p class="lede">
-            Shoppers now ask ChatGPT for the best product for their exact problem, and it answers with a short list of
-            brands. Those shoppers arrive ready to buy and convert far better than other traffic. If your store isn't giving
-            AI the right information, you're not on that list, and <a href="/guides/why-chatgpt-doesnt-recommend-my-shopify-store">a competitor is</a>. And when they do find you, your store
-            has to close the sale.
+            Shoppers ask ChatGPT for the best product for their exact problem, and it answers with a short list of brands.
+            If you're not on it, <a href="/guides/why-chatgpt-doesnt-recommend-my-shopify-store">a competitor is</a>.
           </p>
         </div>
         <div class="grid grid--three shift">
@@ -94,7 +94,7 @@ const jsonLd = [homeSchema({ title, description, faqs })];
               <div class="shift__item">
                 <span class="tag tag--accent">{String(i + 1).padStart(2, '0')}</span>
                 <h3 class="step__title">{s.title}</h3>
-                <p class="step__text">{s.text}</p>
+                <p class="step__text" set:html={s.text} />
               </div>
             ))
           }
@@ -102,12 +102,12 @@ const jsonLd = [homeSchema({ title, description, faqs })];
       </div>
     </section>
 
-    <!-- Two engines -->
+    <!-- Close the gap, then close the sale -->
     <section class="section section--sand" aria-labelledby="engines">
       <div class="wrap stack">
         <div class="head">
           <p class="eyebrow">What I do</p>
-          <h2 class="h2" id="engines">Two engines. One goal: more sales from AI.</h2>
+          <h2 class="h2" id="engines">Close the gap, then close the sale.</h2>
         </div>
         <div class="grid engines">
           {
@@ -201,7 +201,7 @@ const jsonLd = [homeSchema({ title, description, faqs })];
       <div class="wrap stack">
         <div class="head">
           <p class="eyebrow">How it works</p>
-          <h2 class="h2">Audit, build, measure.</h2>
+          <h2 class="h2">See the gap. Close it. Watch it move.</h2>
         </div>
         <div class="grid grid--300">
           {
@@ -304,14 +304,14 @@ const jsonLd = [homeSchema({ title, description, faqs })];
     <!-- Final CTA -->
     <section id="book" class="dark cta">
       <div class="wrap cta__inner">
-        <h2 class="h2 cta__title">See where you stand in AI search.</h2>
+        <h2 class="h2 cta__title">See who AI recommends instead of you.</h2>
         <p class="cta__sub">
-          Run the free AI Visibility Check. In about a minute you'll see whether ChatGPT recommends you, who it recommends
-          instead, and what's holding you back.
+          Run the AI Visibility Check. It takes about a minute, no login, and shows whether ChatGPT recommends you, who it
+          recommends instead, and what's holding you back.
         </p>
         <div class="btn-row btn-row--center">
           <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent">{HEADER_CTA_LABEL}</a>
-          <a href={`mailto:${EMAIL}`} class="btn btn--ghost-dark">Email me</a>
+          <a href={PROGRAM.path} class="btn btn--ghost-dark">See the program</a>
         </div>
       </div>
     </section>

@@ -96,7 +96,7 @@ Images were the strongest part of most catalogs. AI product cards lead with an i
 4. **Give every product at least 3 images,** including one that shows scale or the product in use.
 5. **Check your feed, not just your page.** Look at what Google Merchant Center and your Shopify catalog actually contain for your best sellers.
 
-Product data and feed findings for Google and ChatGPT are part of my [AI Search and Conversion Audit](/ai-search). For a quick read on one page, run the free [AI Visibility Check](/ai-visibility-check).
+Product data and feed findings for Google and ChatGPT are part of [Close the Gap](/close-the-gap). For a quick read on one page, run the [AI Visibility Check](/ai-visibility-check).
 
 ## How this was done
 

@@ -82,7 +82,7 @@ More on the product page side in [the Shopify buy box](/reports/shopify-product-
 5. **Don't force accounts.** Shopify's checkout supports guest checkout; keep it on.
 6. **Make the empty cart useful**, with best sellers and the free shipping threshold.
 
-Cart and checkout leaks are part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Cart and checkout leaks are part of my [Full Store Audit](/full-store-audit). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was compiled
 

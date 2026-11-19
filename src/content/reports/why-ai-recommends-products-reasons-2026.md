@@ -79,7 +79,7 @@ Across all three, the reasons that show up are concrete. "Organic" can be checke
 5. **Get an expert on record.** A vet, dermatologist or dietitian who reviewed the product, named on the page, gives AI a reason it can cite.
 6. **Cut the claims you can't support.** They don't help with AI, and they cost trust with shoppers.
 
-What AI says about your products, and the evidence behind it, is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+What AI says about your products, and the evidence behind it, is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

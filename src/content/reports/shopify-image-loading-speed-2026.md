@@ -77,7 +77,7 @@ For HTML size and script counts, see [Shopify homepage weight](/reports/shopify-
 4. **Give hero videos a light poster image** and don't autoplay heavy files on mobile.
 5. **Check the result in PageSpeed Insights**, on mobile, for your top product page.
 
-Speed fixes that move conversion are part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Speed fixes that move conversion are part of my [Full Store Audit](/full-store-audit). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

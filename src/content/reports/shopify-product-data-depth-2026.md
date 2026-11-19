@@ -90,4 +90,4 @@ Then the story, the brand voice and the lifestyle copy. Nothing is lost for the 
 - **Facts in descriptions:** 94 stores and 10,772 products, up to 250 products per store, checked for ingredient mentions, usage directions (how to use, directions, suggested use) and common certification terms. Text matching, so a mention counts whether it's detailed or brief.
 - **FAQ markup:** from the 94 store structured data scan described in the [AI Readiness Index](/reports/shopify-ai-readiness-index-2026). FAQ page share is from the 606 store dataset.
 
-No store is named in this report. [Run the free AI Visibility Check](/ai-visibility-check).
+No store is named in this report. [Run the AI Visibility Check](/ai-visibility-check).

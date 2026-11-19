@@ -102,4 +102,4 @@ I repeated this check on 617 Shopify brand stores on November 16 and 17, 2026.
 - **Crawler roles:** from OpenAI's crawler documentation and Vercel's "The rise of the AI crawler" (December 2024).
 - **November 17, 2026 update:** 617 Shopify brand stores, my full dataset of 620 minus client stores and one store that blocked automated reads, scanned November 16 and 17, 2026.
 
-No store is named in this report. [Run the free AI Visibility Check](/ai-visibility-check) to see whether AI can read your product pages.
+No store is named in this report. [Run the AI Visibility Check](/ai-visibility-check) to see whether AI can read your product pages.

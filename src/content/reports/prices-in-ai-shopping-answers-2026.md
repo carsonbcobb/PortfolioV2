@@ -70,7 +70,7 @@ ChatGPT reads your product page, but also the review sites, roundups and retaile
 5. **Show unit price where it helps you.** If you're cheaper per serving or per use, say so on the page in a way AI can quote.
 6. **Check the answer.** Ask each AI "how much does [your product] cost" and compare.
 
-Prices, product data and what AI says about your products are part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Prices, product data and what AI says about your products are part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

@@ -73,7 +73,7 @@ The mismatch is clear. Nearly every brand links Instagram, but fewer than half l
 5. **Use the same brand name on every profile.** See [is your brand name the same everywhere](/reports/shopify-brand-name-consistency-2026).
 6. **Show up in the threads.** In the subreddits where your product comes up, answer questions honestly as the brand.
 
-The outside sources that decide AI recommendations are part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+The outside sources that decide AI recommendations are part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

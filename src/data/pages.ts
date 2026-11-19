@@ -39,7 +39,6 @@ export const CONTENT_PAGES: ContentPageInfo[] = [
       name: 'Fractional Head of Ecommerce for Shopify brands',
       serviceType: 'Fractional ecommerce management',
       audience: 'Growing Shopify brands',
-      plans: ['full'],
     },
   },
   {
@@ -63,7 +62,7 @@ export const CONTENT_PAGES: ContentPageInfo[] = [
       name: 'Conversion rate optimization for Shopify brands',
       serviceType: 'Conversion rate optimization',
       audience: 'Shopify brands',
-      offers: true,
+      plans: ['fullAudit'],
     },
   },
   {
@@ -75,7 +74,7 @@ export const CONTENT_PAGES: ContentPageInfo[] = [
       name: 'Klaviyo email for Shopify brands',
       serviceType: 'Email marketing',
       audience: 'Shopify brands using Klaviyo',
-      plans: ['full'],
+      plans: ['fullAudit'],
     },
   },
   {

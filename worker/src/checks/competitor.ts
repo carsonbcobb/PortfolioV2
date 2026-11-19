@@ -8,7 +8,7 @@ import { isNonBrand } from "../nonbrands";
 
 
 /** Brands recommended in the buyer questions, most mentioned first, without the visitor's brand. */
-export function rankCompetitors(v: VisibilitySection, ctx: StoreContext): { name: string; mentions: number }[] {
+export function rankCompetitors(v: VisibilitySection, ctx: Pick<StoreContext, "brand" | "domain">): { name: string; mentions: number }[] {
   const counts = new Map<string, { name: string; mentions: number }>();
   for (const q of v.questions) {
     const seen = new Set<string>();

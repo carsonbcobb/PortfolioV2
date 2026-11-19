@@ -4,6 +4,7 @@ import { runCrawlers } from "./checks/crawlers";
 import { runReadiness } from "./checks/readiness";
 import { runVisibility } from "./checks/visibility";
 import { compareCompetitor } from "./checks/competitor";
+import { headToHead, parseRival, resolveRival, type RivalInput } from "./checks/headtohead";
 import { sendReportEmails } from "./email";
 import {
   cacheReport,
@@ -33,7 +34,8 @@ import type {
 } from "./types";
 import { dnsProblem, domainOf, isValidEmail, parseStoreUrl } from "./validate";
 
-const PAUSED_MESSAGE = "Checks are paused for today. Book a review instead.";
+const PAUSED_MESSAGE = "Checks are paused for today. Book a Close the Gap intro call instead.";
+const RATE_MESSAGE = "You have used all 3 checks for today. Please come back tomorrow or book a Close the Gap intro call.";
 
 // ---------- HTTP helpers ----------
 
@@ -119,9 +121,9 @@ function ndjsonStream(req: Request, env: Env): { response: Response; emit: Emit;
 // ---------- The check ----------
 
 const SECTION_FAIL: Record<SectionKey, string> = {
-  visibility: "ChatGPT didn't answer our buyer questions on this run. The full audit tests them across repeated runs.",
+  visibility: "ChatGPT didn't answer our buyer questions on this run. Please run the check again later.",
   // Only shown if every retry and the fallback model failed, after the page already waited.
-  accuracy: "ChatGPT didn't give a clear answer about your brand on this run. The full audit checks it across repeated runs.",
+  accuracy: "ChatGPT didn't give a clear answer about your brand on this run. Please run the check again later.",
   crawlers: "We could not test AI crawler access to your store this time.",
   readiness: "We could not scan your store pages this time.",
 };
@@ -180,7 +182,7 @@ type Stopped = { stopped: StopReason };
  */
 async function runCheck(
   env: Env,
-  input: { url: URL; domain: string; brand?: string },
+  input: { url: URL; domain: string; brand?: string; rival?: Promise<RivalInput | null> },
   emit: Emit,
   /** Called once the site is confirmed as a store with products, before the first AI call. */
   onStart: () => Promise<void>,
@@ -226,6 +228,9 @@ async function runCheck(
       readinessP,
       competitorP,
     ]);
+    // Counted on the answers the check already has: no extra AI calls.
+    const rival = input.rival ? await input.rival : null;
+    const h2h = headToHead(isError(visibility) ? null : (visibility as VisibilitySection), store, rival, competitor);
 
     const build = async (accuracy: Report["sections"]["accuracy"], findingsSignal: AbortSignal): Promise<Run> => {
       const sections = { visibility, accuracy, crawlers, readiness } as Report["sections"];
@@ -253,6 +258,7 @@ async function runCheck(
         },
         sections,
         competitor,
+        headToHead: h2h,
         weights: { ...WEIGHTS },
         cost: { usd: Math.round(cost.usd * 10000) / 10000, calls: cost.calls, searches: cost.searches, tokens: { ...cost.tokens }, log: cost.log },
         ms: Date.now() - started,
@@ -318,15 +324,27 @@ async function handleCheck(req: Request, env: Env, ctx: ExecutionContext): Promi
   const domain = domainOf(storeUrl);
   const visitorEmail = typeof email === "string" ? email.trim() : "";
   const cleanBrand = typeof brand === "string" ? brand.trim().replace(/\s+/g, " ") : "";
+  // Optional: the visitor's top competitor, a website or a brand name.
+  const rivalParsed = parseRival(body.competitor);
+  if ("problem" in rivalParsed) return fail(req, env, 400, "bad_request", rivalParsed.problem);
+  const rivalIn = rivalParsed.rival;
+  if (rivalIn && (rivalIn.domain === domain || (cleanBrand && rivalIn.name.toLowerCase() === cleanBrand.toLowerCase())))
+    return fail(req, env, 400, "bad_request", "Please enter a competitor, not your own store.");
   const ip = req.headers.get("cf-connecting-ip") || "unknown";
 
   // 2. Turnstile
   if (!(await verifyTurnstile(env, token, req.headers.get("cf-connecting-ip"))))
     return fail(req, env, 403, "turnstile", "We could not verify you are human. Please refresh the page and try again.");
 
+  // Reading a competitor website's name starts now and runs alongside the check (no AI).
+  const rivalP = rivalIn ? resolveRival(rivalIn) : Promise.resolve(null);
+
   // 3. Cache lookup (cache hits do not count toward any limit)
-  const cached = await getCachedReport(env, domain);
-  if (cached) {
+  const hit = await getCachedReport(env, domain);
+  if (hit) {
+    // The head to head is counted again on the saved answers for this visitor's competitor.
+    const cached = withHeadToHead(hit, await rivalP);
+    logHeadToHead(cached, true);
     const { response, emit, close } = ndjsonStream(req, env);
     const ticket = await saveTicket(env, cached, true, false, source);
     emit({ type: "done", report: cached, cached: true, ticket });
@@ -340,7 +358,7 @@ async function handleCheck(req: Request, env: Env, ctx: ExecutionContext): Promi
     const [day, mine] = await Promise.all([todayCount(env), ipCount(env, ip)]);
     if (day >= dailyLimit(env)) return fail(req, env, 503, "paused", PAUSED_MESSAGE);
     if (mine >= LIMITS.perIpPerDay)
-      return fail(req, env, 429, "rate_limited", "You have used all 3 checks for today. Please come back tomorrow or book a review.");
+      return fail(req, env, 429, "rate_limited", RATE_MESSAGE);
   } catch (e) {
     console.error("kv error", String(e));
   }
@@ -354,7 +372,7 @@ async function handleCheck(req: Request, env: Env, ctx: ExecutionContext): Promi
   const work = (async () => {
     try {
       const counted = () => incrementCounters(env, ip).catch((e) => console.error("kv error", String(e)));
-      const out = await runCheck(env, { url: storeUrl, domain, brand: cleanBrand || undefined }, emit, counted);
+      const out = await runCheck(env, { url: storeUrl, domain, brand: cleanBrand || undefined, rival: rivalP }, emit, counted);
       if ("stopped" in out) {
         // Not a store, or no products we could read: no questions, no score, no AI spend, no check used.
         emit({ type: "stopped", reason: out.stopped, message: STOP_MESSAGES[out.stopped] });
@@ -365,6 +383,7 @@ async function handleCheck(req: Request, env: Env, ctx: ExecutionContext): Promi
       let { report, complete } = run;
       const ticket = await saveTicket(env, report, false, !!run.rest, source);
       emit({ type: "done", report, ticket, pending: !!run.rest });
+      logHeadToHead(report, false);
       if (run.rest) {
         // The page stays open and shows the rest of the report; brand accuracy finishes here.
         ({ report, complete } = await run.rest);
@@ -373,7 +392,8 @@ async function handleCheck(req: Request, env: Env, ctx: ExecutionContext): Promi
       }
       await close();
       // Only cache reports where every section worked, so a temporary failure is not stuck for 7 days.
-      if (complete) await cacheReport(env, report).catch((e) => console.error("kv error", String(e)));
+      // The cache is shared by every visitor to this store, so it keeps the most named competitor, not this visitor's.
+      if (complete) await cacheReport(env, withHeadToHead(report, null)).catch((e) => console.error("kv error", String(e)));
       if (visitorEmail) ctx.waitUntil(sendReportEmails(env, report, visitorEmail, false, source));
     } catch (e) {
       console.error("check failed", e instanceof Error ? e.stack : String(e));
@@ -383,6 +403,21 @@ async function handleCheck(req: Request, env: Env, ctx: ExecutionContext): Promi
   })();
   ctx.waitUntil(work);
   return response;
+}
+
+/** The report with its head to head counted for this competitor (or the most named one when null). */
+function withHeadToHead(report: Report, rival: RivalInput | null): Report {
+  const v = report.sections.visibility;
+  return { ...report, headToHead: headToHead(isError(v) ? null : (v as VisibilitySection), report, rival, report.competitor) };
+}
+
+/** One log line per check with the competitor, for `wrangler tail`. The owner email carries it too. */
+function logHeadToHead(report: Report, cached: boolean): void {
+  const h = report.headToHead;
+  console.log(
+    "head to head",
+    JSON.stringify({ domain: report.domain, cached, ...(h ? { source: h.source, typed: h.input, name: h.name, competitor: h.theirs, you: h.yours, of: h.total } : { none: true }) }),
+  );
 }
 
 // ---------- Step flow helpers: detect, saved report, email after the run ----------
@@ -487,7 +522,7 @@ async function handleReport(req: Request, env: Env): Promise<Response> {
   if ("problem" in parsed) return fail(req, env, 400, "invalid_url", parsed.problem);
   const report = await getCachedReport(env, domainOf(parsed.url));
   if (!report) return fail(req, env, 404, "not_found", "No saved report for this store.");
-  return json(req, env, { report });
+  return json(req, env, { report: withHeadToHead(report, null) });
 }
 
 /** Reads the homepage to suggest the brand name before the check. No AI. */
@@ -512,7 +547,7 @@ async function handleDetect(req: Request, env: Env): Promise<Response> {
   try {
     const n = parseInt((await env.CHECKS.get(key)) ?? "0", 10) || 0;
     if (n >= DETECT_PER_IP_PER_DAY)
-      return fail(req, env, 429, "rate_limited", "You have used all 3 checks for today. Please come back tomorrow or book a review.");
+      return fail(req, env, 429, "rate_limited", RATE_MESSAGE);
     await env.CHECKS.put(key, String(n + 1), { expirationTtl: LIMITS.counterTtlSeconds });
   } catch (e) {
     console.error("kv error", String(e));

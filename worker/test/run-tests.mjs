@@ -5,7 +5,7 @@
 // Usage (Node 22+, wrangler needs it): node test/run-tests.mjs
 // Needs worker/.dev.vars with OPENAI_API_KEY (any value), TURNSTILE_SECRET_KEY=1x0000000000000000000000000000000AA
 // and OPENAI_BASE_URL=http://127.0.0.1:8790
-import { spawn } from "node:child_process";
+import { spawn, spawnSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -16,8 +16,10 @@ const out = path.join(here, "out");
 fs.mkdirSync(out, { recursive: true });
 
 const MOCK_PORT = 8790;
+// The mock names Northvale in 1 of the 3 answers, Kestrel & Co in 2, Bramblewood and Ostra Goods in all 3,
+// and the store itself in 2 (answers 1 and 3).
 const STORES = [
-  { url: "https://www.allbirds.com" },
+  { url: "https://www.allbirds.com", competitor: "Northvale" },
   { url: "brooklinen.com" },
 ];
 const FAIL_STORE = { url: "https://www.deathwishcoffee.com" };
@@ -151,6 +153,11 @@ async function main() {
     ["bad email", { ...form("allbirds.com"), email: "not-an-email" }],
     ["brand over 60 chars", { ...form("allbirds.com"), brand: "x".repeat(61) }],
     ["missing token", { ...form("allbirds.com"), token: "" }],
+    ["competitor over 100 chars", { ...form("allbirds.com"), competitor: "x".repeat(101) }],
+    ["competitor is a number", { ...form("allbirds.com"), competitor: 42 }],
+    ["competitor is a private address", { ...form("allbirds.com"), competitor: "http://127.0.0.1/" }],
+    ["competitor is the store itself", { ...form("allbirds.com"), competitor: "https://www.allbirds.com/" }],
+    ["competitor is only junk", { ...form("allbirds.com"), competitor: "!!! ???" }],
   ]) {
     const r = await check(body);
     record(`400 bad_request: ${name}`, r.status === 400 && r.json?.error === "bad_request", r.json?.message);
@@ -200,7 +207,7 @@ async function main() {
   const timings = {};
   for (const s of STORES) {
     await mock("/__reset", {});
-    const r = await check(form(s.url), IP_A);
+    const r = await check({ ...form(s.url), ...(s.competitor ? { competitor: s.competitor } : {}) }, IP_A);
     const rep = done(r)?.report;
     const ticket = done(r)?.ticket;
     if (ticket) {
@@ -247,19 +254,51 @@ async function main() {
       Array.isArray(rep?.overall.top) && rep.overall.top.length === 3 && rep.overall.top.every((f) => f.text && f.cost),
       JSON.stringify(rep?.overall.top?.map((f) => f.text)),
     );
+    const h = rep?.headToHead;
+    if (s.competitor)
+      record(
+        `Head to head counts the typed competitor ${domain}`,
+        !!h && h.source === "visitor" && h.input === s.competitor && h.name === "Northvale" && h.theirs === 1 && h.total === vis?.total && h.yours === vis?.mentioned,
+        JSON.stringify(h),
+      );
+    else
+      record(
+        `Head to head falls back to the brand named most ${domain}`,
+        !!h && h.source === "top" && ["Bramblewood", "Ostra Goods"].includes(h.name) && h.theirs === 3 && h.total === vis?.total && h.yours === vis?.mentioned,
+        JSON.stringify(h),
+      );
+    const stats2 = await mock("/__stats");
+    const fin = r.lines.filter((l) => l.type === "update").at(-1)?.report ?? rep;
+    record(`Head to head adds no OpenAI calls ${domain}`, fin?.cost.calls === stats2.calls, `report ${fin?.cost.calls}, mock ${stats2.calls}`);
     console.log("      competitor:", rep?.competitor ? `${rep.competitor.name} (${rep.competitor.domain}) ${rep.competitor.theirs?.count} vs yours ${rep.competitor.yours?.count}` : "none");
     console.log("      progress:", progress.join(" | "));
     console.log("      findings:", JSON.stringify(rep?.overall.findings));
   }
 
-  // Cache hit
+  // Cache hit. Only complete reports are cached; when a real store limited our visits (readiness failed),
+  // the first report is put in the local cache directly so the cache paths are still tested.
   {
+    const first = JSON.parse(fs.readFileSync(path.join(out, "allbirds.com.json"), "utf8"));
+    if (first && Object.values(first.sections).some((x) => x.error)) {
+      const seed = path.join(root, ".wrangler", "seed-report.json");
+      fs.writeFileSync(seed, JSON.stringify({ ...first, headToHead: null }));
+      const put = spawnSync("npx", ["wrangler", "kv", "key", "put", "report:v2:allbirds.com", "--path", seed, "--binding", "CHECKS", "--local", "--persist-to", ".wrangler/test-state-1"], { cwd: root, encoding: "utf8" });
+      console.log("      seeded the cache (a section failed on the real store):", put.status === 0 ? "ok" : put.stderr.slice(0, 300));
+    }
     const r = await check(form(STORES[0].url), IP_A);
     record(
       "Cache hit returns instantly",
       r.status === 200 && r.lines.length === 1 && r.lines[0].type === "done" && r.lines[0].cached === true && r.ms < 1500,
       `${r.ms} ms, ${r.lines.length} line(s)`,
     );
+    const h = r.lines[0]?.report?.headToHead;
+    record("Cached report keeps the most named competitor, not an earlier visitor's", h?.source === "top", JSON.stringify(h));
+    const k = await check({ ...form(STORES[0].url), competitor: "Kestrel & Co" }, IP_A);
+    const hk = k.lines[0]?.report?.headToHead;
+    record("Cache hit counts a new competitor on the saved answers", k.lines[0]?.cached === true && hk?.source === "visitor" && hk.name === "Kestrel & Co" && hk.theirs === 2, JSON.stringify(hk));
+    const u = await check({ ...form(STORES[0].url), competitor: "https://www.brooklinen.com/" }, IP_A);
+    const hu = u.lines[0]?.report?.headToHead;
+    record("Competitor website is read for its name", hu?.source === "visitor" && hu.domain === "brooklinen.com" && /brooklinen/i.test(hu.name) && hu.theirs === 0, JSON.stringify(hu));
   }
 
   // A site with no products stops before any AI call, with no score, and doesn't use a check.
@@ -316,7 +355,7 @@ async function main() {
     const r = await check(form("brooklinen.com", "bed sheets"), "198.51.100.30");
     record(
       "POST /check returns 503 paused",
-      r.status === 503 && r.json?.error === "paused" && r.json?.message === "Checks are paused for today. Book a review instead.",
+      r.status === 503 && r.json?.error === "paused" && r.json?.message === "Checks are paused for today. Book a Close the Gap intro call instead.",
       JSON.stringify(r.json),
     );
   }

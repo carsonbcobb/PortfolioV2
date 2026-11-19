@@ -77,7 +77,7 @@ The fix for both shoppers and AI is the same: put the numbers in writing, in the
 5. **Show the delivery estimate on the product page and in the cart.** The policy page is the source of truth, but shoppers decide earlier.
 6. **Keep it current.** If you change carriers, thresholds or holiday cutoffs, update the policy the same day.
 
-Shipping, returns and the rest of what shoppers check before buying are part of my [AI Search and Conversion Audit](/ai-search). For setting a threshold, see the [free shipping threshold calculator](/tools/free-shipping-calculator).
+Shipping, returns and the rest of what shoppers check before buying are part of my [Full Store Audit](/full-store-audit). For setting a threshold, see the [free shipping threshold calculator](/tools/free-shipping-calculator).
 
 ## How this was done
 

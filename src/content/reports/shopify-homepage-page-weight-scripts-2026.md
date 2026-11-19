@@ -69,7 +69,7 @@ Heavy HTML is also more for a crawler to wade through before it reaches the word
 3. **Trim the homepage.** Fewer sections, a lighter menu, and no product data for quick view you don't use.
 4. **Test on a real phone on mobile data.** Not on office wifi.
 
-Speed and app weight are part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Speed and app weight are part of my [Full Store Audit](/full-store-audit). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

@@ -60,7 +60,7 @@ AI Mode questions are longer, more specific and more often follow ups, which is 
 
 Because AI Mode builds on Google's index, the classic basics still count: indexable pages, structured data, a Merchant Center feed. But ranking isn't the same as being recommended, and the brands AI Mode names depend heavily on what other sites say about them.
 
-Testing where AI Mode names you is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Testing where AI Mode names you is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was compiled
 

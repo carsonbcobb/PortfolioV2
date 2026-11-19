@@ -1,6 +1,6 @@
 ---
 title: "AI Search Optimization for Shopify Brands | Carson Cobb"
-description: "I get Shopify brands' products recommended in ChatGPT, Perplexity and Google AI answers through product data, product pages and off site coverage."
+description: "See where your competitors beat you in ChatGPT, Gemini and Google AI Mode, and close the gap. AI search optimization for Shopify brands, product by product."
 slug: "/ai-search"
 h1: "AI search optimization for Shopify brands"
 faq:
@@ -16,13 +16,15 @@ faq:
   - question: "How do you make sure before and after tests are comparable?"
     answer: "I run the same questions in repeated runs, in fresh sessions with no chat history, and record each run by date, so before and after compare like with like."
   - question: "Can you guarantee ChatGPT will recommend us?"
-    answer: "No. No one controls AI answers, and anyone who promises a spot is guessing. I measure your mention rate, position and accuracy across real buyer questions, and focus on the questions where you can win."
+    answer: "No one can, and anyone who promises a spot is guessing. What I do guarantee: everything listed for month 1 of Close the Gap, or you don't pay for month 2, and honest numbers in every competitor report. I focus on the questions where you can win."
+  - question: "How much does it cost?"
+    answer: "Close the Gap is $2,500 a month for up to 3 products and 3 competitors (Focus), or $5,000 a month for up to 10 products and 6 competitors (Full), each with a 3 month commitment. After that it continues month to month."
   - question: "We have our own developers. Can you work with them?"
-    answer: "Have your own developers? Core and Growth work alongside them. I measure, find what's holding you back and plan the work, then your team ships the on site changes from clear specs. On Growth, I also handle off site work and conversion testing."
+    answer: "Yes. In Close the Gap I implement the on site fixes myself, or, if you prefer, I hand your developers clear specs and check the work before it goes live. The source work and the competitor reports stay with me."
   - question: "Can apps on my store confuse AI?"
     answer: "Often. Review, bundle and subscription apps can each describe the same product in their own way, so AI sees conflicting prices, ratings or names for one product. When the facts conflict, AI is less sure what you sell and less likely to recommend it. Cleaning that up is part of the store work."
   - question: "How do I see where I stand today?"
-    answer: "Run the free AI Visibility Check. It asks ChatGPT the questions shoppers ask about products like yours, checks what it says about your brand, and reads your top product pages. The full audit tests your products against the questions your own customers ask, across repeated runs."
+    answer: "Run the AI Visibility Check. It asks ChatGPT the questions shoppers ask about products like yours, checks what it says about your brand, and reads your top product pages. It takes about a minute, no login. Close the Gap tests your top products against your main competitors, question by question, with a report every week or two."
 ---
 <!-- The page layout lives in src/pages/ai-search.astro. Only these sections render from here,
 as collapsed "Read more" disclosures, found by their headings. -->

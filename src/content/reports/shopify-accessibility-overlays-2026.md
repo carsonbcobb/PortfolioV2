@@ -66,7 +66,7 @@ Only 18% of 598 Shopify brand homepages passed five basic accessibility checks (
 3. **Test with a keyboard.** Can you add to cart and check out without a mouse?
 4. **Treat any overlay as an extra, not the fix.** If you keep one, don't rely on it for compliance.
 
-What shoppers and machines can read on your pages is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+What shoppers and machines can read on your pages is part of my [Full Store Audit](/full-store-audit). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

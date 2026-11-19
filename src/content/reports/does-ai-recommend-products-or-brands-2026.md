@@ -66,7 +66,7 @@ Several picks in the data used long names that mixed brand, model, color, size o
 4. **Make each product page stand on its own.** If AI sends a shopper straight to one product, that page has to answer their questions without the homepage. See [do product pages answer AI shopper questions](/reports/do-product-pages-answer-ai-shopper-questions).
 5. **Build brand pages for brand questions.** For "best brands" questions, your About page, press and reviews of the brand carry the weight.
 
-How AI names and describes your products is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+How AI names and describes your products is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

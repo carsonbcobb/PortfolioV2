@@ -73,7 +73,7 @@ Dynamic checkout buttons are a real tradeoff. They speed up one product purchase
 4. **Test dynamic checkout buttons** against your average order value, not just conversion rate.
 5. **Keep the buy box short on mobile.** Every line above the button pushes it down.
 
-Buy box tests are core to my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Buy box tests are core to my [Full Store Audit](/full-store-audit). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

@@ -100,7 +100,7 @@ Here's how I'd plan it:
 * **Tell subscribers what changes.** A short email about the new portal saves a lot of support tickets.
 * **Watch the first full billing cycle.** Compare charges, failures and cancellations with the cycle before.
 
-Loop says it has helped more than 1,100 brands migrate, and Recharge says it has migrated more than 53 million subscriptions. Whichever you pick, someone on your side should own the cutover. That's work I do for clients as part of a retainer.
+Loop says it has helped more than 1,100 brands migrate, and Recharge says it has migrated more than 53 million subscriptions. Whichever you pick, someone on your side should own the cutover. That's work I do for clients as part of running their store.
 
 ## Pricing compared
 
@@ -138,11 +138,11 @@ All three cover the basics: a product page widget, a customer portal, failed pay
 
 ## Want help choosing or fixing your setup?
 
-If you want a second set of eyes before you commit, or you want someone to lead your subscription program after you pick, that's what I do. The AI Search and Conversion Audit ($1,500, credited toward a Build or your first retainer month if you start within 30 days) is a good start, and the Full retainer ($7,500/month) is where I run subscriptions as part of the whole store, at your direction. See all options on the [pricing page](/pricing). If you're a supplement or wellness brand, my [supplement brands page](/supplement-brands) covers the extra things I'd check.
+If you want a second set of eyes before you commit, or you want someone to lead your subscription program after you pick, that's what I do. The [Full Store Audit](/full-store-audit) ($1,997) is a good start, because it covers your subscription setup, and running subscriptions as part of the whole store, at your direction, is a custom [fractional head of ecommerce](/fractional-head-of-ecommerce) engagement. See every published price on the [pricing page](/pricing). If you're a supplement or wellness brand, my [supplement brands page](/supplement-brands) covers the extra things I'd check.
 
-Book a 20 minute intro call. We'll go over your goals and the subscription apps you're weighing and figure out the right next step, and if it isn't a fit, I'll say so.
+Book an intro call. We'll go over your goals and the subscription apps you're weighing and figure out the right next step, and if it isn't a fit, I'll say so.
 
-[Book a 20 minute intro call](/ai-visibility-check#book)
+[See Close the Gap and book an intro call](/close-the-gap#start)
 
 ## Sources
 

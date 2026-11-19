@@ -43,7 +43,7 @@ Every change I make is measured. I find where buyers drop off, decide what to te
 
 - **2.4% → 6.7%** Conversion rate for a health and wellness brand, nearly 3x the revenue from the same traffic
 - **3.8% → 5.3%** Conversion rate for a subscription brand, with no extra ad spend
-- **1.2% → 3.8%** Conversion rate on an ongoing retainer, and still climbing
+- **1.2% → 3.8%** Conversion rate with ongoing work, and still climbing
 - **14%** Average conversion lift from winning tests
 
 ### Landing pages for every traffic source

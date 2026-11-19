@@ -82,7 +82,7 @@ Skip what you already pass. For most stores the highest value fixes, in order:
 5. **Describe your brand in Organization data.** ([Organization schema](/reports/shopify-organization-schema-2026))
 6. **Measure AI traffic.** ([Analytics and AI traffic](/reports/shopify-analytics-attribution-ai-traffic-2026))
 
-Running this checklist on your store, and fixing what matters, is my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Running this checklist on your store, and fixing what matters, is [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 The conversion side of the same work is in [the Shopify CRO checklist](/reports/shopify-cro-checklist-2026).
 

@@ -121,7 +121,7 @@ For a Shopify brand, that means three jobs: get into the short list on each AI, 
 
 If a competitor keeps showing up in these answers and you don't, the cause is usually the sources AI cites and how well your product pages answer the exact question. My guide on [why ChatGPT recommends your competitors and not you](/guides/why-chatgpt-doesnt-recommend-my-shopify-store) walks through the six usual reasons and what to fix first.
 
-To see where your own store stands, run the free [AI Visibility Check](/ai-visibility-check). When you want those three jobs handled, that's the work behind my [AI Search and Conversion Audit](/ai-search).
+To see where your own store stands, run the [AI Visibility Check](/ai-visibility-check). When you want those three jobs handled, that's the work behind [Close the Gap](/close-the-gap).
 
 ## About these numbers
 

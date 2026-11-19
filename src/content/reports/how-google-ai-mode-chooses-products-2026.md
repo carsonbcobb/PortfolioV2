@@ -56,7 +56,7 @@ AI Mode got the price right for 19 of 24 products I checked, but ratings for onl
 
 In my scan of 617 Shopify brand stores, only 23% put a GTIN in product structured data and 11% put return or shipping terms there ([agentic commerce readiness](/reports/shopify-agentic-commerce-readiness-2026)). That's the gap AI Mode's product listings expose.
 
-Finding where AI Mode names you and why is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Finding where AI Mode names you and why is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

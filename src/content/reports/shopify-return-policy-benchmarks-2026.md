@@ -78,7 +78,7 @@ That means the exact words in your policy are what an AI repeats to a shopper. A
 4. **If you use the word guarantee, make it easy to use.** A prepaid label or a refund without a return turns a claim into a real promise.
 5. **Use the same numbers everywhere.** Your policy page, product pages, FAQ and footer badges should all state the same window.
 
-Return policies, shipping promises and the rest of what shoppers check before buying are part of my [AI Search and Conversion Audit](/ai-search).
+Return policies, shipping promises and the rest of what shoppers check before buying are part of my [Full Store Audit](/full-store-audit).
 
 ## How this was done
 

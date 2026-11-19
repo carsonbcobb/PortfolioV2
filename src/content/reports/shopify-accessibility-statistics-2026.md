@@ -79,7 +79,7 @@ In my wider scan of 609 Shopify brand homepages, 26% loaded an accessibility ove
 4. **Allow zoom.** Remove user scalable no or maximum scale 1 from the viewport tag.
 5. **Then test with a keyboard and a screen reader.** These checks are a floor, not an audit.
 
-Accessibility issues that also cost conversions are part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Accessibility issues that also cost conversions are part of my [Full Store Audit](/full-store-audit). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

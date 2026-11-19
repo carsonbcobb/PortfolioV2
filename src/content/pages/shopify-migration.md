@@ -15,7 +15,7 @@ faq:
   - question: "How long does a migration take?"
     answer: "It depends on catalog size, subscriptions and how much custom work the old store has. I scope it after an audit and give you a timeline based on your store, not a template."
   - question: "How is migration work priced?"
-    answer: "I start with the $1,500 AI Search and Conversion Audit to review the current store and give you a prioritized plan. The migration or rebuild itself is quoted as a separate project, based on your catalog, subscriptions and how much custom work the old store has."
+    answer: "I start with the $1,997 Full Store Audit to review the current store and rank every fix by what it's worth. The migration or rebuild itself is quoted as a separate project, based on your catalog, subscriptions and how much custom work the old store has."
 ---
 
 A migration is the riskiest project most growing brands ever take on. You're moving the thing that makes all your money while it's still making money.
@@ -82,17 +82,17 @@ Launch day should be uneventful. I aim for that with a simple routine:
 
 ## How the work is packaged
 
-**AI Search and Conversion Audit, $1,500.** I review the current store, test how ChatGPT recommends you today, find where it leaks conversions, and give you a prioritized plan. That gives us a baseline before anything moves.
+**[Full Store Audit](/full-store-audit), $1,997.** I review every page of the current store, cart and checkout, email flows, analytics and subscriptions, and rank every fix by what it's worth. That gives us a baseline before anything moves.
 
-**The migration or rebuild, quoted as its own project.** I scope it after the audit and quote it based on your catalog, subscriptions and how much custom work the old store has. Every launch step comes to you for sign off. After launch, a retainer can keep supporting the store so nothing gets dropped in a handoff. More on my [full store management page](/fractional-head-of-ecommerce).
+**The migration or rebuild, quoted as its own project.** I scope it after the audit and quote it based on your catalog, subscriptions and how much custom work the old store has. Every launch step comes to you for sign off. After launch, I can keep supporting the store so nothing gets dropped in a handoff. More on my [full store management page](/fractional-head-of-ecommerce).
 
 See all options on the [pricing page](/pricing).
 
-## Book a 20 minute intro call
+## Book an intro call
 
-If you're planning a migration or a rebuild, talk to me before you pick a launch date. We'll go over your goals, your timing and where you're moving from, and figure out whether an audit or a build is the right next step. If it isn't a fit, I'll say so.
+If you're planning a migration or a rebuild, talk to me before you pick a launch date. We'll go over your goals, your timing and where you're moving from, and figure out whether the Full Store Audit or a quoted migration is the right next step. If it isn't a fit, I'll say so.
 
-[Book a 20 minute intro call](/ai-visibility-check#book)
+[See Close the Gap and book an intro call](/close-the-gap#start)
 
 ## Sources
 

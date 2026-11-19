@@ -134,7 +134,7 @@ Different inputs produce different shortlists. A brand that is well covered by e
 3. **Look at the brands named by all three.** That shared core is the bar for your product. Find what they have in common: the review sites, testing roundups and Reddit threads behind them.
 4. **Treat each AI as its own channel.** AI Mode rewards what ranks in Google and clear product data on your own site. ChatGPT rewards editorial coverage. Gemini sits in between.
 
-If you want to see where your products stand on all three, that's what my [AI Search and Conversion Audit](/ai-search) covers. Or start with the free [AI Visibility Check](/ai-visibility-check).
+If you want to see where your products stand on all three, that's what [Close the Gap](/close-the-gap) covers. Or start with the [AI Visibility Check](/ai-visibility-check).
 
 ## How this was done
 

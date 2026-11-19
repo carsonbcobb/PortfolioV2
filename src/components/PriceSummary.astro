@@ -1,7 +1,7 @@
 ---
-// The three pricing cards (audit, Build, retainers) linking to /pricing, from the same data as the pricing page.
-// Used on the homepage and as the pricing teaser on the service pages.
-import { AUDIT, BUILD, RETAINERS, MONTHLY_REPORT } from '../data/site';
+// The two Close the Gap sizes, linking to /close-the-gap and /pricing, from the same data as the pricing page.
+// Used on the homepage, /ai-search and as the pricing teaser on the service and industry pages.
+import { PROGRAM, PROGRAM_SIZES } from '../data/site';
 
 interface Props {
   /** Heading id, for the section's aria-labelledby */
@@ -11,16 +11,15 @@ interface Props {
   sand?: boolean;
   /** No top padding, when it follows another section with the same background */
   flush?: boolean;
-  /** Names and prices only, without the summaries (the service pages' teaser) */
+  /** Prices only, without the size details (the service pages' teaser) */
   compact?: boolean;
   /** One short line per card (the industry pages) */
   brief?: boolean;
   eyebrow?: string;
 }
 
-const { id, heading = 'Start with the audit. Grow from there.', sand = true, flush = false, compact = false, brief = false, eyebrow = 'Pricing' } = Astro.props;
+const { id, heading = 'Close the gap. Two sizes.', sand = true, flush = false, compact = false, brief = false, eyebrow = 'Pricing' } = Astro.props;
 const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
-const lowestRetainer = Math.min(...RETAINERS.filter((r) => r.price !== null).map((r) => r.price as number));
 ---
 
 <section class:list={['section', sand && 'section--sand', flush && 'section--flush']} aria-labelledby={id}>
@@ -28,38 +27,28 @@ const lowestRetainer = Math.min(...RETAINERS.filter((r) => r.price !== null).map
     <div class="head">
       <p class="eyebrow">{eyebrow}</p>
       <h2 class="h2" id={id}>{heading}</h2>
+      {!compact && !brief && <p class="lede">{PROGRAM.summary}</p>}
     </div>
-    <div class="grid grid--three price-summary">
-      <a class="card price-card" href="/pricing#audit">
-        <span class="tag">One time</span>
-        <h3 class="h3">Audit</h3>
-        <div class="plan__price">{usd(AUDIT.price)}</div>
-        {brief && <p class="plan__summary">{AUDIT.summary}</p>}
-        {!compact && !brief && <p class="plan__summary">{AUDIT.summary} {AUDIT.note}</p>}
-        {compact && <p class="plan__summary">{AUDIT.note}</p>}
-      </a>
-      <a class="card price-card" href="/pricing#build">
-        <span class="tag">Fixed price, 3 to 4 weeks</span>
-        <h3 class="h3">Build</h3>
-        <div class="plan__price"><span>from</span> {usd(Math.min(...BUILD.tiers.map((t) => t.price)))}</div>
-        {brief && <p class="plan__summary">The audit plan implemented on your store, priced by catalog size.</p>}
-        {
-          !compact && !brief && (
-            <p class="plan__summary">
-              On site AI search work, product pages that answer buyer questions, a conversion rebuild of your product
-              page, collection and cart, and measurement.
-            </p>
-          )
-        }
-      </a>
-      <a class="card price-card" href="/pricing#retainers">
-        <span class="tag">3 month minimum</span>
-        <h3 class="h3">Retainers</h3>
-        <div class="plan__price"><span>from</span> {usd(lowestRetainer)}<span>/month</span></div>
-        {brief && <p class="plan__summary">Ongoing AI search and conversion work, measured every month.</p>}
-        {!compact && !brief && <p class="plan__summary">Ongoing AI search and conversion work. {MONTHLY_REPORT}</p>}
-      </a>
+    <div class="grid grid--320 price-summary price-summary--two">
+      {
+        PROGRAM_SIZES.map((z) => (
+          <a class="card price-card" href={PROGRAM.path}>
+            <span class="tag">{z.fit}</span>
+            <h3 class="h3">{z.name}</h3>
+            <div class="plan__price">
+              <span>from</span> {usd(z.monthly)}
+              <span>/month</span>
+            </div>
+            {brief && <p class="plan__summary">{z.items[0]}.</p>}
+            {!brief && <p class="plan__summary">{z.items.join('. ')}.</p>}
+          </a>
+        ))
+      }
     </div>
-    <p class="ways__more"><a href="/pricing">See full pricing →</a></p>
+    <p class="ways__more">
+      <a href={PROGRAM.path}>See the program →</a>
+      <span aria-hidden="true">&nbsp;·&nbsp;</span>
+      <a href="/pricing">See full pricing →</a>
+    </p>
   </div>
 </section>
