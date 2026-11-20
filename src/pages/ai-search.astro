@@ -64,7 +64,7 @@ const reasons = [
 const steps = [
   { title: 'Measure the gap against your competitors', text: 'I test the questions buyers ask about your products on ChatGPT, Gemini and Google AI Mode, and record how often you and each competitor get recommended, and why.' },
   { title: 'Fix what AI reads on your site', text: 'Product data built for each product, and product pages that answer buyer questions.' },
-  { title: 'Go after the sources AI relies on', text: 'A ranked list of the sites AI cites for your products, and ready to send pitches for the editorial and review sites that matter.' },
+  { title: 'Go after the sources AI relies on', text: 'A ranked list of the sites AI cites for your products. On Full, I do the work on them: listings, review sites and pitches where they make sense.' },
   { title: 'Convert the traffic it sends', text: 'Product pages and checkout that confirm what AI told the shopper.' },
 ];
 
@@ -123,8 +123,8 @@ const industries = CONTENT_PAGES.filter((p) => p.kind === 'industry');
 >
   <Fragment slot="hero">
     <div class="sales-hero__actions">
-      <a href="/close-the-gap" class="btn btn--accent">See the Close the Gap program</a>
-      <a href={CHECK_PATH} data-track="visibility_check" class="sales-hero__link">{HEADER_CTA_LABEL} →</a>
+      <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent">{HEADER_CTA_LABEL}</a>
+      <a href="/close-the-gap" class="btn btn--ghost-dark">See the Close the Gap program</a>
     </div>
     <p class="sales-hero__proof">{HERO_PROOF.join(' · ')}</p>
   </Fragment>

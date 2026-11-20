@@ -7,7 +7,7 @@ datePublished: 2026-10-31
 dateModified: 2026-11-18
 faq:
   - question: "Is a fractional head of ecommerce cheaper than an agency?"
-    answer: "Often, but not always. A fractional head of ecommerce engagement with me is scoped to your brand, so we work out the fit and the price on an intro call. What usually makes a fractional lead cheaper in practice is replacing several vendor invoices with one, and cutting the time you spend managing them."
+    answer: "Often, but not always. A fractional head of ecommerce engagement with me is scoped to your brand. Email me what you need and I'll send back a scope and a price. What usually makes a fractional lead cheaper in practice is replacing several vendor invoices with one, and cutting the time you spend managing them."
   - question: "When is an agency the better choice?"
     answer: "When you have a large, clearly scoped project like a full rebrand and redesign, need a team of specialists working at once, and have someone in house who can manage the agency. In that case, an agency can be the right call."
   - question: "Can I use both?"
@@ -17,7 +17,7 @@ faq:
   - question: "What about hiring a full time head of ecommerce?"
     answer: "That's the right move when the channel needs someone inside the business every day, leading a team. Expect $150K+ a year before benefits. Many brands use a fractional lead until they reach that point."
   - question: "How do I try this without a big commitment?"
-    answer: "Start with the AI Visibility Check, which takes about a minute, no login, or the Full Store Audit, $1,997 one time. For AI search, Close the Gap starts at $2,500 a month with a 3 month commitment."
+    answer: "Start with your gap report, which takes about a minute, no login, or the Full Store Audit, $1,997 one time. For AI search, Close the Gap is $2,500 a month with a 3 month commitment."
 ---
 
 **By Carson Cobb. Last updated November 2026.**
@@ -34,7 +34,7 @@ I'm Carson Cobb. I help Shopify brands get recommended in ChatGPT and Google's A
 
 **Stitching vendors together** is what most brands end up with by default. A developer here, a designer there, an email freelancer, an agency for a project. That's often about four invoices a month, and you're the one connecting them.
 
-**A fractional head of ecommerce** is one senior person who leads the store, the plan and the vendors every month, while you stay in control. With me, it's a custom engagement we scope together on an intro call.
+**A fractional head of ecommerce** is one senior person who leads the store, the plan and the vendors every month, while you stay in control. With me, it's a custom engagement. Email me what you need and I'll send back a scope and a price.
 
 Agencies sit somewhere in the middle. Some are excellent. The question is less whether they're good and more whether their model fits what you need right now.
 
@@ -58,9 +58,9 @@ With a full time hire, you pay a salary whether there's a full month of senior w
 
 With a fractional head of ecommerce, you pay one monthly fee, and the management is part of the job. My options:
 
-* **[Close the Gap](/close-the-gap), from $2,500 a month.** A 90 day program against your main competitors in ChatGPT, Gemini and Google AI Mode: the head to head, the on site fixes implemented, source work, and a competitor report every week or two. Focus is $2,500 a month and Full is $5,000 a month, each with a 3 month commitment.
+* **[Close the Gap](/close-the-gap), $2,500 a month with a 3 month commitment.** A 90 day program against your main competitors in ChatGPT, Gemini and Google AI Mode: the head to head, the on site fixes implemented, source work, and a competitor report every week or two. Focus is $2,500 a month and Full is $5,000 a month, each with a 3 month commitment.
 * **[Full Store Audit](/full-store-audit), $1,997 one time.** Every page on mobile and desktop, cart and checkout, email flows, analytics and subscriptions, with every fix ranked by what it's worth.
-* **Fractional head of ecommerce, custom.** Your ecommerce lead, working at your direction: the plan, launches, Klaviyo, apps and vendors. [Let's talk](https://calendar.app.google/arLBYoErUBfsuqfN9).
+* **Fractional head of ecommerce, custom.** Your ecommerce lead, working at your direction: the plan, launches, Klaviyo, apps and vendors. [Email me what you need](mailto:carson@carsoncobb.com?subject=Fractional%20head%20of%20ecommerce) and I'll send back a scope and a price.
 
 All prices are on the [pricing page](/pricing).
 
@@ -108,13 +108,13 @@ Here's what that looks like in practice. In the first 90 days, I fix tracking, s
 
 | | Full time hire | Agency or stitched vendors | Fractional head of ecommerce |
 |---|---|---|---|
-| Typical cost | $150K+/yr before benefits | About four invoices a month, plus your time | Custom, scoped on an intro call |
+| Typical cost | $150K+/yr before benefits | About four invoices a month, plus your time | Custom: email me what you need for a scope and a price |
 | Who is accountable for outcomes | The hire | Usually you | Me |
 | Speed on small fixes | Fast once onboarded | Slow across handoffs | Fast |
 | Best for | Large channel with a team | Big scoped projects | Growing brands that need a senior lead |
 
-## Book an intro call
+## Start with your gap report
 
-If you're weighing an agency against a fractional lead, let's talk. We'll go over your goals and who's working on the store today and figure out which setup fits, and if it isn't me, I'll say so.
+If you're weighing an agency against a fractional lead, start by seeing where you stand. Your gap report shows how often ChatGPT recommends you against your top competitor, in about a minute. Brands doing $50K a month or more also get a short video of the full gap. Or [email me](mailto:carson@carsoncobb.com?subject=Fractional%20head%20of%20ecommerce) about who's working on the store today, and I'll tell you which setup fits, even if it isn't me.
 
-[See Close the Gap and book an intro call](/close-the-gap#start)
+[Get your gap report](/ai-visibility-check)

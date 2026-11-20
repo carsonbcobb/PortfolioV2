@@ -4,7 +4,7 @@ import SiteNav from '../components/SiteNav.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import '../styles/agencies.css';
 import {
-  CAL_LINK,
+  CHECK_PATH,
   EMAIL,
   AGENCY_EMAIL_URL,
   AGENCY_TICKET_STATS,
@@ -20,15 +20,11 @@ import {
 } from '../data/site';
 import { agenciesSchema } from '../data/schema';
 
-// Every booking button goes to CAL_LINK and is tracked as a book_call event.
-const book = {
-  href: CAL_LINK,
-  'data-track': 'book_call',
-  ...(CAL_LINK.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {}),
-};
+// Agencies start by email. The gap report is the way to show a client their gap.
+const GAP_FOR_CLIENT = 'Get a gap report for a client';
 
 const description =
-  'White label AI search and conversion work for agencies with Shopify clients: audits, implementation and reporting under your brand.';
+  'White label AI search and conversion work for agencies with Shopify clients: competitor gap reports, implementation and reporting under your brand.';
 
 const title = 'AI Search and CRO Partner for Ecommerce Agencies | Carson Cobb';
 const heroSub =
@@ -57,14 +53,14 @@ const jsonLd = [agenciesSchema({ title, description })];
           <h1 class="hero__h1">AI search and CRO for ecommerce agencies. <span class="accent">Under your name.</span></h1>
           <p class="hero__sub">{heroSub}</p>
           <div class="btn-row">
-            <a {...book} class="btn btn--accent"
-              >Book an intro call
+            <a href={AGENCY_EMAIL_URL} class="btn btn--accent"
+              >Email me
               <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
             </a>
-            <a href="#pricing" class="btn btn--ghost-dark">See pricing</a>
+            <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--ghost-dark">{GAP_FOR_CLIENT}</a>
           </div>
           <p class="hero__fine">
-            <strong>50+ AI search audits. 30+ sites optimized for AI search. 50+ Shopify stores, from startups to billion dollar brands.</strong>
+            <strong>50+ AI search projects. 30+ sites optimized for AI search. 50+ Shopify stores, from startups to billion dollar brands.</strong>
             Already working white label for agency partners.
           </p>
         </div>
@@ -159,7 +155,7 @@ const jsonLd = [agenciesSchema({ title, description })];
             <p class="eyebrow">What I take on</p>
             <h2 class="h2">AI search and CRO work, delivered as your team.</h2>
           </div>
-          <p class="lede head__aside">Audits, implementation and reporting, under your brand and in your tools.</p>
+          <p class="lede head__aside">Gap reports, implementation and reporting, under your brand and in your tools.</p>
         </div>
         <div class="grid grid--320">
           {
@@ -190,6 +186,12 @@ const jsonLd = [agenciesSchema({ title, description })];
                 <div class="plan__head">
                   <span class:list={['tag', { 'tag--dim': p.featured }]}>{p.tag}</span>
                   <h3 class="h3">{p.name}</h3>
+                  <div class="plan__price">
+                    {p.price}
+                    {p.unit && <span>{p.unit}</span>}
+                  </div>
+                  <p class="plan__commit">{p.commit}</p>
+                  <p class="plan__other">{p.other}</p>
                   <p class="plan__summary">{p.summary}</p>
                 </div>
                 <ul class="plan__list">
@@ -201,8 +203,11 @@ const jsonLd = [agenciesSchema({ title, description })];
                   ))}
                 </ul>
                 <div class="plan__foot">
-                  <a {...book} class:list={['btn', p.featured ? 'btn--accent' : 'btn--outline']}>
-                    Book a call
+                  <a href={AGENCY_EMAIL_URL} class:list={['btn', p.featured ? 'btn--accent' : 'btn--outline']}>
+                    Email me
+                  </a>
+                  <a href={CHECK_PATH} data-track="visibility_check" class:list={['btn', 'btn--small', p.featured ? 'btn--ghost-dark' : 'btn--outline']}>
+                    {GAP_FOR_CLIENT}
                   </a>
                 </div>
               </div>
@@ -280,13 +285,13 @@ const jsonLd = [agenciesSchema({ title, description })];
     </section>
 
     <!-- Final CTA -->
-    <section id="book" class="dark cta">
+    <section id="contact" class="dark cta">
       <div class="wrap cta__inner">
         <h2 class="h2 cta__title">Sell AI search and CRO without hiring for it.</h2>
-        <p class="cta__sub">Book an intro call and we'll talk through the client accounts you'd hand me first.</p>
+        <p class="cta__sub">Email me about the client accounts you'd hand me first, and I'll send back a scope and a date.</p>
         <div class="btn-row btn-row--center">
-          <a {...book} class="btn btn--accent">Book an intro call</a>
-          <a href={AGENCY_EMAIL_URL} class="btn btn--ghost-dark">Email me</a>
+          <a href={AGENCY_EMAIL_URL} class="btn btn--accent">Email me</a>
+          <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--ghost-dark">{GAP_FOR_CLIENT}</a>
         </div>
       </div>
     </section>

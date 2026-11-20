@@ -5,7 +5,6 @@ import {
   SITE_URL,
   ogImageFor,
   EMAIL,
-  CAL_LINK,
   LINKEDIN_URL,
   GHOST_REVENUE_URL,
   LINKEDIN_COMPANY_URL,
@@ -65,7 +64,7 @@ const person = {
   image: new URL(HEADSHOT ?? '/logo.png', SITE_URL).href,
   jobTitle: 'AI Search and CRO Specialist for Shopify Brands',
   description:
-    "AI search and CRO specialist for Shopify brands. I get products recommended in ChatGPT and Google's AI answers, then make sure the store turns that traffic into sales. 50+ AI search audits, 30+ sites optimized for AI search and 50+ Shopify stores, from startups to billion dollar brands.",
+    "AI search and CRO specialist for Shopify brands. I get products recommended in ChatGPT and Google's AI answers, then make sure the store turns that traffic into sales. 50+ AI search projects, 30+ sites optimized for AI search and 50+ Shopify stores, from startups to billion dollar brands.",
   email: EMAIL,
   ...sameAs(LINKEDIN_URL, GHOST_REVENUE_URL, LINKEDIN_COMPANY_URL),
   knowsLanguage: 'en',
@@ -101,7 +100,7 @@ const business = {
   url: HOME,
   logo: `${SITE_URL}/logo.png`,
   description:
-    'AI search and conversion rate optimization for Shopify brands: getting products recommended in ChatGPT and Google AI answers, structured data, and store conversion work, from audit to ongoing growth.',
+    'AI search and conversion rate optimization for Shopify brands: getting products recommended in ChatGPT and Google AI answers, structured data, and store conversion work, from finding the gap to closing it.',
   knowsAbout: [
     'AI search',
     'Answer engine optimization (AEO)',
@@ -122,7 +121,7 @@ const contact = {
   '@id': ID.contact,
   contactType: 'sales',
   email: EMAIL,
-  url: CAL_LINK,
+  url: `${SITE_URL}${CHECK_PATH}`,
   availableLanguage: 'English',
   hoursAvailable: {
     '@type': 'OpeningHoursSpecification',
@@ -195,8 +194,8 @@ export type PlanKey = keyof typeof PLAN;
 const english = { '@type': 'Language', name: 'English', alternateName: 'en' };
 const channel = (processingTime?: string) => ({
   '@type': 'ServiceChannel',
-  name: 'Email and video calls',
-  serviceUrl: CAL_LINK,
+  name: 'Email and recorded video',
+  serviceUrl: `${SITE_URL}/start`,
   availableLanguage: english,
   ...(processingTime ? { processingTime } : {}),
 });
@@ -211,7 +210,7 @@ const sizeOffer = (z: (typeof PROGRAM_SIZES)[number]) => ({
   '@type': 'Offer',
   '@id': `${PROGRAM_URL}#offer-${z.key}`,
   name: z.name,
-  description: `${z.fit}. ${sentenceList(z.items)} ${usd(z.monthly)} a month with a 3 month commitment, or ${usd(z.upfront)} paid upfront for 3 months. ${usd(z.flexible)} a month with no commitment. ${PROGRAM.guarantee} ${PROGRAM.scope}`,
+  description: `${z.fit}. ${sentenceList(z.items)} ${usd(z.monthly)}/month with a 3 month commitment. Or ${usd(z.upfront)} paid upfront for 3 months, or ${usd(z.flexible)}/month with no commitment. ${PROGRAM.guarantee} ${PROGRAM.scope}`,
   url: PROGRAM_URL,
   itemOffered: ref(PLAN.program),
   seller: ref(ID.business),
@@ -282,7 +281,7 @@ const CHECK_CHANNEL = { '@type': 'ServiceChannel', serviceUrl: `${SITE_URL}${CHE
 
 // The AI search and CRO services: what the work produces, in the page's own words.
 const BRAND_OUTPUT = output(
-  'Audit, plan and implementation',
+  'Gap report, implementation and competitor reports',
   'A head to head against your main competitors on ChatGPT, Gemini and Google AI Mode, the on site fixes implemented, source work, and a competitor report every week or two.',
 );
 
@@ -429,19 +428,20 @@ export function checkSchema(meta: { title: string; description: string; faqs: { 
         mainEntity: ref(appId),
         inLanguage: 'en-US',
       },
-      breadcrumb(crumbId, [{ name: 'AI Visibility Check', url }]),
+      breadcrumb(crumbId, [{ name: 'Gap report', url }]),
       {
         '@type': 'WebApplication',
         '@id': appId,
-        name: 'AI Visibility Check',
+        name: 'Gap report',
         description:
-          "Checks whether ChatGPT recommends a Shopify brand's products for questions built from its top products, how accurately it describes the brand, whether AI crawlers can reach the store, and what its top product pages tell AI. Returns a score from 0 to 100.",
+          "Shows how often ChatGPT recommends a Shopify brand and its top competitor for questions built from the brand's top products, how accurately it describes the brand, whether AI crawlers can reach the store, and what its top product pages tell AI. Returns a score from 0 to 100.",
         url,
         applicationCategory: 'BusinessApplication',
         operatingSystem: 'Any',
         browserRequirements: 'Requires JavaScript',
         isAccessibleForFree: true,
         featureList: [
+          'Head to head against the competitor the brand enters, counted on the same ChatGPT answers',
           'AI visibility for buyer questions built from the store\'s own products, in ChatGPT with web search',
           'Brand accuracy check',
           'AI crawler access for GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended and Applebot-Extended',
@@ -462,13 +462,13 @@ export const AGENCY_DESCRIPTION =
 
 export function agenciesSchema(meta: { title: string; description: string }) {
   const url = `${AGENCIES}#pricing`;
-  // Agency pricing is shared on the intro call, so these offers carry no public price.
+  // Agencies pay the same prices as brands; these offers point to the brand offers for the price.
   const slug = (name: string) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   const agencyOffer = (p: { name: string; summary: string }) => ({
     '@type': 'Offer',
     '@id': `${AGENCIES}#offer-${slug(p.name)}`,
     name: p.name,
-    description: `${p.summary} Delivered under your agency's name. Agency pricing is shared on the intro call.`,
+    description: `${p.summary} Delivered under your agency's name, at the same prices brands pay.`,
     url,
     itemOffered: ref(ID.agencyService),
     seller: ref(ID.business),
@@ -518,7 +518,7 @@ export function agenciesSchema(meta: { title: string; description: string }) {
           description:
             'Agencies that sell AI search and conversion work to Shopify clients and need it implemented under their name.',
         },
-        availableChannel: { '@type': 'ServiceChannel', serviceUrl: CAL_LINK, name: 'Intro call' },
+        availableChannel: { '@type': 'ServiceChannel', serviceUrl: `mailto:${EMAIL}`, name: 'Email' },
         hasOfferCatalog: ref(ID.agencyPartner),
       },
       {
@@ -555,7 +555,7 @@ interface ContentSchemaInput {
   description: string;
   label: string;
   faqs: { q: string; a: string }[];
-  // offers 'only': the Close the Gap offers, without the fit line, output or booking channel
+  // offers 'only': the Close the Gap offers, without the fit line, output or channel
   // (the industry pages show the pricing cards but not those).
   service?: { name: string; serviceType: string; audience: string; offers?: boolean | 'only'; plans?: PlanKey[] };
   /** Comparison guides: an Article by Carson with its dates */

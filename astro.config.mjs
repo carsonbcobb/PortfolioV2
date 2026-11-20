@@ -39,7 +39,7 @@ const CHECK_HREF = '/ai-visibility-check';
 function rehypeReportCta() {
   const text = (n) => (n.type === 'text' ? n.value : (n.children ?? []).map(text).join(''));
   return (tree, file) => {
-    if (!/[\\/]content[\\/]guides[\\/]/.test(file.path ?? '')) return;
+    if (!/[\\/]content[\\/](guides|pages)[\\/]/.test(file.path ?? '')) return;
     const blocks = tree.children.filter((n) => n.type === 'element');
     const last = blocks[blocks.length - 1];
     if (!last || last.tagName !== 'p') return;
@@ -162,6 +162,8 @@ export default defineConfig({
   site: 'https://www.carsoncobb.com',
   output: 'static',
   trailingSlash: 'ignore',
+  // /gap-report is the short name for the gap report, which lives at /ai-visibility-check.
+  redirects: { '/gap-report': '/ai-visibility-check' },
   build: {
     // agencies.html instead of agencies/index.html. Amplify serves /agencies straight from
     // agencies.html; a folder made it 301 to /agencies/, away from the canonical URL.

@@ -5,7 +5,7 @@ import { runReadiness } from "./checks/readiness";
 import { runVisibility } from "./checks/visibility";
 import { compareCompetitor } from "./checks/competitor";
 import { headToHead, parseRival, resolveRival, type RivalInput } from "./checks/headtohead";
-import { sendReportEmails } from "./email";
+import { resultUrl, sendLeadNotice, sendReportEmails } from "./email";
 import {
   cacheReport,
   dailyLimit,
@@ -22,6 +22,7 @@ import type {
   CompetitorCompare,
   Emit,
   Env,
+  Lead,
   ReadinessSection,
   Report,
   SectionError,
@@ -32,10 +33,12 @@ import type {
   VisibilitySection,
   VisitSource,
 } from "./types";
-import { dnsProblem, domainOf, isValidEmail, parseStoreUrl } from "./validate";
+import { cleanName, dnsProblem, domainOf, isValidEmail, parseRevenue, parseStoreUrl } from "./validate";
 
-const PAUSED_MESSAGE = "Checks are paused for today. Book a Close the Gap intro call instead.";
-const RATE_MESSAGE = "You have used all 3 checks for today. Please come back tomorrow or book a Close the Gap intro call.";
+const PAUSED_MESSAGE =
+  "Gap reports are paused for today. Email carson@carsoncobb.com with your store and your top competitor, and I'll send yours.";
+const RATE_MESSAGE =
+  "You've run 3 gap reports today. Come back tomorrow, or email carson@carsoncobb.com with your store and your top competitor.";
 
 // ---------- HTTP helpers ----------
 
@@ -310,9 +313,11 @@ async function handleCheck(req: Request, env: Env, ctx: ExecutionContext): Promi
   const { url, email, token, brand } = body;
   const source = cleanSource(body.source);
   if (typeof url !== "string" || !url.trim()) return fail(req, env, 400, "bad_request", "Please enter your store URL.");
-  // Email is optional here: the step flow asks for it while the check runs and posts it to /email.
-  if (email !== undefined && email !== "" && (typeof email !== "string" || !isValidEmail(email.trim())))
-    return fail(req, env, 400, "bad_request", "Please enter a valid email address.");
+  if (typeof email !== "string" || !isValidEmail(email.trim())) return fail(req, env, 400, "bad_request", "Please enter a valid work email.");
+  const revenueParsed = parseRevenue(body.revenue);
+  if ("problem" in revenueParsed) return fail(req, env, 400, "bad_request", revenueParsed.problem);
+  const name = cleanName(body.name);
+  if (name === null) return fail(req, env, 400, "bad_request", "Please keep your name under 80 characters.");
   if (brand !== undefined && (typeof brand !== "string" || brand.trim().length > 60))
     return fail(req, env, 400, "bad_request", "Please keep the brand name under 60 characters.");
   if (typeof token !== "string" || !token || token.length > 4096)
@@ -322,14 +327,16 @@ async function handleCheck(req: Request, env: Env, ctx: ExecutionContext): Promi
   if ("problem" in parsed) return fail(req, env, 400, "invalid_url", parsed.problem);
   const storeUrl = parsed.url;
   const domain = domainOf(storeUrl);
-  const visitorEmail = typeof email === "string" ? email.trim() : "";
+  const lead: Lead = { email: email.trim(), name, revenue: revenueParsed.revenue, source };
   const cleanBrand = typeof brand === "string" ? brand.trim().replace(/\s+/g, " ") : "";
-  // Optional: the visitor's top competitor, a website or a brand name.
+  // Required: the visitor's top competitor, a website or a brand name.
   const rivalParsed = parseRival(body.competitor);
   if ("problem" in rivalParsed) return fail(req, env, 400, "bad_request", rivalParsed.problem);
   const rivalIn = rivalParsed.rival;
-  if (rivalIn && (rivalIn.domain === domain || (cleanBrand && rivalIn.name.toLowerCase() === cleanBrand.toLowerCase())))
+  if (!rivalIn) return fail(req, env, 400, "bad_request", "Please enter your top competitor's website or brand name.");
+  if (rivalIn.domain === domain || (cleanBrand && rivalIn.name.toLowerCase() === cleanBrand.toLowerCase()))
     return fail(req, env, 400, "bad_request", "Please enter a competitor, not your own store.");
+  const typed = rivalIn.raw;
   const ip = req.headers.get("cf-connecting-ip") || "unknown";
 
   // 2. Turnstile
@@ -337,7 +344,7 @@ async function handleCheck(req: Request, env: Env, ctx: ExecutionContext): Promi
     return fail(req, env, 403, "turnstile", "We could not verify you are human. Please refresh the page and try again.");
 
   // Reading a competitor website's name starts now and runs alongside the check (no AI).
-  const rivalP = rivalIn ? resolveRival(rivalIn) : Promise.resolve(null);
+  const rivalP = resolveRival(rivalIn);
 
   // 3. Cache lookup (cache hits do not count toward any limit)
   const hit = await getCachedReport(env, domain);
@@ -346,17 +353,21 @@ async function handleCheck(req: Request, env: Env, ctx: ExecutionContext): Promi
     const cached = withHeadToHead(hit, await rivalP);
     logHeadToHead(cached, true);
     const { response, emit, close } = ndjsonStream(req, env);
-    const ticket = await saveTicket(env, cached, true, false, source);
-    emit({ type: "done", report: cached, cached: true, ticket });
+    const result = await saveResult(env, cached, true, lead);
+    emit({ type: "done", report: cached, cached: true, result });
     ctx.waitUntil(close());
-    if (visitorEmail) ctx.waitUntil(sendReportEmails(env, cached, visitorEmail, true, source));
+    // The owner email goes out for cached reports too.
+    ctx.waitUntil(sendReportEmails(env, cached, lead, { typed, cached: true, link: result ? resultUrl(env, result) : null }));
     return response;
   }
 
   // 4. Limits
   try {
     const [day, mine] = await Promise.all([todayCount(env), ipCount(env, ip)]);
-    if (day >= dailyLimit(env)) return fail(req, env, 503, "paused", PAUSED_MESSAGE);
+    if (day >= dailyLimit(env)) {
+      ctx.waitUntil(sendLeadNotice(env, lead, domain, typed, { status: "paused", message: "The daily limit was reached, so the check did not run." }));
+      return fail(req, env, 503, "paused", PAUSED_MESSAGE);
+    }
     if (mine >= LIMITS.perIpPerDay)
       return fail(req, env, 429, "rate_limited", RATE_MESSAGE);
   } catch (e) {
@@ -377,28 +388,30 @@ async function handleCheck(req: Request, env: Env, ctx: ExecutionContext): Promi
         // Not a store, or no products we could read: no questions, no score, no AI spend, no check used.
         emit({ type: "stopped", reason: out.stopped, message: STOP_MESSAGES[out.stopped] });
         await close();
+        await sendLeadNotice(env, lead, domain, typed, { status: "stopped", message: STOP_MESSAGES[out.stopped] });
         return;
       }
       const run = out;
       let { report, complete } = run;
-      const ticket = await saveTicket(env, report, false, !!run.rest, source);
-      emit({ type: "done", report, ticket, pending: !!run.rest });
+      const result = await saveResult(env, report, false, lead);
+      emit({ type: "done", report, result, pending: !!run.rest });
       logHeadToHead(report, false);
       if (run.rest) {
         // The page stays open and shows the rest of the report; brand accuracy finishes here.
         ({ report, complete } = await run.rest);
-        if (ticket) await updateTicket(env, ticket, report);
+        if (result) await saveResult(env, report, false, lead, result);
         emit({ type: "update", report });
       }
       await close();
       // Only cache reports where every section worked, so a temporary failure is not stuck for 7 days.
       // The cache is shared by every visitor to this store, so it keeps the most named competitor, not this visitor's.
       if (complete) await cacheReport(env, withHeadToHead(report, null)).catch((e) => console.error("kv error", String(e)));
-      if (visitorEmail) ctx.waitUntil(sendReportEmails(env, report, visitorEmail, false, source));
+      ctx.waitUntil(sendReportEmails(env, report, lead, { typed, cached: false, link: result ? resultUrl(env, result) : null }));
     } catch (e) {
       console.error("check failed", e instanceof Error ? e.stack : String(e));
       emit({ type: "error", error: "server_error", message: "Something went wrong running your check. Please try again." });
       await close();
+      await sendLeadNotice(env, lead, domain, typed, { status: "failed", message: e instanceof Error ? e.message : String(e) });
     }
   })();
   ctx.waitUntil(work);
@@ -420,24 +433,21 @@ function logHeadToHead(report: Report, cached: boolean): void {
   );
 }
 
-// ---------- Step flow helpers: detect, saved report, email after the run ----------
+// ---------- Saved results, detect ----------
 
-const TICKET_TTL = 24 * 60 * 60;
+const RESULT_TTL = 90 * 24 * 60 * 60;
 const DETECT_PER_IP_PER_DAY = 30;
 
 /**
- * A one time ticket for the report just shown, so the page can send the email it collects while the
- * check runs. Only a page that ran a verified check holds one, and each ticket sends one email.
+ * One gap report as this visitor saw it (with their competitor), plus who asked for it. The page and the
+ * owner email open it by its id. The lead (email, name, revenue range, visit source) stays in KV only:
+ * GET /result returns the report alone, and the report cached by domain never carries it.
  */
-interface Ticket {
+interface SavedResult {
   report: Report;
   cached: boolean;
-  /** True while brand accuracy is still finishing; the final report replaces this one. */
-  pending?: boolean;
-  /** Set once an email was requested, so a ticket sends one email. */
-  emailed?: boolean;
-  /** Where the visitor came from, for the owner email only. Kept off the report, which is cached and public by domain. */
-  source?: VisitSource | null;
+  lead: Lead;
+  savedAt: string;
 }
 
 /** Keeps only the expected source fields, as short strings. */
@@ -454,10 +464,11 @@ function cleanSource(raw: unknown): VisitSource | null {
   };
 }
 
-async function saveTicket(env: Env, report: Report, cached: boolean, pending = false, source: VisitSource | null = null): Promise<string | null> {
-  const id = crypto.randomUUID();
+/** Saves (or, with `id`, replaces) a result. Returns its id, or null when KV failed. */
+async function saveResult(env: Env, report: Report, cached: boolean, lead: Lead, id: string = crypto.randomUUID()): Promise<string | null> {
   try {
-    await env.CHECKS.put(`ticket:${id}`, JSON.stringify({ report, cached, pending, source } satisfies Ticket), { expirationTtl: TICKET_TTL });
+    const rec: SavedResult = { report, cached, lead, savedAt: new Date().toISOString() };
+    await env.CHECKS.put(`result:${id}`, JSON.stringify(rec), { expirationTtl: RESULT_TTL });
     return id;
   } catch (e) {
     console.error("kv error", String(e));
@@ -465,54 +476,13 @@ async function saveTicket(env: Env, report: Report, cached: boolean, pending = f
   }
 }
 
-/** Swaps in the final report once brand accuracy is done, keeping the emailed flag. */
-async function updateTicket(env: Env, id: string, report: Report): Promise<void> {
-  try {
-    const prev = await env.CHECKS.get<Ticket>(`ticket:${id}`, "json");
-    await env.CHECKS.put(`ticket:${id}`, JSON.stringify({ report, cached: false, pending: false, emailed: prev?.emailed, source: prev?.source } satisfies Ticket), {
-      expirationTtl: TICKET_TTL,
-    });
-  } catch (e) {
-    console.error("kv error", String(e));
-  }
-}
-
-/** Waits (up to about 3 minutes) for a pending ticket to get its final report. */
-async function finalTicket(env: Env, id: string): Promise<Ticket | null> {
-  for (let i = 0; i < 60; i++) {
-    const t = await env.CHECKS.get<Ticket>(`ticket:${id}`, "json").catch(() => null);
-    if (!t || !t.pending) return t;
-    await new Promise((r) => setTimeout(r, 3000));
-  }
-  return env.CHECKS.get<Ticket>(`ticket:${id}`, "json").catch(() => null);
-}
-
-async function handleEmail(req: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
-  let body: Record<string, unknown>;
-  try {
-    body = (await req.json()) as Record<string, unknown>;
-  } catch {
-    return fail(req, env, 400, "bad_request", "Please send the form again.");
-  }
-  const { ticket, email } = body ?? {};
-  if (typeof email !== "string" || !isValidEmail(email.trim()))
-    return fail(req, env, 400, "bad_request", "Please enter a valid email address.");
-  if (typeof ticket !== "string" || !/^[0-9a-f-]{36}$/.test(ticket))
-    return fail(req, env, 400, "bad_request", "Please run the check again.");
-  const key = `ticket:${ticket}`;
-  const saved = await env.CHECKS.get<Ticket>(key, "json").catch(() => null);
-  if (!saved || saved.emailed) return fail(req, env, 404, "expired", "This report has expired. Please run the check again.");
-  await env.CHECKS.put(key, JSON.stringify({ ...saved, emailed: true } satisfies Ticket), { expirationTtl: TICKET_TTL }).catch(() => {});
-  const to = email.trim();
-  ctx.waitUntil(
-    (async () => {
-      // A report still finishing brand accuracy is emailed once it is final.
-      const t = saved.pending ? ((await finalTicket(env, ticket)) ?? saved) : saved;
-      await sendReportEmails(env, t.report, to, t.cached, t.source ?? saved.source ?? null);
-      await env.CHECKS.delete(key).catch(() => {});
-    })(),
-  );
-  return json(req, env, { ok: true });
+/** One saved gap report by id, without the lead. */
+async function handleResult(req: Request, env: Env): Promise<Response> {
+  const id = new URL(req.url).searchParams.get("id") ?? "";
+  if (!/^[0-9a-f-]{36}$/.test(id)) return fail(req, env, 400, "bad_request", "That report link doesn't look right.");
+  const saved = await env.CHECKS.get<SavedResult>(`result:${id}`, "json").catch(() => null);
+  if (!saved) return fail(req, env, 404, "not_found", "This report has expired. Please run a new gap report.");
+  return json(req, env, { report: saved.report });
 }
 
 /** A saved report from the 7 day cache, so a reload reopens it. */
@@ -573,9 +543,9 @@ export default {
       if (pathname === "/status" && req.method === "GET") return await handleStatus(req, env);
       if (pathname === "/check" && req.method === "POST") return await handleCheck(req, env, ctx);
       if (pathname === "/detect" && req.method === "POST") return await handleDetect(req, env);
-      if (pathname === "/email" && req.method === "POST") return await handleEmail(req, env, ctx);
+      if (pathname === "/result" && req.method === "GET") return await handleResult(req, env);
       if (pathname === "/report" && req.method === "GET") return await handleReport(req, env);
-      if (["/status", "/check", "/detect", "/email", "/report"].includes(pathname))
+      if (["/status", "/check", "/detect", "/result", "/report"].includes(pathname))
         return fail(req, env, 405, "method_not_allowed", "That method is not allowed here.");
       return fail(req, env, 404, "not_found", "Not found.");
     } catch (e) {

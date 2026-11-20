@@ -1,7 +1,8 @@
 ---
-// The two Close the Gap sizes, linking to /close-the-gap and /pricing, from the same data as the pricing page.
-// Used on the homepage, /ai-search and as the pricing teaser on the service and industry pages.
-import { PROGRAM, PROGRAM_SIZES } from '../data/site';
+// The two Close the Gap sizes, from the same data as the pricing page. Full size cards on /ai-search;
+// a short card per size (the industry pages' "How we work together") when brief is set.
+import SizeCard from './SizeCard.astro';
+import { PROGRAM, PROGRAM_SIZES, sizeOtherPrices, CHECK_PATH, CTA_LABEL } from '../data/site';
 
 interface Props {
   /** Heading id, for the section's aria-labelledby */
@@ -11,9 +12,9 @@ interface Props {
   sand?: boolean;
   /** No top padding, when it follows another section with the same background */
   flush?: boolean;
-  /** Prices only, without the size details (the service pages' teaser) */
+  /** No summary line under the heading */
   compact?: boolean;
-  /** One short line per card (the industry pages) */
+  /** One short card per size (the industry pages) */
   brief?: boolean;
   eyebrow?: string;
 }
@@ -27,28 +28,36 @@ const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
     <div class="head">
       <p class="eyebrow">{eyebrow}</p>
       <h2 class="h2" id={id}>{heading}</h2>
-      {!compact && !brief && <p class="lede">{PROGRAM.summary}</p>}
+      {!compact && <p class="lede">{PROGRAM.summary}</p>}
     </div>
-    <div class="grid grid--320 price-summary price-summary--two">
-      {
-        PROGRAM_SIZES.map((z) => (
-          <a class="card price-card" href={PROGRAM.path}>
-            <span class="tag">{z.fit}</span>
-            <h3 class="h3">{z.name}</h3>
-            <div class="plan__price">
-              <span>from</span> {usd(z.monthly)}
-              <span>/month</span>
-            </div>
-            {brief && <p class="plan__summary">{z.items[0]}.</p>}
-            {!brief && <p class="plan__summary">{z.items.join('. ')}.</p>}
-          </a>
-        ))
-      }
+    {
+      brief ? (
+        <div class="grid grid--320 price-summary price-summary--two">
+          {PROGRAM_SIZES.map((z) => (
+            <a class="card price-card" href={PROGRAM.path}>
+              <span class="tag">{z.fit}</span>
+              <h3 class="h3">{z.name}</h3>
+              <div class="plan__price">
+                {usd(z.monthly)}
+                <span>/month</span>
+              </div>
+              <p class="plan__commit">3 month commitment</p>
+              <p class="plan__other">{sizeOtherPrices(z)}</p>
+              <p class="plan__summary">{z.brief}</p>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <div class="grid grid--320 plans">
+          {PROGRAM_SIZES.map((z) => (
+            <SizeCard size={z} />
+          ))}
+        </div>
+      )
+    }
+    <div class="btn-row">
+      <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent">{CTA_LABEL}</a>
+      <a href={PROGRAM.path} class="btn btn--outline">See the program</a>
     </div>
-    <p class="ways__more">
-      <a href={PROGRAM.path}>See the program →</a>
-      <span aria-hidden="true">&nbsp;·&nbsp;</span>
-      <a href="/pricing">See full pricing →</a>
-    </p>
   </div>
 </section>

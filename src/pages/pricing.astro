@@ -2,24 +2,19 @@
 // /pricing: Close the Gap (Focus and Full), the Full Store Audit and the AI Visibility Check, the month 1
 // guarantee, Fit and terms, and a short FAQ. Prices come from site.ts, the same data the schema uses.
 import ContentPage from '../layouts/ContentPage.astro';
-import { PROGRAM, PROGRAM_SIZES, FULL_AUDIT, CHECK_OFFER, PRICING_FAQS, TERMS_LIST, CHECK_PATH, CAL_LINK } from '../data/site';
+import SizeCard from '../components/SizeCard.astro';
+import SizeCompare from '../components/SizeCompare.astro';
+import { PROGRAM, PROGRAM_SIZES, FULL_AUDIT, CHECK_OFFER, PRICING_FAQS, TERMS_LIST, CHECK_PATH, CTA_LABEL, GAP_FIRST_LABEL } from '../data/site';
 import { pricingSchema } from '../data/schema';
 
 const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
 
-// Booking buttons go to CAL_LINK and are tracked as book_call events.
-const book = {
-  href: CAL_LINK,
-  'data-track': 'book_call',
-  ...(CAL_LINK.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {}),
-};
-
 const title = 'Pricing for Close the Gap and the Full Store Audit | Carson Cobb';
 const description =
-  'Close the Gap from $2,500 a month (Focus) or $5,000 a month (Full), the $1,997 Full Store Audit, and the AI Visibility Check, which takes about a minute, no login.';
+  'Close the Gap at $2,500/month (Focus) or $5,000/month (Full) with a 3 month commitment, the $1,997 Full Store Audit, and your gap report, which takes about a minute, no login.';
 const h1 = 'Pricing';
 const intro =
-  'Close the Gap, the 90 day program that beats your competitors in AI search, in two sizes. The Full Store Audit for conversion. And the AI Visibility Check to see where you stand.';
+  'Close the Gap, the 90 day program that beats your competitors in AI search, in two sizes. The Full Store Audit for conversion. And your gap report to see where you stand. Start online, no call needed.';
 
 // The Fit and terms items are visible Q&A too, so they join the page's FAQPage.
 const jsonLd = [pricingSchema({ title, description, faqs: [...PRICING_FAQS, ...TERMS_LIST] })];
@@ -32,56 +27,20 @@ const jsonLd = [pricingSchema({ title, description, faqs: [...PRICING_FAQS, ...T
       <div class="head">
         <p class="eyebrow">The main offer</p>
         <h2 class="h2" id="ctg-title">{PROGRAM.name}</h2>
-        <p class="lede">{PROGRAM.summary} <a href={PROGRAM.path}>See the full program →</a></p>
+        <p class="lede">{PROGRAM.summary}</p>
+        <div class="btn-row">
+          <a href={PROGRAM.path} class="btn btn--outline btn--small">See the full program</a>
+        </div>
       </div>
       <div class="grid grid--320 plans">
         {
           PROGRAM_SIZES.map((z) => (
-            <div class:list={['card', 'plan', { 'plan--featured': z.featured }]} id={z.key}>
-              <div class="plan__head">
-                <span class:list={['tag', { 'tag--dim': z.featured }]}>{z.fit}</span>
-                <h3 class="h3">{z.name}</h3>
-                <div class="plan__price">
-                  {usd(z.monthly)}
-                  <span>/month</span>
-                </div>
-                <ul class="plan__tiers">
-                  <li>
-                    <span>With a 3 month commitment</span>
-                    <strong>{usd(z.monthly)}/month</strong>
-                  </li>
-                  <li>
-                    <span>Paid upfront for 3 months</span>
-                    <strong>{usd(z.upfront)}</strong>
-                  </li>
-                  <li>
-                    <span>No commitment</span>
-                    <strong>{usd(z.flexible)}/month</strong>
-                  </li>
-                </ul>
-              </div>
-              <ul class="plan__list">
-                {z.items.map((i) => (
-                  <li>
-                    <span aria-hidden="true">✓</span>
-                    {i}
-                  </li>
-                ))}
-                <li>
-                  <span aria-hidden="true">✓</span>
-                  The 90 day program: find the gap and fix what you control, go after the sources, then expand and lock it in
-                </li>
-              </ul>
-              <div class="plan__foot">
-                <a {...book} class:list={['btn', z.featured ? 'btn--accent' : 'btn--outline']}>
-                  Book an intro call
-                </a>
-                <a href={PROGRAM.path} class="plan__alt">See everything in the program</a>
-              </div>
-            </div>
+            <SizeCard size={z} id={z.key} extra="The 90 day program: find the gap and fix what you control, go after the sources, then expand and lock it in" />
           ))
         }
       </div>
+
+      <SizeCompare />
 
       <div class="lock">
         <div class="lock__pill">
@@ -131,8 +90,8 @@ const jsonLd = [pricingSchema({ title, description, faqs: [...PRICING_FAQS, ...T
             }
           </ul>
           <div class="plan__foot">
-            <a {...book} class="btn btn--outline">Book the audit</a>
-            <a href={FULL_AUDIT.path} class="plan__alt">See everything it covers</a>
+            <a href="/start?offer=full-store-audit" data-track="start_now" class="btn btn--outline">Start now</a>
+            <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--outline btn--small">{GAP_FIRST_LABEL}</a>
           </div>
         </div>
 
@@ -149,7 +108,7 @@ const jsonLd = [pricingSchema({ title, description, faqs: [...PRICING_FAQS, ...T
             <li><span aria-hidden="true">✓</span>{CHECK_OFFER.note}</li>
           </ul>
           <div class="plan__foot">
-            <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--outline">Run the AI Visibility Check</a>
+            <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent">{CTA_LABEL}</a>
           </div>
         </div>
       </div>
@@ -159,7 +118,7 @@ const jsonLd = [pricingSchema({ title, description, faqs: [...PRICING_FAQS, ...T
   <section class="section" id="terms" aria-labelledby="terms-title">
     <div class="wrap faq">
       <div class="faq__head">
-        <p class="eyebrow">Before you book</p>
+        <p class="eyebrow">Before you start</p>
         <h2 class="h2 h2--36" id="terms-title">Fit and terms</h2>
       </div>
       <div class="faq__list">

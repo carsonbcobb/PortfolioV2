@@ -2,25 +2,21 @@
 import HomeLayout from '../layouts/HomeLayout.astro';
 import SiteNav from '../components/SiteNav.astro';
 import SiteFooter from '../components/SiteFooter.astro';
-import PriceSummary from '../components/PriceSummary.astro';
 import {
   EMAIL,
   HEADSHOT,
   HOME_STATS,
   VERTICALS,
   RECOMMENDED,
-  SHIFT,
-  ENGINES,
-  ENGINES_NOTE,
+  GAP_COST,
   CHAT_MOCK,
-  RESULTS,
+  HOME_RESULTS,
   STEPS,
   FAQS,
   ABOUT,
   CHECK_PATH,
   PROGRAM,
   CTA_LABEL,
-  HEADER_CTA_LABEL,
 } from '../data/site';
 import { homeSchema } from '../data/schema';
 import '../styles/content.css';
@@ -29,8 +25,7 @@ const title = 'Carson Cobb | AI Search and CRO for Shopify Brands';
 const description =
   'AI is picking the winners in your market. I show Shopify brands where competitors beat them in ChatGPT, Gemini and Google AI Mode, product by product, then close the gap.';
 
-// The homepage FAQ covers AI search and Close the Gap only.
-const faqs = FAQS.filter((f) => !f.q.startsWith('Do you work with agencies'));
+const faqs = FAQS;
 
 const jsonLd = [homeSchema({ title, description, faqs })];
 ---
@@ -56,6 +51,7 @@ const jsonLd = [homeSchema({ title, description, faqs })];
             </a>
             <a href={PROGRAM.path} class="btn btn--ghost-dark">See the program</a>
           </div>
+          <p class="hero__note">No calls needed. You get a video, not a sales pitch.</p>
         </div>
       </div>
     </section>
@@ -77,53 +73,58 @@ const jsonLd = [homeSchema({ title, description, faqs })];
       </div>
     </section>
 
-    <!-- The shift -->
-    <section class="section">
+    <!-- What the gap costs you -->
+    <section class="section" aria-labelledby="gap-cost">
       <div class="wrap stack">
         <div class="head">
-          <p class="eyebrow">The shift</p>
-          <h2 class="h2">Your competitor is getting your AI customers.</h2>
-          <p class="lede">
-            Shoppers ask ChatGPT for the best product for their exact problem, and it answers with a short list of brands.
-            If you're not on it, <a href="/guides/why-chatgpt-doesnt-recommend-my-shopify-store">a competitor is</a>.
-          </p>
+          <p class="eyebrow">{GAP_COST.eyebrow}</p>
+          <h2 class="h2" id="gap-cost">{GAP_COST.heading}</h2>
         </div>
-        <div class="grid grid--three shift">
-          {
-            SHIFT.map((s, i) => (
-              <div class="shift__item">
-                <span class="tag tag--accent">{String(i + 1).padStart(2, '0')}</span>
-                <h3 class="step__title">{s.title}</h3>
-                <p class="step__text" set:html={s.text} />
-              </div>
-            ))
-          }
+        <div class="gapcost">
+          <figure class="card gapcost__example" aria-label="Worked example">
+            <span class="tag tag--accent">{GAP_COST.example.label}</span>
+            <p class="gapcost__brand">{GAP_COST.example.brand}</p>
+            <ul class="gapcost__lines">
+              {GAP_COST.example.lines.map((l) => <li set:html={l} />)}
+            </ul>
+            <figcaption class="gapcost__note">{GAP_COST.example.note}</figcaption>
+          </figure>
+          <div class="gapcost__points">
+            {
+              GAP_COST.points.map((s, i) => (
+                <div class="shift__item">
+                  <span class="tag tag--accent">{String(i + 1).padStart(2, '0')}</span>
+                  <h3 class="step__title">{s.title}</h3>
+                  <p class="step__text" set:html={s.text} />
+                </div>
+              ))
+            }
+          </div>
+        </div>
+        <div class="btn-row">
+          <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent">{CTA_LABEL}</a>
         </div>
       </div>
     </section>
 
-    <!-- Close the gap, then close the sale -->
-    <section class="section section--sand" aria-labelledby="engines">
+    <!-- How it works -->
+    <section class="section section--sand">
       <div class="wrap stack">
         <div class="head">
-          <p class="eyebrow">What I do</p>
-          <h2 class="h2" id="engines">Close the gap, then close the sale.</h2>
+          <p class="eyebrow">How it works</p>
+          <h2 class="h2">See the gap. Close it. Watch it move.</h2>
         </div>
-        <div class="grid engines">
+        <div class="grid grid--300">
           {
-            ENGINES.map((e) => (
-              <article class="card engine">
-                <span class="tag tag--accent">{e.tag}</span>
-                <h3 class="engine__title">{e.title}</h3>
-                <p class="engine__text">{e.text}</p>
-                <a class="engine__link" href={e.link.href}>
-                  {e.link.text} →
-                </a>
-              </article>
+            STEPS.map((s) => (
+              <div class="step">
+                <span class="tag tag--accent">{s.when}</span>
+                <h3 class="step__title">{s.title}</h3>
+                <p class="step__text">{s.text}</p>
+              </div>
             ))
           }
         </div>
-        <p class="engines__note">{ENGINES_NOTE}</p>
       </div>
     </section>
 
@@ -138,7 +139,7 @@ const jsonLd = [homeSchema({ title, description, faqs })];
           </p>
           <p class="ai-sees__callout">{CHAT_MOCK.callout}</p>
           <div class="btn-row">
-            <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent">{HEADER_CTA_LABEL}</a>
+            <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent">{CTA_LABEL}</a>
           </div>
         </div>
         <figure class="chat" aria-label="Example of an AI shopping answer with placeholder brands">
@@ -196,29 +197,8 @@ const jsonLd = [homeSchema({ title, description, faqs })];
       </div>
     </section>
 
-    <!-- How it works -->
-    <section class="section">
-      <div class="wrap stack">
-        <div class="head">
-          <p class="eyebrow">How it works</p>
-          <h2 class="h2">See the gap. Close it. Watch it move.</h2>
-        </div>
-        <div class="grid grid--300">
-          {
-            STEPS.map((s) => (
-              <div class="step">
-                <span class="tag tag--accent">{s.when}</span>
-                <h3 class="step__title">{s.title}</h3>
-                <p class="step__text">{s.text}</p>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </section>
-
     <!-- Proof -->
-    <section id="results" class="section section--flush">
+    <section id="results" class="section">
       <div class="wrap stack">
         <div class="head">
           <p class="eyebrow">Proof</p>
@@ -227,7 +207,7 @@ const jsonLd = [homeSchema({ title, description, faqs })];
         </div>
         <div class="grid grid--330">
           {
-            RESULTS.map((r) => (
+            HOME_RESULTS.map((r) => (
               <article class="card result">
                 <div class="result__top">
                   <span class="tag tag--dim">{r.tag}</span>
@@ -247,13 +227,25 @@ const jsonLd = [homeSchema({ title, description, faqs })];
             ))
           }
         </div>
-        <p class="ways__more"><a href="/results">See all results →</a></p>
+        <div class="btn-row"><a href="/results" class="btn btn--outline">See all results</a></div>
         <p class="fineprint">Past client outcomes, shown as examples. Not a guarantee of results for any other store.</p>
       </div>
     </section>
 
-    <!-- Pricing summary -->
-    <PriceSummary id="pricing-summary" />
+    <!-- Pricing -->
+    <section class="section section--sand" aria-labelledby="pricing-summary">
+      <div class="wrap stack">
+        <div class="head">
+          <p class="eyebrow">Pricing</p>
+          <h2 class="h2" id="pricing-summary">Two sizes, built around your gap.</h2>
+          <p class="lede">Close the Gap starts at $2,500 a month with a 3 month commitment, for brands doing $50K a month and up.</p>
+        </div>
+        <div class="btn-row">
+          <a href="/pricing" class="btn btn--outline">See pricing</a>
+          <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent">{CTA_LABEL}</a>
+        </div>
+      </div>
+    </section>
 
     <!-- About -->
     <section class="section">
@@ -302,15 +294,15 @@ const jsonLd = [homeSchema({ title, description, faqs })];
     </section>
 
     <!-- Final CTA -->
-    <section id="book" class="dark cta">
+    <section id="start" class="dark cta">
       <div class="wrap cta__inner">
         <h2 class="h2 cta__title">See who AI recommends instead of you.</h2>
         <p class="cta__sub">
-          Run the AI Visibility Check. It takes about a minute, no login, and shows whether ChatGPT recommends you, who it
-          recommends instead, and what's holding you back.
+          Get your gap report. It takes about a minute, no login, and shows how often ChatGPT recommends you against your
+          top competitor. Then I send you a short video of your full gap.
         </p>
         <div class="btn-row btn-row--center">
-          <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent">{HEADER_CTA_LABEL}</a>
+          <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent">{CTA_LABEL}</a>
           <a href={PROGRAM.path} class="btn btn--ghost-dark">See the program</a>
         </div>
       </div>

@@ -1,0 +1,274 @@
+---
+// /start?offer=focus|full|full-store-audit: what they're starting, what happens after paying, the terms, and
+// (for Close the Gap) the three ways to pay. "Continue to payment" opens the matching link from
+// src/config/payment-links.ts, or an email while that link is still a placeholder. Not in the nav, noindex.
+import ContentPage from '../layouts/ContentPage.astro';
+import { PROGRAM, PROGRAM_SIZES, FULL_AUDIT, TERMS, AFTER_PAY, EMAIL, CHECK_PATH, GAP_FIRST_LABEL } from '../data/site';
+import { paymentHref, type PaymentKey } from '../config/payment-links';
+
+const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
+
+type Option = { id: string; label: string; price: string; note: string; key: PaymentKey };
+type Offer = {
+  key: string;
+  name: string;
+  fit: string;
+  tagline?: string;
+  items: string[];
+  steps: string[];
+  terms: string[];
+  options: Option[];
+};
+
+const sizeOffer = (z: (typeof PROGRAM_SIZES)[number]): Offer => ({
+  key: z.key,
+  name: z.name,
+  fit: z.fit,
+  tagline: z.tagline,
+  items: z.items,
+  steps: AFTER_PAY.program,
+  terms: [
+    'The commitment: 3 months with the 3 month commitment or paid upfront, then month to month at the same monthly price with 30 days written notice to cancel. No commitment is month to month from the start.',
+    `Month 1 delivery guarantee: ${PROGRAM.guarantee} ${PROGRAM.guaranteeNote}`,
+    `Scope: ${PROGRAM.scope}`,
+    `Refunds: ${TERMS.refunds}`,
+  ],
+  options: [
+    { id: '3mo', label: '3 month commitment', price: `${usd(z.monthly)}/month`, note: 'Then month to month at the same price, with 30 days written notice to cancel.', key: `${z.key}3mo` as PaymentKey },
+    { id: 'upfront', label: 'Paid upfront', price: usd(z.upfront), note: 'All 3 months paid at once.', key: `${z.key}Upfront` as PaymentKey },
+    { id: 'flexible', label: 'No commitment', price: `${usd(z.flexible)}/month`, note: 'Month to month from the start, with 30 days written notice to cancel.', key: `${z.key}Flexible` as PaymentKey },
+  ],
+});
+
+const OFFERS: Offer[] = [
+  ...PROGRAM_SIZES.map(sizeOffer),
+  {
+    key: 'full-store-audit',
+    name: FULL_AUDIT.name,
+    fit: 'One time · Conversion',
+    items: FULL_AUDIT.includes,
+    steps: AFTER_PAY.audit,
+    terms: [
+      'The commitment: one payment, no ongoing commitment.',
+      `Scope: ${PROGRAM.scope}`,
+      `Refunds: no refunds once the audit has started.`,
+      `Ownership: ${TERMS.ownership}`,
+    ],
+    options: [{ id: 'once', label: 'One time', price: usd(FULL_AUDIT.price), note: FULL_AUDIT.timing, key: 'fullStoreAudit' }],
+  },
+];
+
+// The fallback email subject names the option too, so you can tell which way they chose to pay.
+const optName = (o: Offer, op: Option) => (o.options.length > 1 ? `${o.name} (${op.label.toLowerCase()})` : o.name);
+
+const title = 'Start | Carson Cobb';
+const description = 'Start Close the Gap or the Full Store Audit online: what you get, what happens after you pay, and the terms.';
+const questions = `mailto:${EMAIL}?subject=${encodeURIComponent('Question before starting')}`;
+---
+
+<ContentPage {title} {description} h1="Start now" intro="Everything you need to start, then pay online. No call needed." trail={[{ name: 'Pricing', href: '/pricing' }, { name: 'Start' }]} hideCta jsonLd={[]}>
+  <!-- Shown when the link has no offer, or an unknown one -->
+  <section class="section start-offer" data-offer="choose" hidden>
+    <div class="wrap stack">
+      <div class="head">
+        <h2 class="h2">What are you starting?</h2>
+      </div>
+      <div class="btn-row">
+        {OFFERS.map((o) => <a href={`/start?offer=${o.key}`} class="btn btn--outline">{o.name}</a>)}
+      </div>
+    </div>
+  </section>
+
+  {
+    OFFERS.map((o, n) => (
+      <div class="start-offer" data-offer={o.key} hidden={n !== 0}>
+        <section class="section">
+          <div class="wrap stack start">
+            <div class="head">
+              <p class="eyebrow">You're starting</p>
+              <h2 class="h2">{o.name}</h2>
+              {o.tagline && <p class="lede">{o.tagline}</p>}
+              <p class="lede">{o.fit}</p>
+            </div>
+            <div class="card plan">
+              <div class="plan__head">
+                <span class="tag">Included</span>
+              </div>
+              <ul class="plan__list">
+                {o.items.map((i) => (
+                  <li>
+                    <span aria-hidden="true">✓</span>
+                    {i}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section--sand">
+          <div class="wrap stack start">
+            <div class="head">
+              <p class="eyebrow">Next</p>
+              <h2 class="h2">What happens after you pay</h2>
+            </div>
+            <div class="grid grid--300">
+              {o.steps.map((st, i) => (
+                <div class="step">
+                  <span class="tag tag--accent">Step {i + 1}</span>
+                  <p class="step__text">{st}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="wrap stack start">
+            <div class="head">
+              <p class="eyebrow">The terms</p>
+              <h2 class="h2">In plain words</h2>
+            </div>
+            <ul class="plan__list start__terms">
+              {o.terms.map((t) => (
+                <li>
+                  <span aria-hidden="true">✓</span>
+                  {t}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section class="section section--sand">
+          <div class="wrap stack start">
+            <div class="head">
+              <p class="eyebrow">Payment</p>
+              <h2 class="h2">{o.options.length > 1 ? 'Choose how to pay' : 'Your price'}</h2>
+            </div>
+            <fieldset class="start__options">
+              <legend class="visually-hidden">How to pay for {o.name}</legend>
+              {o.options.map((op, i) => (
+                <label class="card start__option">
+                  <input type="radio" name={`pay-${o.key}`} value={op.id} data-key={op.key} data-href={paymentHref(op.key, optName(o, op))} checked={i === 0} />
+                  <span class="start__option-body">
+                    <span class="start__option-label">{op.label}</span>
+                    <span class="start__option-price">{op.price}</span>
+                    <span class="start__option-note">{op.note}</span>
+                  </span>
+                </label>
+              ))}
+            </fieldset>
+            <div class="start__pay">
+              <a href={paymentHref(o.options[0].key, optName(o, o.options[0]))} class="btn btn--accent" data-pay data-track="continue_to_payment">
+                Continue to payment
+              </a>
+              <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--outline btn--small">{GAP_FIRST_LABEL}</a>
+              <p class="start__questions">
+                Questions first? Email <a href={questions}>{EMAIL}</a>
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    ))
+  }
+</ContentPage>
+
+<script is:inline>
+  (function () {
+    var want = new URLSearchParams(location.search).get('offer') || '';
+    var blocks = document.querySelectorAll('.start-offer');
+    var known = Array.prototype.some.call(blocks, function (b) { return b.dataset.offer === want; });
+    var show = known ? want : 'choose';
+    blocks.forEach(function (b) { b.hidden = b.dataset.offer !== show; });
+    blocks.forEach(function (b) {
+      var pay = b.querySelector('[data-pay]');
+      if (!pay) return;
+      b.querySelectorAll('input[type=radio]').forEach(function (r) {
+        r.addEventListener('change', function () { if (r.checked) pay.href = r.dataset.href; });
+        if (r.checked) pay.href = r.dataset.href;
+      });
+    });
+  })();
+</script>
+
+<style>
+  .start {
+    max-width: 880px;
+  }
+  .start__terms {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .start__options {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .start__options:has(> label:only-of-type) {
+    grid-template-columns: minmax(0, 360px);
+  }
+  .start__option {
+    position: relative;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    cursor: pointer;
+    padding: 22px;
+    background: #fff;
+  }
+  .start__option:has(input:checked) {
+    border-color: var(--ink);
+    box-shadow: 0 0 0 2px var(--ink);
+  }
+  .start__option input {
+    margin-top: 4px;
+    accent-color: var(--ink);
+    width: 18px;
+    height: 18px;
+    flex: none;
+  }
+  .start__option-body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .start__option-label {
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .start__option-price {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .start__option-note {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--body);
+  }
+  .start__pay {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .start__questions {
+    margin: 0;
+    font-size: 15px;
+    color: var(--body);
+  }
+  @media (max-width: 720px) {
+    .start__options {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .start__pay .btn {
+      width: 100%;
+    }
+  }
+</style>

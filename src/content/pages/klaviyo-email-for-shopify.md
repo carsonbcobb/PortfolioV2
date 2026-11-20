@@ -91,14 +91,14 @@ That's also why I fix tracking first. If the store isn't sending clean order and
 
 **[Full Store Audit](/full-store-audit), $1,997.** I review your email flows along with every page of the store, cart and checkout, analytics and subscriptions, and rank every fix by what it's worth. Delivered within 2 business days of getting store access, walked through by recorded video.
 
-**Fractional head of ecommerce, custom.** Your ecommerce lead, working at your direction. Klaviyo flows, segments and campaigns are handled day to day as part of the store, with launches and promotions brought to you for sign off. Email is part of that engagement and isn't sold on its own. I do the work myself; if something needs a specialist skill like photography, I tell you up front and either quote it or recommend someone you hire directly. [Let's talk](https://calendar.app.google/arLBYoErUBfsuqfN9).
+**Fractional head of ecommerce, custom.** Your ecommerce lead, working at your direction. Klaviyo flows, segments and campaigns are handled day to day as part of the store, with launches and promotions brought to you for sign off. Email is part of that engagement and isn't sold on its own. I do the work myself; if something needs a specialist skill like photography, I tell you up front and either quote it or recommend someone you hire directly. [Email me what you need](mailto:carson@carsoncobb.com?subject=Fractional%20head%20of%20ecommerce) and I'll send back a scope and a price.
 
 Published prices are on the [pricing page](/pricing). In the first 90 days of running your store, email is the main focus of month 2, after tracking, speed and key pages are fixed in month 1.
 
 Across my work, I've supported more than $40M in client revenue for growing brands. If you sell something people reorder, like [supplements](/supplement-brands) or [pet food](/pet-brands), email timing matters even more.
 
-## Book an intro call
+## Start with your gap report
 
-If your Klaviyo account hasn't been touched in a while, let's talk about your email. We'll go over your goals and figure out the right next step, and if it isn't a fit, I'll say so.
+If your Klaviyo account hasn't been touched in a while, the [Full Store Audit](/full-store-audit) reviews your email flows along with the rest of the store. To see how often ChatGPT recommends you against your top competitor, get your gap report. It takes about a minute, no login.
 
-[See Close the Gap and book an intro call](/close-the-gap#start)
+[Get your gap report](/ai-visibility-check)

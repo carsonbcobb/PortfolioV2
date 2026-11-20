@@ -72,4 +72,4 @@ AI referred shoppers arrive with a specific promise in mind, and they convert we
 
 For most Shopify brands doing under a few hundred thousand dollars a month, a senior specialist who does the work directly is the better fit. You get the person who knows your account, without paying for layers. A larger agency makes sense when you need a big content and PR operation running alongside.
 
-I'm a specialist in AI search and conversion for Shopify brands, with 50+ AI search audits and 30+ stores optimized, from startups to billion dollar brands. Here's [how I work and what it costs](/pricing), or start with the [AI Visibility Check](/ai-visibility-check).
+I'm a specialist in AI search and conversion for Shopify brands, with 50+ AI search projects and 30+ stores optimized, from startups to billion dollar brands. Here's [how I work and what it costs](/pricing), or start with the [AI Visibility Check](/ai-visibility-check).

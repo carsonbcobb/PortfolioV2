@@ -14,7 +14,8 @@ id = "67995bbaaaec4e02a7fcf4d3a0b872cd"
 [vars]
 DAILY_CHECK_LIMIT = "50"
 ALLOWED_ORIGINS = "https://www.carsoncobb.com,https://carsoncobb.com,http://localhost:4321"
-BOOKING_URL = "https://calendar.app.google/arLBYoErUBfsuqfN9"
+# Result links in emails point here.
+SITE_URL = "https://www.carsoncobb.com"
 FROM_EMAIL = "Carson Cobb <check@carsoncobb.com>"
 NOTIFY_EMAIL = "carson@carsoncobb.com"
 SMALL_MODEL = "gpt-6-luna"

@@ -2,8 +2,9 @@ export interface Env {
   CHECKS: KVNamespace;
   DAILY_CHECK_LIMIT: string;
   ALLOWED_ORIGINS: string;
-  BOOKING_URL: string;
   FROM_EMAIL: string;
+  /** The site the result links in emails point to. Defaults to https://www.carsoncobb.com. */
+  SITE_URL?: string;
   NOTIFY_EMAIL: string;
   SMALL_MODEL: string;
   SEARCH_MODEL: string;
@@ -251,6 +252,20 @@ export interface VisitSource {
   utm_source: string;
   utm_medium: string;
   utm_campaign: string;
+}
+
+/** The monthly revenue range the visitor picked. Decides the next step shown after the report. */
+export type RevenueRange = "under_50k" | "50k_150k" | "150k_plus";
+
+/**
+ * Who asked for the gap report. Saved with the check data in KV and sent in the emails, but never put on
+ * the report itself, which is cached and public by domain.
+ */
+export interface Lead {
+  email: string;
+  name: string;
+  revenue: RevenueRange;
+  source: VisitSource | null;
 }
 
 /** Why a check stopped before any AI calls. */

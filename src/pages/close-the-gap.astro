@@ -2,21 +2,14 @@
 // /close-the-gap: the main offer. Every line comes from PROGRAM and PROGRAM_SIZES in site.ts, the same data
 // the pricing page, the homepage and the structured data use.
 import ContentPage from '../layouts/ContentPage.astro';
-import { PROGRAM, PROGRAM_SIZES, PROGRAM_FAQS, CAL_LINK, CHECK_PATH } from '../data/site';
+import SizeCard from '../components/SizeCard.astro';
+import SizeCompare from '../components/SizeCompare.astro';
+import { PROGRAM, PROGRAM_SIZES, PROGRAM_FAQS, CHECK_PATH, CTA_LABEL, FULL_AUDIT } from '../data/site';
 import { closeTheGapSchema } from '../data/schema';
-
-const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
-
-// Booking buttons go to CAL_LINK and are tracked as book_call events.
-const book = {
-  href: CAL_LINK,
-  'data-track': 'book_call',
-  ...(CAL_LINK.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {}),
-};
 
 const title = 'Close the Gap: Beat Your Competitors in AI Search | Carson Cobb';
 const description =
-  'AI is picking the winners in every product market. I show Shopify brands where competitors beat them in ChatGPT, Gemini and Google AI Mode, product by product, then close the gap. From $2,500 a month.';
+  'AI is picking the winners in every product market. I show Shopify brands where competitors beat them in ChatGPT, Gemini and Google AI Mode, product by product, then close the gap. $2,500 a month with a 3 month commitment.';
 const h1 = 'Close the Gap';
 const intro =
   "AI is picking the winners in every product market, and right now it's picking your competitor. I show you exactly where your competitors beat you in ChatGPT, Gemini and Google AI Mode, product by product, and what that's costing you. Then I close the gap.";
@@ -27,10 +20,10 @@ const jsonLd = [closeTheGapSchema({ title, description, faqs: PROGRAM_FAQS })];
 <ContentPage {title} {description} {h1} {intro} trail={[{ name: 'Pricing', href: '/pricing' }, { name: PROGRAM.name }]} faqs={PROGRAM_FAQS} {jsonLd}>
   <div slot="hero" class="stack">
     <div class="btn-row">
-      <a {...book} class="btn btn--accent">Book an intro call</a>
+      <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent">{CTA_LABEL}</a>
       <a href="#sizes" class="btn btn--ghost-dark">See the two sizes</a>
     </div>
-    <p class="hero__sub">{PROGRAM.startLine}</p>
+    <p class="hero__note">No calls needed. You get a video, not a sales pitch.</p>
   </div>
 
   <!-- The promise -->
@@ -99,52 +92,10 @@ const jsonLd = [closeTheGapSchema({ title, description, faqs: PROGRAM_FAQS })];
         <h2 class="h2" id="sizes-title">Two sizes.</h2>
       </div>
       <div class="grid grid--320 plans">
-        {
-          PROGRAM_SIZES.map((z) => (
-            <div class:list={['card', 'plan', { 'plan--featured': z.featured }]}>
-              <div class="plan__head">
-                <span class:list={['tag', { 'tag--dim': z.featured }]}>{z.fit}</span>
-                <h3 class="h3">{z.name}</h3>
-                <div class="plan__price">
-                  {usd(z.monthly)}
-                  <span>/month</span>
-                </div>
-                <ul class="plan__tiers">
-                  <li>
-                    <span>With a 3 month commitment</span>
-                    <strong>{usd(z.monthly)}/month</strong>
-                  </li>
-                  <li>
-                    <span>Paid upfront for 3 months</span>
-                    <strong>{usd(z.upfront)}</strong>
-                  </li>
-                  <li>
-                    <span>No commitment</span>
-                    <strong>{usd(z.flexible)}/month</strong>
-                  </li>
-                </ul>
-              </div>
-              <ul class="plan__list">
-                {z.items.map((i) => (
-                  <li>
-                    <span aria-hidden="true">✓</span>
-                    {i}
-                  </li>
-                ))}
-                <li>
-                  <span aria-hidden="true">✓</span>
-                  Everything in the 90 day program above
-                </li>
-              </ul>
-              <div class="plan__foot">
-                <a {...book} class:list={['btn', z.featured ? 'btn--accent' : 'btn--outline']}>
-                  Book an intro call
-                </a>
-              </div>
-            </div>
-          ))
-        }
+        {PROGRAM_SIZES.map((z) => <SizeCard size={z} id={z.key} extra="Everything in the 90 day program above" />)}
       </div>
+
+      <SizeCompare />
 
       <div class="lock">
         <div class="lock__pill">
@@ -167,25 +118,35 @@ const jsonLd = [closeTheGapSchema({ title, description, faqs: PROGRAM_FAQS })];
         <h2 class="h2" id="fit">Brands that want to beat a specific competitor.</h2>
         <p class="lede">{PROGRAM.fit}</p>
         <p class="lede">{PROGRAM.fitNote}</p>
-        <p class="lede">
-          Brands under $50K a month should start with the <a href={CHECK_PATH} data-track="visibility_check">AI Visibility Check</a>. It takes about a minute, no login.
-        </p>
+        <p class="lede">{PROGRAM.under}</p>
+      </div>
+      <div class="btn-row">
+        <a href={FULL_AUDIT.path} class="btn btn--outline">See the Full Store Audit</a>
       </div>
     </div>
   </section>
 
   <!-- How to start -->
-  <section class="section" aria-labelledby="start">
+  <section class="section" id="start" aria-labelledby="start-title">
     <div class="wrap stack">
       <div class="head">
-        <p class="eyebrow">How to start</p>
-        <h2 class="h2" id="start">Book an intro call.</h2>
-        <p class="lede">{PROGRAM.startLine}</p>
+        <p class="eyebrow">No call needed</p>
+        <h2 class="h2" id="start-title">How to start</h2>
+      </div>
+      <div class="grid grid--300">
+        {
+          PROGRAM.startSteps.map((st, i) => (
+            <div class="step">
+              <span class="tag tag--accent">Step {i + 1}</span>
+              <h3 class="step__title">{st.title}</h3>
+              <p class="step__text">{st.text}</p>
+            </div>
+          ))
+        }
       </div>
       <div class="btn-row">
-        <a {...book} class="btn btn--accent">Book an intro call</a>
+        <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent">{CTA_LABEL}</a>
       </div>
-      <p class="lede"><a href={PROGRAM.videoHref} data-track="video_request">{PROGRAM.videoLine}</a></p>
     </div>
   </section>
 </ContentPage>
