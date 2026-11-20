@@ -41,6 +41,13 @@ if (report) {
     throw new Error(`/${slug} needs one short_version slot before one end slot for its CTA`);
   reportParts = [parts[0], parts[2], parts[4]];
 }
+// Pages and guides: one ReportCta card where the markdown marks <div data-cta-slot="page"></div>.
+const PAGE_SLOT = '<div data-cta-slot="page"></div>';
+let pageParts: string[] | undefined;
+if (!report && fm.pageCta) {
+  pageParts = (await page.compiledContent()).split(PAGE_SLOT);
+  if (pageParts.length !== 2) throw new Error(`/${slug} has pageCta, so it needs one ${PAGE_SLOT} in its markdown`);
+}
 const ctaSlug = slug.replace(/^reports\//, '');
 const ctaVariant = fm.cta === 'cro' ? 'cro' : 'ai';
 
@@ -154,6 +161,12 @@ if (report) {
               <Fragment set:html={reportParts[1]} />
               <ReportCta variant={ctaVariant} size="full" slug={ctaSlug} position="end" />
               <Fragment set:html={reportParts[2]} />
+            </>
+          ) : pageParts ? (
+            <>
+              <Fragment set:html={pageParts[0]} />
+              <ReportCta variant={fm.pageCta!.variant ?? 'ai'} headline={fm.pageCta!.headline} body={fm.pageCta!.body} slug={slug} from={slug} position="page" />
+              <Fragment set:html={pageParts[1]} />
             </>
           ) : (
             <page.Content />
