@@ -3,6 +3,7 @@
 // the pricing page, the homepage and the structured data use.
 import ContentPage from '../layouts/ContentPage.astro';
 import SizeCard from '../components/SizeCard.astro';
+import SizeCompare from '../components/SizeCompare.astro';
 import { PROGRAM, PROGRAM_SIZES, PROGRAM_FAQS, CHECK_PATH, CTA_LABEL, FULL_AUDIT } from '../data/site';
 import { closeTheGapSchema } from '../data/schema';
 
@@ -93,6 +94,8 @@ const jsonLd = [closeTheGapSchema({ title, description, faqs: PROGRAM_FAQS })];
       <div class="grid grid--320 plans">
         {PROGRAM_SIZES.map((z) => <SizeCard size={z} id={z.key} extra="Everything in the 90 day program above" />)}
       </div>
+
+      <SizeCompare />
 
       <div class="lock">
         <div class="lock__pill">

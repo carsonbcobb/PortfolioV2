@@ -4,10 +4,10 @@ description: "What AI search work for a Shopify brand actually costs in 2026, wh
 slug: "/guides/ai-search-optimization-cost-shopify"
 h1: "How much does AI search optimization cost for a Shopify brand?"
 datePublished: 2026-11-09
-dateModified: 2026-11-19
+dateModified: 2026-11-20
 faq:
   - question: "How much does AI search optimization cost for a Shopify store?"
-    answer: "It depends on catalog size and how much outside work is included. As a reference, my program, Close the Gap, is $2,500 a month for up to 3 products and 3 competitors, or $5,000 a month for up to 10 products and 6 competitors, each with a 3 month commitment. Off site outreach, like getting into the review sites and articles AI cites, is the part that adds the most cost."
+    answer: "It depends on catalog size and how much outside work is included. As a reference, my program, Close the Gap, is $2,500 a month for up to 3 products against up to 3 competitors, with every fix handed to your team ready to ship, or $5,000 a month for up to 5 products against up to 6 competitors, with the fixes implemented for you, each with a 3 month commitment. Off site outreach, like getting into the review sites and articles AI cites, is the part that adds the most cost."
   - question: "What drives the price of AI search work?"
     answer: "Three things: how many active products need their pages and product data fixed, whether off site work is included, and how many buyer questions and AI tools are tracked each month."
   - question: "Is AI search optimization worth it for a small Shopify brand?"
@@ -36,7 +36,7 @@ Across the market, AI search work is sold three ways:
 - **One time builds.** A project that fixes the store: product data, product pages for top sellers, crawler access, and conversion on the pages AI sends people to. The store improves, but nobody is watching whether AI's answers change.
 - **Monthly programs.** Tracking, new fixes as answers shift, and off site outreach, month after month.
 
-Here's how I sell it: one monthly program, **Close the Gap**, with a 3 month commitment. **Focus is $2,500 a month** for up to 3 products against 3 competitors, and **Full is $5,000 a month** for up to 10 products against 6 competitors. The head to head against your competitors and the on site fixes happen in month 1, source work starts in month 2, and every price is on the [pricing page](/pricing). To see where you stand first, the [gap report](/ai-visibility-check) takes about a minute, no login.
+Here's how I sell it: one monthly program, **Close the Gap**, with a 3 month commitment. **Focus is $2,500 a month**: I find the gap on up to 3 products against up to 3 competitors and hand your team every fix, ready to ship. **Full is $5,000 a month**: up to 5 products against up to 6 competitors, and I implement the fixes and do the sources work myself. The head to head against your competitors and the on site fixes happen in month 1, source work starts in month 2, and every price is on the [pricing page](/pricing). To see where you stand first, the [gap report](/ai-visibility-check) takes about a minute, no login.
 
 ## What cheap offers usually leave out
 

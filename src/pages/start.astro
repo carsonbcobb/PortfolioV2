@@ -13,6 +13,7 @@ type Offer = {
   key: string;
   name: string;
   fit: string;
+  tagline?: string;
   items: string[];
   steps: string[];
   terms: string[];
@@ -23,12 +24,13 @@ const sizeOffer = (z: (typeof PROGRAM_SIZES)[number]): Offer => ({
   key: z.key,
   name: z.name,
   fit: z.fit,
+  tagline: z.tagline,
   items: z.items,
   steps: AFTER_PAY.program,
   terms: [
     'The commitment: 3 months with the 3 month commitment or paid upfront, then month to month at the same monthly price with 30 days written notice to cancel. No commitment is month to month from the start.',
     `Month 1 delivery guarantee: ${PROGRAM.guarantee} ${PROGRAM.guaranteeNote}`,
-    `Scope: ${PROGRAM.scope} Larger catalogs or more competitors are quoted.`,
+    `Scope: ${PROGRAM.scope}`,
     `Refunds: ${TERMS.refunds}`,
   ],
   options: [
@@ -85,6 +87,7 @@ const questions = `mailto:${EMAIL}?subject=${encodeURIComponent('Question before
             <div class="head">
               <p class="eyebrow">You're starting</p>
               <h2 class="h2">{o.name}</h2>
+              {o.tagline && <p class="lede">{o.tagline}</p>}
               <p class="lede">{o.fit}</p>
             </div>
             <div class="card plan">

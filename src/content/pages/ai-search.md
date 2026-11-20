@@ -18,7 +18,7 @@ faq:
   - question: "Can you guarantee ChatGPT will recommend us?"
     answer: "No one can, and anyone who promises a spot is guessing. What I do guarantee: everything listed for month 1 of Close the Gap, or you don't pay for month 2, and honest numbers in every competitor report. I focus on the questions where you can win."
   - question: "How much does it cost?"
-    answer: "Close the Gap is $2,500 a month for up to 3 products and 3 competitors (Focus), or $5,000 a month for up to 10 products and 6 competitors (Full), each with a 3 month commitment. After that it continues month to month."
+    answer: "Close the Gap is $2,500 a month for up to 3 products and 3 competitors (Focus), or $5,000 a month for up to 5 products and 6 competitors (Full), each with a 3 month commitment. After that it continues month to month."
   - question: "We have our own developers. Can you work with them?"
     answer: "Yes. In Close the Gap I implement the on site fixes myself, or, if you prefer, I hand your developers clear specs and check the work before it goes live. The source work and the competitor reports stay with me."
   - question: "Can apps on my store confuse AI?"

@@ -21,6 +21,7 @@ const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
   <div class="plan__head">
     <span class:list={['tag', { 'tag--dim': z.featured }]}>{z.fit}</span>
     <h3 class="h3">{z.name}</h3>
+    <p class="plan__summary">{z.tagline}</p>
     <div class="plan__price">
       {usd(z.monthly)}<span>/month</span>
     </div>

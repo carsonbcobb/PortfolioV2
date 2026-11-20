@@ -3,6 +3,7 @@
 // guarantee, Fit and terms, and a short FAQ. Prices come from site.ts, the same data the schema uses.
 import ContentPage from '../layouts/ContentPage.astro';
 import SizeCard from '../components/SizeCard.astro';
+import SizeCompare from '../components/SizeCompare.astro';
 import { PROGRAM, PROGRAM_SIZES, FULL_AUDIT, CHECK_OFFER, PRICING_FAQS, TERMS_LIST, CHECK_PATH, CTA_LABEL, GAP_FIRST_LABEL } from '../data/site';
 import { pricingSchema } from '../data/schema';
 
@@ -38,6 +39,8 @@ const jsonLd = [pricingSchema({ title, description, faqs: [...PRICING_FAQS, ...T
           ))
         }
       </div>
+
+      <SizeCompare />
 
       <div class="lock">
         <div class="lock__pill">
