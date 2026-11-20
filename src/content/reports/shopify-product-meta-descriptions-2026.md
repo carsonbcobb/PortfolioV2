@@ -78,7 +78,7 @@ What it is + who it's for + one proof point, in about 150 characters.
 5. **Keep promotions out.** They expire, and the description stays in search results long after.
 6. **Fix your product description's first line too.** It's the fallback for every product you don't write by hand.
 
-Product pages, product data and search listings are part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Product pages, product data and search listings are part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

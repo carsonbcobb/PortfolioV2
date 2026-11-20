@@ -4,7 +4,7 @@ description: "ChatGPT names about 4 brands per shopping answer and keeps picking
 slug: "/guides/why-chatgpt-doesnt-recommend-my-shopify-store"
 h1: "Why ChatGPT recommends your competitor, and how to fix it"
 datePublished: 2026-11-09
-dateModified: 2026-11-18
+dateModified: 2026-11-20
 pageCta:
   variant: ai
 faq:
@@ -110,4 +110,4 @@ Find the exact reason first, then fix that. Run the questions your buyers ask in
 6. **Clean up product data** so price, rating and availability are readable without scripts and tied to the right product.
 7. **Go after the sources** the AI already trusts for your questions.
 
-When you want it done properly across every product, the [AI search and conversion audit](/pricing) covers exactly this, and when you want it handled, that's [AI search optimization for Shopify brands](/ai-search), the work I do.
+When you want it done properly across every product, [Close the Gap](/close-the-gap) covers exactly this, against your main competitors, and when you want it handled, that's [AI search optimization for Shopify brands](/ai-search), the work I do.

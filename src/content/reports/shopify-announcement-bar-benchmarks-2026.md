@@ -74,7 +74,7 @@ The median message was 68 characters, which fits on most phones. Stacked bars ra
 5. **One or two messages, not five.** If you rotate, slow it down and put the important one first.
 6. **Remove old promotions the day they end.** An expired code in the bar costs trust.
 
-The announcement bar, product pages and checkout path are part of my [AI Search and Conversion Audit](/ai-search).
+The announcement bar, product pages and checkout path are part of [Close the Gap](/close-the-gap).
 
 ## How this was done
 

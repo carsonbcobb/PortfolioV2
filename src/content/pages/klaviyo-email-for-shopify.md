@@ -9,19 +9,19 @@ faq:
   - question: "Do you write the emails too?"
     answer: "Yes. I write and build the emails in your brand's templates, in your brand's voice. Photography and new brand design come from you or your designer. If you have a copywriter you like, I'll work with them and handle the flow logic and setup."
   - question: "Can I hire you just for email?"
-    answer: "Email and Klaviyo work is part of the Full retainer. It isn't sold on its own."
+    answer: "Running email day to day is part of a custom fractional head of ecommerce engagement, and the Full Store Audit reviews your email flows. Email isn't sold on its own."
   - question: "We don't use Klaviyo yet. Can you set it up?"
     answer: "Yes. I can set up Klaviyo from scratch."
   - question: "Can you fix our existing flows instead of starting over?"
     answer: "Usually, yes. Most accounts I audit have the right flows switched on but with broken timing, missing filters or emails that no longer match the store. I fix what's there before building anything new."
   - question: "Do you run campaigns and newsletters?"
-    answer: "On the Full retainer, campaigns are part of the promo calendar I plan with you. The flows come first, because they keep earning every day without anyone pressing send."
+    answer: "When I run your store day to day, campaigns are part of the promo calendar I plan with you. The flows come first, because they keep earning every day without anyone pressing send."
   - question: "Which subscription apps do you work with?"
     answer: "Recharge, Skio, Loop, Shopify's own subscriptions, and other major subscription apps. I connect subscription data to Klaviyo for every subscription client, so subscriber emails can use real order dates and subscription status. I check the setup on your account before building on it."
   - question: "What do you report on?"
     answer: "Flow and campaign revenue, email's share of store revenue, list growth and subscriber churn, in the monthly report."
   - question: "How do we get started?"
-    answer: "Most brands start with the $1,500 AI Search and Conversion Audit, where I review the store, the Klaviyo account and how ChatGPT recommends you, then give you a prioritized plan. The full $1,500 is credited toward a Build or your first retainer month, if you start within 30 days."
+    answer: "Most brands start with the $1,997 Full Store Audit, where I review every page, cart and checkout, your email flows, analytics and subscriptions, and rank every fix by what it's worth."
 ---
 
 Most Shopify brands I work with already pay for Klaviyo. A welcome series runs. A cart email goes out. And then nobody touches it for two years.
@@ -89,16 +89,16 @@ That's also why I fix tracking first. If the store isn't sending clean order and
 
 ## How the work is packaged
 
-**AI Search and Conversion Audit, $1,500.** I review your Klaviyo account along with the rest of the store, test your products against the questions your buyers ask in ChatGPT, and give you a prioritized plan. The full $1,500 is credited toward a Build or your first retainer month, if you start within 30 days.
+**[Full Store Audit](/full-store-audit), $1,997.** I review your email flows along with every page of the store, cart and checkout, analytics and subscriptions, and rank every fix by what it's worth. Delivered within 2 business days of getting store access, walked through by recorded video.
 
-**Full, $7,500/month.** Your ecommerce lead, working at your direction. Klaviyo flows, segments and campaigns are handled day to day as part of the store, with launches and promotions brought to you for sign off. Email is part of Full and isn't sold on its own. I do the work myself; if something needs more than 60 hours, or a specialist skill like photography, I tell you up front and either quote it or recommend someone you hire directly. 3 month minimum.
+**Fractional head of ecommerce, custom.** Your ecommerce lead, working at your direction. Klaviyo flows, segments and campaigns are handled day to day as part of the store, with launches and promotions brought to you for sign off. Email is part of that engagement and isn't sold on its own. I do the work myself; if something needs a specialist skill like photography, I tell you up front and either quote it or recommend someone you hire directly. [Email me what you need](mailto:carson@carsoncobb.com?subject=Fractional%20head%20of%20ecommerce) and I'll send back a scope and a price.
 
-All options are on the [pricing page](/pricing). In the first 90 days of a retainer, email is the main focus of month 2, after tracking, speed and key pages are fixed in month 1.
+Published prices are on the [pricing page](/pricing). In the first 90 days of running your store, email is the main focus of month 2, after tracking, speed and key pages are fixed in month 1.
 
 Across my work, I've supported more than $40M in client revenue for growing brands. If you sell something people reorder, like [supplements](/supplement-brands) or [pet food](/pet-brands), email timing matters even more.
 
-## Book a 20 minute intro call
+## Start with your gap report
 
-If your Klaviyo account hasn't been touched in a while, let's talk about your email. We'll go over your goals and figure out the right next step, and if it isn't a fit, I'll say so.
+If your Klaviyo account hasn't been touched in a while, the [Full Store Audit](/full-store-audit) reviews your email flows along with the rest of the store. To see how often ChatGPT recommends you against your top competitor, get your gap report. It takes about a minute, no login.
 
-[Book a 20 minute intro call](/ai-visibility-check#book)
+[Get your gap report](/ai-visibility-check)

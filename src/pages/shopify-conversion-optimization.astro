@@ -2,11 +2,10 @@
 // /shopify-conversion-optimization as a designed sales page. Title, description and FAQ come from
 // src/content/pages/shopify-conversion-optimization.md, whose sections are the collapsed "Read more" disclosures.
 import ContentPage from '../layouts/ContentPage.astro';
-import PriceSummary from '../components/PriceSummary.astro';
 import { contentSchema } from '../data/schema';
 import { pageBySlug, toolBySlug } from '../data/pages';
 import { designedPage } from '../data/reports';
-import { CHECK_PATH, HEADER_CTA_LABEL, RESULTS } from '../data/site';
+import { CHECK_PATH, HEADER_CTA_LABEL, RESULTS, FULL_AUDIT, PROGRAM, GAP_FIRST_LABEL } from '../data/site';
 import '../styles/sales.css';
 
 const slug = 'shopify-conversion-optimization';
@@ -40,12 +39,14 @@ const fixes = [
 ];
 
 const steps = [
-  { title: 'Audit', text: 'Find where the store loses buyers, ranked by what each fix is worth.' },
+  { title: 'Audit', text: 'The Full Store Audit finds where the store loses buyers, ranked by what each fix is worth.' },
   { title: 'Fix in priority order', text: 'Ship the biggest leaks first: product pages, cart, speed and tracking.' },
   { title: 'Test and measure', text: 'Test what is worth testing, keep the winners and track the lift.' },
 ];
 
 const tools = ['subscription-calculator', 'free-shipping-calculator'].map(toolBySlug);
+
+const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
 
 const readMore = [
   'What do I fix on product pages?',
@@ -68,8 +69,8 @@ const readMore = [
 >
   <Fragment slot="hero">
     <div class="sales-hero__actions">
-      <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent">{HEADER_CTA_LABEL}</a>
-      <a href="/pricing" class="sales-hero__link">See pricing →</a>
+      <a href={FULL_AUDIT.path} class="btn btn--accent">Get the Full Store Audit</a>
+      <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--ghost-dark">{HEADER_CTA_LABEL}</a>
     </div>
     <p class="sales-hero__proof">{proof.join(' · ')}</p>
   </Fragment>
@@ -81,10 +82,10 @@ const readMore = [
         <p class="bridge__title" id="bridge">Why does AI traffic need a store that converts?</p>
         <p>
           A shopper from ChatGPT arrives ready to buy. If the page doesn't confirm what AI told them, you lose your best
-          visitor of the day.
+          visitor of the day. That's why Close the Gap includes making your product pages convert the shoppers AI sends.
         </p>
       </div>
-      <a class="bridge__link" href="/ai-search">How AI search works →</a>
+      <a class="bridge__link" href={PROGRAM.path}>See Close the Gap →</a>
     </div>
   </section>
 
@@ -202,7 +203,7 @@ const readMore = [
   <section class="section" aria-labelledby="tools">
     <div class="wrap stack">
       <div class="head">
-        <p class="eyebrow">Free tools</p>
+        <p class="eyebrow">Tools</p>
         <h2 class="h2" id="tools">Run the numbers on your own store.</h2>
       </div>
       <div class="tool-list">
@@ -219,5 +220,37 @@ const readMore = [
     </div>
   </section>
 
-  <PriceSummary id="cro-pricing" sand={false} flush compact />
+  <!-- The offer: the Full Store Audit -->
+  <section class="section section--flush" aria-labelledby="cro-offer">
+    <div class="wrap stack">
+      <div class="head">
+        <p class="eyebrow">Start here</p>
+        <h2 class="h2" id="cro-offer">The Full Store Audit.</h2>
+      </div>
+      <div class="grid plans" style="max-width: 720px">
+        <div class="card plan plan--featured">
+          <div class="plan__head">
+            <span class="tag tag--dim">One time</span>
+            <h3 class="h3">{FULL_AUDIT.name}</h3>
+            <div class="plan__price">{usd(FULL_AUDIT.price)}</div>
+            <p class="plan__summary">{FULL_AUDIT.summary}</p>
+          </div>
+          <ul class="plan__list">
+            {
+              FULL_AUDIT.includes.map((i) => (
+                <li>
+                  <span aria-hidden="true">✓</span>
+                  {i}
+                </li>
+              ))
+            }
+          </ul>
+          <div class="plan__foot">
+            <a href="/start?offer=full-store-audit" data-track="start_now" class="btn btn--accent">Start now</a>
+            <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--ghost-dark btn--small">{GAP_FIRST_LABEL}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </ContentPage>

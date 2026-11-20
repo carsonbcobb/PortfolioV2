@@ -15,7 +15,7 @@ faq:
   - question: "How long before I see results?"
     answer: "Fixes to speed and product pages usually show up in conversion within the first few weeks, because every visitor sees them right away. Testing builds on that over the following months."
   - question: "How do we get started?"
-    answer: "Most brands start with the $1,500 AI Search and Conversion Audit, where I review where the store leaks conversions and how ChatGPT recommends you, then give you a prioritized plan. The full $1,500 is credited toward a Build or your first retainer month, if you start within 30 days."
+    answer: "Most brands start with the $1,997 Full Store Audit, where I review every page on mobile and desktop, cart and checkout, email flows, analytics and subscriptions, then rank every fix by what it's worth. It's delivered within 2 business days of getting store access. You can start online, no call needed."
 ---
 <!-- The page layout lives in src/pages/shopify-conversion-optimization.astro. Only these sections render from here,
 as collapsed "Read more" disclosures, found by their headings. -->

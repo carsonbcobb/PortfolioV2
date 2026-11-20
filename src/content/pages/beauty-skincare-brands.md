@@ -7,7 +7,7 @@ faq:
   - question: "How do I get my skincare brand recommended by ChatGPT?"
     answer: "ChatGPT recommends skincare it can match to the shopper's skin and concern: sensitive, acne prone, dry, redness. That comes from product pages that say who the product is for, what's in it and how it fits into a routine, and from the community and editorial sites AI already reads. It works product by product, so the first step is seeing which of your products AI names today and who it names instead."
     link:
-      text: "Run the free AI Visibility Check."
+      text: "Run the AI Visibility Check."
       href: "/ai-visibility-check"
   - question: "Which sources does AI use for beauty and skincare?"
     answer: "Community sources like Reddit and YouTube got the largest share of Google AI Mode's links in beauty and skincare answers, 30% in my November 2026 check, ahead of brand websites at 28%. That means what people say about your products in forums and videos shapes how AI describes them, alongside your own pages."
@@ -35,7 +35,7 @@ Skincare shoppers describe their skin to AI before they ever see a brand: "My sk
 
 The AI answers with a few products and a reason for each. If your product isn't one of them, that shopper never sees your site. If it is, they arrive expecting a product made for their skin, and your product page has to confirm it fast.
 
-I'm Carson Cobb, a Shopify expert who works on [AI search](/ai-search) and conversion. I look at how AI answers the questions your buyers ask, product by product, then make the store turn those visitors into orders. You can see where you stand today with the free [AI Visibility Check](/ai-visibility-check).
+I'm Carson Cobb, a Shopify expert who works on [AI search](/ai-search) and conversion. I look at how AI answers the questions your buyers ask, product by product, then make the store turn those visitors into orders. You can see where you stand today with the [AI Visibility Check](/ai-visibility-check).
 
 ## What I found when I tested products like yours
 
@@ -66,4 +66,4 @@ AI referred shoppers arrive ready to buy. [Shopify reported in May 2026](/report
 
 People don't buy skincare one product at a time, they build a routine. I set up routines and bundles that make sense together, and set reorder timing from how long each product actually lasts, for subscribe and save in Recharge or Skio and for replenishment emails in Klaviyo. More on my [Shopify subscriptions page](/shopify-subscriptions) and my [Klaviyo email page](/klaviyo-email-for-shopify).
 
-If you want me running reorders, email and the rest of the store with you each month, that's the Full retainer on my [full store management page](/fractional-head-of-ecommerce).
+If you want me running reorders, email and the rest of the store with you each month, that's a custom engagement on my [full store management page](/fractional-head-of-ecommerce).

@@ -95,7 +95,7 @@ Work from the bottom of each table up, on your top selling products first:
 
 The AI side of the same work is in the [AI search checklist for Shopify](/reports/ai-search-checklist-shopify-2026).
 
-Running this checklist on your store, and testing what matters, is my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Running this checklist on your store, and testing what matters, is my [Full Store Audit](/full-store-audit). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

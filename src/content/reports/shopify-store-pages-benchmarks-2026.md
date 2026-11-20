@@ -86,7 +86,7 @@ Quizzes are the on site version of AI's follow up questions. Beauty and suppleme
 4. **Clean up old landing pages.** Hundreds of thin campaign pages dilute what search engines and AI find.
 5. **Link the decision pages from product pages**, where shoppers need them.
 
-Content and page strategy is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Content and page strategy is part of my [Full Store Audit](/full-store-audit). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

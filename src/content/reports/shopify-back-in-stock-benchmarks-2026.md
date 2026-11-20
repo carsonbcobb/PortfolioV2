@@ -72,7 +72,7 @@ A back in stock list also tells you which products to reorder first and in what 
 5. **Keep sold out pages live if the product is coming back.** Hide or redirect only the ones that are gone for good.
 6. **Watch the list size.** It's the cleanest demand signal you have for planning stock.
 
-Sold out pages, product pages and the rest of the path to purchase are part of my [AI Search and Conversion Audit](/ai-search).
+Sold out pages, product pages and the rest of the path to purchase are part of [Close the Gap](/close-the-gap).
 
 ## How this was done
 

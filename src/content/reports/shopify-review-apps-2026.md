@@ -76,7 +76,7 @@ Running two review tools makes both more likely, and almost half of stores do.
 3. **Ask your review app how it outputs ratings.** In the page source, or added later by JavaScript.
 4. **Make new products collect reviews fast.** A product with zero reviews has nothing to put in the data.
 
-Reviews, ratings and structured data are part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Reviews, ratings and structured data are part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

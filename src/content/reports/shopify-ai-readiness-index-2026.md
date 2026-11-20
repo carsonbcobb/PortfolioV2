@@ -103,4 +103,4 @@ The catalog behind the structured data matters too. Barcodes, product types, ima
 - **Crawler access:** each store's robots.txt checked for rules affecting OAI-SearchBot and for blanket blocks. Firewall and bot protection were not tested.
 - **Scoring:** points as listed above, total 100. Each check is pass or fail.
 
-No store is named in this report. Want your store's score? [Run the free AI Visibility Check](/ai-visibility-check).
+No store is named in this report. Want your store's score? [Run the AI Visibility Check](/ai-visibility-check).

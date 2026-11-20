@@ -54,7 +54,7 @@ Sources: [how many brands](/reports/how-many-brands-ai-recommends-2026), [prices
 
 Test both. For a typical question, only about 2 brands were named by ChatGPT, Gemini and AI Mode alike. There's also a separate comparison of [how Gemini recommends products](/reports/how-gemini-chooses-products-2026).
 
-Testing where each engine names you is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Testing where each engine names you is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

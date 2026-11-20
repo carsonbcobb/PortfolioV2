@@ -65,7 +65,7 @@ Where do the labels come from? Mostly from the sources AI cites: review sites an
 5. **Get the same label from outside.** Pitch the "best for" angle to the roundups and review sites in your space.
 6. **Check what AI calls you now.** Ask ChatGPT, Gemini and AI Mode for the best products in your space and note the label next to your name, if you're there.
 
-How AI describes your products, and how to change it, is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+How AI describes your products, and how to change it, is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

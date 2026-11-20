@@ -67,7 +67,7 @@ Shopify makes this mostly automatic. Set up a market with its own subfolder or d
 3. **Check the result.** View the homepage source and search for "hreflang".
 4. **Localize what matters.** Prices, currency, shipping times and returns, not just the language.
 
-International search and conversion is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+International search and conversion is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

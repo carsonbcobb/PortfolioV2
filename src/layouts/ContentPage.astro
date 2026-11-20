@@ -23,7 +23,7 @@ interface Props {
   ctaTitle?: string;
   /** Hide the closing call to action (the AI Visibility Check page has its own) */
   hideCta?: boolean;
-  /** Closing call to action: the free check, then the audit (instead of the email button) */
+  /** Closing call to action: the check, then Close the Gap (instead of the email button) */
   ctaAudit?: boolean;
   /** Start every FAQ answer collapsed (default: the first one is open) */
   faqCollapsed?: boolean;
@@ -38,7 +38,7 @@ const {
   trail,
   dates,
   faqs = [],
-  ctaTitle = 'See where you stand in AI search.',
+  ctaTitle = 'See who AI recommends instead of you.',
   hideCta = false,
   ctaAudit = false,
   faqCollapsed = false,
@@ -118,17 +118,17 @@ const updated =
           <div class="wrap cta__inner">
             <h2 class="h2 cta__title">{ctaTitle}</h2>
             <p class="cta__sub">
-              Run the free AI Visibility Check. In about a minute you'll see whether ChatGPT recommends you, who it
-              recommends instead, and what's holding you back.
-              {ctaAudit && ' When you want the full picture for every product, start with the audit.'}
+              Get your gap report. It takes about a minute, no login, and shows how often ChatGPT recommends you against
+              your top competitor. Brands doing $50K a month or more also get a short video of the full gap.
+              {ctaAudit && ' When you want to close it across your top products and main competitors, see Close the Gap.'}
             </p>
             <div class="btn-row btn-row--center">
               <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent">
                 {HEADER_CTA_LABEL}
               </a>
               {ctaAudit ? (
-                <a href="/pricing#audit" class="btn btn--ghost-dark">
-                  See the audit
+                <a href="/close-the-gap" class="btn btn--ghost-dark">
+                  See Close the Gap
                 </a>
               ) : (
                 <a href={`mailto:${EMAIL}`} class="btn btn--ghost-dark">

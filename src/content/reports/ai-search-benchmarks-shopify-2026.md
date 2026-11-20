@@ -68,7 +68,7 @@ Shares for GTIN, policies and ProductGroup are of product pages with Product str
 
 The access layer is solved for almost everyone, thanks to Shopify's defaults. The differences are in product data and content. Every area has a weak spot: beauty on identifiers and variants, food and drink on structured data and policies, apparel on publishing and duplicate Product blocks, supplements on proof that never reaches the data. Each area's report goes deeper: [supplements](/reports/ai-search-supplement-brands-2026), [beauty](/reports/ai-search-beauty-brands-2026), [food and drink](/reports/ai-search-food-beverage-brands-2026), [pet](/reports/ai-search-pet-brands-2026), [home](/reports/ai-search-home-brands-2026), [apparel](/reports/ai-search-apparel-brands-2026).
 
-Benchmarking your store against these numbers is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Benchmarking your store against these numbers is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

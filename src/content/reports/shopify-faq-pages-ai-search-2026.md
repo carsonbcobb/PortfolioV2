@@ -64,7 +64,7 @@ Those product questions are exactly what shoppers ask AI. In my research, ChatGP
 5. **Put product specific answers on product pages too.** The FAQ page is for store wide questions; the product page should answer its own. See [do product pages answer AI shopper questions](/reports/do-product-pages-answer-ai-shopper-questions).
 6. **Keep answers in line with your policies.** The FAQ, the policy pages and the product pages should never disagree.
 
-What shoppers and AI can find out about your products is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+What shoppers and AI can find out about your products is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

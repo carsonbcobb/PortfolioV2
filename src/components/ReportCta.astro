@@ -1,6 +1,6 @@
 ---
 // The call to action on research reports and the /reports hub. Two variants, picked per report with the
-// `cta` frontmatter field: "ai" (the default) leads with the AI Visibility Check, "cro" with the audit.
+// `cta` frontmatter field: "ai" (the default) leads with the AI Visibility Check, "cro" with the Full Store Audit.
 // The compact size sits after "The short version": one line and the primary button. The full size ends the report.
 // Every link carries ?from=report-{slug}, and clicks fire the GA4 event report_cta_click (see SiteHead).
 export type CtaVariant = 'ai' | 'cro';
@@ -23,17 +23,17 @@ const { variant = 'ai', size = 'full', slug, position, headline, body, from: fro
 const COPY = structuredClone({
   ai: {
     eyebrow: 'AI Visibility Check',
-    headline: 'Is your store showing up when shoppers ask AI?',
-    body: "Check whether ChatGPT, Gemini and Google AI Mode can find, read and recommend your products, and see what's holding them back.",
+    headline: 'Is AI recommending your competitor instead of you?',
+    body: 'See who ChatGPT recommends for products like yours, and how often it picks you.',
     primary: { label: 'Run the AI Visibility Check', href: '/ai-visibility-check' },
-    secondary: { label: 'Or get the full AI Search and Conversion Audit', href: '/ai-search' },
+    secondary: { label: 'Or see the Close the Gap program', href: '/close-the-gap' },
   },
   cro: {
-    eyebrow: 'Conversion audit',
+    eyebrow: 'Full Store Audit',
     headline: 'Find the leaks costing your store sales',
-    body: 'I review your product pages, cart and checkout flow on mobile and desktop, and show you what to fix first, ranked by impact.',
-    primary: { label: 'Get the AI Search and Conversion Audit', href: '/ai-search' },
-    secondary: { label: 'Or start with the AI Visibility Check', href: '/ai-visibility-check' },
+    body: 'Every page on mobile and desktop, your cart, checkout, email flows and analytics, with every fix ranked by impact. Back to you in 2 business days.',
+    primary: { label: 'Get the Full Store Audit', href: '/full-store-audit' },
+    secondary: { label: 'Or run the AI Visibility Check', href: '/ai-visibility-check' },
   },
 }[variant]);
 if (headline) COPY.headline = headline;

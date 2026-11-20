@@ -4,11 +4,7 @@ description: "What Recharge, Skio and Loop actually cost at 500, 2,000 and 10,00
 slug: "/recharge-vs-skio-vs-loop"
 h1: "Recharge vs Skio vs Loop: real fees and which to pick"
 datePublished: 2026-10-31
-dateModified: 2026-11-18
-pageCta:
-  variant: cro
-  headline: "Losing subscribers after they sign up?"
-  body: "I review your subscription offer, product page and cancel flow and show you what to fix first, ranked by impact."
+dateModified: 2026-11-20
 faq:
   - question: "Which is cheapest: Recharge, Skio or Loop?"
     answer: "At small volume, Loop. It has a Free Forever plan for up to 50 active subscriptions, and its Starter plan is $99/month plus a 1.0% transaction fee and 15¢ per loyalty order. Recharge Starter is $149/month plus 1.50% + 20¢ per transaction. Skio's Scale plan is $499/month billed annually or $599/month billed monthly, plus 1.25% + 20¢ per subscription order. At high volume all three offer custom pricing, so the real answer depends on your order count."
@@ -128,7 +124,7 @@ Here's how I'd plan it:
 * **Tell subscribers what changes.** A short email about the new portal saves a lot of support tickets.
 * **Watch the first full billing cycle.** Compare charges, failures and cancellations with the cycle before.
 
-Loop says it has helped more than 1,100 brands migrate, and Recharge says it has migrated more than 53 million subscriptions. Whichever you pick, someone on your side should own the cutover. That's work I do for clients as part of a retainer.
+Loop says it has helped more than 1,100 brands migrate, and Recharge says it has migrated more than 53 million subscriptions. Whichever you pick, someone on your side should own the cutover. That's work I do for clients as part of running their store.
 
 ## Pricing compared
 
@@ -164,15 +160,13 @@ All three cover the basics: a product page widget, a customer portal, failed pay
 | Gifting | Surprise and delight gifting on Scale | Surprise and delight gifting | Not listed on the plans I reviewed |
 | API and developer access | JavaScript SDK and Storefront API on Scale | Native integrations, webhooks and API | Bundle SDK and API on Pro |
 
-<div data-cta-slot="page"></div>
-
 ## Want help choosing or fixing your setup?
 
-If you want a second set of eyes before you commit, or you want someone to lead your subscription program after you pick, that's what I do. The AI Search and Conversion Audit ($1,500, credited toward a Build or your first retainer month if you start within 30 days) is a good start, and the Full retainer ($7,500/month) is where I run subscriptions as part of the whole store, at your direction. See all options on the [pricing page](/pricing). If you're a supplement or wellness brand, my [supplement brands page](/supplement-brands) covers the extra things I'd check.
+If you want a second set of eyes before you commit, or you want someone to lead your subscription program after you pick, that's what I do. The [Full Store Audit](/full-store-audit) ($1,997) is a good start, because it covers your subscription setup, and running subscriptions as part of the whole store, at your direction, is a custom [fractional head of ecommerce](/fractional-head-of-ecommerce) engagement. See every published price on the [pricing page](/pricing). If you're a supplement or wellness brand, my [supplement brands page](/supplement-brands) covers the extra things I'd check.
 
-Book a 20 minute intro call. We'll go over your goals and the subscription apps you're weighing and figure out the right next step, and if it isn't a fit, I'll say so.
+Not sure where your store stands? Get your gap report. It takes about a minute, no login, and shows how often ChatGPT recommends you against your top competitor.
 
-[Book a 20 minute intro call](/ai-visibility-check#book)
+[Get your gap report](/ai-visibility-check)
 
 ## Sources
 

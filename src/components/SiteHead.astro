@@ -19,8 +19,9 @@ const {
 } = Astro.props;
 
 // Pages build as name.html (see astro.config.mjs), but are served and linked without the extension.
-// The 404 page is noindex and has no canonical of its own.
+// The 404 page is noindex and has no canonical of its own. /start and /welcome are noindex too.
 const notFound = Astro.url.pathname.startsWith('/404');
+const noindex = notFound || /^\/(start|welcome)(\/|\.html|$)/.test(Astro.url.pathname);
 const canonical = new URL(Astro.url.pathname.replace(/(\.html|\/)$/, '') || '/', SITE_URL).href;
 // Share image comes from the page path (see OG_BY_PATH in data/site.ts), so no page sets its own.
 const og = ogImageFor(Astro.url.pathname);
@@ -33,7 +34,7 @@ const ogImage = new URL(og.path, SITE_URL).href;
 <meta name="description" content={description} />
 <meta name="keywords" content={keywords} />
 <meta name="author" content="Carson Cobb" />
-<meta name="robots" content={notFound ? 'noindex' : 'index, follow'} />
+<meta name="robots" content={noindex ? 'noindex' : 'index, follow'} />
 <meta name="theme-color" content={themeColor} />
 {!notFound && <link rel="canonical" href={canonical} />}
 <link rel="icon" type="image/png" href="/favicon.png" />
@@ -89,7 +90,7 @@ const ogImage = new URL(og.path, SITE_URL).href;
       setTimeout(loadTag, 5000);
     });
   })();
-  // Fire GA4 events for tracked links (book_call, visibility_check, ...) and email clicks.
+  // Fire GA4 events for tracked links (visibility_check, start_now, continue_to_payment, ...) and email clicks.
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[data-track], a[href^="mailto:"]');
     if (!a) return;

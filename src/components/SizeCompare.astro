@@ -1,0 +1,87 @@
+---
+// "Which size fits": Focus and Full side by side, under the two size cards on /close-the-gap and /pricing.
+import { SIZE_COMPARE, PROGRAM_SIZES } from '../data/site';
+const [focus, full] = PROGRAM_SIZES;
+---
+
+<div class="compare">
+  <h3 class="h3">{SIZE_COMPARE.title}</h3>
+  <div class="compare__scroll" tabindex="0" role="region" aria-label={SIZE_COMPARE.title}>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col"><span class="visually-hidden">What you get</span></th>
+          <th scope="col">{focus.short}</th>
+          <th scope="col">{full.short}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          SIZE_COMPARE.rows.map(([label, a, b]) => (
+            <tr>
+              <th scope="row">{label}</th>
+              <td>{a}</td>
+              <td>{b}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+  <p class="compare__note">{SIZE_COMPARE.note}</p>
+</div>
+
+<style>
+  .compare {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .compare__scroll {
+    overflow-x: auto;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+  }
+  th,
+  td {
+    padding: 14px 18px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--line);
+    color: var(--body);
+  }
+  tbody tr:last-child th,
+  tbody tr:last-child td {
+    border-bottom: 0;
+  }
+  thead th {
+    font-weight: 800;
+    color: var(--ink);
+  }
+  tbody th {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  td:last-child,
+  thead th:last-child {
+    background: var(--sand);
+  }
+  .compare__note {
+    margin: 0;
+    font-size: 15px;
+    color: var(--body);
+  }
+  @media (max-width: 520px) {
+    th,
+    td {
+      padding: 12px 12px;
+      font-size: 14px;
+    }
+  }
+</style>

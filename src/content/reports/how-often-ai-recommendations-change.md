@@ -82,7 +82,7 @@ The brand named first most often held first place in 52 of 55 answers. In both q
 
 If a competitor holds positions 1 and 2 while you come and go lower down, my guide on [why ChatGPT recommends your competitor](/guides/why-chatgpt-doesnt-recommend-my-shopify-store) explains what decides the order. Moving a product up that list is the core of my [AI search optimization work for Shopify brands](/ai-search).
 
-This is how I track products for clients: the same buyer questions, repeated runs, positions recorded, on ChatGPT, Gemini and Google AI Mode. See the [AI Search and Conversion Audit](/ai-search), or start with the free [AI Visibility Check](/ai-visibility-check).
+This is how I track products for clients: the same buyer questions, repeated runs, positions recorded, on ChatGPT, Gemini and Google AI Mode. See [Close the Gap](/close-the-gap), or start with the [AI Visibility Check](/ai-visibility-check).
 
 ## How this was done
 

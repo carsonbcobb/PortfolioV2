@@ -2,8 +2,9 @@ export interface Env {
   CHECKS: KVNamespace;
   DAILY_CHECK_LIMIT: string;
   ALLOWED_ORIGINS: string;
-  BOOKING_URL: string;
   FROM_EMAIL: string;
+  /** The site the result links in emails point to. Defaults to https://www.carsoncobb.com. */
+  SITE_URL?: string;
   NOTIFY_EMAIL: string;
   SMALL_MODEL: string;
   SEARCH_MODEL: string;
@@ -99,6 +100,25 @@ export interface CompetitorCompare {
   labels: Record<string, string>;
 }
 
+/**
+ * The visitor's top competitor against the visitor, counted on the same scored buyer answers (no extra AI).
+ * source visitor: the competitor the visitor typed. source top: none was typed, so the brand named most instead.
+ */
+export interface HeadToHead {
+  source: "visitor" | "top";
+  /** What the visitor typed, cleaned. Empty for source top. */
+  input: string;
+  /** Display name: read from the competitor's homepage, the domain stem, or the name as typed. */
+  name: string;
+  domain: string | null;
+  /** Scored answers that named the competitor. */
+  theirs: number;
+  /** Scored answers that named the visitor. */
+  yours: number;
+  /** Scored answers. 0 when the buyer questions couldn't run, so there is nothing to compare. */
+  total: number;
+}
+
 /** One of the 3 findings on the score step: the problem and what it costs in sales. */
 export interface TopFinding {
   text: string;
@@ -183,6 +203,8 @@ export interface Report {
   };
   /** Absent or null when no competitor came up or its site could not be read. */
   competitor?: CompetitorCompare | null;
+  /** The head to head shown first in the report. Absent or null when there is no competitor to compare. */
+  headToHead?: HeadToHead | null;
   weights: Record<SectionKey, number>;
   cost: {
     usd: number;
@@ -230,6 +252,20 @@ export interface VisitSource {
   utm_source: string;
   utm_medium: string;
   utm_campaign: string;
+}
+
+/** The monthly revenue range the visitor picked. Decides the next step shown after the report. */
+export type RevenueRange = "under_50k" | "50k_150k" | "150k_plus";
+
+/**
+ * Who asked for the gap report. Saved with the check data in KV and sent in the emails, but never put on
+ * the report itself, which is cached and public by domain.
+ */
+export interface Lead {
+  email: string;
+  name: string;
+  revenue: RevenueRange;
+  source: VisitSource | null;
 }
 
 /** Why a check stopped before any AI calls. */

@@ -77,7 +77,7 @@ This is a lot like llms.txt. Having the file isn't what makes AI recommend you. 
 4. **Don't replace the default file without a reason.** Keep Shopify's managed version unless you have a specific need it doesn't cover.
 5. **Spend the effort on what decides recommendations.** Complete product data, product pages that answer real questions, and the review sites and roundups AI cites.
 
-What AI sees about your store, and what it does with it, is the core of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+What AI sees about your store, and what it does with it, is the core of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

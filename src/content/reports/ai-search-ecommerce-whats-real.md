@@ -100,4 +100,4 @@ Shopify notes that clicks from Google's AI Overviews are counted as organic sear
 - **My own data** comes from the other reports in this series: a structured data scan of 94 US Shopify stores and live ChatGPT tests run in November 2026.
 - I'll update grades as new evidence comes out, and note each change here.
 
-No store is named in this report. [Run the free AI Visibility Check](/ai-visibility-check) to see what AI says about your brand today.
+No store is named in this report. [Run the AI Visibility Check](/ai-visibility-check) to see what AI says about your brand today.

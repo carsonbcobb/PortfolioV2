@@ -39,7 +39,7 @@ const CHECK_HREF = '/ai-visibility-check';
 function rehypeReportCta() {
   const text = (n) => (n.type === 'text' ? n.value : (n.children ?? []).map(text).join(''));
   return (tree, file) => {
-    if (!/[\\/]content[\\/]guides[\\/]/.test(file.path ?? '')) return;
+    if (!/[\\/]content[\\/](guides|pages)[\\/]/.test(file.path ?? '')) return;
     const blocks = tree.children.filter((n) => n.type === 'element');
     const last = blocks[blocks.length - 1];
     if (!last || last.tagName !== 'p') return;
@@ -85,8 +85,8 @@ function rehypeReportCta() {
 // The plain closing sentences that linked /ai-search or /ai-visibility-check are dropped, because the card
 // replaces them, with a question that only leads into one. Any other sentence in the same paragraph
 // ("No store is named in this report.") stays.
-const SERVICE_LINK = /^\/(ai-search|ai-visibility-check)(?:[?#]|$)/;
-const CTA_ANCHOR = /^(AI Search and Conversion Audit|AI Visibility Check|Run the free AI Visibility Check)$/;
+const SERVICE_LINK = /^\/(ai-search|ai-visibility-check|close-the-gap|full-store-audit)(?:[?#]|$)/;
+const CTA_ANCHOR = /^(Close the Gap|Full Store Audit|AI Visibility Check|Run the AI Visibility Check)$/;
 const METHOD_HEADING = /^(How this was (done|compiled)|About these numbers|Method)$/;
 const isReportFile = (path = '') =>
   (/[\\/]content[\\/]reports[\\/]/.test(path) && !/[\\/]index\.md$/.test(path)) ||
@@ -167,6 +167,8 @@ export default defineConfig({
   site: 'https://www.carsoncobb.com',
   output: 'static',
   trailingSlash: 'ignore',
+  // /gap-report is the short name for the gap report, which lives at /ai-visibility-check.
+  redirects: { '/gap-report': '/ai-visibility-check' },
   build: {
     // agencies.html instead of agencies/index.html. Amplify serves /agencies straight from
     // agencies.html; a folder made it 301 to /agencies/, away from the canonical URL.

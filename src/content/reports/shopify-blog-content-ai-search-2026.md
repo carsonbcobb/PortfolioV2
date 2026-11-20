@@ -70,7 +70,7 @@ AI and Google both favor information that looks current, and an article last tou
 5. **Link articles to products.** Every buying guide should send the reader to the right product page.
 6. **Prune what's wrong.** Old articles about discontinued products should be updated, merged or redirected.
 
-Content that answers shopper questions is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Content that answers shopper questions is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## November 2026 update: 617 stores
 

@@ -54,7 +54,7 @@ Links, site structure, internal linking and the click. AI answers often satisfy 
 
 ## The practical answer
 
-Run one plan. Fix the shared foundation, write product pages that state facts and fit, then add the AI specific work: coverage, consistency and testing across ChatGPT, Gemini and AI Mode. My [AI Search and Conversion Audit](/ai-search) covers both sides. The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Run one plan. Fix the shared foundation, write product pages that state facts and fit, then add the AI specific work: coverage, consistency and testing across ChatGPT, Gemini and AI Mode. My [Close the Gap](/close-the-gap) covers both sides. The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

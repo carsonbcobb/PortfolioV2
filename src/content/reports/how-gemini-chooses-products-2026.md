@@ -56,7 +56,7 @@ The longer list is good news for smaller brands. A fifth or sixth slot is a real
 3. **Test Gemini separately.** Its list differs from ChatGPT's.
 4. **Make your price easy to find** on the product page and in structured data, since Gemini rarely volunteers it.
 
-Testing where Gemini names you is part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Testing where Gemini names you is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

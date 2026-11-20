@@ -109,7 +109,7 @@ Gemini showed almost no clickable links in its answers, 9 links across 2 of 48 a
 
 If those roundups and threads keep naming a competitor, my guide on [why ChatGPT recommends your competitor](/guides/why-chatgpt-doesnt-recommend-my-shopify-store) shows how to find the sources behind it. Earning those sources and converting the clicks they send is the work behind my [AI search optimization for Shopify brands](/ai-search).
 
-Which sources recommend your competitors but not you, and where AI sends your shoppers, are both part of my [AI Search and Conversion Audit](/ai-search). For a quick start, run the free [AI Visibility Check](/ai-visibility-check).
+Which sources recommend your competitors but not you, and where AI sends your shoppers, are both part of [Close the Gap](/close-the-gap). For a quick start, run the [AI Visibility Check](/ai-visibility-check).
 
 ## How this was done
 

@@ -75,7 +75,7 @@ H1s are a theme problem more than a writing problem. Themes often put the logo i
 3. **Check your H1 count.** View source and search for "<h1". Keep one, and make it say what you sell.
 4. **Set an Open Graph image** in theme settings so shared links don't pull a random image.
 
-Homepage and product page basics are part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Homepage and product page basics are part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

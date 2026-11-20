@@ -136,7 +136,7 @@ Different inputs produce different shortlists. A brand that is well covered by e
 
 If the brands named by all three are always your competitors, my guide on [why ChatGPT recommends your competitor](/guides/why-chatgpt-doesnt-recommend-my-shopify-store) covers the usual reasons. Getting into that shared core on each AI is what my [AI search optimization for Shopify brands](/ai-search) is built around.
 
-If you want to see where your products stand on all three, that's what my [AI Search and Conversion Audit](/ai-search) covers. Or start with the free [AI Visibility Check](/ai-visibility-check).
+If you want to see where your products stand on all three, that's what [Close the Gap](/close-the-gap) covers. Or start with the [AI Visibility Check](/ai-visibility-check).
 
 ## How this was done
 

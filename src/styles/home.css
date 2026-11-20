@@ -783,6 +783,20 @@ img {
   color: var(--accent);
 }
 
+/* Price lines (the Close the Gap sizes) on the dark featured card. */
+.plan--featured .plan__tiers,
+.plan--featured .plan__tiers li {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.plan--featured .plan__tiers li {
+  color: var(--soft);
+}
+
+.plan--featured .plan__tiers strong {
+  color: #fff;
+}
+
 .lock {
   display: flex;
   flex-direction: column;
@@ -1351,4 +1365,107 @@ img {
 }
 .plan--featured .plan__alt:hover {
   color: #fff;
+}
+
+/* Close the Gap size cards: the commitment under the headline price, then the other ways to pay. */
+.plan__commit {
+  margin: -6px 0 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.plan__other {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--body);
+}
+.plan--featured .plan__commit {
+  color: #fff;
+}
+.plan--featured .plan__other {
+  color: var(--soft);
+}
+
+/* A smaller secondary button, under a main action. */
+.btn--small {
+  min-height: 42px;
+  padding: 0 20px;
+  font-size: 14px;
+}
+.plan__foot .btn--small {
+  align-self: center;
+}
+
+/* Small reassurance line under hero buttons. */
+.hero__note {
+  margin: 14px 0 0;
+  font-size: 14px;
+  color: var(--soft);
+}
+
+/* What the gap costs you: a labeled worked example beside three short points. */
+.gapcost {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: 28px;
+  align-items: start;
+}
+.gapcost__example {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--dark);
+  border-color: var(--dark);
+  color: #fff;
+}
+.gapcost__brand {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.gapcost__lines {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.gapcost__lines li {
+  padding: 14px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--bright);
+}
+.gapcost__lines li:nth-child(2) {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+}
+.gapcost__lines a {
+  color: var(--soft);
+}
+.gapcost__note {
+  margin: 0;
+  font-size: 13px;
+  color: var(--soft);
+}
+.gapcost__points {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+@media (max-width: 960px) {
+  .gapcost {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Toggled blocks on /start and /welcome. */
+.start-offer[hidden],
+.welcome-steps[hidden] {
+  display: none;
 }

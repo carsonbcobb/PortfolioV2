@@ -73,7 +73,7 @@ You don't have to name a competitor. "Our collagen vs typical bovine collagen" o
 4. **Link from product pages.** A shopper on the product page who's comparing should find it in one click.
 5. **Add a science or testing page if you sell on proof.** Only 43% of stores have one, and it's the evidence comparisons rely on.
 
-Comparison content and the rest of what AI reads about your brand are part of my [AI Search and Conversion Audit](/ai-search). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+Comparison content and the rest of what AI reads about your brand are part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
 ## How this was done
 

@@ -11,11 +11,11 @@ faq:
   - question: "Can you fix my subscription setup without migrating apps?"
     answer: "Usually, yes. Most of the leaks I find have nothing to do with which app you use. They're offer, widget and flow problems, and I fix them inside the app you already pay for. I only recommend a migration when the app is truly holding you back."
   - question: "Do you only do subscriptions?"
-    answer: "No. Subscriptions are one part of running a store. On the Full retainer I handle subscriptions along with product pages, speed, merchandising, email and everything else that moves revenue."
+    answer: "No. Subscriptions are one part of running a store. When I run your store day to day as your fractional head of ecommerce, I handle subscriptions along with product pages, speed, merchandising, email and everything else that moves revenue."
   - question: "What do I need to give you to get started?"
     answer: "Collaborator access to Shopify, access to your subscription app and Klaviyo, and a quick rundown of your hero products and margins. I handle the rest."
   - question: "Is there a long contract?"
-    answer: "The $1,500 AI Search and Conversion Audit is a one time project. Retainers have a 3 month minimum."
+    answer: "The $1,997 Full Store Audit is a one time project, and it covers your subscription setup. Close the Gap has a 3 month commitment, then runs month to month."
 ---
 
 Most Shopify stores I audit already have a subscription app installed. They're paying for it every month. And the subscription option is still quietly losing them money.
@@ -87,11 +87,11 @@ I build subscriber specific flows in Klaviyo: welcome, upcoming charge reminder,
 
 You don't need a giant project to fix this. There are two ways I usually start.
 
-**AI Search and Conversion Audit, $1,500.** I review your subscription setup along with the rest of the store, look for conversion leaks, and test how ChatGPT recommends you. You get a prioritized plan. The full $1,500 is credited toward a Build or your first retainer month, if you start within 30 days. This is the right fit if you want to see how I work before committing.
+**[Full Store Audit](/full-store-audit), $1,997.** I review your subscription setup along with every page of the store, cart and checkout, email flows and analytics, and rank every fix by what it's worth, walked through by recorded video. This is the right fit if you want to see how I work before committing.
 
-**Full, $7,500/month.** I lead subscriptions as part of the store, working at your direction: offer tests, widget changes, flows, cancellation insights, and everything else on the site that affects revenue. You get one person who knows your store deeply instead of a rotating cast. 3 month minimum.
+**Fractional head of ecommerce, custom.** I lead subscriptions as part of the store, working at your direction: offer tests, widget changes, flows, cancellation insights, and everything else on the site that affects revenue. You get one person who knows your store deeply instead of a rotating cast. [Email me what you need](mailto:carson@carsoncobb.com?subject=Fractional%20head%20of%20ecommerce) and I'll send back a scope and a price.
 
-There's also the **Growth** retainer at $4,500/month for ongoing AI search and conversion work. You can see every option on the [pricing page](/pricing).
+For AI search, there's [Close the Gap](/close-the-gap), at $2,500 a month with a 3 month commitment. You can see every published price on the [pricing page](/pricing).
 
 ## Proof: subscribe opt in from 7% to 32%
 
@@ -103,8 +103,8 @@ That's the kind of change that compounds. Every one of those subscribers is reve
 
 Across all my work, rebuilt pages average a 2.1x conversion lift, and I've supported more than $40M in client revenue. If you sell supplements or wellness products specifically, my page for [supplement brands](/supplement-brands) covers the extra challenges that come with that category.
 
-## Book a 20 minute intro call
+## Start with your gap report
 
-If you think your subscription program should be doing more, let's talk. We'll go over your goals and figure out the right next step, and if it isn't a fit, I'll say so.
+If you think your subscription program should be doing more, the [Full Store Audit](/full-store-audit) covers your subscription setup along with the rest of the store. To see how often ChatGPT recommends you against your top competitor, get your gap report. It takes about a minute, no login.
 
-[Book a 20 minute intro call](/ai-visibility-check#book)
+[Get your gap report](/ai-visibility-check)

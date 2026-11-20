@@ -1,0 +1,43 @@
+---
+// /welcome: where the payment links send buyers after checkout. /welcome?offer=full-store-audit shows the
+// Full Store Audit steps. Not in the nav, noindex.
+import ContentPage from '../layouts/ContentPage.astro';
+import { WELCOME_STEPS, WELCOME_AUDIT_STEPS, EMAIL } from '../data/site';
+
+const title = "You're in | Carson Cobb";
+const description = 'What happens next after you start Close the Gap or the Full Store Audit.';
+const sets = [
+  { key: 'program', steps: WELCOME_STEPS },
+  { key: 'full-store-audit', steps: WELCOME_AUDIT_STEPS },
+];
+---
+
+<ContentPage {title} {description} h1="You're in." intro="Here's what happens next." trail={[{ name: 'Welcome' }]} hideCta jsonLd={[]}>
+  <section class="section">
+    <div class="wrap stack">
+      {
+        sets.map((set, n) => (
+          <div class="grid grid--300 welcome-steps" data-offer={set.key} hidden={n !== 0}>
+            {set.steps.map((st, i) => (
+              <div class="step">
+                <span class="tag tag--accent">Step {i + 1}</span>
+                <h2 class="step__title">{st.title}</h2>
+                <p class="step__text">{st.text}</p>
+              </div>
+            ))}
+          </div>
+        ))
+      }
+      <p class="lede">
+        Questions? Email <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+      </p>
+    </div>
+  </section>
+</ContentPage>
+
+<script is:inline>
+  (function () {
+    var show = new URLSearchParams(location.search).get('offer') === 'full-store-audit' ? 'full-store-audit' : 'program';
+    document.querySelectorAll('.welcome-steps').forEach(function (b) { b.hidden = b.dataset.offer !== show; });
+  })();
+</script>

@@ -1,0 +1,61 @@
+---
+// One Close the Gap size card: the headline price with its commitment, the other ways to pay, the included
+// list, and Start now with "Get your gap report first" under it. Used on /close-the-gap, /pricing, /ai-search.
+import { PROGRAM_SIZES, sizeOtherPrices, CHECK_PATH, GAP_FIRST_LABEL } from '../data/site';
+
+interface Props {
+  size: (typeof PROGRAM_SIZES)[number];
+  /** An extra last line in the included list */
+  extra?: string;
+  /** Hide the buttons */
+  noButtons?: boolean;
+  /** Heading level for the size name */
+  id?: string;
+}
+
+const { size: z, extra, noButtons = false, id } = Astro.props;
+const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
+---
+
+<div class:list={['card', 'plan', { 'plan--featured': z.featured }]} id={id}>
+  <div class="plan__head">
+    <span class:list={['tag', { 'tag--dim': z.featured }]}>{z.fit}</span>
+    <h3 class="h3">{z.name}</h3>
+    <p class="plan__summary">{z.tagline}</p>
+    <div class="plan__price">
+      {usd(z.monthly)}<span>/month</span>
+    </div>
+    <p class="plan__commit">3 month commitment</p>
+    <p class="plan__other">{sizeOtherPrices(z)}</p>
+  </div>
+  <ul class="plan__list">
+    {
+      z.items.map((i) => (
+        <li>
+          <span aria-hidden="true">✓</span>
+          {i}
+        </li>
+      ))
+    }
+    {
+      extra && (
+        <li>
+          <span aria-hidden="true">✓</span>
+          {extra}
+        </li>
+      )
+    }
+  </ul>
+  {
+    !noButtons && (
+      <div class="plan__foot">
+        <a href={`/start?offer=${z.key}`} data-track="start_now" class:list={['btn', z.featured ? 'btn--accent' : 'btn--outline']}>
+          Start now
+        </a>
+        <a href={CHECK_PATH} data-track="visibility_check" class:list={['btn', 'btn--small', z.featured ? 'btn--ghost-dark' : 'btn--outline']}>
+          {GAP_FIRST_LABEL}
+        </a>
+      </div>
+    )
+  }
+</div>

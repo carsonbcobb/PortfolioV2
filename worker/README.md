@@ -1,6 +1,6 @@
 # AI Visibility Check (Cloudflare Worker)
 
-Backend for the AI Visibility Check lead tool on carsoncobb.com. A visitor enters a Shopify store URL, a product category and an email. The Worker runs four checks in parallel, streams progress as NDJSON, returns a scored report, and emails the visitor (and you) a copy.
+Backend for the gap report (the AI Visibility Check page) on carsoncobb.com. A visitor enters their Shopify store, their top competitor, their monthly revenue range and their email. The Worker runs four checks in parallel, counts the head to head on the same answers, streams progress as NDJSON, returns a scored report, and emails the visitor their report and you a notification.
 
 This folder is self contained. It is not part of the Astro build or the Amplify deploy.
 
@@ -26,13 +26,17 @@ Two extras, not scored:
 
 `GET /status` returns `{"paused": boolean, "limit": number}`.
 
-`POST /check` with `{"url","token"}` plus optional `"brand"` (the name the visitor confirmed), optional `"email"` and optional `"source"` (`referrer`, `landing`, `utm_source`, `utm_medium`, `utm_campaign`, saved by the site on the first visit; only used in the owner email and kept off the cached report) (token is the Turnstile response). Errors are JSON `{"error","message"}`: 400 `bad_request`, 400 `invalid_url`, 403 `turnstile`, 429 `rate_limited`, 503 `paused`. Success is a 200 `application/x-ndjson` stream of `progress` lines (visibility questions carry an `id`), `tick` lines (`{"type":"tick","id"}` when one question's answer is back), `section` lines and a final `done` line with a one time `ticket`. Cached reports stream a single `{"type":"done","report":...,"cached":true,"ticket":...}` line. When `email` is sent with the check, the report email goes out as before.
+`POST /check` (the gap report) with `{"url","competitor","revenue","email","token"}` plus optional `"name"`, `"brand"` and `"source"` (`referrer`, `landing`, `utm_source`, `utm_medium`, `utm_campaign`, saved by the site on the first visit). `competitor` is a website or brand name, `revenue` is `under_50k`, `50k_150k` or `150k_plus`, and token is the Turnstile response. Errors are JSON `{"error","message"}`: 400 `bad_request`, 400 `invalid_url`, 403 `turnstile`, 429 `rate_limited`, 503 `paused`. Success is a 200 `application/x-ndjson` stream of `progress` lines (visibility questions carry an `id`), `tick` lines (`{"type":"tick","id"}` when one question's answer is back), `section` lines and a final `done` line with a `result` id. Cached reports stream a single `{"type":"done","report":...,"cached":true,"result":...}` line.
 
-The step flow on the site uses three more routes:
+Every submission emails the owner (`NOTIFY_EMAIL`) with the subject `Gap report: store vs competitor (revenue range)`: store, competitor, revenue range, name, email, the head to head and a link to the full result. That includes cached reports, and stopped, failed or paused checks (those have no report link). The visitor gets their report with the next step for their revenue range (Close the Gap at $50K a month and up, the Full Store Audit under that).
 
-- `POST /detect` with `{"url"}` reads the homepage and products and returns `{"domain","brand","category","cached"}` so the visitor confirms instead of typing. It uses `SMALL_MODEL` for the category when `OPENAI_API_KEY` is set, else the most common Shopify product type. Limited to 30 per IP per day; it does not count toward the 3 checks.
-- `POST /email` with `{"ticket","email"}` sends the report emails for the check that issued the ticket (the page collects the email while the check runs). Each ticket sends once and expires after 24 hours: 400 `bad_request`, 404 `expired`.
-- `GET /report?domain=` returns `{"report"}` from the 7 day cache, or 404, so a reload reopens the report.
+The lead (email, name, revenue range, source) is saved in KV with the result (`result:<id>`, 90 days) and sent in the emails, and never put on the report, which is cached and public by domain.
+
+The site uses three more routes:
+
+- `GET /result?id=` returns `{"report"}` for one saved gap report, with that visitor's competitor and without the lead, or 404. The page and the owner email link open it.
+- `POST /detect` with `{"url"}` reads the homepage and returns `{"domain","brand","cached"}`. Limited to 30 per IP per day; it does not count toward the 3 checks. The current page does not use it.
+- `GET /report?domain=` returns `{"report"}` from the 7 day cache, or 404.
 
 Order of operations: validate fields, verify Turnstile, look up the 7 day cache (cache hits never count toward limits), check limits, resolve DNS, then run.
 
@@ -44,7 +48,7 @@ Vars (in `wrangler.toml`):
 | --- | --- |
 | `DAILY_CHECK_LIMIT` | `50` (fresh checks per UTC day across all visitors) |
 | `ALLOWED_ORIGINS` | `https://www.carsoncobb.com,https://carsoncobb.com,http://localhost:4321` |
-| `BOOKING_URL` | `https://calendar.app.google/arLBYoErUBfsuqfN9` |
+| `SITE_URL` | `https://www.carsoncobb.com` (result links in emails) |
 | `FROM_EMAIL` | `Carson Cobb <check@carsoncobb.com>` |
 | `NOTIFY_EMAIL` | `carson@carsoncobb.com` |
 | `SMALL_MODEL` | `gpt-6-luna` (question writing, parsing, grading, findings) |
