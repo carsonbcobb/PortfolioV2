@@ -421,19 +421,129 @@ export const AFTER_PAY = {
     'You get a recorded video walking through every fix.',
   ],
 };
-export const WELCOME_STEPS = [
-  { title: 'Watch your inbox', text: "I'll email you a Shopify collaborator request within 1 business day." },
-  {
-    title: 'Tell me about your brand',
-    text: 'Reply to that email with your top products, your main competitors, and who on your team approves outside pitches and placements.',
+// /welcome: where the payment links land. Lines with `by` change with the offer in the URL: focus, full, or
+// both (no offer). Lines with `only: 'full'` show for full and both.
+type ByOffer = { focus: string; full: string; both: string };
+type WelcomeLine = { title: string; text: string | ByOffer; when?: string };
+const COLLAB_STEP: WelcomeLine = {
+  when: 'Within 1 business day',
+  title: 'Approve my collaborator request',
+  text: "I send a Shopify collaborator request using the store and code you entered at checkout. Shopify emails you a link to approve it. If you skipped the code, I'll ask for it by email.",
+};
+const WELCOME_CLOSING = {
+  title: 'Questions before my first email?',
+  text: "Email me anytime and I'll get back to you.",
+  button: 'Email Carson',
+  href: `mailto:${EMAIL}?subject=Question%20about%20getting%20started`,
+};
+export const WELCOME = {
+  program: {
+    sub: "Thanks for starting Close the Gap. Here's exactly what happens over the next two weeks, and the few things I need from you. Your receipt is on its way from Stripe.",
+    timelineTitle: 'Your first two weeks',
+    timeline: [
+      COLLAB_STEP,
+      {
+        when: 'Same email',
+        title: 'Two quick details',
+        text: 'Reply to my welcome email with your top products and who on your team approves outside pitches and placements.',
+      },
+      {
+        when: 'Week 1',
+        title: 'I map your gap',
+        text: 'I run your buyer questions through ChatGPT, Gemini and Google AI Mode, record who gets recommended and why, and benchmark your product pages against my dataset of more than 600 Shopify stores.',
+      },
+      {
+        when: 'Within 2 weeks',
+        title: 'Your first competitor report',
+        text: "Where each competitor beats you, product by product, what it's worth, and what we fix first.",
+      },
+      {
+        when: 'Month 1',
+        title: 'The fixes start',
+        text: {
+          focus: 'Every on site fix comes to your team written and ready to ship.',
+          full: 'I implement the on site fixes myself and start the conversion work on the pages AI sends shoppers to.',
+          both: 'On Focus, every on site fix comes to your team written and ready to ship. On Full, I implement them myself.',
+        },
+      },
+    ] as WelcomeLine[],
+    checklistIntro: "You can do all of this from the emails I send. Here's the full list so nothing surprises you.",
+    checklist: [
+      { text: 'Approve the Shopify collaborator request' },
+      { text: `Google Analytics 4: add ${EMAIL} as a Viewer` },
+      { text: `Google Search Console: add ${EMAIL} as a user` },
+      { text: 'Your top products, and who approves outside pitches and placements' },
+      { text: 'Access to your post purchase survey app, if you use one', only: 'full' as const },
+    ],
+    work: [
+      {
+        title: 'Updates by email and video',
+        text: 'You get written reports and recorded videos you can watch when it suits you. No meetings to schedule.',
+      },
+      {
+        title: 'Fast replies',
+        text: {
+          focus: 'Replies within 2 business days.',
+          full: 'Same business day replies.',
+          both: 'Same business day replies on Full, within 2 business days on Focus.',
+        },
+      },
+      {
+        title: 'You stay in control',
+        text: "Nothing that costs money or speaks for your brand happens without your team's approval.",
+      },
+    ] as WelcomeLine[],
+    termsTitle: 'Billing and terms',
+    terms: [
+      'Monthly plans bill on the same date each month. Your receipt comes from Stripe.',
+      `3 month plans continue month to month after the commitment. Cancel anytime after that by emailing ${EMAIL} with 30 days notice.`,
+      "If I don't deliver everything listed for month 1, you don't pay for month 2. If you paid upfront, the cost of month 2 is credited toward your next month of service.",
+    ],
   },
-  { title: 'Your first report', text: "You'll get your first competitor report within your first 2 weeks." },
-];
-export const WELCOME_AUDIT_STEPS = [
-  { title: 'Watch your inbox', text: AFTER_PAY.audit[0] },
-  { title: 'Your audit', text: AFTER_PAY.audit[1] },
-  { title: 'Your walkthrough', text: AFTER_PAY.audit[2] },
-];
+  audit: {
+    sub: "Thanks for starting your Full Store Audit. Here's exactly what happens next, and the access I need so I can start. Your receipt is on its way from Stripe.",
+    timelineTitle: 'From access to your audit',
+    timeline: [
+      COLLAB_STEP,
+      {
+        when: 'Same day',
+        title: 'Share your tools',
+        text: 'Add me to the tools on the checklist below, so the audit covers your whole funnel, not just the pages.',
+      },
+      {
+        when: 'Within 2 business days of access',
+        title: 'Your audit',
+        text: 'Every page on mobile and desktop, checkout, email flows, analytics and how AI reads your products, with every fix ranked by what it\'s worth and the math behind each estimate.',
+      },
+      {
+        when: 'With your audit',
+        title: 'Your walkthrough',
+        text: 'A recorded video walking through every fix, so your team knows exactly what to do first.',
+      },
+    ] as WelcomeLine[],
+    checklistIntro: `The more of these I can see, the more the audit can find. Add ${EMAIL} to each one you use.`,
+    checklist: [
+      { text: 'Approve the Shopify collaborator request' },
+      { text: 'Google Analytics 4: Viewer access' },
+      { text: 'Your email platform (Klaviyo or similar): view access' },
+      { text: 'Your heatmap or session recording tool (Clarity, Hotjar or similar), if you use one' },
+      { text: 'Your subscription app, if you sell subscriptions' },
+    ],
+    work: [
+      {
+        title: 'Questions by email',
+        text: "If anything comes up while I'm working, I'll email you. Reply whenever it suits you.",
+      },
+      {
+        title: 'A video, not a meeting',
+        text: 'Your audit comes with a recorded walkthrough you can share with your team.',
+      },
+    ] as WelcomeLine[],
+    termsTitle: 'Terms',
+    terms: ['Your receipt comes from Stripe.', "Refunds aren't offered once the audit has started."],
+  },
+  closing: WELCOME_CLOSING,
+};
 
 // The AI Visibility Check, as an offer on /pricing.
 export const CHECK_OFFER = {

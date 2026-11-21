@@ -4,22 +4,23 @@
 // is treated as missing, and the button falls back to an email to carson@carsoncobb.com instead.
 //
 // In Stripe, set each link's "After payment" redirect to:
-//   Close the Gap links:     https://www.carsoncobb.com/welcome
+//   Focus links:             https://www.carsoncobb.com/welcome?offer=focus
+//   Full links:              https://www.carsoncobb.com/welcome?offer=full
 //   Full Store Audit link:   https://www.carsoncobb.com/welcome?offer=full-store-audit
 
 export const PAYMENT_LINKS = {
   // Close the Gap: Focus
-  focus3mo: 'PAYMENT_LINK_FOCUS_3MO', // $2,500/month, 3 month commitment
-  focusUpfront: 'PAYMENT_LINK_FOCUS_UPFRONT', // $7,000 paid upfront for 3 months
-  focusFlexible: 'PAYMENT_LINK_FOCUS_FLEXIBLE', // $3,000/month, no commitment
+  focus3mo: 'https://buy.stripe.com/4gMeVcbDc3rD7Kv0TMawo02', // $2,500/month, 3 month commitment
+  focusUpfront: 'https://buy.stripe.com/6oU4gyePofalgh1byqawo03', // $7,000 paid upfront for 3 months
+  focusFlexible: 'https://buy.stripe.com/7sY4gydLk0fr9SD8meawo04', // $3,000/month, no commitment
 
   // Close the Gap: Full
-  full3mo: 'PAYMENT_LINK_FULL_3MO', // $5,000/month, 3 month commitment
-  fullUpfront: 'PAYMENT_LINK_FULL_UPFRONT', // $13,500 paid upfront for 3 months
-  fullFlexible: 'PAYMENT_LINK_FULL_FLEXIBLE', // $6,000/month, no commitment
+  full3mo: 'https://buy.stripe.com/9B66oGfTs2nze8T1XQawo05', // $5,000/month, 3 month commitment
+  fullUpfront: 'https://buy.stripe.com/4gMfZg36GaU58OzgSKawo06', // $13,500 paid upfront for 3 months
+  fullFlexible: 'https://buy.stripe.com/cNieVccHgfal5CngSKawo07', // $6,000/month, no commitment
 
   // Full Store Audit
-  fullStoreAudit: 'PAYMENT_LINK_FULL_STORE_AUDIT', // $1,997 one time
+  fullStoreAudit: 'https://buy.stripe.com/6oU9AS6iS8LX6Gr5a2awo08', // $1,997 one time
 } as const;
 
 export type PaymentKey = keyof typeof PAYMENT_LINKS;

@@ -1,43 +1,236 @@
 ---
-// /welcome: where the payment links send buyers after checkout. /welcome?offer=full-store-audit shows the
-// Full Store Audit steps. Not in the nav, noindex.
+// /welcome: where the Stripe payment links send buyers after checkout. Not in the nav or the sitemap,
+// noindex, nofollow, and the header's gap report button is hidden.
+// ?offer=full-store-audit shows the audit version. ?offer=focus or ?offer=full shows that size's lines,
+// and no offer shows the Close the Gap version with both sizes' lines. Every line is in WELCOME (site.ts).
+// The page renders the no offer version, and the inline script switches it for the offer in the URL.
 import ContentPage from '../layouts/ContentPage.astro';
-import { WELCOME_STEPS, WELCOME_AUDIT_STEPS, EMAIL } from '../data/site';
+import { WELCOME } from '../data/site';
 
 const title = "You're in | Carson Cobb";
 const description = 'What happens next after you start Close the Gap or the Full Store Audit.';
+const { closing } = WELCOME;
+
+// Each block lists the offers it shows for.
+const PROGRAM_V = 'both focus full';
 const sets = [
-  { key: 'program', steps: WELCOME_STEPS },
-  { key: 'full-store-audit', steps: WELCOME_AUDIT_STEPS },
+  { v: PROGRAM_V, d: WELCOME.program },
+  { v: 'audit', d: WELCOME.audit },
 ];
+const SIZES = ['focus', 'full', 'both'] as const;
+const shown = (v: string) => v.split(' ').includes('both');
+const pick = (t: unknown, k: (typeof SIZES)[number]) => (t as Record<string, string>)[k];
 ---
 
-<ContentPage {title} {description} h1="You're in." intro="Here's what happens next." trail={[{ name: 'Welcome' }]} hideCta jsonLd={[]}>
-  <section class="section">
-    <div class="wrap stack">
-      {
-        sets.map((set, n) => (
-          <div class="grid grid--300 welcome-steps" data-offer={set.key} hidden={n !== 0}>
-            {set.steps.map((st, i) => (
-              <div class="step">
-                <span class="tag tag--accent">Step {i + 1}</span>
-                <h2 class="step__title">{st.title}</h2>
-                <p class="step__text">{st.text}</p>
-              </div>
-            ))}
+<ContentPage {title} {description} h1="You're in." eyebrow="Welcome" trail={[{ name: 'Welcome' }]} hideCta hideNavCta jsonLd={[]}>
+  <Fragment slot="hero">
+    {sets.map((s) => <p class="hero__sub" data-v={s.v} hidden={!shown(s.v)}>{s.d.sub}</p>)}
+  </Fragment>
+
+  {
+    sets.map((s) => (
+      <div class="welcome" data-v={s.v} hidden={!shown(s.v)}>
+        <section class="section" aria-labelledby={`next-${s.v === 'audit' ? 'audit' : 'program'}`}>
+          <div class="wrap stack">
+            <div class="head">
+              <p class="eyebrow">What happens next</p>
+              <h2 class="h2" id={`next-${s.v === 'audit' ? 'audit' : 'program'}`}>{s.d.timelineTitle}</h2>
+            </div>
+            <ol class="timeline">
+              {s.d.timeline.map((st, i) => (
+                <li class="timeline__item">
+                  <span class="timeline__num" aria-hidden="true">{i + 1}</span>
+                  <div class="timeline__body">
+                    <p class="tag tag--accent">{st.when}</p>
+                    <h3 class="step__title">{st.title}</h3>
+                    {typeof st.text === 'string' ? (
+                      <p class="step__text">{st.text}</p>
+                    ) : (
+                      SIZES.map((k) => (
+                        <p class="step__text" data-v={k} hidden={k !== 'both'}>
+                          {pick(st.text, k)}
+                        </p>
+                      ))
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ol>
           </div>
-        ))
-      }
-      <p class="lede">
-        Questions? Email <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-      </p>
+        </section>
+
+        <section class="section section--sand">
+          <div class="wrap stack">
+            <div class="head">
+              <p class="eyebrow">What I need from you</p>
+              <h2 class="h2">Access checklist</h2>
+              <p class="lede">{s.d.checklistIntro}</p>
+            </div>
+            <div class="card welcome__card">
+              <ul class="plan__list welcome__list">
+                {s.d.checklist.map((c) => (
+                  <li data-v={'only' in c ? 'full both' : undefined}>
+                    <span aria-hidden="true">✓</span>
+                    <div>
+                      {c.text}
+                      {'only' in c && <strong class="tag tag--accent welcome__only">Full</strong>}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="wrap stack">
+            <div class="head">
+              <p class="eyebrow">How we work</p>
+              <h2 class="h2">No calls needed</h2>
+            </div>
+            <div class={`grid ${s.d.work.length === 3 ? 'grid--three' : 'grid--320'}`}>
+              {s.d.work.map((w) => (
+                <div class="card welcome__card">
+                  <h3 class="step__title">{w.title}</h3>
+                  {typeof w.text === 'string' ? (
+                    <p class="step__text">{w.text}</p>
+                  ) : (
+                    SIZES.map((k) => (
+                      <p class="step__text" data-v={k} hidden={k !== 'both'}>
+                        {pick(w.text, k)}
+                      </p>
+                    ))
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section class="section section--sand">
+          <div class="wrap stack">
+            <div class="head">
+              <p class="eyebrow">Good to know</p>
+              <h2 class="h2">{s.d.termsTitle}</h2>
+            </div>
+            <ul class="welcome__terms">
+              {s.d.terms.map((t) => (
+                <li>{t}</li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      </div>
+    ))
+  }
+
+  <section class="dark cta">
+    <div class="wrap cta__inner">
+      <h2 class="h2 cta__title">{closing.title}</h2>
+      <p class="cta__sub">{closing.text}</p>
+      <div class="btn-row btn-row--center">
+        <a href={closing.href} class="btn btn--accent">{closing.button}</a>
+      </div>
     </div>
   </section>
 </ContentPage>
 
 <script is:inline>
   (function () {
-    var show = new URLSearchParams(location.search).get('offer') === 'full-store-audit' ? 'full-store-audit' : 'program';
-    document.querySelectorAll('.welcome-steps').forEach(function (b) { b.hidden = b.dataset.offer !== show; });
+    var o = new URLSearchParams(location.search).get('offer');
+    var v = o === 'full-store-audit' ? 'audit' : o === 'focus' || o === 'full' ? o : 'both';
+    // A block shows when its list has this offer. Close the Gap blocks list both, focus and full.
+    document.querySelectorAll('[data-v]').forEach(function (el) {
+      el.hidden = el.dataset.v.split(' ').indexOf(v) < 0;
+    });
   })();
 </script>
+
+<style>
+  [data-v][hidden] {
+    display: none !important;
+  }
+  .timeline {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    max-width: 760px;
+  }
+  .timeline__item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 20px;
+    padding-bottom: 36px;
+  }
+  .timeline__item:last-child {
+    padding-bottom: 0;
+  }
+  .timeline__item:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 21px;
+    top: 48px;
+    bottom: 4px;
+    width: 2px;
+    background: var(--line);
+  }
+  .timeline__num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--dark);
+    color: #fff;
+    font-family: var(--mono);
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .timeline__body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 2px;
+  }
+  .welcome__card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .welcome__list {
+    font-size: 17px;
+    gap: 14px;
+  }
+  .welcome__only {
+    margin-left: 8px;
+    white-space: nowrap;
+  }
+  .welcome__terms {
+    margin: 0;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 760px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--body);
+  }
+  @media (max-width: 520px) {
+    .timeline__item {
+      grid-template-columns: 36px minmax(0, 1fr);
+      gap: 14px;
+    }
+    .timeline__item:not(:last-child)::before {
+      left: 17px;
+      top: 40px;
+    }
+    .timeline__num {
+      width: 36px;
+      height: 36px;
+      font-size: 14px;
+    }
+  }
+</style>
