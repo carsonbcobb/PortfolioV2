@@ -12,6 +12,10 @@ interface Props {
   title: string;
   description: string;
   h1: string;
+  /** Small red uppercase label above the H1, shown instead of the breadcrumb */
+  eyebrow?: string;
+  /** Hide the header's gap report button (pages for people who already paid) */
+  hideNavCta?: boolean;
   /** Short intro under the H1 */
   intro?: string;
   /** Breadcrumb trail after Home; the last item is this page */
@@ -34,6 +38,8 @@ const {
   title,
   description,
   h1,
+  eyebrow,
+  hideNavCta = false,
   intro,
   trail,
   dates,
@@ -49,11 +55,12 @@ const updated =
 ---
 
 <HomeLayout {title} {description} {jsonLd}>
-  <SiteNav />
+  <SiteNav hideCta={hideNavCta} />
 
   <main id="main">
     <section class="dark" aria-label="Introduction">
       <div class="wrap page-hero">
+        {eyebrow ? <p class="eyebrow">{eyebrow}</p> : (
         <nav class="crumbs" aria-label="Breadcrumb">
           <ol>
             <li><a href="/">Home</a></li>
@@ -64,6 +71,7 @@ const updated =
             }
           </ol>
         </nav>
+        )}
         <h1 class="page-hero__h1">{h1}</h1>
         {intro && <p class="hero__sub">{intro}</p>}
         <slot name="hero" />

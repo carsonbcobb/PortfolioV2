@@ -2,6 +2,7 @@
 // Dark top nav on every page: real pages only, plus the AI Visibility Check button.
 import { NAV_LINKS, CHECK_PATH, HEADER_CTA_LABEL } from '../data/site';
 
+const { hideCta = false } = Astro.props as { hideCta?: boolean };
 const here = Astro.url.pathname.replace(/(\.html|\/)$/, '') || '/';
 ---
 
@@ -17,6 +18,6 @@ const here = Astro.url.pathname.replace(/(\.html|\/)$/, '') || '/';
         ))
       }
     </div>
-    <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent nav__cta">{HEADER_CTA_LABEL}</a>
+    {!hideCta && <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent nav__cta">{HEADER_CTA_LABEL}</a>}
   </nav>
 </header>
