@@ -86,7 +86,8 @@ export const HOME_STATS = [
   { value: '2.1x', label: 'average conversion lift on rebuilt pages' },
 ];
 
-export const VERTICALS = ['Wellness', 'Supplements', 'Beauty', 'Skincare', 'Food and beverage'];
+export const VERTICALS = ['Fitness', 'Apparel', 'Supplements', 'Beauty and skincare', 'Food and beverage', 'Pet', 'Travel', 'and more'];
+export const VERTICALS_NOTE = 'If people compare your product before they buy it, AI is already recommending someone in your market.';
 
 // One proof line under the hero buttons.
 export const HERO_PROOF = ['50+ AI search projects', '30+ sites optimized for AI search', '50+ Shopify stores'];
@@ -245,7 +246,7 @@ export const HOME_RESULTS = [
 
 export const ABOUT = {
   heading: 'Why me.',
-  text: "I'm Carson. I've led AI search work for national brands in vitamins, skincare, cosmetics, food, pet and wellness, from finding the gap to closing it. Before that I spent years running conversion and testing programs, affiliate programs and full rebuilds for Shopify brands from seed stage startups to billion dollar companies. That combination is the point: I know what makes AI recommend a brand, and I know what makes the visitor buy.",
+  text: "I'm Carson. I've led AI search work for national brands in fitness, apparel, vitamins, skincare, cosmetics, food, pet, wellness and more, from finding the gap to closing it. Before that I spent years running conversion and testing programs, affiliate programs and full rebuilds for Shopify brands from seed stage startups to billion dollar companies. That combination is the point: I know what makes AI recommend a brand, and I know what makes the visitor buy.",
   where: 'Based in California. Working remotely with brands anywhere, in English.',
 };
 
@@ -299,7 +300,7 @@ export const PROGRAM = {
   after:
     'After 90 days, the program continues month to month: reports, model watch, new questions and new competitors as they appear, and ongoing source work. Brands with only a few products go deeper on those products, not wider.',
   guarantee: "If I don't deliver everything listed for month 1, you don't pay for month 2.",
-  guaranteeNote: "The guarantee covers the month 1 deliverables listed above, not what AI says. No one controls AI answers.",
+  guaranteeNote: "If you paid upfront, the cost of month 2 is credited toward your next month of service. The guarantee covers the month 1 deliverables listed above, not what AI says. No one controls AI answers.",
   scope: 'Larger catalogs or more competitors are quoted separately.',
   continues:
     'After the first 3 months, both continue month to month at the committed price ($2,500 or $5,000), with 30 days written notice to cancel.',

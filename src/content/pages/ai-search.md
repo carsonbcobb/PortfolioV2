@@ -24,7 +24,7 @@ faq:
   - question: "How much does it cost?"
     answer: "Close the Gap is $2,500 a month for up to 3 products and 3 competitors (Focus), or $5,000 a month for up to 5 products and 6 competitors (Full), each with a 3 month commitment. After that it continues month to month."
   - question: "We have our own developers. Can you work with them?"
-    answer: "Yes. In Close the Gap I implement the on site fixes myself, or, if you prefer, I hand your developers clear specs and check the work before it goes live. The source work and the competitor reports stay with me."
+    answer: "Yes. On Focus, I hand your developers every fix written and ready to ship. On Full, I implement the on site fixes myself and work alongside your developers where needed."
   - question: "Can apps on my store confuse AI?"
     answer: "Often. Review, bundle and subscription apps can each describe the same product in their own way, so AI sees conflicting prices, ratings or names for one product. When the facts conflict, AI is less sure what you sell and less likely to recommend it. Cleaning that up is part of the store work."
   - question: "How do I see where I stand today?"

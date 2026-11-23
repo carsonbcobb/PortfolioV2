@@ -135,7 +135,7 @@ The price depends on your store and what you want covered, so [email me what you
 
 ## Who this is a good fit for
 
-This works best for founders of growing brands who sell on Shopify and feel the store has outgrown the way it's being run. It's a strong fit in categories where reorders and order value matter, like [supplements](/supplement-brands), [beauty and skincare](/beauty-skincare-brands), [food and beverage](/food-beverage-brands) and [pet products](/pet-brands).
+This works best for founders of growing brands who sell on Shopify and feel the store has outgrown the way it's being run. It's a strong fit for any brand where reorders and order value matter, like [supplements](/supplement-brands), [beauty and skincare](/beauty-skincare-brands), [food and beverage](/food-beverage-brands), [pet products](/pet-brands) and more.
 
 It's probably not a fit if you want someone to only run ads, or if you need a team of five on day one.
 
