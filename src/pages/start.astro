@@ -3,7 +3,7 @@
 // (for Close the Gap) the three ways to pay. "Continue to payment" opens the matching link from
 // src/config/payment-links.ts, or an email while that link is still a placeholder. Not in the nav, noindex.
 import ContentPage from '../layouts/ContentPage.astro';
-import { PROGRAM, PROGRAM_SIZES, FULL_AUDIT, TERMS, AFTER_PAY, EMAIL, CHECK_PATH, GAP_FIRST_LABEL } from '../data/site';
+import { PROGRAM, PROGRAM_SIZES, FULL_AUDIT, TERMS, AFTER_PAY, EMAIL, startGuarantee } from '../data/site';
 import { paymentHref, type PaymentKey } from '../config/payment-links';
 
 const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
@@ -26,10 +26,10 @@ const sizeOffer = (z: (typeof PROGRAM_SIZES)[number]): Offer => ({
   fit: z.fit,
   tagline: z.tagline,
   items: z.items,
-  steps: AFTER_PAY.program,
+  steps: AFTER_PAY[z.key as 'focus' | 'full'],
   terms: [
     'The commitment: 3 months with the 3 month commitment or paid upfront, then month to month at the same monthly price with 30 days written notice to cancel. No commitment is month to month from the start.',
-    `Month 1 delivery guarantee: ${PROGRAM.guarantee} ${PROGRAM.guaranteeNote}`,
+    startGuarantee(z.key as 'focus' | 'full'),
     `Scope: ${PROGRAM.scope}`,
     `Refunds: ${TERMS.refunds}`,
   ],
@@ -163,7 +163,6 @@ const questions = `mailto:${EMAIL}?subject=${encodeURIComponent('Question before
               <a href={paymentHref(o.options[0].key, optName(o, o.options[0]))} class="btn btn--accent" data-pay data-track="continue_to_payment">
                 Continue to payment
               </a>
-              <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--outline btn--small">{GAP_FIRST_LABEL}</a>
               <p class="start__questions">
                 Questions first? Email <a href={questions}>{EMAIL}</a>
               </p>
