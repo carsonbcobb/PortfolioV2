@@ -19,8 +19,11 @@ const columns = [
     ],
   },
   {
-    title: 'Industries',
-    links: CONTENT_PAGES.filter((p) => p.kind === 'industry').map((p) => link(p.slug)),
+    title: 'By product area',
+    links: [
+      ...CONTENT_PAGES.filter((p) => p.kind === 'industry').map((p) => link(p.slug)),
+      { href: '/ai-search', label: 'Every other product area' },
+    ],
   },
   {
     title: 'Resources',

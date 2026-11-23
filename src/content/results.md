@@ -23,14 +23,13 @@ Want this work on your store every month? That's my [fractional head of ecommerc
 - **50+** Shopify stores built, rebuilt or run
 - **$40M+** in client revenue supported
 - **2.1x** average conversion lift on rebuilt pages
-- **500+** A/B tests designed and shipped
 - **100+** landing pages built for paid, affiliate and email traffic
 - **15+** industries, from startups to billion dollar brands
 
 ## What it takes, and what it's produced
 
 ### SEO, AEO and AI search
-Shoppers now ask ChatGPT, Perplexity, Gemini and Google's AI results what to buy, and those tools recommend the brands whose data they can read and trust. I audit stores for AI search, write the plan, and then do the work, for national brands in vitamins, skincare, cosmetics, food, pet and wellness. That means product data built from each store's real products, one consistent story for every product where apps had told conflicting ones, product pages that answer the questions buyers ask, pages AI can reach, and the SEO fundamentals underneath it all.
+Shoppers now ask ChatGPT, Perplexity, Gemini and Google's AI results what to buy, and those tools recommend the brands whose data they can read and trust. I audit stores for AI search, write the plan, and then do the work, for national brands in fitness, apparel, vitamins, skincare, cosmetics, food, pet, wellness and more. That means product data built from each store's real products, one consistent story for every product where apps had told conflicting ones, product pages that answer the questions buyers ask, pages AI can reach, and the SEO fundamentals underneath it all.
 
 - **50+** AI search projects
 - **30+** Sites optimized for AI search

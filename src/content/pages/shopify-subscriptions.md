@@ -101,7 +101,7 @@ I worked through the same list on this page: which products had plans attached, 
 
 That's the kind of change that compounds. Every one of those subscribers is revenue you don't have to buy again with ads.
 
-Across all my work, rebuilt pages average a 2.1x conversion lift, and I've supported more than $40M in client revenue. If you sell supplements or wellness products specifically, my page for [supplement brands](/supplement-brands) covers the extra challenges that come with that category.
+Across all my work, rebuilt pages average a 2.1x conversion lift, and I've supported more than $40M in client revenue. If you sell supplements, my page for [supplement brands](/supplement-brands) covers the extra challenges that come with them.
 
 ## Start with your gap report
 
