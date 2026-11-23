@@ -269,6 +269,7 @@ export const PROGRAM = {
       when: 'Month 1',
       title: 'Find the gap and fix what you control',
       items: [
+        'An AI audit of your entire site, not just the product pages: the questions AI needs answered about your products before it recommends them, and whether your pages and structured data answer them in a way AI can read, extract and quote.',
         'A head to head against your main competitors across your top products: who gets recommended, how often, how each brand is described, and which sources drive each pick, on ChatGPT, Gemini and Google AI Mode.',
         'Every on site fix: product data and structured data, product pages that answer the questions buyers ask AI, and comparison and FAQ content. On Focus, every fix comes to your team written and ready to ship. On Full, I implement them.',
         'On Full, I also make sure the product pages close the sale when AI sends a shopper.',
@@ -317,6 +318,10 @@ export const PROGRAM = {
 
 // The two sizes. monthly is the price with a 3 month commitment; upfront is 3 months paid in advance;
 // flexible is the price with no commitment. The same lists show on /close-the-gap, /pricing, /ai-search and /start.
+// First on both plan lists: every engagement starts with an AI audit of the whole site.
+const AI_AUDIT_ITEM =
+  'An AI audit of your entire site: the questions AI needs answered about your products before it recommends them, whether AI can read, extract and quote your pages and structured data, and the sources AI relies on for your products';
+
 export const PROGRAM_SIZES = [
   {
     key: 'focus',
@@ -326,8 +331,9 @@ export const PROGRAM_SIZES = [
     tagline: 'I find the gap and hand your team every fix, ready to ship.',
     brief: 'I find the gap and hand your team every fix, ready to ship. Up to 3 products against up to 3 competitors, with a competitor report every 2 weeks.',
     items: [
+      AI_AUDIT_ITEM,
       'Up to 3 products against up to 3 competitors',
-      'Up to 15 buyer questions, tested in ChatGPT, Gemini and Google AI Mode. Each question is asked more than once, because AI answers change between runs.',
+      'Tested the way real shoppers ask, in ChatGPT, Gemini and Google AI Mode: up to 15 shopper questions, each asked more than once and in different wording, refreshed every month as what shoppers ask changes',
       'Every on site fix written and ready for your team to ship: product data, structured data, product page copy, comparison and FAQ content',
       'A ranked list of the sources AI relies on for your products, with what to do about each one',
       'A competitor report every 2 weeks',
@@ -346,8 +352,9 @@ export const PROGRAM_SIZES = [
     tagline: 'I find the gap and close it for you.',
     brief: 'I find the gap and close it for you. Up to 5 products against up to 6 competitors, with a weekly competitor report and model watch.',
     items: [
+      AI_AUDIT_ITEM,
       'Up to 5 products against up to 6 competitors',
-      "Up to 30 buyer questions, tested in ChatGPT, Gemini and Google AI Mode, with the list reviewed every month as your buyers' questions change",
+      'Tested the way real shoppers ask, in ChatGPT, Gemini and Google AI Mode: up to 30 shopper questions, each asked more than once and in different wording, refreshed every month as what shoppers ask changes',
       'On site fixes implemented by me: product data, structured data, product pages, comparison and FAQ content',
       'Conversion work on the pages AI sends shoppers to, so the shoppers AI sends actually buy',
       'Sources work done for you: retailer and marketplace listings, the review sites and Reddit threads AI cites, and pitches to editorial sites where they make sense',
@@ -369,7 +376,7 @@ export const SIZE_COMPARE = {
   title: 'Which size fits',
   rows: [
     ['Who does the fixes', 'Your team, from my written fixes', 'I do'],
-    ['Buyer questions', 'Up to 15', 'Up to 30'],
+    ['Shopper questions', 'Up to 15', 'Up to 30'],
     ['Products and competitors', 'Up to 3 and 3', 'Up to 5 and 6'],
     ['Conversion work on AI landing pages', 'No', 'Yes'],
     ['Sources work', 'Ranked list', 'Done for you'],
@@ -410,11 +417,23 @@ export const FULL_AUDIT = {
 };
 
 // What happens after paying: on /start before the payment button, and on /welcome after checkout.
+const AFTER_PAY_FIRST =
+  'Within 1 business day, I send a Shopify collaborator request and a short email asking for your top products, your main competitors, and who approves outside pitches and placements.';
+const AFTER_PAY_AUDIT =
+  'I start your AI audit: your entire site, and your products against your competitors in ChatGPT, Gemini and Google AI Mode.';
+// The guarantee on /start, which names the month 1 deliverables because that page doesn't list month 1.
+export const startGuarantee = (key: 'focus' | 'full') =>
+  `Month 1 delivery guarantee: If I don't deliver your AI audit, your first competitor reports and the first round of on site fixes${key === 'focus' ? ', ready for your team to ship,' : ''} in month 1, you don't pay for month 2. If you paid upfront, the cost of month 2 is credited toward your next month of service. The guarantee covers these deliverables, not what AI says. No one controls AI answers.`;
 export const AFTER_PAY = {
-  program: [
-    'Within 1 business day, I send a Shopify collaborator request and a short email asking for your top products, your main competitors, and who approves outside pitches and placements.',
-    'I start the head to head right away.',
-    'Your first competitor report arrives within your first 2 weeks.',
+  full: [
+    AFTER_PAY_FIRST,
+    AFTER_PAY_AUDIT,
+    'Your audit findings and first competitor report arrive within your first 2 weeks, and the fixes start right after.',
+  ],
+  focus: [
+    AFTER_PAY_FIRST,
+    AFTER_PAY_AUDIT,
+    'Your audit findings and first competitor report arrive within your first 2 weeks, and your team gets the first fixes, ready to ship, right after.',
   ],
   audit: [
     'Within 1 business day, I send a Shopify collaborator request and ask for access to your email platform, analytics and subscription app.',
@@ -616,7 +635,7 @@ const MEASURE_ANSWER =
 const SIZE_FAQS = [
   { q: "What's the difference between Focus and Full?", a: DIFF_ANSWER },
   {
-    q: 'Why only 15 or 30 buyer questions?',
+    q: 'Why only 15 or 30 shopper questions?',
     a: "For a brand with a handful of products, the questions that actually move sales usually number in the dozens, not the hundreds. I test each one more than once in every tool, because AI answers change between runs. Fewer questions tested properly beat hundreds tested once.",
   },
   { q: 'How do you measure AI traffic when most of it shows up as direct?', a: MEASURE_ANSWER },
