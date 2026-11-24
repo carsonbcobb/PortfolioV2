@@ -200,6 +200,12 @@ const jsonLd = [homeSchema({ title, description, faqs })];
           The research behind this: <a href="/reports/ai-search-benchmarks-shopify-2026">Shopify AI search benchmarks 2026</a>,
           <a href="/reports/chatgpt-gemini-ai-mode-brand-overlap-2026">ChatGPT vs Gemini vs Google AI Mode</a>
           and <a href="/reports/ai-search-statistics-2026">AI search statistics 2026</a>.
+          {
+            // Featured through December 2, 2026. Drops off at the first build after that date.
+            new Date() < new Date('2026-12-03T00:00:00Z') && (
+              <>New this week: <a href="/reports/black-friday-ai-deals-2026">which Black Friday deals AI recommends</a>.</>
+            )
+          }
           <a href="/reports" class="research-line__all">See all research →</a>
         </p>
       </div>

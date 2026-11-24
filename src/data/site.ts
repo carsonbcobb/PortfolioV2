@@ -32,7 +32,31 @@ export const OG_BY_PATH: Record<string, OgImage> = {
   },
   '/reports/korean-skincare-ai-recommendations-us-2026': {
     path: '/og/og-korean-skincare.png',
-    alt: 'Which Korean skincare brands AI recommends in the US. 20 US shopper questions. 90% of answers named one of the same four brands.',
+    alt: 'Which Korean skincare brands AI recommends in the US. 20 US shopper questions. 93% of answers named one of the same four brands.',
+    width: 1200,
+    height: 627,
+  },
+  '/reports/ai-subscription-prices-shopify-2026': {
+    path: '/og/og-subscription-prices.png',
+    alt: 'Does AI get subscription prices right? 13 Shopify products. ChatGPT was fully right on 6 of 11. Google AI Mode: 11 of 11.',
+    width: 1200,
+    height: 627,
+  },
+  '/reports/black-friday-ai-deals-2026': {
+    path: '/og/og-black-friday-deals.png',
+    alt: 'Which Black Friday deals AI recommends. 20 Black Friday questions. 25% of brands were named by both ChatGPT and Google AI Mode.',
+    width: 1200,
+    height: 627,
+  },
+  '/reports/who-ai-recommends-ai-search-agencies-shopify-2026': {
+    path: '/og/og-ai-search-help.png',
+    alt: 'Who AI recommends for AI search help on Shopify. 28 AI answers. 60 agencies and consultants named, only 10 by both AIs.',
+    width: 1200,
+    height: 627,
+  },
+  '/reports/shopify-apps-ai-recommends-2026': {
+    path: '/og/og-shopify-apps.png',
+    alt: 'Which Shopify apps AI recommends. 12 merchant questions. Both AIs chose the same top app in 5 of 11.',
     width: 1200,
     height: 627,
   },

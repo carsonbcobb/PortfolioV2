@@ -32,7 +32,7 @@ Shoppers now ask ChatGPT, Perplexity, Gemini and Google's AI results what to buy
 - **50+** AI search projects
 - **30+** Sites optimized for AI search
 - **4,000+** Products restructured with machine readable attributes
-- **6** AI platforms optimized for: ChatGPT, Perplexity, Gemini, Claude, Copilot and Google AI Overviews
+- **3** AIs tracked for every client: ChatGPT, Gemini and Google AI Mode
 - **48%** Average organic traffic growth
 
 ### Conversion and A/B testing

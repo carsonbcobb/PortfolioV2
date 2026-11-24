@@ -3,7 +3,7 @@ title: "AI Search Statistics 2026: Shopping, Traffic and Brands"
 description: "77.6% of US shoppers used AI to shop, AI traffic to retail converted 90% better and ChatGPT names a median of 4 brands. 2026 AI search stats, sourced."
 slug: "/reports/ai-search-statistics-2026"
 h1: "AI search statistics for ecommerce, 2026"
-answer: "AI is now part of how most US shoppers buy. 77.6% of US consumers used AI to shop in the past six months, AI traffic to US retail sites converted 90% better than other traffic in September 2026, and Google AI Mode passed 1 billion monthly users. But AI recommends very few brands: ChatGPT names a median of about 4 per shopping answer, and in my latest test four Korean skincare brands appeared in 90% of answers. Below are the most useful AI search statistics for ecommerce brands in 2026, with sources, plus my own research."
+answer: "AI is now part of how most US shoppers buy. 77.6% of US consumers used AI to shop in the past six months, AI traffic to US retail sites converted 90% better than other traffic in September 2026, and Google AI Mode passed 1 billion monthly users. But AI recommends very few brands: ChatGPT names a median of about 4 per shopping answer, and in my latest test four Korean skincare brands appeared in 93% of answers. Below are the most useful AI search statistics for ecommerce brands in 2026, with sources, plus my own research."
 datePublished: 2026-11-06
 dateModified: 2026-11-24
 reportStores: 94
@@ -108,12 +108,25 @@ What this means for a brand: shoppers use AI to decide what to buy and where to 
 - **ChatGPT asked in 38% of answers.** 18 of 48 asked a follow up question or offered to narrow the pick. ([The follow up questions ChatGPT asks shoppers](/reports/chatgpt-follow-up-questions-shoppers-2026))
 - **ChatGPT labels almost everything.** 44 of 48 answers had at least one "best for" style label, 149 labels in total. ([How AI labels the products it recommends](/reports/how-ai-labels-products-best-for-2026))
 
-From my November 2026 test of 20 US shopper questions about Korean skincare in ChatGPT and Google AI Mode ([full report](/reports/korean-skincare-ai-recommendations-us-2026)):
+From my November 2026 test of 20 US shopper questions about Korean skincare in ChatGPT, Gemini and Google AI Mode ([full report](/reports/korean-skincare-ai-recommendations-us-2026)):
 
-- **COSRX, Beauty of Joseon, Anua and Round Lab appeared in 36 of 40 answers (90%).**
-- **The brand's own store was the seller on only 23 of 92 product cards (25%).** Resellers and retailers had the rest.
+- **COSRX, Beauty of Joseon, Anua and Round Lab appeared in 56 of 60 answers (93%).**
+- **The brand's own store was the seller on only 37 of 241 product cards (15%),** and on 9% in Gemini. Resellers and retailers had the rest.
+- **Gemini named a median of 7 brands per answer,** against 4 for ChatGPT and Google AI Mode.
 - **ChatGPT cited Ulta in 13 of 20 answers.** Across 25 Google AI Mode answers, Reddit threads were 20 of the 39 sources shown on screen.
 - **Asked again in different words, 11 of 19 brands came back (58%).**
+
+From my subscription price test ([full report](/reports/ai-subscription-prices-shopify-2026)):
+
+- **Asked the subscribe and save price of 13 Shopify products, Google AI Mode gave the right prices in all 11 answers it returned.** ChatGPT was fully right on 6 of 11 products, partly right on 2 and wrong on 3.
+- **Every ChatGPT miss traced to store setup:** a duplicate product page with a different price, a first order discount that only lived in a plan name, prices split across variant names, or a product AI couldn't find.
+
+From my test of 20 Black Friday shopping questions in ChatGPT and Google AI Mode on November 24, 2026 ([full report](/reports/black-friday-ai-deals-2026)):
+
+- **Of 202 brands named, only 50 (25%) were named by both AIs.**
+- **Google AI Mode matched the brand's own site on 8 of 9 deals checked.** ChatGPT matched on 4 and missed live sales posted on three brands' homepages.
+- **All 20 logged out ChatGPT answers showed a sponsored ad.** 14 of the 16 brand ads came from brands ChatGPT didn't name in its answer.
+- **The brand's own store was the seller on 55% of Google AI Mode product cards** and 41% of ChatGPT cards.
 
 ## More statistics
 

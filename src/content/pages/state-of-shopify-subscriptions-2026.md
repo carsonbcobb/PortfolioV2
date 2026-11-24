@@ -5,7 +5,7 @@ slug: "/state-of-shopify-subscriptions-2026"
 h1: "The State of Shopify Subscriptions 2026"
 answer: "In my November 2026 check of 606 Shopify stores and 121,519 products, 28% of brands selling reorderable products offered no subscription at all, and only 13% offered subscribe and save on every product checked. Of stores with a best sellers collection, 24% had at least one product fully sold out, and 25% of stores had neither a gift collection nor a gift card."
 datePublished: 2026-10-31
-dateModified: 2026-11-23
+dateModified: 2026-11-24
 faq:
   - question: "How many Shopify brands that sell reorderable products offer subscriptions?"
     answer: "In a check of 434 Shopify brands selling supplements, food, beauty and pet products, 72% offered subscribe and save on at least one checked product and 13% offered it on every checked product. 28% offered none."
@@ -97,7 +97,8 @@ Supplements and pet are the least ready for gift shoppers. A gift card alone cov
 2. Check that every bundle and every new product launched this year has the same selling plan as your hero.
 3. Look at your best sellers collection on mobile. Anything sold out should either come off the collection or show a back in stock signup.
 4. Make sure a gift card and a gift collection are live and linked before mid November.
-5. Run the numbers on what a better subscription offer is worth with the [subscription calculator](/tools/subscription-calculator).
+5. Ask ChatGPT what your hero product costs with subscribe and save. In my test of [whether AI gets subscription prices right](/reports/ai-subscription-prices-shopify-2026), ChatGPT was fully right on 6 of 11 products, and every miss came from store setup.
+6. Run the numbers on what a better subscription offer is worth with the [subscription calculator](/tools/subscription-calculator).
 
 ## How this was done
 

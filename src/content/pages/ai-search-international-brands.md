@@ -27,10 +27,10 @@ The questions are also different. A shopper who has never heard of your brand do
 
 ## What AI recommends to US shoppers today
 
-I asked ChatGPT and Google AI Mode 20 real US shopper questions about Korean skincare. Three findings stand out for any brand selling into the US:
+I asked ChatGPT, Gemini and Google AI Mode 20 real US shopper questions about Korean skincare. Three findings stand out for any brand selling into the US:
 
-- **A few brands win almost every answer.** COSRX, Beauty of Joseon, Anua and Round Lab appeared in 36 of 40 answers (90%).
-- **The brand's own store rarely gets the click.** Of 92 product cards, the brand's own store was the seller on 23 (25%). Resellers and US retailers had most of the rest.
+- **A few brands win almost every answer.** COSRX, Beauty of Joseon, Anua and Round Lab appeared in 56 of 60 answers (93%).
+- **The brand's own store rarely gets the click.** Of 241 product cards, the brand's own store was the seller on 37 (15%). Resellers and US retailers had most of the rest.
 - **Each AI trusts different sources.** Across 25 Google AI Mode answers, Reddit threads were 20 of the 39 sources shown on screen. ChatGPT cited Ulta in 13 of 20 answers, more than any other site.
 
 The full results are in [which Korean skincare brands AI recommends to US shoppers](/reports/korean-skincare-ai-recommendations-us-2026).

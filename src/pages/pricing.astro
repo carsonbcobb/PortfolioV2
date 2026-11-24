@@ -17,6 +17,14 @@ const h1 = 'Pricing';
 const intro =
   'Close the Gap, my 90 day program for Shopify brands losing to competitors in AI search, costs $2,500 a month for Focus or $5,000 a month for Full, with a 3 month commitment. The Full Store Audit, a one time conversion audit, is $1,997. Your gap report shows where you stand first, in about a minute. Start online, no call needed.';
 
+// The cost ranges ChatGPT and Google AI Mode gave, from the AI search help report, word for word.
+const AI_COSTS: [string, string, string][] = [
+  ['One time audit or setup', '$500 to $5,000', '$300 to $3,000 depending on scope'],
+  ['Freelance specialist', '$500 to $3,000 per project', 'Not separated out'],
+  ['Monthly retainer, small or boutique', '$1,500 to $5,000 a month', '$1,500 to $5,000 a month'],
+  ['Full service agency', '$5,000 to $15,000+ a month', '$5,000 to $10,000+ a month'],
+];
+
 // The Fit and terms items are visible Q&A too, so they join the page's FAQPage.
 const jsonLd = [pricingSchema({ title, description, faqs: [...PRICING_FAQS, ...TERMS_LIST] })];
 ---
@@ -111,6 +119,31 @@ const jsonLd = [pricingSchema({ title, description, faqs: [...PRICING_FAQS, ...T
           <div class="plan__foot">
             <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent">{CTA_LABEL}</a>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ai-costs-title">
+    <div class="wrap stack">
+      <div class="head">
+        <p class="eyebrow">For comparison</p>
+        <h2 class="h2 h2--36" id="ai-costs-title">What AI search help usually costs</h2>
+        <p class="lede">
+          When I asked ChatGPT and Google AI Mode what AI search help costs a Shopify brand, these are the ranges they gave. More in
+          <a href="/reports/who-ai-recommends-ai-search-agencies-shopify-2026">who AI recommends for AI search help on Shopify</a>.
+        </p>
+      </div>
+      <div class="prose results-table">
+        <div class="table-scroll" tabindex="0" role="region" aria-label="What AI search help usually costs">
+          <table>
+            <thead>
+              <tr><th scope="col">Option</th><th scope="col">Google AI Mode</th><th scope="col">ChatGPT</th></tr>
+            </thead>
+            <tbody>
+              {AI_COSTS.map(([label, a, b]) => <tr><th scope="row">{label}</th><td>{a}</td><td>{b}</td></tr>)}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

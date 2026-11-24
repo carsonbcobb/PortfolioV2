@@ -29,7 +29,7 @@ I'm Carson Cobb. I help Shopify brands get recommended in ChatGPT and Google's A
 
 ## Who this is for
 
-This is for founders of growing brands who sell something people use up and buy again. Supplements, coffee, skincare, pet food, protein, tea, personal care. If a customer who loves your product will need more of it in 30 or 60 days, you should be earning that second order automatically.
+This is for founders of growing brands who sell something people use up and buy again. Supplements, coffee, skincare, pet food, protein, tea, personal care and more. If a customer who loves your product will need more of it in 30 or 60 days, you should be earning that second order automatically.
 
 It's a good fit if any of these sound familiar:
 
@@ -55,6 +55,8 @@ These are real patterns I find in audits. Each one is small on its own. Together
 **Cancellation is a single click.** No pause option, no skip, no swap to a different flavor or frequency, no offer to slow the shipping cadence. Many customers who cancel just have too much product. They'd stay if you asked.
 
 **Subscribers get the same emails as everyone else.** No upcoming order reminder, no easy way to add an item to the next box, no failed payment recovery that sounds like a person. Subscribers are your best customers and they're being treated like strangers.
+
+**AI quotes the wrong subscription price.** A promo copy of the product page with a lower price, a first order discount that only appears in the plan name, or prices written into variant names. In my test of [whether AI gets subscription prices right](/reports/ai-subscription-prices-shopify-2026), every ChatGPT miss traced back to setups like these, not to the subscription app.
 
 ## What I actually do
 
