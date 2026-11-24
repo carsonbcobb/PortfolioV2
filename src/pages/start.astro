@@ -1,6 +1,6 @@
 ---
 // /start?offer=focus|full|full-store-audit: what they're starting, what happens after paying, the terms, and
-// (for Close the Gap) the three ways to pay. "Continue to payment" opens the matching link from
+// (for Close the Gap) the two ways to pay. "Continue to payment" opens the matching link from
 // src/config/payment-links.ts, or an email while that link is still a placeholder. Not in the nav, noindex.
 import ContentPage from '../layouts/ContentPage.astro';
 import { PROGRAM, PROGRAM_SIZES, FULL_AUDIT, TERMS, AFTER_PAY, EMAIL, startGuarantee } from '../data/site';
@@ -28,15 +28,14 @@ const sizeOffer = (z: (typeof PROGRAM_SIZES)[number]): Offer => ({
   items: z.items,
   steps: AFTER_PAY[z.key as 'focus' | 'full'],
   terms: [
-    'The commitment: 3 months with the 3 month commitment or paid upfront, then month to month at the same monthly price with 30 days written notice to cancel. No commitment is month to month from the start.',
+    `Terms: month to month at ${usd(z.monthly)} a month, with 30 days written notice to cancel. No minimum commitment. Paying 3 months upfront is an optional saving.`,
     startGuarantee(z.key as 'focus' | 'full'),
     `Scope: ${PROGRAM.scope}`,
     `Refunds: ${TERMS.refunds}`,
   ],
   options: [
-    { id: '3mo', label: '3 month commitment', price: `${usd(z.monthly)}/month`, note: 'Then month to month at the same price, with 30 days written notice to cancel.', key: `${z.key}3mo` as PaymentKey },
-    { id: 'upfront', label: 'Paid upfront', price: usd(z.upfront), note: 'All 3 months paid at once.', key: `${z.key}Upfront` as PaymentKey },
-    { id: 'flexible', label: 'No commitment', price: `${usd(z.flexible)}/month`, note: 'Month to month from the start, with 30 days written notice to cancel.', key: `${z.key}Flexible` as PaymentKey },
+    { id: 'monthly', label: 'Monthly', price: `${usd(z.monthly)}/month`, note: 'Month to month, 30 days notice to cancel.', key: `${z.key}Monthly` as PaymentKey },
+    { id: 'upfront', label: 'Pay 3 months upfront', price: usd(z.upfront), note: 'Optional saving: 3 months paid at once.', key: `${z.key}Upfront` as PaymentKey },
   ],
 });
 
@@ -49,7 +48,7 @@ const OFFERS: Offer[] = [
     items: FULL_AUDIT.includes,
     steps: AFTER_PAY.audit,
     terms: [
-      'The commitment: one payment, no ongoing commitment.',
+      'Terms: one payment, nothing ongoing.',
       `Scope: ${PROGRAM.scope}`,
       `Refunds: no refunds once the audit has started.`,
       `Ownership: ${TERMS.ownership}`,

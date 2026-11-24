@@ -12,10 +12,10 @@ const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
 
 const title = 'Pricing: Close the Gap and Full Store Audit | Carson Cobb';
 const description =
-  'Close the Gap is $2,500 a month (Focus) or $5,000 a month (Full) with a 3 month commitment. The Full Store Audit is $1,997. Every price, and what\'s in it.';
+  'Close the Gap is $2,500 a month (Focus) or $5,000 a month (Full), month to month. The Full Store Audit is $1,997. Every price, and what\'s in it.';
 const h1 = 'Pricing';
 const intro =
-  'Close the Gap, my 90 day program for Shopify brands losing to competitors in AI search, costs $2,500 a month for Focus or $5,000 a month for Full, with a 3 month commitment. The Full Store Audit, a one time conversion audit, is $1,997. Your gap report shows where you stand first, in about a minute. Start online, no call needed.';
+  'Close the Gap, my 90 day program for Shopify brands losing to competitors in AI search, costs $2,500 a month for Focus or $5,000 a month for Full, month to month with no minimum commitment. The Full Store Audit, a one time conversion audit, is $1,997. Your gap report shows where you stand first, in about a minute. Start online, no call needed.';
 
 
 // The Fit and terms items are visible Q&A too, so they join the page's FAQPage.
@@ -42,6 +42,11 @@ const jsonLd = [pricingSchema({ title, description, faqs: [...PRICING_FAQS, ...T
         }
       </div>
 
+      <div class="head">
+        <h3 class="h3">{PROGRAM.scopeTitle}</h3>
+        <p class="lede">{PROGRAM.scopeText}</p>
+      </div>
+
       <SizeCompare />
 
       <div class="lock">
@@ -62,7 +67,7 @@ const jsonLd = [pricingSchema({ title, description, faqs: [...PRICING_FAQS, ...T
           <span class="lock__icon">
             <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111214" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 018 0v3"></path></svg>
           </span>
-          <p><strong>Lock in 2026 pricing.</strong> Start Close the Gap before January 1 and keep your committed monthly price for 12 months.</p>
+          <p><strong>Lock in 2026 pricing.</strong> Start Close the Gap before January 1 and keep your monthly price for 12 months.</p>
         </div>
       </div>
     </div>

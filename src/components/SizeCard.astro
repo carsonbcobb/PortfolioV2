@@ -1,7 +1,7 @@
 ---
-// One Close the Gap size card: the headline price with its commitment, the other ways to pay, the included
+// One Close the Gap size card: the headline price with its terms, the optional upfront saving, the included
 // list, and Start now with "Get your gap report first" under it. Used on /close-the-gap, /pricing, /ai-search.
-import { PROGRAM_SIZES, sizeOtherPrices, CHECK_PATH, GAP_FIRST_LABEL } from '../data/site';
+import { PROGRAM_SIZES, SIZE_TERMS, sizeOtherPrices, CHECK_PATH, GAP_FIRST_LABEL } from '../data/site';
 
 interface Props {
   size: (typeof PROGRAM_SIZES)[number];
@@ -25,7 +25,7 @@ const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
     <div class="plan__price">
       {usd(z.monthly)}<span>/month</span>
     </div>
-    <p class="plan__commit">3 month commitment</p>
+    <p class="plan__commit">{SIZE_TERMS}</p>
     <p class="plan__other">{sizeOtherPrices(z)}</p>
   </div>
   <ul class="plan__list">

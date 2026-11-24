@@ -203,12 +203,12 @@ const sentenceList = (xs: string[]) => xs.map((x) => (/[.!?]$/.test(x) ? x : `${
 const FIT_LINE = PROGRAM.fit;
 const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
 
-// One Offer per Close the Gap size: the committed monthly price, billed for at least 3 months.
+// One Offer per Close the Gap size: the monthly price, billed month to month.
 const sizeOffer = (z: (typeof PROGRAM_SIZES)[number]) => ({
   '@type': 'Offer',
   '@id': `${PROGRAM_URL}#offer-${z.key}`,
   name: z.name,
-  description: `${z.fit}. ${sentenceList(z.items)} ${usd(z.monthly)}/month with a 3 month commitment. Or ${usd(z.upfront)} paid upfront for 3 months, or ${usd(z.flexible)}/month with no commitment. ${PROGRAM.guarantee} ${PROGRAM.scope}`,
+  description: `${z.fit}. ${sentenceList(z.items)} ${usd(z.monthly)}/month, month to month, with 30 days written notice to cancel. Optional saving: ${usd(z.upfront)} for 3 months paid upfront. ${PROGRAM.guarantee} ${PROGRAM.scope}`,
   url: PROGRAM_URL,
   itemOffered: ref(PLAN.program),
   seller: ref(ID.business),
@@ -219,7 +219,6 @@ const sizeOffer = (z: (typeof PROGRAM_SIZES)[number]) => ({
     price: z.monthly,
     priceCurrency: 'USD',
     unitText: 'MONTH',
-    billingDuration: 'P3M',
   },
   eligibleCustomerType: 'http://purl.org/goodrelations/v1#Business',
   availability: 'https://schema.org/InStock',

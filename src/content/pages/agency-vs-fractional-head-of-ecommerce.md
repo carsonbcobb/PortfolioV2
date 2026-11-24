@@ -18,14 +18,14 @@ faq:
   - question: "What about hiring a full time head of ecommerce?"
     answer: "That's the right move when the channel needs someone inside the business every day, leading a team. Expect $150K+ a year before benefits. Many brands use a fractional lead until they reach that point."
   - question: "How do I try this without a big commitment?"
-    answer: "Start with your gap report, which takes about a minute, no login, or the Full Store Audit, $1,997 one time. For AI search, Close the Gap is $2,500 a month with a 3 month commitment."
+    answer: "Start with your gap report, which takes about a minute, no login, or the Full Store Audit, $1,997 one time. For AI search, Close the Gap is $2,500 a month, month to month."
 ---
 
 **The short answer.** A fractional specialist is the better pick for most growing Shopify brands whose store already has traffic and needs one senior person leading SEO, AI search and conversion work. A full service agency wins when you need many channels or a large scoped project like a rebrand run at once, and you have someone in house to manage it.
 
 | | Fractional specialist | Full service agency or stitched vendors | Full time hire |
 |---|---|---|---|
-| What you pay | Custom: email me what you need for a scope and a price. For AI search, Close the Gap is $2,500/month with a 3 month commitment | About four invoices a month, plus your time managing them | $150K+/yr before benefits |
+| What you pay | Custom: email me what you need for a scope and a price. For AI search, Close the Gap is $2,500/month, month to month | About four invoices a month, plus your time managing them | $150K+/yr before benefits |
 | What you get | One senior person on the plan, the work and the numbers | A team across many channels at once | Someone inside the business every day |
 | Who manages it | Included | Usually you | You, plus hiring and onboarding |
 | Best for | Growing brands that need a senior lead | Big scoped projects and many channels | A large channel with a team |
@@ -72,7 +72,7 @@ With a full time hire, you pay a salary whether there's a full month of senior w
 
 With a fractional head of ecommerce, you pay one monthly fee, and the management is part of the job. My options:
 
-* **[Close the Gap](/close-the-gap), $2,500 a month with a 3 month commitment.** A 90 day program against your main competitors in ChatGPT, Gemini and Google AI Mode: the head to head, every on site fix ready to ship or implemented for you, source work, and a competitor report every week or two. Focus is $2,500 a month and Full is $5,000 a month, each with a 3 month commitment.
+* **[Close the Gap](/close-the-gap), $2,500 a month, month to month.** A 90 day program against your main competitors in ChatGPT, Gemini and Google AI Mode: the head to head, every on site fix ready to ship or implemented for you, source work, and a competitor report every week or two. Focus is $2,500 a month and Full is $5,000 a month, both month to month.
 * **[Full Store Audit](/full-store-audit), $1,997 one time.** Every page on mobile and desktop, cart and checkout, email flows, analytics and subscriptions, with every fix ranked by what it's worth.
 * **Fractional head of ecommerce, custom.** Your ecommerce lead, working at your direction: the plan, launches, Klaviyo, apps and vendors. [Email me what you need](mailto:carson@carsoncobb.com?subject=Fractional%20head%20of%20ecommerce) and I'll send back a scope and a price.
 

@@ -9,7 +9,7 @@ import { closeTheGapSchema } from '../data/schema';
 
 const title = 'Close the Gap: Beat Competitors in AI Search | Carson Cobb';
 const description =
-  'Close the Gap shows Shopify brands where competitors beat them in ChatGPT, Gemini and Google AI Mode, then closes the gap. $2,500 a month for 3 months.';
+  'Close the Gap shows Shopify brands where competitors beat them in ChatGPT, Gemini and Google AI Mode, then closes the gap. From $2,500 a month, month to month.';
 const h1 = 'Close the Gap';
 const intro =
   "AI is picking the winners in every product market, and right now it's picking your competitor. I show you exactly where your competitors beat you in ChatGPT, Gemini and Google AI Mode, product by product, and what that's costing you. Then I close the gap.";
@@ -93,6 +93,11 @@ const jsonLd = [closeTheGapSchema({ title, description, faqs: PROGRAM_FAQS })];
       </div>
       <div class="grid grid--320 plans">
         {PROGRAM_SIZES.map((z) => <SizeCard size={z} id={z.key} extra="Everything in the 90 day program above" />)}
+      </div>
+
+      <div class="head">
+        <h3 class="h3">{PROGRAM.scopeTitle}</h3>
+        <p class="lede">{PROGRAM.scopeText}</p>
       </div>
 
       <SizeCompare />
