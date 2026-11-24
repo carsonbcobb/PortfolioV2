@@ -10,14 +10,12 @@
 
 export const PAYMENT_LINKS = {
   // Close the Gap: Focus
-  focus3mo: 'https://buy.stripe.com/4gMeVcbDc3rD7Kv0TMawo02', // $2,500/month, 3 month commitment
+  focusMonthly: 'https://buy.stripe.com/4gMeVcbDc3rD7Kv0TMawo02', // $2,500/month, month to month (no fixed term)
   focusUpfront: 'https://buy.stripe.com/6oU4gyePofalgh1byqawo03', // $7,000 paid upfront for 3 months
-  focusFlexible: 'https://buy.stripe.com/7sY4gydLk0fr9SD8meawo04', // $3,000/month, no commitment
 
   // Close the Gap: Full
-  full3mo: 'https://buy.stripe.com/9B66oGfTs2nze8T1XQawo05', // $5,000/month, 3 month commitment
+  fullMonthly: 'https://buy.stripe.com/9B66oGfTs2nze8T1XQawo05', // $5,000/month, month to month (no fixed term)
   fullUpfront: 'https://buy.stripe.com/4gMfZg36GaU58OzgSKawo06', // $13,500 paid upfront for 3 months
-  fullFlexible: 'https://buy.stripe.com/cNieVccHgfal5CngSKawo07', // $6,000/month, no commitment
 
   // Full Store Audit
   fullStoreAudit: 'https://buy.stripe.com/6oU9AS6iS8LX6Gr5a2awo08', // $1,997 one time

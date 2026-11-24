@@ -341,12 +341,16 @@ export const PROGRAM = {
     ],
   },
   after:
-    'After 90 days, the program continues month to month: reports, model watch, new questions and new competitors as they appear, and ongoing source work. Brands with only a few products go deeper on those products, not wider.',
+    'After 90 days, the program continues month to month: reports, model watch, new questions and new competitors as they appear, and ongoing source work. Brands with one or two categories go deeper inside them, not wider.',
   guarantee: "If I don't deliver everything listed for month 1, you don't pay for month 2.",
   guaranteeNote: "If you paid upfront, the cost of month 2 is credited toward your next month of service. The guarantee covers the month 1 deliverables listed above, not what AI says. No one controls AI answers.",
-  scope: 'Larger catalogs or more competitors are quoted separately.',
+  scope: 'More categories, more competitors, or additional stores and country sites are quoted separately.',
+  // How scope works: one explanation, reused on /pricing and /close-the-gap.
+  scopeTitle: 'Your whole catalog, tracked by category',
+  scopeText:
+    "The audit and every fix cover your whole catalog. What's scoped is the tracking: I group your products into categories, the way shoppers compare them (for example walking pads, or cleansers), and track the lead product in each category against the brands AI recommends there. What I learn and fix on that product is applied to every product in its category.",
   continues:
-    'After the first 3 months, both continue month to month at the committed price ($2,500 or $5,000), with 30 days written notice to cancel.',
+    'Both sizes run month to month at $2,500 or $5,000 a month. Cancel any time with 30 days written notice. To save, you can pay 3 months upfront: $7,000 for Focus or $13,500 for Full.',
   fit: 'For brands doing about $50K a month and up, competing with brands their own size or a few times bigger.',
   fitNote:
     'Brands whose competitors are household names on every question are slower to move, so I focus on the specific questions real shoppers ask, where a focused brand can win.',
@@ -358,8 +362,7 @@ export const PROGRAM = {
   ],
 };
 
-// The two sizes. monthly is the price with a 3 month commitment; upfront is 3 months paid in advance;
-// flexible is the price with no commitment. The same lists show on /close-the-gap, /pricing, /ai-search and /start.
+// The two sizes. monthly is the month to month price; upfront is the optional 3 months paid in advance, at a saving. The same lists show on /close-the-gap, /pricing, /ai-search and /start.
 // First on both plan lists: every engagement starts with an AI audit of the whole site.
 const AI_AUDIT_ITEM =
   'An AI audit of your entire site: the questions AI needs answered about your products before it recommends them, whether AI can read, extract and quote your pages and structured data, and the sources AI relies on for your products';
@@ -371,10 +374,10 @@ export const PROGRAM_SIZES = [
     short: 'Focus',
     fit: 'For brands doing about $50K to $150K a month',
     tagline: 'I find the gap and hand your team every fix, ready to ship.',
-    brief: 'I find the gap and hand your team every fix, ready to ship. Up to 3 products against up to 3 competitors, with a competitor report every 2 weeks.',
+    brief: 'I find the gap and hand your team every fix, ready to ship. Up to 3 product categories, each tracked against up to 3 competitors, with a competitor report every 2 weeks.',
     items: [
       AI_AUDIT_ITEM,
-      'Up to 3 products against up to 3 competitors',
+      'Up to 3 product categories, each tracked against up to 3 competitors',
       'Tested the way real shoppers ask, in ChatGPT, Gemini and Google AI Mode: up to 15 shopper questions, each asked more than once and in different wording, refreshed every month as what shoppers ask changes',
       'Every on site fix written and ready for your team to ship: product data, structured data, product page copy, comparison and FAQ content',
       'A ranked list of the sources AI relies on for your products, with what to do about each one',
@@ -383,7 +386,6 @@ export const PROGRAM_SIZES = [
     ],
     monthly: 2500,
     upfront: 7000,
-    flexible: 3000,
     featured: false,
   },
   {
@@ -392,10 +394,10 @@ export const PROGRAM_SIZES = [
     short: 'Full',
     fit: 'For brands doing about $150K a month and up',
     tagline: 'I find the gap and close it for you.',
-    brief: 'I find the gap and close it for you. Up to 5 products against up to 6 competitors, with a weekly competitor report and model watch.',
+    brief: 'I find the gap and close it for you. Up to 5 product categories, each tracked against up to 6 competitors, with a weekly competitor report and model watch.',
     items: [
       AI_AUDIT_ITEM,
-      'Up to 5 products against up to 6 competitors',
+      'Up to 5 product categories, each tracked against up to 6 competitors',
       'Tested the way real shoppers ask, in ChatGPT, Gemini and Google AI Mode: up to 30 shopper questions, each asked more than once and in different wording, refreshed every month as what shoppers ask changes',
       'On site fixes implemented by me: product data, structured data, product pages, comparison and FAQ content',
       'Conversion work on the pages AI sends shoppers to, so the shoppers AI sends actually buy',
@@ -408,7 +410,6 @@ export const PROGRAM_SIZES = [
     ],
     monthly: 5000,
     upfront: 13500,
-    flexible: 6000,
     featured: true,
   },
 ];
@@ -419,21 +420,23 @@ export const SIZE_COMPARE = {
   rows: [
     ['Who does the fixes', 'Your team, from my written fixes', 'I do'],
     ['Shopper questions', 'Up to 15', 'Up to 30'],
-    ['Products and competitors', 'Up to 3 and 3', 'Up to 5 and 6'],
+    ['Categories and competitors', 'Up to 3, each against 3', 'Up to 5, each against 6'],
     ['Conversion work on AI landing pages', 'No', 'Yes'],
     ['Sources work', 'Ranked list', 'Done for you'],
     ['Reports', 'Every 2 weeks', 'Weekly, plus model watch'],
     ['AI revenue report', 'No', 'Monthly'],
     ['Strategy video', 'No', 'Monthly'],
     ['Replies', 'Within 2 business days', 'Same business day'],
+    ['Commitment', 'Month to month', 'Month to month'],
   ],
   note: 'Most brands with a dev team that has room choose Focus. Brands whose team is already stretched choose Full.',
 };
 
-// The smaller price line under each size's headline price.
+// The lines under each size's headline price: the terms, then the optional upfront saving.
 const usdPlain = (n: number) => `$${n.toLocaleString('en-US')}`;
+export const SIZE_TERMS = 'Month to month, 30 days notice to cancel';
 export const sizeOtherPrices = (z: (typeof PROGRAM_SIZES)[number]) =>
-  `Or ${usdPlain(z.upfront)} paid upfront for 3 months, or ${usdPlain(z.flexible)}/month with no commitment`;
+  `Optional saving: pay 3 months upfront for ${usdPlain(z.upfront)}`;
 
 // The CRO offer: one time, on /pricing and its own page at /full-store-audit.
 export const FULL_AUDIT = {
@@ -462,7 +465,7 @@ export const FULL_AUDIT = {
 const AFTER_PAY_FIRST =
   'Within 1 business day, I send a Shopify collaborator request and a short email asking for your top products, your main competitors, and who approves outside pitches and placements.';
 const AFTER_PAY_AUDIT =
-  'I start your AI audit: your entire site, and your products against your competitors in ChatGPT, Gemini and Google AI Mode.';
+  'I start your AI audit: your entire site, and how your products compare with your competitors in ChatGPT, Gemini and Google AI Mode.';
 // The guarantee on /start, which names the month 1 deliverables because that page doesn't list month 1.
 export const startGuarantee = (key: 'focus' | 'full') =>
   `Month 1 delivery guarantee: If I don't deliver your AI audit, your first competitor reports and the first round of on site fixes${key === 'focus' ? ', ready for your team to ship,' : ''} in month 1, you don't pay for month 2. If you paid upfront, the cost of month 2 is credited toward your next month of service. The guarantee covers these deliverables, not what AI says. No one controls AI answers.`;
@@ -558,7 +561,7 @@ export const WELCOME = {
     termsTitle: 'Billing and terms',
     terms: [
       'Monthly plans bill on the same date each month. Your receipt comes from Stripe.',
-      `3 month plans continue month to month after the commitment. Cancel anytime after that by emailing ${EMAIL} with 30 days notice.`,
+      `Plans run month to month. Cancel any time by emailing ${EMAIL} with 30 days written notice.`,
       "If I don't deliver everything listed for month 1, you don't pay for month 2. If you paid upfront, the cost of month 2 is credited toward your next month of service.",
     ],
   },
@@ -622,7 +625,7 @@ export const TERMS = {
   start:
     'Store collaborator access, your top products, your main competitors, and someone who can approve outside source pitches and placements.',
   who: 'You work with me directly. I do the work myself, with no handoff to a junior team or an offshore team. If something needs a specialist skill like photography, I tell you up front and either quote it or recommend someone you hire directly.',
-  commitment: 'Close the Gap has a 3 month commitment, then continues month to month with 30 days written notice to cancel.',
+  commitment: "There's no minimum commitment. Close the Gap runs month to month, with 30 days written notice to cancel.",
   refunds: 'No refunds once a month has started.',
   guarantee: `${PROGRAM.guarantee} ${PROGRAM.guaranteeNote}`,
   ownership: 'You own all on site work once it is paid.',
@@ -635,7 +638,7 @@ export const TERMS_LIST = [
   { q: "Who isn't a fit?", a: TERMS.notFit },
   { q: 'What do you need to start?', a: TERMS.start },
   { q: 'Who does the work?', a: TERMS.who },
-  { q: 'How does the commitment work?', a: `${TERMS.commitment} ${PROGRAM.continues}` },
+  { q: 'Is there a commitment?', a: `${TERMS.commitment} To save, you can pay 3 months upfront: $7,000 for Focus or $13,500 for Full.` },
   { q: 'Do you offer refunds?', a: `${TERMS.refunds} ${TERMS.guarantee}` },
   { q: 'Who owns the work?', a: TERMS.ownership },
   { q: 'Who pays for apps, tools and placements?', a: TERMS.costs },
@@ -674,7 +677,13 @@ const DIFF_ANSWER =
   "Who does the work. On Focus, I find where your competitors beat you and hand your team every fix, written and ready to ship. On Full, I implement the fixes myself, do the work on the sources AI relies on, add conversion work on the pages AI sends shoppers to, and report weekly with a monthly AI revenue report.";
 const MEASURE_ANSWER =
   "Tracked AI sales are a floor, not the total. Many shoppers who get a recommendation from AI search the brand on Google, type the site in directly or buy on Amazon. So the monthly report on Full combines three signals: AI sales you can track in Shopify and GA4, growth in searches for your brand name, and how many customers say they heard about you from an AI assistant in your post purchase survey.";
+// Plans are scoped by category, not product count. On /pricing and /close-the-gap, and in their FAQPage data.
+export const CATEGORY_FAQ = {
+  q: 'Do I only get help on 5 products?',
+  a: 'No. The audit and every fix cover your whole catalog. The plan sets how many product categories I track against competitors. In each category I track your lead product, and what I learn and fix there is applied to every product in that category.',
+};
 const SIZE_FAQS = [
+  CATEGORY_FAQ,
   { q: "What's the difference between Focus and Full?", a: DIFF_ANSWER },
   {
     q: 'Why only 15 or 30 shopper questions?',
@@ -689,7 +698,7 @@ const SIZE_FAQS = [
 
 const WHO_FOR = `Shopify brands doing about $50K a month and up, competing with brands their own size or a few times bigger. Under $50K a month, the best next step is the Full Store Audit. It isn't a fit if you need paid ads management, one off development tasks, a brand new store with no traffic yet, or someone who guarantees a ChatGPT ranking.`;
 const AFTER_90 =
-  'It continues month to month at your committed price, with 30 days written notice to cancel: reports, model watch, new questions and new competitors as they appear, and ongoing source work.';
+  'It continues month to month at the same price, with 30 days written notice to cancel: reports, model watch, new questions and new competitors as they appear, and ongoing source work.';
 const GUARANTEE_ANSWER =
   "No one can. What I do guarantee: everything listed for month 1, or you don't pay for month 2, and honest numbers in every competitor report.";
 
@@ -718,7 +727,7 @@ export const PROGRAM_FAQS = [
   CALL_FAQ,
   {
     q: 'What does the gap report show?',
-    a: "How often ChatGPT recommends you against your top competitor, for questions built from your best sellers, plus what AI says about your brand and whether it can read your store. Brands doing $50K a month or more also get a short recorded video of the full gap: your top products against your competitors, roughly what it's worth each month, and which size fits.",
+    a: "How often ChatGPT recommends you against your top competitor, for questions built from your best sellers, plus what AI says about your brand and whether it can read your store. Brands doing $50K a month or more also get a short recorded video of the full gap: how your top products compare with your competitors, roughly what it's worth each month, and which size fits.",
   },
   {
     q: 'How do you estimate what the gap is worth?',
@@ -743,7 +752,7 @@ export const PRICING_FAQS = [
   ...SIZE_FAQS,
   {
     q: 'How do I pay?',
-    a: 'Press Start now on the size you want. You see what happens after you pay and the terms, choose a 3 month commitment, 3 months paid upfront or no commitment, and pay online. Questions first? Email me.',
+    a: 'Press Start now on the size you want. You see what happens after you pay and the terms, choose month to month or 3 months paid upfront, and pay online. Questions first? Email me.',
   },
   {
     q: 'What does the month 1 guarantee cover?',
@@ -755,7 +764,7 @@ export const PRICING_FAQS = [
   },
   {
     q: 'How do I lock in 2026 pricing?',
-    a: 'Start Close the Gap before January 1 and keep your committed monthly price for 12 months.',
+    a: 'Start Close the Gap before January 1 and keep your monthly price for 12 months.',
   },
 ];
 
@@ -774,7 +783,7 @@ export const CHECK_FAQS = [
   },
   {
     q: 'Does ChatGPT recommend my brand?',
-    a: "The gap report asks questions built from your best sellers through OpenAI, using a smaller, faster OpenAI model with web search on. That shows how AI answers with live search, but it isn't the exact model a shopper gets in the ChatGPT app. Answers also vary by wording, person and day, so treat the result as a snapshot. Close the Gap tests your top products against your main competitors, question by question.",
+    a: "The gap report asks questions built from your best sellers through OpenAI, using a smaller, faster OpenAI model with web search on. That shows how AI answers with live search, but it isn't the exact model a shopper gets in the ChatGPT app. Answers also vary by wording, person and day, so treat the result as a snapshot. Close the Gap tracks the lead product in each of your categories against your main competitors, question by question.",
   },
   {
     q: 'How does the gap report work?',
@@ -786,7 +795,7 @@ export const CHECK_FAQS = [
   },
   {
     q: 'Why are my results different from what I see in ChatGPT?',
-    a: 'AI answers change with the exact wording, location, chat history and day. Close the Gap tests your products against the questions your buyers ask, with retests every week or two, to get a reliable picture.',
+    a: 'AI answers change with the exact wording, location, chat history and day. Close the Gap tests your products on the questions your buyers ask, with retests every week or two, to get a reliable picture.',
   },
   {
     q: 'Does it work for stores that are not on Shopify?',
@@ -880,12 +889,12 @@ export const AGENCY_PARTNER_INTRO =
 
 export const AGENCY_PARTNER_PLANS = [
   {
-    tag: '90 days, then month to month',
+    tag: 'Month to month',
     name: 'Close the Gap, white label',
     price: '$2,500',
     unit: '/month',
-    commit: '3 month commitment',
-    other: 'Focus. Full is $5,000/month with a 3 month commitment. Both can be paid upfront or with no commitment, at the same prices brands pay.',
+    commit: 'Month to month',
+    other: 'Focus. Full is $5,000/month. Both run month to month or can be paid 3 months upfront, at the same prices brands pay.',
     summary: 'Same program, reported in your branding.',
     includes: [
       'A head to head against your client\'s main competitors across their top products',

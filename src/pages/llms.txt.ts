@@ -47,9 +47,9 @@ export const GET: APIRoute = () => {
     `- **${PROGRAM.name}** (${url(PROGRAM.path)}): ${PROGRAM.summary} ${PROGRAM.after}`,
     ...PROGRAM_SIZES.map(
       (z) =>
-        `- **${z.name}**: ${z.fit}. ${z.items.join('. ')}. ${usd(z.monthly)}/month with a 3 month commitment. Or ${usd(z.upfront)} paid upfront for 3 months, or ${usd(z.flexible)}/month with no commitment.`,
+        `- **${z.name}**: ${z.fit}. ${z.items.join('. ')}. ${usd(z.monthly)}/month, month to month. Optional saving: ${usd(z.upfront)} for 3 months paid upfront.`,
     ),
-    `- ${PROGRAM.guarantee} ${PROGRAM.guaranteeNote} ${PROGRAM.continues} ${PROGRAM.scope}`,
+    `- ${PROGRAM.scopeText} ${PROGRAM.guarantee} ${PROGRAM.guaranteeNote} ${PROGRAM.continues} ${PROGRAM.scope}`,
     `- **${FULL_AUDIT.name}** (${url(FULL_AUDIT.path)}): ${usd(FULL_AUDIT.price)} one time. ${FULL_AUDIT.summary} ${FULL_AUDIT.timing} ${FULL_AUDIT.walkthrough}`,
     '',
     '## Partner pricing for agencies',

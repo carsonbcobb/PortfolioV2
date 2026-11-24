@@ -16,7 +16,7 @@ faq:
   - question: "What do I need to give you to get started?"
     answer: "Collaborator access to Shopify, access to your subscription app and Klaviyo, and a quick rundown of your hero products and margins. I handle the rest."
   - question: "Is there a long contract?"
-    answer: "The $1,997 Full Store Audit is a one time project, and it covers your subscription setup. Close the Gap has a 3 month commitment, then runs month to month."
+    answer: "The $1,997 Full Store Audit is a one time project, and it covers your subscription setup. Close the Gap runs month to month."
 ---
 
 Most Shopify stores I audit already have a subscription app installed. They're paying for it every month. And the subscription option is still quietly losing them money.
@@ -94,7 +94,7 @@ You don't need a giant project to fix this. There are two ways I usually start.
 
 **Fractional head of ecommerce, custom.** I lead subscriptions as part of the store, working at your direction: offer tests, widget changes, flows, cancellation insights, and everything else on the site that affects revenue. You get one person who knows your store deeply instead of a rotating cast. [Email me what you need](mailto:carson@carsoncobb.com?subject=Fractional%20head%20of%20ecommerce) and I'll send back a scope and a price.
 
-For AI search, there's [Close the Gap](/close-the-gap), at $2,500 a month with a 3 month commitment. You can see every published price on the [pricing page](/pricing).
+For AI search, there's [Close the Gap](/close-the-gap), at $2,500 a month, month to month. You can see every published price on the [pricing page](/pricing).
 
 ## Proof: subscribe opt in from 7% to 32%
 

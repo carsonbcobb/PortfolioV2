@@ -5,7 +5,7 @@ slug: "/guides/hire-ai-search-specialist-shopify"
 h1: "How to hire an AI search specialist for your Shopify store"
 answer: "To choose someone to get your Shopify brand recommended by AI, ask how they test ChatGPT, Gemini and Google AI Mode the way real shoppers ask, who makes the fixes, and what they do about the outside sources AI trusts. Walk away from guaranteed AI rankings, keyword lists and dashboards with no fixes. Good work pairs AI visibility with conversion on the pages AI sends shoppers to."
 datePublished: 2026-11-09
-dateModified: 2026-11-23
+dateModified: 2026-11-24
 faq:
   - question: "What should I ask before hiring an AI search agency for my Shopify store?"
     answer: "Ask which AI tools they track, how they measure whether your brand gets recommended, which buyer questions they test, whether the work is done in your theme code or in an app, what happens with off site sources, and how they report results. Walk away from anyone who guarantees a ranking or sells llms.txt as the main fix."
@@ -89,8 +89,8 @@ AI referred shoppers arrive with a specific promise in mind, and they convert we
 
 Real prices from my own plans, so you have a benchmark:
 
-* **Close the Gap: Focus, $2,500 a month** with a 3 month commitment. I find the gap and hand your team every fix, ready to ship.
-* **Close the Gap: Full, $5,000 a month** with a 3 month commitment. I find the gap and close it for you, including conversion work and sources work.
+* **Close the Gap: Focus, $2,500 a month**, month to month. I find the gap and hand your team every fix, ready to ship.
+* **Close the Gap: Full, $5,000 a month**, month to month. I find the gap and close it for you, including conversion work and sources work.
 * **Full Store Audit, $1,997 one time,** for brands under $50K a month.
 
 Every option and term is on the [pricing page](/pricing). For what drives price up or down anywhere you shop, see [what AI search optimization costs](/guides/ai-search-optimization-cost-shopify).

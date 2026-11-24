@@ -36,7 +36,7 @@ export function nextStep(lead: Pick<Lead, "revenue" | "email">, site = DEFAULT_S
   return {
     lines: [
       "Your gap video is on its way.",
-      `I'll email it to ${lead.email} within 1 business day. It covers your top products against your competitors, roughly what the gap is worth each month, and the program that fits.`,
+      `I'll email it to ${lead.email} within 1 business day. It covers how your top products compare with your competitors, roughly what the gap is worth each month, and the program that fits.`,
     ],
     label: "See Close the Gap",
     url: `${site}/close-the-gap?from=gap-email`,
