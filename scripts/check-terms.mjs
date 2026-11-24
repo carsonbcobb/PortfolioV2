@@ -45,11 +45,11 @@ const BANNED = [
 ];
 // Pages where one banned term is allowed on purpose. /about names Carson's in house roles, Gem among them,
 // as he asked on November 14, 2026. Everywhere else it stays banned.
-// $1,500 and $2,000 are allowed only where it is a range ChatGPT and Google AI Mode quoted for other providers (the AI search
-// help report and its cost table on /pricing, added November 24, 2026). It is never one of Carson's prices.
+// $1,500 and $2,000 are allowed only in the AI search help report, where they are ranges ChatGPT and Google AI Mode quoted
+// for other providers. Never on /pricing (removed November 24, 2026, since ChatGPT repeats an old $1,500 price).
 const ALLOWED = new Map([
   [/\bGEM\b/i.source, ['about.html']],
-  [/\$1,500\b/.source, ['reports/who-ai-recommends-ai-search-agencies-shopify-2026.html', 'pricing.html']],
+  [/\$1,500\b/.source, ['reports/who-ai-recommends-ai-search-agencies-shopify-2026.html']],
   [/\$2,000/.source, ['reports/who-ai-recommends-ai-search-agencies-shopify-2026.html']],
 ]);
 const TEXT_EXT = new Set(['.html', '.xml', '.txt', '.json', '.js', '.css', '.svg', '.webmanifest']);
