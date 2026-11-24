@@ -1,10 +1,11 @@
 ---
-title: "The Follow Up Questions ChatGPT Asks Shoppers | Carson Cobb"
-description: "ChatGPT asked a follow up question or offered to narrow the pick in 18 of 48 shopping answers, often with tappable choices like skin type, budget and dog size. Google AI Mode did in 6."
+title: "The Follow Up Questions ChatGPT Asks Shoppers in 2026"
+description: "ChatGPT asked a follow up question or offered to narrow the pick in 18 of 48 shopping answers (38%), on skin type, budget and pet size. AI Mode did in 6."
 slug: "/reports/chatgpt-follow-up-questions-shoppers-2026"
 h1: "\"What's your skin type?\" The follow up questions ChatGPT asks shoppers"
+answer: "ChatGPT often asks shoppers a follow up question before it settles on a pick. In my November 2026 test of 48 shopping questions, ChatGPT asked or offered to narrow the pick in 18 of 48 answers (38%), often with tappable choices like skin type, budget or dog weight. Google AI Mode did in 6 of 48, and Gemini rarely asked about the shopper."
 datePublished: 2026-11-16
-dateModified: 2026-11-16
+dateModified: 2026-11-23
 faq:
   - question: "Does ChatGPT ask follow up questions when you shop?"
     answer: "Often. In 48 shopping questions I asked in November 2026, ChatGPT asked a follow up question or offered to narrow its recommendation in 18 answers (38%). Many came with tappable answer choices, like skin type or budget."

@@ -1,10 +1,11 @@
 ---
-title: "Is Your Brand Name the Same Everywhere? 96 Shopify Stores | Carson Cobb"
-description: "1 in 10 Shopify brands publish two or more versions of their own name across their site name, Organization data and product data, and 25% don't state it in structured data at all."
+title: "Shopify Brand Name Consistency 2026: 1 in 10 Don't Match"
+description: "1 in 10 Shopify brands publish two or more versions of their own name across site name, Organization and product data, and 25% skip Organization data."
 slug: "/reports/shopify-brand-name-consistency-2026"
 h1: "Is your brand name the same everywhere AI looks?"
+answer: "Most Shopify brands use one brand name everywhere AI looks, but 1 in 10 don't. In my November 2026 check, 10 of 96 Shopify brand stores I could compare published two or more versions of their own name across their site name, Organization structured data and product structured data. 25% of stores didn't state their name in Organization data at all."
 datePublished: 2026-11-16
-dateModified: 2026-11-16
+dateModified: 2026-11-23
 reportStores: 107
 faq:
   - question: "Why does brand name consistency matter for AI search?"
@@ -60,7 +61,7 @@ The 10 inconsistent stores, described without naming them:
 
 A few other differences weren't counted, because they're legitimate: stores that sell other brands' products correctly listed those brands, and one store listed a sub brand for a product line.
 
-## Why this matters
+## Why does brand name consistency matter for AI?
 
 AI builds its picture of a brand by connecting mentions across sources. Your site, your product data, retailer listings, review sites and articles all need to point to the same entity. "Brand USA" on the site, "Brand Co." on Amazon and "BRAND" in product data look like a small detail to a person and like three candidates to a machine.
 

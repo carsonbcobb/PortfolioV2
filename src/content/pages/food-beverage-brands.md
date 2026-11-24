@@ -1,8 +1,9 @@
 ---
-title: "AI Search and CRO for Food and Beverage | Carson Cobb"
-description: "Google AI Mode sends 63% of food and beverage links to brand websites, often to the product page. I get food and drinks recommended by AI, then sold."
+title: "Get Your Food Brand Recommended by AI: What Works"
+description: "Google AI Mode sent 63% of food and beverage links to brand websites. I make food and drink product pages AI can recommend, then turn visits into orders."
 slug: "/food-beverage-brands"
 h1: "Get your food and drinks recommended by AI, then sold on your site"
+answer: "Carson Cobb is an independent AI search and conversion specialist for Shopify brands in every product area, food and beverage among them. AI recommends food and drinks whose product pages say who they are for, the ingredients and allergens, how to serve them and how they taste. In his November 2026 check, Google AI Mode sent 63% of food and beverage links to brand websites."
 faq:
   - question: "How do I get my food brand recommended by ChatGPT?"
     answer: "ChatGPT recommends food and drinks it can match to what the shopper described: the diet, the taste, who's eating it. That comes from product pages that say who the product is for, what's in it and how to eat or serve it, and from the sites AI already reads. It works product by product, so the first step is seeing which of your products AI names today and who it names instead."

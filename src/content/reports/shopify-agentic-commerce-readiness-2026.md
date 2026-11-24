@@ -1,10 +1,11 @@
 ---
-title: "Agentic Commerce Readiness on Shopify 2026: 617 Stores Checked | Carson Cobb"
-description: "Shopify gave almost every store the agent files: 100% respond on UCP and 97% have agents.md. But only 3% replaced the default agents.md and 11% publish return or shipping data agents can read."
+title: "Agentic Commerce Readiness on Shopify 2026: 617 Stores"
+description: "100% of 617 Shopify stores respond on UCP and 97% have agents.md, but only 3% replaced the default and 11% publish return or shipping terms for agents."
 slug: "/reports/shopify-agentic-commerce-readiness-2026"
 h1: "Are Shopify stores ready for AI agents that shop? 617 stores checked"
+answer: "Shopify stores are ready for AI shopping agents by default, but few add store specific data. In my November 2026 check of 617 Shopify brand stores, 100% responded on the UCP file and 97% had agents.md, yet only 3% replaced the default agents.md, 23% put a GTIN in product structured data and 11% put return or shipping terms there."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 reportStores: 617
 faq:
   - question: "What is agentic commerce?"

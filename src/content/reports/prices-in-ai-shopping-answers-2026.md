@@ -1,10 +1,11 @@
 ---
-title: "Do AI Shopping Answers Show Prices? ChatGPT vs Gemini vs AI Mode | Carson Cobb"
-description: "ChatGPT showed prices in 79% of shopping answers, Google AI Mode in 63% and Gemini in 25%. Where those prices come from, how often they're right, and what to fix."
+title: "Do AI Shopping Answers Show Prices? ChatGPT, Gemini, AI Mode"
+description: "ChatGPT showed prices in 79% of shopping answers, Google AI Mode in 63% and Gemini in 25%. Asked directly, ChatGPT and Gemini priced 22 of 24 right."
 slug: "/reports/prices-in-ai-shopping-answers-2026"
 h1: "Do AI shopping answers show your price?"
+answer: "Most AI shopping answers show prices, but it depends on the tool. In 48 shopping questions I asked in November 2026, ChatGPT showed at least one price in 38 answers (79%), Google AI Mode in 30 (63%) and Gemini in only 12 (25%). Asked for the price of 24 specific Shopify products, ChatGPT and Gemini were right for 22."
 datePublished: 2026-11-16
-dateModified: 2026-11-16
+dateModified: 2026-11-23
 faq:
   - question: "Does ChatGPT show product prices?"
     answer: "Usually. In 48 shopping questions I asked in November 2026, ChatGPT showed at least one price in 38 answers (79%), with a median of 4 prices per answer."

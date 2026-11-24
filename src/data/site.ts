@@ -45,6 +45,10 @@ export function ogImageFor(pathname: string): OgImage {
 export const EMAIL = 'carson@carsoncobb.com';
 export const EMAIL_URL = `mailto:${EMAIL}?subject=Shopify%20store%20inquiry`;
 export const AGENCY_EMAIL_URL = `mailto:${EMAIL}?subject=Agency%20partnership`;
+// The one short description of Carson used everywhere: homepage, About, footer, schema and author lines.
+export const BIO_ROLE = 'Independent AI search and conversion specialist for Shopify brands';
+export const BIO = `${BIO_ROLE}, with 6+ years in Shopify development and CRO.`;
+export const BIO_SENTENCE = `Carson Cobb is an independent AI search and conversion specialist for Shopify brands, with 6+ years in Shopify development and CRO.`;
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/carsoncobb/';
 // LinkedIn company page, listed in the JSON-LD sameAs.
 export const LINKEDIN_COMPANY_URL: string | null = 'https://www.linkedin.com/company/carsoncobb';
@@ -90,6 +94,14 @@ export const VERTICALS = ['Fitness', 'Apparel', 'Supplements', 'Beauty and skinc
 export const VERTICALS_NOTE = 'If people compare your product before they buy it, AI is already recommending someone in your market.';
 
 // One proof line under the hero buttons.
+// The five most read reports, linked from the homepage, /ai-search and /pricing (TopReports.astro).
+export const TOP_REPORTS = [
+  'reports/ai-search-statistics-2026',
+  'reports/star-ratings-reviews-ai-answers',
+  'reports/chatgpt-gemini-ai-mode-brand-overlap-2026',
+  'reports/who-chatgpt-recommends-2026',
+  'reports/sources-chatgpt-cites-2026',
+];
 export const HERO_PROOF = ['50+ AI search projects', '30+ sites optimized for AI search', '50+ Shopify stores'];
 
 // "What gets a product recommended": the four things AI weighs, then the sale.
@@ -246,7 +258,7 @@ export const HOME_RESULTS = [
 
 export const ABOUT = {
   heading: 'Why me.',
-  text: "I'm Carson. I've led AI search work for national brands in fitness, apparel, vitamins, skincare, cosmetics, food, pet, wellness and more, from finding the gap to closing it. Before that I spent years running conversion and testing programs, affiliate programs and full rebuilds for Shopify brands from seed stage startups to billion dollar companies. That combination is the point: I know what makes AI recommend a brand, and I know what makes the visitor buy.",
+  text: "I'm Carson Cobb, an independent AI search and conversion specialist for Shopify brands, with 6+ years in Shopify development and CRO. I've led AI search work for national brands in fitness, apparel, vitamins, skincare, cosmetics, food, pet, wellness and more, from finding the gap to closing it. Before that I spent years running conversion and testing programs, affiliate programs and full rebuilds for Shopify brands from seed stage startups to billion dollar companies. That combination is the point: I know what makes AI recommend a brand, and I know what makes the visitor buy.",
   where: 'Based in California. Working remotely with brands anywhere, in English.',
 };
 

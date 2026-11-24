@@ -1,8 +1,9 @@
 ---
-title: "AI Search and CRO for Beauty and Skincare | Carson Cobb"
-description: "In beauty, Reddit, YouTube and other community sources got more of Google AI Mode's links than brand sites. I get your products recommended, then sold."
+title: "AEO for Beauty and Skincare Brands: Get Recommended by AI"
+description: "AEO for beauty and skincare brands: in Google AI Mode, Reddit and YouTube got 30% of beauty links, ahead of brand sites at 28%. What it takes to get named."
 slug: "/beauty-skincare-brands"
 h1: "Get your beauty products recommended by AI, then sold on your site"
+answer: "AEO for beauty and skincare brands means getting your products named when shoppers describe their skin to ChatGPT, Gemini and Google AI Mode and ask what to buy. Carson Cobb, an independent AI search and conversion specialist for Shopify brands, does it by fixing the product pages and data AI reads, within what your brand can legally claim, and working on the community sources AI trusts."
 faq:
   - question: "How do I get my skincare brand recommended by ChatGPT?"
     answer: "ChatGPT recommends skincare it can match to the shopper's skin and concern: sensitive, acne prone, dry, redness. That comes from product pages that say who the product is for, what's in it and how it fits into a routine, and from the community and editorial sites AI already reads. It works product by product, so the first step is seeing which of your products AI names today and who it names instead."
@@ -35,7 +36,7 @@ Skincare shoppers describe their skin to AI before they ever see a brand: "My sk
 
 The AI answers with a few products and a reason for each. If your product isn't one of them, that shopper never sees your site. If it is, they arrive expecting a product made for their skin, and your product page has to confirm it fast.
 
-I'm Carson Cobb, a Shopify expert who works on [AI search](/ai-search) and conversion. I look at how AI answers the questions your buyers ask, product by product, then make the store turn those visitors into orders. You can see where you stand today with the [AI Visibility Check](/ai-visibility-check).
+I'm Carson Cobb, an independent [AI search](/ai-search) and conversion specialist for Shopify brands, working with brands in every product area. I look at how AI answers the questions your buyers ask, product by product, then make the store turn those visitors into orders. You can see where you stand today with the [AI Visibility Check](/ai-visibility-check).
 
 ## What I found when I tested products like yours
 
@@ -46,6 +47,14 @@ In November 2026 I asked ChatGPT, Gemini and Google AI Mode the questions beauty
 - **Pages explain use but skip comparisons.** [63% of beauty product pages I checked explain how to use the product](/reports/do-product-pages-answer-ai-shopper-questions), the best of any product type, but none linked a size guide and 19% compared the product to anything.
 - **Product data is strong.** [81% of beauty products I checked had barcodes on every variant](/reports/shopify-catalog-data-ai-shopping-2026). The gaps are on the page, not in the data.
 - **AI gets ratings wrong.** ChatGPT, Gemini and Google AI Mode got a product's rating and review count right on all three for [only 7 of 22 products](/reports/what-ai-gets-wrong-about-products-2026).
+
+## AEO for beauty and skincare brands: what it takes
+
+AEO, or answer engine optimization, is getting your product into the answer when a shopper asks AI what to buy. For beauty, skincare and cosmetics it takes three things: product pages that answer the shopper's exact question about their skin, product data AI can read, and a presence in the reviews, videos and threads AI leans on for beauty.
+
+One rule shapes all of it. Product claims on the page have to stay within what your brand can legally say about the product, and AI quotes the page. Stronger claims are not the fix. Specific ones are: skin type, what's left out, what each key ingredient does, written in plain words your team has signed off on. That gives AI accurate facts to repeat, and keeps what it repeats about you safe.
+
+Selling into the US from another country, like a Korean skincare brand? See [getting your brand recommended by AI in the US](/ai-search-international-brands).
 
 ## What AI looks for on your product pages
 

@@ -20,11 +20,12 @@ import {
   CTA_LABEL,
 } from '../data/site';
 import { homeSchema } from '../data/schema';
+import TopReports from '../components/TopReports.astro';
 import '../styles/content.css';
 
 const title = 'Carson Cobb | AI Search and CRO for Shopify Brands';
 const description =
-  'AI is picking the winners in your market. I show Shopify brands where competitors beat them in ChatGPT, Gemini and Google AI Mode, product by product, then close the gap.';
+  'AI search and CRO for Shopify brands. I show you where competitors beat you in ChatGPT, Gemini and Google AI Mode, product by product, then close the gap.';
 
 const faqs = FAQS;
 
@@ -39,11 +40,12 @@ const jsonLd = [homeSchema({ title, description, faqs })];
     <section class="dark" aria-label="Introduction">
       <div class="wrap hero hero--solo">
         <div class="hero__text">
+          <p class="eyebrow">AI search and CRO for Shopify brands</p>
           <h1 class="hero__h1">AI is picking the winners in your market. <span class="accent">Make sure it picks you.</span></h1>
           <p class="hero__sub">
-            When shoppers ask ChatGPT, Gemini and Google AI Mode what to buy, they get a short list. I show you exactly where
-            your competitors beat you, product by product, and what it's costing you. Then I close the gap, and make sure the
-            shoppers AI sends actually buy.
+            I'm Carson Cobb, an independent AI search and conversion specialist for Shopify brands. When shoppers ask ChatGPT,
+            Gemini and Google AI Mode what to buy, they get a short list. I show you where your competitors beat you, product by
+            product, then close the gap and make sure the shoppers AI sends actually buy.
           </p>
           <div class="btn-row">
             <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent"
@@ -53,6 +55,10 @@ const jsonLd = [homeSchema({ title, description, faqs })];
             <a href={PROGRAM.path} class="btn btn--ghost-dark">See the program</a>
           </div>
           <p class="hero__note">No calls needed. You get a video, not a sales pitch.</p>
+          <p class="hero__note">
+            New to this? Read <a href="/guides/why-chatgpt-recommends-my-competitor">why ChatGPT recommends your competitor
+            instead of you</a>, or see how <a href="/ai-search">AI search optimization for Shopify brands</a> works.
+          </p>
         </div>
       </div>
     </section>
@@ -249,6 +255,8 @@ const jsonLd = [homeSchema({ title, description, faqs })];
       </div>
     </section>
 
+    <TopReports />
+
     <!-- About -->
     <section class="section">
       <div class="wrap">
@@ -266,9 +274,7 @@ const jsonLd = [homeSchema({ title, description, faqs })];
             <p class="lede">{ABOUT.text}</p>
             <p class="about__where">{ABOUT.where}</p>
             <p class="about__where">
-              More <a href="/about">about me</a>, how I work as your
-              <a href="/fractional-head-of-ecommerce">fractional head of ecommerce</a>, and how I compare
-              <a href="/recharge-vs-skio-vs-loop">Recharge, Skio and Loop</a>.
+              More <a href="/about">about me</a>, and the <a href="/results">results behind the work</a>.
             </p>
           </div>
         </div>

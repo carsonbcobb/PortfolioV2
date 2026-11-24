@@ -1,10 +1,11 @@
 ---
-title: "ChatGPT Shopping Statistics 2026: Users, Queries, Traffic and Recommendations | Carson Cobb"
-description: "The ChatGPT shopping numbers that matter in 2026, each with its source: 900 million weekly users, 84 million weekly US shopping questions, and how many brands ChatGPT actually names."
+title: "ChatGPT Shopping Statistics 2026: Users, Traffic, Brands"
+description: "ChatGPT shopping statistics with sources: 900 million weekly users, over 84 million US shopping questions a week, and a median of 4 brands per answer."
 slug: "/reports/chatgpt-shopping-statistics-2026"
 h1: "ChatGPT shopping statistics for 2026, with sources"
+answer: "ChatGPT had 900 million weekly active users in February 2026, according to OpenAI, and Stackline estimated US consumers ask it over 84 million shopping questions a week. Shopify reported AI referred shoppers convert 64% higher than organic search in Q3 2026. In my November 2026 test of 48 shopping questions, ChatGPT named a median of 4 brands per answer."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 faq:
   - question: "How many people use ChatGPT for shopping?"
     answer: "OpenAI said in February 2026 that ChatGPT had 900 million weekly active users. Stackline estimated in November 2025 that US consumers asked ChatGPT over 84 million shopping questions a week, and its survey of 2,500 US consumers found 41% had recently used AI to help them shop."
@@ -15,8 +16,6 @@ faq:
   - question: "Does ChatGPT send traffic to online stores?"
     answer: "Yes, and the shoppers it sends convert well. Shopify reported in Q3 2026 that AI referred shoppers convert 64% better than organic search, and Similarweb found ChatGPT drove more than 80% of AI referrals to the top 1,000 global websites in a mid 2025 analysis."
 ---
-
-**By Carson Cobb. Updated November 17, 2026.**
 
 Most ChatGPT statistics pages repeat each other's numbers without dates. This one lists each figure with who measured it and when, then adds my own measurements of what ChatGPT actually recommends.
 

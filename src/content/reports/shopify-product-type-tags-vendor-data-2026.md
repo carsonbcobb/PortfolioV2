@@ -1,10 +1,11 @@
 ---
-title: "Shopify Product Type, Tags and Vendor Data 2026: 600 Catalogs Checked | Carson Cobb"
-description: "8% of Shopify brand stores leave product type empty on every product, 11% use no tags, and half use more than one vendor name. What AI shopping tools read from your catalog."
+title: "Shopify Product Type, Tags and Vendor 2026: 600 Catalogs"
+description: "8% of Shopify brand stores leave product type empty on every product, 11% use no tags and half use more than one vendor name. The fields AI shopping reads."
 slug: "/reports/shopify-product-type-tags-vendor-data-2026"
 h1: "Product type, tags and vendor: the Shopify catalog fields AI shopping tools read first"
+answer: "Shopify product type, tags and vendor are catalog fields AI shopping tools can read before any product page. In my November 2026 check of 600 Shopify brand catalogs, the median store filled product type on 94% of products, but 8% left it empty everywhere. 11% used no tags, and half used more than one vendor name."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 reportStores: 617
 faq:
   - question: "Does product type matter on Shopify?"

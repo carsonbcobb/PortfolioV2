@@ -1,10 +1,11 @@
 ---
-title: "Does llms.txt Do Anything for Shopify Stores? 2026 Evidence"
-description: "95% of Shopify stores publish an llms.txt file, mostly one Shopify wrote. What Google, OpenAI and crawler logs say it does, and what to do instead."
+title: "Does llms.txt Do Anything? 2026 Evidence for Shopify"
+description: "No major AI search product says it reads llms.txt, and Google lists it as skippable. 95% of Shopify stores serve the default file. What to do instead."
 slug: "/reports/does-llms-txt-do-anything"
 h1: "Does llms.txt do anything?"
+answer: "No major AI search product says it reads llms.txt, and Google's AI optimization guide lists it as something you can skip. In my November 2026 check, 89 of 94 Shopify stores returned Shopify's default llms.txt, and the one public log study found about 0.1% of AI bot visits requested it. The file is harmless. Leave it and spend the time on product pages."
 datePublished: 2026-11-04
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 reportStores: 94
 faq:
   - question: "Does my Shopify store have an llms.txt file?"
@@ -15,7 +16,7 @@ faq:
     answer: "There is no reason to delete it. If your theme lets you edit it, make sure the store description is accurate. Then spend your time on the things AI systems do read: your product pages, your structured data and the sources that mention you."
 ---
 
-**By Carson Cobb. Data checked November 2026. Last updated November 2026.**
+**By Carson Cobb. Data checked November 2026.**
 
 llms.txt is a plain text file at the root of a website that summarizes the site for AI systems. A year ago it was a niche idea. Now almost every Shopify store has one, because Shopify started generating it automatically. So the useful question is no longer "should I add one." It's "does it change anything, and is there anything worth doing with it."
 

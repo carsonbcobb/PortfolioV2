@@ -1,10 +1,11 @@
 ---
-title: "Shopify Blogs in 2026: 16,726 Articles From 107 Brands | Carson Cobb"
-description: "85% of Shopify brands have a blog, but only 52% updated an article in the last 90 days. Just 2% of articles compare products, the questions shoppers ask AI most."
+title: "Shopify Blog Content for AI Search 2026: 16,726 Articles"
+description: "85% of Shopify brands have a blog, but only 52% updated an article in the last 90 days, and 2% of 16,726 articles compare products, as AI shoppers ask."
 slug: "/reports/shopify-blog-content-ai-search-2026"
 h1: "What 107 Shopify brands publish on their blogs, and what they don't"
+answer: "In my November 2026 check of 107 Shopify brand stores and 16,726 blog articles, 85% had a blog but only 52% updated an article in the last 90 days. 17% of articles answered a question, 6% were best of lists and only 2% were comparisons, the formats shoppers ask AI for most. Half the stores had no comparison article at all."
 datePublished: 2026-11-16
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 reportStores: 107
 faq:
   - question: "Do Shopify brands still have blogs?"
@@ -57,7 +58,7 @@ Comparison questions are everywhere in AI shopping: "X vs Y", "is this better th
 
 Half the stores I checked had no comparison article at all. Across all 16,726 articles, only 375 compared anything.
 
-## Fresh matters, but not the way you think
+## Does blog freshness matter for AI search?
 
 AI and Google both favor information that looks current, and an article last touched in 2022 about a product that's changed since is a liability. But publishing more often isn't the fix. Updating the 10 articles that answer real buying questions, with current prices, ingredients and product names, does more than adding 10 new lifestyle posts.
 

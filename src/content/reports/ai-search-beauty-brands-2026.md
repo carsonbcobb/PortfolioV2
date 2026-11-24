@@ -1,10 +1,11 @@
 ---
-title: "AI Search for Beauty Brands 2026: Who Gets Recommended and Why | Carson Cobb"
-description: "4 of 127 beauty brands on Shopify were named by ChatGPT, Gemini or Google AI Mode in my November 2026 tests. What AI looks for, and how beauty stores compare."
+title: "AI Search for Beauty Brands 2026: Who Gets Recommended"
+description: "4 of 127 Shopify beauty brands, 3%, were named by ChatGPT, Gemini or Google AI Mode in my November 2026 tests. What AI looks for and how stores compare."
 slug: "/reports/ai-search-beauty-brands-2026"
 h1: "AI search for beauty brands: who gets recommended, and what their stores do differently"
+answer: "In my November 2026 tests, ChatGPT, Gemini and Google AI Mode named only 4 of 127 beauty brands on Shopify in my dataset, 3%, against 11% across all six product areas. ChatGPT named a median of 3 brands per beauty answer. Beauty product pages often explain how to use a product (51%) but less often say who it is for (34%)."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 reportStores: 617
 faq:
   - question: "How many beauty brands does ChatGPT recommend per answer?"

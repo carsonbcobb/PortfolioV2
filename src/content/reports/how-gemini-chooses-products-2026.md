@@ -1,10 +1,11 @@
 ---
-title: "How Gemini Recommends Products: 2026 Shopping Research | Carson Cobb"
-description: "Gemini names more brands than ChatGPT, a median of 5 and up to 12, quotes certifications twice as often, shows prices in only 25% of answers and rarely asks about the shopper. Data from 48 questions."
+title: "How Gemini Recommends Products: 2026 Shopping Data"
+description: "Gemini named a median of 5 brands per shopping answer, cited certifications in 23 of 48 answers and showed prices in only 12. How it differs from ChatGPT."
 slug: "/reports/how-gemini-chooses-products-2026"
 h1: "How Gemini recommends products, and how it differs from ChatGPT"
+answer: "Gemini names more brands than ChatGPT and shows fewer prices. In my November 2026 tests of 48 shopping questions, Gemini named a median of 5 brands per answer and up to 12, against 4 and 8 for ChatGPT. It cited certifications in 23 of 48 answers, against 12 for ChatGPT, and showed prices in only 12 of 48."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 faq:
   - question: "How many brands does Gemini recommend?"
     answer: "A median of 5 per shopping answer in my November 2026 tests, with up to 12. That's more than ChatGPT's median of 4. Gemini named 254 different brands across 48 questions."

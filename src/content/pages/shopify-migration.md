@@ -1,8 +1,9 @@
 ---
-title: "Shopify Migration and Theme Rebuilds | Carson Cobb"
-description: "Move to Shopify or rebuild your theme without losing rankings, reviews or subscribers. I plan redirects, subscription moves and a careful launch."
+title: "Shopify Migration Without Losing Rankings or Subscribers"
+description: "Most Shopify migration losses come from missing redirects, lost reviews and broken subscriptions. I map every URL, move contracts and test before launch."
 slug: "/shopify-migration"
 h1: "Shopify migrations and theme rebuilds without the lost revenue"
+answer: "Carson Cobb is an independent AI search and conversion specialist for Shopify brands who plans Shopify migrations and theme rebuilds. Most lost rankings and revenue come from missing redirects, dropped content, broken internal links and subscription contracts moved without a plan. He maps every old URL, moves reviews and subscriptions on a planned cutover, runs test orders and watches the first billing cycle after launch."
 faq:
   - question: "Will I lose my Google rankings if I move to Shopify?"
     answer: "A migration always carries some risk, but most ranking losses come from missing redirects, dropped content and broken internal links. I map every old URL to its new home, keep the content that ranks, and check the redirects after launch so search engines and shoppers land in the right place."

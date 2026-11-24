@@ -1,10 +1,11 @@
 ---
-title: "Most Popular Shopify Themes 2026: What 599 Brand Stores Actually Run | Carson Cobb"
-description: "Dawn runs 13% of 599 Shopify brand stores, then Impulse, Horizon, Broadcast and Prestige. But brands use 263 different themes, and a third run a theme no other store in the sample uses."
+title: "Most Popular Shopify Themes 2026: 599 Brand Stores"
+description: "Dawn runs 13% of 599 Shopify brand stores, then Impulse, Horizon, Broadcast and Prestige. Brands use 263 themes, and a third run one no other store uses."
 slug: "/reports/most-popular-shopify-themes-2026"
 h1: "The most popular Shopify themes in 2026, from 599 brand stores"
+answer: "Dawn is the most popular Shopify theme in 2026. In my November 2026 check of 599 Shopify brand stores, Dawn ran 80 stores (13%), followed by Impulse (3%), Horizon (3%), Broadcast (2%) and Prestige (2%). Brands use 263 different themes, and 197 stores, about a third, run a theme no other store in the sample uses."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 cta: cro
 reportStores: 599
 faq:

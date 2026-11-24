@@ -1,10 +1,11 @@
 ---
-title: "Variant Schema on Shopify 2026: ProductGroup, Size and Color Data | Carson Cobb"
-description: "23% of Shopify product pages use ProductGroup structured data for variants, 56% in apparel but 6% in beauty. Only 3% state color and 2% size. Data from 516 product pages."
+title: "Shopify Variant Schema 2026: ProductGroup, Size and Color"
+description: "23% of 516 Shopify product pages use ProductGroup structured data for variants, 56% in apparel but 6% in beauty. Only 3% state a color and 2% a size."
 slug: "/reports/shopify-productgroup-variant-schema-2026"
 h1: "Variant schema on Shopify: do product pages tell AI which sizes, colors and flavors exist?"
+answer: "Most Shopify product pages don't tell AI which variants exist. In my November 2026 check of 516 Shopify product pages with Product structured data, 23% used ProductGroup, from 56% in apparel to 6% in beauty. Only 3% stated a color and 2% a size in structured data, so a machine often has to guess whether a size or flavor exists."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 reportStores: 617
 faq:
   - question: "What is ProductGroup schema?"

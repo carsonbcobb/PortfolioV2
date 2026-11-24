@@ -1,10 +1,11 @@
 ---
-title: "Shopify Product Schema Completeness 2026: What AI Can Read"
-description: "Which structured data fields Shopify stores publish, from price and stock to ratings, identifiers, shipping and returns. Field by field, from 94 stores."
+title: "Shopify Product Schema Completeness 2026: 94 Stores"
+description: "89% of 94 Shopify stores had Product structured data, but only 62% included a rating, 46% a GTIN and 11% shipping or return details. Field by field."
 slug: "/reports/shopify-product-schema-completeness-2026"
 h1: "Product and merchant schema completeness"
+answer: "Shopify product schema usually covers the basics but misses details AI shoppers ask about. In my November 2026 check of 94 Shopify stores, 89% had Product structured data, and almost all included name, price and availability. But only 62% included a rating, 46% a GTIN, and 11% each shipping details or a return policy. 28% of stores running a review app had no rating in their structured data."
 datePublished: 2026-11-04
-dateModified: 2026-11-04
+dateModified: 2026-11-23
 reportStores: 94
 faq:
   - question: "What share of Shopify stores have Product structured data?"
@@ -15,7 +16,7 @@ faq:
     answer: "11%. Shipping and return policy fields were the least common fields in the study, even though they answer questions shoppers ask AI before buying."
 ---
 
-**By Carson Cobb. Data checked November 2026. Last updated November 2026.**
+**By Carson Cobb. Data checked November 2026.**
 
 Structured data is the part of a product page written for machines: the name, price, stock status, rating and policies in a format a crawler can read without guessing. Google has used it for years. Microsoft has said it helps its AI models understand pages. When an AI assistant answers "how much is it" or "is it any good," clean structured data is the most direct source it can use.
 
@@ -82,6 +83,8 @@ For more on this, see [whether your brand name is the same everywhere AI looks](
 | About page | About page markup | 2% |
 
 The homepage Organization block is how a brand tells machines "this site, these social profiles and this logo are the same company." 39% of stores don't make that connection.
+
+Product meta descriptions are another field most stores leave to Shopify's defaults. See [what Shopify product meta descriptions really say](/reports/shopify-product-meta-descriptions-2026).
 
 ## What to do with this
 

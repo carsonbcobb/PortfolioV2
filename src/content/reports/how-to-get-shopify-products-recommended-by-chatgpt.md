@@ -1,10 +1,11 @@
 ---
-title: "How to Get Your Shopify Products Recommended by ChatGPT (2026, Data Backed) | Carson Cobb"
-description: "A step by step plan to get Shopify products recommended by ChatGPT, Gemini and Google AI Mode, built from 144 AI shopping answers and a scan of 617 Shopify brand stores."
+title: "How to Get Shopify Products Recommended by ChatGPT (2026)"
+description: "Get Shopify products recommended by ChatGPT: earn cited sources, state checkable reasons and who each product is for, and fix data. From 144 AI answers."
 slug: "/reports/how-to-get-shopify-products-recommended-by-chatgpt"
 h1: "How to get your Shopify products recommended by ChatGPT"
+answer: "To get Shopify products recommended by ChatGPT, be the product independent sources recommend, put specific, checkable reasons on each product page, say exactly who each product is for, and keep product data clean. In my November 2026 research across 144 AI shopping answers and 617 Shopify brand stores, sources and specific reasons decided the pick. Structured data decided whether facts were right."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 reportStores: 617
 faq:
   - question: "How do I get my Shopify products recommended by ChatGPT?"
@@ -16,8 +17,6 @@ faq:
   - question: "Should I block ChatGPT's crawlers?"
     answer: "Usually not, if you want to be recommended. Only 1% of 617 Shopify brand stores I checked fully blocked any major AI crawler. Blocking search and user agents stops ChatGPT from reading your pages when shoppers ask about you."
 ---
-
-**By Carson Cobb. Updated November 17, 2026.**
 
 There's no setting that gets you into ChatGPT. But there's a clear pattern in who it recommends. I built this plan from 144 AI shopping answers across ChatGPT, Gemini and Google AI Mode, repeat tests, fact checks against real product pages, and a scan of 617 Shopify brand stores. Each step links to the research behind it.
 

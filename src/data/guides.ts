@@ -5,7 +5,7 @@ const files = Object.values(import.meta.glob<MarkdownPage>('../content/guides/*.
 
 /** Hub order, with the two reports each guide links to under Related */
 const LIST: [string, [string, string]][] = [
-  ['why-chatgpt-doesnt-recommend-my-shopify-store', ['sources-chatgpt-cites-2026', 'who-chatgpt-recommends-2026']],
+  ['why-chatgpt-recommends-my-competitor', ['sources-chatgpt-cites-2026', 'who-chatgpt-recommends-2026']],
   ['shopify-products-in-chatgpt-shopping', ['shopify-catalog-data-ai-shopping-2026', 'what-ai-gets-wrong-about-products-2026']],
   ['hire-ai-search-specialist-shopify', ['chatgpt-gemini-ai-mode-brand-overlap-2026', 'does-llms-txt-do-anything']],
   ['ai-search-optimization-cost-shopify', ['sources-chatgpt-cites-2026', 'chatgpt-gemini-ai-mode-brand-overlap-2026']],

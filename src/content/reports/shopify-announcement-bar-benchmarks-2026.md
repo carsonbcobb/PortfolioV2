@@ -1,10 +1,11 @@
 ---
-title: "What Shopify Announcement Bars Say: 63 Brand Stores | Carson Cobb"
-description: "56% of Shopify announcement bars push free shipping and 35% push a sale. Only 2 of 63 mention returns and 3 use social proof, the messages most stores leave out."
+title: "Shopify Announcement Bar Benchmarks 2026: What 63 Say"
+description: "56% of 63 Shopify announcement bars push free shipping and 35% a sale. Only 2 mention returns and 3 use social proof, the messages that would stand out."
 slug: "/reports/shopify-announcement-bar-benchmarks-2026"
 h1: "What Shopify announcement bars say, and what they leave out"
+answer: "Most Shopify announcement bars push free shipping. In my November 2026 read of 63 Shopify brand announcement bars, 56% promoted free shipping and 35% a sale or discount. The trust messages were missing: only 2 of 63 mentioned returns, only 3 used social proof, and none used a delivery cutoff."
 datePublished: 2026-11-16
-dateModified: 2026-11-16
+dateModified: 2026-11-23
 reportStores: 107
 faq:
   - question: "What do most Shopify announcement bars say?"

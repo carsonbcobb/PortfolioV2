@@ -1,10 +1,11 @@
 ---
-title: "AI Search for Food and drink Brands 2026: Who Gets Recommended and Why | Carson Cobb"
-description: "19 of 154 food and drink brands on Shopify were named by ChatGPT, Gemini or Google AI Mode in my November 2026 tests. What AI looks for, and how food and drink stores compare."
+title: "AI Search for Food and Drink Brands 2026: Who Gets Named"
+description: "19 of 154 Shopify food and drink brands, 12%, were named by ChatGPT, Gemini or Google AI Mode in my November 2026 tests. 96 different brands came up."
 slug: "/reports/ai-search-food-beverage-brands-2026"
 h1: "AI search for food and drink brands: who gets recommended, and what their stores do differently"
+answer: "In my November 2026 tests, ChatGPT, Gemini and Google AI Mode named 19 of 154 food and drink brands on Shopify in my dataset at least once, 12%, against 11% across all six product areas. Food and drink was the most open area, with 96 different brands named across eight questions, and Gemini named a median of 8 brands per answer."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 reportStores: 617
 faq:
   - question: "How many food and drink brands does ChatGPT recommend per answer?"

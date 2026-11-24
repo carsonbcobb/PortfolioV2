@@ -1,10 +1,11 @@
 ---
-title: "Why ChatGPT Recommends Your Competitor (and How to Fix It)"
-description: "ChatGPT names about 4 brands per shopping answer and keeps picking the same ones. Here's what decides who gets named, from tests across real shopping questions."
-slug: "/guides/why-chatgpt-doesnt-recommend-my-shopify-store"
-h1: "Why ChatGPT recommends your competitor, and how to fix it"
+title: "Why ChatGPT Recommends Your Competitor Instead of You"
+description: "ChatGPT names about 4 brands per shopping answer and cites a source in 45 of 48. Those sources and your product page decide who it names. How to fix it."
+slug: "/guides/why-chatgpt-recommends-my-competitor"
+h1: "Why ChatGPT recommends your competitor instead of you"
+answer: "ChatGPT recommends your competitor because the sources it trusts mention them and not you, and their product page answers the shopper's exact question more clearly than yours. In my November 2026 tests, ChatGPT named about 4 brands per shopping answer and showed a source in 45 of 48 answers, led by review sites, testing sites and magazines. Fix the sources first, then your product pages."
 datePublished: 2026-11-09
-dateModified: 2026-11-20
+dateModified: 2026-11-23
 pageCta:
   variant: ai
 faq:
@@ -30,41 +31,32 @@ faq:
     answer: "Not on its own. In my tests, structured data mostly helped AI get facts like price and rating right. Stores ChatGPT named scored only slightly higher on technical readiness than stores it skipped. Schema keeps the AI accurate once you are in the answer; outside sources and clear product pages get you in."
 ---
 
-**By Carson Cobb. Last updated November 2026.**
+You asked ChatGPT for the best product in your space, and it named four brands that weren't you. Maybe one of them is half your size, or has worse reviews. It isn't random, and it isn't about size. Here's what's actually going on, based on checking 94 Shopify stores and 48 real buyer questions across ChatGPT, Gemini and Google AI Mode in November 2026.
 
-**In three sentences.** ChatGPT names [about 4 brands per shopping answer](/reports/who-chatgpt-recommends-2026), so being recommended means being one of a handful. It keeps picking the same ones: asked again in a fresh chat, [the top pick matched in 10 of 11 questions](/reports/who-chatgpt-recommends-2026#how-stable-are-the-picks). And it showed a source in [45 of 48 answers](/reports/sources-chatgpt-cites-2026), led by review sites, testing sites and magazines, so outside pages decide most of who gets named.
-
-You asked ChatGPT for the best product in your space, and it named four brands that weren't you. Maybe one of them is half your size, or has worse reviews. It isn't random, and it isn't about size. Here's what's actually going on, based on checking 94 Shopify stores and 72 real buyer questions across ChatGPT, Gemini and Google AI Mode in November 2026.
-
-## The short answer
-
-ChatGPT recommends the brands it can find good reasons for. Most of those reasons come from other websites, not yours. Your own store decides whether the AI gets your facts right once it has chosen you. It rarely decides whether you get chosen.
-
-## Two things decide it: getting considered, then getting picked
-
-**Outside sources decide whether a brand gets considered.** The review sites, testing sites, magazines and threads behind the answer are where ChatGPT finds its candidates. If they never mention you, you aren't on the list it chooses from.
-
-**The product page decides whether it gets picked.** Among the brands it found, the AI goes with the page that answers the shopper's exact question in plain words.
-
-Here's a short example. A shopper asks for "the best moisturizer for dry skin." Your page says your moisturizer is "for all skin types." Your competitor's page says "for dry skin" and explains why. Both brands show up in the sources, but only one page answers the question, so the competitor gets named. You fix the first problem with outside coverage and the second with the words on your own product page.
-
-## Why does ChatGPT recommend my competitors and not us?
+## Why does ChatGPT recommend my competitors instead of me?
 
 Because the sources ChatGPT trusts for that question mention your competitors and not you, and their product pages state the facts the shopper asked about more clearly than yours do. ChatGPT showed a source or store link in 45 of 48 product answers I checked, so those outside pages decide most picks.
 
 If the review site, the "best of" article and the Reddit thread behind the answer all name your competitor, so will the AI. Check the cited sources for your question. Usually you'll find your competitor in two or three of them and yourself in none.
 
-## Why do some competitors get recommended by AI assistants?
+ChatGPT recommends the brands it can find good reasons for. Most of those reasons come from other websites, not yours. Your own store decides whether the AI gets your facts right once it has chosen you. It rarely decides whether you get chosen.
 
-They give the AI the best evidence for that specific question. Size has little to do with it. AI assistants aren't ranking brands by revenue. They pick the brand that trusted sources mention, whose page states the facts the shopper asked about, and whose rating clears the bar, which is often a smaller specialist brand.
+## How do I know if AI is recommending my competitors?
 
-In my [test of 48 buyer questions](/reports/who-chatgpt-recommends-2026), 27 answers named at least one growing Shopify brand, and 14 of 44 top picks were one of them. That's how a competitor with worse reviews or a fraction of your sales can still be the brand ChatGPT names.
+Ask the way a real shopper would, more than once, in all three AI tools, and write down who gets named. A single question in a single chat tells you very little, because AI answers change between runs: a brand in position 3 or lower came back in only 56% to 74% of [repeat runs of the same question](/reports/how-often-ai-recommendations-change).
 
-## How do AI chatbots decide which brands to recommend?
+To check properly:
 
-They build each answer from evidence. ChatGPT, Gemini and Google AI Mode look at what other sites say about a product, how well its own page answers the exact question, whether its product data is readable, and, in Google AI Mode, whether its rating clears 4.0 stars. Outside sources decide most picks. Your own store mostly decides accuracy.
+- **Ask like a shopper, with context.** Not your brand name or product title, but the question a buyer types: "best magnesium for sleep for someone who wakes up at 3am," or "a gift for a coffee lover under $50." Add the details real shoppers add, like who it's for, the budget and the problem.
+- **Ask each question more than once,** in a new chat each time, and note how often each brand comes up, not just whether it came up once.
+- **Check ChatGPT, Gemini and Google AI Mode.** They [agree less than you'd think](/reports/chatgpt-gemini-ai-mode-brand-overlap-2026): only 23% of the brands named came from all three. You can be invisible in ChatGPT and doing fine in AI Mode, or the reverse.
+- **Write down the sources each answer cites.** Those are the pages deciding who gets named.
 
-These are the six things I see decide it most often.
+The fast way to do the first pass is the [AI Visibility Check](/ai-visibility-check): it shows how often ChatGPT recommends you against your top competitor, in about a minute.
+
+## What makes ChatGPT recommend one brand over another?
+
+Evidence it can trust for that exact question. These are the five things I see decide it most often.
 
 ### 1. Other sites are vouching for your competitors
 
@@ -94,15 +86,27 @@ Nobody I checked was blocking ChatGPT. But [11% of stores](/reports/ai-crawler-a
 
 In Google AI Mode, [79 of 82 rated product cards](/reports/star-ratings-reviews-ai-answers) were 4.0 stars or higher. Ratings work like a minimum bar: below 4.0 you rarely show, and above it other things decide the order. AI also misreads ratings often. All three AIs got the rating right for only [7 of 22 products](/reports/what-ai-gets-wrong-about-products-2026) I asked about directly. If AI thinks you have 3.9 stars when you have 4.7, you'll fall below the 4.0 bar and your competitor won't.
 
-### 6. You're checking the wrong AI
+## How do AI chatbots decide which brands to recommend?
 
-ChatGPT, Gemini and Google AI Mode [agree less than you'd think](/reports/chatgpt-gemini-ai-mode-brand-overlap-2026). Only 23% of the brands named came from all three. You can be invisible in ChatGPT and doing fine in AI Mode, or the reverse.
+They build each answer from evidence. ChatGPT, Gemini and Google AI Mode look at what other sites say about a product, how well its own page answers the exact question, whether its product data is readable, and, in Google AI Mode, whether its rating clears 4.0 stars. Outside sources decide most picks. Your own store mostly decides accuracy.
 
-## ChatGPT recommends my competitors but never my brand. How do I fix that?
+**Outside sources decide whether a brand gets considered.** The review sites, testing sites, magazines and threads behind the answer are where ChatGPT finds its candidates. If they never mention you, you aren't on the list it chooses from.
+
+**The product page decides whether it gets picked.** Among the brands it found, the AI goes with the page that answers the shopper's exact question in plain words.
+
+Here's a short example. A shopper asks for "the best moisturizer for dry skin." Your page says your moisturizer is "for all skin types." Your competitor's page says "for dry skin" and explains why. Both brands show up in the sources, but only one page answers the question, so the competitor gets named. You fix the first problem with outside coverage and the second with the words on your own product page.
+
+They give the AI the best evidence for that specific question. Size has little to do with it. AI assistants aren't ranking brands by revenue. They pick the brand that trusted sources mention, whose page states the facts the shopper asked about, and whose rating clears the bar, which is often a smaller specialist brand.
+
+In my [test of 48 buyer questions](/reports/who-chatgpt-recommends-2026), 27 answers named at least one growing Shopify brand, and 14 of 44 top picks were one of them. That's how a competitor with worse reviews or a fraction of your sales can still be the brand ChatGPT names.
+
+The picks are also sticky. Asked again in a fresh chat, [the top pick matched in 10 of 11 questions](/reports/who-chatgpt-recommends-2026#how-stable-are-the-picks), so a competitor that's in the answer today tends to stay there until something about the evidence changes.
+
+## How do I fix it?
 
 Find the exact reason first, then fix that. Run the questions your buyers ask in ChatGPT, Gemini and Google AI Mode, list the sources each answer cites, and compare your competitor's product page with yours on the facts in the question. The gap is usually a missing source mention or a fact your page never states.
 
-1. **Write down 10 questions a buyer would ask before finding you,** then build that out to 20 to 40 real buyer questions for your top products, short and long. The pattern usually shows up within the first ten.
+1. **Write down how your shoppers actually ask,** short and long, with the context a real shopper adds: who it's for, the budget, the problem it solves. The pattern usually shows up within the first ten.
 2. **Run each one in ChatGPT, Gemini and Google AI Mode.**
 3. **Record who gets named and which sources get cited.** For every answer that names your competitor, list the sources. That's your competition and your target list.
 4. **Compare their product page with yours** on the specific facts in the question, then fix the product pages for your best sellers so they answer the questions in plain sentences.

@@ -1,10 +1,11 @@
 ---
-title: "Buy Now Pay Later and Loyalty on Shopify 2026: What 609 Brands Use | Carson Cobb"
-description: "68% of Shopify brand stores offer Shop Pay Installments and 28% also load Afterpay, Klarna or Affirm code. Loyalty apps are rarer at 10%. Data from 609 stores."
+title: "Buy Now Pay Later and Loyalty on Shopify 2026: 609 Brands"
+description: "68% of Shopify brand stores offer Shop Pay Installments and 28% also load Afterpay, Klarna or Affirm code. 10% load a loyalty app. Data from 609 stores."
 slug: "/reports/shopify-bnpl-loyalty-apps-2026"
 h1: "Buy now pay later and loyalty on Shopify: what 609 brands actually offer"
+answer: "Most Shopify brand stores offer buy now pay later through Shop Pay Installments: 398 of 585 stores (68%) in my November 2026 check. On top of that, 28% of 609 homepages loaded Afterpay, Klarna or Affirm code, led by beauty at 43% and apparel at 42%. Loyalty apps are rarer: only 10% loaded LoyaltyLion or Smile."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 cta: cro
 reportStores: 617
 faq:

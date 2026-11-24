@@ -1,10 +1,11 @@
 ---
-title: "Shopify About Pages: Do Brands Say Who's Behind Them? | Carson Cobb"
-description: "82% of Shopify brands have an About page, but only 52% of those pages mention a founder. Why who's behind a brand matters to shoppers, Google and AI."
+title: "Shopify About Pages 2026: Do Brands Say Who's Behind Them?"
+description: "82% of Shopify brands have an About page, but only 52% of those mention a founder: 57% never say who's behind the brand. Why it matters to shoppers and AI."
 slug: "/reports/shopify-about-pages-founder-2026"
 h1: "Shopify About pages: do brands say who's behind them?"
+answer: "Most Shopify brands have an About page, but only about half say who started the brand. In my November 2026 check of 107 Shopify brand stores, 88 of 107 (82%) had an About or Our Story page, and 46 of those 88 (52%) mentioned a founder or how the brand was founded. 57% of stores never say who's behind the brand on an About page."
 datePublished: 2026-11-16
-dateModified: 2026-11-16
+dateModified: 2026-11-23
 reportStores: 107
 faq:
   - question: "How many Shopify brands have an About page?"

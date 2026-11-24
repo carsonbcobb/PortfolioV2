@@ -1,10 +1,11 @@
 ---
-title: "Does Duplicate Product Schema Hurt AI Visibility?"
-description: "29% of Shopify stores publish two or three Product blocks, usually from a review app. Which apps cause it, how to stop it, and what it does to AI answers."
+title: "Does Duplicate Product Schema Hurt AI Visibility? 94 Stores"
+description: "29% of 94 Shopify stores publish duplicate Product schema, mostly from review apps. ChatGPT handled agreeing blocks fine; rating fragments caused errors."
 slug: "/reports/duplicate-product-schema-ai-visibility"
 h1: "Does duplicate Product schema hurt AI visibility?"
+answer: "Duplicate Product schema didn't hurt in my test when the blocks agreed. In my November 2026 check of 94 Shopify stores, 29% had two or three Product blocks, mostly from review apps like Yotpo, Okendo and Judge.me. ChatGPT described 6 of 8 duplicate products correctly. The misses came when the rating sat in a separate fragment with no price, or was added by a script."
 datePublished: 2026-11-04
-dateModified: 2026-11-04
+dateModified: 2026-11-23
 reportStores: 94
 faq:
   - question: "How common is duplicate Product schema on Shopify?"
@@ -17,7 +18,7 @@ faq:
     answer: "Okendo and Loox have a settings toggle. Judge.me has a documented code flag and a way to merge its block with the theme's using a shared ID. Yotpo asks you to contact support to turn off its automatic markup. Then make sure the rating is added to the theme's single Product block."
 ---
 
-**By Carson Cobb. Data checked November 2026. Last updated November 2026.**
+**By Carson Cobb. Data checked November 2026.**
 
 A common audit finding goes like this: the product page has two Product data blocks. The theme writes one. The review app writes another, to carry the stars. Sometimes a third comes from an SEO app. Nobody notices, because the page looks fine to shoppers.
 

@@ -17,6 +17,8 @@ export interface PageFrontmatter {
   cta?: 'ai' | 'cro';
   /** Pages and guides: a ReportCta card where the markdown has <div data-cta-slot="page"></div> */
   pageCta?: { variant?: 'ai' | 'cro'; headline?: string; body?: string };
+  /** The direct answer under the H1: 40 to 70 words that make sense quoted on their own */
+  answer?: string;
   // link: an optional page link shown after the answer. It stays out of the FAQPage schema text.
   faq?: { question: string; answer: string; link?: { text: string; href: string } }[];
 }
@@ -165,4 +167,19 @@ export async function designedPage(slug: string) {
     return body;
   };
   return { page, fm: page.frontmatter, section };
+}
+
+// Every report and guide links /ai-search and the competitor guide. These are the sentences the templates add
+// after the body for whichever of the two the copy doesn't already link.
+export const COMPETITOR_GUIDE = '/guides/why-chatgpt-recommends-my-competitor';
+export function standardLinks(page: MarkdownPage) {
+  const raw = page.rawContent();
+  const self = `/${slugOf(page)}`;
+  const linked = (href: string) => href === self || raw.includes(`](${href})`) || raw.includes(`](${href}#`);
+  const out: { lead: string; href: string; label: string; tail: string }[] = [];
+  if (!linked(COMPETITOR_GUIDE))
+    out.push({ lead: 'If AI names your competitors and not you,', href: COMPETITOR_GUIDE, label: 'here is why ChatGPT recommends your competitor', tail: ' and how to fix it.' });
+  if (!linked('/ai-search'))
+    out.push({ lead: 'To get your own products recommended by AI, see my', href: '/ai-search', label: 'AI search optimization for Shopify brands', tail: '.' });
+  return out;
 }

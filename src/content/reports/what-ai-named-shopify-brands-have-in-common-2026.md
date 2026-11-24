@@ -1,10 +1,11 @@
 ---
-title: "What AI Recommended Shopify Brands Have in Common (2026 Data) | Carson Cobb"
-description: "Only 65 of 617 Shopify brands were named by ChatGPT, Gemini or Google AI Mode across 144 shopping answers. Named brands had twice the blog content and more testing claims, not better schema."
+title: "What AI Recommended Shopify Brands Have in Common (2026)"
+description: "Only 65 of 617 Shopify brands were named by ChatGPT, Gemini or Google AI Mode. Named brands had a median of 142 blog articles versus 66, not better schema."
 slug: "/reports/what-ai-named-shopify-brands-have-in-common-2026"
 h1: "What do the Shopify brands AI recommends have in common?"
+answer: "The Shopify brands AI recommends publish more and back claims with proof. Their schema isn't better. In my November 2026 tests, 65 of 617 Shopify brands were named by ChatGPT, Gemini or Google AI Mode. Named brands had a median of 142 blog articles versus 66, and 40% of their product pages mentioned testing or certification versus 29%."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 reportStores: 617
 faq:
   - question: "How many Shopify brands does AI recommend?"

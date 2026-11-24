@@ -168,7 +168,14 @@ export default defineConfig({
   output: 'static',
   trailingSlash: 'ignore',
   // /gap-report is the short name for the gap report, which lives at /ai-visibility-check.
-  redirects: { '/gap-report': '/ai-visibility-check' },
+  // Fallbacks only: Amplify's custom rules (scripts/amplify-redirects.json) answer these with a 301 first.
+  redirects: {
+    '/gap-report': '/ai-visibility-check',
+    '/recharge-vs-skio': '/recharge-vs-skio-vs-loop#recharge-vs-skio',
+    '/recharge-vs-loop': '/recharge-vs-skio-vs-loop#recharge-vs-loop',
+    '/skio-vs-loop': '/recharge-vs-skio-vs-loop#skio-vs-loop',
+    '/guides/why-chatgpt-doesnt-recommend-my-shopify-store': '/guides/why-chatgpt-recommends-my-competitor',
+  },
   build: {
     // agencies.html instead of agencies/index.html. Amplify serves /agencies straight from
     // agencies.html; a folder made it 301 to /agencies/, away from the canonical URL.

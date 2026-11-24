@@ -1,10 +1,11 @@
 ---
-title: "Shopify Product Page Buy Box 2026: What 596 Brands Put Next to Add to Cart | Carson Cobb"
-description: "43% of Shopify brand product pages show Buy it now buttons, 37% have sticky add to cart code, 11% show a delivery estimate and 34% mention a guarantee or free returns. Data from 596 product pages."
+title: "Shopify Product Page Buy Box 2026: 596 Brands Checked"
+description: "Only 11% of 596 Shopify product pages show a delivery estimate and 34% a guarantee or free returns. 43% show Buy it now buttons and 37% sticky add to cart."
 slug: "/reports/shopify-product-page-buy-box-2026"
 h1: "The Shopify buy box: what 596 brands put next to the add to cart button"
+answer: "In my November 2026 check of 596 Shopify brand product pages, 63% had a quantity selector in the buy box, 51% loaded product recommendations and 43% showed dynamic checkout buttons like Shop Pay or Buy it now. Few answered delivery or trust: only 11% showed a delivery estimate and 34% mentioned a guarantee or free returns."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 cta: cro
 reportStores: 599
 faq:

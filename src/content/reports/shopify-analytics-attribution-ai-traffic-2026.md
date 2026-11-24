@@ -1,10 +1,11 @@
 ---
-title: "Can Shopify Brands See AI Traffic? Analytics and Attribution Tools 2026 | Carson Cobb"
-description: "40% of Shopify brand homepages load Triple Whale, Elevar or Northbeam, and 41% a session recording tool. Why AI referrals still get undercounted, with data from 609 stores."
+title: "Can Shopify Brands See AI Traffic? 2026 Data From 609 Stores"
+description: "40% of 609 Shopify brand homepages load Triple Whale, Elevar or Northbeam and 41% a session recording tool, yet AI visits with no referrer show as direct."
 slug: "/reports/shopify-analytics-attribution-ai-traffic-2026"
 h1: "Can Shopify brands see their AI traffic? What 609 stores use to measure it"
+answer: "Shopify brands can see only part of their AI traffic. In my November 2026 check of 609 Shopify brand homepages, 40% loaded a dedicated attribution tool (Triple Whale, Elevar or Northbeam) and 41% a session recording tool. But every store undercounts AI: visits without a referrer show up as direct, so AI referral numbers are a minimum."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 reportStores: 617
 faq:
   - question: "How do I see ChatGPT traffic in Shopify?"
@@ -54,7 +55,7 @@ Shopify's own analytics and the Google and Meta sales channels load through Shop
 | Home | 75 | 41% | 51% |
 | Apparel | 92 | 57% | 48% |
 
-## Why AI traffic hides
+## Why is AI traffic undercounted?
 
 Similarweb measured AI referrals worldwide at 770.7 million visits a month on average between June 2025 and May 2026, up 117% year over year, and notes that the count is a floor because visits without referrer data land in direct ([Similarweb](https://aisearch.similarweb.com/blog/ai-referral-traffic-by-industry/)). Mobile apps, copied links and shoppers who read the answer, then search your brand name on Google, all get credited somewhere else.
 

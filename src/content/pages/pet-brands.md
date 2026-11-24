@@ -1,8 +1,9 @@
 ---
-title: "AI Search and CRO for Pet Brands | Carson Cobb"
-description: "In pet answers, retailers got 20% of Google AI Mode's links and brand sites 34%. I get pet products recommended by AI, then sold on your site."
+title: "Get Your Pet Brand Recommended by AI: What Works"
+description: "Google AI Mode sent 34% of pet links to brand websites and 20% to retailers. I make pet product pages AI can recommend, then turn visits into orders."
 slug: "/pet-brands"
 h1: "Get your pet products recommended by AI, then sold on your site"
+answer: "Carson Cobb is an independent AI search and conversion specialist for Shopify brands in every product area, pet brands among them. AI recommends pet products whose pages say which pet they are for, what is in them, how to feed or use them and how they fit. In his November 2026 check, Google AI Mode sent 34% of its pet links to brand websites and 20% to retailers."
 faq:
   - question: "How do I get my pet brand recommended by ChatGPT?"
     answer: "ChatGPT recommends pet products it can match to the pet the owner described: the age, the size, the sensitive stomach, the anxious rescue. That comes from product pages that say who the product is for, how to use or feed it and how it fits, and from the sites AI already reads. It works product by product, so the first step is seeing which of your products AI names today and who it names instead."

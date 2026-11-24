@@ -1,10 +1,11 @@
 ---
-title: "How Often AI Recommendations Change | Carson Cobb"
-description: "55 repeat runs of 12 buyer questions on ChatGPT: the first pick came back 98% of the time, fifth place or lower only 56%."
+title: "How Often AI Recommendations Change: 55 ChatGPT Runs"
+description: "In 55 repeat runs of 12 buyer questions, ChatGPT's first pick came back 98% of the time, but brands in fifth place or lower returned only 56% of the time."
 slug: "/reports/how-often-ai-recommendations-change"
 h1: "How often AI recommendations change"
+answer: "ChatGPT's first pick almost never changes, but the rest of its list does. In 55 runs of 12 buyer questions in November 2026, the brand ChatGPT named first came back in 98% of the other runs of the same question. Brands in fifth place or lower came back in only 56%, and rewording the question changed the list more than asking again."
 datePublished: 2026-11-06
-dateModified: 2026-11-06
+dateModified: 2026-11-23
 reportStores: 94
 faq:
   - question: "Does ChatGPT give the same recommendations every time?"
@@ -80,7 +81,7 @@ The brand named first most often held first place in 52 of 55 answers. In both q
 4. **Moving up beats getting in.** Going from fifth to second matters more than going from absent to fifth, because fifth comes and goes.
 5. **Compare like with like over time.** Same questions, same number of runs, fresh sessions each time. That's the only way a month to month change means anything.
 
-If a competitor holds positions 1 and 2 while you come and go lower down, my guide on [why ChatGPT recommends your competitor](/guides/why-chatgpt-doesnt-recommend-my-shopify-store) explains what decides the order. Moving a product up that list is the core of my [AI search optimization work for Shopify brands](/ai-search).
+If a competitor holds positions 1 and 2 while you come and go lower down, my guide on [why ChatGPT recommends your competitor](/guides/why-chatgpt-recommends-my-competitor) explains what decides the order. Moving a product up that list is the core of my [AI search optimization work for Shopify brands](/ai-search).
 
 This is how I track products for clients: the same buyer questions, repeated runs, positions recorded, on ChatGPT, Gemini and Google AI Mode. See [Close the Gap](/close-the-gap), or start with the [AI Visibility Check](/ai-visibility-check).
 

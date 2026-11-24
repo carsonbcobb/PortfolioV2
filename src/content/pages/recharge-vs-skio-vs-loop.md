@@ -1,10 +1,11 @@
 ---
-title: "Recharge vs Skio vs Loop: Fees at 500, 2K and 10K Orders (2026)"
-description: "What Recharge, Skio and Loop actually cost at 500, 2,000 and 10,000 subscription orders a month, which one fits your brand, and what switching takes."
+title: "Recharge vs Skio vs Loop (2026): Real Fees and Which to Pick"
+description: "Loop starts at $99/mo + 1.0%, Recharge at $149/mo + 1.50% + 20¢ and Skio at $499/mo + 1.25% + 20¢. Real fees at 3 volumes, and which app to pick."
 slug: "/recharge-vs-skio-vs-loop"
 h1: "Recharge vs Skio vs Loop: real fees and which to pick"
+answer: "On public pricing, Loop is the cheapest of the three, from $99/month plus 1.0%, with managed migration on every paid plan. Recharge, from $149/month plus 1.50% + 20¢, is the most established and has the most add ons on Scale. Skio, $499/month billed annually plus 1.25% + 20¢, fits brands where the portal and cancel flow matter most, and is now part of Recharge."
 datePublished: 2026-10-31
-dateModified: 2026-11-20
+dateModified: 2026-11-23
 faq:
   - question: "Which is cheapest: Recharge, Skio or Loop?"
     answer: "At small volume, Loop. It has a Free Forever plan for up to 50 active subscriptions, and its Starter plan is $99/month plus a 1.0% transaction fee and 15¢ per loyalty order. Recharge Starter is $149/month plus 1.50% + 20¢ per transaction. Skio's Scale plan is $499/month billed annually or $599/month billed monthly, plus 1.25% + 20¢ per subscription order. At high volume all three offer custom pricing, so the real answer depends on your order count."
@@ -24,13 +25,13 @@ faq:
     answer: "Skio has one public plan, Scale, at $499/month billed annually or $599/month billed monthly, plus 1.25% + 20¢ per subscription order. At 2,000 subscription orders a month on annual billing, that's $899 plus 1.25% of your subscription revenue. Its loyalty program costs extra, and Enterprise pricing is custom."
   - question: "Should I switch from Recharge to Loop?"
     answer: "Loop costs less at every public tier and includes white glove migration on every paid plan, so it can make sense if fees are the problem. But most subscription leaks I find are offer, product page and cancel flow problems that would follow you to any app. Fix those first, then switch if Recharge still can't do what you need."
+  - question: "Is there a contract with Recharge or Loop?"
+    answer: "Loop bills paid plans month to month with no term commitment. Recharge follows a monthly billing cycle, and its pricing FAQ says its Custom plan runs on a 12 month term."
+  - question: "Which is better for bundles and SMS?"
+    answer: "Skio includes advanced build a box and SkioSMS on its Scale plan. Loop includes build your own and preset bundles on every plan but has no SMS product of its own. Recharge includes bundles and Concierge SMS on Scale and Custom, not on Starter, and bills Concierge SMS at $0.03 per message segment in the US and Canada and $0.06 internationally."
   - question: "Are these prices current?"
     answer: "They come from each vendor's own pricing page and Shopify App Store listing as checked in November 2026. Pricing changes, so confirm on the vendor site before you sign."
 ---
-
-**By Carson Cobb. Last updated November 2026.**
-
-**The short answer.** Loop fits a newer brand that wants the lowest entry price and managed migration on every paid plan. Recharge fits a brand that wants the most established platform and the most add ons, if it budgets for the Scale plan. Skio fits a brand where the subscriber portal and cancel flow are the core of the business, now as part of Recharge.
 
 | | Recharge | Skio | Loop |
 | --- | --- | --- | --- |
@@ -57,35 +58,39 @@ On public pricing, Loop costs the least at every volume here, because it has the
 
 If you sell something people reorder on Shopify, you'll end up choosing between a short list of subscription apps. Recharge, Skio and Loop are the three I get asked about most. Recharge announced on April 27, 2026 that Skio is joining Recharge.
 
-I'm Carson Cobb. I help Shopify brands [get recommended in ChatGPT and Google's AI answers](/ai-search), then make the store convert that traffic, and I set up and fix subscription programs as part of my work. I've spent the most time inside Recharge and Skio. I don't get paid by any of these vendors, and I'll tell you where each one fits and where it doesn't. If shoppers ask AI about subscriptions in your space and it names other brands, my guide on [why ChatGPT recommends your competitor](/guides/why-chatgpt-doesnt-recommend-my-shopify-store) explains what decides it.
+I'm Carson Cobb. I help Shopify brands [get recommended in ChatGPT and Google's AI answers](/ai-search), then make the store convert that traffic, and I set up and fix subscription programs as part of my work. I've spent the most time inside Recharge and Skio. I don't get paid by any of these vendors, and I'll tell you where each one fits and where it doesn't. If shoppers ask AI about subscriptions in your space and it names other brands, my guide on [why ChatGPT recommends your competitor](/guides/why-chatgpt-recommends-my-competitor) explains what decides it.
 
 One thing first. The app is rarely the reason a subscription program underperforms. Most of the leaks I find in audits, like a hero product with no subscribe option or a widget that never renders on the product page, would follow you to any app. If that sounds like your store, start with my [Shopify subscriptions page](/shopify-subscriptions), or put your numbers into the [subscription revenue calculator](/tools/subscription-calculator).
 
-All pricing below comes from each vendor's own pricing page and Shopify App Store listing, checked in November 2026. Prices change, so confirm before you sign anything. For a deeper look at one pair, see [Recharge vs Skio](/recharge-vs-skio), [Recharge vs Loop](/recharge-vs-loop) and [Skio vs Loop](/skio-vs-loop).
+All pricing below comes from each vendor's own pricing page and Shopify App Store listing, checked in November 2026. Prices change, so confirm before you sign anything. Jump to one pair: [Recharge vs Skio](#recharge-vs-skio), [Recharge vs Loop](#recharge-vs-loop) or [Skio vs Loop](#skio-vs-loop).
 
-## How does Skio compare to Recharge?
+<h2 id="recharge-vs-skio">Recharge vs Skio: how do they compare?</h2>
 
 Skio has one public plan with most features included, at $499/month billed annually or $599/month billed monthly, plus 1.25% + 20¢ per subscription order. Recharge starts lower at $149/month, but bundles, SMS and migration support only come with its $499/month Scale plan. Both are now owned by Recharge.
 
 On fees, Skio and Recharge Scale charge the same 1.25% + 20¢. Recharge Starter costs less each month but charges 1.50% + 20¢ per transaction. Skio's Scale plan includes its multi step cancel flow builder, advanced build a box, SkioSMS for one and two way texting, and an AI driven upsell carousel. Recharge puts smart cancellation prevention and its customer portal on every plan, and saves bundles, Concierge SMS, gifting and its JavaScript SDK for Scale and Custom. Skio charges extra for its loyalty program and doesn't publish the price.
 
-The full breakdown is on my [Recharge vs Skio page](/recharge-vs-skio).
+On migration, Recharge lists end to end migration support on Scale: data validation, preparation tools and a cutover strategy. It isn't listed on Starter. Skio lists comprehensive migration on Scale, and custom migration development on Enterprise.
 
-## How does Loop compare to Recharge?
+**Pick Recharge** if you want the most established platform, with by far the most App Store reviews, and either a low cost start on Starter or the full add on set on Scale. **Pick Skio** if subscribers are the core of the business, the portal and cancel flow experience matter most, and you're happy paying for one plan with most features included.
+
+<h2 id="recharge-vs-loop">Recharge vs Loop: how do they compare?</h2>
 
 Loop costs less to start and charges lower percentage fees. Its Starter plan is $99/month plus 1.0%, and Pro is $399/month plus 0.75%, against Recharge at $149/month plus 1.50% + 20¢ or $499/month plus 1.25% + 20¢. Loop includes white glove migration on every paid plan. Recharge includes migration support on Scale.
 
 Loop has one fee Recharge doesn't: 15¢ per loyalty order on Starter and 10¢ on Pro. It bills month to month. Recharge bills monthly too, and its pricing FAQ says its Custom plan runs on a 12 month term. Loop includes personalized cancellation flows and build your own bundles on every plan. Recharge needs Scale for bundles. Loop doesn't have its own SMS product, and on Pro it connects with SMS tools like Postscript and Attentive. Recharge has Concierge SMS on Scale, billed at $0.03 per message segment in the US and Canada and $0.06 internationally.
 
-The full breakdown is on my [Recharge vs Loop page](/recharge-vs-loop).
+On migration, Loop says it's fully managed end to end and included on every paid plan, with no setup, migration or onboarding fees. Its Enterprise plan adds a risk free test environment and post migration support. Recharge's end to end migration support comes with Scale, not Starter.
 
-## How does Skio compare to Loop?
+**Pick Loop** if you're a newer brand launching subscriptions, or any brand watching fees closely, and you want managed migration without a fee. **Pick Recharge** if you want the most established platform and a deep set of add ons, and you're ready to pay for Scale to get bundles, SMS and migration support.
+
+<h2 id="skio-vs-loop">Skio vs Loop: how do they compare?</h2>
 
 Loop is cheaper at every public tier. Starter is $99/month plus 1.0%, and Pro is $399/month plus 0.75%, against Skio at $499/month billed annually plus 1.25% + 20¢ per subscription order. Skio includes SMS and a full feature set on one plan. Loop includes white glove migration on every paid plan.
 
 Skio's appeal is that one plan covers almost everything: the cancel flow builder, build a box, SMS, upsells and analytics. Loop splits features between Starter and Pro. Cancellation flow A/B testing, win back campaigns, personalized upsells and its bundle SDK are on Pro. Both include migration help, and both charge extra for loyalty: Loop per loyalty order, Skio as an add on. The other difference now is ownership. Skio is part of Recharge, and Loop is independent.
 
-The full breakdown is on my [Skio vs Loop page](/skio-vs-loop).
+**Pick Loop** if you're a newer brand, or any brand watching fees, that wants to start on a no cost plan or a cheap one and get managed migration without a fee. **Pick Skio** if the subscriber experience is the business, and you want SMS and the full feature set in one plan.
 
 ## What changes now that Recharge owns Skio?
 
@@ -124,7 +129,7 @@ Here's how I'd plan it:
 * **Tell subscribers what changes.** A short email about the new portal saves a lot of support tickets.
 * **Watch the first full billing cycle.** Compare charges, failures and cancellations with the cycle before.
 
-Loop says it has helped more than 1,100 brands migrate, and Recharge says it has migrated more than 53 million subscriptions. Whichever you pick, someone on your side should own the cutover. That's work I do for clients as part of running their store.
+Loop says it has helped more than 1,100 brands migrate, and Recharge says it has migrated more than 53 million subscriptions. Whichever you pick, someone on your side should own the cutover. If you're moving the whole store to Shopify at the same time, my [Shopify migration page](/shopify-migration) covers the rest.
 
 ## Pricing compared
 
@@ -160,9 +165,24 @@ All three cover the basics: a product page widget, a customer portal, failed pay
 | Gifting | Surprise and delight gifting on Scale | Surprise and delight gifting | Not listed on the plans I reviewed |
 | API and developer access | JavaScript SDK and Storefront API on Scale | Native integrations, webhooks and API | Bundle SDK and API on Pro |
 
+## What about Smartrr, Stay AI, Bold and Shopify Subscriptions?
+
+Recharge, Skio and Loop are the three I get asked about most, but they aren't the only options. Here's what four others publish, from each vendor's pricing page and Shopify App Store listing, checked November 23, 2026.
+
+* **Smartrr.** Launch is $99/month plus 1% of subscriber GMV, Grow is $299/month plus 1%, and Excel starts at $499/month plus 1%. Its listing says it's built for consumable brands like supplements, coffee, beauty and pet care, with a branded customer portal.
+* **Stay AI.** Standard is $499/month plus 1% + 19¢ per transaction. High Growth is custom pricing for larger brands, with a dedicated account manager and no implementation fees.
+* **Bold Subscriptions.** Launch is $24.99/month plus 2%, Grow is $49.99/month plus 1%, Scale is $74.99/month plus 0.9%, and Ultimate Retention is $399.99/month plus 0.9%, through sales. It lists a 30 day trial.
+* **Shopify Subscriptions.** Built by Shopify and listed as free on the App Store. You set it up from the Shopify admin, it sells subscriptions on POS too, and customers can pause or skip. It's the simplest place to start if you only need the basics.
+
+If you're choosing between these and the three above, the same rule applies: compare the percentage fee at your real order volume, then check which plan unlocks the cancel flow, bundles and migration help you need.
+
+## Does your subscription app affect AI recommendations?
+
+Not directly. When a shopper asks ChatGPT or Google AI Mode what to buy, the answer is built from your product pages and what other sites say about you, not from which subscription app you use. What can matter is what the app puts on the page: whether the subscribe price and the product's details show in the page HTML and structured data AI can read, and whether your reviews and star ratings are visible. My reports on [whether star ratings decide who AI recommends](/reports/star-ratings-reviews-ai-answers) and [how complete Shopify product schema is](/reports/shopify-product-schema-completeness-2026) show what AI reads. Getting your products named in those answers is the work on my [AI search optimization](/ai-search) page.
+
 ## Want help choosing or fixing your setup?
 
-If you want a second set of eyes before you commit, or you want someone to lead your subscription program after you pick, that's what I do. The [Full Store Audit](/full-store-audit) ($1,997) is a good start, because it covers your subscription setup, and running subscriptions as part of the whole store, at your direction, is a custom [fractional head of ecommerce](/fractional-head-of-ecommerce) engagement. See every published price on the [pricing page](/pricing). If you're a supplement or wellness brand, my [supplement brands page](/supplement-brands) covers the extra things I'd check.
+The app you pick matters less than whether shoppers find you and buy once they land. [Close the Gap](/close-the-gap) is how I work: I find where AI recommends your competitors instead of you, fix the pages it sends shoppers to, and make them convert, as described on my [AI search optimization](/ai-search) page. If you want a second set of eyes on your subscription setup first, the [Full Store Audit](/full-store-audit) ($1,997) covers it, and my [Shopify subscriptions page](/shopify-subscriptions) covers what I fix first. Every published price is on the [pricing page](/pricing).
 
 Not sure where your store stands? Get your gap report. It takes about a minute, no login, and shows how often ChatGPT recommends you against your top competitor.
 
@@ -181,3 +201,10 @@ Not sure where your store stands? Get your gap report. It takes about a minute, 
 * [Loop Subscriptions pricing](https://www.loopwork.co/pricing)
 * [Loop migration](https://www.loopwork.co/migration)
 * [Loop Subscriptions on the Shopify App Store](https://apps.shopify.com/loop-subscriptions)
+* [Smartrr pricing](https://smartrr.com/pricing)
+* [Smartrr on the Shopify App Store](https://apps.shopify.com/smartrr)
+* [Stay AI pricing](https://stay.ai/pricing)
+* [Stay AI on the Shopify App Store](https://apps.shopify.com/stayai-subscriptions)
+* [Bold Subscriptions pricing](https://boldcommerce.com/shopify/subscriptions-pricing)
+* [Bold Subscriptions on the Shopify App Store](https://apps.shopify.com/bold-subscriptions)
+* [Shopify Subscriptions on the Shopify App Store](https://apps.shopify.com/shopify-subscriptions)

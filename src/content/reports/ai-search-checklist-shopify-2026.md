@@ -1,10 +1,11 @@
 ---
-title: "AI Search Checklist for Shopify 2026: 25 Checks and How Many Stores Pass | Carson Cobb"
-description: "A 25 point AI search checklist for Shopify stores, with the share of 617 brand stores that pass each check. From crawler access and agents.md to GTINs, policies and product page content."
+title: "AI Search Checklist for Shopify 2026: 617 Store Pass Rates"
+description: "99% of 617 Shopify brand stores allow AI crawlers, but only 23% put a GTIN in product structured data and 11% list return or shipping terms. Every check."
 slug: "/reports/ai-search-checklist-shopify-2026"
 h1: "The AI search checklist for Shopify, with pass rates from 617 stores"
+answer: "The AI search checklist for Shopify covers access, brand data, product structured data, product page content and publishing. In my November 2026 check of 617 Shopify brand stores, 99% allowed the major AI crawlers. But only 23% of product pages with Product data had a GTIN, 11% had return or shipping terms, and 38% of product pages said who the product is for."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 reportStores: 617
 faq:
   - question: "What should a Shopify store check for AI search?"

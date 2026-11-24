@@ -1,10 +1,11 @@
 ---
-title: "Shopify Variant Pickers 2026: Buttons vs Dropdowns on 191 Product Pages | Carson Cobb"
-description: "On Shopify product pages with real choices, 42% show variant buttons, 28% use dropdowns only and the rest load a custom picker. 41% of food and 47% of pet stores still use dropdowns."
+title: "Shopify Variant Pickers 2026: Buttons vs Dropdowns"
+description: "Of 191 Shopify product pages with variant choices, 42% show buttons, 28% dropdowns only and 30% a custom picker. Pet and food stores use dropdowns most."
 slug: "/reports/shopify-variant-picker-buttons-vs-dropdowns-2026"
 h1: "Variant pickers on Shopify: buttons or dropdowns, and why it matters"
+answer: "Buttons or swatches usually serve shoppers better than dropdowns on Shopify variant pickers, because they show every option at once. In my November 2026 check of 191 Shopify product pages with a real choice, 42% used buttons, 28% used dropdowns only and 30% showed neither in the page source, usually a custom picker. 26% of color choices were still dropdowns."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 cta: cro
 reportStores: 599
 faq:

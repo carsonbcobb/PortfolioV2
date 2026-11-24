@@ -6,15 +6,16 @@ import SizeCard from '../components/SizeCard.astro';
 import SizeCompare from '../components/SizeCompare.astro';
 import { PROGRAM, PROGRAM_SIZES, FULL_AUDIT, CHECK_OFFER, PRICING_FAQS, TERMS_LIST, CHECK_PATH, CTA_LABEL, GAP_FIRST_LABEL } from '../data/site';
 import { pricingSchema } from '../data/schema';
+import TopReports from '../components/TopReports.astro';
 
 const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
 
-const title = 'Pricing for Close the Gap and the Full Store Audit | Carson Cobb';
+const title = 'Pricing: Close the Gap and Full Store Audit | Carson Cobb';
 const description =
-  'Close the Gap at $2,500/month (Focus) or $5,000/month (Full) with a 3 month commitment, the $1,997 Full Store Audit, and your gap report, which takes about a minute, no login.';
+  'Close the Gap is $2,500 a month (Focus) or $5,000 a month (Full) with a 3 month commitment. The Full Store Audit is $1,997. Every price, and what\'s in it.';
 const h1 = 'Pricing';
 const intro =
-  'Close the Gap, the 90 day program that beats your competitors in AI search, in two sizes. The Full Store Audit for conversion. And your gap report to see where you stand. Start online, no call needed.';
+  'Close the Gap, my 90 day program for Shopify brands losing to competitors in AI search, costs $2,500 a month for Focus or $5,000 a month for Full, with a 3 month commitment. The Full Store Audit, a one time conversion audit, is $1,997. Your gap report shows where you stand first, in about a minute. Start online, no call needed.';
 
 // The Fit and terms items are visible Q&A too, so they join the page's FAQPage.
 const jsonLd = [pricingSchema({ title, description, faqs: [...PRICING_FAQS, ...TERMS_LIST] })];
@@ -133,4 +134,6 @@ const jsonLd = [pricingSchema({ title, description, faqs: [...PRICING_FAQS, ...T
       </div>
     </div>
   </section>
+
+  <TopReports sand />
 </ContentPage>

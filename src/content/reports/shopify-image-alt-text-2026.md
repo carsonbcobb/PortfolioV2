@@ -1,10 +1,11 @@
 ---
-title: "Shopify Product Image Alt Text: 3,039 Images Checked | Carson Cobb"
-description: "Only 54% of Shopify product images had alt text, and 35% of stores had none on any image I checked. Why it matters for Google, AI and accessibility."
+title: "Shopify Product Image Alt Text 2026: 3,039 Images Checked"
+description: "Only 54% of 3,039 Shopify product images had alt text, and 35% of stores had none on any image I checked. Why it matters for Google, AI and accessibility."
 slug: "/reports/shopify-image-alt-text-2026"
 h1: "Shopify product image alt text: 3,039 images checked"
+answer: "About half of Shopify product images have alt text. In my November 2026 check of 3,039 product images from 105 Shopify brand stores, 1,637 (54%) had alt text. 37 stores (35%) had no alt text on any image I checked, and 26 (25%) had it on every image. Alt text helps screen reader users, Google and AI tools read product images."
 datePublished: 2026-11-16
-dateModified: 2026-11-16
+dateModified: 2026-11-23
 reportStores: 105
 faq:
   - question: "How many Shopify product images have alt text?"
@@ -53,7 +54,7 @@ It takes a few seconds per image, which is why most stores skip it. I checked th
 
 Alt text is part of accessibility too. See [accessibility overlays on Shopify](/reports/shopify-accessibility-overlays-2026) for the overlay tools brands load.
 
-## What good alt text looks like
+## What should product image alt text say?
 
 Describe what the image shows, briefly:
 

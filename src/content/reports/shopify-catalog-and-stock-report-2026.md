@@ -1,10 +1,11 @@
 ---
 title: "Shopify Catalog and Stock Report 2026: Sold Out Rates"
-description: "How much of a typical Shopify catalog is sold out, how often best sellers run out, and how fast brands launch. Data from 606 stores and 121,519 products."
+description: "The typical Shopify store has 5% of its catalog sold out, 34% have 10% or more, and 24% of best sellers collections have a gap. Data from 606 stores."
 slug: "/reports/shopify-catalog-and-stock-report-2026"
 h1: "Shopify Catalog and Stock Report 2026"
+answer: "The typical Shopify store has 5% of its catalog fully sold out. In my November 2026 check of 606 Shopify stores and 121,519 products, 77% of stores had at least one product fully sold out, 34% had 10% or more sold out, and 24% of best sellers collections had something sold out. Food brands run out most: the typical food store had 9% sold out."
 datePublished: 2026-11-01
-dateModified: 2026-11-01
+dateModified: 2026-11-23
 reportStores: 606
 reportProducts: 121519
 faq:
@@ -16,7 +17,7 @@ faq:
     answer: "The typical store in this study had 78 products. Food brands had the smallest catalogs at 43 and apparel the largest at 425."
 ---
 
-**By Carson Cobb, AI Search and CRO for Shopify Brands. Data checked November 2026.**
+**By Carson Cobb. Data checked November 2026.**
 
 A sold out product costs more than the one sale. The shopper who clicked from an ad or an email lands on a dead end, and most don't come back. I checked 606 Shopify stores and 121,519 products to see how often that happens, where it happens most, and how quickly growing brands add new products.
 

@@ -1,10 +1,11 @@
 ---
-title: "AI Search for Home Brands 2026: Who Gets Recommended and Why | Carson Cobb"
-description: "12 of 76 home brands on Shopify were named by ChatGPT, Gemini or Google AI Mode in my November 2026 tests. What AI looks for, and how home stores compare."
+title: "AI Search for Home Brands 2026: Who Gets Recommended"
+description: "12 of 76 Shopify home brands were named by ChatGPT, Gemini or Google AI Mode in my November 2026 tests. Home stores lead on video and saying who it's for."
 slug: "/reports/ai-search-home-brands-2026"
 h1: "AI search for home brands: who gets recommended, and what their stores do differently"
+answer: "In my November 2026 tests, 12 of 76 home brand stores on Shopify were named at least once by ChatGPT, Gemini or Google AI Mode, 16% against 11% across all six product areas. Home stores were the most likely to say who a product is for (51%) and to show video (36%). AI compares a handful of known names on specs."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 reportStores: 617
 faq:
   - question: "How many home brands does ChatGPT recommend per answer?"

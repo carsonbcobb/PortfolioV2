@@ -1,10 +1,11 @@
 ---
-title: "Shopify Homepage Weight 2026: HTML Size, Scripts and Third Party Tools | Carson Cobb"
-description: "The median Shopify brand homepage sends 604 KB of HTML before images, loads 28 scripts in the page source and calls 6 outside script hosts. 21% send over 1 MB. Data from 609 stores."
+title: "Shopify Homepage Page Weight 2026: 609 Stores Measured"
+description: "The median Shopify brand homepage sends 604 KB of HTML before images, has 28 script tags and 6 outside script hosts. 21% send over 1 MB. From 609 stores."
 slug: "/reports/shopify-homepage-page-weight-scripts-2026"
 h1: "How heavy is a Shopify homepage? HTML size, scripts and outside tools across 609 brands"
+answer: "The median Shopify brand homepage sends 604 KB of HTML before any images, scripts or styles load. In my November 2026 check of 609 Shopify brand homepages, 21% sent over 1 MB of HTML. The median homepage had 28 script tags in its source and loaded scripts from 6 outside hosts. Apparel and home were heaviest, and food and drink was lightest."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 cta: cro
 reportStores: 617
 faq:

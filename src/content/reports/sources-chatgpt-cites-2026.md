@@ -1,10 +1,11 @@
 ---
 title: "The Sources ChatGPT Cites for Product Questions (2026)"
-description: "Which sources ChatGPT shows when it recommends products: review sites, magazines, medical sources, brand stores or Reddit. Data from 48 buyer questions."
+description: "ChatGPT's most visible sources for product questions are review and testing sites (35% of answers) and magazines (33%). Reddit appeared once in 48 answers."
 slug: "/reports/sources-chatgpt-cites-2026"
 h1: "The sources ChatGPT cites"
+answer: "In my November 2026 test of 48 buyer questions, ChatGPT showed a source or store link in 45 answers. Independent review and testing sites led, in 35% of answers, then magazines and publishers at 33%, links to brands' own stores at 29% and medical, veterinary or research sources at 29%. Reddit appeared as a visible source once, and Amazon never."
 datePublished: 2026-11-04
-dateModified: 2026-11-04
+dateModified: 2026-11-23
 reportStores: 94
 faq:
   - question: "What sources does ChatGPT use to recommend products?"
@@ -15,7 +16,7 @@ faq:
     answer: "Yes. 29% of answers linked shoppers directly to the recommended brands' own stores, and in pet food and kids vitamins ChatGPT labeled them as official websites. Your own product page is often where an AI referred shopper lands."
 ---
 
-**By Carson Cobb. Data checked November 2026. Last updated November 2026.**
+**By Carson Cobb. Data checked November 2026.**
 
 When ChatGPT recommends a product, it usually shows where the information came from: small source labels next to the claims, and links out to stores. Those sources are the closest thing to a map of what decides who gets recommended. If a review site, a magazine or a veterinary resource is behind most answers about products like yours, that's where your brand needs to be.
 
@@ -73,7 +74,7 @@ There's an important limit here. ChatGPT often shows only the first source for a
 
 The reasons AI gives for each pick are in [why AI recommends a product](/reports/why-ai-recommends-products-reasons-2026), and the social and press signals stores show on their own sites are in [which off site signals Shopify brands show](/reports/shopify-off-site-signals-2026).
 
-When these sources name your competitors and not you, that's usually why ChatGPT recommends them instead. My guide on [why ChatGPT recommends your competitors and not you](/guides/why-chatgpt-doesnt-recommend-my-shopify-store) covers that and the other five reasons.
+When these sources name your competitors and not you, that's usually why ChatGPT recommends them instead. My guide on [why ChatGPT recommends your competitors and not you](/guides/why-chatgpt-recommends-my-competitor) covers that and the other five reasons.
 
 ## How this was done
 

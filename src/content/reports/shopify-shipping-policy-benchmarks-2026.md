@@ -1,10 +1,11 @@
 ---
-title: "Shopify Shipping Policies 2026: What 107 Brand Stores Promise | Carson Cobb"
-description: "Only half of Shopify shipping policies give a delivery time range, 7% state an order cutoff, and 21 of 33 stores that advertise free shipping in their banner don't repeat it in the policy."
+title: "Shopify Shipping Policy Benchmarks 2026: 107 Stores"
+description: "52% of Shopify shipping policies give a time range, 7% state an order cutoff, and 21 of 33 stores with a free shipping banner skip it in the policy."
 slug: "/reports/shopify-shipping-policy-benchmarks-2026"
 h1: "Shopify shipping policies: what 107 brand stores actually promise"
+answer: "Many Shopify shipping policies leave out the numbers shoppers and AI agents need. In my November 2026 read of 95 Shopify brand shipping policies, only 49 (52%) gave a time range in days, 7% stated a daily order cutoff and 36% mentioned tracking. Of 33 stores advertising a free shipping threshold in their banner, only 12 repeated it in the policy."
 datePublished: 2026-11-16
-dateModified: 2026-11-16
+dateModified: 2026-11-23
 cta: cro
 reportStores: 107
 faq:

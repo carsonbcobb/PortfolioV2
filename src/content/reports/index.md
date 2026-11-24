@@ -197,7 +197,7 @@ I research how AI assistants read, describe and recommend Shopify brands, and ho
 73% of stores already show a crossed out price before Black Friday, and 68% of reorderable brands with subscriptions mark products down deeper than their subscription discount. Before and after numbers coming Black Friday week.
 
 ### [Shopify Subscription Benchmarks 2026](/reports/shopify-subscription-benchmarks-2026)
-The real subscribe and save discounts, delivery frequencies and subscription apps behind 314 reorderable brands. 10% is the most common discount, and half of brands miss at least one best seller.
+The real subscribe and save discounts, delivery frequencies and subscription apps behind 314 brands with subscriptions, out of 434 reorderable brands checked. 10% is the most common discount, and half of brands miss at least one best seller.
 
 ### [Holiday Readiness Report 2026](/reports/holiday-readiness-report-2026)
 Gift collections, gift cards and bundles by category. 45% of supplement brands have no gift path at all eight weeks before Christmas.

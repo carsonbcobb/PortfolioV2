@@ -1,10 +1,11 @@
 ---
 title: "Shopify AI Readiness Index 2026: 94 Stores Scored"
-description: "How ready are Shopify stores for AI search? I scored 94 stores on 11 checks AI relies on. The typical store scores 70 of 100, and the gaps are fixable."
+description: "I scored 94 Shopify stores on 11 checks AI relies on. The median store scored 70 of 100, and 89% had no shipping or return details in structured data."
 slug: "/reports/shopify-ai-readiness-index-2026"
 h1: "Shopify AI Readiness Index 2026"
+answer: "In my November 2026 Shopify AI Readiness Index, the median of 94 US Shopify stores scored 70 out of 100 on 11 checks AI systems rely on. 25% scored 80 or higher and 11% scored under 40. The most common gaps were shipping and return details in structured data, missing at 89% of stores, then FAQ markup and breadcrumbs."
 datePublished: 2026-11-04
-dateModified: 2026-11-04
+dateModified: 2026-11-23
 reportStores: 94
 faq:
   - question: "What is the Shopify AI Readiness Index?"
@@ -19,7 +20,7 @@ faq:
 
 **By Carson Cobb. Data checked November 2026.**
 
-AI assistants are becoming a real way shoppers find products. Shopify reported that orders from AI referrals grew nearly 13 times year over year in early 2026, and that AI referred visitors who land on a product page convert about 50% better than organic search visitors.
+AI assistants are becoming a real way shoppers find products. Shopify reported that orders from AI referrals grew nearly 13 times year over year in early 2026, and that AI referred visitors who land on a product page convert about 49% better than organic search visitors.
 
 Getting recommended depends on two things: whether AI can read and trust your own site, and what the rest of the internet says about you. This index measures the first part, the part you control completely.
 
@@ -77,7 +78,7 @@ In November 2026 I repeated the scan on 617 Shopify brand stores. The results ar
 
 Pet brands score well because their product pages tend to be detailed and most run review apps that publish ratings. Food and beverage brands score lowest, mostly on description depth, ratings and identifiers. Apparel and beauty have the widest spread, with some of the best and worst stores in the study.
 
-## The five most common gaps
+## What do most Shopify stores miss?
 
 1. **No shipping or return details in the data (89% of stores).** These answer "how fast" and "can I return it," which are among the last questions before a purchase.
 2. **No FAQ markup (78%).** Most stores have written FAQs. Few label them for machines.

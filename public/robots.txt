@@ -1,4 +1,7 @@
-# AI crawlers are welcome. This site is meant to be read and cited by AI search.
+# Search and AI crawlers are welcome. This site is meant to be read and cited by AI search.
+User-agent: Googlebot
+Allow: /
+
 User-agent: GPTBot
 Allow: /
 

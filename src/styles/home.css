@@ -1029,6 +1029,20 @@ img {
   text-decoration: none;
 }
 
+/* One line about Carson above the copyright line. */
+.footer__bio {
+  margin: 0;
+  padding-top: 28px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--bright);
+}
+
+.footer__bio + .footer__inner {
+  padding-top: 12px;
+}
+
+.footer__cols + .footer__bio,
 .footer__cols + .footer__inner {
   border-top: 1px solid var(--dark-rule);
 }
@@ -1402,6 +1416,11 @@ img {
   margin: 14px 0 0;
   font-size: 14px;
   color: var(--soft);
+}
+.hero__note a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* What the gap costs you: a labeled worked example beside three short points. */

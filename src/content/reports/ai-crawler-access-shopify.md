@@ -1,10 +1,11 @@
 ---
 title: "AI Crawler Access on Shopify 2026: Who Blocks ChatGPT?"
-description: "Do Shopify stores block ChatGPT or Perplexity? I checked robots.txt and JavaScript only product data on 94 stores. Blocking is rare. Invisible data isn't."
+description: "None of 94 Shopify stores blocked ChatGPT's search crawler in robots.txt. The real gap: 11% had product data that only appeared after JavaScript ran."
 slug: "/reports/ai-crawler-access-shopify"
 h1: "AI crawler access on Shopify"
+answer: "In my November 2026 check of 94 Shopify stores, none blocked ChatGPT's search crawler in robots.txt, and Shopify's default file has no AI rules at all. The bigger gap is JavaScript: 11% of stores had product data that only appeared after scripts ran, which the crawlers behind ChatGPT, Claude and Perplexity can miss."
 datePublished: 2026-11-04
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 reportStores: 94
 faq:
   - question: "Does Shopify block ChatGPT by default?"
@@ -15,7 +16,7 @@ faq:
     answer: "Product data that only exists after JavaScript runs. AI crawlers from OpenAI, Anthropic and Perplexity don't run JavaScript, so data added by scripts can be invisible to them. 11% of stores had at least one product data block that only appeared after scripts ran."
 ---
 
-**By Carson Cobb. Data checked November 2026. Last updated November 2026.**
+**By Carson Cobb. Data checked November 2026.**
 
 "Is my store blocking AI?" is one of the first questions brands ask, usually after reading that some publishers block ChatGPT. For Shopify brands the answer is almost always no. The more common problem is quieter: part of the product information exists only after JavaScript runs in a browser, and the crawlers behind most AI answers don't run JavaScript.
 

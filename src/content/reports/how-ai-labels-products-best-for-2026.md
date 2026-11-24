@@ -1,10 +1,11 @@
 ---
-title: "\"Best For\" Labels: How ChatGPT, Gemini and AI Mode Label Products | Carson Cobb"
-description: "ChatGPT gave a \"best for\" label in 44 of 48 shopping answers, and 45% of its labels named a specific shopper need, not \"best overall\". What that means for your product pages."
+title: "How AI Labels the Products It Recommends: 2026 Data"
+description: "ChatGPT gave a \"best for\" label in 44 of 48 shopping answers, and 45% of its 149 labels named a specific shopper need, not best overall. What it means."
 slug: "/reports/how-ai-labels-products-best-for-2026"
 h1: "\"Best for sensitive skin\": how AI labels the products it recommends"
+answer: "AI shopping answers usually label each pick, and most labels name a specific shopper need. In my November 2026 test of 48 shopping questions, ChatGPT gave at least one \"best for\" style label in 44 of 48 answers, 149 labels in total. 45% of ChatGPT's labels named a specific need, like best for oily skin, while about a third said best overall."
 datePublished: 2026-11-16
-dateModified: 2026-11-16
+dateModified: 2026-11-23
 faq:
   - question: "Does ChatGPT label the products it recommends?"
     answer: "Almost always. In 48 shopping questions I asked in November 2026, ChatGPT gave at least one \"best for\" style label in 44 answers, 149 labels in total. Gemini labeled picks in 31 answers and Google AI Mode in 29."

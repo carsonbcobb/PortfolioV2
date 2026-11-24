@@ -6,7 +6,7 @@ import PriceSummary from '../components/PriceSummary.astro';
 import ReportCta from '../components/ReportCta.astro';
 import { contentSchema, reportSchema } from '../data/schema';
 import { pageBySlug, CONTENT_PAGES } from '../data/pages';
-import { MARKDOWN_PAGES, DESIGNED_PAGES, AI_RESEARCH, ROUNDUPS, slugOf, isReportPage, isoDate, checkedDate, coverage, tableHeaders, type MarkdownPage } from '../data/reports';
+import { MARKDOWN_PAGES, DESIGNED_PAGES, AI_RESEARCH, ROUNDUPS, slugOf, isReportPage, isoDate, checkedDate, coverage, tableHeaders, standardLinks, type MarkdownPage } from '../data/reports';
 
 export function getStaticPaths() {
   // Designed pages have their own route file and only borrow their markdown's frontmatter and sections.
@@ -28,6 +28,8 @@ let trail: { name: string; href?: string }[];
 let related: { href: string; label: string; lead: string } | undefined;
 let jsonLd: object[];
 let dates: { published?: string; modified?: string } | undefined;
+// Reports and guides: the /ai-search and competitor guide lines the copy is missing.
+const standard = report || pageBySlug(slug).kind === 'guide' ? standardLinks(page) : [];
 // Industry pages: the pricing cards after the body, and a closing call to action that ends on the audit.
 const industry = !report && pageBySlug(slug).kind === 'industry';
 
@@ -82,8 +84,9 @@ if (report) {
   trail = [{ name: 'Reports', href: '/reports' }, { name: fm.h1 }];
   const services = CONTENT_PAGES.filter((p) => p.kind === 'service');
   const linksService = services.some((p) => page.rawContent().includes(`](/${p.slug})`));
-  if (!linksService) {
-    const target = services.find((p) => p.slug === (ai ? 'ai-search' : 'shopify-conversion-optimization'))!;
+  // AI research gets its /ai-search line from standardLinks, so this covers store research only.
+  if (!linksService && !ai) {
+    const target = services.find((p) => p.slug === 'shopify-conversion-optimization')!;
     // A sentence, not a label, so every report links its service page in the body copy.
     const lead = ai
       ? 'To get your own products recommended by AI, see my'
@@ -126,6 +129,9 @@ if (report) {
 } else {
   const info = pageBySlug(slug);
   trail = [{ name: info.label }];
+  // Comparison guides show their dates under the H1, matching the Article dates.
+  if (info.kind === 'guide' && fm.dateModified)
+    dates = { published: isoDate(fm.datePublished ?? fm.dateModified), modified: isoDate(fm.dateModified) };
   jsonLd = [
     contentSchema({
       slug,
@@ -149,7 +155,7 @@ if (report) {
 }
 ---
 
-<ContentPage title={fm.title} description={fm.description} h1={fm.h1} {trail} {dates} {faqs} {jsonLd} ctaAudit={industry}>
+<ContentPage title={fm.title} description={fm.description} h1={fm.h1} intro={fm.answer} {trail} {dates} {faqs} {jsonLd} ctaAudit={industry}>
   <section class="section page-body">
     <div class="wrap">
       <article class="prose">
@@ -179,6 +185,11 @@ if (report) {
             </p>
           )
         }
+        {standard.map((l) => (
+          <p class="report-related">
+            {l.lead} <a href={l.href}>{l.label}</a>{l.tail}
+          </p>
+        ))}
       </article>
     </div>
   </section>

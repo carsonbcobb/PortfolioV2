@@ -1,10 +1,11 @@
 ---
-title: "Google AI Mode Statistics 2026: Users, Queries and Shopping Answers | Carson Cobb"
-description: "Google AI Mode passed 1 billion monthly users in 2026 and queries are about 3 times longer than classic search. The key AI Mode numbers with sources, plus what it recommends for shopping."
+title: "Google AI Mode Statistics 2026: Users, Queries, Shopping"
+description: "Google AI Mode passed 1 billion monthly users in 2026, with queries about 3 times longer than search. In my tests it named a median of 5 brands per answer."
 slug: "/reports/google-ai-mode-statistics-2026"
 h1: "Google AI Mode statistics for 2026, with sources"
+answer: "Google said in May 2026 that AI Mode had passed 1 billion monthly active users globally, with searches about 3 times longer than traditional searches. In my November 2026 test of 48 shopping questions, Google AI Mode named a median of 5 brands per answer, and in 19 questions only 40% of the sites it cited also ranked on Google's first page."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 faq:
   - question: "How many people use Google AI Mode?"
     answer: "Google said in May 2026 that AI Mode had passed 1 billion monthly active users globally, and that queries had more than doubled every quarter since launch."
@@ -15,8 +16,6 @@ faq:
   - question: "Does ranking on Google mean ranking in AI Mode?"
     answer: "Not reliably. In 19 shopping questions I checked in November 2026, only 40% of the sites AI Mode cited also ranked on Google's first page for the same question, and 11 of the 19 AI Mode answers were built around product listings rather than articles."
 ---
-
-**By Carson Cobb. Updated November 17, 2026.**
 
 Google AI Mode is the conversational search tab Google opened to everyone in the US in 2025 and expanded through 2026. These are the numbers worth knowing, each with its source, plus my own measurements of what AI Mode recommends when people shop.
 

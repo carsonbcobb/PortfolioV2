@@ -1,10 +1,11 @@
 ---
-title: "Agentic Commerce Statistics 2026: Adoption, Trust and Store Readiness | Carson Cobb"
-description: "17% of US AI users have bought something with AI, up from 10% a year earlier. The key agentic commerce numbers for 2026 with sources, plus how ready 617 Shopify stores are."
+title: "Agentic Commerce Statistics 2026: Adoption and Readiness"
+description: "17% of US AI users have bought with AI, up from 10% a year earlier. Key agentic commerce statistics for 2026, plus how ready 617 Shopify stores are."
 slug: "/reports/agentic-commerce-statistics-2026"
 h1: "Agentic commerce statistics for 2026, with sources"
+answer: "In McKinsey's survey fielded June 2026, 17% of US AI users had completed a purchase with AI, up from 10% a year earlier. Shopify reported that orders from AI searches grew 3.3 times year over year. In my scan of 617 Shopify brand stores, 100% responded on the UCP agent file, but only 23% put a GTIN in product structured data."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 reportStores: 617
 faq:
   - question: "How many people buy things through AI agents?"
@@ -16,8 +17,6 @@ faq:
   - question: "Are online stores ready for AI shopping agents?"
     answer: "The access is there, the data is thin. In my scan of 617 Shopify brand stores in November 2026, 100% responded on the UCP agent file and 97% had agents.md, but only 23% put GTINs and 11% return or shipping terms in product structured data."
 ---
-
-**By Carson Cobb. Updated November 17, 2026.**
 
 Agentic commerce means an AI agent doing part of the shopping: finding, comparing and sometimes buying. The numbers below are the ones that hold up, each with who measured it and when, plus my own scan of how ready Shopify stores are.
 

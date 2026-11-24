@@ -1,10 +1,11 @@
 ---
 title: "AI Search for Ecommerce: What's Real and What's Not (2026)"
-description: "12 common claims about AI search for online stores, graded proven, likely, unproven or false, with the source for each, from public data and my own tests."
+description: "12 common AI search claims for online stores, graded with sources: AI referred shoppers convert better, but blocking GPTBot and llms.txt claims fall flat."
 slug: "/reports/ai-search-ecommerce-whats-real"
 h1: "AI search for ecommerce: what's real and what's not"
+answer: "Of 12 common claims about AI search for ecommerce, only some hold up. Proven: AI referred shoppers convert better than search shoppers, and most land on product pages. False: AI is replacing Google, blocking GPTBot keeps you out of ChatGPT, and AI crawlers see everything on your page. Unproven: llms.txt and content chunking. Likely: structured data and outside sources matter."
 datePublished: 2026-11-04
-dateModified: 2026-11-04
+dateModified: 2026-11-23
 reportStores: 94
 faq:
   - question: "Do shoppers from ChatGPT convert better than shoppers from Google?"
@@ -16,8 +17,6 @@ faq:
   - question: "What actually decides whether ChatGPT recommends a brand?"
     answer: "In my tests, ChatGPT built most recommendation answers from outside sources like independent review sites, magazines and expert sources, plus links to brands' own stores. Your own site decides how accurately you're described. Outside sources decide whether you're named."
 ---
-
-**By Carson Cobb. Updated November 2026.**
 
 AI search attracts more confident claims than evidence. Some are true, some are reasonable guesses, and some are sold as facts with nothing behind them. This is my running scorecard of the claims I hear most from Shopify brands and the agencies pitching them, graded by what can actually be shown. The published numbers behind many of these claims are collected in [AI search statistics for ecommerce, 2026](/reports/ai-search-statistics-2026).
 

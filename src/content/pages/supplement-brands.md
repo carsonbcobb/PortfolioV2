@@ -1,8 +1,9 @@
 ---
-title: "AI Search and CRO for Supplement Brands | Carson Cobb"
-description: "Google AI Mode sends 28% of supplement links to health and expert sources and 17% to brand sites. I get supplements recommended by AI, then sold."
+title: "AEO for Supplement Brands: Get Recommended by AI"
+description: "AEO for supplement brands: Google AI Mode sends 28% of supplement links to health and expert sources, 17% to brand sites. What it takes to get named."
 slug: "/supplement-brands"
 h1: "Get your supplements recommended by AI, then sold on your site"
+answer: "AEO for supplement brands means getting your products named when shoppers ask ChatGPT, Gemini and Google AI Mode which supplement to buy. Carson Cobb, an independent AI search and conversion specialist for Shopify brands, does it by fixing the product pages and data AI reads, within what your brand can legally claim, and working on the health and expert sources AI trusts."
 faq:
   - question: "How do I get my supplement brand recommended by ChatGPT?"
     answer: "ChatGPT recommends supplements it can match to the shopper's situation and trust from more than one source. That comes from product pages that say who the product is for, how to use it and how it's tested, and from the sites AI already reads for supplements. It works product by product, so the first step is seeing which of your products AI names today and who it names instead."
@@ -35,7 +36,7 @@ Supplement shoppers don't type "best creatine" anymore. They describe themselves
 
 The AI answers with a few brands and a reason for each. If your product isn't one of them, that shopper never sees your site. If it is, they arrive already half convinced, and your product page has to confirm what the AI told them.
 
-I'm Carson Cobb, a Shopify expert who works on [AI search](/ai-search) and conversion. I look at how AI answers the questions your buyers ask, product by product, then make the store turn those visitors into orders. You can see where you stand today with the [AI Visibility Check](/ai-visibility-check).
+I'm Carson Cobb, an independent [AI search](/ai-search) and conversion specialist for Shopify brands, working with brands in every product area. I look at how AI answers the questions your buyers ask, product by product, then make the store turn those visitors into orders. You can see where you stand today with the [AI Visibility Check](/ai-visibility-check).
 
 ## What I found when I tested products like yours
 
@@ -46,6 +47,12 @@ In November 2026 I asked ChatGPT, Gemini and Google AI Mode the questions supple
 - **Some questions get no brand at all.** For questions about perimenopause and a drink for focus, [none of the three AIs named a single brand](/reports/chatgpt-gemini-ai-mode-brand-overlap-2026). They gave general advice instead.
 - **Pages prove quality but skip the basics.** [80% of supplement product pages I checked mention testing or certification](/reports/do-product-pages-answer-ai-shopper-questions), the highest of any product type, but only 33% explain how to use the product and 47% say who it's for.
 - **Many products are hard to match.** [40% of supplement products I checked had no barcode on any variant](/reports/shopify-catalog-data-ai-shopping-2026), which makes it harder for Google to connect your product to the same product on retailer and review sites.
+
+## AEO for supplement brands: what it takes
+
+AEO, or answer engine optimization, is getting your product into the answer when a shopper asks AI what to buy. For supplements it takes three things: product pages that answer the shopper's exact question, product data AI can read, and a presence in the health and expert sources AI leans on for supplements.
+
+One rule shapes all of it. Product claims on the page have to stay within what your brand can legally say about the product, and AI quotes the page. Stronger claims are not the fix. Specific ones are: who it's for, dose and timing, what was tested and by whom, written in plain words your team has signed off on. That gives AI accurate facts to repeat, and keeps what it repeats about you safe.
 
 ## What AI looks for on your product pages
 

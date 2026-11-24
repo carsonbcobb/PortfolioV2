@@ -1,10 +1,11 @@
 ---
-title: "A/B Testing on Shopify 2026: Two Thirds of Brands Load No Testing Tool | Carson Cobb"
-description: "33% of Shopify brand homepages load an A/B testing tool. Intelligems leads at 19%, then Shoplift at 9%. Supplements and apparel test most, food least. Data from 609 stores."
+title: "Shopify A/B Testing Tools 2026: Data From 609 Brands"
+description: "33% of 609 Shopify brand homepages load an A/B testing tool. Intelligems leads at 19%, then Shoplift at 9%. Supplements and apparel test most, food least."
 slug: "/reports/shopify-ab-testing-tools-2026"
 h1: "A/B testing on Shopify: which brands test, and with which tools"
+answer: "In my November 2026 check of 609 Shopify brand homepages, 33% loaded code from an A/B testing tool. Intelligems led at 19%, then Shoplift at 9%. Supplements (48%) and apparel (47%) stores tested most, and food and drink least at 17%. Code on the page is a ceiling, since some stores keep it after they stop testing."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 cta: cro
 reportStores: 617
 faq:

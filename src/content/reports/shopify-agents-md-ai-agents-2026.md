@@ -1,10 +1,11 @@
 ---
-title: "Every Shopify Store Now Has an agents.md File. What's in It? | Carson Cobb"
-description: "105 of 107 Shopify brand stores serve an agents.md file for AI shopping agents, and 104 use Shopify's default. Only 1 store wrote its own. What it says and what you control."
+title: "Shopify agents.md in 2026: What It Tells AI Agents"
+description: "105 of 107 Shopify brand stores serve an agents.md file for AI shopping agents, and 104 use Shopify's default. What the file says and the part you control."
 slug: "/reports/shopify-agents-md-ai-agents-2026"
 h1: "Every Shopify store now has an agents.md file. Here's what it says."
+answer: "Shopify now publishes an agents.md file on almost every store, telling AI shopping agents how to browse and buy. In my November 2026 check of 107 Shopify brand stores, 105 served agents.md, 104 used Shopify's default and only 1 wrote its own. All 107 answered as a UCP store. The default file covers how an agent can shop, not what makes your products worth buying."
 datePublished: 2026-11-16
-dateModified: 2026-11-16
+dateModified: 2026-11-23
 reportStores: 107
 faq:
   - question: "What is agents.md on Shopify?"

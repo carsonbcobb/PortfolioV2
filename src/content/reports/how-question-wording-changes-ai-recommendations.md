@@ -1,10 +1,11 @@
 ---
-title: "How Question Wording Changes AI Picks | Carson Cobb"
-description: "Short vs real shopper questions on ChatGPT and Google AI Mode: the top pick changed in most questions and half the brands changed."
+title: "How Question Wording Changes AI Recommendations: Test Data"
+description: "Rewording 24 short buyer questions the way shoppers ask changed ChatGPT's picks: it kept the same top brand in 9 of 24 and named 50% of its brands again."
 slug: "/reports/how-question-wording-changes-ai-recommendations"
 h1: "How question wording changes AI recommendations"
+answer: "Question wording changes AI recommendations a lot. When I rewrote 24 short buyer questions the way shoppers actually ask, ChatGPT kept the same top pick in 9 of 24 questions and named only 50% of its short answer brands again. Google AI Mode kept the top pick in 8 of 24. Asking ChatGPT the same short question again kept the top pick 98% of the time."
 datePublished: 2026-11-06
-dateModified: 2026-11-06
+dateModified: 2026-11-23
 reportStores: 94
 faq:
   - question: "Does the way you phrase a question change ChatGPT's recommendations?"

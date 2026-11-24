@@ -1,10 +1,11 @@
 ---
-title: "AI Referral Traffic Statistics 2026: Growth, Conversion and Ecommerce | Carson Cobb"
-description: "AI referrals to US retail sites were up 393% in Q1 2026, and AI visitors now convert 42% to 64% better depending on the source. The key AI traffic numbers with sources and caveats."
+title: "AI Referral Traffic Statistics 2026: Growth and Conversion"
+description: "AI traffic to US retail sites rose 393% in Q1 2026, and AI visitors converted 42% better by March 2026. Every key AI referral figure, with source and date."
 slug: "/reports/ai-referral-traffic-statistics-2026"
 h1: "AI referral traffic statistics for 2026, with sources"
+answer: "AI referral traffic is still a small share of most stores' traffic, but it is the fastest growing source. Adobe measured AI traffic to US retail sites up 393% year over year in Q1 2026, and AI visitors converted 42% better than non AI traffic in March 2026. Shopify said AI referred shoppers converted 64% higher than organic search in Q3 2026."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 faq:
   - question: "How fast is AI referral traffic growing?"
     answer: "Very fast from a small base. Adobe measured AI traffic to US retail sites up 393% year over year in Q1 2026 and up 62% year over year in July 2026. Similarweb measured AI referrals worldwide averaging 770.7 million visits a month from June 2025 to May 2026, up 117%."
@@ -15,8 +16,6 @@ faq:
   - question: "Why does my analytics show less AI traffic than these reports?"
     answer: "Because some of it is hidden. AI visits without referrer data are counted as direct, and many shoppers read an AI answer and then search your brand name. Referral numbers are a floor, not the full picture."
 ---
-
-**By Carson Cobb. Updated November 17, 2026.**
 
 AI is still a small share of most stores' traffic, but it's the fastest growing source and, in 2026, one of the best converting. Here are the figures that matter, each with its source and date.
 
