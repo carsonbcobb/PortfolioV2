@@ -5,7 +5,7 @@ slug: "/guides/why-chatgpt-recommends-my-competitor"
 h1: "Why ChatGPT recommends your competitor instead of you"
 answer: "ChatGPT recommends your competitor because the sources it trusts mention them and not you, and their product page answers the shopper's exact question more clearly than yours. In my November 2026 tests, ChatGPT named about 4 brands per shopping answer and showed a source in 45 of 48 answers, led by review sites, testing sites and magazines. Fix the sources first, then your product pages."
 datePublished: 2026-11-09
-dateModified: 2026-11-23
+dateModified: 2026-11-24
 pageCta:
   variant: ai
 faq:

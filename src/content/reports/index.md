@@ -3,14 +3,14 @@ title: "AI Search and Ecommerce Research | Carson Cobb"
 description: "How AI assistants read, describe and recommend Shopify brands, and how Shopify stores convert. Built from data I collect from live stores and AI answers."
 slug: "/reports"
 h1: "AI search and ecommerce research"
-dateModified: 2026-11-17
+dateModified: 2026-11-24
 faq:
   - question: "Where does this data come from?"
     answer: "From the public storefront data every Shopify store publishes: products, collections, pages, store settings and subscription plans, and from live answers from ChatGPT, Gemini and Google AI Mode, collected in fresh chats. I check each store directly, so the numbers reflect what shoppers actually see on the date of the check."
   - question: "How often are the reports updated?"
     answer: "Each report shows the date it was checked. The Black Friday report gets a second check during Black Friday week, and the others are rerun every quarter."
   - question: "Are any brands named?"
-    answer: "No. Every report is aggregated by category. No individual store is named."
+    answer: "No store is named in the store research: those reports are aggregated, and no individual store appears. Reports on what AI recommends name the brands AI itself named in its answers."
 ---
 
 I research how AI assistants read, describe and recommend Shopify brands, and how Shopify stores convert. Every report is built from data I collect myself, from live stores and live AI answers.
@@ -40,6 +40,8 @@ I research how AI assistants read, describe and recommend Shopify brands, and ho
 ### [GEO vs SEO for ecommerce](/reports/geo-vs-seo-ecommerce-2026)
 
 ## AI search research
+
+### [Which Korean skincare brands AI recommends to US shoppers](/reports/korean-skincare-ai-recommendations-us-2026)
 
 ### [Every Shopify store now has an agents.md file](/reports/shopify-agents-md-ai-agents-2026)
 

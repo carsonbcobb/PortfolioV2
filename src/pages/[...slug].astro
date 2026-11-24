@@ -103,10 +103,11 @@ if (report) {
       datePublished: published,
       dateModified: modified,
       checked: checkedDate(page),
-      coverage: coverage(page),
+      coverage: fm.dataset?.coverage ?? coverage(page),
+      files: fm.dataFiles,
       dataset: !ROUNDUPS.includes(slug),
-      us: /\bUS (Shopify stores|brands)\b/.test(raw),
-      variables: tableHeaders(page),
+      us: fm.dataset?.us ?? /\bUS (Shopify stores|brands)\b/.test(raw),
+      variables: fm.dataset?.variables ?? tableHeaders(page),
       stores: fm.reportStores,
       products: fm.reportProducts,
       ...(vsGoogle
@@ -116,7 +117,9 @@ if (report) {
           }
         : {
             ...(ai ? { keywords: ['Shopify', 'ecommerce', 'AI search', 'ChatGPT', 'structured data'] } : {}),
-            ...(fromChats
+            ...(fm.dataset?.technique
+              ? { technique: fm.dataset.technique }
+              : fromChats
               ? {
                   technique: alsoStores
                     ? `Reading each store's public Shopify storefront data, and ${technique[0].toLowerCase()}${technique.slice(1)}`

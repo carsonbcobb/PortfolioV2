@@ -738,6 +738,8 @@ interface ReportSchemaInput {
   /** True when the report says its stores or brands are in the US: adds spatialCoverage */
   us?: boolean;
   keywords?: string[];
+  /** Downloadable data files: the Dataset distribution */
+  files?: { path: string; name: string; description: string }[];
 }
 
 // A data report: the Article, the Dataset behind it, the FAQ, and Home > Reports > report.
@@ -801,6 +803,17 @@ export function reportSchema(p: ReportSchemaInput) {
         ...(size.length ? { size: size.join(', ') } : {}),
         measurementTechnique: p.technique ?? "Reading each store's public Shopify storefront data",
         variableMeasured: p.variables,
+        ...(p.files?.length
+          ? {
+              distribution: p.files.map((f) => ({
+                '@type': 'DataDownload',
+                name: f.name,
+                description: f.description,
+                encodingFormat: 'text/csv',
+                contentUrl: `${SITE_URL}${f.path}`,
+              })),
+            }
+          : {}),
         keywords: p.keywords ?? ['Shopify', 'ecommerce', 'benchmarks', 'DTC'],
         inLanguage: 'en-US',
       }]),

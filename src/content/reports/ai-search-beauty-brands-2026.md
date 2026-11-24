@@ -5,7 +5,7 @@ slug: "/reports/ai-search-beauty-brands-2026"
 h1: "AI search for beauty brands: who gets recommended, and what their stores do differently"
 answer: "In my November 2026 tests, ChatGPT, Gemini and Google AI Mode named only 4 of 127 beauty brands on Shopify in my dataset, 3%, against 11% across all six product areas. ChatGPT named a median of 3 brands per beauty answer. Beauty product pages often explain how to use a product (51%) but less often say who it is for (34%)."
 datePublished: 2026-11-17
-dateModified: 2026-11-23
+dateModified: 2026-11-24
 reportStores: 617
 faq:
   - question: "How many beauty brands does ChatGPT recommend per answer?"
@@ -57,6 +57,8 @@ Beauty questions are personal: skin type, tone, hair type, sensitivity. In my re
 4. **Answer the follow up question on the page.** If AI would ask "what's your skin type", your page should already cover each answer.
 
 More on the pattern across all six areas in [what AI named Shopify brands have in common](/reports/what-ai-named-shopify-brands-have-in-common-2026) and [how many brands AI recommends](/reports/how-many-brands-ai-recommends-2026).
+
+**Related research:** [which Korean skincare brands AI recommends to US shoppers](/reports/korean-skincare-ai-recommendations-us-2026), and where those product cards send the click.
 
 Finding where AI names your brand, and why it skips you, is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
 
