@@ -5,44 +5,65 @@
 // and no offer shows the Close the Gap version with both sizes' lines. Every line is in WELCOME (site.ts).
 // The page renders the no offer version, and the inline script switches it for the offer in the URL.
 import ContentPage from '../layouts/ContentPage.astro';
-import { WELCOME } from '../data/site';
+import { WELCOME, PROGRAM_SIZES, SIZE_TERMS } from '../data/site';
 
 const title = "You're in | Carson Cobb";
 const description = 'What happens next after you start Close the Gap or the Full Store Audit.';
-const { closing } = WELCOME;
+const { program, audit } = WELCOME;
 
-// Each block lists the offers it shows for.
+// Each block lists the offers it shows for. Close the Gap blocks list both, focus and full.
 const PROGRAM_V = 'both focus full';
-const sets = [
-  { v: PROGRAM_V, d: WELCOME.program },
-  { v: 'audit', d: WELCOME.audit },
-];
 const SIZES = ['focus', 'full', 'both'] as const;
+type Size = (typeof SIZES)[number];
+const pick = (t: unknown, k: Size) => (t as Record<string, string>)[k];
+// A line with only: 'full' shows on Full and on the no offer version.
+const onlyV = (l: { only?: string }) => (l.only === 'full' ? 'full both' : undefined);
+const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
+
+const sets = [
+  { key: 'program', v: PROGRAM_V, d: program },
+  { key: 'audit', v: 'audit', d: audit },
+] as const;
 const shown = (v: string) => v.split(' ').includes('both');
-const pick = (t: unknown, k: (typeof SIZES)[number]) => (t as Record<string, string>)[k];
 ---
 
 <ContentPage {title} {description} h1="You're in." eyebrow="Welcome" trail={[{ name: 'Welcome' }]} hideCta hideNavCta jsonLd={[]}>
   <Fragment slot="hero">
-    {sets.map((s) => <p class="hero__sub" data-v={s.v} hidden={!shown(s.v)}>{s.d.sub}</p>)}
+    {SIZES.map((k) => <p class="hero__sub" data-v={k} hidden={k !== 'both'}>{pick(program.sub, k)}</p>)}
+    {
+      PROGRAM_SIZES.map((z) => (
+        <p class="welcome__plan" data-v={z.key} hidden>
+          <span class="welcome__plan-name">{z.name}</span>
+          <span class="welcome__plan-price">
+            {usd(z.monthly)}
+            <small>/month</small>
+          </span>
+          <span class="welcome__plan-terms">{SIZE_TERMS}</span>
+        </p>
+      ))
+    }
+    <p class="hero__sub" data-v="audit" hidden>{audit.sub}</p>
   </Fragment>
 
   {
     sets.map((s) => (
       <div class="welcome" data-v={s.v} hidden={!shown(s.v)}>
-        <section class="section" aria-labelledby={`next-${s.v === 'audit' ? 'audit' : 'program'}`}>
+        <section class="section" aria-labelledby={`next-${s.key}`}>
           <div class="wrap stack">
             <div class="head">
               <p class="eyebrow">What happens next</p>
-              <h2 class="h2" id={`next-${s.v === 'audit' ? 'audit' : 'program'}`}>{s.d.timelineTitle}</h2>
+              <h2 class="h2" id={`next-${s.key}`}>{s.d.timelineTitle}</h2>
             </div>
             <ol class="timeline">
-              {s.d.timeline.map((st, i) => (
-                <li class="timeline__item">
-                  <span class="timeline__num" aria-hidden="true">{i + 1}</span>
+              {s.d.timeline.map((st) => (
+                <li class="timeline__item" data-v={onlyV(st)}>
+                  <span class="timeline__num" aria-hidden="true" />
                   <div class="timeline__body">
                     <p class="tag tag--accent">{st.when}</p>
-                    <h3 class="step__title">{st.title}</h3>
+                    <h3 class="step__title">
+                      {st.title}
+                      {st.only && <strong class="tag welcome__only" data-v="both">Full</strong>}
+                    </h3>
                     {typeof st.text === 'string' ? (
                       <p class="step__text">{st.text}</p>
                     ) : (
@@ -56,6 +77,19 @@ const pick = (t: unknown, k: (typeof SIZES)[number]) => (t as Record<string, str
                 </li>
               ))}
             </ol>
+
+            {'scope' in s.d && (
+              <aside class="welcome__scope" aria-labelledby={`scope-${s.key}`}>
+                <p class="eyebrow">Your plan</p>
+                <h3 class="h3" id={`scope-${s.key}`}>{s.d.scope.title}</h3>
+                <p>{s.d.scope.text}</p>
+                {SIZES.map((k) => (
+                  <p class="welcome__scope-size" data-v={k} hidden={k !== 'both'}>
+                    {pick(s.d.scope.by, k)}
+                  </p>
+                ))}
+              </aside>
+            )}
           </div>
         </section>
 
@@ -73,11 +107,12 @@ const pick = (t: unknown, k: (typeof SIZES)[number]) => (t as Record<string, str
                     <span aria-hidden="true">✓</span>
                     <div>
                       {c.text}
-                      {'only' in c && <strong class="tag tag--accent welcome__only">Full</strong>}
+                      {'only' in c && <strong class="tag tag--accent welcome__only" data-v="both">Full</strong>}
                     </div>
                   </li>
                 ))}
               </ul>
+              {'checklistNote' in s.d && <p class="welcome__note">{s.d.checklistNote}</p>}
             </div>
           </div>
         </section>
@@ -120,26 +155,26 @@ const pick = (t: unknown, k: (typeof SIZES)[number]) => (t as Record<string, str
             </ul>
           </div>
         </section>
+
+        <section class="dark cta">
+          <div class="wrap cta__inner">
+            <h2 class="h2 cta__title">{s.d.closing.title}</h2>
+            <p class="cta__sub">{s.d.closing.text}</p>
+            <div class="btn-row btn-row--center">
+              <a href={s.d.closing.href} class="btn btn--accent">{s.d.closing.button}</a>
+            </div>
+          </div>
+        </section>
       </div>
     ))
   }
-
-  <section class="dark cta">
-    <div class="wrap cta__inner">
-      <h2 class="h2 cta__title">{closing.title}</h2>
-      <p class="cta__sub">{closing.text}</p>
-      <div class="btn-row btn-row--center">
-        <a href={closing.href} class="btn btn--accent">{closing.button}</a>
-      </div>
-    </div>
-  </section>
 </ContentPage>
 
 <script is:inline>
   (function () {
     var o = new URLSearchParams(location.search).get('offer');
     var v = o === 'full-store-audit' ? 'audit' : o === 'focus' || o === 'full' ? o : 'both';
-    // A block shows when its list has this offer. Close the Gap blocks list both, focus and full.
+    // A block shows when its list has this offer.
     document.querySelectorAll('[data-v]').forEach(function (el) {
       el.hidden = el.dataset.v.split(' ').indexOf(v) < 0;
     });
@@ -150,11 +185,48 @@ const pick = (t: unknown, k: (typeof SIZES)[number]) => (t as Record<string, str
   [data-v][hidden] {
     display: none !important;
   }
+  /* The plan they bought, under the hero line: name, price and terms. */
+  .welcome__plan {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px 18px;
+    margin: 8px 0 0;
+    padding: 14px 20px;
+    border: 1px solid var(--dark-line);
+    border-radius: var(--radius-card);
+    background: var(--dark-card);
+    color: #fff;
+  }
+  .welcome__plan-name {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .welcome__plan-price {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .welcome__plan-price small {
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.7;
+  }
+  .welcome__plan-terms {
+    font-size: 15px;
+    opacity: 0.8;
+  }
+  /* Steps number themselves, so a step hidden for one size never leaves a gap in the count. */
   .timeline {
     margin: 0;
     padding: 0;
     list-style: none;
     max-width: 760px;
+    counter-reset: step;
   }
   .timeline__item {
     position: relative;
@@ -162,11 +234,13 @@ const pick = (t: unknown, k: (typeof SIZES)[number]) => (t as Record<string, str
     grid-template-columns: 44px minmax(0, 1fr);
     gap: 20px;
     padding-bottom: 36px;
+    counter-increment: step;
   }
-  .timeline__item:last-child {
+  .timeline__item:last-of-type,
+  .timeline__item:has(~ .timeline__item[hidden]):not(:has(~ .timeline__item:not([hidden]))) {
     padding-bottom: 0;
   }
-  .timeline__item:not(:last-child)::before {
+  .timeline__item:not(:last-of-type)::before {
     content: '';
     position: absolute;
     left: 21px;
@@ -174,6 +248,9 @@ const pick = (t: unknown, k: (typeof SIZES)[number]) => (t as Record<string, str
     bottom: 4px;
     width: 2px;
     background: var(--line);
+  }
+  .timeline__item:has(~ .timeline__item[hidden]):not(:has(~ .timeline__item:not([hidden])))::before {
+    display: none;
   }
   .timeline__num {
     display: flex;
@@ -188,11 +265,38 @@ const pick = (t: unknown, k: (typeof SIZES)[number]) => (t as Record<string, str
     font-weight: 700;
     font-size: 16px;
   }
+  .timeline__num::before {
+    content: counter(step);
+  }
   .timeline__body {
     display: flex;
     flex-direction: column;
     gap: 8px;
     padding-top: 2px;
+  }
+  .welcome__scope {
+    max-width: 760px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 28px 32px;
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--accent);
+    border-radius: var(--radius-card);
+    background: var(--sand);
+  }
+  .welcome__scope p {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--body);
+  }
+  .welcome__scope .eyebrow {
+    font-size: 13px;
+  }
+  .welcome__scope .welcome__scope-size {
+    font-weight: 700;
+    color: var(--ink);
   }
   .welcome__card {
     display: flex;
@@ -206,6 +310,14 @@ const pick = (t: unknown, k: (typeof SIZES)[number]) => (t as Record<string, str
   .welcome__only {
     margin-left: 8px;
     white-space: nowrap;
+    vertical-align: middle;
+  }
+  .welcome__note {
+    margin: 4px 0 0;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    font-size: 16px;
+    color: var(--muted);
   }
   .welcome__terms {
     margin: 0;
@@ -223,7 +335,7 @@ const pick = (t: unknown, k: (typeof SIZES)[number]) => (t as Record<string, str
       grid-template-columns: 36px minmax(0, 1fr);
       gap: 14px;
     }
-    .timeline__item:not(:last-child)::before {
+    .timeline__item:not(:last-of-type)::before {
       left: 17px;
       top: 40px;
     }
@@ -231,6 +343,9 @@ const pick = (t: unknown, k: (typeof SIZES)[number]) => (t as Record<string, str
       width: 36px;
       height: 36px;
       font-size: 14px;
+    }
+    .welcome__scope {
+      padding: 22px 20px;
     }
   }
 </style>

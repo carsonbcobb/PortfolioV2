@@ -1381,7 +1381,7 @@ img {
   color: #fff;
 }
 
-/* Close the Gap size cards: the terms under the headline price, then the optional upfront saving. */
+/* Close the Gap size cards: the terms under the headline price. */
 .plan__commit {
   margin: -6px 0 0;
   font-size: 15px;

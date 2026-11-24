@@ -138,7 +138,7 @@ export const HERO_PROOF = ['50+ AI search projects', '30+ sites optimized for AI
 export const RECOMMENDED = {
   eyebrow: 'How AI decides',
   heading: 'What gets a product recommended.',
-  text: "AI recommends the brands it can read, trust and verify. That comes down to four things, and then the store has to close the sale. I work on all of it, product by product, and measure whether AI's answers change.",
+  text: "AI recommends the brands it can read, trust and verify. That comes down to four things, and then the store has to close the sale. I work on all of it, category by category, and measure whether AI's answers change.",
   cards: [
     { title: 'Complete product data', text: 'Every product described fully and consistently, so AI never has to guess.' },
     {
@@ -156,7 +156,7 @@ export const RECOMMENDED = {
 
 export const APPROACH_FAQ = {
   q: 'What makes your approach different?',
-  a: "I work product by product. For each product that matters, I find the questions its buyers actually ask, which competing products AI recommends instead and why, and what AI gets wrong about it. Then I fix the store side myself, from product data built for each product to the pages that close the sale, and measure whether AI's answers change. The store work and the conversion work are done by the same person, so the traffic AI sends actually turns into orders.",
+  a: "I work category by category. In each category that matters, I find the questions its buyers actually ask, which competing products AI recommends instead and why, and what AI gets wrong about your products. Then I fix the store side myself, from product data built for each product to the pages that close the sale, and measure whether AI's answers change. The store work and the conversion work are done by the same person, so the traffic AI sends actually turns into orders.",
 };
 
 // "What the gap costs you" on the homepage. A worked example, clearly labeled, then three points.
@@ -195,7 +195,7 @@ export const ENGINES = [
   {
     tag: 'Step one',
     title: 'Close the gap.',
-    text: 'I find exactly why AI recommends your competitor, product by product, on ChatGPT, Gemini and Google AI Mode. Then I fix everything you control and go after the sources AI relies on.',
+    text: 'I find exactly why AI recommends your competitor, category by category, on ChatGPT, Gemini and Google AI Mode. Then I fix everything you control and go after the sources AI relies on.',
     link: { href: '/close-the-gap', text: 'See the program' },
   },
   {
@@ -305,14 +305,14 @@ export const PROGRAM = {
   promise:
     "I can't control what AI says. Nobody can. What I can do is find exactly why your competitor gets picked, fix everything you control, give your team a clear plan for everything you don't, and show you how it's moving every week.",
   summary:
-    'A 90 day program: I show you where your competitors beat you in ChatGPT, Gemini and Google AI Mode, product by product, fix everything you control, go after the sources AI relies on, and report how it moves.',
+    'A 90 day program: I show you where your competitors beat you in ChatGPT, Gemini and Google AI Mode, category by category, fix everything you control, go after the sources AI relies on, and report how it moves.',
   months: [
     {
       when: 'Month 1',
       title: 'Find the gap and fix what you control',
       items: [
         'An AI audit of your entire site, not just the product pages: the questions AI needs answered about your products before it recommends them, and whether your pages and structured data answer them in a way AI can read, extract and quote.',
-        'A head to head against your main competitors across your top products: who gets recommended, how often, how each brand is described, and which sources drive each pick, on ChatGPT, Gemini and Google AI Mode.',
+        'A head to head against your main competitors in each of your product categories: who gets recommended, how often, how each brand is described, and which sources drive each pick, on ChatGPT, Gemini and Google AI Mode.',
         'Every on site fix: product data and structured data, product pages that answer the questions buyers ask AI, and comparison and FAQ content. On Focus, every fix comes to your team written and ready to ship. On Full, I implement them.',
         'On Full, I also make sure the product pages close the sale when AI sends a shopper.',
       ],
@@ -343,14 +343,14 @@ export const PROGRAM = {
   after:
     'After 90 days, the program continues month to month: reports, model watch, new questions and new competitors as they appear, and ongoing source work. Brands with one or two categories go deeper inside them, not wider.',
   guarantee: "If I don't deliver everything listed for month 1, you don't pay for month 2.",
-  guaranteeNote: "If you paid upfront, the cost of month 2 is credited toward your next month of service. The guarantee covers the month 1 deliverables listed above, not what AI says. No one controls AI answers.",
+  guaranteeNote: "The guarantee covers the month 1 deliverables listed above, not what AI says. No one controls AI answers.",
   scope: 'More categories, more competitors, or additional stores and country sites are quoted separately.',
   // How scope works: one explanation, reused on /pricing and /close-the-gap.
   scopeTitle: 'Your whole catalog, tracked by category',
   scopeText:
     "The audit and every fix cover your whole catalog. What's scoped is the tracking: I group your products into categories, the way shoppers compare them (for example walking pads, or cleansers), and track the lead product in each category against the brands AI recommends there. What I learn and fix on that product is applied to every product in its category.",
   continues:
-    'Both sizes run month to month at $2,500 or $5,000 a month. Cancel any time with 30 days written notice. To save, you can pay 3 months upfront: $7,000 for Focus or $13,500 for Full.',
+    'Both sizes run month to month at $2,500 or $5,000 a month. Cancel any time with 30 days written notice.',
   fit: 'For brands doing about $50K a month and up, competing with brands their own size or a few times bigger.',
   fitNote:
     'Brands whose competitors are household names on every question are slower to move, so I focus on the specific questions real shoppers ask, where a focused brand can win.',
@@ -362,7 +362,7 @@ export const PROGRAM = {
   ],
 };
 
-// The two sizes. monthly is the month to month price; upfront is the optional 3 months paid in advance, at a saving. The same lists show on /close-the-gap, /pricing, /ai-search and /start.
+// The two sizes. monthly is the one price, month to month. The same lists show on /close-the-gap, /pricing, /ai-search and /start.
 // First on both plan lists: every engagement starts with an AI audit of the whole site.
 const AI_AUDIT_ITEM =
   'An AI audit of your entire site: the questions AI needs answered about your products before it recommends them, whether AI can read, extract and quote your pages and structured data, and the sources AI relies on for your products';
@@ -385,7 +385,6 @@ export const PROGRAM_SIZES = [
       'Replies within 2 business days',
     ],
     monthly: 2500,
-    upfront: 7000,
     featured: false,
   },
   {
@@ -409,7 +408,6 @@ export const PROGRAM_SIZES = [
       'Same business day replies',
     ],
     monthly: 5000,
-    upfront: 13500,
     featured: true,
   },
 ];
@@ -432,11 +430,8 @@ export const SIZE_COMPARE = {
   note: 'Most brands with a dev team that has room choose Focus. Brands whose team is already stretched choose Full.',
 };
 
-// The lines under each size's headline price: the terms, then the optional upfront saving.
-const usdPlain = (n: number) => `$${n.toLocaleString('en-US')}`;
-export const SIZE_TERMS = 'Month to month, 30 days notice to cancel';
-export const sizeOtherPrices = (z: (typeof PROGRAM_SIZES)[number]) =>
-  `Optional saving: pay 3 months upfront for ${usdPlain(z.upfront)}`;
+// The line under each size's headline price, and under each price on /start.
+export const SIZE_TERMS = 'Month to month. Cancel any time with 30 days notice.';
 
 // The CRO offer: one time, on /pricing and its own page at /full-store-audit.
 export const FULL_AUDIT = {
@@ -463,12 +458,12 @@ export const FULL_AUDIT = {
 
 // What happens after paying: on /start before the payment button, and on /welcome after checkout.
 const AFTER_PAY_FIRST =
-  'Within 1 business day, I send a Shopify collaborator request and a short email asking for your top products, your main competitors, and who approves outside pitches and placements.';
+  'Within 1 business day, I send a Shopify collaborator request and a short email to confirm your product categories, your main competitors, and who approves outside pitches and placements.';
 const AFTER_PAY_AUDIT =
   'I start your AI audit: your entire site, and how your products compare with your competitors in ChatGPT, Gemini and Google AI Mode.';
 // The guarantee on /start, which names the month 1 deliverables because that page doesn't list month 1.
 export const startGuarantee = (key: 'focus' | 'full') =>
-  `Month 1 delivery guarantee: If I don't deliver your AI audit, your first competitor reports and the first round of on site fixes${key === 'focus' ? ', ready for your team to ship,' : ''} in month 1, you don't pay for month 2. If you paid upfront, the cost of month 2 is credited toward your next month of service. The guarantee covers these deliverables, not what AI says. No one controls AI answers.`;
+  `Month 1 delivery guarantee: If I don't deliver your AI audit, your first competitor reports and the first round of on site fixes${key === 'focus' ? ', ready for your team to ship,' : ''} in month 1, you don't pay for month 2. The guarantee covers these deliverables, not what AI says. No one controls AI answers.`;
 export const AFTER_PAY = {
   full: [
     AFTER_PAY_FIRST,
@@ -489,7 +484,7 @@ export const AFTER_PAY = {
 // /welcome: where the payment links land. Lines with `by` change with the offer in the URL: focus, full, or
 // both (no offer). Lines with `only: 'full'` show for full and both.
 type ByOffer = { focus: string; full: string; both: string };
-type WelcomeLine = { title: string; text: string | ByOffer; when?: string };
+type WelcomeLine = { title: string; text: string | ByOffer; when?: string; only?: 'full' };
 const COLLAB_STEP: WelcomeLine = {
   when: 'Within 1 business day',
   title: 'Approve my collaborator request',
@@ -501,45 +496,71 @@ const WELCOME_CLOSING = {
   button: 'Email Carson',
   href: `mailto:${EMAIL}?subject=Question%20about%20getting%20started`,
 };
+const welcomeSub = (name: string) =>
+  `Thanks for starting ${name}. Here's exactly what happens over the next two weeks, and the few things I need from you. Your receipt is on its way from Stripe.`;
 export const WELCOME = {
   program: {
-    sub: "Thanks for starting Close the Gap. Here's exactly what happens over the next two weeks, and the few things I need from you. Your receipt is on its way from Stripe.",
-    timelineTitle: 'Your first two weeks',
+    sub: {
+      focus: welcomeSub('Close the Gap: Focus'),
+      full: welcomeSub('Close the Gap: Full'),
+      both: welcomeSub('Close the Gap'),
+    } as ByOffer,
+    timelineTitle: 'Your first month, step by step',
     timeline: [
       COLLAB_STEP,
       {
         when: 'Same email',
-        title: 'Two quick details',
-        text: 'Reply to my welcome email with your top products and who on your team approves outside pitches and placements.',
+        title: 'Confirm your categories',
+        text: "I'll confirm the product categories you entered at checkout, or suggest them if you left it blank, along with the lead product I'll track in each. Reply with any changes and who on your team approves outside pitches and placements.",
       },
       {
         when: 'Week 1',
-        title: 'I map your gap',
-        text: 'I run your buyer questions through ChatGPT, Gemini and Google AI Mode, record who gets recommended and why, and benchmark your product pages against my dataset of more than 600 Shopify stores.',
+        title: 'I audit your entire site',
+        text: 'I review your whole catalog the way AI reads it: product data, structured data, product pages, and the facts AI looks for before it recommends a product. Then I run the questions your shoppers ask through ChatGPT, Gemini and Google AI Mode, category by category, and record who gets recommended and why.',
       },
       {
         when: 'Within 2 weeks',
         title: 'Your first competitor report',
-        text: "Where each competitor beats you, product by product, what it's worth, and what we fix first.",
+        text: {
+          focus: "Where each competitor beats you in each of your categories, what it's worth, and what we fix first. After that, a new report every 2 weeks.",
+          full: "Where each competitor beats you in every category, what it's worth, and what we fix first. After that, a new report every week.",
+          both: "Where each competitor beats you in each of your categories, what it's worth, and what we fix first. After that, a new report every week on Full and every 2 weeks on Focus.",
+        },
       },
       {
         when: 'Month 1',
         title: 'The fixes start',
         text: {
-          focus: 'Every on site fix comes to your team written and ready to ship.',
-          full: 'I implement the on site fixes myself and start the conversion work on the pages AI sends shoppers to.',
-          both: 'On Focus, every on site fix comes to your team written and ready to ship. On Full, I implement them myself.',
+          focus: 'Every fix comes to your team written and ready to ship, from the structured data to the page copy and comparison content. Every fix in a category applies to every product in it.',
+          full: 'I implement the fixes across your catalog myself, start the conversion work on the pages AI sends shoppers to, and start on the outside sources AI relies on. Every fix in a category applies to every product in it.',
+          both: 'On Focus, every fix comes to your team written and ready to ship. On Full, I implement the fixes myself and start the conversion and source work. Every fix in a category applies to every product in it.',
         },
       },
+      {
+        when: 'Every month',
+        title: 'Your AI revenue report and strategy video',
+        text: 'Each month you get a report on the revenue AI is driving and a short recorded video on what moved, what\'s next, and what your team should approve.',
+        only: 'full',
+      },
     ] as WelcomeLine[],
-    checklistIntro: "You can do all of this from the emails I send. Here's the full list so nothing surprises you.",
+    scope: {
+      title: 'How your plan is scoped',
+      text: 'The audit and every fix cover your whole catalog. What\'s scoped is the tracking: in each of your categories, I track your lead product against the brands AI recommends there, and apply what we learn to every product in that category.',
+      by: {
+        focus: 'Your plan covers up to 3 categories, each tracked against up to 3 competitors.',
+        full: 'Your plan covers up to 5 categories, each tracked against up to 6 competitors.',
+        both: 'Focus covers up to 3 categories, each tracked against up to 3 competitors. Full covers up to 5, each tracked against up to 6.',
+      } as ByOffer,
+    },
+    checklistIntro: "Here's the full list, so nothing surprises you.",
     checklist: [
       { text: 'Approve the Shopify collaborator request' },
       { text: `Google Analytics 4: add ${EMAIL} as a Viewer` },
       { text: `Google Search Console: add ${EMAIL} as a user` },
-      { text: 'Your top products, and who approves outside pitches and placements' },
+      { text: 'Confirm your categories, and who approves outside pitches and placements' },
       { text: 'Access to your post purchase survey app, if you use one', only: 'full' as const },
     ],
+    checklistNote: 'You can do all of this from the emails I send.',
     work: [
       {
         title: 'Updates by email and video',
@@ -560,10 +581,17 @@ export const WELCOME = {
     ] as WelcomeLine[],
     termsTitle: 'Billing and terms',
     terms: [
-      'Monthly plans bill on the same date each month. Your receipt comes from Stripe.',
-      `Plans run month to month. Cancel any time by emailing ${EMAIL} with 30 days written notice.`,
-      "If I don't deliver everything listed for month 1, you don't pay for month 2. If you paid upfront, the cost of month 2 is credited toward your next month of service.",
+      'Your plan bills on the same date each month. Your receipt and invoice come from Stripe, with the business name and tax ID you entered at checkout.',
+      `Month to month. Cancel any time with 30 days written notice by email to ${EMAIL}.`,
+      "If I don't deliver everything listed for month 1, you don't pay for month 2.",
+      'No refunds once a month has started.',
     ],
+    closing: {
+      title: 'Questions before then?',
+      text: `Email ${EMAIL}. I'll be in touch within 1 business day.`,
+      button: 'Email Carson',
+      href: `mailto:${EMAIL}?subject=Question%20about%20getting%20started`,
+    },
   },
   audit: {
     sub: "Thanks for starting your Full Store Audit. Here's exactly what happens next, and the access I need so I can start. Your receipt is on its way from Stripe.",
@@ -606,8 +634,8 @@ export const WELCOME = {
     ] as WelcomeLine[],
     termsTitle: 'Terms',
     terms: ['Your receipt comes from Stripe.', "Refunds aren't offered once the audit has started."],
+    closing: WELCOME_CLOSING,
   },
-  closing: WELCOME_CLOSING,
 };
 
 // The AI Visibility Check, as an offer on /pricing.
@@ -623,9 +651,9 @@ export const TERMS = {
   notFit:
     'You need paid ads management, one off development tasks, a brand new store with no traffic yet, or someone who guarantees a ChatGPT ranking. Stores not on Shopify get partial service.',
   start:
-    'Store collaborator access, your top products, your main competitors, and someone who can approve outside source pitches and placements.',
+    'Store collaborator access, your product categories, your main competitors, and someone who can approve outside source pitches and placements.',
   who: 'You work with me directly. I do the work myself, with no handoff to a junior team or an offshore team. If something needs a specialist skill like photography, I tell you up front and either quote it or recommend someone you hire directly.',
-  commitment: "There's no minimum commitment. Close the Gap runs month to month, with 30 days written notice to cancel.",
+  cancel: 'Yes. Close the Gap runs month to month. Cancel any time with 30 days written notice.',
   refunds: 'No refunds once a month has started.',
   guarantee: `${PROGRAM.guarantee} ${PROGRAM.guaranteeNote}`,
   ownership: 'You own all on site work once it is paid.',
@@ -638,7 +666,7 @@ export const TERMS_LIST = [
   { q: "Who isn't a fit?", a: TERMS.notFit },
   { q: 'What do you need to start?', a: TERMS.start },
   { q: 'Who does the work?', a: TERMS.who },
-  { q: 'Is there a commitment?', a: `${TERMS.commitment} To save, you can pay 3 months upfront: $7,000 for Focus or $13,500 for Full.` },
+  { q: 'Can I cancel any time?', a: TERMS.cancel },
   { q: 'Do you offer refunds?', a: `${TERMS.refunds} ${TERMS.guarantee}` },
   { q: 'Who owns the work?', a: TERMS.ownership },
   { q: 'Who pays for apps, tools and placements?', a: TERMS.costs },
@@ -705,7 +733,7 @@ const GUARANTEE_ANSWER =
 export const FAQS: { q: string; a: string; link?: { href: string; text: string } }[] = [
   {
     q: 'What is Close the Gap?',
-    a: 'A 90 day program for Shopify brands. I show you where your competitors beat you in ChatGPT, Gemini and Google AI Mode, product by product, fix everything you control, go after the sources AI relies on, and send a competitor report every week or two so you can see it move.',
+    a: 'A 90 day program for Shopify brands. I show you where your competitors beat you in ChatGPT, Gemini and Google AI Mode, category by category, fix everything you control, go after the sources AI relies on, and send a competitor report every week or two so you can see it move.',
   },
   { q: 'Do we need a call?', a: CALL_ANSWER },
   { q: 'Can you guarantee ChatGPT will recommend us?', a: GUARANTEE_ANSWER },
@@ -752,7 +780,7 @@ export const PRICING_FAQS = [
   ...SIZE_FAQS,
   {
     q: 'How do I pay?',
-    a: 'Press Start now on the size you want. You see what happens after you pay and the terms, choose month to month or 3 months paid upfront, and pay online. Questions first? Email me.',
+    a: 'Press Start now on the size you want. You see what happens after you pay and the terms, and pay online. Questions first? Email me.',
   },
   {
     q: 'What does the month 1 guarantee cover?',
@@ -894,10 +922,10 @@ export const AGENCY_PARTNER_PLANS = [
     price: '$2,500',
     unit: '/month',
     commit: 'Month to month',
-    other: 'Focus. Full is $5,000/month. Both run month to month or can be paid 3 months upfront, at the same prices brands pay.',
+    other: 'Focus. Full is $5,000/month. Both run month to month, at the same prices brands pay.',
     summary: 'Same program, reported in your branding.',
     includes: [
-      'A head to head against your client\'s main competitors across their top products',
+      'A head to head against your client\'s main competitors in each of their product categories',
       "On Focus, every fix written and ready for your client's team to ship. On Full, I implement them",
       'Sources work: a ranked list on Focus, done for you on Full',
       'Competitor reports in your branding: every 2 weeks on Focus, weekly with model watch on Full',

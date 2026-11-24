@@ -2,7 +2,7 @@
 // The two Close the Gap sizes, from the same data as the pricing page. Full size cards on /ai-search;
 // a short card per size (the industry pages' "How we work together") when brief is set.
 import SizeCard from './SizeCard.astro';
-import { PROGRAM, PROGRAM_SIZES, SIZE_TERMS, sizeOtherPrices, CHECK_PATH, CTA_LABEL } from '../data/site';
+import { PROGRAM, PROGRAM_SIZES, SIZE_TERMS, CHECK_PATH, CTA_LABEL } from '../data/site';
 
 interface Props {
   /** Heading id, for the section's aria-labelledby */
@@ -42,7 +42,6 @@ const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
                 <span>/month</span>
               </div>
               <p class="plan__commit">{SIZE_TERMS}</p>
-              <p class="plan__other">{sizeOtherPrices(z)}</p>
               <p class="plan__summary">{z.brief}</p>
             </a>
           ))}

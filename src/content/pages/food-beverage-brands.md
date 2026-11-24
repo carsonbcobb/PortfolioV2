@@ -6,7 +6,7 @@ h1: "Get your food and drinks recommended by AI, then sold on your site"
 answer: "Carson Cobb is an independent AI search and conversion specialist for Shopify brands in every product area, food and beverage among them. AI recommends food and drinks whose product pages say who they are for, the ingredients and allergens, how to serve them and how they taste. In his November 2026 check, Google AI Mode sent 63% of food and beverage links to brand websites."
 faq:
   - question: "How do I get my food brand recommended by ChatGPT?"
-    answer: "ChatGPT recommends food and drinks it can match to what the shopper described: the diet, the taste, who's eating it. That comes from product pages that say who the product is for, what's in it and how to eat or serve it, and from the sites AI already reads. It works product by product, so the first step is seeing which of your products AI names today and who it names instead."
+    answer: "ChatGPT recommends food and drinks it can match to what the shopper described: the diet, the taste, who's eating it. That comes from product pages that say who the product is for, what's in it and how to eat or serve it, and from the sites AI already reads. It works category by category, so the first step is seeing which of your products AI names today and who it names instead."
     link:
       text: "Run the AI Visibility Check."
       href: "/ai-visibility-check"
@@ -36,7 +36,7 @@ Food and drink shoppers now ask AI the way they'd ask a friend: "I'm gluten free
 
 The AI answers with a few products and a reason for each. In food and beverage, it often links straight to the brand's own product page. So the page that shopper lands on has to confirm everything they asked for, in their words, before they lose interest.
 
-I'm Carson Cobb, a Shopify expert who works on [AI search](/ai-search) and conversion. I look at how AI answers the questions your buyers ask, product by product, then make the store turn those visitors into orders. You can see where you stand today with the [AI Visibility Check](/ai-visibility-check).
+I'm Carson Cobb, a Shopify expert who works on [AI search](/ai-search) and conversion. I look at how AI answers the questions your buyers ask, category by category, then make the store turn those visitors into orders. You can see where you stand today with the [AI Visibility Check](/ai-visibility-check).
 
 ## What I found when I tested products like yours
 

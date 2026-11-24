@@ -1,11 +1,11 @@
 ---
 title: "AI Search Optimization for Shopify Brands | Carson Cobb"
-description: "AI search optimization for Shopify brands: see where competitors beat you in ChatGPT, Gemini and Google AI Mode, product by product, and close the gap."
+description: "AI search optimization for Shopify brands: see where competitors beat you in ChatGPT, Gemini and Google AI Mode, category by category, and close the gap."
 slug: "/ai-search"
 h1: "AI search optimization for Shopify brands"
 faq:
   - question: "What do you need from my brand?"
-    answer: "Shopify collaborator access, analytics access, Google Search Console, your top products, your main competitors, and someone who can approve outside pitches and placements. You approve every change before it goes live."
+    answer: "Shopify collaborator access, analytics access, Google Search Console, your product categories, your main competitors, and someone who can approve outside pitches and placements. You approve every change before it goes live."
   - question: "How are results measured?"
     answer: "I test the same buyer questions for each product that matters, in repeated runs on ChatGPT, Gemini and Google AI Mode, and track how often AI names you, where it places you and whether it describes you accurately. You get that in a competitor report every 2 weeks on Focus or weekly on Full, with AI referral traffic and sales from your store data as a second signal, since analytics tools undercount AI."
   - question: "What is AI search optimization?"
