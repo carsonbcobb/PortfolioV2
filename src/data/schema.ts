@@ -208,7 +208,7 @@ const sizeOffer = (z: (typeof PROGRAM_SIZES)[number]) => ({
   '@type': 'Offer',
   '@id': `${PROGRAM_URL}#offer-${z.key}`,
   name: z.name,
-  description: `${z.fit}. ${sentenceList(z.items)} ${usd(z.monthly)}/month, month to month, with 30 days written notice to cancel. Optional saving: ${usd(z.upfront)} for 3 months paid upfront. ${PROGRAM.guarantee} ${PROGRAM.scope}`,
+  description: `${z.fit}. ${sentenceList(z.items)} ${usd(z.monthly)}/month, month to month. Cancel any time with 30 days written notice. ${PROGRAM.guarantee} ${PROGRAM.scope}`,
   url: PROGRAM_URL,
   itemOffered: ref(PLAN.program),
   seller: ref(ID.business),
@@ -310,7 +310,7 @@ export function homeSchema(meta: { title: string; description: string; faqs: { q
         name: 'AI Search and CRO for Shopify Brands',
         serviceType: 'AI search optimization and conversion rate optimization',
         description:
-          'I show Shopify brands exactly where their competitors beat them in ChatGPT, Gemini and Google AI Mode, product by product, and what it is costing them. Then I close the gap, and make sure the shoppers AI sends actually buy. Founders stay in control: I propose, you decide.',
+          'I show Shopify brands exactly where their competitors beat them in ChatGPT, Gemini and Google AI Mode, category by category, and what it is costing them. Then I close the gap, and make sure the shoppers AI sends actually buy. Founders stay in control: I propose, you decide.',
         provider: ref(ID.business),
         areaServed: AREAS,
         audience: BRAND_AUDIENCE,
@@ -351,7 +351,7 @@ export function pricingSchema(meta: { title: string; description: string; faqs: 
         name: 'AI Search and CRO for Shopify Brands',
         serviceType: 'AI search optimization and conversion rate optimization',
         description:
-          'Close the Gap, a 90 day program in two sizes, the Full Store Audit, and the AI Visibility Check.',
+          'Close the Gap, ongoing monthly work in two sizes, the Full Store Audit, and the AI Visibility Check.',
         url: PRICING_URL,
         provider: ref(ID.business),
         areaServed: AREAS,

@@ -72,7 +72,7 @@ With a full time hire, you pay a salary whether there's a full month of senior w
 
 With a fractional head of ecommerce, you pay one monthly fee, and the management is part of the job. My options:
 
-* **[Close the Gap](/close-the-gap), $2,500 a month, month to month.** A 90 day program against your main competitors in ChatGPT, Gemini and Google AI Mode: the head to head, every on site fix ready to ship or implemented for you, source work, and a competitor report every week or two. Focus is $2,500 a month and Full is $5,000 a month, both month to month.
+* **[Close the Gap](/close-the-gap), $2,500 a month, month to month.** Ongoing monthly work against your main competitors in ChatGPT, Gemini and Google AI Mode: the head to head, every on site fix ready to ship or implemented for you, source work, and a competitor report every week or two. Focus is $2,500 a month and Full is $5,000 a month, both month to month.
 * **[Full Store Audit](/full-store-audit), $1,997 one time.** Every page on mobile and desktop, cart and checkout, email flows, analytics and subscriptions, with every fix ranked by what it's worth.
 * **Fractional head of ecommerce, custom.** Your ecommerce lead, working at your direction: the plan, launches, Klaviyo, apps and vendors. [Email me what you need](mailto:carson@carsoncobb.com?subject=Fractional%20head%20of%20ecommerce) and I'll send back a scope and a price.
 

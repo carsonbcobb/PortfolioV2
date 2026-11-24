@@ -1,9 +1,9 @@
 ---
 // /start?offer=focus|full|full-store-audit: what they're starting, what happens after paying, the terms, and
-// (for Close the Gap) the two ways to pay. "Continue to payment" opens the matching link from
+// (for Close the Gap) its one monthly price. "Continue to payment" opens the matching link from
 // src/config/payment-links.ts, or an email while that link is still a placeholder. Not in the nav, noindex.
 import ContentPage from '../layouts/ContentPage.astro';
-import { PROGRAM, PROGRAM_SIZES, FULL_AUDIT, TERMS, AFTER_PAY, EMAIL, startGuarantee } from '../data/site';
+import { PROGRAM, PROGRAM_SIZES, FULL_AUDIT, TERMS, AFTER_PAY, EMAIL, SIZE_TERMS, startGuarantee } from '../data/site';
 import { paymentHref, type PaymentKey } from '../config/payment-links';
 
 const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
@@ -28,14 +28,13 @@ const sizeOffer = (z: (typeof PROGRAM_SIZES)[number]): Offer => ({
   items: z.items,
   steps: AFTER_PAY[z.key as 'focus' | 'full'],
   terms: [
-    `Terms: month to month at ${usd(z.monthly)} a month, with 30 days written notice to cancel. No minimum commitment. Paying 3 months upfront is an optional saving.`,
+    `Terms: ${usd(z.monthly)} a month, month to month. Cancel any time with 30 days written notice.`,
     startGuarantee(z.key as 'focus' | 'full'),
     `Scope: ${PROGRAM.scope}`,
     `Refunds: ${TERMS.refunds}`,
   ],
   options: [
-    { id: 'monthly', label: 'Monthly', price: `${usd(z.monthly)}/month`, note: 'Month to month, 30 days notice to cancel.', key: `${z.key}Monthly` as PaymentKey },
-    { id: 'upfront', label: 'Pay 3 months upfront', price: usd(z.upfront), note: 'Optional saving: 3 months paid at once.', key: `${z.key}Upfront` as PaymentKey },
+    { id: 'monthly', label: 'Monthly', price: `${usd(z.monthly)}/month`, note: SIZE_TERMS, key: z.key as PaymentKey },
   ],
 });
 

@@ -6,7 +6,7 @@ h1: "Get your beauty products recommended by AI, then sold on your site"
 answer: "AEO for beauty and skincare brands means getting your products named when shoppers describe their skin to ChatGPT, Gemini and Google AI Mode and ask what to buy. Carson Cobb, an independent AI search and conversion specialist for Shopify brands, does it by fixing the product pages and data AI reads, within what your brand can legally claim, and working on the community sources AI trusts."
 faq:
   - question: "How do I get my skincare brand recommended by ChatGPT?"
-    answer: "ChatGPT recommends skincare it can match to the shopper's skin and concern: sensitive, acne prone, dry, redness. That comes from product pages that say who the product is for, what's in it and how it fits into a routine, and from the community and editorial sites AI already reads. It works product by product, so the first step is seeing which of your products AI names today and who it names instead."
+    answer: "ChatGPT recommends skincare it can match to the shopper's skin and concern: sensitive, acne prone, dry, redness. That comes from product pages that say who the product is for, what's in it and how it fits into a routine, and from the community and editorial sites AI already reads. It works category by category, so the first step is seeing which of your products AI names today and who it names instead."
     link:
       text: "Run the AI Visibility Check."
       href: "/ai-visibility-check"
@@ -36,7 +36,7 @@ Skincare shoppers describe their skin to AI before they ever see a brand: "My sk
 
 The AI answers with a few products and a reason for each. If your product isn't one of them, that shopper never sees your site. If it is, they arrive expecting a product made for their skin, and your product page has to confirm it fast.
 
-I'm Carson Cobb, an independent [AI search](/ai-search) and conversion specialist for Shopify brands, working with brands in every product area. I look at how AI answers the questions your buyers ask, product by product, then make the store turn those visitors into orders. You can see where you stand today with the [AI Visibility Check](/ai-visibility-check).
+I'm Carson Cobb, an independent [AI search](/ai-search) and conversion specialist for Shopify brands, working with brands in every product area. I look at how AI answers the questions your buyers ask, category by category, then make the store turn those visitors into orders. You can see where you stand today with the [AI Visibility Check](/ai-visibility-check).
 
 ## What I found when I tested products like yours
 

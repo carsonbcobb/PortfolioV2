@@ -6,7 +6,7 @@ h1: "Get your supplements recommended by AI, then sold on your site"
 answer: "AEO for supplement brands means getting your products named when shoppers ask ChatGPT, Gemini and Google AI Mode which supplement to buy. Carson Cobb, an independent AI search and conversion specialist for Shopify brands, does it by fixing the product pages and data AI reads, within what your brand can legally claim, and working on the health and expert sources AI trusts."
 faq:
   - question: "How do I get my supplement brand recommended by ChatGPT?"
-    answer: "ChatGPT recommends supplements it can match to the shopper's situation and trust from more than one source. That comes from product pages that say who the product is for, how to use it and how it's tested, and from the sites AI already reads for supplements. It works product by product, so the first step is seeing which of your products AI names today and who it names instead."
+    answer: "ChatGPT recommends supplements it can match to the shopper's situation and trust from more than one source. That comes from product pages that say who the product is for, how to use it and how it's tested, and from the sites AI already reads for supplements. It works category by category, so the first step is seeing which of your products AI names today and who it names instead."
     link:
       text: "Run the AI Visibility Check."
       href: "/ai-visibility-check"
@@ -36,7 +36,7 @@ Supplement shoppers don't type "best creatine" anymore. They describe themselves
 
 The AI answers with a few brands and a reason for each. If your product isn't one of them, that shopper never sees your site. If it is, they arrive already half convinced, and your product page has to confirm what the AI told them.
 
-I'm Carson Cobb, an independent [AI search](/ai-search) and conversion specialist for Shopify brands, working with brands in every product area. I look at how AI answers the questions your buyers ask, product by product, then make the store turn those visitors into orders. You can see where you stand today with the [AI Visibility Check](/ai-visibility-check).
+I'm Carson Cobb, an independent [AI search](/ai-search) and conversion specialist for Shopify brands, working with brands in every product area. I look at how AI answers the questions your buyers ask, category by category, then make the store turn those visitors into orders. You can see where you stand today with the [AI Visibility Check](/ai-visibility-check).
 
 ## What I found when I tested products like yours
 

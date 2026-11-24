@@ -47,7 +47,7 @@ export const GET: APIRoute = () => {
     `- **${PROGRAM.name}** (${url(PROGRAM.path)}): ${PROGRAM.summary} ${PROGRAM.after}`,
     ...PROGRAM_SIZES.map(
       (z) =>
-        `- **${z.name}**: ${z.fit}. ${z.items.join('. ')}. ${usd(z.monthly)}/month, month to month. Optional saving: ${usd(z.upfront)} for 3 months paid upfront.`,
+        `- **${z.name}**: ${z.fit}. ${z.items.join('. ')}. ${usd(z.monthly)}/month, month to month. Cancel any time with 30 days written notice.`,
     ),
     `- ${PROGRAM.scopeText} ${PROGRAM.guarantee} ${PROGRAM.guaranteeNote} ${PROGRAM.continues} ${PROGRAM.scope}`,
     `- **${FULL_AUDIT.name}** (${url(FULL_AUDIT.path)}): ${usd(FULL_AUDIT.price)} one time. ${FULL_AUDIT.summary} ${FULL_AUDIT.timing} ${FULL_AUDIT.walkthrough}`,
@@ -63,7 +63,7 @@ export const GET: APIRoute = () => {
     `- [Home](${url('/')}): AI is picking the winners in every product market: how competitors win in AI search, how I close the gap and then the sale, proof, pricing summary and FAQ.`,
     `- [AI search optimization](${url('/ai-search')}): How AI decides what to recommend, the on site and off site work, and how it is measured.`,
     `- [Conversion rate optimization](${url('/shopify-conversion-optimization')}): CRO built for high intent AI traffic and everyone else.`,
-    `- [Close the Gap](${url(PROGRAM.path)}): The 90 day program, its two sizes, the month 1 guarantee and the FAQ.`,
+    `- [Close the Gap](${url(PROGRAM.path)}): How it works, its two sizes, the month 1 guarantee and the FAQ.`,
     `- [Pricing](${url('/pricing')}): Close the Gap Focus and Full, the Full Store Audit, the gap report, and fit and terms.`,
     `- [Full Store Audit](${url(FULL_AUDIT.path)}): A one time conversion audit of every page, cart and checkout, email flows, analytics and subscriptions.`,
     `- [AI Visibility Check](${url(CHECK_PATH)}): Whether ChatGPT recommends your brand or your top competitor. Takes about a minute, no login.`,
