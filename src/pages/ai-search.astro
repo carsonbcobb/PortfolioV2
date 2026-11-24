@@ -92,9 +92,17 @@ const FINDINGS: Record<string, string> = {
     "The access layer is solved for almost everyone, thanks to Shopify's defaults. The differences are in product data and content.",
   'reports/how-chatgpt-chooses-products-2026': 'ChatGPT showed a source or store link in 45 of 48 answers.',
   'reports/korean-skincare-ai-recommendations-us-2026':
-    'COSRX, Beauty of Joseon, Anua and Round Lab appeared in 36 of 40 answers (90%).',
+    'COSRX, Beauty of Joseon, Anua and Round Lab appeared in 56 of 60 answers (93%).',
+  'reports/black-friday-ai-deals-2026': "Google AI Mode matched the brand's site on 8 of 9 deals we checked. ChatGPT matched on 4.",
+  'reports/who-ai-recommends-ai-search-agencies-shopify-2026':
+    'Across 28 answers, ChatGPT and Google AI Mode named 60 agencies and consultants. Only 10 were named by both.',
+  'reports/ai-subscription-prices-shopify-2026':
+    'Google AI Mode got the price right in 11 of 11 answers. ChatGPT was fully right on 6 of 11 products, partly right on 2 and wrong on 3.',
+  'reports/shopify-apps-ai-recommends-2026': 'ChatGPT and Google AI Mode chose the same top app in only 5 of the 11 questions where both picked one.',
 };
 const research = [
+  'reports/black-friday-ai-deals-2026',
+  'reports/who-ai-recommends-ai-search-agencies-shopify-2026',
   'reports/ai-search-benchmarks-shopify-2026',
   'reports/what-ai-named-shopify-brands-have-in-common-2026',
   'reports/how-chatgpt-chooses-products-2026',
@@ -105,6 +113,8 @@ const research = [
   'reports/chatgpt-follow-up-questions-shoppers-2026',
   'reports/shopify-structured-data-gaps-2026',
   'reports/korean-skincare-ai-recommendations-us-2026',
+  'reports/ai-subscription-prices-shopify-2026',
+  'reports/shopify-apps-ai-recommends-2026',
 ].map((slug) => {
   const report = REPORTS.find((r) => slugOf(r) === slug);
   if (!report) throw new Error(`/ai-search research links to /${slug}, which is not a report`);
@@ -191,8 +201,10 @@ const industries = CONTENT_PAGES.filter((p) => p.kind === 'industry');
         <p class="eyebrow">Who does it</p>
         <h2 class="h2 h2--36" id="who-does-it">Who does AI search and CRO for Shopify brands?</h2>
         <p class="lede">
-          I do, as an independent specialist rather than an agency. The person who audits your store is the person who
-          fixes it, so nothing gets lost in a handoff between a strategist and a junior team.
+          I do. If you're comparing AI search and CRO agencies for Shopify, I'm an independent specialist who does both, and
+          the person who audits your store is the person who fixes it. Nothing gets lost in a handoff between a strategist
+          and a junior team. I tested <a href="/reports/who-ai-recommends-ai-search-agencies-shopify-2026">who ChatGPT and Google AI Mode recommend</a> when Shopify brands look
+          for this kind of help, and both said most stores should start with an independent specialist.
         </p>
         <p class="lede">
           The two belong together because a recommendation only pays if the page converts. AI sends shoppers straight to a

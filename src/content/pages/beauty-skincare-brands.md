@@ -54,7 +54,7 @@ AEO, or answer engine optimization, is getting your product into the answer when
 
 One rule shapes all of it. Product claims on the page have to stay within what your brand can legally say about the product, and AI quotes the page. Stronger claims are not the fix. Specific ones are: skin type, what's left out, what each key ingredient does, written in plain words your team has signed off on. That gives AI accurate facts to repeat, and keeps what it repeats about you safe.
 
-In my test of [which Korean skincare brands AI recommends to US shoppers](/reports/korean-skincare-ai-recommendations-us-2026), four brands appeared in 36 of 40 answers, and the brand's own store was the seller on only 23 of 92 product cards. Getting named is half the job. Making sure the click and the price shown belong to you is the other half. Selling into the US from another country? See [getting your brand recommended by AI in the US](/ai-search-international-brands).
+In my test of [which Korean skincare brands AI recommends to US shoppers](/reports/korean-skincare-ai-recommendations-us-2026), four brands appeared in 56 of 60 answers, and the brand's own store was the seller on only 37 of 241 product cards. Getting named is half the job. Making sure the click and the price shown belong to you is the other half. Selling into the US from another country? See [getting your brand recommended by AI in the US](/ai-search-international-brands).
 
 ## What AI looks for on your product pages
 

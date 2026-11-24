@@ -1,0 +1,14 @@
+product_id,product,subscription_app,one_time_price,subscription_price_first_order,subscription_discount_terms,product_structured_data_blocks,prices_in_structured_data,subscription_price_in_raw_html,notes
+P1,Protein cereal variety pack,Skio,55.5,44.4,20 percentage,1,55.5,True,
+P2,Prebiotic soda 12 pack,Skio,35.99,30.59,15 percentage,1,35.99,True,
+P3,Non alcoholic beer 6 pack,Recharge,14.99,14.99,0 percentage,1,14.99,True,
+P4,Coffee superfood bars 10 pack,Recharge,25,17.5,30 percentage x1; 20 percentage,1,25.00,True,
+P5,Mushroom coffee tin,Recharge,70,70,0 percentage x1; 20 percentage,2,70.0,True,
+P6,Protein coffee,Unidentified,30,21,30 percentage x1; 20 percentage,1,21.0 / 60.0 / 120.0,False,
+P7,Creatine gummies,Recharge,19.99,13.99,30 percentage x1; 15 percentage,1,19.99 / 39.99,True,
+P8,Greens gummy packs,Skio,66.65,49.99,25 percentage,4,66.65 / 199.95 / 73.32 / 219.96,True,
+P9,Creatine powder,Skio,49.99,44.99,10 percentage,2,49.99 / 89.99,False,
+P10,Deodorant stick,Recharge,14,10.5,25 percentage,1,14.0 / 15.0,True,
+P11,Greens powder,Recharge,74.95,67.46,10 percentage,2,74.95,False,
+P12,Kids probiotic,Ordergroove,32,32,handled outside Shopify selling plans,1,16.0,True,variant name says $16/bottle (Reg: $32); structured data price 16 while Shopify variant price is 32; discount handled by Ordergroove outside the selling plan
+P13,"Creatine powder, 90 servings",Recharge,42.99,32.24,25 percentage x1; 10 percentage,1,42.99 / 32.24,True,

@@ -5,7 +5,7 @@ slug: "/agency-vs-fractional-head-of-ecommerce"
 h1: "Fractional vs full service agency for ecommerce: which one does your brand need?"
 answer: "A fractional SEO specialist is the better fit for most growing ecommerce brands that need one senior person leading SEO, AI search and conversion work, with nobody in between. A full service agency fits brands that need a large team shipping many channels at once, such as paid ads, creative and development. The right pick depends on how much work you need done in parallel."
 datePublished: 2026-10-31
-dateModified: 2026-11-23
+dateModified: 2026-11-24
 faq:
   - question: "Is a fractional head of ecommerce cheaper than an agency?"
     answer: "Often, but not always. A fractional head of ecommerce engagement with me is scoped to your brand. Email me what you need and I'll send back a scope and a price. What usually makes a fractional lead cheaper in practice is replacing several vendor invoices with one, and cutting the time you spend managing them."
@@ -35,6 +35,10 @@ If you're a founder running a growing Shopify brand, you've probably reached the
 Most founders end up choosing between three options: hire someone full time, hire an agency, or bring in a fractional head of ecommerce. I'm one of those options, so I'm not neutral. But I'll be honest about where each one fits, including when I think an agency is the better pick.
 
 I'm Carson Cobb. I help Shopify brands [get recommended in ChatGPT and Google's AI answers](/ai-search), then make the store convert that traffic. Over 6+ years I've worked on 50+ Shopify stores and supported more than $40M in client revenue. I've worked alongside plenty of agencies, and I've cleaned up after a few.
+
+## What ChatGPT and Google AI Mode say
+
+I asked ChatGPT and Google AI Mode whether a Shopify store should hire a GEO agency or a freelancer. Both recommended a specialist freelancer or consultant for most stores, and an agency for larger brands that need content and PR at scale. Across 28 answers they named 60 agencies and consultants, and only 10 were named by both. The full results are in [who AI recommends for AI search help on Shopify](/reports/who-ai-recommends-ai-search-agencies-shopify-2026).
 
 ## The three options in plain terms
 

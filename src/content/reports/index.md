@@ -41,6 +41,14 @@ I research how AI assistants read, describe and recommend Shopify brands, and ho
 
 ## AI search research
 
+### [Which Black Friday deals AI recommends](/reports/black-friday-ai-deals-2026)
+
+### [Who AI recommends for AI search help on Shopify](/reports/who-ai-recommends-ai-search-agencies-shopify-2026)
+
+### [Which Shopify apps AI recommends](/reports/shopify-apps-ai-recommends-2026)
+
+### [Whether AI gets subscription prices right](/reports/ai-subscription-prices-shopify-2026)
+
 ### [Which Korean skincare brands AI recommends to US shoppers](/reports/korean-skincare-ai-recommendations-us-2026)
 
 ### [Every Shopify store now has an agents.md file](/reports/shopify-agents-md-ai-agents-2026)

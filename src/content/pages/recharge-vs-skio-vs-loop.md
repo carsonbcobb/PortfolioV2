@@ -5,7 +5,7 @@ slug: "/recharge-vs-skio-vs-loop"
 h1: "Recharge vs Skio vs Loop: real fees and which to pick"
 answer: "On public pricing, Loop is the cheapest of the three, from $99/month plus 1.0%, with managed migration on every paid plan. Recharge, from $149/month plus 1.50% + 20¢, is the most established and has the most add ons on Scale. Skio, $499/month billed annually plus 1.25% + 20¢, fits brands where the portal and cancel flow matter most, and is now part of Recharge."
 datePublished: 2026-10-31
-dateModified: 2026-11-23
+dateModified: 2026-11-24
 faq:
   - question: "Which is cheapest: Recharge, Skio or Loop?"
     answer: "At small volume, Loop. It has a Free Forever plan for up to 50 active subscriptions, and its Starter plan is $99/month plus a 1.0% transaction fee and 15¢ per loyalty order. Recharge Starter is $149/month plus 1.50% + 20¢ per transaction. Skio's Scale plan is $499/month billed annually or $599/month billed monthly, plus 1.25% + 20¢ per subscription order. At high volume all three offer custom pricing, so the real answer depends on your order count."
@@ -39,6 +39,8 @@ faq:
 | Best for | Most add ons | Portal and cancel flow | Newer brands |
 | Migration | On Scale only | Included on Scale | Every paid plan |
 | Owner | Recharge | Recharge | Independent |
+
+When merchants ask [ChatGPT and Google AI Mode which subscription app to use](/reports/shopify-apps-ai-recommends-2026), they start with Appstle or Shopify Subscriptions and suggest Recharge, Loop and Skio for larger programs.
 
 ## What each app costs at your order volume
 
@@ -178,7 +180,11 @@ If you're choosing between these and the three above, the same rule applies: com
 
 ## Does your subscription app affect AI recommendations?
 
-Not directly. When a shopper asks ChatGPT or Google AI Mode what to buy, the answer is built from your product pages and what other sites say about you, not from which subscription app you use. What can matter is what the app puts on the page: whether the subscribe price and the product's details show in the page HTML and structured data AI can read, and whether your reviews and star ratings are visible. My reports on [whether star ratings decide who AI recommends](/reports/star-ratings-reviews-ai-answers) and [how complete Shopify product schema is](/reports/shopify-product-schema-completeness-2026) show what AI reads. Getting your products named in those answers is the work on my [AI search optimization](/ai-search) page.
+Not directly. In my test of [whether AI gets subscription prices right](/reports/ai-subscription-prices-shopify-2026), I asked ChatGPT and Google AI Mode the subscribe and save price of 13 Shopify products running on Recharge, Skio, Ordergroove and one app I couldn't identify. Google AI Mode gave the right prices in all 11 answers it returned. ChatGPT was fully right on 6 of 11 products, partly right on 2 and wrong on 3.
+
+Every ChatGPT miss traced back to store setup, not the app: a duplicate product page with a different price, a first order discount that only lived in a plan name, prices split across variant names, or a product AI couldn't find. The products both AIs got exactly right had one clean product page, and in one case the subscription price sat in the product's structured data next to the one time price.
+
+So whichever app you pick, what matters is what your store publishes: one page per product, the subscription price in your Product structured data, and first order and recurring terms written on the page in plain words. Getting your products named in those answers is the work on my [AI search optimization](/ai-search) page.
 
 ## Want help choosing or fixing your setup?
 

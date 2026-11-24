@@ -1,41 +1,74 @@
-brand,answers_named_in (of 40),google_ai_mode (of 20),chatgpt (of 20)
-COSRX,20,9,11
-Beauty of Joseon,19,8,11
-Anua,12,7,5
-Round Lab,11,5,6
-Haruharu,9,5,4
-SKIN1004,9,5,4
-Some By Mi,8,2,6
-Etude,6,3,3
-Aestura,5,2,3
-Purito,5,3,2
-Isntree,4,2,2
-Dr. Althea,4,2,2
-Laneige,4,2,2
-Medicube,3,1,2
-Innisfree,3,1,2
-Abib,3,1,2
-Goodal,2,1,1
-Banila Co,2,1,1
-Jumiso,2,1,1
-Missha,2,1,1
-Mixsoon,2,1,1
-Dr. Jart,2,2,0
-Torriden,2,1,1
-Biodance,2,1,1
-Sulwhasoo,2,1,1
-Tocobo,2,1,1
-Mediheal,2,0,2
-Celimax,1,1,0
-Needly,1,1,0
-Axis-Y,1,1,0
-Pyunkang Yul,1,1,0
-Numbuzin,1,1,0
-OBgE,1,1,0
-Olive Young Care Plus,1,1,0
-Illiyoon,1,1,0
-Mizon,1,0,1
-Ma:nyo,1,0,1
-Then I Met You,1,0,1
-La Roche-Posay,1,0,1
-CARE:NEL,1,0,1
+brand,answers_named_in (of 60),google_ai_mode (of 20),chatgpt (of 20),gemini (of 20)
+COSRX,35,9,11,15
+Beauty of Joseon,25,8,11,6
+Anua,18,7,5,6
+Round Lab,15,5,6,4
+SKIN1004,14,5,4,5
+Some By Mi,13,2,6,5
+Haruharu,10,5,4,1
+Etude,9,3,3,3
+Purito,8,3,2,3
+Aestura,7,2,3,2
+Innisfree,7,1,2,4
+Medicube,6,1,2,3
+Isntree,6,2,2,2
+Dr. Althea,6,2,2,2
+Laneige,6,2,2,2
+Mediheal,6,0,2,4
+Mixsoon,4,1,1,2
+Torriden,4,1,1,2
+Abib,4,1,2,1
+Biodance,4,1,1,2
+Sulwhasoo,4,1,1,2
+Celimax,3,1,0,2
+Pyunkang Yul,3,1,0,2
+Goodal,3,1,1,1
+Banila Co,3,1,1,1
+Jumiso,3,1,1,1
+Numbuzin,3,1,0,2
+Missha,3,1,1,1
+Dr. Jart,3,2,0,1
+Tocobo,3,1,1,1
+OBgE,2,1,0,1
+Olive Young Care Plus,2,1,0,1
+Erborian,2,0,0,2
+Benton,2,0,0,2
+Peach Slices,2,0,0,2
+Heimish,2,0,0,2
+Arencia,2,0,0,2
+Needly,1,1,0,0
+Axis-Y,1,1,0,0
+Illiyoon,1,1,0,0
+Mizon,1,0,1,0
+Ma:nyo,1,0,1,0
+Then I Met You,1,0,1,0
+La Roche-Posay,1,0,1,0
+CARE:NEL,1,0,1,0
+VT Cosmetics,1,0,0,1
+Centellian24,1,0,0,1
+G9SKIN,1,0,0,1
+P.CALM,1,0,0,1
+Seoul Ceuticals,1,0,0,1
+THOME,1,0,0,1
+Klairs,1,0,0,1
+Nature Republic,1,0,0,1
+Seoul 1988,1,0,0,1
+Hwarang,1,0,0,1
+APLB,1,0,0,1
+Dr.Different,1,0,0,1
+Dr.G,1,0,0,1
+Blithe,1,0,0,1
+Elizavecca,1,0,0,1
+Real Barrier,1,0,0,1
+Starlike,1,0,0,1
+TIAM,1,0,0,1
+Make P:rem,1,0,0,1
+Cosnori,1,0,0,1
+Su:m37,1,0,0,1
+Cos De Baha,1,0,0,1
+Mary&May,1,0,0,1
+Vegreen,1,0,0,1
+By Wishtrend,1,0,0,1
+Someblossom,1,0,0,1
+Klavuu,1,0,0,1
+Skinfood,1,0,0,1
