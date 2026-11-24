@@ -1,0 +1,787 @@
+[
+  {
+    "source": "https://carsoncobb.com",
+    "target": "https://www.carsoncobb.com",
+    "status": "301"
+  },
+  {
+    "source": "/blog",
+    "target": "/guides",
+    "status": "301"
+  },
+  {
+    "source": "/blog/",
+    "target": "/guides",
+    "status": "301"
+  },
+  {
+    "source": "/blog/<*>",
+    "target": "/guides",
+    "status": "301"
+  },
+  {
+    "source": "/tools/store-check",
+    "target": "/ai-visibility-check",
+    "status": "301"
+  },
+  {
+    "source": "/tools/store-check/",
+    "target": "/ai-visibility-check",
+    "status": "301"
+  },
+  {
+    "source": "/gap-report",
+    "target": "/ai-visibility-check",
+    "status": "301"
+  },
+  {
+    "source": "/gap-report/",
+    "target": "/ai-visibility-check",
+    "status": "301"
+  },
+  {
+    "source": "/guides/why-chatgpt-doesnt-recommend-my-shopify-store",
+    "target": "/guides/why-chatgpt-recommends-my-competitor",
+    "status": "301"
+  },
+  {
+    "source": "/guides/why-chatgpt-doesnt-recommend-my-shopify-store/",
+    "target": "/guides/why-chatgpt-recommends-my-competitor",
+    "status": "301"
+  },
+  {
+    "source": "/reports/product-data-depth-answer-first-content",
+    "target": "/reports/shopify-product-data-depth-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/product-data-depth-answer-first-content/",
+    "target": "/reports/shopify-product-data-depth-2026",
+    "status": "301"
+  },
+  {
+    "source": "/recharge-vs-skio",
+    "target": "/recharge-vs-skio-vs-loop",
+    "status": "301"
+  },
+  {
+    "source": "/recharge-vs-skio/",
+    "target": "/recharge-vs-skio-vs-loop",
+    "status": "301"
+  },
+  {
+    "source": "/recharge-vs-loop",
+    "target": "/recharge-vs-skio-vs-loop",
+    "status": "301"
+  },
+  {
+    "source": "/recharge-vs-loop/",
+    "target": "/recharge-vs-skio-vs-loop",
+    "status": "301"
+  },
+  {
+    "source": "/skio-vs-loop",
+    "target": "/recharge-vs-skio-vs-loop",
+    "status": "301"
+  },
+  {
+    "source": "/skio-vs-loop/",
+    "target": "/recharge-vs-skio-vs-loop",
+    "status": "301"
+  },
+  {
+    "source": "/about/",
+    "target": "/about",
+    "status": "301"
+  },
+  {
+    "source": "/agencies/",
+    "target": "/agencies",
+    "status": "301"
+  },
+  {
+    "source": "/agency-vs-fractional-head-of-ecommerce/",
+    "target": "/agency-vs-fractional-head-of-ecommerce",
+    "status": "301"
+  },
+  {
+    "source": "/ai-search/",
+    "target": "/ai-search",
+    "status": "301"
+  },
+  {
+    "source": "/ai-search-international-brands/",
+    "target": "/ai-search-international-brands",
+    "status": "301"
+  },
+  {
+    "source": "/ai-visibility-check/",
+    "target": "/ai-visibility-check",
+    "status": "301"
+  },
+  {
+    "source": "/beauty-skincare-brands/",
+    "target": "/beauty-skincare-brands",
+    "status": "301"
+  },
+  {
+    "source": "/close-the-gap/",
+    "target": "/close-the-gap",
+    "status": "301"
+  },
+  {
+    "source": "/food-beverage-brands/",
+    "target": "/food-beverage-brands",
+    "status": "301"
+  },
+  {
+    "source": "/fractional-head-of-ecommerce/",
+    "target": "/fractional-head-of-ecommerce",
+    "status": "301"
+  },
+  {
+    "source": "/full-store-audit/",
+    "target": "/full-store-audit",
+    "status": "301"
+  },
+  {
+    "source": "/gap-report/",
+    "target": "/gap-report",
+    "status": "301"
+  },
+  {
+    "source": "/guides/",
+    "target": "/guides",
+    "status": "301"
+  },
+  {
+    "source": "/guides/ai-search-optimization-cost-shopify/",
+    "target": "/guides/ai-search-optimization-cost-shopify",
+    "status": "301"
+  },
+  {
+    "source": "/guides/hire-ai-search-specialist-shopify/",
+    "target": "/guides/hire-ai-search-specialist-shopify",
+    "status": "301"
+  },
+  {
+    "source": "/guides/shopify-products-in-chatgpt-shopping/",
+    "target": "/guides/shopify-products-in-chatgpt-shopping",
+    "status": "301"
+  },
+  {
+    "source": "/guides/why-chatgpt-doesnt-recommend-my-shopify-store/",
+    "target": "/guides/why-chatgpt-doesnt-recommend-my-shopify-store",
+    "status": "301"
+  },
+  {
+    "source": "/guides/why-chatgpt-recommends-my-competitor/",
+    "target": "/guides/why-chatgpt-recommends-my-competitor",
+    "status": "301"
+  },
+  {
+    "source": "/klaviyo-email-for-shopify/",
+    "target": "/klaviyo-email-for-shopify",
+    "status": "301"
+  },
+  {
+    "source": "/pet-brands/",
+    "target": "/pet-brands",
+    "status": "301"
+  },
+  {
+    "source": "/pricing/",
+    "target": "/pricing",
+    "status": "301"
+  },
+  {
+    "source": "/recharge-skio-acquisition/",
+    "target": "/recharge-skio-acquisition",
+    "status": "301"
+  },
+  {
+    "source": "/recharge-vs-loop/",
+    "target": "/recharge-vs-loop",
+    "status": "301"
+  },
+  {
+    "source": "/recharge-vs-skio/",
+    "target": "/recharge-vs-skio",
+    "status": "301"
+  },
+  {
+    "source": "/recharge-vs-skio-vs-loop/",
+    "target": "/recharge-vs-skio-vs-loop",
+    "status": "301"
+  },
+  {
+    "source": "/reports/",
+    "target": "/reports",
+    "status": "301"
+  },
+  {
+    "source": "/reports/agentic-commerce-statistics-2026/",
+    "target": "/reports/agentic-commerce-statistics-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/ai-crawler-access-shopify/",
+    "target": "/reports/ai-crawler-access-shopify",
+    "status": "301"
+  },
+  {
+    "source": "/reports/ai-referral-traffic-statistics-2026/",
+    "target": "/reports/ai-referral-traffic-statistics-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/ai-search-apparel-brands-2026/",
+    "target": "/reports/ai-search-apparel-brands-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/ai-search-beauty-brands-2026/",
+    "target": "/reports/ai-search-beauty-brands-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/ai-search-benchmarks-shopify-2026/",
+    "target": "/reports/ai-search-benchmarks-shopify-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/ai-search-checklist-shopify-2026/",
+    "target": "/reports/ai-search-checklist-shopify-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/ai-search-ecommerce-whats-real/",
+    "target": "/reports/ai-search-ecommerce-whats-real",
+    "status": "301"
+  },
+  {
+    "source": "/reports/ai-search-food-beverage-brands-2026/",
+    "target": "/reports/ai-search-food-beverage-brands-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/ai-search-home-brands-2026/",
+    "target": "/reports/ai-search-home-brands-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/ai-search-pet-brands-2026/",
+    "target": "/reports/ai-search-pet-brands-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/ai-search-statistics-2026/",
+    "target": "/reports/ai-search-statistics-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/ai-search-supplement-brands-2026/",
+    "target": "/reports/ai-search-supplement-brands-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/ai-subscription-prices-shopify-2026/",
+    "target": "/reports/ai-subscription-prices-shopify-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/black-friday-ai-deals-2026/",
+    "target": "/reports/black-friday-ai-deals-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/black-friday-discount-report-2026/",
+    "target": "/reports/black-friday-discount-report-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/cart-abandonment-statistics-2026/",
+    "target": "/reports/cart-abandonment-statistics-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/chatgpt-follow-up-questions-shoppers-2026/",
+    "target": "/reports/chatgpt-follow-up-questions-shoppers-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/chatgpt-gemini-ai-mode-brand-overlap-2026/",
+    "target": "/reports/chatgpt-gemini-ai-mode-brand-overlap-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/chatgpt-shopping-statistics-2026/",
+    "target": "/reports/chatgpt-shopping-statistics-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/chatgpt-vs-google-ai-mode-shopping-2026/",
+    "target": "/reports/chatgpt-vs-google-ai-mode-shopping-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/do-product-pages-answer-ai-shopper-questions/",
+    "target": "/reports/do-product-pages-answer-ai-shopper-questions",
+    "status": "301"
+  },
+  {
+    "source": "/reports/does-ai-recommend-products-or-brands-2026/",
+    "target": "/reports/does-ai-recommend-products-or-brands-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/does-llms-txt-do-anything/",
+    "target": "/reports/does-llms-txt-do-anything",
+    "status": "301"
+  },
+  {
+    "source": "/reports/does-schema-change-what-chatgpt-says/",
+    "target": "/reports/does-schema-change-what-chatgpt-says",
+    "status": "301"
+  },
+  {
+    "source": "/reports/duplicate-product-schema-ai-visibility/",
+    "target": "/reports/duplicate-product-schema-ai-visibility",
+    "status": "301"
+  },
+  {
+    "source": "/reports/geo-vs-seo-ecommerce-2026/",
+    "target": "/reports/geo-vs-seo-ecommerce-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/google-ai-mode-statistics-2026/",
+    "target": "/reports/google-ai-mode-statistics-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/google-rankings-vs-ai-mode-2026/",
+    "target": "/reports/google-rankings-vs-ai-mode-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/holiday-readiness-report-2026/",
+    "target": "/reports/holiday-readiness-report-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/how-ai-labels-products-best-for-2026/",
+    "target": "/reports/how-ai-labels-products-best-for-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/how-chatgpt-chooses-products-2026/",
+    "target": "/reports/how-chatgpt-chooses-products-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/how-gemini-chooses-products-2026/",
+    "target": "/reports/how-gemini-chooses-products-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/how-google-ai-mode-chooses-products-2026/",
+    "target": "/reports/how-google-ai-mode-chooses-products-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/how-many-brands-ai-recommends-2026/",
+    "target": "/reports/how-many-brands-ai-recommends-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/how-often-ai-recommendations-change/",
+    "target": "/reports/how-often-ai-recommendations-change",
+    "status": "301"
+  },
+  {
+    "source": "/reports/how-question-wording-changes-ai-recommendations/",
+    "target": "/reports/how-question-wording-changes-ai-recommendations",
+    "status": "301"
+  },
+  {
+    "source": "/reports/how-to-get-shopify-products-recommended-by-chatgpt/",
+    "target": "/reports/how-to-get-shopify-products-recommended-by-chatgpt",
+    "status": "301"
+  },
+  {
+    "source": "/reports/korean-skincare-ai-recommendations-us-2026/",
+    "target": "/reports/korean-skincare-ai-recommendations-us-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/most-popular-shopify-themes-2026/",
+    "target": "/reports/most-popular-shopify-themes-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/naming-products-for-google-and-ai/",
+    "target": "/reports/naming-products-for-google-and-ai",
+    "status": "301"
+  },
+  {
+    "source": "/reports/prices-in-ai-shopping-answers-2026/",
+    "target": "/reports/prices-in-ai-shopping-answers-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/product-data-depth-answer-first-content/",
+    "target": "/reports/product-data-depth-answer-first-content",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-ab-testing-tools-2026/",
+    "target": "/reports/shopify-ab-testing-tools-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-about-pages-founder-2026/",
+    "target": "/reports/shopify-about-pages-founder-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-accessibility-overlays-2026/",
+    "target": "/reports/shopify-accessibility-overlays-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-accessibility-statistics-2026/",
+    "target": "/reports/shopify-accessibility-statistics-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-agentic-commerce-readiness-2026/",
+    "target": "/reports/shopify-agentic-commerce-readiness-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-agents-md-ai-agents-2026/",
+    "target": "/reports/shopify-agents-md-ai-agents-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-ai-readiness-index-2026/",
+    "target": "/reports/shopify-ai-readiness-index-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-analytics-attribution-ai-traffic-2026/",
+    "target": "/reports/shopify-analytics-attribution-ai-traffic-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-announcement-bar-benchmarks-2026/",
+    "target": "/reports/shopify-announcement-bar-benchmarks-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-apps-ai-recommends-2026/",
+    "target": "/reports/shopify-apps-ai-recommends-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-back-in-stock-benchmarks-2026/",
+    "target": "/reports/shopify-back-in-stock-benchmarks-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-blog-content-ai-search-2026/",
+    "target": "/reports/shopify-blog-content-ai-search-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-bnpl-loyalty-apps-2026/",
+    "target": "/reports/shopify-bnpl-loyalty-apps-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-brand-name-consistency-2026/",
+    "target": "/reports/shopify-brand-name-consistency-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-catalog-and-stock-report-2026/",
+    "target": "/reports/shopify-catalog-and-stock-report-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-catalog-data-ai-shopping-2026/",
+    "target": "/reports/shopify-catalog-data-ai-shopping-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-collection-filters-sorting-2026/",
+    "target": "/reports/shopify-collection-filters-sorting-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-comparison-pages-2026/",
+    "target": "/reports/shopify-comparison-pages-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-contact-options-benchmarks-2026/",
+    "target": "/reports/shopify-contact-options-benchmarks-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-cro-checklist-2026/",
+    "target": "/reports/shopify-cro-checklist-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-faq-pages-ai-search-2026/",
+    "target": "/reports/shopify-faq-pages-ai-search-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-gtin-product-identifiers-2026/",
+    "target": "/reports/shopify-gtin-product-identifiers-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-homepage-page-weight-scripts-2026/",
+    "target": "/reports/shopify-homepage-page-weight-scripts-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-homepage-seo-basics-2026/",
+    "target": "/reports/shopify-homepage-seo-basics-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-image-alt-text-2026/",
+    "target": "/reports/shopify-image-alt-text-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-image-loading-speed-2026/",
+    "target": "/reports/shopify-image-loading-speed-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-international-hreflang-2026/",
+    "target": "/reports/shopify-international-hreflang-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-off-site-signals-2026/",
+    "target": "/reports/shopify-off-site-signals-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-organization-schema-2026/",
+    "target": "/reports/shopify-organization-schema-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-product-data-depth-2026/",
+    "target": "/reports/shopify-product-data-depth-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-product-description-length-format-2026/",
+    "target": "/reports/shopify-product-description-length-format-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-product-meta-descriptions-2026/",
+    "target": "/reports/shopify-product-meta-descriptions-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-product-page-benchmarks-2026/",
+    "target": "/reports/shopify-product-page-benchmarks-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-product-page-buy-box-2026/",
+    "target": "/reports/shopify-product-page-buy-box-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-product-schema-completeness-2026/",
+    "target": "/reports/shopify-product-schema-completeness-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-product-type-tags-vendor-data-2026/",
+    "target": "/reports/shopify-product-type-tags-vendor-data-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-productgroup-variant-schema-2026/",
+    "target": "/reports/shopify-productgroup-variant-schema-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-return-policy-benchmarks-2026/",
+    "target": "/reports/shopify-return-policy-benchmarks-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-review-apps-2026/",
+    "target": "/reports/shopify-review-apps-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-shipping-policy-benchmarks-2026/",
+    "target": "/reports/shopify-shipping-policy-benchmarks-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-shipping-return-policy-schema-2026/",
+    "target": "/reports/shopify-shipping-return-policy-schema-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-site-search-typos-2026/",
+    "target": "/reports/shopify-site-search-typos-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-store-pages-benchmarks-2026/",
+    "target": "/reports/shopify-store-pages-benchmarks-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-structured-data-gaps-2026/",
+    "target": "/reports/shopify-structured-data-gaps-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-subscription-benchmarks-2026/",
+    "target": "/reports/shopify-subscription-benchmarks-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-tech-stack-report-2026/",
+    "target": "/reports/shopify-tech-stack-report-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-variant-picker-buttons-vs-dropdowns-2026/",
+    "target": "/reports/shopify-variant-picker-buttons-vs-dropdowns-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/sources-chatgpt-cites-2026/",
+    "target": "/reports/sources-chatgpt-cites-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/star-ratings-reviews-ai-answers/",
+    "target": "/reports/star-ratings-reviews-ai-answers",
+    "status": "301"
+  },
+  {
+    "source": "/reports/what-ai-gets-wrong-about-products-2026/",
+    "target": "/reports/what-ai-gets-wrong-about-products-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/what-ai-named-shopify-brands-have-in-common-2026/",
+    "target": "/reports/what-ai-named-shopify-brands-have-in-common-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/where-ai-sends-shoppers-2026/",
+    "target": "/reports/where-ai-sends-shoppers-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/who-ai-recommends-ai-search-agencies-shopify-2026/",
+    "target": "/reports/who-ai-recommends-ai-search-agencies-shopify-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/who-chatgpt-recommends-2026/",
+    "target": "/reports/who-chatgpt-recommends-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/why-ai-recommends-products-reasons-2026/",
+    "target": "/reports/why-ai-recommends-products-reasons-2026",
+    "status": "301"
+  },
+  {
+    "source": "/results/",
+    "target": "/results",
+    "status": "301"
+  },
+  {
+    "source": "/shopify-conversion-optimization/",
+    "target": "/shopify-conversion-optimization",
+    "status": "301"
+  },
+  {
+    "source": "/shopify-migration/",
+    "target": "/shopify-migration",
+    "status": "301"
+  },
+  {
+    "source": "/shopify-subscriptions/",
+    "target": "/shopify-subscriptions",
+    "status": "301"
+  },
+  {
+    "source": "/skio-vs-loop/",
+    "target": "/skio-vs-loop",
+    "status": "301"
+  },
+  {
+    "source": "/start/",
+    "target": "/start",
+    "status": "301"
+  },
+  {
+    "source": "/state-of-shopify-subscriptions-2026/",
+    "target": "/state-of-shopify-subscriptions-2026",
+    "status": "301"
+  },
+  {
+    "source": "/supplement-brands/",
+    "target": "/supplement-brands",
+    "status": "301"
+  },
+  {
+    "source": "/tools/",
+    "target": "/tools",
+    "status": "301"
+  },
+  {
+    "source": "/tools/free-shipping-calculator/",
+    "target": "/tools/free-shipping-calculator",
+    "status": "301"
+  },
+  {
+    "source": "/tools/shopify-revenue-checker/",
+    "target": "/tools/shopify-revenue-checker",
+    "status": "301"
+  },
+  {
+    "source": "/tools/store-check/",
+    "target": "/tools/store-check",
+    "status": "301"
+  },
+  {
+    "source": "/tools/subscription-calculator/",
+    "target": "/tools/subscription-calculator",
+    "status": "301"
+  },
+  {
+    "source": "/welcome/",
+    "target": "/welcome",
+    "status": "301"
+  },
+  {
+    "source": "/<*>",
+    "target": "/404.html",
+    "status": "404-200"
+  }
+]
