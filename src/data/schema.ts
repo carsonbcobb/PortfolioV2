@@ -351,7 +351,7 @@ export function pricingSchema(meta: { title: string; description: string; faqs: 
         name: 'AI Search and CRO for Shopify Brands',
         serviceType: 'AI search optimization and conversion rate optimization',
         description:
-          'Close the Gap, a 90 day program in two sizes, the Full Store Audit, and the AI Visibility Check.',
+          'Close the Gap, ongoing monthly work in two sizes, the Full Store Audit, and the AI Visibility Check.',
         url: PRICING_URL,
         provider: ref(ID.business),
         areaServed: AREAS,

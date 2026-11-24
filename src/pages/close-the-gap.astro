@@ -41,8 +41,8 @@ const jsonLd = [closeTheGapSchema({ title, description, faqs: PROGRAM_FAQS })];
   <section class="section section--sand" aria-labelledby="program">
     <div class="wrap stack">
       <div class="head">
-        <p class="eyebrow">The program</p>
-        <h2 class="h2" id="program">90 days to close the gap.</h2>
+        <p class="eyebrow">The work</p>
+        <h2 class="h2" id="program">How it works</h2>
       </div>
       <div class="grid grid--three plans">
         {
@@ -92,7 +92,7 @@ const jsonLd = [closeTheGapSchema({ title, description, faqs: PROGRAM_FAQS })];
         <h2 class="h2" id="sizes-title">Two sizes.</h2>
       </div>
       <div class="grid grid--320 plans">
-        {PROGRAM_SIZES.map((z) => <SizeCard size={z} id={z.key} extra="Everything in the 90 day program above" />)}
+        {PROGRAM_SIZES.map((z) => <SizeCard size={z} id={z.key} />)}
       </div>
 
       <div class="head">

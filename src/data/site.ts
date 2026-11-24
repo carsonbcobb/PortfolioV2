@@ -297,7 +297,7 @@ export const REFERRAL = {
   text: 'Introduce us. When they sign, you get 10% of their first 3 months, paid once their third payment clears.',
 };
 
-// The main offer: Close the Gap, a 90 day program that continues month to month. Shown on /close-the-gap,
+// The main offer: Close the Gap, ongoing monthly work, month to month. Shown on /close-the-gap,
 // /pricing, the homepage and /ai-search, and described in the structured data from the same lines.
 export const PROGRAM = {
   name: 'Close the Gap',
@@ -305,10 +305,10 @@ export const PROGRAM = {
   promise:
     "I can't control what AI says. Nobody can. What I can do is find exactly why your competitor gets picked, fix everything you control, give your team a clear plan for everything you don't, and show you how it's moving every week.",
   summary:
-    'A 90 day program: I show you where your competitors beat you in ChatGPT, Gemini and Google AI Mode, category by category, fix everything you control, go after the sources AI relies on, and report how it moves.',
+    'Ongoing monthly work: I show you where your competitors beat you in ChatGPT, Gemini and Google AI Mode, category by category, fix everything you control, go after the sources AI relies on, and report how it moves.',
   months: [
     {
-      when: 'Month 1',
+      when: 'First',
       title: 'Find the gap and fix what you control',
       items: [
         'An AI audit of your entire site, not just the product pages: the questions AI needs answered about your products before it recommends them, and whether your pages and structured data answer them in a way AI can read, extract and quote.',
@@ -318,15 +318,15 @@ export const PROGRAM = {
       ],
     },
     {
-      when: 'Month 2',
+      when: 'Next',
       title: 'Go after the sources',
       items: [
         'A ranked list of the sites AI cites for your products. On Full, I do the work on them: retailer and marketplace listings, review sites, and pitches where they make sense. Paid placements are recommended with reasoning; your team decides.',
       ],
     },
     {
-      when: 'Month 3',
-      title: 'Expand and lock it in',
+      when: 'Then',
+      title: 'Expand and keep it',
       items: [
         'A full retest, then the next set of questions buyers ask about your products: by need, budget, gifting, comparisons and season.',
         "A clear picture of what moved, what didn't, and why.",
@@ -341,7 +341,7 @@ export const PROGRAM = {
     ],
   },
   after:
-    'After 90 days, the program continues month to month: reports, model watch, new questions and new competitors as they appear, and ongoing source work. Brands with one or two categories go deeper inside them, not wider.',
+    'It keeps running every month: new questions, new competitors as they appear, model watch and ongoing source work. Brands with one or two categories go deeper inside them, not wider.',
   guarantee: "If I don't deliver everything listed for month 1, you don't pay for month 2.",
   guaranteeNote: "The guarantee covers the month 1 deliverables listed above, not what AI says. No one controls AI answers.",
   scope: 'More categories, more competitors, or additional stores and country sites are quoted separately.',
@@ -365,7 +365,7 @@ export const PROGRAM = {
 // The two sizes. monthly is the one price, month to month. The same lists show on /close-the-gap, /pricing, /ai-search and /start.
 // First on both plan lists: every engagement starts with an AI audit of the whole site.
 const AI_AUDIT_ITEM =
-  'An AI audit of your entire site: the questions AI needs answered about your products before it recommends them, whether AI can read, extract and quote your pages and structured data, and the sources AI relies on for your products';
+  'An AI audit of your entire site and catalog: what AI needs to know before it recommends your products, and whether it can find it';
 
 export const PROGRAM_SIZES = [
   {
@@ -374,15 +374,12 @@ export const PROGRAM_SIZES = [
     short: 'Focus',
     fit: 'For brands doing about $50K to $150K a month',
     tagline: 'I find the gap and hand your team every fix, ready to ship.',
-    brief: 'I find the gap and hand your team every fix, ready to ship. Up to 3 product categories, each tracked against up to 3 competitors, with a competitor report every 2 weeks.',
     items: [
       AI_AUDIT_ITEM,
-      'Up to 3 product categories, each tracked against up to 3 competitors',
-      'Tested the way real shoppers ask, in ChatGPT, Gemini and Google AI Mode: up to 15 shopper questions, each asked more than once and in different wording, refreshed every month as what shoppers ask changes',
-      'Every on site fix written and ready for your team to ship: product data, structured data, product page copy, comparison and FAQ content',
-      'A ranked list of the sources AI relies on for your products, with what to do about each one',
-      'A competitor report every 2 weeks',
-      'Replies within 2 business days',
+      'Up to 3 product categories, each tracked against the competitors AI recommends there',
+      'Every fix written and ready for your team to ship: structured data, product facts, page copy, comparison and FAQ content',
+      'A ranked plan for the outside sources AI relies on for your products',
+      "A competitor report every 2 weeks showing where you're winning and where you're not",
     ],
     monthly: 2500,
     featured: false,
@@ -393,19 +390,14 @@ export const PROGRAM_SIZES = [
     short: 'Full',
     fit: 'For brands doing about $150K a month and up',
     tagline: 'I find the gap and close it for you.',
-    brief: 'I find the gap and close it for you. Up to 5 product categories, each tracked against up to 6 competitors, with a weekly competitor report and model watch.',
     items: [
       AI_AUDIT_ITEM,
-      'Up to 5 product categories, each tracked against up to 6 competitors',
-      'Tested the way real shoppers ask, in ChatGPT, Gemini and Google AI Mode: up to 30 shopper questions, each asked more than once and in different wording, refreshed every month as what shoppers ask changes',
-      'On site fixes implemented by me: product data, structured data, product pages, comparison and FAQ content',
+      'Up to 5 product categories, each tracked against the competitors AI recommends there',
+      'Every fix implemented by me across your catalog: structured data, product facts, product pages, comparison and FAQ content',
       'Conversion work on the pages AI sends shoppers to, so the shoppers AI sends actually buy',
-      'Sources work done for you: retailer and marketplace listings, the review sites and Reddit threads AI cites, and pitches to editorial sites where they make sense',
-      'A weekly competitor report',
-      'Model watch: when ChatGPT, Gemini or Google AI Mode changes how it recommends products, I retest within 3 business days and adjust',
-      'A monthly AI revenue report: AI sales you can track, branded search growth, and what customers say in your post purchase survey',
-      "A monthly recorded strategy video: what moved, what's next, and what your team should approve",
-      'Same business day replies',
+      'The outside sources AI relies on, worked for you: retailer and marketplace listings, the review sites and threads AI cites, and editorial pitches where they make sense',
+      'A weekly competitor report and a monthly report on the revenue AI is driving',
+      'Model watch: when ChatGPT, Gemini or Google AI Mode changes how it recommends products, I retest and adjust',
     ],
     monthly: 5000,
     featured: true,
@@ -416,16 +408,12 @@ export const PROGRAM_SIZES = [
 export const SIZE_COMPARE = {
   title: 'Which size fits',
   rows: [
-    ['Who does the fixes', 'Your team, from my written fixes', 'I do'],
-    ['Shopper questions', 'Up to 15', 'Up to 30'],
-    ['Categories and competitors', 'Up to 3, each against 3', 'Up to 5, each against 6'],
-    ['Conversion work on AI landing pages', 'No', 'Yes'],
-    ['Sources work', 'Ranked list', 'Done for you'],
-    ['Reports', 'Every 2 weeks', 'Weekly, plus model watch'],
-    ['AI revenue report', 'No', 'Monthly'],
-    ['Strategy video', 'No', 'Monthly'],
-    ['Replies', 'Within 2 business days', 'Same business day'],
-    ['Commitment', 'Month to month', 'Month to month'],
+    ['Who makes the changes', 'Your team, from my written fixes', 'I do'],
+    ['Categories tracked', 'Up to 3', 'Up to 5'],
+    ['Conversion work on the pages AI sends shoppers to', 'No', 'Yes'],
+    ['Outside sources AI relies on', 'Ranked plan', 'Done for you'],
+    ['Competitor reports', 'Every 2 weeks', 'Weekly, plus model watch'],
+    ['Report on the revenue AI is driving', 'No', 'Monthly'],
   ],
   note: 'Most brands with a dev team that has room choose Focus. Brands whose team is already stretched choose Full.',
 };
@@ -682,7 +670,7 @@ export const STEPS = [
   {
     when: 'Step 2',
     title: 'Close the gap',
-    text: 'The 90 day program: fix what you control, go after the sources AI relies on, and expand to the next questions.',
+    text: 'Fix what you control, go after the sources AI relies on, and keep expanding to the next questions.',
   },
   {
     when: 'Step 3',
@@ -713,10 +701,6 @@ export const CATEGORY_FAQ = {
 const SIZE_FAQS = [
   CATEGORY_FAQ,
   { q: "What's the difference between Focus and Full?", a: DIFF_ANSWER },
-  {
-    q: 'Why only 15 or 30 shopper questions?',
-    a: "For a brand with a handful of products, the questions that actually move sales usually number in the dozens, not the hundreds. I test each one more than once in every tool, because AI answers change between runs. Fewer questions tested properly beat hundreds tested once.",
-  },
   { q: 'How do you measure AI traffic when most of it shows up as direct?', a: MEASURE_ANSWER },
   {
     q: 'Which AI tools do you track?',
@@ -725,19 +709,16 @@ const SIZE_FAQS = [
 ];
 
 const WHO_FOR = `Shopify brands doing about $50K a month and up, competing with brands their own size or a few times bigger. Under $50K a month, the best next step is the Full Store Audit. It isn't a fit if you need paid ads management, one off development tasks, a brand new store with no traffic yet, or someone who guarantees a ChatGPT ranking.`;
-const AFTER_90 =
-  'It continues month to month at the same price, with 30 days written notice to cancel: reports, model watch, new questions and new competitors as they appear, and ongoing source work.';
 const GUARANTEE_ANSWER =
   "No one can. What I do guarantee: everything listed for month 1, or you don't pay for month 2, and honest numbers in every competitor report.";
 
 export const FAQS: { q: string; a: string; link?: { href: string; text: string } }[] = [
   {
     q: 'What is Close the Gap?',
-    a: 'A 90 day program for Shopify brands. I show you where your competitors beat you in ChatGPT, Gemini and Google AI Mode, category by category, fix everything you control, go after the sources AI relies on, and send a competitor report every week or two so you can see it move.',
+    a: 'Ongoing monthly work for Shopify brands. I show you where your competitors beat you in ChatGPT, Gemini and Google AI Mode, category by category, fix everything you control, go after the sources AI relies on, and send a competitor report every week or two so you can see it move.',
   },
   { q: 'Do we need a call?', a: CALL_ANSWER },
   { q: 'Can you guarantee ChatGPT will recommend us?', a: GUARANTEE_ANSWER },
-  { q: 'What happens after 90 days?', a: AFTER_90 },
   { q: 'Who is it for?', a: WHO_FOR },
   { q: 'How do you measure AI traffic when most of it shows up as direct?', a: MEASURE_ANSWER },
   {
@@ -768,7 +749,6 @@ export const PROGRAM_FAQS = [
     q: 'Do we have to pay for placements?',
     a: 'Sometimes the best sources are paid. I recommend them with the reasoning, and your team decides. I advise; I never buy placements myself.',
   },
-  { q: 'What happens after 90 days?', a: AFTER_90 },
 ];
 
 export const PRICING_FAQS = [
