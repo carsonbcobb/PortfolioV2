@@ -3,6 +3,7 @@
 // whose sections are the collapsed "Read more" disclosures. Same URL and structured data as before.
 import ContentPage from '../layouts/ContentPage.astro';
 import PriceSummary from '../components/PriceSummary.astro';
+import TopReports from '../components/TopReports.astro';
 import { contentSchema } from '../data/schema';
 import { pageBySlug, CONTENT_PAGES } from '../data/pages';
 import { designedPage, REPORTS, slugOf, shortVersion } from '../data/reports';
@@ -116,7 +117,7 @@ const workMore = readMore([
   { heading: 'How is AI search measured?' },
 ]);
 // The guides linked from the Common questions block.
-const commonQuestions = ['why-chatgpt-doesnt-recommend-my-shopify-store', 'shopify-products-in-chatgpt-shopping', 'ai-search-optimization-cost-shopify'].map(guideNamed);
+const commonQuestions = ['why-chatgpt-recommends-my-competitor', 'shopify-products-in-chatgpt-shopping', 'ai-search-optimization-cost-shopify'].map(guideNamed);
 // The four product type pages, linked under the research card.
 const industries = CONTENT_PAGES.filter((p) => p.kind === 'industry');
 ---
@@ -125,7 +126,7 @@ const industries = CONTENT_PAGES.filter((p) => p.kind === 'industry');
   title={fm.title}
   description={fm.description}
   h1={fm.h1}
-  intro="See where your competitors beat you in ChatGPT, Gemini and Google AI Mode, and close the gap."
+  intro="I'm Carson Cobb, an independent AI search and conversion specialist for Shopify brands. I get products recommended when shoppers ask ChatGPT, Gemini and Google AI Mode what to buy, then make sure the pages AI sends them to turn the visit into a sale. I do both together, for Shopify brands in every product area."
   trail={[{ name: info.label }]}
   {faqs}
   faqCollapsed
@@ -177,6 +178,42 @@ const industries = CONTENT_PAGES.filter((p) => p.kind === 'industry');
         </div>
         <figcaption class="chat__caption">Example answer. Brand names are placeholders.</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <!-- Who does it, and the names for it -->
+  <section class="section section--sand" aria-labelledby="who-does-it">
+    <div class="wrap grid grid--320">
+      <div class="head">
+        <p class="eyebrow">Who does it</p>
+        <h2 class="h2 h2--36" id="who-does-it">Who does AI search and CRO for Shopify brands?</h2>
+        <p class="lede">
+          I do, as an independent specialist rather than an agency. The person who audits your store is the person who
+          fixes it, so nothing gets lost in a handoff between a strategist and a junior team.
+        </p>
+        <p class="lede">
+          The two belong together because a recommendation only pays if the page converts. AI sends shoppers straight to a
+          product page, already told what to expect. If the page doesn't confirm it, they leave. So I work on both: getting
+          your products named in ChatGPT, Gemini and Google AI Mode, and making the pages they land on close the sale. That's
+          50+ AI search projects and 50+ Shopify stores built, rebuilt or run, for brands in every product area.
+          <a href="/results">See the results</a>, or if you sell into the US from abroad, see
+          <a href="/ai-search-international-brands">getting recommended by AI in the US</a>.
+        </p>
+      </div>
+      <div class="head">
+        <p class="eyebrow">The names for it</p>
+        <h2 class="h2 h2--36" id="aeo-geo">AI search, AEO and GEO: what's the difference?</h2>
+        <p class="lede">
+          They're three names for the same work. AI search optimization is the plain name: getting your brand recommended
+          when people ask AI tools what to buy. Answer engine optimization (AEO) is the older name, from answer boxes and voice
+          assistants. Generative engine optimization (GEO) is the newer one, for tools like ChatGPT, Gemini and Google AI Mode.
+        </p>
+        <p class="lede">
+          Under any of the names, the work I do is the same: test how real shoppers ask, find where competitors get named
+          instead of you, fix the product pages and structured data AI reads, and work on the outside sources AI trusts. More
+          in <a href="/reports/geo-vs-seo-ecommerce-2026">GEO vs SEO for ecommerce</a>.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -351,6 +388,7 @@ const industries = CONTENT_PAGES.filter((p) => p.kind === 'industry');
     </div>
   </section>
 
+  <TopReports sand service={false} />
   <PriceSummary id="ai-pricing" sand={false} flush compact />
 
 </ContentPage>

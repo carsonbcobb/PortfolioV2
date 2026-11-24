@@ -1,10 +1,11 @@
 ---
-title: "Shopify FAQ Pages: What 83 Brands Answer, and What They Skip | Carson Cobb"
-description: "79% of Shopify brands have a FAQ page with a median of 22 questions, but only 23% of those pages use FAQ structured data, and 35% skip product safety questions."
+title: "Shopify FAQ Pages 2026: What 83 Brands Answer and Skip"
+description: "79% of Shopify brands have a FAQ page with a median of 22 questions. 95% cover shipping and returns, 35% skip safety and only 23% use FAQ structured data."
 slug: "/reports/shopify-faq-pages-ai-search-2026"
 h1: "Shopify FAQ pages: what 83 brands answer, and what they skip"
+answer: "Most Shopify brands have a FAQ page, but many skip the product questions shoppers ask AI. In my November 2026 check, 83 of 105 Shopify brand stores (79%) had a FAQ page, with a median of about 22 questions. Shipping and returns were covered by 95%, but 35% of FAQ pages didn't cover safety, and only 23% used FAQ structured data."
 datePublished: 2026-11-16
-dateModified: 2026-11-16
+dateModified: 2026-11-23
 reportStores: 105
 faq:
   - question: "How many Shopify stores have a FAQ page?"

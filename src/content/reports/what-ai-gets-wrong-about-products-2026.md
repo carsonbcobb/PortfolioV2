@@ -1,10 +1,11 @@
 ---
-title: "What AI Gets Wrong About Products (2026) | Carson Cobb"
-description: "ChatGPT, Gemini and Google AI Mode on 24 Shopify products: prices mostly right, ratings right on all three for only 7 of 22."
+title: "What AI Gets Wrong About Products: 2026 Accuracy Test"
+description: "ChatGPT, Gemini and Google AI Mode priced most of 24 Shopify products right, but all three got the rating right for only 7 of 22. Why the errors happen."
 slug: "/reports/what-ai-gets-wrong-about-products-2026"
 h1: "What AI gets wrong about your products"
+answer: "AI mostly gets product prices right but often gets ratings wrong. In my November 2026 test of 24 Shopify products, ChatGPT gave the right price for 22 of 24, Gemini for 22 and Google AI Mode for 19. Ratings and review counts were weaker: all three got the rating right for only 7 of 22 products, and at least one was wrong for 15."
 datePublished: 2026-11-06
-dateModified: 2026-11-06
+dateModified: 2026-11-23
 reportStores: 24
 faq:
   - question: "How accurate is ChatGPT about product prices?"
@@ -17,7 +18,7 @@ faq:
     answer: "In this test, ChatGPT was the most accurate on ratings and tied with Gemini on prices. Google AI Mode made the most errors, often by picking a different version of the product or reporting a rating that isn't on the product page."
 ---
 
-**By Carson Cobb. Data collected November 2026. Last updated November 2026.**
+**By Carson Cobb. Data collected November 2026.**
 
 Getting recommended is half the job. The other half is AI describing your product correctly when a shopper asks about it directly. A wrong price or a weak rating in an AI answer costs the sale before the shopper ever reaches your site.
 

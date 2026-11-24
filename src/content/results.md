@@ -5,11 +5,9 @@ slug: "/results"
 h1: "Results"
 ---
 
-I get Shopify brands recommended by AI and turn that traffic into sales. I've done the work behind both for seed stage startups and for billion dollar companies, across supplements, skincare, food, apparel, travel and more, for 6+ years.
+I'm Carson Cobb, an independent AI search and conversion specialist for Shopify brands. I get brands recommended by AI and turn that traffic into sales. I've done the work behind both for seed stage startups and for billion dollar companies, across supplements, skincare, food, apparel, travel and more, for 6+ years.
 
 Almost every client is under NDA, so no names here. The work and the numbers are real.
-
-Want this work on your store every month? That's my [fractional head of ecommerce](/fractional-head-of-ecommerce) role.
 
 ## AI search
 
@@ -76,7 +74,7 @@ Klaviyo flows and campaigns that bring people back: welcome, browse and cart aba
 I design and write the pages that sell: product pages, collections, homepages and offers. Benefits before ingredients, trust where the buyer needs it, and every format sold the way it's bought. Drink mixes sell on routine, capsules on proof, gummies on taste, intimates on fit, and an urn on reassurance.
 
 - **62%** Organic revenue growth in 6 months for a skincare brand, alongside a 71% conversion lift at the same ad spend
-- **2.1% → 3.2%** Average conversion rate before and after, with AOV up from $58 to $64
+- **2.1% → 3.2%** Conversion rate in a sample month for a skincare client, with AOV up from $58 to $64
 - **150+** Product page templates built
 
 ### Site builds, rebuilds and speed

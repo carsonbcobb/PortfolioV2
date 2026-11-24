@@ -1,10 +1,11 @@
 ---
-title: "ChatGPT vs Google AI Mode for Shopping (2026): How Their Recommendations Differ | Carson Cobb"
-description: "ChatGPT shows prices in 79% of shopping answers and asks follow ups in 38%. Google AI Mode builds answers from product listings and quotes certifications twice as often. Side by side data."
+title: "ChatGPT vs Google AI Mode for Shopping: 2026 Data"
+description: "ChatGPT showed prices in 79% of shopping answers and asked about the shopper in 18 of 48. Google AI Mode cited certifications in 25 answers, ChatGPT in 12."
 slug: "/reports/chatgpt-vs-google-ai-mode-shopping-2026"
 h1: "ChatGPT vs Google AI Mode for shopping: how their recommendations differ"
+answer: "ChatGPT and Google AI Mode shop differently. In my November 2026 tests of 48 shopping questions, ChatGPT showed prices in 38 of 48 answers (79%) and asked about the shopper in 18 of 48, against 30 of 48 (63%) and 6 of 48 for AI Mode. AI Mode built answers around product listings and cited certifications in 25 answers, against 12 for ChatGPT."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 faq:
   - question: "Is ChatGPT or Google AI Mode better for shopping?"
     answer: "They're good at different things. In my November 2026 tests, ChatGPT asked about the shopper more often (18 of 48 answers versus 6) and showed prices more often (79% versus 63%). AI Mode built most answers around product listings with prices, ratings and sellers, and cited certifications twice as often."

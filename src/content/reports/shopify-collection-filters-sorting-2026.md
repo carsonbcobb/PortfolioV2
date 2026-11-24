@@ -1,10 +1,11 @@
 ---
-title: "Shopify Collection Filters and Sorting 2026: 38% of Brand Stores Offer No Filters | Carson Cobb"
-description: "62% of Shopify brand stores offer filters on their main collection page and 63% offer sorting. Only 5% filter by Shopify's standard product attributes. Data from 599 collection pages."
+title: "Shopify Collection Filters and Sorting 2026: 599 Stores"
+description: "62% of 599 Shopify brand stores offer filters on their all products collection and 63% offer sorting. 38% offer none, and only 5% use standard attributes."
 slug: "/reports/shopify-collection-filters-sorting-2026"
 h1: "Collection filters and sorting on Shopify: what 599 brands give shoppers"
+answer: "Most Shopify brand stores offer collection filters, but many don't. In my November 17, 2026 check of 599 Shopify brand stores, 62% offered filters on their all products collection and 63% offered sorting, while 38% showed no filter code at all. Only 5% of all stores filtered on Shopify's standard product attributes."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 cta: cro
 reportStores: 599
 faq:

@@ -1,10 +1,11 @@
 ---
-title: "How Google AI Mode Chooses Products to Recommend (2026 Research) | Carson Cobb"
-description: "Google AI Mode builds most shopping answers from product listings, cites brand stores more than Google's first page does, and leans on certifications. What decides its picks, from my 2026 tests."
+title: "How Google AI Mode Chooses Products: 2026 Research"
+description: "Google AI Mode built 11 of 19 shopping answers on product listings, and only 40% of sites it cited ranked on Google's first page. What decides its picks."
 slug: "/reports/how-google-ai-mode-chooses-products-2026"
 h1: "How Google AI Mode chooses which products to recommend"
+answer: "Google AI Mode chooses products largely from product listings and the Shopping Graph, not Google rankings. In my November 2026 tests, it built 11 of 19 shopping answers around product listings, only 40% of the sites it cited ranked on Google's first page, and brand stores were 37% of the sites it cited. It also leaned on certifications."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 faq:
   - question: "How does Google AI Mode choose products?"
     answer: "Largely from product listings and the Shopping Graph. In 11 of 19 shopping questions I checked in November 2026, AI Mode built its answer around product listings with a price, rating, review count and seller. Google says these rely on Merchant Center and Shopping Graph data."

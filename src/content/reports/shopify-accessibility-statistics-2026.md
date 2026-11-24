@@ -1,10 +1,11 @@
 ---
-title: "Shopify Accessibility Statistics 2026: 82% of Brand Homepages Fail a Basic Check | Carson Cobb"
-description: "Only 18% of 598 Shopify brand homepages passed five basic accessibility checks. 54% had links with no text, 44% images with no alt attribute and 31% form fields with no label."
+title: "Shopify Accessibility Statistics 2026: 598 Homepages Checked"
+description: "Only 18% of 598 Shopify brand homepages passed five basic accessibility checks. 54% had links with no name, and 44% had images with no alt attribute."
 slug: "/reports/shopify-accessibility-statistics-2026"
 h1: "Shopify accessibility statistics 2026: how 598 brand homepages do on five basic checks"
+answer: "Most Shopify brand homepages fail at least one basic accessibility check. On November 17, 2026, only 107 of 598 Shopify brand homepages I checked (18%) passed all five checks. 54% had links with no name, usually icon links for cart, account, search or social, 44% had images with no alt attribute and 31% had form fields with no label."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 cta: cro
 reportStores: 599
 faq:

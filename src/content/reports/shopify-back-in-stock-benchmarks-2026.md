@@ -1,10 +1,11 @@
 ---
-title: "Back in Stock Alerts on Shopify: 77 Sold Out Products | Carson Cobb"
-description: "73% of Shopify brands had at least one sold out product, and 36% of those sold out product pages offered no way to get notified when it returns."
+title: "Shopify Back in Stock Alerts 2026: 77 Sold Out Pages"
+description: "73% of Shopify brands had a sold out product, and 36% of sold out product pages offered no way to get notified when it returns. How to capture the shopper."
 slug: "/reports/shopify-back-in-stock-benchmarks-2026"
 h1: "Sold out and silent: back in stock alerts on 77 Shopify product pages"
+answer: "Most Shopify stores have sold out products, and many sold out pages lose the shopper. In my November 2026 check, 77 of 105 Shopify brand catalogs (73%) had at least one fully sold out product. Of 77 sold out product pages, 49 (64%) offered a back in stock signup, and 28 (36%) offered no way to get notified when the product returns."
 datePublished: 2026-11-16
-dateModified: 2026-11-16
+dateModified: 2026-11-23
 reportStores: 107
 faq:
   - question: "How many Shopify stores have sold out products?"

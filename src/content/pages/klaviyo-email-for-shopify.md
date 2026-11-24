@@ -1,8 +1,9 @@
 ---
-title: "Klaviyo Email for Shopify Brands | Carson Cobb"
-description: "I build and fix Klaviyo flows for Shopify brands: welcome, cart, post purchase, subscriber, winback and segments that match how your customers buy."
+title: "Klaviyo Flows for Shopify: What Every Store Needs"
+description: "Every Shopify store needs welcome, browse, cart, post purchase, back in stock and winback flows in Klaviyo. I build and fix them, plus subscriber flows."
 slug: "/klaviyo-email-for-shopify"
 h1: "Klaviyo email for Shopify, built around how your store sells"
+answer: "Carson Cobb is an independent AI search and conversion specialist for Shopify brands who builds and fixes Klaviyo email flows. Every Shopify store needs welcome, browse abandonment, cart and checkout abandonment, post purchase, back in stock and winback flows. Brands that sell subscriptions also need subscriber flows for upcoming orders, failed payments and cancellations, timed to how their customers actually reorder."
 faq:
   - question: "Which Klaviyo flows should every Shopify store have?"
     answer: "Start with these: welcome, browse abandonment, cart and checkout abandonment, post purchase, back in stock and winback. If you sell subscriptions, add subscriber flows for upcoming orders, failed payments and cancellations."

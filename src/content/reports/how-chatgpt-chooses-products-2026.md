@@ -1,10 +1,11 @@
 ---
-title: "How ChatGPT Chooses Which Products to Recommend (2026 Research) | Carson Cobb"
-description: "What decides which products ChatGPT recommends, based on 48 shopping questions, repeat runs and a scan of 617 Shopify stores: sources, specific reasons, the shopper's situation and clean data."
+title: "How ChatGPT Chooses Products to Recommend (2026 Research)"
+description: "ChatGPT picks products from independent sources: it showed sources in 45 of 48 shopping answers. Specific reasons and the shopper's need decide the rest."
 slug: "/reports/how-chatgpt-chooses-products-2026"
 h1: "How ChatGPT chooses which products to recommend"
+answer: "ChatGPT chooses products mostly from what independent sources say, matched to the shopper's situation. In my November 2026 tests, it showed sources in 45 of 48 shopping answers, led by review and testing sites and magazines, and gave a specific reason for every pick. Clean product data decides whether it gets the facts right, not whether a brand is named."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 reportStores: 617
 faq:
   - question: "How does ChatGPT decide which products to recommend?"

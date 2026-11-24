@@ -1,10 +1,11 @@
 ---
-title: "Shopify Site Search 2026: How 471 Stores Handle Typos and Vague Searches | Carson Cobb"
-description: "Swap two letters in a product word and 27% of Shopify brand stores' search returns nothing. 11% return nothing for 'gift'. 20% return products for a nonsense word. Data from 595 stores."
+title: "Shopify Site Search and Typos 2026: 27% Return Nothing"
+description: "Swap two letters in a product word and 27% of Shopify stores' search returns nothing. 11% return nothing for gift and 20% show products for a made up word."
 slug: "/reports/shopify-site-search-typos-2026"
 h1: "Shopify site search: what happens when shoppers make a typo"
+answer: "Shopify site search often gives up on a typo. In my November 2026 test of predictive search on Shopify brand stores, 27% returned nothing when two letters were swapped in a common product word, and 10% returned nothing when one letter was missing. 11% returned nothing for the word gift, and 20% returned products for a made up word."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 cta: cro
 reportStores: 599
 faq:

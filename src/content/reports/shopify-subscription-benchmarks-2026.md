@@ -1,10 +1,11 @@
 ---
 title: "Shopify Subscription Benchmarks 2026: Discounts and Apps"
-description: "The subscribe and save discounts, delivery frequencies and subscription apps growing Shopify brands actually run. Data from 434 reorderable brands."
+description: "10% is the most common Shopify subscribe and save discount, used by 32% of brands. 72% of 434 reorderable brands offer subscriptions, 13% on every product."
 slug: "/reports/shopify-subscription-benchmarks-2026"
 h1: "Shopify Subscription Benchmarks 2026"
+answer: "The most common subscribe and save discount on Shopify is 10%, used by 32% of reorderable brands with subscriptions, followed by 15% at 26%. In my November 2026 check of 434 reorderable Shopify brands, 72% offered subscriptions but only 13% on every product checked. Recharge ran plans for 46% of brands with subscriptions and Skio for 16%."
 datePublished: 2026-11-01
-dateModified: 2026-11-01
+dateModified: 2026-11-23
 reportStores: 606
 faq:
   - question: "What is the typical subscribe and save discount on Shopify?"
@@ -17,7 +18,7 @@ faq:
     answer: "Rarely. Only 13% of reorderable brands offered subscribe and save on every product checked. Among brands with subscriptions, the typical store covered 70% of checked products, and 52% left at least one best seller without it."
 ---
 
-**By Carson Cobb, AI Search and CRO for Shopify Brands. Data checked November 2026.**
+**By Carson Cobb. Data checked November 2026.**
 
 Everyone has an opinion on what a subscription offer should look like. This report shows what growing brands actually run. I read the live selling plans on up to 20 products per store (best sellers first) across 606 Shopify stores, including 434 brands that sell things people reorder: supplements, beauty and skincare, food and beverage, and pet.
 

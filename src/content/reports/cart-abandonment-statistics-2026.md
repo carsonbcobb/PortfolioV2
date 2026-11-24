@@ -1,10 +1,11 @@
 ---
-title: "Cart Abandonment Statistics 2026: Rates, Reasons and What Shopify Stores Fix | Carson Cobb"
-description: "The average documented cart abandonment rate is 70.22% across 50 studies. The top reasons, checkout benchmarks, and how 599 Shopify brand stores answer them on the product page."
+title: "Cart Abandonment Statistics 2026: Rates and Reasons"
+description: "The average cart abandonment rate is 70.22% across 50 studies. Extra costs lead at 40%, and only 11% of Shopify product pages show a delivery estimate."
 slug: "/reports/cart-abandonment-statistics-2026"
 h1: "Cart abandonment statistics 2026, and what Shopify stores do about them"
+answer: "The average documented cart abandonment rate is 70.22%, from 50 studies compiled by Baymard Institute, updated October 2026. The top reason is extra costs like shipping, tax and fees (40%). In my November 2026 scan of 599 Shopify brand stores, only 11% of product pages showed a delivery estimate and 34% mentioned a guarantee or free returns."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 cta: cro
 reportStores: 599
 faq:
@@ -17,8 +18,6 @@ faq:
   - question: "How do Shopify stores reduce cart abandonment before checkout?"
     answer: "By answering cost, delivery and trust questions on the product page. In my November 2026 scan of 599 Shopify brand stores, only 11% of product pages showed a delivery estimate and 34% mentioned a guarantee or free returns."
 ---
-
-**By Carson Cobb. Updated November 17, 2026.**
 
 Most carts don't become orders. The research on why is consistent, and most of the reasons can be answered before the shopper ever reaches checkout. Here are the numbers that hold up, with sources, and how 599 Shopify brand stores handle them in my own scan.
 
@@ -72,6 +71,8 @@ Shopify's checkout handles much of the form side already. What Shopify brands co
 On the cart page itself, only 23% of stores showed product suggestions when the cart was empty, and 15% mentioned free shipping there.
 
 More on the product page side in [the Shopify buy box](/reports/shopify-product-page-buy-box-2026).
+
+To see what a small conversion lift is worth in sales for a store your size, try the [Shopify revenue checker](/tools/shopify-revenue-checker).
 
 ## What to do with this
 

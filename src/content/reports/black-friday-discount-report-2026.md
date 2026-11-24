@@ -1,10 +1,11 @@
 ---
 title: "Shopify Black Friday Discount Report 2026: 606 Stores"
-description: "How many Shopify brands show sale prices before Black Friday, how deep the markdowns go, and who has a Black Friday page ready. Data from 606 stores."
+description: "73% of 606 Shopify stores showed sale prices before Black Friday 2026, with a typical markdown of 20%. Only 23% had a Black Friday collection published."
 slug: "/reports/black-friday-discount-report-2026"
 h1: "Shopify Black Friday Discount Report 2026"
+answer: "In my November 2026 check of 606 Shopify stores, 73% already showed a crossed out compare at price on at least one product before Black Friday. Among stores with markdowns, the typical markdown was 20%. Only 23% had a Black Friday collection published, and 68% of reorderable brands with subscriptions and markdowns mark products down deeper than their subscribe and save discount."
 datePublished: 2026-11-01
-dateModified: 2026-11-01
+dateModified: 2026-11-23
 reportStores: 606
 reportProducts: 121519
 faq:
@@ -18,7 +19,7 @@ faq:
     answer: "Often. Of the reorderable brands that offer subscriptions and also mark products down, 68% have a typical markdown deeper than their subscribe and save discount, which can give subscribers a reason to cancel and buy on sale."
 ---
 
-**By Carson Cobb, AI Search and CRO for Shopify Brands. Data checked November 2026. I will check the same stores again during Black Friday week.**
+**By Carson Cobb. Data checked November 2026. I will check the same stores again during Black Friday week.**
 
 This is the before picture. In early November, I checked 606 Shopify stores and 121,519 products to see how many brands are already showing sale prices, how deep those markdowns go, and who has a Black Friday page built. I'll check the same stores again during Black Friday week and publish the change, so you can see what growing brands actually do, not what they say they'll do.
 

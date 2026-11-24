@@ -1,10 +1,11 @@
 ---
-title: "Shopify Product Descriptions 2026: Length and Format Across 600 Stores | Carson Cobb"
-description: "The median Shopify product description is 61 words. 29% of stores never use headings or lists, and AI named brands didn't write longer descriptions. Data from 600 stores."
+title: "Shopify Product Description Length 2026: 600 Stores"
+description: "The median Shopify product description is 61 words, 29% of stores never use headings or lists, and brands AI named didn't write more. From 600 stores."
 slug: "/reports/shopify-product-description-length-format-2026"
 h1: "How long are Shopify product descriptions, and does length matter for AI?"
+answer: "The median Shopify brand store's typical product description is 61 words, and length alone doesn't predict AI recommendations. In my November 2026 check of 600 Shopify brand stores, a quarter of stores were under 40 words, and 29% never used headings or lists. Brands that AI named had a median of 56 words, versus 62 for brands it didn't name."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 reportStores: 617
 faq:
   - question: "How long is the average Shopify product description?"

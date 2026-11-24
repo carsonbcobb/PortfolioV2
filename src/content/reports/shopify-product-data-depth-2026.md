@@ -1,10 +1,11 @@
 ---
-title: "How Deep Is Shopify Product Data? (2026)"
-description: "39% of 121,519 Shopify products have under 300 characters of description. How deep product data is, by category, and what product copy should lead with."
+title: "Shopify Product Data Depth 2026: 121,519 Products Checked"
+description: "Across 121,519 Shopify products, the median description is 372 characters, about 60 words. 39% have under 300 characters and 8% have no description at all."
 slug: "/reports/shopify-product-data-depth-2026"
 h1: "How deep Shopify product data really is"
+answer: "Shopify product data is thin. Across 121,519 products from 606 US Shopify stores, checked November 2026, the median description was 372 characters, about 60 words. 39% had under 300 characters and 8% had no description at all. In a closer look at 94 stores, among food, beauty, pet and supplement products, only 7% said how to use the product."
 datePublished: 2026-11-04
-dateModified: 2026-11-04
+dateModified: 2026-11-23
 reportStores: 606
 reportProducts: 121519
 faq:

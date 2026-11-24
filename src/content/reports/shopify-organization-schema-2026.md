@@ -1,10 +1,11 @@
 ---
-title: "Shopify Organization Schema 2026: What 609 Brand Homepages Tell AI | Carson Cobb"
-description: "75% of Shopify brand homepages publish Organization structured data, but only 30% describe what the brand does and 11% say when it was founded. Data from 609 stores."
+title: "Shopify Organization Schema 2026: 609 Homepages Checked"
+description: "75% of 609 Shopify brand homepages publish Organization structured data, but only 30% describe what the brand does and 11% say when it was founded."
 slug: "/reports/shopify-organization-schema-2026"
 h1: "Organization schema on Shopify: what 609 brand homepages tell AI about who they are"
+answer: "Most Shopify brand homepages have Organization schema, but few say what the brand does. In my November 2026 check, 456 of 609 Shopify brand homepages (75%) had Organization structured data. Only 30% of those blocks described the brand, 22% included contact details and 11% a founding date, while 19% of homepages had no structured data at all."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 reportStores: 617
 faq:
   - question: "Do Shopify stores have Organization schema?"
@@ -60,6 +61,8 @@ Description share is of stores with Organization data.
 A name and a logo tell a machine that a brand exists. They don't tell it what the brand is for. When a shopper asks for "a clean deodorant brand that's safe for sensitive skin," the AI is matching your brand to a need. The one sentence description is your chance to state that need plainly, in the same words you use everywhere else.
 
 The other homepage data is in decent shape. 62% of homepages have a site search action, 68% a WebSite block, and 2% have structured data that fails to parse, which means a machine reads none of it.
+
+Who's behind the brand matters on the page as well as in the code. See [how many Shopify About pages say who started the brand](/reports/shopify-about-pages-founder-2026).
 
 ## What to do with this
 

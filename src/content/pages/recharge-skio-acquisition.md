@@ -1,10 +1,11 @@
 ---
-title: "Recharge Bought Skio: What It Means for Shopify Subscription Brands"
-description: "What Recharge and Skio have said about Skio joining Recharge, what changes for merchants on each, and whether you should switch apps."
+title: "Recharge Bought Skio: What Changes for Shopify Brands"
+description: "Recharge announced on April 27, 2026 that Skio is joining Recharge. Nothing changes today for merchants on either app. What to watch and whether to switch."
 slug: "/recharge-skio-acquisition"
 h1: "Recharge Bought Skio: What It Means for Shopify Subscription Brands"
+answer: "Recharge announced on April 27, 2026 that Skio is joining Recharge. Both companies say nothing changes today for merchants on either platform: both keep operating, and your existing team stays your point of contact. Neither announcement mentions pricing changes, a shutdown date or a required migration. If Recharge or Skio works for you, stay put. If you want an independent app, Loop is the main option."
 datePublished: 2026-11-14
-dateModified: 2026-11-14
+dateModified: 2026-11-23
 faq:
   - question: "Did Recharge buy Skio?"
     answer: "Yes. Recharge announced on April 27, 2026 that Skio is joining Recharge. The Skio Shopify App Store listing is now titled Skio, a Recharge Company."
@@ -17,8 +18,6 @@ faq:
   - question: "What's the alternative if I don't want to be on Recharge or Skio?"
     answer: "Loop is the main independent option of the three I compare. It has a Free Forever plan for up to 50 active subscriptions, paid plans from $99/month, and white glove migration on every paid plan with no migration fee."
 ---
-
-**By Carson Cobb. Last updated November 2026.**
 
 **My verdict.** Recharge announced on April 27, 2026 that Skio is joining Recharge, and both companies say nothing changes today for merchants on either platform. If you're on Recharge or Skio and it works, stay put and watch for the details both companies say are coming. If you were choosing Skio as an alternative to Recharge, that reason is gone, and Loop is now the main independent option.
 
@@ -58,7 +57,7 @@ Also nothing yet. Skio's Scale plan is $499/month billed annually or $599/month 
 | Higher | Scale: $499/month + 1.25% + 20¢ per transaction | Enterprise: custom | Pro: $399/month + 0.75% + 10¢ per loyalty order |
 | Migration | End to end migration support on Scale | Comprehensive migration on Scale, free migration included | White glove migration on every paid plan, no migration fee |
 
-Checked November 2026 on each vendor's pricing page. My head to head pages go deeper: [Recharge vs Skio](/recharge-vs-skio), [Recharge vs Loop](/recharge-vs-loop) and [Skio vs Loop](/skio-vs-loop).
+Checked November 2026 on each vendor's pricing page. My main comparison goes deeper on each pair: [Recharge vs Skio](/recharge-vs-skio-vs-loop#recharge-vs-skio), [Recharge vs Loop](/recharge-vs-skio-vs-loop#recharge-vs-loop) and [Skio vs Loop](/recharge-vs-skio-vs-loop#skio-vs-loop).
 
 ## Features that matter for retention
 

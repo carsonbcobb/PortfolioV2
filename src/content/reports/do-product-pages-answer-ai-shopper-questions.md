@@ -1,10 +1,11 @@
 ---
-title: "Do Product Pages Answer AI Shopper Questions? | Carson Cobb"
-description: "94 Shopify product pages checked for what shoppers ask AI: 23% explain how to use the product and 16% compare it to anything."
+title: "Do Product Pages Answer AI Shopper Questions? 94 Checked"
+description: "Only 23% of 94 Shopify product pages explain how to use the product and 16% compare it to anything, though those are the questions shoppers ask AI."
 slug: "/reports/do-product-pages-answer-ai-shopper-questions"
 h1: "Do your product pages answer what shoppers ask AI?"
+answer: "Mostly not. In my November 2026 check of 94 Shopify product pages, 79% mentioned ingredients or materials and 79% returns or a guarantee, but only 40% said who the product is for, 23% explained how to use it and 16% compared it to anything. Those are the questions shoppers ask AI."
 datePublished: 2026-11-06
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 reportStores: 94
 faq:
   - question: "What questions do shoppers ask AI about products?"
@@ -17,7 +18,7 @@ faq:
     answer: "23% of the 94 product pages I checked in November 2026 mentioned how to use, directions or care instructions anywhere on the page. For food and beverage it was none of 16."
 ---
 
-**By Carson Cobb. Data checked November 2026. Last updated November 2026.**
+**By Carson Cobb. Data checked November 2026.**
 
 People don't ask AI the way they search Google. They describe their situation. "My skin gets red and stings with most moisturizers." "My small dog coughs on a collar." "I sleep hot." Then they ask what to buy.
 

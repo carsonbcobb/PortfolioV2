@@ -1,10 +1,11 @@
 ---
-title: "Do Shopify Brands Publish Comparison Pages? 105 Stores | Carson Cobb"
-description: "Only 12% of Shopify brands have a comparison page, and 47% have no comparison content anywhere on their site, even though comparison questions are common in AI shopping."
+title: "Shopify Comparison Pages 2026: Only 12% of Brands Have One"
+description: "Only 12% of 105 Shopify brands have a comparison page and 47% have no comparison content anywhere, so AI answers X vs Y from review sites and Reddit."
 slug: "/reports/shopify-comparison-pages-2026"
 h1: "\"X vs Y\": do Shopify brands answer comparison questions on their own site?"
+answer: "Most Shopify brands don't answer comparison questions on their own site. In my November 2026 check of 105 Shopify brand stores, only 12% had a comparison page and 47% had no comparison content anywhere, counting blog articles. When a brand doesn't answer X vs Y on its own site, AI answers it from review sites, roundups and Reddit instead."
 datePublished: 2026-11-16
-dateModified: 2026-11-16
+dateModified: 2026-11-23
 reportStores: 105
 faq:
   - question: "How many Shopify brands have comparison pages?"

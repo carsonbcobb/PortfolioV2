@@ -1,10 +1,11 @@
 ---
-title: "Google Rankings vs AI Mode: Who Gets Recommended (2026) | Carson Cobb"
-description: "I ran 19 shopping questions through Google and Google AI Mode. Only 40% of the sites AI Mode cited ranked on Google's first page, and 11 answers were built from product listings."
+title: "Google Rankings vs AI Mode: Who Gets Recommended (2026)"
+description: "Only 40% of sites Google AI Mode cited ranked on Google's first page in my test of 19 shopping questions, and 11 answers were built from product listings."
 slug: "/reports/google-rankings-vs-ai-mode-2026"
 h1: "Ranking on Google doesn't decide who AI Mode recommends"
+answer: "Ranking on Google's first page doesn't decide who Google AI Mode recommends. In my November 14, 2026 test of 19 shopping questions, only 40% of the sites AI Mode cited ranked on Google's first page for the same question, and Google's number one result was cited for just 7 of 19. 11 of 19 AI Mode answers were built from product listings."
 datePublished: 2026-11-14
-dateModified: 2026-11-14
+dateModified: 2026-11-23
 faq:
   - question: "If I rank on Google's first page, will Google AI Mode recommend me?"
     answer: "Not reliably. Across 19 shopping questions checked in November 2026, only 40% of the sites Google AI Mode cited also appeared on Google's first page for the same question, and Google's number one result was cited in AI Mode for just 7 of the 19 questions."
@@ -55,7 +56,7 @@ Ranking helps, since 4 in 10 cited sites did rank. But 6 in 10 sites AI Mode lea
 
 Google's first page is mostly review articles, Reddit threads and Amazon. AI Mode cites far more brand stores and far fewer forums. Reddit appeared on Google's first page for 17 of 19 questions, yet AI Mode cited it in only 4 answers.
 
-## AI Mode answers with products, not pages
+## Where does AI Mode get the products it recommends?
 
 For 11 of the 19 questions, the AI Mode answer was a set of product listings: a product name, a price, a star rating with a review count, and the seller. These answers cited few pages or none. One cited none at all.
 

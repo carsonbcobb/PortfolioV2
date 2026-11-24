@@ -1,8 +1,9 @@
 ---
-title: "Shopify Subscriptions for Growing Brands | Carson Cobb"
-description: "I find the leaks in your Shopify subscription setup and fix them: offers, Recharge or Skio plans, product page widgets, cancel flows and Klaviyo."
+title: "Shopify Subscriptions: How I Took Opt In From 7% to 32%"
+description: "Most Shopify subscription leaks are missing plans, hidden widgets, weak offers and easy cancels. I fix them in Recharge or Skio. One brand went 7% to 32%."
 slug: "/shopify-subscriptions"
 h1: "Shopify subscriptions that actually get chosen"
+answer: "Carson Cobb is an independent AI search and conversion specialist for Shopify brands who fixes subscription programs in Recharge, Skio and Shopify selling plans. Most leaks have nothing to do with the app: missing plans on hero products, widgets that never render, weak offers and cancellation in a single click. On one subscription brand, fixing those took subscribe and save opt in from 7% to 32%."
 faq:
   - question: "Do you work with Recharge or Skio?"
     answer: "Both. I set up and fix plans in Recharge and Skio every week, and I also work directly with Shopify selling plans. If you're still choosing, my Recharge vs Skio vs Loop comparison walks through how I'd decide."
@@ -22,7 +23,7 @@ Most Shopify stores I audit already have a subscription app installed. They're p
 
 Not because subscriptions don't work for their products. Because the setup has gaps nobody has had time to look at. A plan that exists in the admin but never shows on the page. A discount that's too small to matter. A cancel button that lets a customer leave without ever hearing a better offer.
 
-[See what 314 brands actually offer.](/reports/shopify-subscription-benchmarks-2026)
+[See what 314 brands with subscriptions actually offer.](/reports/shopify-subscription-benchmarks-2026)
 
 I'm Carson Cobb. I help Shopify brands get recommended in ChatGPT and Google's AI answers, then make the store convert that traffic, and subscription revenue is one of the first places I look. Over 6+ years and 50+ Shopify stores, I've learned that the biggest wins usually aren't new tools. They're fixing what's already there.
 

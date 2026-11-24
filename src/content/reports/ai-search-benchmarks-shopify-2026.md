@@ -1,10 +1,11 @@
 ---
-title: "Shopify AI Search Benchmarks 2026: 617 Brand Stores by Product Area | Carson Cobb"
-description: "The benchmark table for AI search on Shopify: how 617 brand stores score on AI crawler access, agent files, structured data, product page content and publishing, by product area."
+title: "Shopify AI Search Benchmarks 2026: 617 Brand Stores"
+description: "Shopify AI search benchmarks from 617 brand stores: 1% block AI crawlers, 86% have Product schema, but only 23% have a GTIN and 11% publish return terms."
 slug: "/reports/ai-search-benchmarks-shopify-2026"
 h1: "Shopify AI search benchmarks 2026: how 617 brand stores compare"
+answer: "In my November 2026 scan of 617 Shopify brand stores, AI crawler access was almost never the problem: only 1% fully blocked any major AI crawler. The gaps were in product data. 86% of product pages had Product structured data, but only 23% had a GTIN in structured data and 11% had return or shipping terms in structured data."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 reportStores: 617
 faq:
   - question: "What is a good AI search benchmark for a Shopify store?"

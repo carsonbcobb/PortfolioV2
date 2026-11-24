@@ -1,10 +1,11 @@
 ---
-title: "Does Schema Change What ChatGPT Says About a Product?"
-description: "I asked ChatGPT the price and rating of 24 Shopify products with clean, duplicate, partial or no structured data, and checked each answer on the page."
+title: "Does Schema Change What ChatGPT Says? A 24 Product Test"
+description: "ChatGPT gave the right price for all 20 Shopify products with Product structured data, but got the rating right for only 17 of 23. A test of 24 products."
 slug: "/reports/does-schema-change-what-chatgpt-says"
 h1: "Does schema change what ChatGPT says?"
+answer: "Product schema made ChatGPT reliable on price in my November 2026 test of 24 Shopify products: it gave the correct price for all 20 products with Product structured data. Ratings were less predictable. ChatGPT got the rating and review count right for 17 of 23, and 3 of 8 products with clean, complete data still got a wrong rating or count."
 datePublished: 2026-11-04
-dateModified: 2026-11-04
+dateModified: 2026-11-23
 reportStores: 24
 faq:
   - question: "Does ChatGPT use structured data when it answers product questions?"

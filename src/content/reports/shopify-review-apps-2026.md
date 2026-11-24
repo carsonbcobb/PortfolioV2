@@ -1,10 +1,11 @@
 ---
-title: "Shopify Review Apps 2026: Market Share and What They Tell AI | Carson Cobb"
-description: "Which review apps 609 Shopify brands load, how many run two or more, and which apps put ratings into structured data or add a second Product block. November 2026 data."
+title: "Shopify Review Apps 2026: Market Share and What AI Sees"
+description: "Yotpo, Judge.me and Okendo code is on 38%, 26% and 25% of 609 Shopify brand homepages, and only 22% of product pages have a rating in structured data."
 slug: "/reports/shopify-review-apps-2026"
 h1: "Shopify review apps in 2026: who uses what, and what each one tells AI"
+answer: "Yotpo, Judge.me and Okendo are the most common review apps on Shopify brand stores. In my November 2026 check of 609 Shopify brand homepages, code from them appeared on 38%, 26% and 25%. 45% loaded code from two or more review tools. On product pages, stores with Okendo code had a rating in structured data most often, 44%, versus 26% for Yotpo."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 reportStores: 617
 faq:
   - question: "What is the most used review app on Shopify brand stores?"

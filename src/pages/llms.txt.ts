@@ -9,9 +9,11 @@ import {
   ENGINES,
   AGENCY_PARTNER_PLANS,
   AGENCY_PARTNER_INTRO,
+  BIO_SENTENCE,
+  TOP_REPORTS,
 } from '../data/site';
 import { CONTENT_PAGES, TOOLS } from '../data/pages';
-import { REPORT_HUB, REPORTS, AI_RESEARCH, slugOf } from '../data/reports';
+import { REPORT_HUB, REPORTS, AI_RESEARCH, MARKDOWN_PAGES, COMPETITOR_GUIDE, slugOf } from '../data/reports';
 import { GUIDES } from '../data/guides';
 
 // Plain markdown summary of the site at /llms.txt. Built from the same data as the pages,
@@ -28,7 +30,7 @@ export const GET: APIRoute = () => {
     '',
     "> AI search and CRO specialist for Shopify brands. I get products recommended in ChatGPT, Perplexity and Google's AI answers, then make sure the store turns that traffic into sales.",
     '',
-    "I'm Carson Cobb. I've led AI search work for national brands in fitness, apparel, vitamins, skincare, cosmetics, food, pet, wellness and more: 50+ AI search projects, 30+ sites optimized for AI search, and 4,000+ products restructured with machine readable attributes. Before that I spent years running conversion and testing programs, affiliate programs and full rebuilds for 50+ Shopify stores, from seed stage startups to billion dollar brands. Rebuilt pages average a 2.1x conversion lift. Founders stay in control: I propose, you decide, and nothing goes live without your sign off. I never promise rankings; I measure. Based in California, working with brands across the US.",
+    `${BIO_SENTENCE} I've led AI search work for national brands in fitness, apparel, vitamins, skincare, cosmetics, food, pet, wellness and more: 50+ AI search projects, 30+ sites optimized for AI search, and 4,000+ products restructured with machine readable attributes. Before that I spent years running conversion and testing programs, affiliate programs and full rebuilds for 50+ Shopify stores, from seed stage startups to billion dollar brands. Rebuilt pages average a 2.1x conversion lift. Founders stay in control: I propose, you decide, and nothing goes live without your sign off. I never promise rankings; I measure. Based in California, working with Shopify brands in the US and worldwide.`,
     '',
     '## Two engines',
     '',
@@ -68,6 +70,13 @@ export const GET: APIRoute = () => {
     `- [About Carson Cobb](${url('/about')}): Carson's background in Shopify CRO and ecommerce, how he works, and links to his results.`,
     `- [Results](${url('/results')}): AI search results first, then conversion, testing, subscriptions, email and more.`,
     `- [For agencies](${url('/agencies')}): White label AI search and CRO implementation for agencies with Shopify clients.`,
+    '',
+    '## Start here: top research and the main guide',
+    '',
+    ...[COMPETITOR_GUIDE.slice(1), ...TOP_REPORTS].map((slug) => {
+      const p = [...MARKDOWN_PAGES, ...GUIDES].find((m) => slugOf(m) === slug)!;
+      return `- [${p.frontmatter.h1}](${url(`/${slug}`)}): ${p.frontmatter.answer ?? p.frontmatter.description}`;
+    }),
     '',
     '## Other services',
     '',

@@ -1,10 +1,11 @@
 ---
-title: "Do Star Ratings Decide AI Recommendations? | Carson Cobb"
-description: "96% of rated products on Google AI Mode's cards had 4.0 stars or more, but the top rated product came first only 5 times in 21."
+title: "Do Star Ratings Affect AI Product Recommendations?"
+description: "Star ratings work as a minimum bar for AI, not a ranking: 79 of 82 rated cards were 4.0+ but the top rated product came first only 5 times in 21."
 slug: "/reports/star-ratings-reviews-ai-answers"
 h1: "Do star ratings decide who AI recommends?"
+answer: "Star ratings and reviews affect whether AI shows your products, but as a minimum bar, not a ranking. In my November 2026 tests, 79 of 82 rated products on Google AI Mode's cards had 4.0 stars or more, yet the highest rated product came first only 5 times in 21. ChatGPT mentioned reviews or ratings in 15 of 48 answers."
 datePublished: 2026-11-06
-dateModified: 2026-11-06
+dateModified: 2026-11-23
 reportStores: 94
 faq:
   - question: "Does Google AI Mode show star ratings?"
@@ -22,6 +23,10 @@ faq:
 Ask a founder what gets a product recommended by AI and many will say reviews. It makes sense: AI tools show star ratings, and shoppers trust them. But is a higher rating what puts a product at the top of the answer?
 
 I looked at it from three sides: the ratings Google AI Mode shows on its product cards, how often each AI talks about reviews in its answers, and whether AI gets a product's rating right when asked directly.
+
+## Do product reviews and star ratings affect whether ChatGPT shows my products?
+
+Yes, but as a minimum bar, not a ranking. ChatGPT mentioned reviews or ratings in 15 of 48 answers and quoted a star rating in only 2, because it leans on what review sites, testers and editors say about a product. Google AI Mode shows ratings on its product cards, and almost every rated product it showed was above 4.0. Above that bar, other things decide the order.
 
 ## The short version
 

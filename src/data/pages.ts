@@ -89,6 +89,19 @@ export const CONTENT_PAGES: ContentPageInfo[] = [
     },
   },
   {
+    slug: 'ai-search-international-brands',
+    kind: 'service',
+    label: 'Brands selling into the US',
+    summary:
+      'For brands outside the US: getting products named when American shoppers ask ChatGPT, Gemini and Google AI Mode, with US prices, shipping and sources AI can read.',
+    service: {
+      name: 'AI search for international brands selling into the US',
+      serviceType: 'AI search optimization (AEO and GEO)',
+      audience: 'Brands outside the US selling to US shoppers',
+      offers: true,
+    },
+  },
+  {
     slug: 'supplement-brands',
     kind: 'industry',
     label: 'Supplement brands',
@@ -146,25 +159,7 @@ export const CONTENT_PAGES: ContentPageInfo[] = [
     slug: 'recharge-vs-skio-vs-loop',
     kind: 'guide',
     label: 'Recharge vs Skio vs Loop',
-    summary: 'Pricing, fees, features and migration support for the three main Shopify subscription apps.',
-  },
-  {
-    slug: 'recharge-vs-skio',
-    kind: 'guide',
-    label: 'Recharge vs Skio',
-    summary: 'Recharge and Skio side by side: pricing, fees, migration, retention features and what the merger changes.',
-  },
-  {
-    slug: 'recharge-vs-loop',
-    kind: 'guide',
-    label: 'Recharge vs Loop',
-    summary: 'Recharge and Loop side by side: pricing, fees, migration, retention features and which fits your store.',
-  },
-  {
-    slug: 'skio-vs-loop',
-    kind: 'guide',
-    label: 'Skio vs Loop',
-    summary: 'Skio and Loop side by side: pricing, fees, migration, retention features and which fits your store.',
+    summary: 'Real fees, features and migration support for Recharge, Skio and Loop, with Smartrr, Stay AI, Bold and Shopify Subscriptions.',
   },
   {
     slug: 'recharge-skio-acquisition',

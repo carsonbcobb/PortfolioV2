@@ -1,10 +1,11 @@
 ---
-title: "Where AI Sends Shoppers: Brands vs Amazon | Carson Cobb"
-description: "Every link Google AI Mode showed for 72 buyer questions: 39% went to brand websites and 6% to retailers. Reddit was in 19 of 48."
+title: "Where AI Sends Shoppers 2026: Brand Sites vs Amazon"
+description: "39% of Google AI Mode's shopping links went to brand websites and 6% to retailers. Amazon appeared in 5 of 48 answers, Reddit in 19. Full breakdown."
 slug: "/reports/where-ai-sends-shoppers-2026"
 h1: "Where AI sends shoppers"
+answer: "Google AI Mode sends shoppers to brand websites far more than to Amazon. In my November 2026 test of 72 buyer questions, 39% of AI Mode's links on short questions went to brand websites and 6% to retailers, and Amazon appeared in 5 of 48 answers. When AI Mode named a brand, it linked to that brand's own site 42% of the time."
 datePublished: 2026-11-06
-dateModified: 2026-11-06
+dateModified: 2026-11-23
 reportStores: 94
 faq:
   - question: "Does Google AI Mode link to Amazon or to brand websites?"
@@ -107,7 +108,7 @@ Gemini showed almost no clickable links in its answers, 9 links across 2 of 48 a
 4. **Keep your Google Shopping data clean.** The product cards AI Mode shows come from Google's shopping data, separate from the links in the answer.
 5. **Measure AI traffic by landing page.** More than half of AI referred sessions on Shopify start on a product page, according to Shopify's own data. Watch conversion on the pages AI sends people to.
 
-If those roundups and threads keep naming a competitor, my guide on [why ChatGPT recommends your competitor](/guides/why-chatgpt-doesnt-recommend-my-shopify-store) shows how to find the sources behind it. Earning those sources and converting the clicks they send is the work behind my [AI search optimization for Shopify brands](/ai-search).
+If those roundups and threads keep naming a competitor, my guide on [why ChatGPT recommends your competitor](/guides/why-chatgpt-recommends-my-competitor) shows how to find the sources behind it. Earning those sources and converting the clicks they send is the work behind my [AI search optimization for Shopify brands](/ai-search).
 
 Which sources recommend your competitors but not you, and where AI sends your shoppers, are both part of [Close the Gap](/close-the-gap). For a quick start, run the [AI Visibility Check](/ai-visibility-check).
 

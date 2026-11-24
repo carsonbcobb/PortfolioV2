@@ -1,10 +1,11 @@
 ---
-title: "Shopify Product Page Benchmarks 2026: Photos and Video"
-description: "How many photos, how much description text and how often video growing Shopify brands use, plus how they price. Data from 606 stores and 121,519 products."
+title: "Shopify Product Page Benchmarks 2026: Photos, Video, Price"
+description: "The typical Shopify product page has 5 photos and about 380 characters of description, and only 12% of products have video. Data from 606 Shopify stores."
 slug: "/reports/shopify-product-page-benchmarks-2026"
 h1: "Shopify Product Page Benchmarks 2026"
+answer: "The typical Shopify product page has 5 photos and a description of about 380 characters, roughly 60 words. In my November 2026 check of 606 growing Shopify brands, only 12% of checked products had a video. Supplements and pet brands tend to use .99 endings, while beauty and apparel price in whole dollars."
 datePublished: 2026-11-01
-dateModified: 2026-11-01
+dateModified: 2026-11-23
 cta: cro
 reportStores: 606
 reportProducts: 121519
@@ -19,7 +20,7 @@ faq:
     answer: "The typical product description was about 380 characters, roughly 60 words. 25% of stores had at least a quarter of their products under 150 characters."
 ---
 
-**By Carson Cobb, AI Search and CRO for Shopify Brands. Data checked November 2026. Last updated November 2026.**
+**By Carson Cobb. Data checked November 2026.**
 
 The product page is where the sale happens or doesn't. Most advice about product pages is opinion. This report is what 606 growing Shopify brands actually publish: how many photos, how much copy, how often video, and how they price. What AI reads from these pages is covered in the [product data depth report](/reports/shopify-product-data-depth-2026).
 

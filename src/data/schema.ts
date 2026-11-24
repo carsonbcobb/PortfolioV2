@@ -18,6 +18,9 @@ import {
   AGENCY_PARTNER_PLANS,
   AGENCY_PARTNER_INTRO,
   AGENCY_FAQS,
+  BIO,
+  BIO_ROLE,
+  BIO_SENTENCE,
 } from './site';
 
 const HOME = `${SITE_URL}/`;
@@ -48,6 +51,8 @@ const US = { '@type': 'Place', name: 'United States' };
 // Google flags date only values as invalid datetimes, so add a UTC time.
 const dt = (d: string) => (/^\d{4}-\d{2}-\d{2}$/.test(d) ? `${d}T00:00:00Z` : d);
 const WORLD = 'Worldwide';
+// Where the business works: US brands first, and brands anywhere.
+const AREAS = [{ '@type': 'Country', name: 'United States' }, WORLD];
 // Omits sameAs entirely when none of the profile URLs are set.
 const sameAs = (...urls: (string | null)[]) => {
   const list = urls.filter(Boolean);
@@ -62,9 +67,8 @@ const person = {
   name: 'Carson Cobb',
   url: HOME,
   image: new URL(HEADSHOT ?? '/logo.png', SITE_URL).href,
-  jobTitle: 'AI Search and CRO Specialist for Shopify Brands',
-  description:
-    "AI search and CRO specialist for Shopify brands. I get products recommended in ChatGPT and Google's AI answers, then make sure the store turns that traffic into sales. 50+ AI search projects, 30+ sites optimized for AI search and 50+ Shopify stores, from startups to billion dollar brands.",
+  jobTitle: BIO_ROLE,
+  description: BIO,
   email: EMAIL,
   ...sameAs(LINKEDIN_URL, GHOST_REVENUE_URL, LINKEDIN_COMPANY_URL),
   knowsLanguage: 'en',
@@ -76,43 +80,34 @@ const person = {
     'AI search optimization',
     'Generative engine optimization',
     'Answer engine optimization',
-    'Shopify',
-    'Shopify Plus',
     'Conversion rate optimization',
-    'A/B testing',
-    'Structured data',
-    'Schema.org',
-    'Product data',
-    'Ecommerce analytics',
-    'Klaviyo',
-    'Shopify subscriptions',
-    'Recharge',
-    'Skio',
+    'Shopify',
+    'Product structured data',
   ],
   worksFor: ref(ID.business),
   contactPoint: ref(ID.contact),
 };
 
 const business = {
-  '@type': 'Organization',
+  '@type': 'ProfessionalService',
   '@id': ID.business,
   name: 'Carson Cobb',
   url: HOME,
   logo: `${SITE_URL}/logo.png`,
-  description:
-    'AI search and conversion rate optimization for Shopify brands: getting products recommended in ChatGPT and Google AI answers, structured data, and store conversion work, from finding the gap to closing it.',
+  image: `${SITE_URL}/logo.png`,
+  description: BIO_SENTENCE,
   knowsAbout: [
-    'AI search',
-    'Answer engine optimization (AEO)',
-    'Generative engine optimization (GEO)',
-    'Structured data',
+    'AI search optimization',
+    'Generative engine optimization',
+    'Answer engine optimization',
     'Conversion rate optimization',
-    'A/B testing',
     'Shopify',
+    'Product structured data',
   ],
   founder: ref(ID.carson),
-  ...sameAs(LINKEDIN_COMPANY_URL),
-  areaServed: WORLD,
+  employee: ref(ID.carson),
+  ...sameAs(LINKEDIN_COMPANY_URL, LINKEDIN_URL),
+  areaServed: AREAS,
   contactPoint: ref(ID.contact),
 };
 
@@ -227,6 +222,17 @@ const sizeOffer = (z: (typeof PROGRAM_SIZES)[number]) => ({
   availability: 'https://schema.org/InStock',
 });
 
+const fullAuditOffer = () =>
+  offer({
+    id: `${FULL_AUDIT_URL}#offer`,
+    name: FULL_AUDIT.name,
+    description: `${FULL_AUDIT.timing} ${FULL_AUDIT.walkthrough} ${TERMS.ownership}`,
+    url: FULL_AUDIT_URL,
+    service: PLAN.fullAudit,
+    price: FULL_AUDIT.price,
+    unit: 'once',
+  });
+
 const planServices: Record<PlanKey, () => object> = {
   program: () => ({
     '@type': 'Service',
@@ -235,8 +241,8 @@ const planServices: Record<PlanKey, () => object> = {
     serviceType: 'AI search optimization against competitors',
     description: `${PROGRAM.summary} ${PROGRAM.after}`,
     url: PROGRAM_URL,
-    provider: ref(ID.carson),
-    areaServed: WORLD,
+    provider: ref(ID.business),
+    areaServed: AREAS,
     audience: audience(FIT_LINE),
     availableChannel: channel(),
     serviceOutput: output(
@@ -252,20 +258,12 @@ const planServices: Record<PlanKey, () => object> = {
     serviceType: 'Shopify conversion audit',
     description: FULL_AUDIT.summary,
     url: FULL_AUDIT_URL,
-    provider: ref(ID.carson),
-    areaServed: WORLD,
+    provider: ref(ID.business),
+    areaServed: AREAS,
     audience: audience(FIT_LINE),
     availableChannel: channel('P2D'),
     serviceOutput: output('Written report, ranked fixes and recorded video walkthrough', sentenceList(FULL_AUDIT.includes)),
-    offers: offer({
-      id: `${FULL_AUDIT_URL}#offer`,
-      name: FULL_AUDIT.name,
-      description: `${FULL_AUDIT.timing} ${FULL_AUDIT.walkthrough} ${TERMS.ownership}`,
-      url: FULL_AUDIT_URL,
-      service: PLAN.fullAudit,
-      price: FULL_AUDIT.price,
-      unit: 'once',
-    }),
+    offers: fullAuditOffer(),
   }),
 };
 
@@ -311,15 +309,14 @@ export function homeSchema(meta: { title: string; description: string; faqs: { q
         serviceType: 'AI search optimization and conversion rate optimization',
         description:
           'I show Shopify brands exactly where their competitors beat them in ChatGPT, Gemini and Google AI Mode, product by product, and what it is costing them. Then I close the gap, and make sure the shoppers AI sends actually buy. Founders stay in control: I propose, you decide.',
-        provider: ref(ID.carson),
-        areaServed: WORLD,
+        provider: ref(ID.business),
+        areaServed: AREAS,
         audience: BRAND_AUDIENCE,
         availableChannel: [CHECK_CHANNEL, channel()],
         serviceOutput: BRAND_OUTPUT,
         offers: summaryOffers(HOME, ID.brandService),
         isRelatedTo: Object.values(PLAN).map(ref),
       },
-      ...planNodes(),
       faqPage(ID.homeFaq, ID.homePage, meta.faqs),
     ],
   };
@@ -354,8 +351,8 @@ export function pricingSchema(meta: { title: string; description: string; faqs: 
         description:
           'Close the Gap, a 90 day program in two sizes, the Full Store Audit, and the AI Visibility Check.',
         url: PRICING_URL,
-        provider: ref(ID.carson),
-        areaServed: WORLD,
+        provider: ref(ID.business),
+        areaServed: AREAS,
         audience: BRAND_AUDIENCE,
         availableChannel: channel(),
         serviceOutput: BRAND_OUTPUT,
@@ -365,9 +362,8 @@ export function pricingSchema(meta: { title: string; description: string; faqs: 
         '@type': 'OfferCatalog',
         '@id': ID.pricingCatalog,
         name: 'AI search and CRO plans for Shopify brands',
-        itemListElement: Object.values(PLAN).map(ref),
+        itemListElement: [...PROGRAM_SIZES.map(sizeOffer), fullAuditOffer()],
       },
-      ...planNodes(),
       faqPage(`${PRICING_URL}#faq`, pageId, meta.faqs),
     ],
   };
@@ -449,7 +445,7 @@ export function checkSchema(meta: { title: string; description: string; faqs: { 
         ],
         offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD' },
         author: ref(ID.carson),
-        provider: ref(ID.carson),
+        provider: ref(ID.business),
         inLanguage: 'en-US',
       },
       faqPage(`${url}#faq`, pageId, meta.faqs),
@@ -510,8 +506,8 @@ export function agenciesSchema(meta: { title: string; description: string }) {
         name: 'White Label AI Search and CRO Implementation for Agencies',
         serviceType: 'White label AI search optimization and conversion rate optimization',
         description: AGENCY_DESCRIPTION,
-        provider: ref(ID.carson),
-        areaServed: WORLD,
+        provider: ref(ID.business),
+        areaServed: AREAS,
         audience: {
           '@type': 'BusinessAudience',
           audienceType: 'Marketing and ecommerce agencies',
@@ -595,16 +591,22 @@ export function contentSchema(p: ContentSchemaInput) {
       serviceType: p.service.serviceType,
       description: p.description,
       url,
-      provider: ref(ID.carson),
-      areaServed: WORLD,
+      provider: ref(ID.business),
+      areaServed: AREAS,
       audience: { '@type': 'BusinessAudience', audienceType: p.service.audience, ...(p.service.offers === true ? { description: FIT_LINE } : {}) },
       availableChannel: p.service.offers === 'only' ? [CHECK_CHANNEL] : [CHECK_CHANNEL, channel()],
       // The AI search and CRO pages sell both Close the Gap sizes directly.
       ...(p.service.offers === true ? { serviceOutput: BRAND_OUTPUT } : {}),
-      ...(p.service.offers ? { offers: summaryOffers(url, serviceId) } : {}),
+      ...(p.service.offers || p.service.plans?.includes('fullAudit')
+        ? {
+            offers: [
+              ...(p.service.offers ? summaryOffers(url, serviceId) : []),
+              ...(p.service.plans?.includes('fullAudit') ? [fullAuditOffer()] : []),
+            ],
+          }
+        : {}),
       ...(p.service.plans ? { isRelatedTo: p.service.plans.map((k) => ref(PLAN[k])) } : {}),
     });
-    if (p.service.plans) graph.push(...planNodes(p.service.plans));
   }
 
   if (p.article) {
@@ -664,7 +666,7 @@ export function toolSchema(t: { slug: string; name: string; title: string; descr
         isAccessibleForFree: true,
         offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD' },
         author: ref(ID.carson),
-        provider: ref(ID.carson),
+        provider: ref(ID.business),
         inLanguage: 'en-US',
       },
       ...(faqs.length ? [faqPage(`${url}#faq`, pageId, faqs)] : []),

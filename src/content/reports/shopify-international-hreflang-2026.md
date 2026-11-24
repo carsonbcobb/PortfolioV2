@@ -1,10 +1,11 @@
 ---
-title: "Shopify International SEO 2026: Who Ships Abroad and Who Uses Hreflang | Carson Cobb"
-description: "18% of Shopify brand stores ship to 150+ countries, but only 31% of stores shipping to more than 50 countries use hreflang. 21% use it overall. Data from 585 to 609 stores."
+title: "Shopify Hreflang 2026: Who Ships Abroad and Who Uses It"
+description: "18% of Shopify brand stores ship to 150 or more countries, but only 21% of homepages use hreflang, and 31% of stores shipping to more than 50 countries."
 slug: "/reports/shopify-international-hreflang-2026"
 h1: "Shopify brands ship worldwide, but most don't tell search engines which market a page is for"
+answer: "Most Shopify brands that ship abroad don't use hreflang to tell search engines which page is for which market. In my November 2026 check, only 21% of 609 Shopify brand homepages had hreflang tags. Even among stores shipping to more than 50 countries, only 31% used it, though 18% of 585 stores ship to 150 or more countries."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 reportStores: 617
 faq:
   - question: "How many Shopify stores ship internationally?"

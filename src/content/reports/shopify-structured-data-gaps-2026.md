@@ -1,10 +1,11 @@
 ---
-title: "Shopify Structured Data Gaps: 107 Homepages, 104 Product Pages | Carson Cobb"
-description: "12% of Shopify product pages had no Product structured data, 22% had two or more copies, and 16% of homepages had no structured data at all. What breaks and how to fix it."
+title: "Shopify Structured Data Gaps 2026: 107 Stores Checked"
+description: "12% of Shopify product pages have no Product structured data, 22% have two or more copies and 16% of homepages have none. What breaks and how to fix it."
 slug: "/reports/shopify-structured-data-gaps-2026"
 h1: "Missing, doubled or broken: structured data on 107 Shopify stores"
+answer: "Shopify structured data is often missing or doubled. In my November 2026 check of 107 Shopify brand stores, 12% of product pages had no Product structured data and 22% had two or more Product blocks, usually one from the theme and one from an app. 16% of homepages had no structured data at all, and broken code was rare."
 datePublished: 2026-11-16
-dateModified: 2026-11-16
+dateModified: 2026-11-23
 reportStores: 107
 faq:
   - question: "Do all Shopify product pages have Product structured data?"

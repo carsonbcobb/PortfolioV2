@@ -20,7 +20,8 @@ interface Props {
   intro?: string;
   /** Breadcrumb trail after Home; the last item is this page */
   trail: { name: string; href?: string }[];
-  /** Reports: ISO dates shown under the H1 as month and year. Updated only shows when its month differs from published. */
+  /** Reports, guides and comparison pages: ISO dates shown under the H1 as month and year, with the byline.
+   *  Last updated always shows; Published shows only when its month differs. */
   dates?: { published?: string; modified?: string };
   faqs?: { q: string; a: string; link?: { text: string; href: string } }[];
   /** Closing call to action heading, if not the default */
@@ -50,8 +51,9 @@ const {
   faqCollapsed = false,
   jsonLd,
 } = Astro.props;
-const updated =
-  dates?.modified && !(dates.published && sameMonth(dates.modified, dates.published)) ? dates.modified : undefined;
+const updated = dates?.modified ?? dates?.published;
+const published =
+  dates?.published && updated && !sameMonth(updated, dates.published) ? dates.published : undefined;
 ---
 
 <HomeLayout {title} {description} {jsonLd}>
@@ -76,18 +78,19 @@ const updated =
         {intro && <p class="hero__sub">{intro}</p>}
         <slot name="hero" />
         {
-          (dates?.published || updated) && (
+          updated && (
             <p class="page-hero__dates">
-              {dates?.published && (
+              <span>
+                By <a href="/about" rel="author">Carson Cobb</a>
+              </span>
+              {published && (
                 <span>
-                  Published <time datetime={dates.published}>{monthYear(dates.published)}</time>
+                  Published <time datetime={published}>{monthYear(published)}</time>
                 </span>
               )}
-              {updated && (
-                <span>
-                  Updated <time datetime={updated}>{monthYear(updated)}</time>
-                </span>
-              )}
+              <span>
+                Last updated <time datetime={updated}>{monthYear(updated)}</time>
+              </span>
             </p>
           )
         }

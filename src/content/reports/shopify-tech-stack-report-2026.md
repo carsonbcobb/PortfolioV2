@@ -1,10 +1,11 @@
 ---
-title: "Shopify Tech Stack Report 2026: What Growing Brands Load"
-description: "The email, reviews, testing and analytics tools growing Shopify brands load on their homepage, plus themes and free shipping lines. Data from 153 stores."
+title: "Shopify Tech Stack Report 2026: What 153 Brands Load"
+description: "87% of 153 Shopify brands load Klaviyo, 82% a reviews app and only 23% an A/B testing tool. The typical homepage loads code from 20 outside companies."
 slug: "/reports/shopify-tech-stack-report-2026"
 h1: "Shopify Tech Stack Report 2026"
+answer: "Klaviyo is close to universal in the Shopify tech stack. In my November 2026 check of 153 growing Shopify brand homepages, 87% loaded Klaviyo, 82% loaded a reviews app and 31% ran a separate SMS tool. Only 23% loaded an A/B testing tool, and the typical homepage loaded code from 20 outside companies."
 datePublished: 2026-11-01
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 reportStores: 153
 faq:
   - question: "What email platform do Shopify brands use most?"
@@ -17,7 +18,7 @@ faq:
     answer: "Dawn, Shopify's free theme, was the most common base theme at 14% of stores. Most other stores used a paid theme or a custom build."
 ---
 
-**By Carson Cobb, AI Search and CRO for Shopify Brands. Data checked November 2026. Last updated November 2026.**
+**By Carson Cobb. Data checked November 2026.**
 
 App vendors publish case studies. Agencies publish their favorite stacks. Neither tells you what growing brands actually run. For this report I loaded the homepages of 153 Shopify stores in a real browser and recorded every outside service each page called: email, reviews, support, testing, analytics, ads and more.
 

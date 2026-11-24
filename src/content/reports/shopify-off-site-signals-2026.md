@@ -1,10 +1,11 @@
 ---
-title: "Social and Press Signals on 107 Shopify Brand Sites | Carson Cobb"
-description: "94% of Shopify brands link Instagram but only 45% link YouTube, the network Google AI Mode cited in 18 of 48 answers. Just 14% show press mentions on the homepage."
+title: "Social and Press Signals for AI: 107 Shopify Brands"
+description: "94% of Shopify brands link Instagram but only 45% link YouTube, which Google AI Mode cited in 18 of 48 answers. Only 14% show press on the homepage."
 slug: "/reports/shopify-off-site-signals-2026"
 h1: "Which social and press signals Shopify brands show, and which AI uses"
+answer: "Shopify brands mostly link Instagram, not the sources AI cites. In my November 2026 check of 107 Shopify brand homepages, 94% linked Instagram but only 45% linked YouTube, even though Google AI Mode cited YouTube in 18 of 48 answers. Only 14% showed press mentions on the homepage, and 34 of 105 stores had a press page."
 datePublished: 2026-11-16
-dateModified: 2026-11-16
+dateModified: 2026-11-23
 reportStores: 107
 faq:
   - question: "Which social networks do Shopify brands link to?"

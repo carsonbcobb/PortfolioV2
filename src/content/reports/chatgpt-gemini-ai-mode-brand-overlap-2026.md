@@ -1,16 +1,17 @@
 ---
-title: "ChatGPT vs Gemini vs AI Mode: Same Brands? | Carson Cobb"
-description: "I asked ChatGPT, Gemini and Google AI Mode the same 48 buyer questions. Only 23% of the brands named came from all three AIs."
+title: "ChatGPT vs Gemini vs Google AI Mode: Same Brands? (2026)"
+description: "No. Asked the same 48 buyer questions, ChatGPT, Gemini and Google AI Mode agreed on only 23% of brands and picked the same top brand in 15 of 45."
 slug: "/reports/chatgpt-gemini-ai-mode-brand-overlap-2026"
 h1: "ChatGPT, Gemini and Google AI Mode don't recommend the same brands"
+answer: "ChatGPT, Gemini and Google AI Mode mostly recommend different brands. When I asked all three the same 48 buyer questions in November 2026, only 23% of the brands named came from all three, 53% were named by just one, and all three picked the same top brand in only 15 of 45 questions. Tracking one AI hides most of the picture."
 datePublished: 2026-11-06
-dateModified: 2026-11-06
+dateModified: 2026-11-23
 reportStores: 94
 faq:
   - question: "Do ChatGPT, Gemini and Google AI Mode recommend the same brands?"
     answer: "Mostly not. Across 45 buyer questions where all three named brands, 53% of the brands appeared in only one of the three answers and 23% appeared in all three. All three picked the same brand first in 15 of 45 questions."
   - question: "Which AI names the most brands per answer?"
-    answer: "In November 2026, Gemini named a median of 6 brands per answer, Google AI Mode 5 and ChatGPT 4. ChatGPT's lists were also the most mainstream: only 21% of the brands it named were named by neither of the other two, against 34% for Gemini and 36% for AI Mode."
+    answer: "In November 2026, Gemini and Google AI Mode named a median of 5 brands per answer and ChatGPT 4. ChatGPT's lists were also the most mainstream: only 21% of the brands it named were named by neither of the other two, against 34% for Gemini and 36% for AI Mode."
   - question: "If ChatGPT recommends my brand, will Gemini and AI Mode too?"
     answer: "Not reliably. When ChatGPT put a brand first, both Gemini and AI Mode named that brand somewhere in their answer 31 times out of 45. Being the top pick on one AI improves your odds on the others, but you need to check each one."
   - question: "Is it enough to track ChatGPT only?"
@@ -27,7 +28,7 @@ They agree less than most people assume.
 
 - **Only 23% of the brands named came from all three AIs.** 53% were named by just one of them.
 - **They picked the same top brand 15 times out of 45.** Any two of them agreed on the first pick about 4 to 5 times in 10.
-- **Gemini and AI Mode name more brands than ChatGPT.** Median per answer: Gemini 6, AI Mode 5, ChatGPT 4.
+- **Gemini and AI Mode name more brands than ChatGPT.** Median per answer: Gemini 5, AI Mode 5, ChatGPT 4.
 - **ChatGPT plays it safest.** Only 21% of its brands were named by neither of the others, against 34% for Gemini and 36% for AI Mode.
 - **Repeat runs of ChatGPT agree with each other more than ChatGPT agrees with Gemini or AI Mode.** The gap between tools is bigger than the randomness inside one tool.
 - **Growing Shopify brands held up well across tools.** When one of them was named, it was named by all three 41% of the time, against 18% for every other brand.
@@ -59,7 +60,15 @@ For each pair of AIs, I measured what share of all the brands they named for a q
 | ChatGPT and AI Mode | 39% | 19 of 45 |
 | All three | 23% of all brands | 15 of 45 |
 
-ChatGPT and Gemini were the closest pair. Google's two products, Gemini and AI Mode, were no closer to each other than either was to ChatGPT, which surprises people who assume they share one brain. AI Mode leans heavily on what ranks in Google's results and on the product cards it shows, while Gemini writes longer, more opinionated lists.
+ChatGPT and Gemini were the closest pair.
+
+## Is Google AI Mode the same as ChatGPT?
+
+No. ChatGPT and Google AI Mode shared 39% of the brands they named for a question, on average, and picked the same top brand in 19 of 45 questions, the lowest of the three pairs. ChatGPT answers from its own knowledge plus a web search that leans on review sites, testing sites and magazines. AI Mode pulls from Google's own results, product listings, Reddit, YouTube and brand websites, and shows product cards. More on how the two shop differently in [ChatGPT vs Google AI Mode for shopping](/reports/chatgpt-vs-google-ai-mode-shopping-2026).
+
+## AI Mode vs Gemini
+
+Google's two products, Gemini and AI Mode, were no closer to each other than either was to ChatGPT, which surprises people who assume they share one brain. They shared 39% of brands on average and picked the same top brand in 21 of 45 questions. AI Mode leans heavily on what ranks in Google's results and on the product cards it shows, while Gemini writes longer, more opinionated lists, often adding a craft or specialist tier, and shows fewer links.
 
 ## Top picks travel better than the rest of the list
 
@@ -78,7 +87,7 @@ Being first on one AI is a good sign you're at least in the answer on the others
 | | ChatGPT | Gemini | Google AI Mode |
 | --- | --- | --- | --- |
 | Answers naming brands | 45 of 48 | 45 of 48 | 45 of 48 |
-| Median brands per answer | 4 | 6 | 5 |
+| Median brands per answer | 4 | 5 | 5 |
 | Most brands in one answer | 8 | 12 | 11 |
 | Brands no other AI named | 21% | 34% | 36% |
 
@@ -86,7 +95,7 @@ ChatGPT gave the shortest lists and the most mainstream ones. Gemini went wider,
 
 For a brand, this means each AI has a different shape of opportunity. ChatGPT has fewer seats, and they go mostly to brands the editorial lists already agree on. Gemini and AI Mode have more seats and more room for a brand that isn't the obvious pick.
 
-ChatGPT names a median of 4 brands per answer. Gemini and Google AI Mode name a median of 5. More in [how many brands AI recommends](/reports/how-many-brands-ai-recommends-2026) and [how Gemini recommends products](/reports/how-gemini-chooses-products-2026).
+More on list length in [how many brands AI recommends](/reports/how-many-brands-ai-recommends-2026) and [how Gemini recommends products](/reports/how-gemini-chooses-products-2026).
 
 ## Which product types agree the most
 
@@ -134,7 +143,7 @@ Different inputs produce different shortlists. A brand that is well covered by e
 3. **Look at the brands named by all three.** That shared core is the bar for your product. Find what they have in common: the review sites, testing roundups and Reddit threads behind them.
 4. **Treat each AI as its own channel.** AI Mode rewards what ranks in Google and clear product data on your own site. ChatGPT rewards editorial coverage. Gemini sits in between.
 
-If the brands named by all three are always your competitors, my guide on [why ChatGPT recommends your competitor](/guides/why-chatgpt-doesnt-recommend-my-shopify-store) covers the usual reasons. Getting into that shared core on each AI is what my [AI search optimization for Shopify brands](/ai-search) is built around.
+If the brands named by all three are always your competitors, my guide on [why ChatGPT recommends your competitor](/guides/why-chatgpt-recommends-my-competitor) covers the usual reasons. Getting into that shared core on each AI is what my [AI search optimization for Shopify brands](/ai-search) is built around.
 
 If you want to see where your products stand on all three, that's what [Close the Gap](/close-the-gap) covers. Or start with the [AI Visibility Check](/ai-visibility-check).
 

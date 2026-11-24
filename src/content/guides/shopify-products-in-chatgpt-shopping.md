@@ -1,10 +1,11 @@
 ---
-title: "How to Get Shopify Products Into ChatGPT Shopping (2026) | Carson Cobb"
-description: "How Shopify products show up in ChatGPT: eligibility, the Agentic sales channel, the common reasons products are missing, and what decides which ones get recommended."
+title: "How to Get Shopify Products Into ChatGPT Shopping (2026)"
+description: "Shopify shares products with ChatGPT through the Agentic sales channel, on by default for most stores. Being chosen takes sources and clear product pages."
 slug: "/guides/shopify-products-in-chatgpt-shopping"
 h1: "How to get your Shopify products into ChatGPT shopping"
+answer: "To get Shopify products into ChatGPT shopping, two things have to happen. Your products have to be available to ChatGPT, which Shopify handles through Shopify Catalog in the Agentic sales channel, on by default for most stores. Then ChatGPT has to choose them, which depends on the outside sources it trusts and product pages that answer the shopper's question."
 datePublished: 2026-11-09
-dateModified: 2026-11-09
+dateModified: 2026-11-23
 faq:
   - question: "How do I connect my Shopify store to ChatGPT?"
     answer: "For most stores it's already on. Shopify shares eligible products with ChatGPT through Shopify Catalog. You can check the setting in your Shopify admin under Sales channels, then Agentic, then ChatGPT. Your store needs to sell to US customers, have its terms of service, privacy policy and refund policy filled in, and have products that qualify for Shopify Catalog."
@@ -15,8 +16,6 @@ faq:
   - question: "Does being in Shopify Catalog mean ChatGPT will recommend my products?"
     answer: "No. Catalog makes your products available to ChatGPT. Whether they get recommended depends on how well your product pages answer the shopper's question and what other sources say about your brand compared with competitors."
 ---
-
-**By Carson Cobb. Updated November 2026.**
 
 Two separate things have to happen for a shopper to buy from you through ChatGPT. Your products have to be **available** to ChatGPT, and ChatGPT has to **choose** them. Most guides only cover the first one. It's the easy part.
 

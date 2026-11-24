@@ -1,10 +1,11 @@
 ---
-title: "Which Pages Shopify Brands Publish: 2026 Benchmarks From 595 Stores | Carson Cobb"
-description: "89% of Shopify brands have an about page and 80% a FAQ, but only 40% have a product quiz, 24% a science or testing page and 11% a comparison page. Benchmarks from 595 stores' page sitemaps."
+title: "Which Pages Shopify Brands Publish: 2026 Benchmarks"
+description: "89% of Shopify brands have an about page and 80% a FAQ, but only 40% have a product quiz, 24% a testing page and 11% a comparison page. From 595 stores."
 slug: "/reports/shopify-store-pages-benchmarks-2026"
 h1: "Which pages Shopify brands publish, and which ones most skip"
+answer: "Almost every Shopify brand has an about, contact and FAQ page, but few publish the pages that help shoppers decide. In my November 2026 check of 595 Shopify brand stores' page sitemaps, 89% had an about page and 80% a FAQ, but only 40% had a product quiz, 24% a science or testing page and 11% a comparison page."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 cta: cro
 reportStores: 599
 faq:

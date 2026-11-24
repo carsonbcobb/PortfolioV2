@@ -1,10 +1,11 @@
 ---
-title: "Does ChatGPT Recommend Products or Brands? 181 Picks | Carson Cobb"
-description: "About 6 in 10 of ChatGPT's shopping picks named a specific product, not just a brand. 23 of 37 ranked lists were all products. Why your product names matter."
+title: "Does ChatGPT Recommend Products or Brands? 181 Picks"
+description: "107 of 181 ChatGPT shopping picks (59%) named a specific product, not just a brand, and 23 of 37 ranked lists were all products. Why product names matter."
 slug: "/reports/does-ai-recommend-products-or-brands-2026"
 h1: "Does ChatGPT recommend your brand, or one of your products?"
+answer: "ChatGPT mostly recommends specific products, not just brands. In my November 2026 test of 48 buyer questions, 107 of 181 ranked picks (59%) named a specific product, and 23 of 37 ranked lists named only products. ChatGPT named brands mainly when the question asked for brands or stores. When it names a product, that exact name is what the shopper searches next."
 datePublished: 2026-11-16
-dateModified: 2026-11-16
+dateModified: 2026-11-23
 faq:
   - question: "Does ChatGPT recommend brands or specific products?"
     answer: "Mostly specific products. Of 181 ranked picks in 37 ChatGPT shopping answers I analyzed in November 2026, about 6 in 10 (107) named a specific product. 23 of the 37 lists named only products, 6 named only brands and 8 mixed the two."

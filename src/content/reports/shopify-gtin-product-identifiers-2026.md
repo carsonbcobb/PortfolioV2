@@ -1,10 +1,11 @@
 ---
-title: "GTINs on Shopify 2026: 77% of Product Pages Hide the Barcode From AI | Carson Cobb"
-description: "Only 23% of Shopify product pages put a GTIN in their structured data, and 41% have a GTIN or MPN. Data from 516 product pages, and why identifiers matter for AI shopping."
+title: "GTINs on Shopify 2026: Only 23% of Product Pages Have One"
+description: "Only 23% of 516 Shopify product pages put a GTIN in structured data and 41% have a GTIN or MPN. Apparel leads at 40%. Why identifiers matter for AI."
 slug: "/reports/shopify-gtin-product-identifiers-2026"
 h1: "GTINs on Shopify: most product pages don't tell AI which product they are"
+answer: "Most Shopify product pages don't include a GTIN. In my November 2026 check of 516 Shopify product pages with Product structured data, only 23% included a GTIN and 41% had a GTIN or an MPN. Apparel led at 40%, while beauty and food trailed at 15%. Without a GTIN, AI tools have a harder time matching the exact product."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 reportStores: 617
 faq:
   - question: "What is a GTIN and why does it matter for AI search?"

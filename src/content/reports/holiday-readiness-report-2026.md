@@ -1,10 +1,11 @@
 ---
 title: "Shopify Holiday Readiness Report 2026: Gifts and Bundles"
-description: "How many Shopify brands have a gift collection, a gift card and bundles live before the holidays, by category. Data from 606 stores checked November 2026."
+description: "62% of 606 Shopify stores had a gift collection live in November 2026, 54% sold a gift card and 25% had neither. Supplement brands trail at 29%."
 slug: "/reports/holiday-readiness-report-2026"
 h1: "Shopify Holiday Readiness Report 2026"
+answer: "In my November 2026 holiday readiness check of 606 Shopify stores, 62% had a gift collection live with products in it, 54% sold a gift card and 81% had a bundle, kit, set or pack collection. 25% had neither a gift collection nor a gift card. Supplement brands were least ready: only 29% had a gift collection."
 datePublished: 2026-11-01
-dateModified: 2026-11-01
+dateModified: 2026-11-23
 reportStores: 606
 faq:
   - question: "How many Shopify stores have a gift collection before the holidays?"
@@ -15,7 +16,7 @@ faq:
     answer: "Supplement and pet brands. 45% of supplement stores and 39% of pet stores had neither a gift collection nor a gift card in early November."
 ---
 
-**By Carson Cobb, AI Search and CRO for Shopify Brands. Data checked November 2026. Last updated November 2026.**
+**By Carson Cobb. Data checked November 2026.**
 
 Holiday shoppers are buying for someone else. They don't know your product, they don't know which size to pick, and they're shopping on a deadline. The brands that win the season make that easy with three things: a gift collection, a gift card and bundles that work as gifts.
 

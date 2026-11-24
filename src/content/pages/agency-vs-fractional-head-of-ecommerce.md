@@ -1,10 +1,11 @@
 ---
-title: "Fractional Specialist vs Agency for Shopify: Cost and When Each Wins"
-description: "What a fractional specialist and a full service agency really cost a Shopify brand each month, what you get for it, and the signs you've outgrown either one."
+title: "Fractional SEO vs Full Service Agency for Ecommerce (2026)"
+description: "A fractional specialist fits brands that need one senior lead on SEO, AI search and conversion. An agency fits brands shipping many channels at once."
 slug: "/agency-vs-fractional-head-of-ecommerce"
 h1: "Fractional vs full service agency for ecommerce: which one does your brand need?"
+answer: "A fractional SEO specialist is the better fit for most growing ecommerce brands that need one senior person leading SEO, AI search and conversion work, with nobody in between. A full service agency fits brands that need a large team shipping many channels at once, such as paid ads, creative and development. The right pick depends on how much work you need done in parallel."
 datePublished: 2026-10-31
-dateModified: 2026-11-20
+dateModified: 2026-11-23
 faq:
   - question: "Is a fractional head of ecommerce cheaper than an agency?"
     answer: "Often, but not always. A fractional head of ecommerce engagement with me is scoped to your brand. Email me what you need and I'll send back a scope and a price. What usually makes a fractional lead cheaper in practice is replacing several vendor invoices with one, and cutting the time you spend managing them."
@@ -19,8 +20,6 @@ faq:
   - question: "How do I try this without a big commitment?"
     answer: "Start with your gap report, which takes about a minute, no login, or the Full Store Audit, $1,997 one time. For AI search, Close the Gap is $2,500 a month with a 3 month commitment."
 ---
-
-**By Carson Cobb. Last updated November 2026.**
 
 **The short answer.** A fractional specialist is the better pick for most growing Shopify brands whose store already has traffic and needs one senior person leading SEO, AI search and conversion work. A full service agency wins when you need many channels or a large scoped project like a rebrand run at once, and you have someone in house to manage it.
 
@@ -57,7 +56,7 @@ A fractional specialist gives your Shopify brand one senior person on your SEO, 
 
 Many brands use both: a fractional lead sets the plan and the numbers, and briefs the agency on the work it does best.
 
-If the gap is that AI names other brands when shoppers ask about products like yours, start with my guide on [why ChatGPT recommends your competitor](/guides/why-chatgpt-doesnt-recommend-my-shopify-store). It shows what decides those picks and what a specialist would fix first.
+If the gap is that AI names other brands when shoppers ask about products like yours, start with my guide on [why ChatGPT recommends your competitor](/guides/why-chatgpt-recommends-my-competitor). It shows what decides those picks and what a specialist would fix first.
 
 ## Costs: what you're actually paying for
 
@@ -69,7 +68,7 @@ With a full time hire, you pay a salary whether there's a full month of senior w
 
 With a fractional head of ecommerce, you pay one monthly fee, and the management is part of the job. My options:
 
-* **[Close the Gap](/close-the-gap), $2,500 a month with a 3 month commitment.** A 90 day program against your main competitors in ChatGPT, Gemini and Google AI Mode: the head to head, the on site fixes implemented, source work, and a competitor report every week or two. Focus is $2,500 a month and Full is $5,000 a month, each with a 3 month commitment.
+* **[Close the Gap](/close-the-gap), $2,500 a month with a 3 month commitment.** A 90 day program against your main competitors in ChatGPT, Gemini and Google AI Mode: the head to head, every on site fix ready to ship or implemented for you, source work, and a competitor report every week or two. Focus is $2,500 a month and Full is $5,000 a month, each with a 3 month commitment.
 * **[Full Store Audit](/full-store-audit), $1,997 one time.** Every page on mobile and desktop, cart and checkout, email flows, analytics and subscriptions, with every fix ranked by what it's worth.
 * **Fractional head of ecommerce, custom.** Your ecommerce lead, working at your direction: the plan, launches, Klaviyo, apps and vendors. [Email me what you need](mailto:carson@carsoncobb.com?subject=Fractional%20head%20of%20ecommerce) and I'll send back a scope and a price.
 
@@ -114,6 +113,20 @@ A fractional lead tends to fit better when:
 * You aren't ready for a $150K+ a year hire, or you want to get the channel in shape before you make one.
 
 Here's what that looks like in practice. In the first 90 days, I fix tracking, speed and key pages in month 1, raise order value with upsells, subscriptions and email in month 2, and set up a testing plan and promo calendar in month 3. In a sample month for a skincare client, conversion went from 2.1% to 3.2% and average order value from $58 to $64. More on my [fractional head of ecommerce page](/fractional-head-of-ecommerce).
+
+## Should you hire an agency or a specialist for AI search and CRO?
+
+For most Shopify brands, a specialist. AI search and conversion are one job: getting your products recommended in ChatGPT, Gemini and Google AI Mode only pays if the page AI sends shoppers to turns them into buyers. An agency often splits that across an SEO team, a content team and a CRO team. A specialist does both, and the person who finds the problem is the person who fixes it. An agency makes more sense when AI search is one line item in a bigger program that also needs ads, creative and development at volume.
+
+Whichever you talk to, ask these before you hire:
+
+* **How do you check whether AI recommends us?** You want repeated runs of how real shoppers ask, in ChatGPT, Gemini and Google AI Mode, because answers change between runs. One screenshot proves nothing.
+* **Who makes the fixes?** Find out whether you get a report, fixes written for your team, or fixes made for you.
+* **What do you do off our site?** Most picks come from outside sources like review sites and articles, so the answer should include them.
+* **How do you connect AI visibility to sales?** Look for AI referral traffic, branded search and post purchase survey answers, plus conversion work on the pages AI sends shoppers to.
+* **Do you guarantee rankings in ChatGPT?** The right answer is no. No one controls AI answers.
+
+More on what good work looks like in [how to hire an AI search specialist](/guides/hire-ai-search-specialist-shopify), and how I do it on my [AI search optimization](/ai-search) page.
 
 ## Start with your gap report
 

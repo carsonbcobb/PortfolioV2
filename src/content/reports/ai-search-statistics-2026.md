@@ -1,10 +1,11 @@
 ---
-title: "AI Search Statistics 2026: How Shoppers Use ChatGPT and Google AI"
-description: "The numbers behind AI shopping in 2026: how often AI recommends brands, where it sends shoppers and how those visitors convert, with sources."
+title: "AI Search Statistics 2026: Shopping, Traffic and Brands"
+description: "77.6% of US shoppers used AI to shop, AI traffic to retail converted 90% better and ChatGPT names a median of 4 brands. 2026 AI search stats, sourced."
 slug: "/reports/ai-search-statistics-2026"
 h1: "AI search statistics for ecommerce, 2026"
+answer: "AI search is a small but fast growing source of shoppers in 2026. 77.6% of US consumers used AI to shop in the past six months (Exploding Topics). AI traffic to US retail sites converted 90% better than other traffic in September 2026 (Adobe). And in my November 2026 tests, ChatGPT named a median of just 4 brands per answer."
 datePublished: 2026-11-06
-dateModified: 2026-11-16
+dateModified: 2026-11-23
 reportStores: 94
 faq:
   - question: "How much retail traffic comes from AI in 2026?"
@@ -16,19 +17,28 @@ faq:
   - question: "How many people use Google AI Mode, Gemini and ChatGPT?"
     answer: "Alphabet said in July 2026 that AI Mode had passed 1 billion monthly users and the Gemini app had 950 million monthly users. OpenAI said in early 2026 that ChatGPT had about 900 million weekly users."
   - question: "How many brands does AI recommend per answer?"
-    answer: "Few. In my November 2026 tests of 48 buyer questions, the median answer named 4 brands on ChatGPT, 5 on Google AI Mode and 6 on Gemini. Only 23% of the brands named came from all three."
+    answer: "Few. In my November 2026 tests of 48 buyer questions, the median answer named 4 brands on ChatGPT and 5 on both Gemini and Google AI Mode. Only 23% of the brands named came from all three."
 ---
-
-**By Carson Cobb. Last updated November 2026.**
 
 A lot of what gets written about AI search is opinion. This page collects the numbers: what the big platforms and analytics companies have published about AI search and AI shopping in 2026, and what my own tests of ChatGPT, Gemini and Google AI Mode found. Every figure has a date and a source. I'll keep it updated.
 
-## How many people use AI search
+## Key statistics
+
+- **77.6% of US consumers used AI to shop** in the past six months. (Exploding Topics survey of 1,009 US consumers, 2026)
+- **AI traffic to US retail sites converted 90% better** than non AI traffic in September 2026, and grew 71% year over year. (Adobe Analytics, October 29, 2026)
+- **AI referred visitors to Shopify product pages converted about 49% more often** than organic search visitors in Q1 2026, with 14% larger orders. (Shopify, May 2026)
+- **Google AI Mode passed 1 billion monthly users** and the Gemini app reached 950 million. (Alphabet, July 2026)
+- **ChatGPT had about 900 million weekly users** in early 2026. (OpenAI)
+- **ChatGPT names a median of 4 brands per shopping answer.** Only 23% of brands named came from all three of ChatGPT, Gemini and Google AI Mode. (My tests of 48 buyer questions, November 2026)
+
+Sources for each are linked in the sections below.
+
+## How many people use AI search?
 
 - **Google AI Mode passed 1 billion monthly users,** and the **Gemini app reached 950 million monthly users,** Alphabet said on its Q2 2026 earnings call in July 2026. ([MarketBeat](https://www.marketbeat.com/instant-alerts/alphabet-q2-earnings-call-highlights-2026-07-22/))
 - **ChatGPT had about 900 million weekly users and about 50 million paying subscribers** in early 2026, according to OpenAI's head of ChatGPT. ([ROIC](https://www.roic.ai/news/openais-chatgpt-surpasses-900-million-weekly-users-50-million-paying-subscribers-02-27-2026))
 
-## How shoppers use AI
+## How do shoppers use AI?
 
 From a 2026 survey of 1,009 US consumers by Exploding Topics, a Semrush company ([Search Engine Land](https://searchengineland.com/new-data-77-use-ai-to-shop-nearly-1-in-3-wont-let-it-spend-475614)):
 
@@ -43,7 +53,7 @@ From an Adobe survey of 5,000 US online shoppers in 2026 ([Digital Commerce 360]
 - **77% of AI users said AI made them more confident in their purchases.**
 - **69% said they were less likely to return items.**
 
-## AI traffic and conversion
+## Does AI traffic convert better?
 
 From Adobe Analytics, based on more than 1 trillion visits to US retail sites ([Adobe, October 29, 2026](https://business.adobe.com/blog/ai-traffic-higher-revenue-per-visit-retail-holiday)):
 
@@ -88,7 +98,7 @@ From Adobe's 2026 holiday forecast ([Digital Commerce 360, September 29, 2026](h
 
 From my tests of ChatGPT, Gemini and Google AI Mode in November 2026, using 48 buyer questions across apparel, beauty and skincare, food and beverage, home, pet and supplements:
 
-- **AI names few brands.** Median brands per answer: ChatGPT 4, Google AI Mode 5, Gemini 6. ([ChatGPT vs Gemini vs Google AI Mode](/reports/chatgpt-gemini-ai-mode-brand-overlap-2026))
+- **AI names few brands.** Median brands per answer: ChatGPT 4, Gemini 5, Google AI Mode 5. ([ChatGPT vs Gemini vs Google AI Mode](/reports/chatgpt-gemini-ai-mode-brand-overlap-2026))
 - **The three AIs mostly disagree.** Only 23% of brands named came from all three, and 53% from just one. They picked the same top brand in 15 of 45 questions. ([ChatGPT vs Gemini vs Google AI Mode](/reports/chatgpt-gemini-ai-mode-brand-overlap-2026))
 - **The top pick is stable. The rest isn't.** On repeat runs of the same question, ChatGPT's first pick came back 98% of the time, but brands in fifth place or lower only 56%. ([How often AI recommendations change](/reports/how-often-ai-recommendations-change))
 - **Wording changes the answer more than randomness does.** Rewriting short questions the way shoppers really ask kept the same top pick in only 9 of 24 questions on ChatGPT and 8 of 24 on AI Mode. ([How question wording changes AI recommendations](/reports/how-question-wording-changes-ai-recommendations))
@@ -119,7 +129,7 @@ For a Shopify brand, that means three jobs: get into the short list on each AI, 
 
 ## What this means for your store
 
-If a competitor keeps showing up in these answers and you don't, the cause is usually the sources AI cites and how well your product pages answer the exact question. My guide on [why ChatGPT recommends your competitors and not you](/guides/why-chatgpt-doesnt-recommend-my-shopify-store) walks through the six usual reasons and what to fix first. Fixing both, and turning those visits into sales, is the work behind my [AI search optimization for Shopify brands](/ai-search).
+If a competitor keeps showing up in these answers and you don't, the cause is usually the sources AI cites and how well your product pages answer the exact question. My guide on [why ChatGPT recommends your competitors and not you](/guides/why-chatgpt-recommends-my-competitor) walks through the usual reasons and what to fix first. Fixing both, and turning those visits into sales, is the work behind my [AI search optimization for Shopify brands](/ai-search).
 
 To see where your own store stands, run the [AI Visibility Check](/ai-visibility-check). When you want those three jobs handled, that's the work behind [Close the Gap](/close-the-gap).
 

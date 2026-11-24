@@ -1,0 +1,14 @@
+[
+  { "source": "https://carsoncobb.com", "target": "https://www.carsoncobb.com", "status": "301" },
+  { "source": "/tools/store-check", "target": "/ai-visibility-check", "status": "301" },
+  { "source": "/gap-report", "target": "/ai-visibility-check", "status": "301" },
+  { "source": "/blog", "target": "/guides", "status": "301" },
+  { "source": "/blog/", "target": "/guides", "status": "301" },
+  { "source": "/blog/<*>", "target": "/guides", "status": "301" },
+  { "source": "/guides/why-chatgpt-doesnt-recommend-my-shopify-store", "target": "/guides/why-chatgpt-recommends-my-competitor", "status": "301" },
+  { "source": "/reports/product-data-depth-answer-first-content", "target": "/reports/shopify-product-data-depth-2026", "status": "301" },
+  { "source": "/recharge-vs-skio", "target": "/recharge-vs-skio-vs-loop", "status": "301" },
+  { "source": "/recharge-vs-loop", "target": "/recharge-vs-skio-vs-loop", "status": "301" },
+  { "source": "/skio-vs-loop", "target": "/recharge-vs-skio-vs-loop", "status": "301" },
+  { "source": "/<*>", "target": "/404.html", "status": "404-200" }
+]

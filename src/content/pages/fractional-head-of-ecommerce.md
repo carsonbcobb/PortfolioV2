@@ -1,8 +1,9 @@
 ---
-title: "Fractional Head of Ecommerce for Shopify Brands | Carson Cobb"
-description: "A senior ecommerce lead for your Shopify store without a full time hire: conversion, AI search, retention and the work done, not just advice."
+title: "Fractional Head of Ecommerce for Shopify: What I Do"
+description: "A fractional head of ecommerce leads your Shopify store without a $150K+ hire: the plan, numbers, pages, AI search, email and vendors, with the work done."
 slug: "/fractional-head-of-ecommerce"
 h1: "A fractional head of ecommerce for your Shopify store"
+answer: "Carson Cobb is an independent AI search and conversion specialist for Shopify brands who works as a fractional head of ecommerce. He leads the Shopify store the way a full time hire would: the plan, the numbers, product pages, AI search, email, subscriptions, apps and vendors. You make the decisions, he does much of the work himself, and nothing goes live without your sign off."
 faq:
   - question: "What does a fractional head of ecommerce do?"
     answer: "I lead the Shopify channel the way a full time hire would: the plan, the numbers, the store, AI search and conversion, the apps, email and the vendors around it. You decide, and nothing goes live without your sign off. The difference is you pay a monthly fee instead of a salary, and I bring patterns from 50+ Shopify stores with me."

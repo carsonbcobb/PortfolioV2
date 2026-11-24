@@ -1,10 +1,11 @@
 ---
-title: "AI Search for Apparel Brands 2026: Who Gets Recommended and Why | Carson Cobb"
-description: "6 of 96 apparel brands on Shopify were named by ChatGPT, Gemini or Google AI Mode in my November 2026 tests. What AI looks for, and how apparel stores compare."
+title: "AI Search for Apparel Brands 2026: Who Gets Recommended"
+description: "Only 6 of 96 Shopify apparel stores were named by ChatGPT, Gemini or Google AI Mode in my November 2026 tests, despite the best product structured data."
 slug: "/reports/ai-search-apparel-brands-2026"
 h1: "AI search for apparel brands: who gets recommended, and what their stores do differently"
+answer: "In my November 2026 tests, ChatGPT, Gemini and Google AI Mode named only 6 of 96 apparel stores on Shopify, 6%, against 11% across all six product areas. Apparel stores had the best technical setup, with 93% carrying product structured data, but the median apparel store had 31 blog articles. Apparel answers come from fit reviewers and real wearers, not product data."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 reportStores: 617
 faq:
   - question: "How many apparel brands does ChatGPT recommend per answer?"

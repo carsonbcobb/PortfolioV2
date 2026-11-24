@@ -1,6 +1,6 @@
 ---
 title: "AI Search Optimization for Shopify Brands | Carson Cobb"
-description: "See where your competitors beat you in ChatGPT, Gemini and Google AI Mode, and close the gap. AI search optimization for Shopify brands, product by product."
+description: "AI search optimization for Shopify brands: see where competitors beat you in ChatGPT, Gemini and Google AI Mode, product by product, and close the gap."
 slug: "/ai-search"
 h1: "AI search optimization for Shopify brands"
 faq:

@@ -1,10 +1,11 @@
 ---
-title: "AI Search for Supplement Brands 2026: Who Gets Recommended and Why | Carson Cobb"
-description: "14 of 123 supplement brands on Shopify were named by ChatGPT, Gemini or Google AI Mode in my November 2026 tests. What AI looks for, and how supplement stores compare."
+title: "AI Search for Supplement Brands 2026: Who Gets Recommended"
+description: "ChatGPT, Gemini and Google AI Mode named 14 of 123 Shopify supplement stores in my November 2026 tests. Proof of testing is what AI repeats most."
 slug: "/reports/ai-search-supplement-brands-2026"
 h1: "AI search for supplement brands: who gets recommended, and what their stores do differently"
+answer: "In my November 2026 tests, ChatGPT, Gemini and Google AI Mode named 14 of 123 supplement stores on Shopify, 11%. AI recommends supplements it can back with proof: testing claims came up again and again as the reason a product was recommended. 58% of supplement product pages mention testing or certification, but GTINs are on only 25% of product pages."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 reportStores: 617
 faq:
   - question: "How many supplement brands does ChatGPT recommend per answer?"

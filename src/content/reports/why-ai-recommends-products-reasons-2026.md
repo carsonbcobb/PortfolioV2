@@ -1,10 +1,11 @@
 ---
-title: "Why AI Recommends a Product: The Reasons and Claims It Repeats | Carson Cobb"
-description: "Ingredients, materials and value were the reasons AI gave most. Gemini and AI Mode quoted certifications 2 to 3 times as often as ChatGPT. What AI repeats about products."
+title: "Why AI Recommends a Product: Reasons It Repeats (2026)"
+description: "Value, materials and ingredients were the reasons AI gave most. Gemini and Google AI Mode quoted certifications in 23 and 25 of 48 answers, ChatGPT in 12."
 slug: "/reports/why-ai-recommends-products-reasons-2026"
 h1: "Why AI recommends a product: the reasons and claims it repeats"
+answer: "AI recommends products for specific, checkable reasons. In 48 shopping answers per AI from November 2026, value, materials and ingredients were the top reasons for ChatGPT, Gemini and Google AI Mode. Gemini and AI Mode quoted certifications in 23 and 25 answers, against 12 for ChatGPT. Vague claims like premium quality never appeared as a reason in any answer."
 datePublished: 2026-11-16
-dateModified: 2026-11-16
+dateModified: 2026-11-23
 faq:
   - question: "What reasons does ChatGPT give for recommending a product?"
     answer: "Mostly value, materials or ingredients, and testing. In 48 shopping answers from November 2026, ChatGPT talked about price or value in 34, ingredients or materials in 29 and testing or editor reviews in 24."

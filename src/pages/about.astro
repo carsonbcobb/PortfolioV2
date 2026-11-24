@@ -2,15 +2,15 @@
 // /about: who Carson is, his background, and where to see the results. ProfilePage JSON-LD with Carson as the main entity.
 import ContentPage from '../layouts/ContentPage.astro';
 import { aboutSchema } from '../data/schema';
-import { HEADSHOT, GHOST_REVENUE_URL, LINKEDIN_URL } from '../data/site';
+import { HEADSHOT, GHOST_REVENUE_URL, LINKEDIN_URL, BIO_SENTENCE } from '../data/site';
 
 const title = 'About Carson Cobb | AI Search and CRO for Shopify Brands';
 const description =
-  'Carson Cobb is an AI search and CRO specialist for Shopify brands, with 6+ years in Shopify conversion and ecommerce, in house and at an agency.';
+  'Carson Cobb is an independent AI search and conversion specialist for Shopify brands, with 6+ years in Shopify development and CRO. How he works and why.';
 const jsonLd = [aboutSchema({ title, description, dateModified: '2026-11-14' })];
 ---
 
-<ContentPage {title} {description} h1="About Carson Cobb" trail={[{ name: 'About' }]} {jsonLd}>
+<ContentPage {title} {description} h1="About Carson Cobb" intro={`${BIO_SENTENCE} I get products recommended in ChatGPT, Gemini and Google AI Mode, then make sure the pages AI sends shoppers to turn that traffic into sales. I do the work myself, for Shopify brands in every product area.`} trail={[{ name: 'About' }]} {jsonLd}>
   <section class="section page-body">
     <div class="wrap">
       <article class="prose">
@@ -20,10 +20,6 @@ const jsonLd = [aboutSchema({ title, description, dateModified: '2026-11-14' })]
             <img class="about-photo" src={HEADSHOT} alt="Carson Cobb" width="160" height="160" loading="eager" />
           )
         }
-        <p>
-          I'm Carson Cobb, an AI search and CRO specialist for Shopify brands. I get products recommended in ChatGPT and
-          Google's AI answers, then make sure the store turns that traffic into sales.
-        </p>
 
         <h2>Background</h2>
         <p>
@@ -42,10 +38,10 @@ const jsonLd = [aboutSchema({ title, description, dateModified: '2026-11-14' })]
           stores built, rebuilt or run, and $40M+ in client revenue supported.
         </p>
         <p>
-          Most brands start with the <a href="/ai-visibility-check">AI Visibility Check</a>. If you want me leading
-          the store with you each month, that's my <a href="/fractional-head-of-ecommerce">fractional head of ecommerce</a>
-          work. For AI search, that's <a href="/close-the-gap">Close the Gap</a>, and every price is on the
-          <a href="/pricing">pricing page</a>.
+          Most brands start with the <a href="/ai-visibility-check">AI Visibility Check</a>. When you want the gap
+          closed, that's <a href="/close-the-gap">Close the Gap</a>, and every price is on the
+          <a href="/pricing">pricing page</a>. More on the work itself on my
+          <a href="/ai-search">AI search optimization</a> page.
         </p>
         <p>You can also find me on <a href={LINKEDIN_URL} rel="noopener">LinkedIn</a>.</p>
       </article>

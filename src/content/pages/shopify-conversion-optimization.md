@@ -42,7 +42,7 @@ Speed is where I find some of the biggest wins, because a slow page loses people
 
 Most slow Shopify stores aren't slowed down by the theme. They're slowed down by app scripts, oversized images and leftover code from apps uninstalled long ago. I audit every script, cut what isn't earning its place, compress and resize images, and defer anything that doesn't need to load first.
 
-One supplement brand I worked with had product pages taking 7.9 seconds to load on mobile. After the cleanup they loaded in 2.1 seconds, and conversion rose 24%. Same ads, same products, same prices.
+One supplement brand I worked with had product pages taking 7.9 seconds to load on mobile. After the rebuild they loaded in 2.1 seconds, and conversion rose 24%. Same ads, same products, same prices.
 
 ## How do testing and measurement work?
 

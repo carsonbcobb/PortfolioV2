@@ -1,10 +1,11 @@
 ---
-title: "How Many Brands Does ChatGPT Recommend? 144 AI Shopping Answers Counted | Carson Cobb"
-description: "ChatGPT names a median of 4 brands per shopping answer, Gemini and Google AI Mode 5. Across all three, a typical question has 8 brands in play and only 2 named by every engine."
+title: "How Many Brands Does ChatGPT Recommend? 144 Answers"
+description: "ChatGPT names a median of 4 brands per shopping answer, Gemini and Google AI Mode 5. A typical question has 8 brands in play and only 2 named by all three."
 slug: "/reports/how-many-brands-ai-recommends-2026"
 h1: "How many brands does AI recommend in a shopping answer?"
+answer: "ChatGPT names a median of 4 brands per shopping answer, and never more than 8. In my November 2026 test of 48 shopping questions, Gemini and Google AI Mode named a median of 5. Across all three engines, a typical question had 8 brands in play, and only 2 were named by all three. The lists barely repeat from question to question."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 faq:
   - question: "How many brands does ChatGPT recommend per answer?"
     answer: "A median of 4. In 48 shopping questions I asked in November 2026, ChatGPT named between 0 and 8 brands per answer, 4.2 on average. Gemini named a median of 5 (up to 12) and Google AI Mode a median of 5 (up to 11)."

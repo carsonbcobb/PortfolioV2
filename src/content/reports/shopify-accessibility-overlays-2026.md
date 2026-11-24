@@ -1,10 +1,11 @@
 ---
-title: "Accessibility Overlays on Shopify 2026: 1 in 4 Brands Still Use One | Carson Cobb"
-description: "26% of Shopify brand homepages load an accessibility overlay widget, most often accessiBe. Data from 609 stores, and what overlays do and don't fix."
+title: "Accessibility Overlays on Shopify 2026: 26% Still Use One"
+description: "26% of 609 Shopify brand homepages load an accessibility overlay, most often accessiBe at 18%. What overlays do and don't fix, and what to do instead."
 slug: "/reports/shopify-accessibility-overlays-2026"
 h1: "Accessibility overlays on Shopify: one in four brands still load one"
+answer: "In my November 2026 check, 157 of 609 Shopify brand homepages (26%) loaded an accessibility overlay. accessiBe was the most common at 18%, then UserWay at 6% and AudioEye at 3%. Overlays run in the browser after the page loads and don't change the page source, so they are no substitute for real alt text, headings and labels."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 cta: cro
 reportStores: 617
 faq:

@@ -1,10 +1,11 @@
 ---
-title: "Shopify Homepage SEO Basics 2026: Titles, Meta Descriptions and H1s | Carson Cobb"
-description: "46% of Shopify brand homepages have no H1 or more than one, 18% have a title under 30 characters, and 45% have a meta description too long to show in full. Data from 609 stores."
+title: "Shopify Homepage SEO 2026: Titles, Meta Descriptions, H1s"
+description: "Only 54% of 609 Shopify brand homepages have exactly one H1, 45% have a meta description over 160 characters and 18% use a title under 30 characters."
 slug: "/reports/shopify-homepage-seo-basics-2026"
 h1: "Shopify homepage SEO basics: how 609 brand homepages handle titles, descriptions and H1s"
+answer: "A Shopify homepage needs a 30 to 60 character title naming the brand and what it sells, a meta description under 160 characters and exactly one H1. In my November 2026 check of 609 Shopify brand homepages, only 54% had exactly one H1, 45% had a meta description over 160 characters and 18% had a title under 30 characters."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 reportStores: 617
 faq:
   - question: "How long should a Shopify homepage title be?"

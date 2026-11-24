@@ -1,10 +1,11 @@
 ---
-title: "AI Search for Pet Brands 2026: Who Gets Recommended and Why | Carson Cobb"
-description: "10 of 41 pet brands on Shopify were named by ChatGPT, Gemini or Google AI Mode in my November 2026 tests. What AI looks for, and how pet stores compare."
+title: "AI Search for Pet Brands 2026: Who Gets Recommended"
+description: "10 of 41 pet brands on Shopify were named by ChatGPT, Gemini or Google AI Mode in my November 2026 tests, 24% against 11% overall. What those stores do."
 slug: "/reports/ai-search-pet-brands-2026"
 h1: "AI search for pet brands: who gets recommended, and what their stores do differently"
+answer: "In my November 2026 tests of eight pet shopping questions in ChatGPT, Gemini and Google AI Mode, 10 of 41 pet brands on Shopify were named at least once, 24% against 11% across all six product areas. ChatGPT named a median of 4 brands per answer. The pet brands AI knows publish the most: the median pet store has 142 blog articles."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 reportStores: 617
 faq:
   - question: "How many pet brands does ChatGPT recommend per answer?"

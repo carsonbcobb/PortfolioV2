@@ -1,10 +1,11 @@
 ---
-title: "Shopify Return Policy Benchmarks 2026: 101 Brand Stores | Carson Cobb"
-description: "30 days is the standard: 65% of Shopify return policies that state a window use exactly 30 days. Only 11% mention free returns, and half list items you can't return."
+title: "Shopify Return Policy Benchmarks 2026: 101 Brand Stores"
+description: "65% of Shopify return policies that state a window use exactly 30 days. Only 11% offer free returns, and half list items you can't return. 101 stores."
 slug: "/reports/shopify-return-policy-benchmarks-2026"
 h1: "Shopify return policy benchmarks: what 101 brand stores actually promise"
+answer: "30 days is the standard Shopify return window. In my November 2026 read of 101 Shopify brand return policies, 65% of those that stated a window in days used exactly 30. Only 11% mentioned free returns or a prepaid label, 50% named final sale or non returnable items, and 24 of 101 never stated a window in days."
 datePublished: 2026-11-16
-dateModified: 2026-11-16
+dateModified: 2026-11-23
 cta: cro
 reportStores: 107
 faq:

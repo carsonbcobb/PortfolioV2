@@ -1,6 +1,6 @@
 ---
 // Footer for every page: link columns, then the contact and trademark line.
-import { EMAIL, LINKEDIN_URL, REFERRAL, CHECK_PATH } from '../data/site';
+import { EMAIL, LINKEDIN_URL, REFERRAL, CHECK_PATH, BIO_SENTENCE } from '../data/site';
 import { CONTENT_PAGES } from '../data/pages';
 
 const year = new Date().getFullYear();
@@ -13,6 +13,7 @@ const columns = [
       { href: '/close-the-gap', label: 'Close the Gap' },
       { href: '/full-store-audit', label: 'Full Store Audit' },
       { href: '/ai-search', label: 'AI search optimization' },
+      { href: '/ai-search-international-brands', label: 'Brands selling into the US' },
       { href: '/shopify-conversion-optimization', label: 'Conversion optimization' },
       { href: '/fractional-head-of-ecommerce', label: 'Full store management' },
       { href: '/pricing', label: 'Pricing' },
@@ -73,6 +74,7 @@ const columns = [
       ))
     }
   </nav>
+  <p class="wrap footer__bio">{BIO_SENTENCE}</p>
   <div class="wrap footer__inner">
     <span>
       © {year} Carson Cobb · <a href={`mailto:${EMAIL}`}>{EMAIL}</a> · <a href={LINKEDIN_URL}>LinkedIn</a>

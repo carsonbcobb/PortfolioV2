@@ -1,10 +1,11 @@
 ---
-title: "Shipping and Return Policy Schema on Shopify 2026: 89% Leave It Out | Carson Cobb"
-description: "Only 8% of Shopify product pages put shipping details in structured data and 11% a return policy, yet 93% mention shipping on the page. Data from 516 product pages."
+title: "Shopify Shipping and Return Schema 2026: 89% Leave It Out"
+description: "Only 8% of 516 Shopify product pages put shipping details in structured data and 11% a return policy, yet 93% mention shipping in the page text."
 slug: "/reports/shopify-shipping-return-policy-schema-2026"
 h1: "Shipping and return policy schema: the product page data almost every Shopify store skips"
+answer: "Almost every Shopify store leaves shipping and return policy schema out. In my November 2026 check of 516 Shopify product pages with Product structured data, only 43 (8%) included shippingDetails and 57 (11%) a return policy, and 89% had neither. Yet 93% of product pages mention shipping in the page text, so the information exists but isn't machine readable."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 reportStores: 617
 faq:
   - question: "How many Shopify stores have shipping and return policy structured data?"

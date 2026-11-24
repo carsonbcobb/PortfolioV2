@@ -1,10 +1,11 @@
 ---
-title: "Shopify Product Meta Descriptions: 104 Product Pages | Carson Cobb"
-description: "54% of Shopify product meta descriptions are just the first lines of the product description, 27% are cut off at exactly 320 characters, and 7% are empty."
+title: "Shopify Product Meta Descriptions 2026: 104 Pages Checked"
+description: "54% of Shopify product meta descriptions are just the product description's first lines, 27% are cut at exactly 320 characters and 7% are empty."
 slug: "/reports/shopify-product-meta-descriptions-2026"
 h1: "Shopify product meta descriptions: most are written by default, not by anyone"
+answer: "Most Shopify product meta descriptions are written by default, not by anyone. In my November 2026 check of 104 Shopify product pages, 54% were just the start of the product description, 27% were cut at exactly 320 characters, Shopify's automatic length, and 7% were empty. The median was 226 characters, and 60% ran over 160, too long for Google."
 datePublished: 2026-11-16
-dateModified: 2026-11-16
+dateModified: 2026-11-23
 reportStores: 104
 faq:
   - question: "Does Shopify write meta descriptions automatically?"
@@ -63,7 +64,7 @@ It's also a consistency problem. When the meta description, the product descript
 
 For the same basics on homepages, see [Shopify homepage SEO basics](/reports/shopify-homepage-seo-basics-2026).
 
-## A simple formula
+## What should a product meta description say?
 
 What it is + who it's for + one proof point, in about 150 characters.
 

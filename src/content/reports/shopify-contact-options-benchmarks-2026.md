@@ -1,10 +1,11 @@
 ---
-title: "How Shopify Stores Let Shoppers Reach Them: 107 Brands | Carson Cobb"
-description: "60% of Shopify brand homepages load a chat or help desk widget, but only 24% link an email address and 12% a phone number. 32% offer none of the three on the homepage."
+title: "Shopify Contact Options 2026: Chat, Email and Phone"
+description: "60% of Shopify brand homepages load a chat or help desk widget, but only 24% link an email address and 12% a phone number. 32% offer none of the three."
 slug: "/reports/shopify-contact-options-benchmarks-2026"
 h1: "Can shoppers reach you? Contact options on 107 Shopify brand homepages"
+answer: "Most Shopify brands offer chat, but few show an email or phone number on the homepage. In my November 2026 check of 107 Shopify brand homepages, 60% loaded a chat or help desk widget, 24% linked an email address and 12% a phone number. 32% offered none of the three, so a shopper had to find a contact page. Gorgias was the most common tool."
 datePublished: 2026-11-16
-dateModified: 2026-11-16
+dateModified: 2026-11-23
 reportStores: 107
 faq:
   - question: "How many Shopify stores offer live chat?"

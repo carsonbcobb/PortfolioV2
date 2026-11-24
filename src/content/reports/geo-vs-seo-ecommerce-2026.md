@@ -1,10 +1,11 @@
 ---
-title: "GEO vs SEO for Ecommerce in 2026: What's Actually Different (With Data) | Carson Cobb"
-description: "Generative engine optimization and SEO overlap, but they reward different things. Only 40% of the sites Google AI Mode cited ranked on Google's first page. What the data says for online stores."
+title: "GEO vs SEO for Ecommerce 2026: What's Different, With Data"
+description: "Only 40% of sites Google AI Mode cited ranked on Google's first page. GEO and SEO share a foundation but reward different things. What it means for stores."
 slug: "/reports/geo-vs-seo-ecommerce-2026"
 h1: "GEO vs SEO for ecommerce: what's actually different, with data"
+answer: "GEO (generative engine optimization) and SEO for ecommerce share a foundation, crawlable pages and clean structured data, but they reward different things. In my November 2026 tests, only 40% of the sites Google AI Mode cited ranked on Google's first page for the same question, and ChatGPT named a median of 4 brands per answer. Independent coverage and clear product facts matter more for AI."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 reportStores: 617
 faq:
   - question: "What is GEO in ecommerce?"
@@ -16,8 +17,6 @@ faq:
   - question: "Should an ecommerce brand invest in GEO or SEO?"
     answer: "Both, from one plan. Product pages that answer real buyer questions with specific facts help both. The extra work for AI is earning independent coverage, saying exactly who each product is for, and keeping product data consistent everywhere."
 ---
-
-**By Carson Cobb. Updated November 17, 2026.**
 
 Every agency now sells GEO, generative engine optimization. Some say it replaces SEO. Some say it's SEO with a new name. For online stores, the data says something in between: the foundation is shared, and what wins is different.
 

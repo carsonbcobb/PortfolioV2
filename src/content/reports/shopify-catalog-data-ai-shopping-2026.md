@@ -1,10 +1,11 @@
 ---
-title: "Shopify Product Data for AI Shopping 2026 | Carson Cobb"
-description: "Barcodes, product types, images and descriptions on 94 Shopify stores: 30% of products had no barcode, 43% passed four basic checks."
+title: "Shopify Product Data for AI Shopping 2026: 94 Stores"
+description: "30% of sampled Shopify products had no barcode, and only 43% passed four basic checks for AI shopping: barcodes, product type, 3 images and a description."
 slug: "/reports/shopify-catalog-data-ai-shopping-2026"
 h1: "Is your Shopify product data ready for AI shopping?"
+answer: "Most Shopify product data is not fully ready for AI shopping. In my November 2026 check of 94 Shopify stores, 30% of sampled products had no barcode on any variant, rising to 63% in food and beverage, and 21% had no product type. Only 43% passed four basic checks: barcodes on every variant, a product type, 3 or more images and a description of at least 150 characters."
 datePublished: 2026-11-06
-dateModified: 2026-11-06
+dateModified: 2026-11-23
 reportStores: 94
 faq:
   - question: "Do Shopify products need barcodes (GTINs) for AI shopping?"

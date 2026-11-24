@@ -1,10 +1,11 @@
 ---
 title: "State of Shopify Subscriptions 2026: Data From 606 Stores"
-description: "I checked 606 Shopify stores and 121,519 products for subscriptions, sold out best sellers, gifting and bundles. What growing brands leave on the table."
+description: "Of 606 Shopify stores, 28% of brands selling reorderable products had no subscription, and 24% of best sellers collections had a sold out product."
 slug: "/state-of-shopify-subscriptions-2026"
 h1: "The State of Shopify Subscriptions 2026"
+answer: "In my November 2026 check of 606 Shopify stores and 121,519 products, 28% of brands selling reorderable products offered no subscription at all, and only 13% offered subscribe and save on every product checked. Of stores with a best sellers collection, 24% had at least one product fully sold out, and 25% of stores had neither a gift collection nor a gift card."
 datePublished: 2026-10-31
-dateModified: 2026-11-01
+dateModified: 2026-11-23
 faq:
   - question: "How many Shopify brands that sell reorderable products offer subscriptions?"
     answer: "In a check of 434 Shopify brands selling supplements, food, beauty and pet products, 72% offered subscribe and save on at least one checked product and 13% offered it on every checked product. 28% offered none."
@@ -16,7 +17,7 @@ faq:
     answer: "From the public product data every Shopify store publishes, checked in November 2026. For each store I read up to 1,000 products and all published collections, and checked up to 20 products (best sellers first) for active selling plans."
 ---
 
-**By Carson Cobb, AI Search and CRO for Shopify Brands. First published October 2026. Updated November 2026 with a larger check.**
+**By Carson Cobb. First published October 2026. Updated November 2026 with a larger check.**
 
 I checked 606 Shopify stores across six categories, 121,519 products in total, for the same things I look at first in every store audit: whether reorderable products offer subscribe and save, whether best sellers are in stock, whether gifting is set up before the holidays, and whether bundles exist.
 

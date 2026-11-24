@@ -1,10 +1,11 @@
 ---
-title: "Shopify Image Loading 2026: A Third Lazy Load the Main Product Image | Carson Cobb"
-description: "34% of Shopify brand product pages lazy load the first product image, which delays the largest thing shoppers see. Only 43% mark it high priority. Data from 596 product pages and 598 homepages."
+title: "Shopify Image Loading 2026: 34% Lazy Load the Main Image"
+description: "34% of Shopify brand product pages lazy load the first product image, delaying the largest thing shoppers see. Only 43% mark an image as high priority."
 slug: "/reports/shopify-image-loading-speed-2026"
 h1: "Shopify image loading: a third of brand stores slow down the first image shoppers see"
+answer: "In my November 2026 check of 599 Shopify brand stores, 34% of product pages lazy loaded the first product image, which tells the browser to wait on the largest thing shoppers see. Only 43% of product pages marked an image fetchpriority high. Google's guidance says not to lazy load the image likely to be the largest content on the page."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 cta: cro
 reportStores: 599
 faq:

@@ -1,10 +1,11 @@
 ---
-title: "Shopify CRO Checklist 2026: 30 Checks and How Many Brand Stores Pass | Carson Cobb"
-description: "A Shopify conversion checklist with pass rates from 599 brand stores. Only 11% show a delivery estimate, 18% pass basic accessibility checks and 33% load an A/B testing tool."
+title: "Shopify CRO Checklist 2026: Pass Rates From 599 Stores"
+description: "A Shopify CRO checklist with pass rates from 599 brand stores: only 11% show a delivery estimate, 18% pass basic accessibility checks, 33% use A/B testing."
 slug: "/reports/shopify-cro-checklist-2026"
 h1: "The Shopify CRO checklist, with pass rates from 599 brand stores"
+answer: "A Shopify CRO checklist should cover the product page buy box, product page content, collections and search, accessibility, testing tools and decision pages. In my November 2026 scans of Shopify brand stores, the checks most often failed were a delivery estimate on the product page (11%), passing five basic accessibility checks (18%), comparing options (25%) and an A/B testing tool (33%)."
 datePublished: 2026-11-17
-dateModified: 2026-11-17
+dateModified: 2026-11-23
 cta: cro
 reportStores: 617
 faq:
@@ -83,7 +84,7 @@ Most CRO checklists are a list of best practices with no sense of which ones mat
 | Science or testing page | 24% |
 | Comparison page | 11% |
 
-## Where to start
+## Where should a Shopify store start with CRO?
 
 Work from the bottom of each table up, on your top selling products first:
 

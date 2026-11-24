@@ -1,10 +1,11 @@
 ---
-title: "How Much Does AI Search Optimization Cost for Shopify? | Carson Cobb"
-description: "What AI search work for a Shopify brand actually costs in 2026, what drives the price, and what you should get at each level, with real prices."
+title: "How Much Does AI Search Optimization Cost for Shopify?"
+description: "My real prices: Close the Gap at $2,500 a month on Focus or $5,000 on Full, and a $1,997 Full Store Audit. What drives the price and what each level gets."
 slug: "/guides/ai-search-optimization-cost-shopify"
 h1: "How much does AI search optimization cost for a Shopify brand?"
+answer: "AI search optimization for a Shopify brand costs what the scope demands: catalog size, how many competitors you're up against, and whether someone makes the fixes for you. As a reference, my Close the Gap program is $2,500 a month on Focus and $5,000 a month on Full, each with a 3 month commitment, and the Full Store Audit is $1,997 one time."
 datePublished: 2026-11-09
-dateModified: 2026-11-20
+dateModified: 2026-11-23
 faq:
   - question: "How much does AI search optimization cost for a Shopify store?"
     answer: "It depends on catalog size and how much outside work is included. As a reference, my program, Close the Gap, is $2,500 a month for up to 3 products against up to 3 competitors, with every fix handed to your team ready to ship, or $5,000 a month for up to 5 products against up to 6 competitors, with the fixes implemented for you, each with a 3 month commitment. Off site outreach, like getting into the review sites and articles AI cites, is the part that adds the most cost."
@@ -16,9 +17,7 @@ faq:
     answer: "Some of it. Filling barcodes and product types, writing fuller product descriptions and checking your Agentic sales channel settings are all doable in house. Tracking buyer questions across several AIs, fixing product data in theme code and off site outreach are where most brands bring in help."
 ---
 
-**By Carson Cobb. Updated November 2026.**
-
-Most agencies hide this behind a sales call. Here's what drives the price, what you should get at each level, and my actual prices as a reference point.
+Most agencies hide this behind a sales pitch. Here's what drives the price, what you should get at each level, and my actual prices as a reference point.
 
 ## What drives the price
 

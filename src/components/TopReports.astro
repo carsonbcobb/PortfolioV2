@@ -1,0 +1,54 @@
+---
+// The five most read reports plus the competitor guide, linked from the homepage, /ai-search and /pricing.
+// Titles come from each page's own H1, so a renamed report updates here too.
+import { TOP_REPORTS } from '../data/site';
+import { REPORTS, slugOf } from '../data/reports';
+import { guideNamed } from '../data/guides';
+import '../styles/sales.css';
+
+interface Props {
+  sand?: boolean;
+  /** Show the link to /ai-search under the list (off on /ai-search itself) */
+  service?: boolean;
+}
+const { sand = false, service = true } = Astro.props;
+const guide = guideNamed('why-chatgpt-recommends-my-competitor');
+const reports = TOP_REPORTS.map((s) => {
+  const r = REPORTS.find((p) => slugOf(p) === s);
+  if (!r) throw new Error(`TOP_REPORTS links /${s}, which is not a report`);
+  return { href: `/${s}`, title: r.frontmatter.h1 };
+});
+---
+
+<section class:list={['section', 'section--tight', sand && 'section--sand']} aria-labelledby="top-research">
+  <div class="wrap">
+    <div class="card research-behind">
+      <h2 class="h3" id="top-research">The research behind the work</h2>
+      <p>
+        Start with <a href={`/${slugOf(guide)}`}>{guide.frontmatter.h1}</a>, then the reports people read most:
+      </p>
+      <ul>
+        {reports.map((r) => <li><a href={r.href}>{r.title}</a></li>)}
+      </ul>
+      {
+        service && (
+          <p>
+            How I put it to work: <a href="/ai-search">AI search optimization for Shopify brands</a>.
+          </p>
+        )
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  p {
+    margin: 0 0 12px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+  ul + p {
+    margin: 16px 0 0;
+  }
+</style>

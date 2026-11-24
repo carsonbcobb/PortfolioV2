@@ -1,10 +1,11 @@
 ---
-title: "How to Name Products for Google and AI at the Same Time | Carson Cobb"
-description: "29% of Shopify product pages use a different name in their SEO title than on the product itself. Here's how to rank in Google and stay recognizable to AI without picking one."
+title: "How to Name Products for Google and AI (382 Pages Checked)"
+description: "Use one product name everywhere for AI, and put search terms in the SEO title and feed title for Google. 29% of Shopify product pages rename the product."
 slug: "/reports/naming-products-for-google-and-ai"
 h1: "How to name products for Google and AI at the same time"
+answer: "To name products for Google and AI at the same time, keep one consistent product name on the page, in structured data and everywhere else, and put search wording in the SEO title tag and the Google Shopping feed title. In my November 2026 check of 382 product pages from 128 Shopify stores, 29% renamed the product in their SEO title."
 datePublished: 2026-11-11
-dateModified: 2026-11-11
+dateModified: 2026-11-23
 reportStores: 128
 faq:
   - question: "Should my product title be written for SEO or for AI search?"
@@ -19,7 +20,7 @@ faq:
     answer: "Across 382 product pages from 128 Shopify stores, checked in November 2026, 55% used the same name in the SEO title as on the product, 15% added extra keywords after the name, and 29% changed the name itself. Structured data almost always matched the product name, and only about 1% of product names started with a size or pack count."
 ---
 
-**By Carson Cobb. Data collected November 2026. Last updated November 2026.**
+**By Carson Cobb. Data collected November 2026.**
 
 A question I keep hearing from large brands: Google rewards product titles written around what people search for, like "Men's Size 11 Wide Trail Runner." AI search seems to reward the opposite: one product name, used the same way everywhere, so the AI knows every mention is the same product. So which do you optimize for?
 
