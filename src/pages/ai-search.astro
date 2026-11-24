@@ -91,6 +91,8 @@ const FINDINGS: Record<string, string> = {
   'reports/ai-search-benchmarks-shopify-2026':
     "The access layer is solved for almost everyone, thanks to Shopify's defaults. The differences are in product data and content.",
   'reports/how-chatgpt-chooses-products-2026': 'ChatGPT showed a source or store link in 45 of 48 answers.',
+  'reports/korean-skincare-ai-recommendations-us-2026':
+    'COSRX, Beauty of Joseon, Anua and Round Lab appeared in 36 of 40 answers (90%).',
 };
 const research = [
   'reports/ai-search-benchmarks-shopify-2026',
@@ -102,6 +104,7 @@ const research = [
   'reports/shopify-agents-md-ai-agents-2026',
   'reports/chatgpt-follow-up-questions-shoppers-2026',
   'reports/shopify-structured-data-gaps-2026',
+  'reports/korean-skincare-ai-recommendations-us-2026',
 ].map((slug) => {
   const report = REPORTS.find((r) => slugOf(r) === slug);
   if (!report) throw new Error(`/ai-search research links to /${slug}, which is not a report`);

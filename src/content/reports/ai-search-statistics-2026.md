@@ -3,9 +3,9 @@ title: "AI Search Statistics 2026: Shopping, Traffic and Brands"
 description: "77.6% of US shoppers used AI to shop, AI traffic to retail converted 90% better and ChatGPT names a median of 4 brands. 2026 AI search stats, sourced."
 slug: "/reports/ai-search-statistics-2026"
 h1: "AI search statistics for ecommerce, 2026"
-answer: "AI search is a small but fast growing source of shoppers in 2026. 77.6% of US consumers used AI to shop in the past six months (Exploding Topics). AI traffic to US retail sites converted 90% better than other traffic in September 2026 (Adobe). And in my November 2026 tests, ChatGPT named a median of just 4 brands per answer."
+answer: "AI is now part of how most US shoppers buy. 77.6% of US consumers used AI to shop in the past six months, AI traffic to US retail sites converted 90% better than other traffic in September 2026, and Google AI Mode passed 1 billion monthly users. But AI recommends very few brands: ChatGPT names a median of about 4 per shopping answer, and in my latest test four Korean skincare brands appeared in 90% of answers. Below are the most useful AI search statistics for ecommerce brands in 2026, with sources, plus my own research."
 datePublished: 2026-11-06
-dateModified: 2026-11-23
+dateModified: 2026-11-24
 reportStores: 94
 faq:
   - question: "How much retail traffic comes from AI in 2026?"
@@ -30,6 +30,8 @@ A lot of what gets written about AI search is opinion. This page collects the nu
 - **Google AI Mode passed 1 billion monthly users** and the Gemini app reached 950 million. (Alphabet, July 2026)
 - **ChatGPT had about 900 million weekly users** in early 2026. (OpenAI)
 - **ChatGPT names a median of 4 brands per shopping answer.** Only 23% of brands named came from all three of ChatGPT, Gemini and Google AI Mode. (My tests of 48 buyer questions, November 2026)
+- **34% of likely Black Friday and Cyber Monday shoppers say they are likely to use AI to navigate the sales,** but only 5% would let AI complete a purchase after their approval. ([YouGov](https://yougov.com/en-us/articles/55893-which-ai-tools-will-americans-use-to-navigate-black-friday-and-cyber-monday-in-2026) survey of 1,495 US adults, fielded July 13 to August 11, 2026, published October 2026)
+- **50% of shoppers use an AI assistant at some point in their buying journey,** and Salesforce forecasts that 20% of all 2026 holiday ecommerce traffic will come from AI chat agents. ([Salesforce](https://www.salesforce.com/blog/holiday-retail-predictions-2026/), July 2026)
 
 Sources for each are linked in the sections below.
 
@@ -71,6 +73,25 @@ From Adobe's 2026 holiday forecast ([Digital Commerce 360, September 29, 2026](h
 - **AI traffic forecast to rise 130% year over year** over the season, including 159% on Thanksgiving, 95% on Black Friday and 88% on Cyber Monday.
 - **AI referral traffic in July 2026 was up 1,219%** compared with October 2024.
 
+## What holiday shoppers say about AI in 2026
+
+YouGov survey of 1,495 US adults, fielded July 13 to August 11, 2026 (published October and November 2026) ([YouGov, November 4, 2026](https://yougov.com/en-us/articles/55893-which-ai-tools-will-americans-use-to-navigate-black-friday-and-cyber-monday-in-2026); [Retail Dive, October 2026](https://www.retaildive.com/press-release/20261007-one-third-of-black-friday-and-cyber-monday-shoppers-expect-to-use-ai-but-f/)):
+
+- **34% of likely Black Friday and Cyber Monday shoppers say they are likely to use an AI tool to navigate the sales.** 40% say they won't use any.
+- **Among those likely to use AI, ChatGPT and Google Gemini tied at 29% each,** followed by Microsoft Copilot at 14%.
+- **43% would use AI to find the best price,** 9% to add items to a basket, 5% to complete a purchase after approval and 4% to buy without asking first.
+- **80% trust retailer websites or apps to find the best deal,** compared with 48% for AI tools.
+- **56% of experienced AI shoppers worry about inaccurate or outdated information,** and 51% about biased or sponsored recommendations.
+
+Salesforce, "2026 Holiday Predictions," July 2026 ([Salesforce, July 20, 2026](https://www.salesforce.com/blog/holiday-retail-predictions-2026/)):
+
+- **50% of shoppers use an AI assistant at some point in their buying journey,** up 67% year over year.
+- **Shoppers using an AI assistant as their first stop in shopping rose 200%** from May 2025 to May 2026.
+- **74% of shoppers trust the product recommendations they get from AI chat.**
+- **Forecast: 20% of all 2026 holiday ecommerce traffic will come from AI chat agents.**
+
+What this means for a brand: shoppers use AI to decide what to buy and where to find the best price, then mostly buy on a retailer or brand site themselves. Being named in the answer and having a page that confirms the price and details is what wins the order.
+
 ## Shopify
 
 - **AI referred visitors who landed on a product page converted about 49% more often than organic search visitors** in Q1 2026, and **orders from AI search were 14% larger.** ([Shopify, May 2026](https://www.shopify.com/uk/enterprise/blog/ai-search-insights))
@@ -86,6 +107,13 @@ From Adobe's 2026 holiday forecast ([Digital Commerce 360, September 29, 2026](h
 - **105 of 107 stores serve an agents.md file.** 104 use Shopify's default. One store wrote its own. ([Every Shopify store now has an agents.md file](/reports/shopify-agents-md-ai-agents-2026))
 - **ChatGPT asked in 38% of answers.** 18 of 48 asked a follow up question or offered to narrow the pick. ([The follow up questions ChatGPT asks shoppers](/reports/chatgpt-follow-up-questions-shoppers-2026))
 - **ChatGPT labels almost everything.** 44 of 48 answers had at least one "best for" style label, 149 labels in total. ([How AI labels the products it recommends](/reports/how-ai-labels-products-best-for-2026))
+
+From my November 2026 test of 20 US shopper questions about Korean skincare in ChatGPT and Google AI Mode ([full report](/reports/korean-skincare-ai-recommendations-us-2026)):
+
+- **COSRX, Beauty of Joseon, Anua and Round Lab appeared in 36 of 40 answers (90%).**
+- **The brand's own store was the seller on only 23 of 92 product cards (25%).** Resellers and retailers had the rest.
+- **ChatGPT cited Ulta in 13 of 20 answers.** Across 25 Google AI Mode answers, Reddit threads were 20 of the 39 sources shown on screen.
+- **Asked again in different words, 11 of 19 brands came back (58%).**
 
 ## More statistics
 

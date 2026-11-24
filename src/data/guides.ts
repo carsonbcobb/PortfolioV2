@@ -3,9 +3,9 @@ import { REPORTS, slugOf, type MarkdownPage } from './reports';
 
 const files = Object.values(import.meta.glob<MarkdownPage>('../content/guides/*.md', { eager: true }));
 
-/** Hub order, with the two reports each guide links to under Related */
-const LIST: [string, [string, string]][] = [
-  ['why-chatgpt-recommends-my-competitor', ['sources-chatgpt-cites-2026', 'who-chatgpt-recommends-2026']],
+/** Hub order, with the reports each guide links to under Related */
+const LIST: [string, string[]][] = [
+  ['why-chatgpt-recommends-my-competitor', ['sources-chatgpt-cites-2026', 'who-chatgpt-recommends-2026', 'korean-skincare-ai-recommendations-us-2026']],
   ['shopify-products-in-chatgpt-shopping', ['shopify-catalog-data-ai-shopping-2026', 'what-ai-gets-wrong-about-products-2026']],
   ['hire-ai-search-specialist-shopify', ['chatgpt-gemini-ai-mode-brand-overlap-2026', 'does-llms-txt-do-anything']],
   ['ai-search-optimization-cost-shopify', ['sources-chatgpt-cites-2026', 'chatgpt-gemini-ai-mode-brand-overlap-2026']],
@@ -22,7 +22,7 @@ export const GUIDES = LIST.map(([name]) => guideAt(name));
 /** A guide by its name after /guides/ */
 export const guideNamed = guideAt;
 
-/** The other guides plus the guide's two related reports, as links */
+/** The other guides plus the guide's related reports, as links */
 export function relatedTo(page: MarkdownPage) {
   const link = (p: MarkdownPage) => ({ href: `/${slugOf(p)}`, label: p.frontmatter.h1 });
   const [, reports] = LIST.find(([name]) => guideAt(name) === page)!;

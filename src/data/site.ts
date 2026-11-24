@@ -30,6 +30,12 @@ export const OG_BY_PATH: Record<string, OgImage> = {
     width: 1200,
     height: 627,
   },
+  '/reports/korean-skincare-ai-recommendations-us-2026': {
+    path: '/og/og-korean-skincare.png',
+    alt: 'Which Korean skincare brands AI recommends in the US. 20 US shopper questions. 90% of answers named one of the same four brands.',
+    width: 1200,
+    height: 627,
+  },
   '/reports/who-chatgpt-recommends-2026': {
     path: '/og/og-who-chatgpt-recommends.png',
     alt: 'Who ChatGPT recommends in 2026. 48 buyer questions tested. 4 brands named in a typical answer.',

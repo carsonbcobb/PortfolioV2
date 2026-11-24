@@ -25,6 +25,16 @@ American shoppers ask in English and with US context. They want to know whether 
 
 The questions are also different. A shopper who has never heard of your brand doesn't search your product name. They describe their problem, their skin or their budget, and the AI picks from the brands it can match to that description.
 
+## What AI recommends to US shoppers today
+
+I asked ChatGPT and Google AI Mode 20 real US shopper questions about Korean skincare. Three findings stand out for any brand selling into the US:
+
+- **A few brands win almost every answer.** COSRX, Beauty of Joseon, Anua and Round Lab appeared in 36 of 40 answers (90%).
+- **The brand's own store rarely gets the click.** Of 92 product cards, the brand's own store was the seller on 23 (25%). Resellers and US retailers had most of the rest.
+- **Each AI trusts different sources.** Across 25 Google AI Mode answers, Reddit threads were 20 of the 39 sources shown on screen. ChatGPT cited Ulta in 13 of 20 answers, more than any other site.
+
+The full results are in [which Korean skincare brands AI recommends to US shoppers](/reports/korean-skincare-ai-recommendations-us-2026).
+
 ## Which sources does AI trust for US shoppers?
 
 Mostly US ones. ChatGPT showed a source in [45 of 48 product answers](/reports/sources-chatgpt-cites-2026) I checked, led by review sites, testing sites and magazines. For a brand that's famous at home, that's the gap: coverage in your home market's press and forums rarely shows up when an American shopper asks. In beauty, community sources like Reddit and YouTube got [the largest share of Google AI Mode's links](/reports/where-ai-sends-shoppers-2026), so US community threads matter too.

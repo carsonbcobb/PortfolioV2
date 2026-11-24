@@ -19,6 +19,10 @@ export interface PageFrontmatter {
   pageCta?: { variant?: 'ai' | 'cro'; headline?: string; body?: string };
   /** The direct answer under the H1: 40 to 70 words that make sense quoted on their own */
   answer?: string;
+  /** Reports: downloadable data files in public/, listed in the Dataset distribution */
+  dataFiles?: { path: string; name: string; description: string }[];
+  /** Reports: Dataset overrides when the defaults read from the copy don't fit */
+  dataset?: { coverage?: string; variables?: string[]; technique?: string; us?: boolean };
   // link: an optional page link shown after the answer. It stays out of the FAQPage schema text.
   faq?: { question: string; answer: string; link?: { text: string; href: string } }[];
 }

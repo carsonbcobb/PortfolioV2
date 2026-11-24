@@ -260,6 +260,11 @@
   text-transform: uppercase;
   color: var(--dim);
 }
+.page-hero__dates a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 
 .prose blockquote {
   margin: 0 0 28px;
