@@ -5,7 +5,7 @@ slug: "/reports/shopify-product-data-depth-2026"
 h1: "How deep Shopify product data really is"
 answer: "Shopify product data is thin. Across 121,519 products from 606 US Shopify stores, checked November 2026, the median description was 372 characters, about 60 words. 39% had under 300 characters and 8% had no description at all. In a closer look at 94 stores, among food, beauty, pet and supplement products, only 7% said how to use the product."
 datePublished: 2026-11-04
-dateModified: 2026-11-23
+dateModified: 2026-11-25
 reportStores: 606
 reportProducts: 121519
 faq:
@@ -84,6 +84,8 @@ Then the story, the brand voice and the lifestyle copy. Nothing is lost for the 
 3. **Put facts in text, not images.** Ingredient panels and size charts as images are invisible to most crawlers.
 4. **Mark up the FAQs you already have.** One structured data block per product page, matching the questions shown on the page.
 5. **Check what AI says now.** The [AI Visibility Check](/ai-visibility-check) shows how AI currently describes your products.
+
+Turning product facts into structured attributes AI can read is part of my [Shopify structured data](/shopify-structured-data) work.
 
 ## How this was done
 

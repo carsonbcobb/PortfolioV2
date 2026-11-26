@@ -21,6 +21,8 @@ import {
 } from '../data/site';
 import { homeSchema } from '../data/schema';
 import TopReports from '../components/TopReports.astro';
+import Testimonials from '../components/Testimonials.astro';
+import { IMPLEMENTATION_TEXT } from '../data/facts';
 import '../styles/content.css';
 
 const title = 'Carson Cobb | AI Search and CRO for Shopify Brands';
@@ -43,7 +45,7 @@ const jsonLd = [homeSchema({ title, description, faqs })];
           <p class="eyebrow">AI search and CRO for Shopify brands</p>
           <h1 class="hero__h1">AI is picking the winners in your market. <span class="accent">Make sure it picks you.</span></h1>
           <p class="hero__sub">
-            I'm Carson Cobb, an independent AI search and conversion specialist for Shopify brands. When shoppers ask ChatGPT,
+            I'm Carson Cobb, an independent AI search and CRO specialist for Shopify brands. When shoppers ask ChatGPT,
             Gemini and Google AI Mode what to buy, they get a short list. I show you where your competitors beat you, category by
             category, then close the gap and make sure the shoppers AI sends actually buy.
           </p>
@@ -133,6 +135,10 @@ const jsonLd = [homeSchema({ title, description, faqs })];
             ))
           }
         </div>
+        <div class="head">
+          <h3 class="h3" id="who-does-the-work">Who does the work</h3>
+          <p class="lede">{IMPLEMENTATION_TEXT}</p>
+        </div>
       </div>
     </section>
 
@@ -197,6 +203,7 @@ const jsonLd = [homeSchema({ title, description, faqs })];
           </div>
         </div>
         <p class="research-line">
+          How I fix it: <a href="/shopify-structured-data">Shopify structured data that AI understands</a>.
           The research behind this: <a href="/reports/ai-search-benchmarks-shopify-2026">Shopify AI search benchmarks 2026</a>,
           <a href="/reports/chatgpt-gemini-ai-mode-brand-overlap-2026">ChatGPT vs Gemini vs Google AI Mode</a>
           and <a href="/reports/ai-search-statistics-2026">AI search statistics 2026</a>.
@@ -245,6 +252,8 @@ const jsonLd = [homeSchema({ title, description, faqs })];
         <p class="fineprint">Past client outcomes, shown as examples. Not a guarantee of results for any other store.</p>
       </div>
     </section>
+
+    <Testimonials />
 
     <!-- Pricing -->
     <section class="section section--sand" aria-labelledby="pricing-summary">

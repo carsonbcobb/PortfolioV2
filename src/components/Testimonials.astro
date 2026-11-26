@@ -1,0 +1,63 @@
+---
+// Client testimonials from src/data/testimonials.ts. Renders nothing while the list is empty.
+// The Review JSON-LD for named entries is added by the page schema (homeSchema, pricingSchema, resultsSchema).
+import { TESTIMONIALS } from '../data/testimonials';
+
+interface Props {
+  sand?: boolean;
+}
+const { sand = false } = Astro.props;
+const name = (t: (typeof TESTIMONIALS)[number]) => [t.firstName, t.lastName].filter(Boolean).join(' ');
+const role = (t: (typeof TESTIMONIALS)[number]) => [t.title, t.company].filter(Boolean).join(', ');
+---
+
+{
+  TESTIMONIALS.length > 0 && (
+    <section class:list={['section', sand && 'section--sand']} aria-labelledby="testimonials">
+      <div class="wrap stack">
+        <div class="head">
+          <p class="eyebrow">In their words</p>
+          <h2 class="h2" id="testimonials">What clients say.</h2>
+        </div>
+        <div class="grid grid--330">
+          {TESTIMONIALS.map((t) => (
+            <figure class="card testimonial">
+              <blockquote class="testimonial__quote">
+                <p>{t.quote}</p>
+              </blockquote>
+              <figcaption class="testimonial__who">
+                <strong>{t.link ? <a href={t.link} rel="noopener">{name(t)}</a> : name(t)}</strong>
+                {role(t) && <span>{role(t)}</span>}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .testimonial {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0;
+  }
+  .testimonial__quote {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+  .testimonial__quote p {
+    margin: 0;
+  }
+  .testimonial__who {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 15px;
+    color: var(--body);
+  }
+</style>

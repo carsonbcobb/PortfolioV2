@@ -21,7 +21,10 @@ import {
   BIO,
   BIO_ROLE,
   BIO_SENTENCE,
+  UPWORK_URL,
 } from './site';
+import { FACTS, FACTS_DESCRIPTION } from './facts';
+import { NAMED_TESTIMONIALS } from './testimonials';
 
 const HOME = `${SITE_URL}/`;
 const AGENCIES = `${SITE_URL}/agencies`;
@@ -68,23 +71,16 @@ const person = {
   url: HOME,
   image: new URL(HEADSHOT ?? '/logo.png', SITE_URL).href,
   jobTitle: BIO_ROLE,
-  description: BIO,
+  description: FACTS_DESCRIPTION,
   email: EMAIL,
-  ...sameAs(LINKEDIN_URL, GHOST_REVENUE_URL, LINKEDIN_COMPANY_URL),
+  address: { '@type': 'PostalAddress', addressRegion: FACTS.location.region, addressCountry: FACTS.location.country },
+  ...sameAs(LINKEDIN_URL, LINKEDIN_COMPANY_URL, UPWORK_URL, GHOST_REVENUE_URL),
   knowsLanguage: 'en',
   hasOccupation: {
     '@type': 'Occupation',
-    name: 'AI search and conversion optimization specialist for Shopify brands',
+    name: BIO_ROLE,
   },
-  knowsAbout: [
-    'AI search optimization',
-    'Generative engine optimization',
-    'Answer engine optimization',
-    'Conversion rate optimization',
-    'Shopify',
-    'Structured data',
-    'Product structured data',
-  ],
+  knowsAbout: FACTS.knowsAbout,
   worksFor: ref(ID.business),
   contactPoint: ref(ID.contact),
 };
@@ -96,16 +92,9 @@ const business = {
   url: HOME,
   logo: `${SITE_URL}/logo.png`,
   image: `${SITE_URL}/logo.png`,
-  description: BIO_SENTENCE,
-  knowsAbout: [
-    'AI search optimization',
-    'Generative engine optimization',
-    'Answer engine optimization',
-    'Conversion rate optimization',
-    'Shopify',
-    'Structured data',
-    'Product structured data',
-  ],
+  description: FACTS_DESCRIPTION,
+  knowsAbout: FACTS.knowsAbout,
+  address: { '@type': 'PostalAddress', addressRegion: FACTS.location.region, addressCountry: FACTS.location.country },
   founder: ref(ID.carson),
   employee: ref(ID.carson),
   ...sameAs(LINKEDIN_COMPANY_URL, LINKEDIN_URL),
@@ -218,7 +207,8 @@ const sizeOffer = (z: (typeof PROGRAM_SIZES)[number]) => ({
     '@type': 'UnitPriceSpecification',
     price: z.monthly,
     priceCurrency: 'USD',
-    unitText: 'MONTH',
+    ...UNITS.month,
+    description: 'Billed monthly, month to month. Cancel any time with 30 days written notice.',
   },
   eligibleCustomerType: 'http://purl.org/goodrelations/v1#Business',
   availability: 'https://schema.org/InStock',
@@ -228,7 +218,7 @@ const fullAuditOffer = () =>
   offer({
     id: `${FULL_AUDIT_URL}#offer`,
     name: FULL_AUDIT.name,
-    description: `${FULL_AUDIT.timing} ${FULL_AUDIT.walkthrough} ${TERMS.ownership}`,
+    description: `A one time conversion audit. ${FULL_AUDIT.timing} ${FULL_AUDIT.walkthrough} ${TERMS.ownership}`,
     url: FULL_AUDIT_URL,
     service: PLAN.fullAudit,
     price: FULL_AUDIT.price,
@@ -268,6 +258,24 @@ const planServices: Record<PlanKey, () => object> = {
     offers: fullAuditOffer(),
   }),
 };
+
+// Every canonical offer on the business itself, so any page's graph says what Carson sells and for how much.
+Object.assign(business, { makesOffer: [...PROGRAM_SIZES.map(sizeOffer), fullAuditOffer()] });
+
+// Reviews from named testimonials only (full name and company), tied to the business. None while the list is empty.
+const testimonialReviews = (page: string) =>
+  NAMED_TESTIMONIALS.map((t, i) => ({
+    '@type': 'Review',
+    '@id': `${page}#review-${i + 1}`,
+    itemReviewed: ref(ID.business),
+    reviewBody: t.quote,
+    author: {
+      '@type': 'Person',
+      name: `${t.firstName} ${t.lastName}`,
+      ...(t.title ? { jobTitle: t.title } : {}),
+      worksFor: { '@type': 'Organization', name: t.company, ...(t.link ? { url: t.link } : {}) },
+    },
+  }));
 
 export const planNodes = (keys: PlanKey[] = ['program', 'fullAudit']) => keys.map((k) => planServices[k]());
 
@@ -320,6 +328,7 @@ export function homeSchema(meta: { title: string; description: string; faqs: { q
         isRelatedTo: Object.values(PLAN).map(ref),
       },
       faqPage(ID.homeFaq, ID.homePage, meta.faqs),
+      ...testimonialReviews(HOME),
     ],
   };
 }
@@ -367,6 +376,7 @@ export function pricingSchema(meta: { title: string; description: string; faqs: 
         itemListElement: [...PROGRAM_SIZES.map(sizeOffer), fullAuditOffer()],
       },
       faqPage(`${PRICING_URL}#faq`, pageId, meta.faqs),
+      ...testimonialReviews(PRICING_URL),
     ],
   };
 }
@@ -928,6 +938,7 @@ export function resultsSchema(meta: { title: string; description: string }) {
           },
         })),
       },
+      ...testimonialReviews(url),
     ],
   };
 }

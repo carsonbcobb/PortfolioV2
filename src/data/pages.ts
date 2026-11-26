@@ -31,14 +31,16 @@ export const CONTENT_PAGES: ContentPageInfo[] = [
     },
   },
   {
-    slug: 'fractional-head-of-ecommerce',
+    slug: 'shopify-structured-data',
     kind: 'service',
-    label: 'Fractional Head of Ecommerce',
-    summary: 'What a fractional Head of Ecommerce leads, what it costs, and when it fits a growing Shopify brand.',
+    label: 'Shopify structured data',
+    summary:
+      'Hand coded JSON-LD built into your Shopify theme, so ChatGPT, Gemini and Google read your products, prices and reviews correctly.',
     service: {
-      name: 'Fractional Head of Ecommerce for Shopify brands',
-      serviceType: 'Fractional ecommerce management',
-      audience: 'Growing Shopify brands',
+      name: 'Shopify structured data for ChatGPT, Gemini and Google',
+      serviceType: 'Shopify structured data (JSON-LD)',
+      audience: 'Shopify brands',
+      offers: true,
     },
   },
   {
@@ -150,10 +152,22 @@ export const CONTENT_PAGES: ContentPageInfo[] = [
     },
   },
   {
+    slug: 'apparel-brands',
+    kind: 'industry',
+    label: 'Apparel brands',
+    summary: 'Getting apparel recommended by ChatGPT, Gemini and Google AI Mode for fit, fabric and sizing questions, then turning that traffic into orders.',
+    service: {
+      name: 'AI search and CRO for apparel brands',
+      serviceType: 'AI search and conversion optimization',
+      audience: 'Apparel brands on Shopify',
+      offers: 'only',
+    },
+  },
+  {
     slug: 'agency-vs-fractional-head-of-ecommerce',
     kind: 'guide',
-    label: 'Agency vs fractional lead',
-    summary: 'An honest comparison of hiring an agency or a fractional Head of Ecommerce: cost, accountability and speed.',
+    label: 'Agency vs independent specialist',
+    summary: 'An honest comparison of hiring an agency or an independent specialist for SEO, AI search and conversion: cost, accountability and speed.',
   },
   {
     slug: 'recharge-vs-skio-vs-loop',

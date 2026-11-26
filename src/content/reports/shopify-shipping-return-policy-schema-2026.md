@@ -5,7 +5,7 @@ slug: "/reports/shopify-shipping-return-policy-schema-2026"
 h1: "Shipping and return policy schema: the product page data almost every Shopify store skips"
 answer: "Almost every Shopify store leaves shipping and return policy schema out. In my November 2026 check of 516 Shopify product pages with Product structured data, only 43 (8%) included shippingDetails and 57 (11%) a return policy, and 89% had neither. Yet 93% of product pages mention shipping in the page text, so the information exists but isn't machine readable."
 datePublished: 2026-11-17
-dateModified: 2026-11-23
+dateModified: 2026-11-25
 reportStores: 617
 faq:
   - question: "How many Shopify stores have shipping and return policy structured data?"
@@ -50,7 +50,7 @@ Page text shares are of all 598 product pages that loaded.
 
 AI is becoming a real sales channel. Shopify said in its Q3 2026 results that AI traffic to its merchants' stores grew 2.6 times year over year and orders from AI searches 3.3 times ([PPC Land](https://ppc.land/shopify-revenue-gains-32-to-3-7bn-as-ai-referred-orders-rise-3-3x/)). An agent comparing two stores on "arrives by Friday, free returns" can read that from structured data with certainty. From page text it has to guess, and from a policy page linked in the footer it may not look at all.
 
-My earlier [return policy benchmarks](/reports/shopify-return-policy-benchmarks-2026) and [shipping policy benchmarks](/reports/shopify-shipping-policy-benchmarks-2026) cover what the policies say. This report covers whether machines can read them.
+My earlier [return policy benchmarks](/reports/shopify-store-benchmarks-2026#return-policies) and [shipping policy benchmarks](/reports/shopify-store-benchmarks-2026#shipping-policies) cover what the policies say. This report covers whether machines can read them.
 
 ## What to do with this
 

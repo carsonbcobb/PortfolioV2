@@ -5,7 +5,7 @@ slug: "/reports/does-schema-change-what-chatgpt-says"
 h1: "Does schema change what ChatGPT says?"
 answer: "Product schema made ChatGPT reliable on price in my November 2026 test of 24 Shopify products: it gave the correct price for all 20 products with Product structured data. Ratings were less predictable. ChatGPT got the rating and review count right for 17 of 23, and 3 of 8 products with clean, complete data still got a wrong rating or count."
 datePublished: 2026-11-04
-dateModified: 2026-11-23
+dateModified: 2026-11-25
 reportStores: 24
 faq:
   - question: "Does ChatGPT use structured data when it answers product questions?"
@@ -75,6 +75,8 @@ This is a small test, 24 products checked once each, so it shows what can go wro
 2. **Put your rating inside your Product data.** If your review app adds its own separate block, connect it to the product or turn it off and add the rating to the theme's data. See [the duplicate schema report](/reports/duplicate-product-schema-ai-visibility) for each app's setting.
 3. **Don't load ratings only with scripts.** Most AI crawlers don't run them.
 4. **Keep outside listings consistent.** If your product's rating on a retailer or in a brand wide widget differs a lot from your own page, AI may use the wrong one.
+
+For how I build product structured data into a Shopify theme, see [Shopify structured data for ChatGPT, Gemini and Google](/shopify-structured-data).
 
 ## How this was done
 

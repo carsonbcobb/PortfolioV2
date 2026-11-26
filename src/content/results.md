@@ -1,13 +1,13 @@
 ---
 title: "AI Search and CRO Results for Shopify | Carson Cobb"
-description: "AI search and CRO results for Shopify brands: 50+ AI search projects, 4,000+ products made readable to AI, and conversion, testing and subscription wins."
+description: "AI search and CRO results for Shopify brands: 50+ AI search projects, 30+ sites optimized for AI search, and conversion, testing and subscription wins."
 slug: "/results"
 h1: "Results"
 ---
 
-I'm Carson Cobb, an independent AI search and conversion specialist for Shopify brands. I get brands recommended by AI and turn that traffic into sales. I've done the work behind both for seed stage startups and for billion dollar companies, across supplements, skincare, food, apparel, travel and more, for 6+ years.
+I'm Carson Cobb, an independent AI search and CRO specialist for Shopify brands. I get brands recommended by AI and turn that traffic into sales. I've done the work behind both for seed stage startups and for billion dollar companies, across supplements, skincare, food, apparel, travel and more, for 6+ years.
 
-Almost every client is under NDA, so no names here. The work and the numbers are real.
+Clients are anonymous under NDA. Results are from real engagements.
 
 ## AI search
 

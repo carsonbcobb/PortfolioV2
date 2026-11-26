@@ -3,7 +3,7 @@ title: "Get Your Brand Recommended by AI in the US"
 description: "For brands outside the US: get named when American shoppers ask ChatGPT, Gemini and Google AI Mode, with US prices, shipping and sources AI can read."
 slug: "/ai-search-international-brands"
 h1: "Get your brand recommended by AI in the US"
-answer: "I'm Carson Cobb, an independent AI search and conversion specialist for Shopify brands. I help brands from outside the US get their products named when American shoppers ask ChatGPT, Gemini and Google AI Mode for recommendations, by making US prices, shipping and availability readable, answering US shoppers' questions on the page, and getting into the US sources AI trusts."
+answer: "I'm Carson Cobb, an independent AI search and CRO specialist for Shopify brands. I help brands from outside the US get their products named when American shoppers ask ChatGPT, Gemini and Google AI Mode for recommendations, by making US prices, shipping and availability readable, answering US shoppers' questions on the page, and getting into the US sources AI trusts."
 faq:
   - question: "Can a Korean skincare brand get recommended by ChatGPT in the US?"
     answer: "Yes, if AI can find good reasons to name it for the questions American shoppers ask. That means US review sites, magazines and community threads that mention the product, a product page that answers the shopper's question in English with US context, and a price in dollars with US shipping that AI can read. No one can guarantee a recommendation, but those are the gaps I see most often."

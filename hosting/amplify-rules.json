@@ -90,6 +90,66 @@
     "status": "301"
   },
   {
+    "source": "/fractional-head-of-ecommerce",
+    "target": "/pricing",
+    "status": "301"
+  },
+  {
+    "source": "/fractional-head-of-ecommerce/",
+    "target": "/pricing",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-shipping-policy-benchmarks-2026",
+    "target": "/reports/shopify-store-benchmarks-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-shipping-policy-benchmarks-2026/",
+    "target": "/reports/shopify-store-benchmarks-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-return-policy-benchmarks-2026",
+    "target": "/reports/shopify-store-benchmarks-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-return-policy-benchmarks-2026/",
+    "target": "/reports/shopify-store-benchmarks-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-contact-options-benchmarks-2026",
+    "target": "/reports/shopify-store-benchmarks-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-contact-options-benchmarks-2026/",
+    "target": "/reports/shopify-store-benchmarks-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-back-in-stock-benchmarks-2026",
+    "target": "/reports/shopify-store-benchmarks-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-back-in-stock-benchmarks-2026/",
+    "target": "/reports/shopify-store-benchmarks-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-announcement-bar-benchmarks-2026",
+    "target": "/reports/shopify-store-benchmarks-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-announcement-bar-benchmarks-2026/",
+    "target": "/reports/shopify-store-benchmarks-2026",
+    "status": "301"
+  },
+  {
     "source": "/about/",
     "target": "/about",
     "status": "301"
@@ -120,6 +180,11 @@
     "status": "301"
   },
   {
+    "source": "/apparel-brands/",
+    "target": "/apparel-brands",
+    "status": "301"
+  },
+  {
     "source": "/beauty-skincare-brands/",
     "target": "/beauty-skincare-brands",
     "status": "301"
@@ -135,18 +200,8 @@
     "status": "301"
   },
   {
-    "source": "/fractional-head-of-ecommerce/",
-    "target": "/fractional-head-of-ecommerce",
-    "status": "301"
-  },
-  {
     "source": "/full-store-audit/",
     "target": "/full-store-audit",
-    "status": "301"
-  },
-  {
-    "source": "/gap-report/",
-    "target": "/gap-report",
     "status": "301"
   },
   {
@@ -167,11 +222,6 @@
   {
     "source": "/guides/shopify-products-in-chatgpt-shopping/",
     "target": "/guides/shopify-products-in-chatgpt-shopping",
-    "status": "301"
-  },
-  {
-    "source": "/guides/why-chatgpt-doesnt-recommend-my-shopify-store/",
-    "target": "/guides/why-chatgpt-doesnt-recommend-my-shopify-store",
     "status": "301"
   },
   {
@@ -197,16 +247,6 @@
   {
     "source": "/recharge-skio-acquisition/",
     "target": "/recharge-skio-acquisition",
-    "status": "301"
-  },
-  {
-    "source": "/recharge-vs-loop/",
-    "target": "/recharge-vs-loop",
-    "status": "301"
-  },
-  {
-    "source": "/recharge-vs-skio/",
-    "target": "/recharge-vs-skio",
     "status": "301"
   },
   {
@@ -430,11 +470,6 @@
     "status": "301"
   },
   {
-    "source": "/reports/product-data-depth-answer-first-content/",
-    "target": "/reports/product-data-depth-answer-first-content",
-    "status": "301"
-  },
-  {
     "source": "/reports/shopify-ab-testing-tools-2026/",
     "target": "/reports/shopify-ab-testing-tools-2026",
     "status": "301"
@@ -475,18 +510,8 @@
     "status": "301"
   },
   {
-    "source": "/reports/shopify-announcement-bar-benchmarks-2026/",
-    "target": "/reports/shopify-announcement-bar-benchmarks-2026",
-    "status": "301"
-  },
-  {
     "source": "/reports/shopify-apps-ai-recommends-2026/",
     "target": "/reports/shopify-apps-ai-recommends-2026",
-    "status": "301"
-  },
-  {
-    "source": "/reports/shopify-back-in-stock-benchmarks-2026/",
-    "target": "/reports/shopify-back-in-stock-benchmarks-2026",
     "status": "301"
   },
   {
@@ -522,11 +547,6 @@
   {
     "source": "/reports/shopify-comparison-pages-2026/",
     "target": "/reports/shopify-comparison-pages-2026",
-    "status": "301"
-  },
-  {
-    "source": "/reports/shopify-contact-options-benchmarks-2026/",
-    "target": "/reports/shopify-contact-options-benchmarks-2026",
     "status": "301"
   },
   {
@@ -620,18 +640,8 @@
     "status": "301"
   },
   {
-    "source": "/reports/shopify-return-policy-benchmarks-2026/",
-    "target": "/reports/shopify-return-policy-benchmarks-2026",
-    "status": "301"
-  },
-  {
     "source": "/reports/shopify-review-apps-2026/",
     "target": "/reports/shopify-review-apps-2026",
-    "status": "301"
-  },
-  {
-    "source": "/reports/shopify-shipping-policy-benchmarks-2026/",
-    "target": "/reports/shopify-shipping-policy-benchmarks-2026",
     "status": "301"
   },
   {
@@ -642,6 +652,11 @@
   {
     "source": "/reports/shopify-site-search-typos-2026/",
     "target": "/reports/shopify-site-search-typos-2026",
+    "status": "301"
+  },
+  {
+    "source": "/reports/shopify-store-benchmarks-2026/",
+    "target": "/reports/shopify-store-benchmarks-2026",
     "status": "301"
   },
   {
@@ -725,13 +740,13 @@
     "status": "301"
   },
   {
-    "source": "/shopify-subscriptions/",
-    "target": "/shopify-subscriptions",
+    "source": "/shopify-structured-data/",
+    "target": "/shopify-structured-data",
     "status": "301"
   },
   {
-    "source": "/skio-vs-loop/",
-    "target": "/skio-vs-loop",
+    "source": "/shopify-subscriptions/",
+    "target": "/shopify-subscriptions",
     "status": "301"
   },
   {
@@ -762,11 +777,6 @@
   {
     "source": "/tools/shopify-revenue-checker/",
     "target": "/tools/shopify-revenue-checker",
-    "status": "301"
-  },
-  {
-    "source": "/tools/store-check/",
-    "target": "/tools/store-check",
     "status": "301"
   },
   {

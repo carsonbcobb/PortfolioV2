@@ -10,5 +10,11 @@
   { "source": "/recharge-vs-skio", "target": "/recharge-vs-skio-vs-loop", "status": "301" },
   { "source": "/recharge-vs-loop", "target": "/recharge-vs-skio-vs-loop", "status": "301" },
   { "source": "/skio-vs-loop", "target": "/recharge-vs-skio-vs-loop", "status": "301" },
+  { "source": "/fractional-head-of-ecommerce", "target": "/pricing", "status": "301" },
+  { "source": "/reports/shopify-shipping-policy-benchmarks-2026", "target": "/reports/shopify-store-benchmarks-2026", "status": "301" },
+  { "source": "/reports/shopify-return-policy-benchmarks-2026", "target": "/reports/shopify-store-benchmarks-2026", "status": "301" },
+  { "source": "/reports/shopify-contact-options-benchmarks-2026", "target": "/reports/shopify-store-benchmarks-2026", "status": "301" },
+  { "source": "/reports/shopify-back-in-stock-benchmarks-2026", "target": "/reports/shopify-store-benchmarks-2026", "status": "301" },
+  { "source": "/reports/shopify-announcement-bar-benchmarks-2026", "target": "/reports/shopify-store-benchmarks-2026", "status": "301" },
   { "source": "/<*>", "target": "/404.html", "status": "404-200" }
 ]

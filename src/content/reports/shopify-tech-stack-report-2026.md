@@ -5,7 +5,7 @@ slug: "/reports/shopify-tech-stack-report-2026"
 h1: "Shopify Tech Stack Report 2026"
 answer: "Klaviyo is close to universal in the Shopify tech stack. In my November 2026 check of 153 growing Shopify brand homepages, 87% loaded Klaviyo, 82% loaded a reviews app and 31% ran a separate SMS tool. Only 23% loaded an A/B testing tool, and the typical homepage loaded code from 20 outside companies."
 datePublished: 2026-11-01
-dateModified: 2026-11-23
+dateModified: 2026-11-25
 reportStores: 153
 faq:
   - question: "What email platform do Shopify brands use most?"
@@ -101,7 +101,7 @@ Dawn runs 13% of 599 Shopify brand stores, then Impulse, Horizon, Broadcast and 
 | Pet | $50 | 2.3 times |
 | Food | $50 | 3.5 times |
 
-$50 was the most common threshold (22% of stores showing one), then $75 and $100. Food brands set the line highest relative to what they sell, at 3.5 times the typical product price. That means a shopper needs three or four items to get free shipping, which works if the bundle is obvious and fails if it isn't. For the thresholds brands state in their shipping policies, see [Shopify shipping policy benchmarks](/reports/shopify-shipping-policy-benchmarks-2026), and for what announcement bars promote, see [Shopify announcement bar benchmarks](/reports/shopify-announcement-bar-benchmarks-2026). The [free shipping calculator](/tools/free-shipping-calculator) works out where yours should sit.
+$50 was the most common threshold (22% of stores showing one), then $75 and $100. Food brands set the line highest relative to what they sell, at 3.5 times the typical product price. That means a shopper needs three or four items to get free shipping, which works if the bundle is obvious and fails if it isn't. For the thresholds brands state in their shipping policies, see [Shopify shipping policy benchmarks](/reports/shopify-store-benchmarks-2026#shipping-policies), and for what announcement bars promote, see [Shopify announcement bar benchmarks](/reports/shopify-store-benchmarks-2026#announcement-bars). The [free shipping calculator](/tools/free-shipping-calculator) works out where yours should sit.
 
 ## What to do with this
 

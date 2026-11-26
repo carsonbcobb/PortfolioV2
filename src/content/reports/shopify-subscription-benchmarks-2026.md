@@ -5,7 +5,7 @@ slug: "/reports/shopify-subscription-benchmarks-2026"
 h1: "Shopify Subscription Benchmarks 2026"
 answer: "The most common subscribe and save discount on Shopify is 10%, used by 32% of reorderable brands with subscriptions, followed by 15% at 26%. In my November 2026 check of 434 reorderable Shopify brands, 72% offered subscriptions but only 13% on every product checked. Recharge ran plans for 46% of brands with subscriptions and Skio for 16%."
 datePublished: 2026-11-01
-dateModified: 2026-11-23
+dateModified: 2026-11-25
 reportStores: 606
 faq:
   - question: "What is the typical subscribe and save discount on Shopify?"
@@ -120,6 +120,8 @@ If you're weighing a switch, I compare the three most common options in [Recharg
 3. **Match frequency to how long the product lasts.** Offer the real usage cycle as the default, plus one shorter and one longer.
 4. **Add a subscription page.** A third of brands with subscriptions have no published subscription page explaining how skipping, swapping and canceling work. That page answers the question that stops people from subscribing.
 5. **Run your own numbers.** The [subscription calculator](/tools/subscription-calculator) shows what a better offer is worth at your order volume.
+
+For shipping, returns and back in stock alerts, see [Shopify store benchmarks 2026](/reports/shopify-store-benchmarks-2026).
 
 ## How this was done
 

@@ -7,6 +7,8 @@ import SizeCompare from '../components/SizeCompare.astro';
 import { PROGRAM, PROGRAM_SIZES, FULL_AUDIT, CHECK_OFFER, PRICING_FAQS, TERMS_LIST, CHECK_PATH, CTA_LABEL, GAP_FIRST_LABEL } from '../data/site';
 import { pricingSchema } from '../data/schema';
 import TopReports from '../components/TopReports.astro';
+import Testimonials from '../components/Testimonials.astro';
+import { FACTS } from '../data/facts';
 
 const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
 
@@ -49,6 +51,11 @@ const jsonLd = [pricingSchema({ title, description, faqs: [...PRICING_FAQS, ...T
 
       <SizeCompare />
 
+      <div class="head">
+        <h3 class="h3" id="who-does-the-work">{FACTS.implementation.headline} Here's who ships what.</h3>
+        <p class="lede">{FACTS.implementation.what} {FACTS.implementation.full} {FACTS.implementation.focus} {FACTS.implementation.audit}</p>
+      </div>
+
       <div class="lock">
         <div class="lock__pill">
           <span class="lock__icon">
@@ -72,6 +79,8 @@ const jsonLd = [pricingSchema({ title, description, faqs: [...PRICING_FAQS, ...T
       </div>
     </div>
   </section>
+
+  <Testimonials />
 
   <!-- Full Store Audit and the AI Visibility Check -->
   <section class="section section--sand" aria-labelledby="more-title">

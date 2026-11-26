@@ -9,6 +9,7 @@ import { pageBySlug, CONTENT_PAGES } from '../data/pages';
 import { designedPage, REPORTS, slugOf, shortVersion } from '../data/reports';
 import { guideNamed } from '../data/guides';
 import { AI_CASES, AI_CASES_NOTE, CHECK_PATH, HEADER_CTA_LABEL, HERO_PROOF } from '../data/site';
+import { FACTS } from '../data/facts';
 import '../styles/sales.css';
 
 const slug = 'ai-search';
@@ -139,7 +140,7 @@ const industries = CONTENT_PAGES.filter((p) => p.kind === 'industry');
   title={fm.title}
   description={fm.description}
   h1={fm.h1}
-  intro="I'm Carson Cobb, an independent AI search and conversion specialist for Shopify brands. I get products recommended when shoppers ask ChatGPT, Gemini and Google AI Mode what to buy, then make sure the pages AI sends them to turn the visit into a sale. I do both together, for Shopify brands in every product area."
+  intro="I'm Carson Cobb, an independent AI search and CRO specialist for Shopify brands. I get products recommended when shoppers ask ChatGPT, Gemini and Google AI Mode what to buy, then make sure the pages AI sends them to turn the visit into a sale. I do both together, for Shopify brands in every product area."
   trail={[{ name: info.label }]}
   {faqs}
   faqCollapsed
@@ -205,6 +206,10 @@ const industries = CONTENT_PAGES.filter((p) => p.kind === 'industry');
           the person who audits your store is the person who fixes it. Nothing gets lost in a handoff between a strategist
           and a junior team. I tested <a href="/reports/who-ai-recommends-ai-search-agencies-shopify-2026">who ChatGPT and Google AI Mode recommend</a> when Shopify brands look
           for this kind of help, and both said most stores should start with an independent specialist.
+        </p>
+        <p class="lede" id="who-does-the-work">
+          {FACTS.implementation.headline} {FACTS.implementation.what} {FACTS.implementation.full} {FACTS.implementation.focus}
+          The structured data side is on its own page: <a href="/shopify-structured-data">Shopify structured data for ChatGPT, Gemini and Google</a>.
         </p>
         <p class="lede">
           The two belong together because a recommendation only pays if the page converts. AI sends shoppers straight to a
@@ -286,7 +291,9 @@ const industries = CONTENT_PAGES.filter((p) => p.kind === 'industry');
       <p class="lede">I work through all three for the products that matter most to your revenue, and measure the change.</p>
       <p class="research">
         Related research: <a href="/reports/sources-chatgpt-cites-2026">the sources ChatGPT cites</a>,
-        <a href="/reports/shopify-product-data-depth-2026">how deep Shopify product data is</a> and
+        <a href="/reports/shopify-product-data-depth-2026">how deep Shopify product data is</a>,
+        <a href="/reports/shopify-catalog-data-ai-shopping-2026">whether Shopify product data is ready for AI shopping</a>,
+        <a href="/reports/ai-crawler-access-shopify">AI crawler access on Shopify</a> and
         <a href="/reports/duplicate-product-schema-ai-visibility">conflicting product data from apps</a>.
       </p>
       <div class="readmore">

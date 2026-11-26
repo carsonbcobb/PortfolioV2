@@ -5,7 +5,7 @@ slug: "/reports/duplicate-product-schema-ai-visibility"
 h1: "Does duplicate Product schema hurt AI visibility?"
 answer: "Duplicate Product schema didn't hurt in my test when the blocks agreed. In my November 2026 check of 94 Shopify stores, 29% had two or three Product blocks, mostly from review apps like Yotpo, Okendo and Judge.me. ChatGPT described 6 of 8 duplicate products correctly. The misses came when the rating sat in a separate fragment with no price, or was added by a script."
 datePublished: 2026-11-04
-dateModified: 2026-11-23
+dateModified: 2026-11-25
 reportStores: 94
 faq:
   - question: "How common is duplicate Product schema on Shopify?"
@@ -101,6 +101,8 @@ So in this test, duplicates that agree didn't hurt. Splitting the rating away fr
 3. **Use your app's setting.** Okendo and Loox have toggles. Judge.me documents a flag and a merge method. Yotpo asks you to contact support.
 4. **Don't delete the rating while fixing duplicates.** A clean page with no rating is worse than a duplicate with one. Test again after the change.
 5. **Make sure the rating doesn't depend on a script.** It should be in the HTML the server sends.
+
+Merging duplicate Product blocks into one clean, hand coded block is part of my [Shopify structured data](/shopify-structured-data) work.
 
 ## How this was done
 

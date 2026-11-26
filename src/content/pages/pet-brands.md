@@ -3,7 +3,7 @@ title: "Get Your Pet Brand Recommended by AI: What Works"
 description: "Google AI Mode sent 34% of pet links to brand websites and 20% to retailers. I make pet product pages AI can recommend, then turn visits into orders."
 slug: "/pet-brands"
 h1: "Get your pet products recommended by AI, then sold on your site"
-answer: "Carson Cobb is an independent AI search and conversion specialist for Shopify brands in every product area, pet brands among them. AI recommends pet products whose pages say which pet they are for, what is in them, how to feed or use them and how they fit. In his November 2026 check, Google AI Mode sent 34% of its pet links to brand websites and 20% to retailers."
+answer: "Carson Cobb is an independent AI search and CRO specialist for Shopify brands in every product area, pet brands among them. AI recommends pet products whose pages say which pet they are for, what is in them, how to feed or use them and how they fit. In his November 2026 check, Google AI Mode sent 34% of its pet links to brand websites and 20% to retailers."
 faq:
   - question: "How do I get my pet brand recommended by ChatGPT?"
     answer: "ChatGPT recommends pet products it can match to the pet the owner described: the age, the size, the sensitive stomach, the anxious rescue. That comes from product pages that say who the product is for, how to use or feed it and how it fits, and from the sites AI already reads. It works category by category, so the first step is seeing which of your products AI names today and who it names instead."
@@ -67,4 +67,4 @@ AI referred shoppers arrive ready to buy. [Shopify reported in May 2026](/report
 
 Then comes the reorder. Once a dog does well on a food, the owner wants the same thing, on time. I set autoship frequencies from bag size and real reorder gaps, give owners easy ways to skip, pause or swap sizes, and connect trial packs to the full size product so a happy trial has a next step. On one subscription brand, [subscribe and save opt in went from 7% to 32%](/results). More on my [Shopify subscriptions page](/shopify-subscriptions).
 
-Reorder reminders timed to how fast a pet goes through the product, and back in stock emails so a sold out food doesn't send the owner elsewhere, run in Klaviyo. More on my [Klaviyo email page](/klaviyo-email-for-shopify). If you want me running reorders, email and the rest of the store with you each month, that's a custom engagement on my [full store management page](/fractional-head-of-ecommerce).
+Reorder reminders timed to how fast a pet goes through the product, and back in stock emails so a sold out food doesn't send the owner elsewhere, run in Klaviyo. More on my [Klaviyo email page](/klaviyo-email-for-shopify). The [Full Store Audit](/full-store-audit) reviews your subscription setup and email flows along with every page of the store, with every fix ranked by what it's worth.

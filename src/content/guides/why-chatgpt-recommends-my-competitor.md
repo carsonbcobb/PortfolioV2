@@ -5,7 +5,7 @@ slug: "/guides/why-chatgpt-recommends-my-competitor"
 h1: "Why ChatGPT recommends your competitor instead of you"
 answer: "ChatGPT recommends your competitor because the sources it trusts mention them and not you, and their product page answers the shopper's exact question more clearly than yours. In my November 2026 tests, ChatGPT named about 4 brands per shopping answer and showed a source in 45 of 48 answers, led by review sites, testing sites and magazines. Fix the sources first, then your product pages."
 datePublished: 2026-11-09
-dateModified: 2026-11-24
+dateModified: 2026-11-25
 pageCta:
   variant: ai
 faq:
@@ -80,7 +80,7 @@ If your page doesn't say your serum is fragrance free and made for sensitive ski
 
 ### 4. The AI can't read your product data
 
-Nobody I checked was blocking ChatGPT. But [11% of stores](/reports/ai-crawler-access-shopify) had product data that only appeared after scripts ran, and for some it was the only product data on the page. Review apps also added duplicate or detached rating blocks on [29% of stores](/reports/duplicate-product-schema-ai-visibility), which led to wrong ratings in AI answers.
+Nobody I checked was blocking ChatGPT. But [11% of stores](/reports/ai-crawler-access-shopify) had product data that only appeared after scripts ran, and for some it was the only product data on the page. Review apps also added duplicate or detached rating blocks on [29% of stores](/reports/duplicate-product-schema-ai-visibility), which led to wrong ratings in AI answers. I fix both in the theme itself: see [Shopify structured data that AI understands](/shopify-structured-data).
 
 ### 5. Your ratings are below the bar, or wrong
 

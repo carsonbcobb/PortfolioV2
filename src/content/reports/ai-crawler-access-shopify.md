@@ -5,7 +5,7 @@ slug: "/reports/ai-crawler-access-shopify"
 h1: "AI crawler access on Shopify"
 answer: "In my November 2026 check of 94 Shopify stores, none blocked ChatGPT's search crawler in robots.txt, and Shopify's default file has no AI rules at all. The bigger gap is JavaScript: 11% of stores had product data that only appeared after scripts ran, which the crawlers behind ChatGPT, Claude and Perplexity can miss."
 datePublished: 2026-11-04
-dateModified: 2026-11-23
+dateModified: 2026-11-25
 reportStores: 94
 faq:
   - question: "Does Shopify block ChatGPT by default?"
@@ -93,6 +93,8 @@ I repeated this check on 617 Shopify brand stores on November 16 and 17, 2026.
 | Pet | 41 | 2% |
 | Home | 76 | 0% |
 | Apparel | 96 | 4% |
+
+Crawler access is the first check. What AI reads once it gets in is covered on my [Shopify structured data](/shopify-structured-data) page.
 
 ## How this was done
 

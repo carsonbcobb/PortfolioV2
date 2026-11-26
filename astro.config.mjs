@@ -168,13 +168,21 @@ export default defineConfig({
   output: 'static',
   trailingSlash: 'ignore',
   // /gap-report is the short name for the gap report, which lives at /ai-visibility-check.
-  // Fallbacks only: Amplify's custom rules (scripts/amplify-redirects.json) answer these with a 301 first.
+  // Fallbacks only: Amplify's custom rules (hosting/amplify-rules.json, from scripts/amplify-rules.mjs) answer these with a 301 first.
   redirects: {
     '/gap-report': '/ai-visibility-check',
     '/recharge-vs-skio': '/recharge-vs-skio-vs-loop#recharge-vs-skio',
     '/recharge-vs-loop': '/recharge-vs-skio-vs-loop#recharge-vs-loop',
     '/skio-vs-loop': '/recharge-vs-skio-vs-loop#skio-vs-loop',
     '/guides/why-chatgpt-doesnt-recommend-my-shopify-store': '/guides/why-chatgpt-recommends-my-competitor',
+    // Retired November 25, 2026: the fractional role is no longer sold.
+    '/fractional-head-of-ecommerce': '/pricing',
+    // Five thin benchmark reports, merged into one report on November 25, 2026.
+    '/reports/shopify-shipping-policy-benchmarks-2026': '/reports/shopify-store-benchmarks-2026#shipping-policies',
+    '/reports/shopify-return-policy-benchmarks-2026': '/reports/shopify-store-benchmarks-2026#return-policies',
+    '/reports/shopify-contact-options-benchmarks-2026': '/reports/shopify-store-benchmarks-2026#contact-options',
+    '/reports/shopify-back-in-stock-benchmarks-2026': '/reports/shopify-store-benchmarks-2026#back-in-stock-alerts',
+    '/reports/shopify-announcement-bar-benchmarks-2026': '/reports/shopify-store-benchmarks-2026#announcement-bars',
   },
   build: {
     // agencies.html instead of agencies/index.html. Amplify serves /agencies straight from
