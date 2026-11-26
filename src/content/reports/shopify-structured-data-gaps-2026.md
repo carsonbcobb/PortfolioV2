@@ -5,7 +5,7 @@ slug: "/reports/shopify-structured-data-gaps-2026"
 h1: "Missing, doubled or broken: structured data on 107 Shopify stores"
 answer: "Shopify structured data is often missing or doubled. In my November 2026 check of 107 Shopify brand stores, 12% of product pages had no Product structured data and 22% had two or more Product blocks, usually one from the theme and one from an app. 16% of homepages had no structured data at all, and broken code was rare."
 datePublished: 2026-11-16
-dateModified: 2026-11-23
+dateModified: 2026-11-25
 reportStores: 107
 faq:
   - question: "Do all Shopify product pages have Product structured data?"
@@ -74,6 +74,8 @@ When the theme publishes one Product block and a review app publishes another, t
 5. **Re-test after theme or app changes.** Most problems arrive with a new app or theme update.
 
 Structured data and the rest of your product data are part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+
+Fixing missing, doubled and broken structured data in the theme itself is what my [Shopify structured data](/shopify-structured-data) work does.
 
 ## How this was done
 

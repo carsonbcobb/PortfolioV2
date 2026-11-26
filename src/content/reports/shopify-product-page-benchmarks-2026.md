@@ -5,7 +5,7 @@ slug: "/reports/shopify-product-page-benchmarks-2026"
 h1: "Shopify Product Page Benchmarks 2026"
 answer: "The typical Shopify product page has 5 photos and a description of about 380 characters, roughly 60 words. In my November 2026 check of 606 growing Shopify brands, only 12% of checked products had a video. Supplements and pet brands tend to use .99 endings, while beauty and apparel price in whole dollars."
 datePublished: 2026-11-01
-dateModified: 2026-11-23
+dateModified: 2026-11-25
 cta: cro
 reportStores: 606
 reportProducts: 121519
@@ -75,7 +75,7 @@ Typical price also sets where your free shipping line should sit. In the [tech s
 | A quiz page | 35% | Supplements, 56% |
 | Ships to 20 or more countries | 37% | Apparel, 58% |
 
-For what product pages show when something sells out, see [back in stock alerts on Shopify](/reports/shopify-back-in-stock-benchmarks-2026), and for what return policies promise, see [Shopify return policy benchmarks](/reports/shopify-return-policy-benchmarks-2026).
+For what product pages show when something sells out, see [back in stock alerts on Shopify](/reports/shopify-store-benchmarks-2026#back-in-stock-alerts), and for what return policies promise, see [Shopify return policy benchmarks](/reports/shopify-store-benchmarks-2026#return-policies).
 
 For what sits next to the add to cart button, see [the Shopify buy box](/reports/shopify-product-page-buy-box-2026), and for how stores show sizes and colors, see [variant pickers: buttons or dropdowns](/reports/shopify-variant-picker-buttons-vs-dropdowns-2026).
 

@@ -5,7 +5,7 @@ slug: "/reports/star-ratings-reviews-ai-answers"
 h1: "Do star ratings decide who AI recommends?"
 answer: "Star ratings and reviews affect whether AI shows your products, but as a minimum bar, not a ranking. In my November 2026 tests, 79 of 82 rated products on Google AI Mode's cards had 4.0 stars or more, yet the highest rated product came first only 5 times in 21. ChatGPT mentioned reviews or ratings in 15 of 48 answers."
 datePublished: 2026-11-06
-dateModified: 2026-11-23
+dateModified: 2026-11-25
 reportStores: 94
 faq:
   - question: "Does Google AI Mode show star ratings?"
@@ -102,6 +102,8 @@ Of the 94 Shopify product pages I checked, 67% showed a review count on the page
 6. **Earn the sources that decide the order.** Reviews get you on the shortlist. Review sites, testing roundups, Reddit and video reviews decide where you land on it.
 
 Reviews, ratings and what AI says about your products are part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+
+Rating and review data that matches what the page shows is part of my [Shopify structured data](/shopify-structured-data) work.
 
 ## How this was done
 

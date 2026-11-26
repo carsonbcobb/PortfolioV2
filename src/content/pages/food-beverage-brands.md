@@ -3,7 +3,7 @@ title: "Get Your Food Brand Recommended by AI: What Works"
 description: "Google AI Mode sent 63% of food and beverage links to brand websites. I make food and drink product pages AI can recommend, then turn visits into orders."
 slug: "/food-beverage-brands"
 h1: "Get your food and drinks recommended by AI, then sold on your site"
-answer: "Carson Cobb is an independent AI search and conversion specialist for Shopify brands in every product area, food and beverage among them. AI recommends food and drinks whose product pages say who they are for, the ingredients and allergens, how to serve them and how they taste. In his November 2026 check, Google AI Mode sent 63% of food and beverage links to brand websites."
+answer: "Carson Cobb is an independent AI search and CRO specialist for Shopify brands in every product area, food and beverage among them. AI recommends food and drinks whose product pages say who they are for, the ingredients and allergens, how to serve them and how they taste. In his November 2026 check, Google AI Mode sent 63% of food and beverage links to brand websites."
 faq:
   - question: "How do I get my food brand recommended by ChatGPT?"
     answer: "ChatGPT recommends food and drinks it can match to what the shopper described: the diet, the taste, who's eating it. That comes from product pages that say who the product is for, what's in it and how to eat or serve it, and from the sites AI already reads. It works category by category, so the first step is seeing which of your products AI names today and who it names instead."
@@ -67,4 +67,4 @@ AI referred shoppers arrive ready to buy. [Shopify reported in May 2026](/report
 
 Food and drink brands also have something most products would love: people finish the product and want more. I set subscription frequencies from real reorder gaps, make it easy to skip, change cadence or swap flavors, and set up variety packs that work with subscriptions. On one subscription brand, [subscribe and save opt in went from 7% to 32%](/results). More on my [Shopify subscriptions page](/shopify-subscriptions).
 
-Reorder reminders timed to how fast people use the product, and gifting emails planned weeks ahead, run in Klaviyo. More on my [Klaviyo email page](/klaviyo-email-for-shopify). If you want me running reorders, email and the rest of the store with you each month, that's a custom engagement on my [full store management page](/fractional-head-of-ecommerce).
+Reorder reminders timed to how fast people use the product, and gifting emails planned weeks ahead, run in Klaviyo. More on my [Klaviyo email page](/klaviyo-email-for-shopify). The [Full Store Audit](/full-store-audit) reviews your subscription setup and email flows along with every page of the store, with every fix ranked by what it's worth.

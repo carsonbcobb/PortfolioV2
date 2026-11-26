@@ -5,7 +5,7 @@ slug: "/reports/shopify-product-schema-completeness-2026"
 h1: "Product and merchant schema completeness"
 answer: "Shopify product schema usually covers the basics but misses details AI shoppers ask about. In my November 2026 check of 94 Shopify stores, 89% had Product structured data, and almost all included name, price and availability. But only 62% included a rating, 46% a GTIN, and 11% each shipping details or a return policy. 28% of stores running a review app had no rating in their structured data."
 datePublished: 2026-11-04
-dateModified: 2026-11-23
+dateModified: 2026-11-25
 reportStores: 94
 faq:
   - question: "What share of Shopify stores have Product structured data?"
@@ -93,6 +93,8 @@ Product meta descriptions are another field most stores leave to Shopify's defau
 3. **Add GTINs where you have them.** If your products have barcodes, they belong in the catalog and in the data.
 4. **Add shipping and return details.** Shopify's newer themes and Google's merchant listing fields support both. They answer the last questions before purchase.
 5. **Connect your brand on the homepage.** One Organization block with your logo and social profiles.
+
+Filling these fields from your catalog, variant by variant, is part of my [Shopify structured data](/shopify-structured-data) work.
 
 ## How this was done
 

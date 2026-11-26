@@ -3,7 +3,7 @@ title: "Shopify Subscriptions: How I Took Opt In From 7% to 32%"
 description: "Most Shopify subscription leaks are missing plans, hidden widgets, weak offers and easy cancels. I fix them in Recharge or Skio. One brand went 7% to 32%."
 slug: "/shopify-subscriptions"
 h1: "Shopify subscriptions that actually get chosen"
-answer: "Carson Cobb is an independent AI search and conversion specialist for Shopify brands who fixes subscription programs in Recharge, Skio and Shopify selling plans. Most leaks have nothing to do with the app: missing plans on hero products, widgets that never render, weak offers and cancellation in a single click. On one subscription brand, fixing those took subscribe and save opt in from 7% to 32%."
+answer: "Carson Cobb is an independent AI search and CRO specialist for Shopify brands who fixes subscription programs in Recharge, Skio and Shopify selling plans. Most leaks have nothing to do with the app: missing plans on hero products, widgets that never render, weak offers and cancellation in a single click. On one subscription brand, fixing those took subscribe and save opt in from 7% to 32%."
 faq:
   - question: "Do you work with Recharge or Skio?"
     answer: "Both. I set up and fix plans in Recharge and Skio every week, and I also work directly with Shopify selling plans. If you're still choosing, my Recharge vs Skio vs Loop comparison walks through how I'd decide."
@@ -12,7 +12,7 @@ faq:
   - question: "Can you fix my subscription setup without migrating apps?"
     answer: "Usually, yes. Most of the leaks I find have nothing to do with which app you use. They're offer, widget and flow problems, and I fix them inside the app you already pay for. I only recommend a migration when the app is truly holding you back."
   - question: "Do you only do subscriptions?"
-    answer: "No. Subscriptions are one part of running a store. When I run your store day to day as your fractional head of ecommerce, I handle subscriptions along with product pages, speed, merchandising, email and everything else that moves revenue."
+    answer: "No. I'm an independent AI search and CRO specialist for Shopify brands, and subscriptions are one of the first places I look for revenue a store is already losing. The same work covers product pages, speed and the pages AI sends shoppers to."
   - question: "What do I need to give you to get started?"
     answer: "Collaborator access to Shopify, access to your subscription app and Klaviyo, and a quick rundown of your hero products and margins. I handle the rest."
   - question: "Is there a long contract?"
@@ -25,7 +25,7 @@ Not because subscriptions don't work for their products. Because the setup has g
 
 [See what 314 brands with subscriptions actually offer.](/reports/shopify-subscription-benchmarks-2026)
 
-I'm Carson Cobb. I help Shopify brands get recommended in ChatGPT and Google's AI answers, then make the store convert that traffic, and subscription revenue is one of the first places I look. Over 6+ years and 50+ Shopify stores, I've learned that the biggest wins usually aren't new tools. They're fixing what's already there.
+I'm Carson Cobb, an independent AI search and CRO specialist for Shopify brands. I help Shopify brands get recommended in ChatGPT, Gemini and Google AI Mode, then make the store convert that traffic, and subscription revenue is one of the first places I look. Benchmarks for what other brands offer are in my [Shopify subscription benchmarks](/reports/shopify-subscription-benchmarks-2026). Over 6+ years and 50+ Shopify stores, I've learned that the biggest wins usually aren't new tools. They're fixing what's already there.
 
 ## Who this is for
 
@@ -92,7 +92,7 @@ You don't need a giant project to fix this. There are two ways I usually start.
 
 **[Full Store Audit](/full-store-audit), $1,997.** I review your subscription setup along with every page of the store, cart and checkout, email flows and analytics, and rank every fix by what it's worth, walked through by recorded video. This is the right fit if you want to see how I work before committing.
 
-**Fractional head of ecommerce, custom.** I lead subscriptions as part of the store, working at your direction: offer tests, widget changes, flows, cancellation insights, and everything else on the site that affects revenue. You get one person who knows your store deeply instead of a rotating cast. [Email me what you need](mailto:carson@carsoncobb.com?subject=Fractional%20head%20of%20ecommerce) and I'll send back a scope and a price.
+**Subscription fixes, quoted as a project.** When the audit turns up plans, widgets or flows that need rebuilding, I quote that work on its own and do it myself: offer tests, widget changes, subscriber flows and cancellation insights. [Email me what you need](mailto:carson@carsoncobb.com?subject=Subscription%20project) and I'll send back a scope and a price.
 
 For AI search, there's [Close the Gap](/close-the-gap), at $2,500 a month, month to month. You can see every published price on the [pricing page](/pricing).
 

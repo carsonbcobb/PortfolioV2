@@ -3,7 +3,7 @@ title: "Shopify Migration Without Losing Rankings or Subscribers"
 description: "Most Shopify migration losses come from missing redirects, lost reviews and broken subscriptions. I map every URL, move contracts and test before launch."
 slug: "/shopify-migration"
 h1: "Shopify migrations and theme rebuilds without the lost revenue"
-answer: "Carson Cobb is an independent AI search and conversion specialist for Shopify brands who plans Shopify migrations and theme rebuilds. Most lost rankings and revenue come from missing redirects, dropped content, broken internal links and subscription contracts moved without a plan. He maps every old URL, moves reviews and subscriptions on a planned cutover, runs test orders and watches the first billing cycle after launch."
+answer: "Carson Cobb is an independent AI search and CRO specialist for Shopify brands who plans Shopify migrations and theme rebuilds. Most lost rankings and revenue come from missing redirects, dropped content, broken internal links and subscription contracts moved without a plan. He maps every old URL, moves reviews and subscriptions on a planned cutover, runs test orders and watches the first billing cycle after launch."
 faq:
   - question: "Will I lose my Google rankings if I move to Shopify?"
     answer: "A migration always carries some risk, but most ranking losses come from missing redirects, dropped content and broken internal links. I map every old URL to its new home, keep the content that ranks, and check the redirects after launch so search engines and shoppers land in the right place."
@@ -85,7 +85,7 @@ Launch day should be uneventful. I aim for that with a simple routine:
 
 **[Full Store Audit](/full-store-audit), $1,997.** I review every page of the current store, cart and checkout, email flows, analytics and subscriptions, and rank every fix by what it's worth. That gives us a baseline before anything moves.
 
-**The migration or rebuild, quoted as its own project.** I scope it after the audit and quote it based on your catalog, subscriptions and how much custom work the old store has. Every launch step comes to you for sign off. After launch, I can keep supporting the store so nothing gets dropped in a handoff. More on my [full store management page](/fractional-head-of-ecommerce).
+**The migration or rebuild, quoted as its own project.** I scope it after the audit and quote it based on your catalog, subscriptions and how much custom work the old store has. Every launch step comes to you for sign off. After launch, I check rankings, reviews and subscriptions so nothing gets dropped in the move.
 
 See all options on the [pricing page](/pricing).
 

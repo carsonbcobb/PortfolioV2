@@ -5,7 +5,7 @@ slug: "/reports/cart-abandonment-statistics-2026"
 h1: "Cart abandonment statistics 2026, and what Shopify stores do about them"
 answer: "The average documented cart abandonment rate is 70.22%, from 50 studies compiled by Baymard Institute, updated October 2026. The top reason is extra costs like shipping, tax and fees (40%). In my November 2026 scan of 599 Shopify brand stores, only 11% of product pages showed a delivery estimate and 34% mentioned a guarantee or free returns."
 datePublished: 2026-11-17
-dateModified: 2026-11-23
+dateModified: 2026-11-25
 cta: cro
 reportStores: 599
 faq:
@@ -62,7 +62,7 @@ Shopify's checkout handles much of the form side already. What Shopify brands co
 
 | Abandonment reason | What answers it on the product page | Product pages that do it |
 | --- | --- | --- |
-| Extra costs | Shipping threshold or cost stated near the price | See [shipping policy benchmarks](/reports/shopify-shipping-policy-benchmarks-2026) |
+| Extra costs | Shipping threshold or cost stated near the price | See [shipping policy benchmarks](/reports/shopify-store-benchmarks-2026#shipping-policies) |
 | Slow delivery | A delivery estimate | 11% |
 | Trust and returns | A guarantee or free returns line | 34% |
 | Payment options | Express checkout buttons | 43% |

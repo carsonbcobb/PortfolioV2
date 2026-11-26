@@ -1,40 +1,40 @@
 ---
 title: "Fractional SEO vs Full Service Agency for Ecommerce (2026)"
-description: "A fractional specialist fits brands that need one senior lead on SEO, AI search and conversion. An agency fits brands shipping many channels at once."
+description: "An independent specialist fits brands that need one senior person on SEO, AI search and conversion. An agency fits brands shipping many channels at once."
 slug: "/agency-vs-fractional-head-of-ecommerce"
-h1: "Fractional vs full service agency for ecommerce: which one does your brand need?"
-answer: "A fractional SEO specialist is the better fit for most growing ecommerce brands that need one senior person leading SEO, AI search and conversion work, with nobody in between. A full service agency fits brands that need a large team shipping many channels at once, such as paid ads, creative and development. The right pick depends on how much work you need done in parallel."
+h1: "Fractional specialist vs full service agency for ecommerce: which one does your brand need?"
+answer: "An independent, fractional specialist is the better fit for most growing ecommerce brands that need one senior person on SEO, AI search and conversion, with nobody in between. A full service agency fits brands that need a large team shipping many channels at once, such as paid ads, creative and development. The right pick depends on how much work you need done in parallel."
 datePublished: 2026-10-31
-dateModified: 2026-11-24
+dateModified: 2026-11-25
 faq:
-  - question: "Is a fractional head of ecommerce cheaper than an agency?"
-    answer: "Often, but not always. A fractional head of ecommerce engagement with me is scoped to your brand. Email me what you need and I'll send back a scope and a price. What usually makes a fractional lead cheaper in practice is replacing several vendor invoices with one, and cutting the time you spend managing them."
+  - question: "Is an independent specialist cheaper than an agency?"
+    answer: "Often. My AI search work, Close the Gap, is $2,500 a month for Focus or $5,000 a month for Full, month to month. What usually makes a specialist cheaper in practice is that you pay for senior work, not account management, and you spend less time managing vendors."
   - question: "When is an agency the better choice?"
     answer: "When you have a large, clearly scoped project like a full rebrand and redesign, need a team of specialists working at once, and have someone in house who can manage the agency. In that case, an agency can be the right call."
   - question: "Can I use both?"
-    answer: "Yes, and many brands do. A fractional head of ecommerce can lead the plan and the numbers, and brief an agency or specialist for specific projects. I work alongside agencies and freelancers often."
-  - question: "Who is accountable for results with a fractional head of ecommerce?"
-    answer: "I am. I propose the priorities, you decide, and I do much of the work, brief anyone else involved, and report on what moved. That's the main difference from buying a list of deliverables from separate vendors."
+    answer: "Yes, and many brands do. A specialist can own AI search and conversion while an agency runs paid ads or creative. I work alongside agencies and freelancers often."
+  - question: "Does an independent specialist actually do the work, or just advise?"
+    answer: "I do the work. On Close the Gap: Full, I write the structured data, edit the Shopify theme, restructure the product data and ship the fixes, with your sign off before anything goes live. On Focus, every fix comes to your team written and ready to ship."
   - question: "What about hiring a full time head of ecommerce?"
-    answer: "That's the right move when the channel needs someone inside the business every day, leading a team. Expect $150K+ a year before benefits. Many brands use a fractional lead until they reach that point."
+    answer: "That's the right move when the channel needs someone inside the business every day, leading a team. Expect $150K+ a year before benefits. A specialist for AI search and conversion works alongside that hire, or before it."
   - question: "How do I try this without a big commitment?"
-    answer: "Start with your gap report, which takes about a minute, no login, or the Full Store Audit, $1,997 one time. For AI search, Close the Gap is $2,500 a month, month to month."
+    answer: "Start with your gap report, which takes about a minute, no login. Close the Gap runs month to month, and the Full Store Audit, a one time conversion audit, is $1,997."
 ---
 
-**The short answer.** A fractional specialist is the better pick for most growing Shopify brands whose store already has traffic and needs one senior person leading SEO, AI search and conversion work. A full service agency wins when you need many channels or a large scoped project like a rebrand run at once, and you have someone in house to manage it.
+**The short answer.** An independent specialist is the better pick for most growing Shopify brands whose store already has traffic and needs one senior person on SEO, AI search and conversion. A full service agency wins when you need many channels or a large scoped project like a rebrand run at once, and you have someone in house to manage it.
 
-| | Fractional specialist | Full service agency or stitched vendors | Full time hire |
+| | Independent specialist | Full service agency or stitched vendors | Full time hire |
 |---|---|---|---|
-| What you pay | Custom: email me what you need for a scope and a price. For AI search, Close the Gap is $2,500/month, month to month | About four invoices a month, plus your time managing them | $150K+/yr before benefits |
-| What you get | One senior person on the plan, the work and the numbers | A team across many channels at once | Someone inside the business every day |
+| What you pay | For AI search and conversion with me: Close the Gap at $2,500 or $5,000 a month, month to month | About four invoices a month, plus your time managing them | $150K+/yr before benefits |
+| What you get | One senior person who finds the problem and fixes it | A team across many channels at once | Someone inside the business every day |
 | Who manages it | Included | Usually you | You, plus hiring and onboarding |
-| Best for | Growing brands that need a senior lead | Big scoped projects and many channels | A large channel with a team |
+| Best for | Growing brands with traffic that needs to be found and to convert | Big scoped projects and many channels | A large channel with a team |
 
-If you're a founder running a growing Shopify brand, you've probably reached the point where you can't run the store yourself anymore. The question is who should.
+If you're a founder running a growing Shopify brand, you've probably hit the point where the store needs more senior attention than you can give it. The question is who should give it.
 
-Most founders end up choosing between three options: hire someone full time, hire an agency, or bring in a fractional head of ecommerce. I'm one of those options, so I'm not neutral. But I'll be honest about where each one fits, including when I think an agency is the better pick.
+Most founders end up choosing between three options: hire someone full time, hire an agency, or bring in an independent specialist. I'm one of those options, so I'm not neutral. But I'll be honest about where each one fits, including when I think an agency is the better pick.
 
-I'm Carson Cobb. I help Shopify brands [get recommended in ChatGPT and Google's AI answers](/ai-search), then make the store convert that traffic. Over 6+ years I've worked on 50+ Shopify stores and supported more than $40M in client revenue. I've worked alongside plenty of agencies, and I've cleaned up after a few.
+I'm Carson Cobb, an independent AI search and CRO specialist for Shopify brands. I get products [recommended in ChatGPT, Gemini and Google AI Mode](/ai-search), then make the store convert that traffic. Over 6+ years I've worked on 50+ Shopify stores and supported more than $40M in client revenue. I've worked alongside plenty of agencies, and I've cleaned up after a few.
 
 ## What ChatGPT and Google AI Mode say
 
@@ -46,19 +46,19 @@ I asked ChatGPT and Google AI Mode whether a Shopify store should hire a GEO age
 
 **Stitching vendors together** is what most brands end up with by default. A developer here, a designer there, an email freelancer, an agency for a project. That's often about four invoices a month, and you're the one connecting them.
 
-**A fractional head of ecommerce** is one senior person who leads the store, the plan and the vendors every month, while you stay in control. With me, it's a custom engagement. Email me what you need and I'll send back a scope and a price.
+**An independent specialist** is one senior person who owns a specific job end to end. With me, that job is AI search and conversion: finding why AI recommends your competitors, fixing it on your store and in the sources AI relies on, and making sure the shoppers AI sends actually buy.
 
 Agencies sit somewhere in the middle. Some are excellent. The question is less whether they're good and more whether their model fits what you need right now.
 
 ## Fractional SEO vs a full service agency for ecommerce
 
-A fractional specialist gives your Shopify brand one senior person on your SEO, AI search and conversion work, usually for less than a full service agency. An agency gives you a team across many channels at once, with more people but less senior attention on your store.
+A fractional or independent specialist gives your Shopify brand one senior person on your SEO, AI search and conversion work, usually for less than a full service agency. An agency gives you a team across many channels at once, with more people but less senior attention on your store.
 
-**A fractional specialist makes sense** when your store already has traffic and the gap is how well it shows up in Google and AI answers and how well it converts, when you want one person accountable for the numbers, and when you'd rather pay for senior attention than account management. For AI search, my [Close the Gap](/close-the-gap) program starts at $2,500 a month.
+**A specialist makes sense** when your store already has traffic and the gap is how well it shows up in Google and AI answers and how well it converts, when you want one person accountable for the numbers, and when you'd rather pay for senior attention than account management. For AI search, my [Close the Gap](/close-the-gap) work starts at $2,500 a month, month to month.
 
 **A full service agency makes sense** when you need many channels run at once, like paid ads, email, design and content, or a large, clearly scoped project such as a full rebrand and redesign, and you have someone in house to manage it.
 
-Many brands use both: a fractional lead sets the plan and the numbers, and briefs the agency on the work it does best.
+Many brands use both: a specialist owns AI search and conversion, and the agency runs the channels it does best.
 
 If the gap is that AI names other brands when shoppers ask about products like yours, start with my guide on [why ChatGPT recommends your competitor](/guides/why-chatgpt-recommends-my-competitor). It shows what decides those picks and what a specialist would fix first.
 
@@ -70,11 +70,11 @@ With an agency or a group of vendors, you pay each invoice, plus the hidden cost
 
 With a full time hire, you pay a salary whether there's a full month of senior work or not, plus benefits, equipment and the cost of a bad hire if it doesn't work out.
 
-With a fractional head of ecommerce, you pay one monthly fee, and the management is part of the job. My options:
+With a specialist, you pay for the work itself. My options:
 
-* **[Close the Gap](/close-the-gap), $2,500 a month, month to month.** Ongoing monthly work against your main competitors in ChatGPT, Gemini and Google AI Mode: the head to head, every on site fix ready to ship or implemented for you, source work, and a competitor report every week or two. Focus is $2,500 a month and Full is $5,000 a month, both month to month.
-* **[Full Store Audit](/full-store-audit), $1,997 one time.** Every page on mobile and desktop, cart and checkout, email flows, analytics and subscriptions, with every fix ranked by what it's worth.
-* **Fractional head of ecommerce, custom.** Your ecommerce lead, working at your direction: the plan, launches, Klaviyo, apps and vendors. [Email me what you need](mailto:carson@carsoncobb.com?subject=Fractional%20head%20of%20ecommerce) and I'll send back a scope and a price.
+* **[Close the Gap: Focus](/close-the-gap), $2,500 a month, month to month.** For brands doing about $50K to $150K a month. I find where your competitors beat you in ChatGPT, Gemini and Google AI Mode and hand your team every fix, written and ready to ship, with a competitor report every 2 weeks.
+* **[Close the Gap: Full](/close-the-gap), $5,000 a month, month to month.** I implement every fix in your store myself, work the outside sources AI relies on, add conversion work on the pages AI sends shoppers to, and report weekly.
+* **[Full Store Audit](/full-store-audit), $1,997 one time.** A conversion audit, separate from AI search: every page on mobile and desktop, cart and checkout, email flows, analytics and subscriptions, with every fix ranked by what it's worth.
 
 All prices are on the [pricing page](/pricing).
 
@@ -86,15 +86,15 @@ An agency is usually hired to deliver something: a redesign, a set of emails, a 
 
 Vendors each handle a slice. The email freelancer handles email. The developer handles tickets. Nobody is watching whether the store as a whole made more money this month.
 
-A fractional head of ecommerce is accountable for the result. I propose what to work on based on what will move revenue, you decide, and I do the work or brief whoever should, and report back on what changed. If something didn't work, that's mine to explain and fix.
+A specialist is accountable for the result in their lane. I measure how often AI recommends you against each competitor before and during the work, report what moved and what didn't, and change course when something isn't working.
 
 ## Speed: how fast things actually get done
 
-Agencies often work in scoped projects with kickoffs, approvals and change requests. That's useful for big projects, and slow for the small fixes that make up most of the revenue gains on a running store.
+Agencies often work in scoped projects with kickoffs, approvals and change requests. That's useful for big projects, and slow for the small fixes that make up most of the gains on a running store.
 
 Stitched together vendors can be fast individually and slow together, because every handoff waits on someone, usually you.
 
-As a fractional lead, I can see a problem on Monday and fix it on Monday once you sign off, because I'm the one who spotted it and the one who has access. A lot of the work that moves conversion is like that: a broken widget, a slow script, a cart offer showing the wrong product. My [conversion optimization page](/shopify-conversion-optimization) has examples.
+As a specialist, I can see a problem on Monday and fix it on Monday once you sign off, because I'm the one who spotted it and the one who has access. A lot of the work that moves AI visibility and conversion is like that: duplicate product data from a review app, a missing price on a variant, a slow script, a product page that doesn't answer the question AI was asked. My [Shopify structured data](/shopify-structured-data) and [conversion optimization](/shopify-conversion-optimization) pages have examples.
 
 ## When an agency is the better pick
 
@@ -103,20 +103,20 @@ I'd honestly point you toward an agency when:
 * You need a full rebrand with new photography, brand identity and a ground up site design, all at once.
 * You need several specialists working at the same time on a tight deadline.
 * You have an experienced ecommerce lead in house who can scope and manage the agency.
-* You want a fixed project with a fixed end, and no ongoing lead.
+* You want a fixed project with a fixed end, and no ongoing work.
 
-In those cases, an agency's bench of people is the point. If you go that route, a fractional lead can still help write the brief and check the work. That's a common setup for my clients.
+In those cases, an agency's bench of people is the point. A specialist can still own AI search and conversion alongside it. That's a common setup for my clients.
 
-## When a fractional head of ecommerce is the better pick
+## When an independent specialist is the better pick
 
-A fractional lead tends to fit better when:
+A specialist tends to fit better when:
 
-* The store is growing, but no one leads it end to end.
-* You're paying several vendors and still doing the managing yourself.
-* You need ongoing improvements more than one big project, including how you show up in ChatGPT and Google's AI answers.
-* You aren't ready for a $150K+ a year hire, or you want to get the channel in shape before you make one.
+* Your store has traffic, but AI recommends your competitors and the pages don't convert as well as they should.
+* You're paying several vendors and nobody owns AI search.
+* You need ongoing improvements more than one big project, including how you show up in ChatGPT, Gemini and Google AI Mode.
+* You want the person who finds the problem to be the person who fixes it.
 
-Here's what that looks like in practice. In the first 90 days, I fix tracking, speed and key pages in month 1, raise order value with upsells, subscriptions and email in month 2, and set up a testing plan and promo calendar in month 3. In a sample month for a skincare client, conversion went from 2.1% to 3.2% and average order value from $58 to $64. More on my [fractional head of ecommerce page](/fractional-head-of-ecommerce).
+In a sample month for a skincare client, conversion went from 2.1% to 3.2% and average order value from $58 to $64. More results on my [results page](/results).
 
 ## Should you hire an agency or a specialist for AI search and CRO?
 
@@ -134,6 +134,6 @@ More on what good work looks like in [how to hire an AI search specialist](/guid
 
 ## Start with your gap report
 
-If you're weighing an agency against a fractional lead, start by seeing where you stand. Your gap report shows how often ChatGPT recommends you against your top competitor, in about a minute. Brands doing $50K a month or more also get a short video of the full gap. Or [email me](mailto:carson@carsoncobb.com?subject=Fractional%20head%20of%20ecommerce) about who's working on the store today, and I'll tell you which setup fits, even if it isn't me.
+If you're weighing an agency against a specialist, start by seeing where you stand. Your gap report shows how often ChatGPT recommends you against your top competitor, in about a minute. Brands doing $50K a month or more also get a short video of the full gap. Or see every plan and price on the [pricing page](/pricing).
 
 [Get your gap report](/ai-visibility-check)

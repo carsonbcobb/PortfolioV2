@@ -5,7 +5,7 @@ slug: "/reports/shopify-catalog-data-ai-shopping-2026"
 h1: "Is your Shopify product data ready for AI shopping?"
 answer: "Most Shopify product data is not fully ready for AI shopping. In my November 2026 check of 94 Shopify stores, 30% of sampled products had no barcode on any variant, rising to 63% in food and beverage, and 21% had no product type. Only 43% passed four basic checks: barcodes on every variant, a product type, 3 or more images and a description of at least 150 characters."
 datePublished: 2026-11-06
-dateModified: 2026-11-23
+dateModified: 2026-11-25
 reportStores: 94
 faq:
   - question: "Do Shopify products need barcodes (GTINs) for AI shopping?"
@@ -98,6 +98,8 @@ Images were the strongest part of most catalogs. AI product cards lead with an i
 5. **Check your feed, not just your page.** Look at what Google Merchant Center and your Shopify catalog actually contain for your best sellers.
 
 Product data and feed findings for Google and ChatGPT are part of [Close the Gap](/close-the-gap). For a quick read on one page, run the [AI Visibility Check](/ai-visibility-check).
+
+Filling these gaps from metafields, variant by variant, is part of my [Shopify structured data](/shopify-structured-data) work.
 
 ## How this was done
 

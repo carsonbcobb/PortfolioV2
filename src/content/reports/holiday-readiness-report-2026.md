@@ -5,7 +5,7 @@ slug: "/reports/holiday-readiness-report-2026"
 h1: "Shopify Holiday Readiness Report 2026"
 answer: "In my November 2026 holiday readiness check of 606 Shopify stores, 62% had a gift collection live with products in it, 54% sold a gift card and 81% had a bundle, kit, set or pack collection. 25% had neither a gift collection nor a gift card. Supplement brands were least ready: only 29% had a gift collection."
 datePublished: 2026-11-01
-dateModified: 2026-11-23
+dateModified: 2026-11-25
 reportStores: 606
 faq:
   - question: "How many Shopify stores have a gift collection before the holidays?"
@@ -60,7 +60,7 @@ Once shipping cutoffs pass, a store without a gift card has far fewer ways to ca
 1. **Publish a gift collection** and link it from your main menu and homepage by mid November. Keep it short and sorted by price.
 2. **Add a digital gift card** if you don't have one. It takes an afternoon.
 3. **Turn one bundle into a gift set.** Same products, gift ready packaging or a gift note, and a name that says gift.
-4. **Set shipping cutoff dates** in your announcement bar and cart, then switch the message to the gift card when they pass. See what other brands put in theirs in [Shopify announcement bar benchmarks](/reports/shopify-announcement-bar-benchmarks-2026) and [Shopify shipping policy benchmarks](/reports/shopify-shipping-policy-benchmarks-2026).
+4. **Set shipping cutoff dates** in your announcement bar and cart, then switch the message to the gift card when they pass. See what other brands put in theirs in [Shopify announcement bar benchmarks](/reports/shopify-store-benchmarks-2026#announcement-bars) and [Shopify shipping policy benchmarks](/reports/shopify-store-benchmarks-2026#shipping-policies).
 5. **Check your best sellers are in stock.** 24% of stores with a best sellers collection had at least one sold out in early November. More in the [catalog and stock report](/reports/shopify-catalog-and-stock-report-2026).
 
 If you ship abroad for the holidays, see [international targeting on Shopify](/reports/shopify-international-hreflang-2026).

@@ -5,6 +5,7 @@ import ContentPage from '../layouts/ContentPage.astro';
 import { resultsSchema } from '../data/schema';
 import { RESULTS_META as fm, INTRO, AI_SEARCH, GLANCE, WORK, BRANDS, MEASURED, CLOSING } from '../data/results';
 import { AI_CASES, AI_CASES_NOTE } from '../data/site';
+import Testimonials from '../components/Testimonials.astro';
 import '../styles/results.css';
 
 const jsonLd = [resultsSchema({ title: fm.title, description: fm.description })];
@@ -54,6 +55,8 @@ const jsonLd = [resultsSchema({ title: fm.title, description: fm.description })]
       {INTRO.slice(1).map((p) => <p class="lede" set:html={p} />)}
     </div>
   </section>
+
+  <Testimonials />
 
   <section class="section section--sand" aria-labelledby="the-work">
     <div class="wrap stack">

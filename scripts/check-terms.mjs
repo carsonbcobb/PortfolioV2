@@ -42,6 +42,20 @@ const BANNED = [
   /calendar\.app\.google/,
   /calendar\.google\.com\/calendar\/appointments/,
   /AI search audits/i,
+  // AI visibility and accuracy fixes (Nov 25, 2026): facts the engines were quoting that are no longer true.
+  // The one source of truth is src/data/facts.ts.
+  /numbers are real/i,
+  /results are real/i,
+  /\$3,000\b/,
+  /\$7,000\b/,
+  /500\+ A\/B/i,
+  /\b(three|3) month (program|sprint|minimum|commitment)/i,
+  /\bsprint\b/i,
+  /fractional head of ecommerce/i,
+  /full store management/i,
+  /\bNovi\b/,
+  /\bMexico\b/,
+  /AI search and conversion specialist/i,
 ];
 // Pages where one banned term is allowed on purpose. /about names Carson's in house roles, Gem among them,
 // as he asked on November 14, 2026. Everywhere else it stays banned.
@@ -51,6 +65,8 @@ const ALLOWED = new Map([
   [/\bGEM\b/i.source, ['about.html']],
   [/\$1,500\b/.source, ['reports/who-ai-recommends-ai-search-agencies-shopify-2026.html']],
   [/\$2,000/.source, ['reports/who-ai-recommends-ai-search-agencies-shopify-2026.html']],
+  // $3,000 appears only as market rates other providers charge, in the same report.
+  [/\$3,000\b/.source, ['reports/who-ai-recommends-ai-search-agencies-shopify-2026.html']],
 ]);
 const TEXT_EXT = new Set(['.html', '.xml', '.txt', '.json', '.js', '.css', '.svg', '.webmanifest']);
 

@@ -1,16 +1,19 @@
 ---
-// /about: who Carson is, his background, and where to see the results. ProfilePage JSON-LD with Carson as the main entity.
+// /about: who Carson is now, how he works, the numbers, then his background. ProfilePage JSON-LD with Carson
+// as the main entity. Every number comes from facts.ts.
 import ContentPage from '../layouts/ContentPage.astro';
 import { aboutSchema } from '../data/schema';
-import { HEADSHOT, GHOST_REVENUE_URL, LINKEDIN_URL, BIO_SENTENCE } from '../data/site';
+import { HEADSHOT, GHOST_REVENUE_URL, LINKEDIN_URL } from '../data/site';
+import { FACTS, FACTS_SENTENCE } from '../data/facts';
 
 const title = 'About Carson Cobb | AI Search and CRO for Shopify Brands';
 const description =
-  'Carson Cobb is an independent AI search and conversion specialist for Shopify brands, with 6+ years in Shopify development and CRO. How he works and why.';
-const jsonLd = [aboutSchema({ title, description, dateModified: '2026-11-14' })];
+  'Carson Cobb is an independent AI search and CRO specialist for Shopify brands, with 6+ years of Shopify development and conversion work. What he does and how.';
+const jsonLd = [aboutSchema({ title, description, dateModified: '2026-11-25' })];
+const stats = Object.values(FACTS.stats);
 ---
 
-<ContentPage {title} {description} h1="About Carson Cobb" intro={`${BIO_SENTENCE} I get products recommended in ChatGPT, Gemini and Google AI Mode, then make sure the pages AI sends shoppers to turn that traffic into sales. I do the work myself, for Shopify brands in every product area.`} trail={[{ name: 'About' }]} {jsonLd}>
+<ContentPage {title} {description} h1="About Carson Cobb" intro={`${FACTS_SENTENCE} I get products recommended in ChatGPT, Gemini and Google AI Mode, then make sure the pages AI sends shoppers to turn that traffic into sales. I work with Shopify brands in every product category, and I do the work myself.`} trail={[{ name: 'About' }]} {jsonLd}>
   <section class="section page-body">
     <div class="wrap">
       <article class="prose">
@@ -21,27 +24,50 @@ const jsonLd = [aboutSchema({ title, description, dateModified: '2026-11-14' })]
           )
         }
 
-        <h2>Background</h2>
+        <h2>What I do</h2>
         <p>
-          I've spent 6+ years in Shopify CRO and ecommerce. I worked in house at BiOptimizers, Organifi and Gem, and on
-          conversion optimization at Single Grain.
+          I'm an independent AI search and CRO specialist for Shopify brands. When shoppers ask ChatGPT, Gemini and Google AI
+          Mode what to buy, they get a short list. I find where your competitors make that list and you don't, category by
+          category, then close the gap: product data and <a href="/shopify-structured-data">structured data</a> AI can read,
+          product pages that answer the questions shoppers ask, the outside sources AI relies on, and conversion work on the
+          pages AI sends shoppers to.
         </p>
         <p>
-          Today I do AI search work for DTC brands of every kind, and I founded
-          <a href={GHOST_REVENUE_URL} rel="noopener">Ghost Revenue</a>.
+          I work with Shopify brands in every product category: {FACTS.categories}. If people compare your product before
+          they buy it, AI is already recommending someone in your market.
+        </p>
+
+        <h2 id="who-does-the-work">I implement the work</h2>
+        <p>{FACTS.implementation.what}</p>
+        <p>
+          {FACTS.implementation.full} {FACTS.implementation.focus} {FACTS.implementation.audit} Every price is on the
+          <a href="/pricing">pricing page</a>.
+        </p>
+
+        <h2>The numbers</h2>
+        <ul>
+          {stats.map((s) => <li><strong>{s.value}</strong> {s.label}</li>)}
+        </ul>
+        <p>
+          {FACTS.abTesting} Client work is under NDA, so client names stay off this site. The full numbers and anonymous case
+          studies are on my <a href="/results">results page</a>.
         </p>
 
         <h2>How I work</h2>
         <p>
-          I do the work myself, with no handoff to a junior team. Client work is under NDA, so client names stay off this
-          site. The numbers are on my <a href="/results">results page</a>, including 50+ AI search projects, 50+ Shopify
-          stores built, rebuilt or run, and $40M+ in client revenue supported.
+          You work with me directly, with no handoff to a junior team. We work over email and recorded video, and nothing goes
+          live without your sign off. {FACTS.location.serves}
         </p>
         <p>
           Most brands start with the <a href="/ai-visibility-check">AI Visibility Check</a>. When you want the gap
-          closed, that's <a href="/close-the-gap">Close the Gap</a>, and every price is on the
-          <a href="/pricing">pricing page</a>. More on the work itself on my
+          closed, that's <a href="/close-the-gap">Close the Gap</a>. More on the work itself on my
           <a href="/ai-search">AI search optimization</a> page.
+        </p>
+
+        <h2>Background</h2>
+        <p>
+          I've spent {FACTS.experience}. Along the way I worked in house at BiOptimizers, Organifi and Gem, and on conversion
+          optimization at Single Grain. I also founded <a href={GHOST_REVENUE_URL} rel="noopener">Ghost Revenue</a>.
         </p>
         <p>You can also find me on <a href={LINKEDIN_URL} rel="noopener">LinkedIn</a>.</p>
       </article>

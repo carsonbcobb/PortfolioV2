@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { FACTS, FACTS_SENTENCE, IMPLEMENTATION_FAQ, stat } from './facts';
 
 export const SITE_URL = 'https://www.carsoncobb.com';
 
@@ -76,14 +77,16 @@ export const EMAIL = 'carson@carsoncobb.com';
 export const EMAIL_URL = `mailto:${EMAIL}?subject=Shopify%20store%20inquiry`;
 export const AGENCY_EMAIL_URL = `mailto:${EMAIL}?subject=Agency%20partnership`;
 // The one short description of Carson used everywhere: homepage, About, footer, schema and author lines.
-export const BIO_ROLE = 'Independent AI search and conversion specialist for Shopify brands';
-export const BIO = `${BIO_ROLE}, with 6+ years in Shopify development and CRO.`;
-export const BIO_SENTENCE = `Carson Cobb is an independent AI search and conversion specialist for Shopify brands, with 6+ years in Shopify development and CRO.`;
-export const LINKEDIN_URL = 'https://www.linkedin.com/in/carsoncobb/';
+// All of it comes from facts.ts.
+export const BIO_ROLE = FACTS.role;
+export const BIO = `${BIO_ROLE}, with ${FACTS.experience}.`;
+export const BIO_SENTENCE = FACTS_SENTENCE;
+export const LINKEDIN_URL = FACTS.profiles.linkedin;
 // LinkedIn company page, listed in the JSON-LD sameAs.
-export const LINKEDIN_COMPANY_URL: string | null = 'https://www.linkedin.com/company/carsoncobb';
+export const LINKEDIN_COMPANY_URL: string | null = FACTS.profiles.linkedinCompany || null;
 // Ghost Revenue, the company Carson founded. Listed in the Person sameAs.
-export const GHOST_REVENUE_URL = 'https://ghostrevenue.co';
+export const GHOST_REVENUE_URL = FACTS.profiles.ghostRevenue;
+export const UPWORK_URL: string | null = FACTS.profiles.upwork || null;
 export const GA_ID = 'G-PEDB1QHBG3';
 
 // Gap report settings, read at build time. Each is optional: without the API URL the
@@ -113,14 +116,10 @@ export const NAV_LINKS = [
 
 // Homepage
 
-export const HOME_STATS = [
-  { value: '50+', label: 'AI search projects' },
-  { value: '30+', label: 'sites optimized for AI search' },
-  { value: '50+', label: 'Shopify stores' },
-  { value: '2.1x', label: 'average conversion lift on rebuilt pages' },
-];
+export const HOME_STATS = [FACTS.stats.aiProjects, FACTS.stats.aiSites, FACTS.stats.stores, FACTS.stats.lift];
 
-export const VERTICALS = ['Fitness', 'Apparel', 'Supplements', 'Beauty and skincare', 'Food and beverage', 'Pet', 'Travel', 'and more'];
+// Examples of product areas, never a specialty: Carson works with Shopify brands in every category.
+export const VERTICALS = ['Supplements', 'Skincare', 'Food', 'Apparel', 'Pet', 'Home', 'Travel', 'and every other product category'];
 export const VERTICALS_NOTE = 'If people compare your product before they buy it, AI is already recommending someone in your market.';
 
 // One proof line under the hero buttons.
@@ -132,7 +131,7 @@ export const TOP_REPORTS = [
   'reports/who-chatgpt-recommends-2026',
   'reports/sources-chatgpt-cites-2026',
 ];
-export const HERO_PROOF = ['50+ AI search projects', '30+ sites optimized for AI search', '50+ Shopify stores'];
+export const HERO_PROOF = [stat('aiProjects'), stat('aiSites'), stat('stores')];
 
 // "What gets a product recommended": the four things AI weighs, then the sale.
 export const RECOMMENDED = {
@@ -288,8 +287,8 @@ export const HOME_RESULTS = [
 
 export const ABOUT = {
   heading: 'Why me.',
-  text: "I'm Carson Cobb, an independent AI search and conversion specialist for Shopify brands, with 6+ years in Shopify development and CRO. I've led AI search work for national brands in fitness, apparel, vitamins, skincare, cosmetics, food, pet, wellness and more, from finding the gap to closing it. Before that I spent years running conversion and testing programs, affiliate programs and full rebuilds for Shopify brands from seed stage startups to billion dollar companies. That combination is the point: I know what makes AI recommend a brand, and I know what makes the visitor buy.",
-  where: 'Based in California. Working remotely with brands anywhere, in English.',
+  text: `I'm Carson Cobb, an independent AI search and CRO specialist for Shopify brands, with ${FACTS.experience}. I work with Shopify brands in every product category, from seed stage startups to billion dollar companies: ${FACTS.categories}. I do the work myself. I write the structured data, edit the theme, restructure the product data and ship the fixes, and I've run A/B tests for DTC brands for six years. That combination is the point: I know what makes AI recommend a brand, and I know what makes the visitor buy.`,
+  where: `${FACTS.location.serves} In English.`,
 };
 
 export const REFERRAL = {
@@ -370,9 +369,9 @@ const AI_AUDIT_ITEM =
 export const PROGRAM_SIZES = [
   {
     key: 'focus',
-    name: 'Close the Gap: Focus',
+    name: FACTS.offers.focus.name,
     short: 'Focus',
-    fit: 'For brands doing about $50K to $150K a month',
+    fit: FACTS.offers.focus.fit,
     tagline: 'I find the gap and hand your team every fix, ready to ship.',
     items: [
       AI_AUDIT_ITEM,
@@ -381,14 +380,14 @@ export const PROGRAM_SIZES = [
       'A ranked plan for the outside sources AI relies on for your products',
       "A competitor report every 2 weeks showing where you're winning and where you're not",
     ],
-    monthly: 2500,
+    monthly: FACTS.offers.focus.price,
     featured: false,
   },
   {
     key: 'full',
-    name: 'Close the Gap: Full',
+    name: FACTS.offers.full.name,
     short: 'Full',
-    fit: 'For brands doing about $150K a month and up',
+    fit: FACTS.offers.full.fit,
     tagline: 'I find the gap and close it for you.',
     items: [
       AI_AUDIT_ITEM,
@@ -399,7 +398,7 @@ export const PROGRAM_SIZES = [
       'A weekly competitor report and a monthly report on the revenue AI is driving',
       'Model watch: when ChatGPT, Gemini or Google AI Mode changes how it recommends products, I retest and adjust',
     ],
-    monthly: 5000,
+    monthly: FACTS.offers.full.price,
     featured: true,
   },
 ];
@@ -423,8 +422,8 @@ export const SIZE_TERMS = 'Month to month. Cancel any time with 30 days notice.'
 
 // The CRO offer: one time, on /pricing and its own page at /full-store-audit.
 export const FULL_AUDIT = {
-  name: 'Full Store Audit',
-  price: 1997,
+  name: FACTS.offers.audit.name,
+  price: FACTS.offers.audit.price,
   path: '/full-store-audit',
   covers: [
     'Every page of your store, reviewed on mobile and desktop.',
@@ -699,6 +698,7 @@ export const CATEGORY_FAQ = {
   a: 'No. The audit and every fix cover your whole catalog. The plan sets how many product categories I track against competitors. In each category I track your lead product, and what I learn and fix there is applied to every product in that category.',
 };
 const SIZE_FAQS = [
+  IMPLEMENTATION_FAQ,
   CATEGORY_FAQ,
   { q: "What's the difference between Focus and Full?", a: DIFF_ANSWER },
   { q: 'How do you measure AI traffic when most of it shows up as direct?', a: MEASURE_ANSWER },
@@ -717,6 +717,7 @@ export const FAQS: { q: string; a: string; link?: { href: string; text: string }
     q: 'What is Close the Gap?',
     a: 'Ongoing monthly work for Shopify brands. I show you where your competitors beat you in ChatGPT, Gemini and Google AI Mode, category by category, fix everything you control, go after the sources AI relies on, and send a competitor report every week or two so you can see it move.',
   },
+  IMPLEMENTATION_FAQ,
   { q: 'Do we need a call?', a: CALL_ANSWER },
   { q: 'Can you guarantee ChatGPT will recommend us?', a: GUARANTEE_ANSWER },
   { q: 'Who is it for?', a: WHO_FOR },
@@ -833,9 +834,9 @@ export const AGENCY_TICKETS = [
 ];
 
 export const AGENCY_STATS = [
-  { value: '50+', label: 'AI search projects' },
-  { value: '4,000+', label: 'products made readable to AI' },
-  { value: '50+', label: 'Shopify stores' },
+  FACTS.stats.aiProjects,
+  FACTS.stats.products,
+  FACTS.stats.stores,
   { value: '100%', label: 'white label, NDA signed upfront' },
 ];
 

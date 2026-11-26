@@ -5,7 +5,7 @@ slug: "/reports/ai-search-apparel-brands-2026"
 h1: "AI search for apparel brands: who gets recommended, and what their stores do differently"
 answer: "In my November 2026 tests, ChatGPT, Gemini and Google AI Mode named only 6 of 96 apparel stores on Shopify, 6%, against 11% across all six product areas. Apparel stores had the best technical setup, with 93% carrying product structured data, but the median apparel store had 31 blog articles. Apparel answers come from fit reviewers and real wearers, not product data."
 datePublished: 2026-11-17
-dateModified: 2026-11-23
+dateModified: 2026-11-25
 reportStores: 617
 faq:
   - question: "How many apparel brands does ChatGPT recommend per answer?"
@@ -59,6 +59,8 @@ The gap is content and coverage. The median apparel store has 31 blog articles, 
 More on the pattern across all six areas in [what AI named Shopify brands have in common](/reports/what-ai-named-shopify-brands-have-in-common-2026) and [how many brands AI recommends](/reports/how-many-brands-ai-recommends-2026).
 
 Finding where AI names your brand, and why it skips you, is part of [Close the Gap](/close-the-gap). The [AI Visibility Check](/ai-visibility-check) is a quick first look.
+
+How I work with apparel brands is on my [apparel brands page](/apparel-brands).
 
 ## How this was done
 

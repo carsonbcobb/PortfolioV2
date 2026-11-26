@@ -3,20 +3,20 @@ title: "Klaviyo Flows for Shopify: What Every Store Needs"
 description: "Every Shopify store needs welcome, browse, cart, post purchase, back in stock and winback flows in Klaviyo. I build and fix them, plus subscriber flows."
 slug: "/klaviyo-email-for-shopify"
 h1: "Klaviyo email for Shopify, built around how your store sells"
-answer: "Carson Cobb is an independent AI search and conversion specialist for Shopify brands who builds and fixes Klaviyo email flows. Every Shopify store needs welcome, browse abandonment, cart and checkout abandonment, post purchase, back in stock and winback flows. Brands that sell subscriptions also need subscriber flows for upcoming orders, failed payments and cancellations, timed to how their customers actually reorder."
+answer: "Carson Cobb is an independent AI search and CRO specialist for Shopify brands who builds and fixes Klaviyo email flows. Every Shopify store needs welcome, browse abandonment, cart and checkout abandonment, post purchase, back in stock and winback flows. Brands that sell subscriptions also need subscriber flows for upcoming orders, failed payments and cancellations, timed to how their customers actually reorder."
 faq:
   - question: "Which Klaviyo flows should every Shopify store have?"
     answer: "Start with these: welcome, browse abandonment, cart and checkout abandonment, post purchase, back in stock and winback. If you sell subscriptions, add subscriber flows for upcoming orders, failed payments and cancellations."
   - question: "Do you write the emails too?"
     answer: "Yes. I write and build the emails in your brand's templates, in your brand's voice. Photography and new brand design come from you or your designer. If you have a copywriter you like, I'll work with them and handle the flow logic and setup."
   - question: "Can I hire you just for email?"
-    answer: "Running email day to day is part of a custom fractional head of ecommerce engagement, and the Full Store Audit reviews your email flows. Email isn't sold on its own."
+    answer: "Email work is quoted as a project, usually after the Full Store Audit reviews your flows. I build and fix the flows myself. Email isn't sold as a monthly service on its own."
   - question: "We don't use Klaviyo yet. Can you set it up?"
     answer: "Yes. I can set up Klaviyo from scratch."
   - question: "Can you fix our existing flows instead of starting over?"
     answer: "Usually, yes. Most accounts I audit have the right flows switched on but with broken timing, missing filters or emails that no longer match the store. I fix what's there before building anything new."
   - question: "Do you run campaigns and newsletters?"
-    answer: "When I run your store day to day, campaigns are part of the promo calendar I plan with you. The flows come first, because they keep earning every day without anyone pressing send."
+    answer: "The flows come first, because they keep earning every day without anyone pressing send. Campaign planning can be part of a quoted email project."
   - question: "Which subscription apps do you work with?"
     answer: "Recharge, Skio, Loop, Shopify's own subscriptions, and other major subscription apps. I connect subscription data to Klaviyo for every subscription client, so subscriber emails can use real order dates and subscription status. I check the setup on your account before building on it."
   - question: "What do you report on?"
@@ -84,7 +84,7 @@ Then I use those segments in flows and campaigns so a subscriber doesn't get a d
 
 This is where most email setups fall apart. The emails and the site don't talk to each other.
 
-When I run a store, email and the site are planned together. A product page change goes into the post purchase flow. A new bundle shows up in the winback. Back in stock signups on the site feed straight into Klaviyo. Promos go on one calendar so the homepage, the cart offer and the email all say the same thing on the same day.
+When I work on a store, email and the site are planned together. A product page change goes into the post purchase flow. A new bundle shows up in the winback. Back in stock signups on the site feed straight into Klaviyo. Promos go on one calendar so the homepage, the cart offer and the email all say the same thing on the same day.
 
 That's also why I fix tracking first. If the store isn't sending clean order and product data to Klaviyo, flows can't trigger correctly and reports can't be trusted. My [conversion optimization page](/shopify-conversion-optimization) covers the site side.
 
@@ -92,9 +92,9 @@ That's also why I fix tracking first. If the store isn't sending clean order and
 
 **[Full Store Audit](/full-store-audit), $1,997.** I review your email flows along with every page of the store, cart and checkout, analytics and subscriptions, and rank every fix by what it's worth. Delivered within 2 business days of getting store access, walked through by recorded video.
 
-**Fractional head of ecommerce, custom.** Your ecommerce lead, working at your direction. Klaviyo flows, segments and campaigns are handled day to day as part of the store, with launches and promotions brought to you for sign off. Email is part of that engagement and isn't sold on its own. I do the work myself; if something needs a specialist skill like photography, I tell you up front and either quote it or recommend someone you hire directly. [Email me what you need](mailto:carson@carsoncobb.com?subject=Fractional%20head%20of%20ecommerce) and I'll send back a scope and a price.
+**Email fixes, quoted as a project.** When the audit turns up flows that need rebuilding, I quote that work on its own and do it myself, with every flow brought to you for sign off before it goes live. If something needs a specialist skill like photography, I tell you up front and either quote it or recommend someone you hire directly. [Email me what you need](mailto:carson@carsoncobb.com?subject=Klaviyo%20project) and I'll send back a scope and a price.
 
-Published prices are on the [pricing page](/pricing). In the first 90 days of running your store, email is the main focus of month 2, after tracking, speed and key pages are fixed in month 1.
+Published prices are on the [pricing page](/pricing).
 
 Across my work, I've supported more than $40M in client revenue for growing brands. If you sell something people reorder, like [supplements](/supplement-brands) or [pet food](/pet-brands), email timing matters even more.
 

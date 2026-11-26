@@ -5,7 +5,7 @@ slug: "/guides/hire-ai-search-specialist-shopify"
 h1: "How to hire an AI search specialist for your Shopify store"
 answer: "To choose someone to get your Shopify brand recommended by AI, ask how they test ChatGPT, Gemini and Google AI Mode the way real shoppers ask, who makes the fixes, and what they do about the outside sources AI trusts. Walk away from guaranteed AI rankings, keyword lists and dashboards with no fixes. Good work pairs AI visibility with conversion on the pages AI sends shoppers to."
 datePublished: 2026-11-09
-dateModified: 2026-11-24
+dateModified: 2026-11-25
 faq:
   - question: "What should I ask before hiring an AI search agency for my Shopify store?"
     answer: "Ask which AI tools they track, how they measure whether your brand gets recommended, which buyer questions they test, whether the work is done in your theme code or in an app, what happens with off site sources, and how they report results. Walk away from anyone who guarantees a ranking or sells llms.txt as the main fix."
@@ -84,6 +84,8 @@ AI referred shoppers arrive with a specific promise in mind, and they convert we
 * **Work on the outside sources** AI cites for your products: review sites, listings, articles and threads.
 * **Conversion work** on the pages AI sends shoppers to.
 * **Regular reports** on how often you and each competitor get recommended, and what changed.
+
+For what that looks like on the structured data side, see [Shopify structured data for ChatGPT, Gemini and Google](/shopify-structured-data).
 
 ## What does it cost?
 

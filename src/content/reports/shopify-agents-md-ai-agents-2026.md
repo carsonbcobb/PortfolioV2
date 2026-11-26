@@ -5,7 +5,7 @@ slug: "/reports/shopify-agents-md-ai-agents-2026"
 h1: "Every Shopify store now has an agents.md file. Here's what it says."
 answer: "Shopify now publishes an agents.md file on almost every store, telling AI shopping agents how to browse and buy. In my November 2026 check of 107 Shopify brand stores, 105 served agents.md, 104 used Shopify's default and only 1 wrote its own. All 107 answered as a UCP store. The default file covers how an agent can shop, not what makes your products worth buying."
 datePublished: 2026-11-16
-dateModified: 2026-11-23
+dateModified: 2026-11-25
 reportStores: 107
 faq:
   - question: "What is agents.md on Shopify?"
@@ -62,7 +62,7 @@ That's the point worth understanding. agents.md helps an AI agent shop your stor
 
 Of everything in the default file, your policies matter most, because they're the store specific facts an agent passes to the shopper. 103 of the 105 agents.md files referenced the store's policies, and 104 mentioned returns.
 
-In a 2026 test of 122 Shopify stores by Search Engine Journal, AI agents answered return window questions well, but no store gave a usable answer about shipping cost to a specific city, and only 2 of 88 gave a usable answer about cancellations ([source](https://searchenginejournal.com/your-store-is-agent-ready-by-default-we-tested-122-shopify-stores/591767)). Those answers come from your policy pages. See [Shopify return policies](/reports/shopify-return-policy-benchmarks-2026) and [Shopify shipping policies](/reports/shopify-shipping-policy-benchmarks-2026).
+In a 2026 test of 122 Shopify stores by Search Engine Journal, AI agents answered return window questions well, but no store gave a usable answer about shipping cost to a specific city, and only 2 of 88 gave a usable answer about cancellations ([source](https://searchenginejournal.com/your-store-is-agent-ready-by-default-we-tested-122-shopify-stores/591767)). Those answers come from your policy pages. See [Shopify return policies](/reports/shopify-store-benchmarks-2026#return-policies) and [Shopify shipping policies](/reports/shopify-store-benchmarks-2026#shipping-policies).
 
 ## Should you write your own?
 

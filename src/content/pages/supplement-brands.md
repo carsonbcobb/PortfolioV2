@@ -3,7 +3,7 @@ title: "AEO for Supplement Brands: Get Recommended by AI"
 description: "AEO for supplement brands: Google AI Mode sends 28% of supplement links to health and expert sources, 17% to brand sites. What it takes to get named."
 slug: "/supplement-brands"
 h1: "Get your supplements recommended by AI, then sold on your site"
-answer: "AEO for supplement brands means getting your products named when shoppers ask ChatGPT, Gemini and Google AI Mode which supplement to buy. Carson Cobb, an independent AI search and conversion specialist for Shopify brands, does it by fixing the product pages and data AI reads, within what your brand can legally claim, and working on the health and expert sources AI trusts."
+answer: "AEO for supplement brands means getting your products named when shoppers ask ChatGPT, Gemini and Google AI Mode which supplement to buy. Carson Cobb, an independent AI search and CRO specialist for Shopify brands, does it by fixing the product pages and data AI reads, within what your brand can legally claim, and working on the health and expert sources AI trusts."
 faq:
   - question: "How do I get my supplement brand recommended by ChatGPT?"
     answer: "ChatGPT recommends supplements it can match to the shopper's situation and trust from more than one source. That comes from product pages that say who the product is for, how to use it and how it's tested, and from the sites AI already reads for supplements. It works category by category, so the first step is seeing which of your products AI names today and who it names instead."
@@ -73,4 +73,4 @@ AI referred shoppers arrive ready to buy. [Shopify reported in May 2026](/report
 
 Then comes the second order, where supplement brands make their money. I set subscription frequencies from real serving counts, make subscribe and save visible on the products people take every day, and time reorder reminders to when a bottle runs out. On one subscription brand, [subscribe and save opt in went from 7% to 32%](/results). More on my [Shopify subscriptions page](/shopify-subscriptions).
 
-If you want me running reorders, email and the rest of the store with you each month, that's a custom engagement on my [full store management page](/fractional-head-of-ecommerce).
+The [Full Store Audit](/full-store-audit) reviews your subscription setup and email flows along with every page of the store, with every fix ranked by what it's worth.

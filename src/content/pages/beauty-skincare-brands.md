@@ -3,7 +3,7 @@ title: "AEO for Beauty and Skincare Brands: Get Recommended by AI"
 description: "AEO for beauty and skincare brands: in Google AI Mode, Reddit and YouTube got 30% of beauty links, ahead of brand sites at 28%. What it takes to get named."
 slug: "/beauty-skincare-brands"
 h1: "Get your beauty products recommended by AI, then sold on your site"
-answer: "AEO for beauty and skincare brands means getting your products named when shoppers describe their skin to ChatGPT, Gemini and Google AI Mode and ask what to buy. Carson Cobb, an independent AI search and conversion specialist for Shopify brands, does it by fixing the product pages and data AI reads, within what your brand can legally claim, and working on the community sources AI trusts."
+answer: "AEO for beauty and skincare brands means getting your products named when shoppers describe their skin to ChatGPT, Gemini and Google AI Mode and ask what to buy. Carson Cobb, an independent AI search and CRO specialist for Shopify brands, does it by fixing the product pages and data AI reads, within what your brand can legally claim, and working on the community sources AI trusts."
 faq:
   - question: "How do I get my skincare brand recommended by ChatGPT?"
     answer: "ChatGPT recommends skincare it can match to the shopper's skin and concern: sensitive, acne prone, dry, redness. That comes from product pages that say who the product is for, what's in it and how it fits into a routine, and from the community and editorial sites AI already reads. It works category by category, so the first step is seeing which of your products AI names today and who it names instead."
@@ -75,4 +75,4 @@ AI referred shoppers arrive ready to buy. [Shopify reported in May 2026](/report
 
 People don't buy skincare one product at a time, they build a routine. I set up routines and bundles that make sense together, and set reorder timing from how long each product actually lasts, for subscribe and save in Recharge or Skio and for replenishment emails in Klaviyo. More on my [Shopify subscriptions page](/shopify-subscriptions) and my [Klaviyo email page](/klaviyo-email-for-shopify).
 
-If you want me running reorders, email and the rest of the store with you each month, that's a custom engagement on my [full store management page](/fractional-head-of-ecommerce).
+The [Full Store Audit](/full-store-audit) reviews your subscription setup and email flows along with every page of the store, with every fix ranked by what it's worth.

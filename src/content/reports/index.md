@@ -3,7 +3,7 @@ title: "AI Search and Ecommerce Research | Carson Cobb"
 description: "How AI assistants read, describe and recommend Shopify brands, and how Shopify stores convert. Built from data I collect from live stores and AI answers."
 slug: "/reports"
 h1: "AI search and ecommerce research"
-dateModified: 2026-11-24
+dateModified: 2026-11-25
 faq:
   - question: "Where does this data come from?"
     answer: "From the public storefront data every Shopify store publishes: products, collections, pages, store settings and subscription plans, and from live answers from ChatGPT, Gemini and Google AI Mode, collected in fresh chats. I check each store directly, so the numbers reflect what shoppers actually see on the date of the check."
@@ -193,15 +193,8 @@ I research how AI assistants read, describe and recommend Shopify brands, and ho
 
 ## Conversion and ecommerce benchmarks
 
-### [Shopify return policy benchmarks](/reports/shopify-return-policy-benchmarks-2026)
-
-### [Shopify shipping policy benchmarks](/reports/shopify-shipping-policy-benchmarks-2026)
-
-### [Shopify announcement bar benchmarks](/reports/shopify-announcement-bar-benchmarks-2026)
-
-### [Back in stock alerts on Shopify](/reports/shopify-back-in-stock-benchmarks-2026)
-
-### [Shopify contact options](/reports/shopify-contact-options-benchmarks-2026)
+### [Shopify store benchmarks: shipping, returns, contact, back in stock and announcement bars](/reports/shopify-store-benchmarks-2026)
+Five checks on the same 107 stores. Only half of shipping policies give a delivery range, 65% of return windows are 30 days, and 36% of sold out pages capture nothing.
 
 ### [Black Friday Discount Report 2026](/reports/black-friday-discount-report-2026)
 73% of stores already show a crossed out price before Black Friday, and 68% of reorderable brands with subscriptions mark products down deeper than their subscription discount. Before and after numbers coming Black Friday week.
