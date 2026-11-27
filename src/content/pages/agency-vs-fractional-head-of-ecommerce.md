@@ -5,7 +5,7 @@ slug: "/agency-vs-fractional-head-of-ecommerce"
 h1: "Fractional specialist vs full service agency for ecommerce: which one does your brand need?"
 answer: "An independent, fractional specialist is the better fit for most growing ecommerce brands that need one senior person on SEO, AI search and conversion, with nobody in between. A full service agency fits brands that need a large team shipping many channels at once, such as paid ads, creative and development. The right pick depends on how much work you need done in parallel."
 datePublished: 2026-10-31
-dateModified: 2026-11-25
+dateModified: 2026-11-27
 faq:
   - question: "Is an independent specialist cheaper than an agency?"
     answer: "Often. My AI search work, Close the Gap, is $2,500 a month for Focus or $5,000 a month for Full, month to month. What usually makes a specialist cheaper in practice is that you pay for senior work, not account management, and you spend less time managing vendors."
@@ -14,7 +14,7 @@ faq:
   - question: "Can I use both?"
     answer: "Yes, and many brands do. A specialist can own AI search and conversion while an agency runs paid ads or creative. I work alongside agencies and freelancers often."
   - question: "Does an independent specialist actually do the work, or just advise?"
-    answer: "I do the work. On Close the Gap: Full, I write the structured data, edit the Shopify theme, restructure the product data and ship the fixes, with your sign off before anything goes live. On Focus, every fix comes to your team written and ready to ship."
+    answer: "I do the work. On both Close the Gap plans, I write the structured data, edit the Shopify theme, restructure the product data and ship the fixes, with your sign off before anything goes live. On Full, I also test and implement conversion work on the pages AI sends shoppers to."
   - question: "What about hiring a full time head of ecommerce?"
     answer: "That's the right move when the channel needs someone inside the business every day, leading a team. Expect $150K+ a year before benefits. A specialist for AI search and conversion works alongside that hire, or before it."
   - question: "How do I try this without a big commitment?"
@@ -72,8 +72,8 @@ With a full time hire, you pay a salary whether there's a full month of senior w
 
 With a specialist, you pay for the work itself. My options:
 
-* **[Close the Gap: Focus](/close-the-gap), $2,500 a month, month to month.** For brands doing about $50K to $150K a month. I find where your competitors beat you in ChatGPT, Gemini and Google AI Mode and hand your team every fix, written and ready to ship, with a competitor report every 2 weeks.
-* **[Close the Gap: Full](/close-the-gap), $5,000 a month, month to month.** I implement every fix in your store myself, work the outside sources AI relies on, add conversion work on the pages AI sends shoppers to, and report weekly.
+* **[Close the Gap: Focus](/close-the-gap), $2,500 a month, month to month.** Covers up to 3 product categories. Every month I test what ChatGPT, Gemini and Google AI Mode recommend, fix what AI gets wrong about your products on your site myself, add new content and send a monthly report.
+* **[Close the Gap: Full](/close-the-gap), $5,000 a month, month to month.** Covers up to 6 product categories. Everything in Focus, plus conversion work on the pages AI sends shoppers to, competitor tracking, placement work in the outside sources AI trusts, and weekly reports with monthly revenue from AI.
 * **[Full Store Audit](/full-store-audit), $1,997 one time.** A conversion audit, separate from AI search: every page on mobile and desktop, cart and checkout, email flows, analytics and subscriptions, with every fix ranked by what it's worth.
 
 All prices are on the [pricing page](/pricing).

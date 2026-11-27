@@ -3,12 +3,12 @@ title: "How Much Does AI Search Optimization Cost for Shopify?"
 description: "My real prices: Close the Gap at $2,500 a month on Focus or $5,000 on Full, and a $1,997 Full Store Audit. What drives the price and what each level gets."
 slug: "/guides/ai-search-optimization-cost-shopify"
 h1: "How much does AI search optimization cost for a Shopify brand?"
-answer: "AI search optimization for a Shopify brand costs what the scope demands: catalog size, how many competitors you're up against, and whether someone makes the fixes for you. As a reference, my Close the Gap program is $2,500 a month on Focus and $5,000 a month on Full, month to month, and the Full Store Audit is $1,997 one time."
+answer: "AI search optimization for a Shopify brand costs what the scope demands: catalog size, how many competitors you're up against, and how much conversion and outside work is included. As a reference, my Close the Gap program is $2,500 a month on Focus and $5,000 a month on Full, month to month, and the Full Store Audit is $1,997 one time."
 datePublished: 2026-11-09
-dateModified: 2026-11-24
+dateModified: 2026-11-27
 faq:
   - question: "How much does AI search optimization cost for a Shopify store?"
-    answer: "It depends on catalog size and how much outside work is included. As a reference, my program, Close the Gap, is $2,500 a month for up to 3 product categories, each tracked against up to 3 competitors, with every fix handed to your team ready to ship, or $5,000 a month for up to 5 product categories, each tracked against up to 6 competitors, with the fixes implemented for you. Both run month to month, and the audit and fixes cover the whole catalog. Off site outreach, like getting into the review sites and articles AI cites, is the part that adds the most cost."
+    answer: "It depends on catalog size and how much outside work is included. As a reference, my program, Close the Gap, is $2,500 a month on Focus, covering up to 3 product categories, or $5,000 a month on Full, covering up to 6, with conversion work, competitor tracking and placement work added. Both run month to month, and I make the fixes on your site myself on both. Off site outreach, like getting into the review sites and articles AI cites, is the part that adds the most cost."
   - question: "What drives the price of AI search work?"
     answer: "Three things: how many active products need their pages and product data fixed, whether off site work is included, and how many buyer questions and AI tools are tracked each month."
   - question: "Is AI search optimization worth it for a small Shopify brand?"
@@ -35,7 +35,7 @@ Across the market, AI search work is sold three ways:
 - **One time builds.** A project that fixes the store: product data, product pages for top sellers, crawler access, and conversion on the pages AI sends people to. The store improves, but nobody is watching whether AI's answers change.
 - **Monthly programs.** Tracking, new fixes as answers shift, and off site outreach, month after month.
 
-Here's how I sell it: one monthly program, **Close the Gap**, month to month. The audit and every fix cover your whole catalog, and I track the lead product in each category against its competitors. **Focus is $2,500 a month**: up to 3 product categories, each tracked against up to 3 competitors, and I hand your team every fix, ready to ship. **Full is $5,000 a month**: up to 5 product categories, each tracked against up to 6 competitors, and I implement the fixes and do the sources work myself. The head to head against your competitors and the on site fixes happen in month 1, source work starts in month 2, and every price is on the [pricing page](/pricing). To see where you stand first, the [gap report](/ai-visibility-check) takes about a minute, no login.
+Here's how I sell it: one monthly program, **Close the Gap**, month to month. **Focus is $2,500 a month** and covers up to 3 product categories: every month I test what ChatGPT, Gemini and Google AI Mode recommend, fix what AI gets wrong about your products on your site myself, add content that answers the follow up questions AI asks shoppers, and send a monthly report. **Full is $5,000 a month** and covers up to 6 product categories: everything in Focus, plus conversion work on the pages AI sends shoppers to, gift, comparison and competitor questions, ongoing competitor tracking, placement work in the outside sources AI trusts, and weekly reports with monthly revenue from AI. One product category? Either plan covers your whole store. Every price is on the [pricing page](/pricing). To see where you stand first, the [gap report](/ai-visibility-check) takes about a minute, no login.
 
 ## What cheap offers usually leave out
 

@@ -4,7 +4,7 @@ description: "I fix the structured data on Shopify stores so ChatGPT, Gemini and
 slug: "/shopify-structured-data"
 h1: "Shopify structured data that AI actually understands"
 answer: "Carson Cobb, an independent AI search and CRO specialist for Shopify brands, fixes Shopify structured data so ChatGPT, Gemini and Google AI Mode read your products, prices and reviews correctly. He merges duplicate Product schema from your theme and apps into one clean block, adds prices, availability and identifiers to every variant, and writes the JSON-LD by hand into your theme, connected to metafields your team can edit."
-dateModified: 2026-11-25
+dateModified: 2026-11-27
 faq:
   - question: "Do you use a schema app?"
     answer: "No. I write the JSON-LD by hand into your theme and connect it to metafields where your team needs to edit it. A schema app layered on top of your theme and review app is one of the most common causes of duplicate Product data."
@@ -19,7 +19,7 @@ faq:
       text: "See the schema test."
       href: "/reports/does-schema-change-what-chatgpt-says"
   - question: "Do you implement it, or just tell us what to change?"
-    answer: "On Close the Gap: Full, I write the structured data, put it into your theme and ship it with your sign off. On Focus, the code comes to your team written, tested and ready to ship."
+    answer: "On both Close the Gap plans, I write the structured data, put it into your theme and ship it with your sign off."
   - question: "Which structured data types do you cover?"
     answer: "Product, Offer and variant data, reviews and ratings, Organization, Brand, Breadcrumb, FAQ, and shipping and return policy markup, all validated so Google reads it cleanly."
 ---
@@ -41,7 +41,7 @@ I'm Carson Cobb, an independent [AI search](/ai-search) and CRO specialist for S
 
 I audit your current structured data across your catalog and show you exactly what AI sees today. Then I write the JSON-LD by hand into your theme, connect it to metafields where your team needs to edit it, test it, and ship it with your sign off. No schema app layered on top.
 
-That's how it works on [Close the Gap: Full](/close-the-gap), where I implement every fix myself. On Focus, I write the same structured data and hand it to your team tested and ready to ship. Either way, structured data is one part of the work: it sits alongside product pages that answer the questions shoppers ask AI, the outside sources AI relies on, and a competitor report that shows whether AI's answers change. Every price is on the [pricing page](/pricing).
+That's how it works on both [Close the Gap](/close-the-gap) plans, where I fix what AI gets wrong about your products on your site myself. Structured data is one part of the work: it sits alongside product pages that answer the questions shoppers ask AI, the outside sources AI relies on, and a report that shows whether AI's answers change. Every price is on the [pricing page](/pricing).
 
 ## Why it matters
 

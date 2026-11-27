@@ -56,6 +56,18 @@ const BANNED = [
   /\bNovi\b/,
   /\bMexico\b/,
   /AI search and conversion specialist/i,
+  // Close the Gap plan copy (Nov 27, 2026): Focus covers up to 3 product categories, Full up to 6, and Carson
+  // makes the on site fixes himself on both. No old scopes, handoff wording or retired report cadences.
+  /up to 5 product categories/i,
+  /tracked against up to/i,
+  /ready (for your team )?to ship/i,
+  /every week or two/i,
+  /model watch/i,
+  /share of voice/i,
+  /\broadmap\b/i,
+  /AEO audits?/i,
+  /pay upfront/i,
+  /minimum commitment/i,
 ];
 // Pages where one banned term is allowed on purpose. /about names Carson's in house roles, Gem among them,
 // as he asked on November 14, 2026. Everywhere else it stays banned.

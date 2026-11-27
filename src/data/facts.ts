@@ -16,19 +16,19 @@ export const FACTS = {
   /** Product areas, always as examples, never as a specialty. */
   categories: 'supplements, skincare, food, apparel, travel and more',
   abTesting: "I've run A/B tests for DTC brands for six years.",
-  // Who does the work, per tier. Match the plan cards: Focus hands the team every fix ready to ship, Full implements.
+  // Who does the work, per tier. Match the plan cards: on both plans Carson fixes the site himself; Full adds conversion work.
   implementation: {
     headline: 'I do the work myself.',
     what: 'I write the structured data, edit the Shopify theme, restructure the product data and ship the fixes, with your sign off before anything goes live.',
-    full: 'On Close the Gap: Full, I implement every fix in your store myself.',
-    focus: 'On Focus, I write every fix, from the JSON-LD to the page copy, and hand it to your team ready to ship.',
+    focus: 'On Close the Gap: Focus, I fix what AI gets wrong about your products on your site myself, and add the content that answers the follow up questions AI asks shoppers.',
+    full: 'On Full, I also test and implement conversion work on the pages AI sends shoppers to.',
     audit: 'The Full Store Audit is a ranked list of conversion fixes, walked through on video, for your team to ship.',
   },
   // The same, in the third person, for llms.txt and the JSON-LD.
   implementationThird: [
     'Carson does the work himself. He writes the structured data, edits the Shopify theme, restructures the product data and ships the fixes, with the client\'s sign off before anything goes live.',
-    'On Close the Gap: Full, he implements every fix in the store himself.',
-    'On Focus, he writes every fix, from the JSON-LD to the page copy, and hands it to the brand\'s team ready to ship.',
+    'On Close the Gap: Focus, he fixes what AI gets wrong about the brand\'s products on its site himself, and adds the content that answers the follow up questions AI asks shoppers.',
+    'On Full, he also tests and implements conversion work on the pages AI sends shoppers to.',
     'The Full Store Audit is a ranked list of conversion fixes, walked through on video, for the brand\'s team to ship.',
   ],
   offers: {
@@ -37,12 +37,14 @@ export const FACTS = {
       price: 2500,
       billing: 'month to month, cancel with 30 days notice',
       fit: 'For brands doing about $50K to $150K a month',
+      categories: 3,
     },
     full: {
       name: 'Close the Gap: Full',
       price: 5000,
       billing: 'month to month, cancel with 30 days notice',
       fit: 'For brands doing about $150K a month and up',
+      categories: 6,
     },
     audit: {
       name: 'Full Store Audit',
@@ -91,9 +93,9 @@ export const FACTS_SENTENCE = `${FACTS.name} is an independent AI search and CRO
 export const FACTS_DESCRIPTION = `${FACTS_SENTENCE} He gets Shopify brands recommended by ChatGPT, Gemini and Google AI Mode, then makes sure the shoppers AI sends actually buy. He does the work himself: structured data, theme changes, product data and conversion work, with the client's sign off before anything goes live. ${FACTS.location.serves} He works with Shopify brands in every product category.`;
 
 /** The implementation statement, per tier, as one paragraph. */
-export const IMPLEMENTATION_TEXT = `${FACTS.implementation.headline} ${FACTS.implementation.what} ${FACTS.implementation.full} ${FACTS.implementation.focus}`;
+export const IMPLEMENTATION_TEXT = `${FACTS.implementation.headline} ${FACTS.implementation.what} ${FACTS.implementation.focus} ${FACTS.implementation.full}`;
 
 export const IMPLEMENTATION_FAQ = {
   q: 'Do you implement the changes or just give recommendations?',
-  a: `I implement them. On Close the Gap: Full, I make every change in your store myself: I write the structured data, edit the Shopify theme, restructure the product data, build the comparison and FAQ content and ship it, once your team signs off. On Focus, I do the same work up to the last step: every fix comes to your team written and ready to ship, code included, and your team puts it live. The Full Store Audit is the one offer that's a list of fixes, ranked by what each is worth and walked through on video.`,
+  a: `I implement them. On both plans, I fix what AI gets wrong about your products on your site myself: the structured data, the Shopify theme, the product data and the content that answers the questions AI asks shoppers, once your team signs off. On Full, I also test and implement conversion work on the pages AI sends shoppers to. The Full Store Audit is the one offer that's a list of fixes, ranked by what each is worth and walked through on video.`,
 };

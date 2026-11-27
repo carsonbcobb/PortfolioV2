@@ -14,6 +14,7 @@ type Offer = {
   name: string;
   fit: string;
   tagline?: string;
+  desc?: string;
   items: string[];
   steps: string[];
   terms: string[];
@@ -25,6 +26,7 @@ const sizeOffer = (z: (typeof PROGRAM_SIZES)[number]): Offer => ({
   name: z.name,
   fit: z.fit,
   tagline: z.tagline,
+  desc: z.desc,
   items: z.items,
   steps: AFTER_PAY[z.key as 'focus' | 'full'],
   terms: [
@@ -34,7 +36,7 @@ const sizeOffer = (z: (typeof PROGRAM_SIZES)[number]): Offer => ({
     `Refunds: ${TERMS.refunds}`,
   ],
   options: [
-    { id: 'monthly', label: 'Monthly', price: `${usd(z.monthly)}/month`, note: SIZE_TERMS, key: z.key as PaymentKey },
+    { id: 'monthly', label: 'Monthly', price: `${usd(z.monthly)}/month`, note: `${z.terms} ${SIZE_TERMS.replace('Month to month. ', '')}`, key: z.key as PaymentKey },
   ],
 });
 
@@ -84,7 +86,8 @@ const questions = `mailto:${EMAIL}?subject=${encodeURIComponent('Question before
             <div class="head">
               <p class="eyebrow">You're starting</p>
               <h2 class="h2">{o.name}</h2>
-              {o.tagline && <p class="lede">{o.tagline}</p>}
+              {o.tagline && <p class="lede"><strong>{o.tagline}</strong></p>}
+              {o.desc && <p class="lede">{o.desc}</p>}
               <p class="lede">{o.fit}</p>
             </div>
             <div class="card plan">

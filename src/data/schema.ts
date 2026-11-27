@@ -197,7 +197,7 @@ const sizeOffer = (z: (typeof PROGRAM_SIZES)[number]) => ({
   '@type': 'Offer',
   '@id': `${PROGRAM_URL}#offer-${z.key}`,
   name: z.name,
-  description: `${z.fit}. ${sentenceList(z.items)} ${usd(z.monthly)}/month, month to month. Cancel any time with 30 days written notice. ${PROGRAM.guarantee} ${PROGRAM.scope}`,
+  description: `${z.tagline} ${z.desc} ${sentenceList(z.items)} ${usd(z.monthly)}/month. ${z.terms} Cancel any time with 30 days written notice. ${PROGRAM.guarantee} ${PROGRAM.plansNote}`,
   url: PROGRAM_URL,
   itemOffered: ref(PLAN.program),
   seller: ref(ID.business),
@@ -238,7 +238,7 @@ const planServices: Record<PlanKey, () => object> = {
     audience: audience(FIT_LINE),
     availableChannel: channel(),
     serviceOutput: output(
-      'Competitor head to head, on site fixes, source work and competitor reports',
+      'AI testing, on site fixes, new content, source work and reports',
       sentenceList([...PROGRAM.months.flatMap((m) => m.items), ...PROGRAM.always.items]),
     ),
     offers: PROGRAM_SIZES.map(sizeOffer),
@@ -289,8 +289,8 @@ const CHECK_CHANNEL = { '@type': 'ServiceChannel', serviceUrl: `${SITE_URL}${CHE
 
 // The AI search and CRO services: what the work produces, in the page's own words.
 const BRAND_OUTPUT = output(
-  'Gap report, implementation and competitor reports',
-  'A head to head against your main competitors on ChatGPT, Gemini and Google AI Mode, the on site fixes implemented, source work, and a competitor report every week or two.',
+  'Gap report, implementation and reports',
+  'Monthly testing of what ChatGPT, Gemini and Google AI Mode recommend against your main competitors, the on site fixes made by me, new content, source work, and a report every month on Focus or every week on Full.',
 );
 
 export function homeSchema(meta: { title: string; description: string; faqs: { q: string; a: string }[] }) {

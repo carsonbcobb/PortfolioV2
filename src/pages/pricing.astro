@@ -31,7 +31,7 @@ const jsonLd = [pricingSchema({ title, description, faqs: [...PRICING_FAQS, ...T
       <div class="head">
         <p class="eyebrow">The main offer</p>
         <h2 class="h2" id="ctg-title">{PROGRAM.name}</h2>
-        <p class="lede">{PROGRAM.summary}</p>
+        <p class="lede">{PROGRAM.plansIntro}</p>
         <div class="btn-row">
           <a href={PROGRAM.path} class="btn btn--outline btn--small">See the full program</a>
         </div>
@@ -43,6 +43,7 @@ const jsonLd = [pricingSchema({ title, description, faqs: [...PRICING_FAQS, ...T
           ))
         }
       </div>
+      <p class="lock__terms plans__note">{PROGRAM.plansNote}</p>
 
       <div class="head">
         <h3 class="h3">{PROGRAM.scopeTitle}</h3>
@@ -53,7 +54,7 @@ const jsonLd = [pricingSchema({ title, description, faqs: [...PRICING_FAQS, ...T
 
       <div class="head">
         <h3 class="h3" id="who-does-the-work">{FACTS.implementation.headline} Here's who ships what.</h3>
-        <p class="lede">{FACTS.implementation.what} {FACTS.implementation.full} {FACTS.implementation.focus} {FACTS.implementation.audit}</p>
+        <p class="lede">{FACTS.implementation.what} {FACTS.implementation.focus} {FACTS.implementation.full} {FACTS.implementation.audit}</p>
       </div>
 
       <div class="lock">
@@ -65,7 +66,6 @@ const jsonLd = [pricingSchema({ title, description, faqs: [...PRICING_FAQS, ...T
         </div>
       </div>
       <p class="lock__terms plans__note">{PROGRAM.continues}</p>
-      <p class="lock__terms plans__note">{PROGRAM.scope}</p>
       <p class="lock__terms plans__note">{PROGRAM.fit} {PROGRAM.under}</p>
 
       <!-- Lock in 2026 pricing -->
