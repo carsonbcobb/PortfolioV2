@@ -9,7 +9,7 @@ import { closeTheGapSchema } from '../data/schema';
 
 const title = 'Close the Gap: Beat Competitors in AI Search | Carson Cobb';
 const description =
-  'Close the Gap shows Shopify brands where competitors beat them in ChatGPT, Gemini and Google AI Mode, then closes the gap. From $2,500 a month, month to month.';
+  'Close the Gap gets your brand recommended by ChatGPT, Gemini and Google AI Mode, keeps it there, and turns AI shoppers into sales. Focus $2,500/month, Full $5,000/month, month to month.';
 const h1 = 'Close the Gap';
 const intro =
   "AI is picking the winners in every product market, and right now it's picking your competitor. I show you exactly where your competitors beat you in ChatGPT, Gemini and Google AI Mode, category by category, and what that's costing you. Then I close the gap.";
@@ -90,10 +90,12 @@ const jsonLd = [closeTheGapSchema({ title, description, faqs: PROGRAM_FAQS })];
       <div class="head">
         <p class="eyebrow">Pricing</p>
         <h2 class="h2" id="sizes-title">Two sizes.</h2>
+        <p class="lede">{PROGRAM.plansIntro}</p>
       </div>
       <div class="grid grid--320 plans">
         {PROGRAM_SIZES.map((z) => <SizeCard size={z} id={z.key} />)}
       </div>
+      <p class="lock__terms plans__note">{PROGRAM.plansNote}</p>
 
       <div class="head">
         <h3 class="h3">{PROGRAM.scopeTitle}</h3>
@@ -111,7 +113,6 @@ const jsonLd = [closeTheGapSchema({ title, description, faqs: PROGRAM_FAQS })];
         </div>
       </div>
       <p class="lock__terms plans__note">{PROGRAM.continues}</p>
-      <p class="lock__terms plans__note">{PROGRAM.scope}</p>
     </div>
   </section>
 

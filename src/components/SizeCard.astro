@@ -1,8 +1,8 @@
 ---
 // One Close the Gap size card, the only place the cards are built: the headline price with its terms, the
-// included list from PROGRAM_SIZES, and Start now (the size's Stripe link) with "Get your gap report first"
+// heading and description, the included list from PROGRAM_SIZES (every bullet, however many), and Start now (the size's Stripe link) with "Get your gap report first"
 // under it. Used on /close-the-gap, /pricing, /ai-search and the industry pages.
-import { PROGRAM_SIZES, SIZE_TERMS, CHECK_PATH, GAP_FIRST_LABEL } from '../data/site';
+import { PROGRAM_SIZES, CHECK_PATH, GAP_FIRST_LABEL } from '../data/site';
 import { paymentHref, type PaymentKey } from '../config/payment-links';
 
 interface Props {
@@ -21,11 +21,12 @@ const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
   <div class="plan__head">
     <span class:list={['tag', { 'tag--dim': z.featured }]}>{z.fit}</span>
     <h3 class="h3">{z.name}</h3>
-    <p class="plan__summary">{z.tagline}</p>
     <div class="plan__price">
       {usd(z.monthly)}<span>/month</span>
     </div>
-    <p class="plan__commit">{SIZE_TERMS}</p>
+    <p class="plan__commit">{z.terms}</p>
+    <p class="plan__summary"><strong>{z.tagline}</strong></p>
+    <p class="plan__summary">{z.desc}</p>
   </div>
   <ul class="plan__list">
     {

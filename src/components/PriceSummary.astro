@@ -25,13 +25,14 @@ const { id, heading = 'Close the gap. Two sizes.', sand = true, flush = false, c
     <div class="head">
       <p class="eyebrow">{eyebrow}</p>
       <h2 class="h2" id={id}>{heading}</h2>
-      {!compact && <p class="lede">{PROGRAM.summary}</p>}
+      {!compact && <p class="lede">{PROGRAM.plansIntro}</p>}
     </div>
     <div class="grid grid--320 plans">
       {PROGRAM_SIZES.map((z) => (
         <SizeCard size={z} />
       ))}
     </div>
+    <p class="lock__terms plans__note">{PROGRAM.plansNote}</p>
     <div class="btn-row">
       <a href={CHECK_PATH} data-track="visibility_check" class="btn btn--accent">{CTA_LABEL}</a>
       <a href={PROGRAM.path} class="btn btn--outline">See how it works</a>
